@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CadastroModule } from './cadastro/cadastro.module';
-import { LoginModule } from './login/login.module';
-import { TesteModule } from './teste/teste.module';
-import { HeaderModule } from './header/header.module';
-import { FooterModule } from './footer/footer.module';
+import { SelectModule } from '../select/select.module';
+import { FooterComponent } from './component/footer.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -17,12 +12,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    FooterComponent,
+  ],
+  exports: [
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
@@ -30,15 +26,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           deps: [HttpClient]
       }
   }),
-    LoginModule,
-    CadastroModule,
-    TesteModule,
-    HeaderModule,
-    FooterModule
+    SelectModule
   ],
   providers: [
     TranslateService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
-export class AppModule { }
+export class FooterModule { }

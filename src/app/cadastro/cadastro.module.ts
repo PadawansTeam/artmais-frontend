@@ -8,6 +8,8 @@ import { SelectLangComponent } from '../select/component/select.component';
 import { SelectModule } from '../select/select.module';
 import { CadastroService } from './service/cadastro.service';
 import { Cadastro } from './service/cadastro';
+import { HeaderModule } from '../header/header.module';
+import { FooterModule } from '../footer/footer.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -26,7 +28,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           deps: [HttpClient]
       }
   }),
-    SelectModule
+    SelectModule,
+    HeaderModule,
+    FooterModule
   ],
   providers: [
     TranslateService,
