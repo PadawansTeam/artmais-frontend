@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
-  title: 'Prod Padawans',
+  production: false,
+  title: 'Dev Padawans',
   apiURL: 'https://padawans-auth-poc.herokuapp.com/',
 };

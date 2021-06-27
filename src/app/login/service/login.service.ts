@@ -4,11 +4,24 @@ import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Login } from './login';
 import { argv } from 'yargs';
+import { Component } from '@angular/core';
+import { environment } from '../../../environments/environment';
+
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: '../component/login.component.html',
+//   styleUrls: ['../component/login.component.css'],
+// })
+// export class AppComponent {
+//   title = environment.title;
+//   apiURL = environment.apiURL;
+// }
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
-const url = argv.BACKEND_URL;
+
+const url = environment.apiURL;
 
 @Injectable({
   providedIn: 'root',
