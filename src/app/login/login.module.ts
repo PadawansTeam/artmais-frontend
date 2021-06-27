@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
+import { LoginService } from './service/login.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -27,7 +28,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SelectModule
   ],
   providers: [
-    TranslateService
+    TranslateService, 
+    LoginService
   ],
   bootstrap: []
 })
