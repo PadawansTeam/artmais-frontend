@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';  
 import { HttpHeaders } from '@angular/common/http';  
+import { Observable } from 'rxjs';  
+import { Login } from './login';
 
 var httpOptions = {headers: new HttpHeaders({"Content-Type": "application/json"})};
 
@@ -11,12 +13,6 @@ export class LoginService {
 
   url = 'https://padawans-backend-poc.herokuapp.com/vi/signin';  
 
-  constructor(
-    private http: HttpClient,
-    ) { }
-
-  getIsLogged(){
-    return true
-  }
+  constructor(private http: HttpClient) { }
 
 }

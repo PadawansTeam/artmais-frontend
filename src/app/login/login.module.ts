@@ -6,6 +6,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
 import { LoginService } from './service/login.service';
+import { Login } from './service/login';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -29,7 +30,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   providers: [
     TranslateService, 
-    LoginService
+    LoginService, 
+    Login
   ],
   bootstrap: []
 })

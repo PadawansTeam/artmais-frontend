@@ -7,6 +7,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectLangComponent } from '../select/component/select.component';
 import { SelectModule } from '../select/select.module';
 import { CadastroService } from './service/cadastro.service';
+import { Cadastro } from './service/cadastro';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -29,7 +30,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   providers: [
     TranslateService,
-    CadastroService
+    CadastroService,
+    Cadastro
   ],
   bootstrap: []
 })

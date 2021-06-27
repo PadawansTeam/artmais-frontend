@@ -4,4 +4,5 @@ export class Cadastro {
   socialName!: string;
   email!: string;
   password!: string;
+  cadastroId: string | undefined;
 }
