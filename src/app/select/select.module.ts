@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TesteComponent } from './component/teste.component';
+import { SelectLangComponent } from './component/select.component';
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { SelectModule } from '../select/select.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
-
 @NgModule({
   declarations: [
-    TesteComponent
+    SelectLangComponent
+  ],
+  exports: [
+    SelectLangComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,11 +25,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           deps: [HttpClient]
       }
   }),
-    SelectModule
   ],
   providers: [
     TranslateService
   ],
   bootstrap: []
 })
-export class TesteModule { }
+export class SelectModule { }

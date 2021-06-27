@@ -1,0 +1,26 @@
+{
+    "TESTE": {
+        "OLA": "Hello!",
+        "BEM-VINDO": "Welcome, Teste!"
+    },
+    "CADASTRO": {
+        "CADASTRAR": "Sign Up",
+        "NOME": "First Name",
+        "SOBRENOME": "Last Name",
+        "SOCIAL": "How do you want to be called?",
+        "USUARIO": "Choose a username",
+        "EMAIL": "E-mail",
+        "CONF-EMAIL": "Confirm your e-mail",
+        "SENHA": "Password",
+        "CONF-SENHA": "Confirm your password",
+        "NASCIMENTO": "Birth date",
+        "BOTAO": "Sign up"
+    },
+    "ENTRAR": {
+        "ENTRAR": "Sign In",
+        "EMAIL": "E-mail",
+        "SENHA": "Password",
+        "BOTAO": "Sign in",
+        "ESQUECEU": "Forgot your password?"
+    }
+}

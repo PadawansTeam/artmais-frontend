@@ -1,0 +1,26 @@
+{
+    "TESTE": {
+        "OLA": "Olá!",
+        "BEM-VINDO": "Seja bem-vindo(a), Teste!"
+    },
+    "CADASTRO": {
+        "CADASTRAR": "Cadastre-se",
+        "NOME": "Nome",
+        "SOBRENOME": "Sobrenome",
+        "SOCIAL": "Como quer ser chamado(a)?",
+        "USUARIO": "Escolha um nome de usuário",
+        "EMAIL": "E-mail",
+        "CONF-EMAIL": "Confirmação do e-mail",
+        "SENHA": "Senha",
+        "CONF-SENHA": "Confirmação de senha",
+        "NASCIMENTO": "Data de nascimento",
+        "BOTAO": "Cadastrar"
+    },
+    "ENTRAR": {
+        "ENTRAR": "Entrar",
+        "EMAIL": "E-mail",
+        "SENHA": "Senha",
+        "BOTAO": "Entrar",
+        "ESQUECEU": "Esqueceu sua senha?"
+    }
+}

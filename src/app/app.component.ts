@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ArtMais';
+
+  constructor() {
+    if(!localStorage.getItem("lang"))
+      localStorage.setItem("lang", "pt-BR");
+   }
 }
