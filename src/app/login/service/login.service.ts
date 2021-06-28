@@ -6,14 +6,12 @@ export interface LoginDto {
   email: string;
   password: string;
 }
-
 export interface LoginResponseDto {
   token: string;
 }
-
 @Injectable()
 export class LoginService {
-  loginURL = 'https://google.com';
+  loginURL = 'http://google.com';
   constructor(private http: HttpClient) {}
 
   public authenticate(loginDto: LoginDto): Observable<LoginResponseDto> {
