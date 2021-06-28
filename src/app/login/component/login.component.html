@@ -1,11 +1,25 @@
 <app-header></app-header>
 <select-lang></select-lang>
 <div class="main">
-    <p class="sign" align="center">{{'ENTRAR.ENTRAR' | translate}}</p>
-    <form class="form1">
-      <input class="un" type="text" align="center" placeholder="{{'ENTRAR.EMAIL' | translate}}">
-      <input class="pass" type="password" align="center" placeholder="{{'ENTRAR.SENHA' | translate}}">
-      <a class="submit" align="center">{{'ENTRAR.BOTAO' | translate}}</a>
-      <p class="forgot" align="center"><a href="#">{{'ENTRAR.ESQUECEU' | translate}}</a></p>  
-    </form>
+  <p class="sign" align="center">{{ "ENTRAR.ENTRAR" | translate }}</p>
+  <form class="form1">
+    <input
+      class="un"
+      type="text"
+      align="center"
+      placeholder="{{ 'ENTRAR.EMAIL' | translate }}"
+    />
+    <input
+      class="pass"
+      type="password"
+      align="center"
+      placeholder="{{ 'ENTRAR.SENHA' | translate }}"
+    />
+    <button class="submit" align="center" (click)="login()">
+      {{ "ENTRAR.BOTAO" | translate }}
+    </button>
+    <p class="forgot" align="center">
+      <a href="#">{{ "ENTRAR.ESQUECEU" | translate }}</a>
+    </p>
+  </form>
 </div>
