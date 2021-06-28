@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 export interface LoginDto {
   email: string;
@@ -11,10 +12,21 @@ export interface LoginResponseDto {
 }
 @Injectable()
 export class LoginService {
-  loginURL = 'http://google.com';
+  public loginURL = `${environment.apiURL}`;
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+
   constructor(private http: HttpClient) {}
 
-  public authenticate(loginDto: LoginDto): Observable<LoginResponseDto> {
-    return this.http.post<LoginResponseDto>(`${this.loginURL}`, loginDto);
+  authenticate(email: string, password: string): Observable<LoginResponseDto> {
+    return this.http.post<LoginResponseDto>(
+      `${this.loginURL}` + 'v1/SignIn',
+      { email, password },
+      this.httpOptions
+    );
   }
 }
