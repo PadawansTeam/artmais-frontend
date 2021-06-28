@@ -22,5 +22,20 @@
         "SENHA": "Senha",
         "BOTAO": "Entrar",
         "ESQUECEU": "Esqueceu sua senha?"
+    },
+    "MENU": {
+        "SOBRE": "SOBRE",
+        "CADASTRO": "CADASTRE-SE",
+        "ENTRAR": "ENTRAR"
+    },
+    "FOOTER": {
+        "SOBRE": "SOBRE",
+        "SOBRE-TEXTO": "Somos uma plataforma de networking com o objetivo de aumentar a capacidade dos artistas e amantes da arte em criar e estabelecer contatos entre si, gerando mais contatos comerciais, mais vendas, mais conhecimento e mais envolvimento.",
+        "LINKS": "LINKS RÁPIDOS",
+        "NOS": "Sobre nós",
+        "PRIVACIDADE": "Política de Privacidade",
+        "CADASTRAR": "Cadastre-se",
+        "LOGIN": "Entrar",
+        "COPYRIGHT": " 2021 Todos os direitos reservados por Team Padawans"
     }
 }

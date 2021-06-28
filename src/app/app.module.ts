@@ -11,6 +11,7 @@ import { TesteModule } from './teste/teste.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 
+
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
