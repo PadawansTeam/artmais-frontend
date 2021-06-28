@@ -26,11 +26,10 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private loginService: LoginService) {}
 
-  onClickSubmit() {
+  public loginArtPlus() {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        Authorization: 'my-auth-token',
       }),
     };
     let teste = {

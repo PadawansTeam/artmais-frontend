@@ -15,7 +15,12 @@
       align="center"
       placeholder="{{ 'ENTRAR.SENHA' | translate }}"
     />
-    <button class="submit" align="center" (ngSubmit)="onClickSubmit()">
+    <button
+      type="button"
+      class="submit"
+      align="center"
+      (click)="loginArtPlus()"
+    >
       {{ "ENTRAR.BOTAO" | translate }}
     </button>
     <p class="forgot" align="center">
