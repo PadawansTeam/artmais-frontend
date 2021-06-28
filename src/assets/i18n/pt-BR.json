@@ -24,7 +24,7 @@
         "ESQUECEU": "Esqueceu sua senha?"
     },
     "MENU": {
-        "SOBRE": "SOBRE",
+        "SOBRE": "INÍCIO",
         "CADASTRO": "CADASTRE-SE",
         "ENTRAR": "ENTRAR"
     },
@@ -37,5 +37,10 @@
         "CADASTRAR": "Cadastre-se",
         "LOGIN": "Entrar",
         "COPYRIGHT": " 2021 Todos os direitos reservados por Team Padawans"
+    },
+    "INICIO": {
+        "ARTMAIS": "ART+",
+        "LOGIN": "ENTRAR",
+        "CADASTRO": "CADASTRE-SE"
     }
 }

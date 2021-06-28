@@ -10,6 +10,7 @@ import { LoginModule } from './login/login.module';
 import { TesteModule } from './teste/teste.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
+import { InicioModule } from './inicio/inicio.module';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -18,7 +19,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +36,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     CadastroModule,
     TesteModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    InicioModule
   ],
   providers: [
     TranslateService

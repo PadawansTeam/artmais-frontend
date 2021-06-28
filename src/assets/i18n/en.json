@@ -24,9 +24,9 @@
         "ESQUECEU": "Forgot your password?"
     },
     "MENU": {
-        "SOBRE": "About",
-        "CADASTRO": "Sign up",
-        "ENTRAR": "Sign in"
+        "SOBRE": "HOME",
+        "CADASTRO": "SIGN UP",
+        "ENTRAR": "SIGN IN"
     },
     "FOOTER": {
         "SOBRE": "ABOUT",
@@ -37,5 +37,10 @@
         "CADASTRAR": "Sign Up",
         "LOGIN": "Sign In",
         "COPYRIGHT": " 2021 All Rights Reserved by Team Padawans"
+    },
+    "INICIO": {
+        "ARTMAIS": "ART+",
+        "LOGIN": "SIGN IN",
+        "CADASTRO": "SIGN UP"
     }
 }
