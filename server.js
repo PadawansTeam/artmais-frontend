@@ -41,11 +41,17 @@ const app = express();
 // );
 
 // Serve only the static files form the dist directory
-app.use(express.static(`${__dirname}/dist/artmais-frontend/src/`));
+// app.use(express.static(`${__dirname}/dist/artmais-frontend/src/`));
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(`${__dirname}/dist/artmais-frontend/src/index.html`));
-});
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.join(`${__dirname}/dist/artmais-frontend/src/index.html`));
+// });
+// Serve only the static files form the dist directory
+app.use(express.static("./dist/artmais-frontend/src/"));
+
+app.get("/*", (req, res) =>
+  res.sendFile("index.html", { root: "dist/artmais-frontend/src/" })
+);
 
 // Start the app by listening on the default Heroku port
 const PORT = process.env.PORT || 4200;
