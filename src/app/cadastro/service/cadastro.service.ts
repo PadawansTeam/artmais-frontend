@@ -1,43 +1,39 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';  
-import { HttpHeaders } from '@angular/common/http';  
-import { Observable } from 'rxjs';  
-import { Cadastro } from './cadastro';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
-var httpOptions = {headers: new HttpHeaders({"Content-Type": "application/json"})};
+export interface CadastroDto {
+  name: string;
+  surname: string;
+  socialName: string;
+  email: string;
+  password: string;
+}
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CadastroService {
+  public artPlusURL = `${environment.apiURL}`;
 
-  url = 'https://padawans-backend-poc.herokuapp.com/v1/singup';  
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
 
-  constructor(
-    private http: HttpClient,
-    ) { }
+  constructor(private http: HttpClient) {}
 
-    getAllCadastro(): Observable<Cadastro[]> {  
-      return this.http.get<Cadastro[]>(this.url);  
-    }  
-
-    gecadastroById(cadastroid: string): Observable<Cadastro> {  
-      const apiurl = `${this.url}/${cadastroid}`;
-      return this.http.get<Cadastro>(apiurl);  
-    } 
-  
-    createcadastro(cadastro: Cadastro): Observable<Cadastro> {  
-      return this.http.post<Cadastro>(this.url, cadastro, httpOptions);  
-    }  
-  
-    updatecadastro(cadastroid: string, cadastro: Cadastro): Observable<Cadastro> {  
-      const apiurl = `${this.url}/${cadastroid}`;
-      return this.http.put<Cadastro>(apiurl,cadastro, httpOptions);  
-    }  
-  
-    deletecadastroById(cadastroid: string): Observable<number> {  
-      const apiurl = `${this.url}/${cadastroid}`;
-      return this.http.delete<number>(apiurl, httpOptions);  
-    }  
-
+  signUp(
+    name: string,
+    surname: string,
+    socialName: string,
+    email: string,
+    password: string
+  ): Observable<object> {
+    return this.http.post<object>(
+      `${this.artPlusURL}` + 'v1/SignUp',
+      { name, surname, socialName, email, password },
+      this.httpOptions
+    );
+  }
 }
