@@ -1,23 +1,51 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoginService } from '../service/login.service';
+import { Component } from '@angular/core';
+import {
+  LoginDto,
+  LoginResponseDto,
+  LoginService,
+} from '../service/login.service';
+import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+import { Login } from '../service/login';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  loginURL = 'https://padawans-auth-poc.herokuapp.com/v1/SignIn';
 
-  constructor(
-    private loginService: LoginService,
-    private router: Router
-  ) { }
+  model = new Login('joao.teixeira@aluno.ifsp.edu.br', 'padawans#2021');
 
-  ngOnInit(): void {
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
   }
 
-  // this.router.navigate(['/teste']);
-  
+  constructor(private http: HttpClient, private loginService: LoginService) {}
 
+  public loginArtPlus() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    let teste = {
+      email: 'joao.teixeira@aluno.ifsp.edu.br',
+      password: 'padawans#2021',
+    } as LoginDto;
+    this.http
+      .post<LoginResponseDto>(`${this.loginURL}`, teste, httpOptions)
+      .subscribe(
+        (response) => {
+          console.log(response);
+          return response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
+  }
 }

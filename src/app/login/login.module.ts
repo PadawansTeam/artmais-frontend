@@ -24,20 +24,16 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BrowserModule,
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-  }),
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
     SelectModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
   ],
-  providers: [
-    TranslateService, 
-    LoginService, 
-    Login
-  ],
+  providers: [TranslateService, LoginService],
   bootstrap: [],
 })
 export class LoginModule {}
