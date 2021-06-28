@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CadastroService } from '../service/cadastro.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -18,7 +19,10 @@ export class CadastroComponent {
   redirectTo: string = '';
   roles: string[] = [];
 
-  constructor(private cadastroService: CadastroService) {}
+  constructor(
+    private cadastroService: CadastroService,
+    private router: Router
+  ) {}
 
   public cadastroArtPlus() {
     this.cadastroService
@@ -32,6 +36,9 @@ export class CadastroComponent {
       .subscribe(
         (response) => {
           console.log(response);
+          if (response != null) {
+            this.router.navigateByUrl('/teste');
+          }
           return response;
         },
         (err) => {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../service/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
   redirectTo: string = '';
   roles: string[] = [];
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   public loginArtPlus() {
     this.loginService
@@ -23,6 +24,9 @@ export class LoginComponent {
       .subscribe(
         (response) => {
           console.log(response);
+          if (response.token != null) {
+            this.router.navigateByUrl('/teste');
+          }
           return response;
         },
         (err) => {
