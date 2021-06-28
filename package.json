@@ -27,6 +27,7 @@
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "express": "^4.17.1",
+    "helmet": "^4.6.0",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
