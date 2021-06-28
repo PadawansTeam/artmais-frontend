@@ -15,8 +15,8 @@ import { LoginModule } from './login/login.module';
 import { TesteModule } from './teste/teste.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
+import { InicioModule } from './inicio/inicio.module';
 import { CommonModule } from '@angular/common';
-
 import { LoginService } from './login/service/login.service';
 import { CadastroService } from './cadastro/service/cadastro.service';
 
@@ -25,7 +25,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -44,6 +46,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     TesteModule,
     HeaderModule,
     FooterModule,
+    InicioModule
   ],
   providers: [TranslateService, LoginService, CadastroService],
   bootstrap: [AppComponent],

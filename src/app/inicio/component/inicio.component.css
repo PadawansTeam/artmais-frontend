@@ -1,0 +1,35 @@
+.sign-title {
+    padding-top: 40px;
+    color: #8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.button_slide {
+  color: #737373;
+  border: 2px solid #8C55AA;
+  border-radius: 0px;
+  padding: 18px 36px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #8C55AA;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.slide_left:hover {
+  box-shadow: inset 0 0 0 50px #8C55AA;
+  color: #FFF;
+}
+
+.main{
+    min-height: 26.5rem;
+}
