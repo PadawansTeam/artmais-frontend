@@ -1,46 +1,47 @@
 {
-  "TESTE": {
-    "OLA": "Olá!",
-    "BEM-VINDO": "Seja bem-vindo(a) a plataforma Art+"
-  },
-  "CADASTRO": {
-    "CADASTRAR": "Cadastre-se",
-    "NOME": "Nome",
-    "SOBRENOME": "Sobrenome",
-    "SOCIAL": "Como quer ser chamado(a)?",
-    "USUARIO": "Escolha um nome de usuário",
-    "EMAIL": "E-mail",
-    "CONF-EMAIL": "Confirmação do e-mail",
-    "SENHA": "Senha",
-    "CONF-SENHA": "Confirmação de senha",
-    "NASCIMENTO": "Data de nascimento",
-    "BOTAO": "Cadastrar"
-  },
-  "ENTRAR": {
-    "ENTRAR": "Entrar",
-    "EMAIL": "E-mail",
-    "SENHA": "Senha",
-    "BOTAO": "Entrar",
-    "ESQUECEU": "Esqueceu sua senha?"
-  },
-  "MENU": {
-    "SOBRE": "INÍCIO",
-    "CADASTRO": "CADASTRE-SE",
-    "ENTRAR": "ENTRAR"
-  },
-  "FOOTER": {
-    "SOBRE": "SOBRE",
-    "SOBRE-TEXTO": "Somos uma plataforma de networking com o objetivo de aumentar a capacidade dos artistas e amantes da arte em criar e estabelecer contatos entre si, gerando mais contatos comerciais, mais vendas, mais conhecimento e mais envolvimento.",
-    "LINKS": "LINKS RÁPIDOS",
-    "NOS": "Sobre nós",
-    "PRIVACIDADE": "Política de Privacidade",
-    "CADASTRAR": "Cadastre-se",
-    "LOGIN": "Entrar",
-    "COPYRIGHT": " 2021 Todos os direitos reservados por Team Padawans"
-  },
-  "INICIO": {
-    "ARTMAIS": "ART+",
-    "LOGIN": "ENTRAR",
-    "CADASTRO": "CADASTRE-SE"
-  }
+    "TESTE": {
+        "OLA": "Olá!",
+        "BEM-VINDO": "Seja bem-vindo(a) à Plataforma Art+!"
+    },
+    "CADASTRO": {
+        "CADASTRAR": "Cadastre-se",
+        "NOME": "Nome",
+        "SOBRENOME": "Sobrenome",
+        "SOCIAL": "Como quer ser chamado(a)?",
+        "USUARIO": "Escolha um nome de usuário",
+        "EMAIL": "E-mail",
+        "CONF-EMAIL": "Confirmação do e-mail",
+        "SENHA": "Senha",
+        "CONF-SENHA": "Confirmação de senha",
+        "NASCIMENTO": "Data de nascimento",
+        "BOTAO": "Cadastrar"
+    },
+    "ENTRAR": {
+        "ENTRAR": "Entrar",
+        "EMAIL": "E-mail",
+        "SENHA": "Senha",
+        "BOTAO": "Entrar",
+        "ERRO": "E-mail ou senha errados. Por favor, tente novamente!",
+        "ESQUECEU": "Esqueceu sua senha?"
+    },
+    "MENU": {
+        "SOBRE": "INÍCIO",
+        "CADASTRO": "CADASTRE-SE",
+        "ENTRAR": "ENTRAR"
+    },
+    "FOOTER": {
+        "SOBRE": "SOBRE",
+        "SOBRE-TEXTO": "Somos uma plataforma de networking com o objetivo de aumentar a capacidade dos artistas e amantes da arte em criar e estabelecer contatos entre si, gerando mais contatos comerciais, mais vendas, mais conhecimento e mais envolvimento.",
+        "LINKS": "LINKS RÁPIDOS",
+        "NOS": "Sobre nós",
+        "PRIVACIDADE": "Política de Privacidade",
+        "CADASTRAR": "Cadastre-se",
+        "LOGIN": "Entrar",
+        "COPYRIGHT": " 2021 Todos os direitos reservados por Team Padawans"
+    },
+    "INICIO": {
+        "ARTMAIS": "ART+",
+        "LOGIN": "ENTRAR",
+        "CADASTRO": "CADASTRE-SE"
+    }
 }

@@ -9,7 +9,7 @@ export class SelectLangComponent implements OnInit {
 
   constructor(public translate: TranslateService) {
     this.translate.setDefaultLang('pt-BR');
-    translate.addLangs(['pt-BR', 'en']);
+    translate.addLangs(['pt-BR', 'en-US']);
     this.translate.use(localStorage.getItem('lang') || 'pt-BR');
   }
 
