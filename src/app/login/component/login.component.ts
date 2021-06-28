@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import {
   LoginDto,
   LoginResponseDto,
@@ -13,39 +15,41 @@ import { Login } from '../service/login';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
-  loginURL = 'https://padawans-auth-poc.herokuapp.com/v1/SignIn';
+export class LoginComponent implements OnInit {
+  form: any = {
+    email: null,
+    password: null,
+  };
+  errorMessage = '';
+  redirectTo: string = '';
+  roles: string[] = [];
 
-  model = new Login('joao.teixeira@aluno.ifsp.edu.br', 'padawans#2021');
-
-  submitted = false;
+  constructor(
+    private http: HttpClient,
+    private loginService: LoginService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+  email!: string;
+  password!: string;
 
   onSubmit() {
-    this.submitted = true;
+    const { email, password } = this.form;
   }
 
-  constructor(private http: HttpClient, private loginService: LoginService) {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   public loginArtPlus() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-    let teste = {
-      email: 'joao.teixeira@aluno.ifsp.edu.br',
-      password: 'padawans#2021',
-    } as LoginDto;
-    this.http
-      .post<LoginResponseDto>(`${this.loginURL}`, teste, httpOptions)
-      .subscribe(
-        (response) => {
-          console.log(response);
-          return response;
-        },
-        (err) => {
-          throw err;
-        }
-      );
+    this.loginService.authenticate(this.email, this.password).subscribe(
+      (response) => {
+        console.log(response);
+        return response;
+      },
+      (err) => {
+        throw err;
+      }
+    );
   }
 }

@@ -1,5 +1,4 @@
 export const environment = {
   production: false,
-  title: 'Localhost Padawans',
-  apiURL: 'http://localhost:5001',
+  apiURL: 'https://padawans-auth-poc.herokuapp.com/',
 };

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { LoginComponent } from './component/login.component';
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +11,6 @@ import {
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
 import { LoginService } from './service/login.service';
-import { Login } from './service/login';
 import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 
@@ -22,6 +22,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [LoginComponent],
   imports: [
     BrowserModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
