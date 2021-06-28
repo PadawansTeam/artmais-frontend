@@ -1,20 +1,79 @@
 <app-header></app-header>
 <select-lang></select-lang>
 <div class="main">
-    <p class="sign" align="center">{{'CADASTRO.CADASTRAR' | translate}}</p>
-    <form class="form1">
-      <div class="fullname">
-        <input class="un" type="text" align="center" placeholder="{{'CADASTRO.NOME' | translate}}">
-        <input class="un-space" type="text" align="center" placeholder="{{'CADASTRO.SOBRENOME' | translate}}">
-      </div>
-      <input class="un" type="text" align="center" placeholder="{{'CADASTRO.SOCIAL' | translate}}">
-      <input class="un" type="text" align="center" placeholder="{{'CADASTRO.USUARIO' | translate}}">
-      <input class="un" type="email" align="center" placeholder="{{'CADASTRO.EMAIL' | translate}}">
-      <input class="un" type="email" align="center" placeholder="{{'CADASTRO.CONF-EMAIL' | translate}}">
-      <input class="un" type="password" align="center" placeholder="{{'CADASTRO.SENHA' | translate}}">
-      <input class="un" type="password" align="center" placeholder="{{'CADASTRO.CONF-SENHA' | translate}}">
-      <input class="un" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" align="center" placeholder="{{'CADASTRO.NASCIMENTO' | translate}}">
-      <a class="submit" align="center">{{'CADASTRO.BOTAO' | translate}}</a>
-    </form>
+  <p class="sign" align="center">{{ "CADASTRO.CADASTRAR" | translate }}</p>
+  <form class="form1">
+    <div class="fullname">
+      <input
+        [(ngModel)]="this.form.name"
+        name="name"
+        class="un"
+        type="text"
+        align="center"
+        placeholder="{{ 'CADASTRO.NOME' | translate }}"
+      />
+      <input
+        [(ngModel)]="this.form.surname"
+        name="surname"
+        class="un-space"
+        type="text"
+        align="center"
+        placeholder="{{ 'CADASTRO.SOBRENOME' | translate }}"
+      />
+    </div>
+    <input
+      [(ngModel)]="this.form.socialName"
+      name="socialName"
+      class="un"
+      type="text"
+      align="center"
+      placeholder="{{ 'CADASTRO.SOCIAL' | translate }}"
+    />
+    <input
+      class="un"
+      type="text"
+      align="center"
+      placeholder="{{ 'CADASTRO.USUARIO' | translate }}"
+    />
+    <input
+      class="un"
+      type="email"
+      align="center"
+      placeholder="{{ 'CADASTRO.EMAIL' | translate }}"
+    />
+    <input
+      [(ngModel)]="this.form.email"
+      name="email"
+      class="un"
+      type="email"
+      align="center"
+      placeholder="{{ 'CADASTRO.CONF-EMAIL' | translate }}"
+    />
+    <input
+      class="un"
+      type="password"
+      align="center"
+      placeholder="{{ 'CADASTRO.SENHA' | translate }}"
+    />
+    <input
+      [(ngModel)]="this.form.password"
+      name="password"
+      class="un"
+      type="password"
+      align="center"
+      placeholder="{{ 'CADASTRO.CONF-SENHA' | translate }}"
+    />
+    <input
+      class="un"
+      type="text"
+      onfocus="(this.type='date')"
+      onblur="(this.type='text')"
+      align="center"
+      placeholder="{{ 'CADASTRO.NASCIMENTO' | translate }}"
+    />
+    <button class="submit" align="center" (click)="cadastroArtPlus()">
+      {{ "CADASTRO.BOTAO" | translate }}
+    </button>
+  </form>
 </div>
 <app-footer></app-footer>

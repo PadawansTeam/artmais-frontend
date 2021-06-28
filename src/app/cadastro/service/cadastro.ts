@@ -1,8 +1,9 @@
 export class Cadastro {
-  name!: string;
-  surname!: string;
-  socialName!: string;
-  email!: string;
-  password!: string;
-  cadastroId: string | undefined;
+  constructor(
+    public name: string,
+    public surname: string,
+    public socialName: string,
+    public email: string,
+    public password: string
+  ) {}
 }

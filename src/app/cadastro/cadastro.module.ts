@@ -1,43 +1,40 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CadastroComponent } from './component/cadastro.component';
 import { HttpClient } from '@angular/common/http';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import {
+  TranslateLoader,
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { SelectLangComponent } from '../select/component/select.component';
 import { SelectModule } from '../select/select.module';
 import { CadastroService } from './service/cadastro.service';
-import { Cadastro } from './service/cadastro';
 import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
-
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [
-    CadastroComponent,
-  ],
+  declarations: [CadastroComponent],
   imports: [
     BrowserModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-  }),
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
     SelectModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
   ],
-  providers: [
-    TranslateService,
-    CadastroService,
-    Cadastro
-  ],
-  bootstrap: []
+  providers: [TranslateService, CadastroService],
+  bootstrap: [],
 })
-export class CadastroModule { }
+export class CadastroModule {}

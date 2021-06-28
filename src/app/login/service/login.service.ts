@@ -12,7 +12,7 @@ export interface LoginResponseDto {
 }
 @Injectable()
 export class LoginService {
-  public loginURL = `${environment.apiURL}`;
+  public artPlusURL = `${environment.apiURL}`;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -24,7 +24,7 @@ export class LoginService {
 
   authenticate(email: string, password: string): Observable<LoginResponseDto> {
     return this.http.post<LoginResponseDto>(
-      `${this.loginURL}` + 'v1/SignIn',
+      `${this.artPlusURL}` + 'v1/SignIn',
       { email, password },
       this.httpOptions
     );
