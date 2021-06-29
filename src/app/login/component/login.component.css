@@ -2,6 +2,10 @@ body {
     background-color: #F3EBF6;
     font-family: 'Ubuntu', sans-serif;
 }
+
+.login-main{
+    min-height: 66vh;
+}
     
 .main {
     background-color: #FFFFFF;
