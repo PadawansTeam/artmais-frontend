@@ -10,6 +10,7 @@ export interface LoginDto {
 export interface LoginResponseDto {
   token: string;
 }
+
 @Injectable()
 export class LoginService {
   public artPlusURL = `${environment.apiURL}`;

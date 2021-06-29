@@ -7,7 +7,7 @@
       <input class="un" type="text" align="center" placeholder="{{ 'ENTRAR.EMAIL' | translate }}"/>
       <input class="pass" type="password" align="center" placeholder="{{ 'ENTRAR.SENHA' | translate }}"/>
       <button type="button" class="submit" align="center" (click)="loginArtPlus()"> {{ "ENTRAR.BOTAO" | translate }}</button>
-      <p *ngIf="" class="error" align="center">{{ "ENTRAR.ERRO" | translate }}</p>
+      <p *ngIf="loginReturn" class="error" align="center">{{ "ENTRAR.ERRO" | translate }}</p>
       <p class="forgot" align="center"> <a href="#">{{ "ENTRAR.ESQUECEU" | translate }}</a></p>
     </form>
   </div>
