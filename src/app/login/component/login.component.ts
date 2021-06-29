@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../service/login.service';
+import { LoginResponseDto, LoginService } from '../service/login.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,6 +15,7 @@ export class LoginComponent {
   errorMessage = '';
   redirectTo: string = '';
   roles: string[] = [];
+  loginReturn: boolean = false;
 
   constructor(private loginService: LoginService, private router: Router) {}
 
@@ -23,9 +24,10 @@ export class LoginComponent {
       .authenticate(this.form.email, this.form.password)
       .subscribe(
         (response) => {
-          console.log(response);
           if (response.token != null) {
+            console.log(response);
             this.router.navigateByUrl('/teste');
+            this.loginReturn = true;
           }
           return response;
         },

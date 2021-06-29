@@ -2,6 +2,10 @@ body {
     background-color: #F3EBF6;
     font-family: 'Ubuntu', sans-serif;
 }
+
+.login-main{
+    min-height: 66vh;
+}
     
 .main {
     background-color: #FFFFFF;
@@ -89,6 +93,13 @@ form.form1 {
 .forgot {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
     color:#8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 15px;
+}
+
+.error {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color:#cc0000;
     font-family: 'Ubuntu', sans-serif;
     padding-top: 15px;
 }

@@ -12,3 +12,7 @@
     font-weight: bold;
     font-size: 23px;
 }
+
+.main{
+    min-height: 66vh;
+}
