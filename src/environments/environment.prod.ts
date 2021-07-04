@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: 'https://padawans-auth-poc.herokuapp.com/',
+  apiURL: 'https://artmais-backend.herokuapp.com/',
 };
