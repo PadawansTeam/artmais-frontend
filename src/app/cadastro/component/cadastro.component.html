@@ -3,24 +3,6 @@
 <div class="main">
   <p class="sign" align="center">{{ "CADASTRO.CADASTRAR" | translate }}</p>
   <form class="form1">
-    <div class="fullname">
-      <input
-        [(ngModel)]="this.form.name"
-        name="name"
-        class="un"
-        type="text"
-        align="center"
-        placeholder="{{ 'CADASTRO.NOME' | translate }}"
-      />
-      <input
-        [(ngModel)]="this.form.surname"
-        name="surname"
-        class="un-space"
-        type="text"
-        align="center"
-        placeholder="{{ 'CADASTRO.SOBRENOME' | translate }}"
-      />
-    </div>
     <input
       [(ngModel)]="this.form.socialName"
       name="socialName"

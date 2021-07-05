@@ -16,6 +16,7 @@ export class LoginComponent {
   redirectTo: string = '';
   roles: string[] = [];
   loginReturn: boolean = false;
+  erroLogin: boolean = false;
 
   constructor(private loginService: LoginService, private router: Router) {}
 
@@ -24,14 +25,16 @@ export class LoginComponent {
       .authenticate(this.form.email, this.form.password)
       .subscribe(
         (response) => {
-          if (response.token != null) {
-            console.log(response);
+          if (response.status == 200) {
             this.router.navigateByUrl('/teste');
             this.loginReturn = true;
           }
           return response;
         },
         (err) => {
+          if(err.status == 422){
+            this.erroLogin = true;
+          }
           throw err;
         }
       );
