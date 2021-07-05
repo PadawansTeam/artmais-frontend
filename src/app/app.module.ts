@@ -19,6 +19,12 @@ import { InicioModule } from './inicio/inicio.module';
 import { CommonModule } from '@angular/common';
 import { LoginService } from './login/service/login.service';
 import { CadastroService } from './cadastro/service/cadastro.service';
+import { ErroModule } from './erro/erro.module';
+import { ConstrucaoModule } from './construcao/construcao.module';
+import { SwiperModule } from 'swiper/angular';
+import { HomepageModule } from './homepage/homepage.module';
+import { PlanosComponent } from './planos/componet/planos.component';
+import { PlanosModule } from './planos/planos.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -46,7 +52,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     TesteModule,
     HeaderModule,
     FooterModule,
-    InicioModule
+    InicioModule,
+    ErroModule,
+    SwiperModule,
+    ConstrucaoModule,
+    HomepageModule,
+    PlanosModule
   ],
   providers: [TranslateService, LoginService, CadastroService],
   bootstrap: [AppComponent],
