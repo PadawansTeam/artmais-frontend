@@ -18,11 +18,11 @@
 }
 
 .site-footer{
-  background-color:#26272b;
+  background-color:#1b1b1b;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
-  color:#737373;
+  color:white;
   margin-bottom: -1rem;
   width: 100%;
   position: absolute;
@@ -34,7 +34,7 @@
 }
 
 .site-footer hr{
-  border-top-color:#bbb;
+  border-top-color:white;
   opacity:0.5
 }
 
@@ -51,7 +51,7 @@
 }
 
 .site-footer a{
-  color:#737373;
+  color:white;
 }
 
 .site-footer a:hover{
@@ -69,12 +69,12 @@
 }
 
 .footer-links a{
-  color:#737373;
+  color:white;
   font-size: 16px;
 }
 
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover{
-  color:#3366cc;
+  color:#701ec6;
   text-decoration:none;
 }
 

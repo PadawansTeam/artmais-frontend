@@ -1,11 +1,27 @@
-<div class="topnav">
-    <div>
-        <img class="logo" src="..\assets\LogoSFundo.png"> 
+<header id="header" class="fixed-top">
+    <div class="container d-flex  justify-content-between">
+         <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="../assets/img/logos/log.png" alt="" class="d-inline-block align-text-top logo"></a>
+        </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Sobre</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Planos</a></li>
+          <li><a class="nav-link scrollto" href="\time">Equipe</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
+          <li class="dropdown"><a href="#" class="nav-link scrollto" >Idioma</a>
+            <ul>
+              <li><a href="#"><img src="./assets/img/logos/brasil.png" alt="" width="30" height="24">PT-BR</a></li>
+              <li><a href="#"><img src="../assets/img/logos/estados-unidos.png" alt="" width="30" height="24">EN</a></li>
+            </ul>
+          </li>
+
+          <li><a class="nav-link scrollto" href="\cadastro">Cadastre-se</a></li>
+          <li><a class="getstarted scrollto" href="\login">Entrar</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
     </div>
-    <div class="menu-items">
-        <select-lang class="lang"></select-lang>
-        <a class="" href="">{{'MENU.SOBRE' | translate}}</a>
-        <a class=""href="\cadastro">{{'MENU.CADASTRO' | translate}}</a>
-        <a class="active"href="\login">{{'MENU.ENTRAR' | translate}}</a>
-    </div>
-</div> 
+  </header>
