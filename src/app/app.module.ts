@@ -23,8 +23,11 @@ import { ErroModule } from './erro/erro.module';
 import { ConstrucaoModule } from './construcao/construcao.module';
 import { SwiperModule } from 'swiper/angular';
 import { HomepageModule } from './homepage/homepage.module';
-import { PlanosComponent } from './planos/componet/planos.component';
 import { PlanosModule } from './planos/planos.module';
+import { HeaderlogComponent } from './headerlog/component/headerlog.component';
+import { HeaderlogModule } from './headerlog/headerlog.module';
+
+
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -33,6 +36,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SwiperModule,
     ConstrucaoModule,
     HomepageModule,
-    PlanosModule
+    PlanosModule,
+    HeaderlogModule
+
   ],
   providers: [TranslateService, LoginService, CadastroService],
   bootstrap: [AppComponent],
