@@ -26,7 +26,7 @@ export class LoginComponent {
       .subscribe(
         (response) => {
           if (response.status == 200) {
-            this.router.navigateByUrl('/teste');
+            this.router.navigateByUrl('/homepage');
             this.loginReturn = true;
           }
           return response;
