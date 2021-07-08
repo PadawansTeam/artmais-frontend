@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroModule } from './cadastro/cadastro.module';
 import { LoginModule } from './login/login.module';
-import { TesteModule } from './teste/teste.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { InicioModule } from './inicio/inicio.module';
@@ -53,7 +52,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
     LoginModule,
     CadastroModule,
-    TesteModule,
     HeaderModule,
     FooterModule,
     InicioModule,
