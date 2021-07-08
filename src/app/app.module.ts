@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroModule } from './cadastro/cadastro.module';
 import { LoginModule } from './login/login.module';
-import { TesteModule } from './teste/teste.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { InicioModule } from './inicio/inicio.module';
@@ -23,7 +22,6 @@ import { ErroModule } from './erro/erro.module';
 import { ConstrucaoModule } from './construcao/construcao.module';
 import { SwiperModule } from 'swiper/angular';
 import { HomepageModule } from './homepage/homepage.module';
-import { PlanosComponent } from './planos/componet/planos.component';
 import { PlanosModule } from './planos/planos.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -49,7 +47,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
     LoginModule,
     CadastroModule,
-    TesteModule,
     HeaderModule,
     FooterModule,
     InicioModule,
