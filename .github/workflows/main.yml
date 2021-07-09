@@ -1,0 +1,28 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v1
+      
+    - name: Install packages and build
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        installPackages: npm install
+        installAngular: npm install -g @angular/cli
+        buildCommand: ng build
+    
+    - name: Execute tests
+      run: npm run test
