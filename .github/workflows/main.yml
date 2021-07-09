@@ -25,6 +25,9 @@ jobs:
     - name: Install angular
       run: npm install -g @angular/cli
       
+    - name: Install angular devkit
+      run: npm install @angular-devkit/build-angular
+      
     - name: Build
       run: ng build
     
