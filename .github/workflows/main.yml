@@ -16,11 +16,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v1
       
-    - name: Install packages, build and test
+    - name: Install packages
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-        installPackages: npm install
-        installAngular: npm install -g @angular/cli
-        buildCommand: ng build
-        testCommnad: ng test
+        run: npm install
+    
+    - name: Install angular
+      run: npm install -g @angular/cli
+      
+    - name: Build
+      run: ng build
+    
+    - name: Execute tests
+      run: ng test
