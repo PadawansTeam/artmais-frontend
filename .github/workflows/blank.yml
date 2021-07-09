@@ -1,0 +1,21 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Angular Full CI
+        uses: colbyhill21/angular-full-ci@v1.0
+        with:
+          testcommand: run test
