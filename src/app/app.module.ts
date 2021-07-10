@@ -25,6 +25,10 @@ import { HomepageModule } from './homepage/homepage.module';
 import { PlanosModule } from './planos/planos.module';
 import { HeaderlogComponent } from './headerlog/component/headerlog.component';
 import { HeaderlogModule } from './headerlog/headerlog.module';
+import { PerfilComponent } from './perfil/component/perfil.component';
+import { DashboardComponent } from './dashboard/component/dashboard.component';
+import { PerfilModule } from './perfil/perfil.module';
+import { DashboardModule } from './dashboard/dashboad.module';
 
 
 
@@ -35,7 +39,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ConstrucaoModule,
     HomepageModule,
     PlanosModule,
-    HeaderlogModule
+    HeaderlogModule, 
+    PerfilModule,
+    DashboardModule
 
   ],
   providers: [TranslateService, LoginService, CadastroService],
