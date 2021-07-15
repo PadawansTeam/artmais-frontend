@@ -135,6 +135,17 @@
  
     background: linear-gradient(to left, #9558d5, #701ec6);
     color: white !important;
+    margin-left: 30px;
+  }
+
+  .navbar .getstarted:active {
+     background: linear-gradient(to left, #9558d5, #701ec6);
+    color: white !important;
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #fff;
   }
   
   .navbar .dropdown ul {
