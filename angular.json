@@ -33,7 +33,10 @@
               "src/assets/boxicons/css/boxicons.min.css",
               "src/assets/boxicons/css/transformations.css",
               "src/assets/aos/aos.css",
-              "src/assets/glightbox/css/glightbox.min.css"],
+              "src/assets/glightbox/css/glightbox.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+            ],
+
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/jquery/dist/jquery.min.js",
               "src/assets/jquery-easing/jquery.easing.min.js",
@@ -41,7 +44,10 @@
               "node_modules/swiper/swiper-bundle.min.js",
               "src/assets/js/main.js",
               "src/assets/aos/aos.js",
-              "src/assets/glightbox/js/glightbox.min.js"]
+              "src/assets/glightbox/js/glightbox.min.js",
+              "node_modules/bootstrap/js/dist/modal.js",
+              "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -112,33 +118,10 @@
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/swiper/swiper-bundle.min.css",
-              "src/assets/boxicons/css/animations.css",
-              "src/assets/boxicons/css/boxicons.min.css",
-              "src/assets/boxicons/css/transformations.css",
-              "src/assets/aos/aos.css",
-              "src/assets/glightbox/css/glightbox.min.css",
-              "src/assets/css/css/material-kit.min.css"
+              "src/styles.css"  
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/jquery/dist/jquery.min.js",
-              "src/assets/jquery-easing/jquery.easing.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "node_modules/swiper/swiper-bundle.min.js",
-              "src/assets/js/main.js",
-              "src/assets/aos/aos.js",
-              "src/assets/glightbox/js/glightbox.min.js",
-              "node_modules/swiper/angular/bundles/swiper_angular.umd.js",
-              "src/assets/js/material-kit.min.js",
-              "src/assets/js/plugins/jquery.sharrre.js",
-              "src/assets/js/plugins/bootstrap-datetimepicker.js",
-              "src/assets/js/plugins/moment.min.js",
-              "src/assets/js/plugins/nouislider.min.js",
-              "src/assets/js/core/popper.min.js",
-              "src/assets/js/core/bootstrap-material-design.min.js"
+
 
             ]
           }
