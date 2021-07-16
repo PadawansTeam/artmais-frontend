@@ -1,0 +1,264 @@
+.profile-header {
+	transform: translateY(5rem);
+}
+
+.profile {
+	text-align: center;
+	max-width: 100%;
+	max-width: 100%;
+}
+
+.back {
+	background-image: url("src/assets/img/slide/test2.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 0;
+	height: 250px;
+}
+
+body {
+	background: #654ea3;
+	background: -webkit-linear-gradient(to right, #654ea3, #eaafc8);
+	background: linear-gradient(to right, #654ea3, #eaafc8);
+	min-height: 100vh;
+}
+
+.media-body {
+	padding-top: 100px;
+	text-align: center;
+}
+
+.category {
+	color: #654ea3;
+	font-size: 20px;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+ul.social-buttons {
+	margin-bottom: 0;
+}
+
+ul.social-buttons li a {
+	font-size: 15px;
+	line-height: 40px;
+	display: block;
+	width: 40px;
+	height: 40px;
+	transition: all 0.3s;
+	color: white;
+	border-radius: 100%;
+	outline: none;
+	background-color: #701ec6;
+}
+
+ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+	background: linear-gradient(to left, #9558d5, #701ec6);
+}
+
+ul.list-inline {
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+
+.name {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+photo-port {
+	box-shadow: 0px 5px 30px 5px rgba(110, 123, 131, 0.5);
+}
+
+photo-port:hover {
+	transform: scale(1.08);
+}
+
+.title {
+	font-size: 35px;
+	font-weight: 500;
+	color: #701ec6;
+}
+
+ul.plus-buttons li a {
+	font-size: 15px;
+	line-height: 40px;
+	display: block;
+	width: 40px;
+	height: 40px;
+	transition: all 0.3s;
+	color: white;
+	border-radius: 100%;
+	outline: none;
+	background-color: #701ec6;
+	margin-bottom: 0;
+	padding-left: 13px;
+}
+
+ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:hover {
+	background: linear-gradient(to left, #9558d5, #701ec6);
+}
+
+#portfolio .portfolio-item {
+	right: 0;
+	margin: 0 0 15px;
+}
+
+#portfolio .portfolio-item .portfolio-link {
+	position: relative;
+	display: block;
+	max-width: 400px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: all ease 0.5s;
+	opacity: 0;
+	background: rgba(8, 0, 5, 0.521);
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+	opacity: 1;
+}
+
+.portfolio-modal .modal-dialog {
+	max-width: 75vw;
+}
+
+.portfolio-modal .modal-content {
+	padding: 100px 0;
+	text-align: center;
+	background-color: rgba(240, 242, 243, 0.801);
+}
+
+.portfolio-modal .modal-content p {
+	margin-bottom: 30px;
+}
+
+.portfolio-modal .modal-content img {
+	margin-bottom: 30px;
+}
+
+.portfolio-modal .modal-content button {
+	cursor: pointer;
+}
+
+.portfolio-modal .close-modal {
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	width: 75px;
+	height: 75px;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.portfolio-modal .close-modal:hover {
+	opacity: 0.3;
+}
+
+.portfolio-modal .close-modal .lr {
+	z-index: 1051;
+	width: 1px;
+	height: 50px;
+	margin-left: 35px;
+
+	transform: rotate(45deg);
+	background-color: #631D76;
+}
+
+.portfolio-modal .close-modal .lr .rl {
+	z-index: 1052;
+	width: 1px;
+	height: 50px;
+	transform: rotate(90deg);
+	background-color: #631D76;
+}
+
+#portfolio * {
+	z-index: 2;
+}
+
+@media (min-width: 767px) {
+	#portfolio .portfolio-item {
+		margin: 0 0 30px;
+	}
+}
+
+.getstarted {
+	background: linear-gradient(to right, #9558d5, #701ec6);
+	padding: 8px 20px;
+	margin-left: 30px;
+	border-radius: 4px;
+	font-weight: 600;
+	color: #fff;
+	border: 0;
+}
+
+.getstarted:hover {
+	background: linear-gradient(to left, #9558d5, #701ec6);
+	color: white !important;
+}
+
+.img-perfil {
+
+	width: 200px;
+	height: 200px;
+	border: 7px solid white;
+	margin-top: 4rem;
+	display: block;
+
+
+}
+
+.rounded-circle {
+	margin-left: auto;
+	margin-right: auto;
+	vertical-align: middle;
+	z-index: 1;
+    margin-top: 9rem;
+    border-radius: 50%;
+
+}
+
+div.img-responsive {
+	display: block;
+	margin: 0 31.5rem;
+}
+
+@media (max-width: 767px) {
+	div.img-responsive {
+		display: block;
+		margin: 0 3.7rem;
+	}
+}
+
+.icon-color{
+	font-size: 15px;
+	line-height: 40px;
+	width: 40px;
+	height: 40px;
+	transition: all 0.3s;
+	color: white;
+	border-radius: 100%;
+	background-color: #701ec6;
+}
+.btn-calendar{
+	background: linear-gradient(to right, #9558d5, #701ec6);
+	padding: 8px 20px;
+
+	border-radius: 4px;
+	font-weight: 600;
+	color: #fff;
+	border: 0;
+}
+
+.btn-calendar:hover{
+	background: linear-gradient(to left, #9558d5, #701ec6);
+	color: white !important;
+}
