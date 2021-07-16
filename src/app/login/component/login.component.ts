@@ -25,11 +25,9 @@ export class LoginComponent {
       .authenticate(this.form.email, this.form.password)
       .subscribe(
         (response) => {
-          if (response.status == 200) {
-            this.router.navigateByUrl('/homepage');
-            this.loginReturn = true;
-          }
-          return response;
+          localStorage.setItem('token', response.token);
+          this.router.navigateByUrl('/homepage');
+          this.loginReturn = true;
         },
         (err) => {
           if(err.status == 422){
