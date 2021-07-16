@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CadastroService } from '../service/cadastro.service';
 import { Router } from '@angular/router';
 
@@ -7,43 +7,79 @@ import { Router } from '@angular/router';
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css'],
 })
-export class CadastroComponent {
+export class CadastroComponent implements OnInit {
   form: any = {
     name: null,
-    surname: null,
-    socialName: null,
     email: null,
     password: null,
+    username: null,
+    birthDate: null,
+    role: null,
+    category: null,
+    subcategory: null
   };
   errorMessage = '';
   redirectTo: string = '';
   roles: string[] = [];
+  arraySelect: any[] = [];
+  isArtist = false;
+  isClient = false;
+  invalidField = false;
 
   constructor(
     private cadastroService: CadastroService,
     private router: Router
-  ) {}
+  ) { }
+
+  ngOnInit() {
+    this.cadastroService.getAll().subscribe(
+      (response) => {
+        this.arraySelect = response;
+      },
+    )
+  }
+
+  public checkIsClient() {
+    this.isClient = true
+    this.isArtist = false
+    return
+  }
+
+  public checkIsArtist() {
+    this.isArtist = true
+    this.isClient = false
+    return
+  }
 
   public cadastroArtPlus() {
-    this.cadastroService
-      .signUp(
-        this.form.name,
-        this.form.surname,
-        this.form.socialName,
-        this.form.email,
-        this.form.password
-      )
-      .subscribe(
-        (response) => {
-          console.log(response);
-          if (response != null) {
-            this.router.navigateByUrl('/teste');
+    this.form.subcategory = this.form.category.split("_")[1];
+    this.form.category = this.form.category.split("_")[0];
+    console.log(this.form)
+    if (this.form.name && this.form.email && this.form.password && this.form.username && this.form.birthDate && this.form.role && this.form.category && this.form.subcategory) {
+      this.cadastroService
+        .signUp(
+          this.form.name,
+          this.form.email,
+          this.form.password,
+          this.form.username,
+          this.form.birthDate,
+          this.form.role,
+          this.form.category,
+          this.form.subcategory
+        ).subscribe(
+          (response) => {
+            console.log(response);
+            // if (response != null) {
+            this.router.navigateByUrl('/homepage');
+            // }
+            return response;
+          },
+          (err) => {
+            throw err;
           }
-          return response;
-        },
-        (err) => {
-          throw err;
-        }
-      );
+        );
+    } else{
+      this.invalidField = true;
+    }
   }
 }

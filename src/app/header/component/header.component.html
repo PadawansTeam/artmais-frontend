@@ -6,20 +6,14 @@
         </div>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Sobre</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Planos</a></li>
-          <li><a class="nav-link scrollto" href="\time">Equipe</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
-          <li class="dropdown"><a href="#" class="nav-link scrollto" >Idioma</a>
-            <ul>
-              <li><a href="#"><img src="./assets/img/logos/brasil.png" alt="" width="30" height="24">PT-BR</a></li>
-              <li><a href="#"><img src="../assets/img/logos/estados-unidos.png" alt="" width="30" height="24">EN-US</a></li>
-            </ul>
-          </li>
-
-          <li><a class="nav-link scrollto" href="\cadastro">Cadastre-se</a></li>
-          <li><a class="getstarted scrollto" href="\login">Entrar</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">{{ 'MENU.HOME' | translate }}</a></li>
+          <li><a class="nav-link scrollto" href="#about">{{ 'MENU.SOBRE' | translate }}</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">{{ 'MENU.PLANOS' | translate }}</a></li>
+          <li><a class="nav-link scrollto" href="\time">{{ 'MENU.EQUIPE' | translate }}</a></li>
+          <li><a class="nav-link scrollto" href="#contact">{{ 'MENU.CONTATO' | translate }}</a></li>
+          <select-lang></select-lang>
+          <li><a class="nav-link scrollto" href="\cadastro">{{ 'MENU.CADASTRO' | translate }}</a></li>
+          <li><a class="getstarted scrollto" href="\login">{{ 'MENU.ENTRAR' | translate }}</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
