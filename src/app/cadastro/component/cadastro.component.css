@@ -13,24 +13,6 @@ body {
 	font-family: 'Ubuntu', sans-serif;
 }
 
-.list-unstyled {
-	padding-left: 0;
-	list-style: none;
-}
-
-.list-inline {
-	padding-left: 0;
-	list-style: none;
-}
-
-.list-inline-item {
-	display: inline-block;
-}
-
-.list-inline-item:not(:last-child) {
-	margin-right: 0.5rem;
-}
-
 .form-control::-ms-expand {
 	background-color: transparent;
 	border: 0;
@@ -47,57 +29,6 @@ body {
 .form-control::placeholder {
 	color: #6c757d;
 	opacity: 1;
-}
-
-.form-group {
-	margin-bottom: 1rem;
-}
-
-.form-text {
-	display: block;
-	margin-top: 0.25rem;
-}
-
-.form-row {
-	display: flex;
-	flex-wrap: wrap;
-	margin-right: -5px;
-	margin-left: -5px;
-}
-
-.form-row>.col, .form-row>[class*="col-"] {
-	padding-right: 5px;
-	padding-left: 5px;
-}
-
-.form-check {
-	position: relative;
-	display: block;
-	padding-left: 1.25rem;
-}
-
-.form-check-input {
-	position: absolute;
-	margin-top: 0.3rem;
-	margin-left: -1.25rem;
-}
-
-.form-check-label {
-	margin-bottom: 0;
-}
-
-.form-check-inline {
-	display: inline-flex;
-	align-items: center;
-	padding-left: 0;
-	margin-right: 0.75rem;
-}
-
-.form-check-inline .form-check-input {
-	position: static;
-	margin-top: 0;
-	margin-right: 0.3125rem;
-	margin-left: 0;
 }
 
 input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="button"].btn-block {
@@ -208,21 +139,6 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 	height: 76%;
 }
 
-.card>hr {
-	margin-right: 0;
-	margin-left: 0;
-}
-
-.card>.list-group:first-child .list-group-item:first-child {
-	border-top-left-radius: 0.25rem;
-	border-top-right-radius: 0.25rem;
-}
-
-.card>.list-group:last-child .list-group-item:last-child {
-	border-bottom-right-radius: 0.25rem;
-	border-bottom-left-radius: 0.25rem;
-}
-
 .card-body {
 	flex: 1 1 auto;
 	padding: 1.25rem;
@@ -267,32 +183,6 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 .card-header-pills {
 	margin-right: -0.625rem;
 	margin-left: -0.625rem;
-}
-
-.card-img-overlay {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	padding: 1.25rem;
-}
-
-.card-img {
-	width: 100%;
-	border-radius: calc(0.25rem - 1px);
-}
-
-.card-img-top {
-	width: 100%;
-	border-top-left-radius: calc(0.25rem - 1px);
-	border-top-right-radius: calc(0.25rem - 1px);
-}
-
-.card-img-bottom {
-	width: 100%;
-	border-bottom-right-radius: calc(0.25rem - 1px);
-	border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
 .card-deck {
@@ -447,16 +337,6 @@ a:focus {
 	border-color: rgba(0, 0, 0, 0.87);
 }
 
-body {
-	background-color: #eee;
-	color: #000000;
-	font-weight: 300;
-}
-
-legend {
-	border-bottom: 0;
-}
-
 * {
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 	-webkit-tap-highlight-color: transparent;
@@ -468,18 +348,6 @@ legend {
 
 fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
 	color: rgba(0, 0, 0, 0.26);
-}
-
-.form-check .form-check-input {
-	opacity: 0;
-	position: absolute;
-	margin: 0;
-	z-index: -1;
-	width: 0;
-	height: 0;
-	overflow: hidden;
-	left: 0;
-	pointer-events: none;
 }
 
 form {
@@ -542,12 +410,6 @@ fieldset[disabled][disabled] .form-control, .form-control.disabled, .form-contro
 
 label {
 	color: #AAAAAA;
-}
-
-.is-focused .bmd-label-floating, .is-filled .bmd-label-floating {
-	top: 1rem;
-	left: 0;
-	font-size: 0.6875rem;
 }
 
 .form-group {
@@ -731,10 +593,6 @@ label {
 
 .card .card-header:not([class*="header-"]) {
 	box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-}
-
-.card .card-header .nav-tabs {
-	padding: 0;
 }
 
 .card .card-header.card-header-image {
