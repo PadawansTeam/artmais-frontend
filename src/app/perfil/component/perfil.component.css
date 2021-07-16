@@ -126,8 +126,6 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 	opacity: 1;
 }
 
-/* teste */
-
 .portfolio-modal .modal-dialog {
 	max-width: 75vw;
 }
@@ -165,22 +163,19 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 }
 
 .portfolio-modal .close-modal .lr {
-	/* Safari and Chrome */
 	z-index: 1051;
 	width: 1px;
 	height: 50px;
 	margin-left: 35px;
-	/* IE 9 */
+
 	transform: rotate(45deg);
 	background-color: #631D76;
 }
 
 .portfolio-modal .close-modal .lr .rl {
-	/* Safari and Chrome */
 	z-index: 1052;
 	width: 1px;
 	height: 50px;
-	/* IE 9 */
 	transform: rotate(90deg);
 	background-color: #631D76;
 }
