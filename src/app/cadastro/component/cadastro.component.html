@@ -1,72 +1,12 @@
 <app-header></app-header>
-<!--<select-lang></select-lang>
- <div class="main">
-  <p class="sign" align="center">{{ "CADASTRO.CADASTRAR" | translate }}</p>
-  <form class="form1">
-    <input
-      [(ngModel)]="this.form.socialName"
-      name="socialName"
-      class="un"
-      type="text"
-      align="center"
-      placeholder="{{ 'CADASTRO.SOCIAL' | translate }}"
-    />
-    <input
-      class="un"
-      type="text"
-      align="center"
-      placeholder="{{ 'CADASTRO.USUARIO' | translate }}"
-    />
-    <input
-      class="un"
-      type="email"
-      align="center"
-      placeholder="{{ 'CADASTRO.EMAIL' | translate }}"
-    />
-    <input
-      [(ngModel)]="this.form.email"
-      name="email"
-      class="un"
-      type="email"
-      align="center"
-      placeholder="{{ 'CADASTRO.CONF-EMAIL' | translate }}"
-    />
-    <input
-      class="un"
-      type="password"
-      align="center"
-      placeholder="{{ 'CADASTRO.SENHA' | translate }}"
-    />
-    <input
-      [(ngModel)]="this.form.password"
-      name="password"
-      class="un"
-      type="password"
-      align="center"
-      placeholder="{{ 'CADASTRO.CONF-SENHA' | translate }}"
-    />
-    <input
-      class="un"
-      type="text"
-      onfocus="(this.type='date')"
-      onblur="(this.type='text')"
-      align="center"
-      placeholder="{{ 'CADASTRO.NASCIMENTO' | translate }}"
-    />
-    <button class="submit" align="center" (click)="cadastroArtPlus()">
-      {{ "CADASTRO.BOTAO" | translate }}
-    </button>
-  </form>
-</div>
-<app-footer></app-footer> -->
-<div class="page-header header-filter back" style="">
+<div class="page-header header-filter back">
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-6 ml-auto mr-auto">
         <div class="card card-login " data-aos="fade-up">
-          <form class="form" method="" action="">
+          <div class="form">
             <div class="card-header card-header-primary text-center " data-aos="fade-up">
-              <h4 class="card-title" >Cadastro</h4>
+              <h4 class="card-title">{{ 'CADASTRO.TITULO' | translate }}</h4>
             </div>
             <div class="card-body" >
               <div class="input-group">
@@ -75,11 +15,13 @@
                     <i class="bx bx-user bx-sm bx-tada-hover"></i>
                   </span>
                 </div>
-                <input         [(ngModel)]="this.form.socialName"
-                name="socialName"
-                class="un form-control "
-                type="text"
-                placeholder="{{ 'CADASTRO.SOCIAL' | translate }}">
+                <input         
+                  [(ngModel)]="this.form.name"
+                  name="socialName"
+                  class="un form-control "
+                  type="text"
+                  placeholder="{{ 'CADASTRO.SOCIAL' | translate }}"
+                >
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -88,7 +30,8 @@
                   </span>
                 </div>
                 <input
-                class="un form-control "
+                  [(ngModel)]="this.form.username"
+                  class="un form-control "
                   type="text"
                   placeholder="{{ 'CADASTRO.USUARIO' | translate }}"
                 />
@@ -100,11 +43,11 @@
                   </span>
                 </div>
                 <input
-                [(ngModel)]="this.form.email"
-                name="email"
-                class="un form-control "
-                type="email"
-                placeholder="{{ 'CADASTRO.CONF-EMAIL' | translate }}"
+                  [(ngModel)]="this.form.email"
+                  name="email"
+                  class="un form-control "
+                  type="email"
+                  placeholder="{{ 'CADASTRO.EMAIL' | translate }}"
               />
               </div>
               <div class="input-group">
@@ -114,7 +57,7 @@
                   </span>
                 </div>
                 <input
-                class="un form-control "
+                  class="un form-control "
                   type="password"
                   placeholder="{{ 'CADASTRO.SENHA' | translate }}"
                 />
@@ -126,11 +69,11 @@
                   </span>
                 </div>
                 <input
-                [(ngModel)]="this.form.password"
-                name="password"
-                class="un form-control "
-                type="password"
-                placeholder="{{ 'CADASTRO.CONF-SENHA' | translate }}"
+                  [(ngModel)]="this.form.password"
+                  name="password"
+                  class="un form-control "
+                  type="password"
+                  placeholder="{{ 'CADASTRO.CONF-SENHA' | translate }}"
               />
               </div>
               <div class="input-group">
@@ -140,18 +83,57 @@
                   </span>
                 </div>
                 <input
-                class="un form-control "
+                  [(ngModel)]="this.form.birthDate"
+                  class="un form-control "
                   type="text"
                   onfocus="(this.type='date')"
                   onblur="(this.type='text')"
                   placeholder="{{ 'CADASTRO.NASCIMENTO' | translate }}"
                 />
               </div>
-            </div>
-            <button  class="submit" align="center" (click)="cadastroArtPlus()">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="bx bx-palette bx-sm bx-tada-hover"></i>
+                  </span>
+                </div>
+                <div class="form-check radio-form">
+                  <label class="form-check-label">
+                    <input [(ngModel)]="this.form.role" class="form-check-input" (click)="checkIsArtist()" type="radio" name="category" id="category" value="artist" checked="">
+                    {{ 'CADASTRO.ARTISTA' | translate }}
+                    <span class="circle">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                  <label class="form-check-label">
+                    <input [(ngModel)]="this.form.role" class="form-check-input" (click)="checkIsClient()" type="radio" name="category" id="category" value="client" checked="">
+                    {{ 'CADASTRO.CLIENTE' | translate }}
+                    <span class="circle">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+              </div> 
+              <div class="input-group" *ngIf= "isArtist && !isClient">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="bx bx-palette bx-sm bx-tada-hover"></i>
+                  </span>
+                </div>
+                <select class="select" [(ngModel)]="this.form.category">
+                  <optgroup *ngFor="let categoria of arraySelect" [label]= "categoria.category">
+                    <option *ngFor="let subcategoria of categoria.subcategory" [value]="categoria.category+'_'+subcategoria">
+                      {{subcategoria}}
+                    </option>
+                  </optgroup>
+                </select>
+              </div> 
+            </div>   
+            <p *ngIf="invalidField" class="error" align="center">{{ "CADASTRO.ERRO" | translate }}</p>
+            <button class="submit" align="center" (click)="cadastroArtPlus()">
               {{ "CADASTRO.BOTAO" | translate }}
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
