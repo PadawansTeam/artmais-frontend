@@ -24,12 +24,10 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   authenticate(email: string, password: string): Observable<any> {
-    const response = this.http.post(
+    return this.http.post(
       `${this.artPlusURL}` + 'v1/SignIn',
       { email, password },
       this.httpOptions
     );
-    console.log(response)
-    return response;
   }
 }

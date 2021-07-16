@@ -1,10 +1,6 @@
 {
-    "TESTE": {
-        "OLA": "Hello!",
-        "BEM-VINDO": "Welcome to the Art+ Platform!"
-    },
     "CADASTRO": {
-        "CADASTRAR": "Sign Up",
+        "TITULO": "Sign Up",
         "NOME": "First Name",
         "SOBRENOME": "Last Name",
         "SOCIAL": "How do you want to be called?",
@@ -14,7 +10,10 @@
         "SENHA": "Password",
         "CONF-SENHA": "Confirm your password",
         "NASCIMENTO": "Birth date",
-        "BOTAO": "Sign up"
+        "BOTAO": "Sign up",
+        "ARTISTA": "I'm an artist",
+        "CLIENTE": "I'm not an artist",
+        "ERRO": "Required fields were not filled. Please, try again!"
     },
     "ENTRAR": {
         "ENTRAR": "Sign In",
@@ -25,9 +24,13 @@
         "ESQUECEU": "Forgot your password?"
     },
     "MENU": {
-        "SOBRE": "HOME",
-        "CADASTRO": "SIGN UP",
-        "ENTRAR": "SIGN IN"
+        "HOME": "Home",
+        "SOBRE": "About",
+        "PLANOS": "Subscription",
+        "EQUIPE": "Team",
+        "CONTATO": "Contact Us",
+        "CADASTRO": "Sign Up",
+        "ENTRAR": "Sign In"
     },
     "FOOTER": {
         "SOBRE": "ABOUT",
@@ -40,8 +43,36 @@
         "COPYRIGHT": " 2021 All Rights Reserved by Team Padawans"
     },
     "INICIO": {
-        "ARTMAIS": "ART+",
-        "LOGIN": "SIGN IN",
-        "CADASTRO": "SIGN UP"
+        "TITULO": "The best place to connect yourself with art",
+        "SUBTITULO": "We are anetworking platform for artists and art lovers",
+        "CONHECA": "About Us",
+        "SOBRE-TITULO": "Platform ART+",
+        "SOBRE-SUBTITULO": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit",
+        "SOBRE-CADASTRAR": "Sign Up",
+        "SOBRE-TEXTO1": "Find artists effortlessly",
+        "SOBRE-SUBTEXTO1": "Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip",
+        "SOBRE-TEXTO2": "Sell your art easily",
+        "SOBRE-SUBTEXTO2": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt",
+        "SOBRE-TEXTO3": "See the artists you admire",
+        "SOBRE-SUBTEXTO3": "Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere",
+        "SOBRE-TEXTO4": "Improve your networking",
+        "SOBRE-SUBTEXTO4": "Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta",
+        "PLANOS-TITULO": "SUBSCRIPTIONS",
+        "PLANOS-SUBTITULO": "Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
+        "PLANOS-TITULO-CARD1": "FREE",
+        "PLANOS-POR-MES": "/ month",
+        "PLANOS-TEXTO1-CARD1": "Aida dere",
+        "PLANOS-TEXTO2-CARD1": "Nec feugiat nisl",
+        "PLANOS-TEXTO3-CARD1": "Nulla at volutpat dola",
+        "PLANOS-TEXTO4-CARD1": "Pharetra massa",
+        "PLANOS-TEXTO5-CARD1": "Massa ultricies mi",
+        "PLANOS-CADASTRAR-CARD1": "Sign Up",
+        "PLANOS-TITULO-CARD2": "PREMIUM",
+        "PLANOS-TEXTO1-CARD2": "Aida dere",
+        "PLANOS-TEXTO2-CARD2": "Nec feugiat nisl",
+        "PLANOS-TEXTO3-CARD2": "Nulla at volutpat dola",
+        "PLANOS-TEXTO4-CARD2": "Pharetra massa",
+        "PLANOS-TEXTO5-CARD2": "Massa ultricies mi",
+        "PLANOS-CADASTRAR-CARD2": "Buy Now"
     }
 }
