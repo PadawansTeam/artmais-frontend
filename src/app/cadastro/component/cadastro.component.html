@@ -98,14 +98,14 @@
                   </span>
                 </div>
                 <div class="form-check radio-form">
-                  <label class="form-check-label">
+                  <label class="form-check-label" style="margin-right: 30px;">
                     <input [(ngModel)]="this.form.role" class="form-check-input" (click)="checkIsArtist()" type="radio" name="category" id="category" value="artist" checked="">
                     {{ 'CADASTRO.ARTISTA' | translate }}
                     <span class="circle">
                       <span class="check"></span>
                     </span>
                   </label>
-                  <label class="form-check-label">
+                  <label class="form-check-label" style="margin-right: 30px;">
                     <input [(ngModel)]="this.form.role" class="form-check-input" (click)="checkIsClient()" type="radio" name="category" id="category" value="client" checked="">
                     {{ 'CADASTRO.CLIENTE' | translate }}
                     <span class="circle">
