@@ -9,13 +9,17 @@ export class SelectLangComponent implements OnInit {
   constructor(public translate: TranslateService) {
     this.translate.setDefaultLang('pt-BR');
     translate.addLangs(['pt-BR', 'en-US']);
+    localStorage.setItem('selectTranslate', JSON.stringify(this.translate.langs));
     this.translate.use(localStorage.getItem('lang') || 'pt-BR');
   }
 
   ngOnInit() {}
 
-  switchLang(lang: string): void {
-    localStorage.setItem('lang', lang);
+  switchLang(lang: string) {
+    let languages: string = "";
+    languages = JSON.parse(localStorage.getItem('selectTranslate') as string);
+    let index = languages.indexOf(lang);
+    localStorage.setItem('lang', languages[index]);
     window.location.reload();
   }
 }
