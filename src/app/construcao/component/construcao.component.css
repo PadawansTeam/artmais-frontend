@@ -1,0 +1,46 @@
+  .pag {
+      margin-bottom: 6.5rem !important;
+  }
+
+  .btn-principal {
+      background: linear-gradient(to right, #9558d5, #701ec6);
+      padding: 8px 20px;
+      margin-left: 30px;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #fff;
+      border: 0;
+      margin-top: 6rem;
+  }
+
+  .btn-principal:hover {
+      background: linear-gradient(to left, #9558d5, #701ec6);
+      color: white !important;
+      margin-left: 30px;
+      border: 0;
+  }
+
+  .btn-principal:active {
+      background: linear-gradient(to left, #9558d5, #701ec6);
+      color: white !important;
+      padding: 8px 20px;
+      margin-left: 30px;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #fff;
+      border: 0;
+  }
+
+  .ops {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: stretch;
+      margin-top: 2rem
+  }
+
+  .text_ops {
+      color: #701ec6;
+  }
