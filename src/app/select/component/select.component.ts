@@ -7,10 +7,10 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class SelectLangComponent implements OnInit {
   constructor(public translate: TranslateService) {
-    this.translate.setDefaultLang('pt-BR');
-    translate.addLangs(['pt-BR', 'en-US']);
+    this.translate.setDefaultLang('PT-BR');
+    translate.addLangs(['PT-BR', 'EN-US']);
     localStorage.setItem('selectTranslate', JSON.stringify(this.translate.langs));
-    this.translate.use(localStorage.getItem('lang') || 'pt-BR');
+    this.translate.use(localStorage.getItem('lang') || 'PT-BR');
   }
 
   ngOnInit() {}
