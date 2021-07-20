@@ -40,7 +40,10 @@
         "PRIVACIDADE": "Política de Privacidade",
         "CADASTRAR": "Cadastre-se",
         "LOGIN": "Entrar",
-        "COPYRIGHT": " 2021 Todos os direitos reservados por Team Padawans"
+        "COPYRIGHT": " 2021 Todos os direitos reservados por Team Padawans",
+        "EQUIPE": "Equipe",
+        "PLANOS": "Planos"
+
     },
     "INICIO": {
         "TITULO": "O melhor lugar para se conectar com a arte",
