@@ -29,6 +29,9 @@ import { PerfilComponent } from './perfil/component/perfil.component';
 import { DashboardComponent } from './dashboard/component/dashboard.component';
 import { PerfilModule } from './perfil/perfil.module';
 import { DashboardModule } from './dashboard/dashboad.module';
+import { InteresseModule } from './interesse/interesse.module';
+import { ConfiguracaoModule } from './configuracao/configuracao.module';
+
 
 
 
@@ -65,7 +68,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     PlanosModule,
     HeaderlogModule, 
     PerfilModule,
-    DashboardModule
+    DashboardModule,
+    InteresseModule,
+    ConfiguracaoModule
 
   ],
   providers: [TranslateService, LoginService, CadastroService],
