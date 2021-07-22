@@ -1,25 +1,39 @@
 <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="sobre col-md-10">
-          <h6>{{'FOOTER.SOBRE' | translate}}</h6>
-          <p class="text-justify">{{'FOOTER.SOBRE-TEXTO' | translate}}</p>
+  <div class="container">
+    <div class="row">
+      <div class="sobre col-md-8 mb-0 ">
+        <h5>{{'FOOTER.SOBRE' | translate}}</h5>
+        <p>{{'FOOTER.SOBRE-TEXTO' | translate}}</p>
+      </div>
+      <div class="links col-md-4 col-xs-12 mb-0">
+        <div class="row">
+          <div class="col-md-12">
+            <h5>{{'FOOTER.LINKS' | translate}}</h5>
+          </div>
         </div>
-        <div class="links col-md-4">
-          <h6>{{'FOOTER.LINKS' | translate}}</h6>
-          <ul class="footer-links">
-            <li><a href="\sobre">{{'FOOTER.NOS' | translate}}</a></li>
-            <li><a href="\privacidade">{{'FOOTER.PRIVACIDADE' | translate}}</a></li>
-            <li><a href="\cadastro">{{'FOOTER.CADASTRAR' | translate}}</a></li>
-            <li><a href="\login">{{'FOOTER.LOGIN' | translate}}</a></li>
-            <li><a href="\planos">Princing</a></li>
-            <li><a href="\time">Team</a></li>
-          </ul>
+        <div class="row mb-0">
+          <div class="col-md-5 col-xs-5 mb-0 ">
+            <ul class="footer-links">
+              <li><a href="\login">{{'FOOTER.LOGIN' | translate}}</a></li>
+              <li><a href="\cadastro">{{'FOOTER.CADASTRAR' | translate}}</a></li>
+              <li><a href="\sobre">{{'FOOTER.NOS' | translate}}</a></li>
+            </ul>
+          </div>
+          <div class="col-md-7 col-xs-7 mt-0">
+            <ul class="footer-links">
+              <li><a href="\planos">{{'FOOTER.PLANOS' | translate}}</a></li>
+              <li><a href="\time">{{'FOOTER.EQUIPE' | translate}}</a></li>
+              <li><a href="\privacidade">{{'FOOTER.PRIVACIDADE' | translate}}</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <hr>
     </div>
-    <div class="container" class="copyright-div" align= "center">
-        <p class="copyright-text">Copyright &copy;{{'FOOTER.COPYRIGHT' | translate}}</p>
+  </div>
+  <hr>
+  <div class="row" class="copyright-div" align="center">
+    <div class="col-sm-12 text-center copyright-text align-self-center">
+      <p class="mb-1">Copyright &copy;{{'FOOTER.COPYRIGHT' | translate}}</p>
     </div>
+  </div>
 </footer>
