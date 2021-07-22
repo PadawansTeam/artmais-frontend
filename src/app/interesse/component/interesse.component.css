@@ -1,0 +1,83 @@
+.btn-principal {
+    background: linear-gradient(to right, #9558d5, #701ec6);
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #fff;
+    border: 0;
+}
+
+.btn-principal:hover {
+    background: linear-gradient(to left, #9558d5, #701ec6);
+    color: white !important;
+    margin-left: 30px;
+    border: 0;
+}
+
+.btn-principal:active {
+    background: linear-gradient(to left, #9558d5, #701ec6);
+    color: white !important;
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #fff;
+    border: 0;
+}
+
+.btn1{
+    color: #fff;
+    border: 0;
+    background: linear-gradient(to right, #9558d5, #701ec6);
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 25px 20px;
+}
+
+.btn1:hover{
+    color: #fff;
+    border: 0;
+    background: linear-gradient(to left, #9558d5, #701ec6);
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 25px 20px;
+    font-weight: 600;
+
+}
+
+.btn1:active{
+    color: #fff;
+    border: 0;
+    background: linear-gradient(to left, #9558d5, #701ec6);
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 25px 20px;
+    font-weight: 600;
+}
+
+
+
+
+
+.c1 {
+
+    font-size:  1.75rem;
+    text-align: center;
+    
+}
+
+.c2 {
+    color: #701ec6;
+    font-size:  2rem;
+    text-align: center;
+    
+}
+
+.img1{
+    width: 30rem;
+    margin-right: 40px;
+}
