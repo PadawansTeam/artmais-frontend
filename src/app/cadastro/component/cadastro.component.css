@@ -764,6 +764,8 @@ label {
     background-image: url('src/assets/img/pages/bg3.jpg'); 
     background-size: cover;
     background-position: top center;
+	width: 100%;
+	height: 100%;
   }
 
   .submit {
@@ -818,4 +820,9 @@ label {
     font-family: 'Ubuntu', sans-serif;
     padding-top: 15px;
     margin-bottom: -5px;
+}
+
+.form-check-input:checked {
+  background-color: #701ec6;
+  border-color: #fff;  
 }
