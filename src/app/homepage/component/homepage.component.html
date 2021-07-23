@@ -1,98 +1,35 @@
 <app-headerlog></app-headerlog>
 
-<section clas= welcome>
-  
-          <div class="section-title" data-aos="fade-up" >
-            <h2>Recomendação de Perfil</h2>
-            <div class="texto">
-              <p >Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-            </div>
-            
-          </div>
-
+<section clas=welcome>
+  <div class="section-title" data-aos="fade-up">
+    <h2>Recomendação de Perfil</h2>
+    <div class="texto">
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in
+        iste officiis commodi quidem hic quas.</p>
+    </div>
+  </div>
   <div class="container" data-aos="fade-up">
     <div class="friend-list">
-        <div class="row">
-            <div class="col-md-4 col-sm-6">
-              <div class="friend-card">
-                  <img src="https://images.pexels.com/photos/209948/pexels-photo-209948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="profile-cover" class="img-responsive cover">
-                  <div class="card-info">
-                  <img src="https://images.pexels.com/photos/1886694/pexels-photo-1886694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="user" class="profile-photo-lg">
-                  <div class="friend-info">
-                    <a href="#" class="pull-right text-green">Dança</a>
-                    <h5><a href="timeline.html" class="profile-link">Gloria Groove</a></h5>
-                  </div>
-                </div>
+      <div class="row">
+        <div *ngFor="let recomendacao of teste" class="col-md-4 col-sm-6">
+          <div class="friend-card">
+            <img
+              [src]="recomendacao.backgroundPicture"
+              alt="profile-cover" class="img-responsive cover">
+            <div class="card-info">
+              <img
+                [src]="recomendacao.userPicture"
+                alt="user" class="profile-photo-lg">
+              <div class="friend-info">
+                <a href="#" class="pull-right text-green">{{recomendacao.category}}- </a>
+                <a href="#" class="pull-right text-green">{{recomendacao.subcategory}}</a>
+                <h5><a href="timeline.html" class="profile-link">{{recomendacao.username}}</a></h5>
               </div>
             </div>
-            
-            <div class="col-md-4 col-sm-6 box">
-              <div class="friend-card">
-                  <img src="https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="profile-cover" class="img-responsive cover">
-                  <div class="card-info">
-                  <img src="https://images.pexels.com/photos/3497525/pexels-photo-3497525.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="user" class="profile-photo-lg">
-                  <div class="friend-info">
-                    <a href="#" class="pull-right text-green">Arte Cênicas</a>
-                    <h5><a href="timeline.html" class="profile-link">Pablo Vittar</a></h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6">
-              <div class="friend-card">
-                  <img src="https://images.pexels.com/photos/4125609/pexels-photo-4125609.jpeg?cs=srgb&dl=pexels-cottonbro-4125609.jpg&fm=jpg" alt="profile-cover" class="img-responsive cover">
-                  <div class="card-info">
-                  <img src="https://images.pexels.com/photos/2177019/pexels-photo-2177019.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="user" class="profile-photo-lg">
-                  <div class="friend-info">
-                    <a href="#" class="pull-right text-green">Tattoo</a>
-                    <h5><a href="timeline.html" class="profile-link">Rupaul</a></h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6">
-              <div class="friend-card">
-                  <img  src="https://images.pexels.com/photos/1279813/pexels-photo-1279813.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="profile-cover" class="img-responsive cover">
-                  <div class="card-info">
-                  <img src="https://images.pexels.com/photos/3053844/pexels-photo-3053844.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500https://media-exp1.licdn.com/dms/image/C4D03AQGDJoPaW8QhSw/profile-displayphoto-shrink_800_800/0/1624922607334?e=1630540800&v=beta&t=ChxwKhhaxez-yUboZT3PYayRC6949bbAGPFKyNdctkM" alt="user" class="profile-photo-lg">
-                  <div class="friend-info">
-                    <a href="#" class="pull-right text-green">Design</a>
-                    <h5><a href="timeline.html" class="profile-link">Anitta</a></h5>
-  
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6">
-              <div class="friend-card">
-                  <img src="https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="profile-cover" class="img-responsive cover">
-                  <div class="card-info">
-                  <img src="https://images.pexels.com/photos/5118500/pexels-photo-5118500.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="user" class="profile-photo-lg">
-                  <div class="friend-info">
-                    <a href="#" class="pull-right text-green">Música</a>
-                    <h5><a href="timeline.html" class="profile-link">Rihanna</a></h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-md-4 col-sm-6">
-              <div class="friend-card">
-                  <img src="https://images.pexels.com/photos/3683194/pexels-photo-3683194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="profile-cover" class="img-responsive cover">
-                  <div class="card-info">
-                  <img src="https://images.pexels.com/photos/3310693/pexels-photo-3310693.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="user" class="profile-photo-lg">
-                  <div class="friend-info">
-                    <a href="#" class="pull-right text-green">Artes Plásticas</a>
-                    <h5><a href="timeline.html" class="profile-link">Mulher Pepita</a></h5>
-  
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
   </div>
 </section>
