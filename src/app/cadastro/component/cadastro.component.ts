@@ -68,10 +68,7 @@ export class CadastroComponent implements OnInit {
           this.form.subcategory
         ).subscribe(
           (response) => {
-            console.log(response);
-            // if (response != null) {
             this.router.navigateByUrl('/homepage');
-            // }
             return response;
           },
           (err) => {
