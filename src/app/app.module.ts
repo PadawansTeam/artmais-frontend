@@ -31,7 +31,7 @@ import { PerfilModule } from './perfil/perfil.module';
 import { DashboardModule } from './dashboard/dashboad.module';
 import { InteresseModule } from './interesse/interesse.module';
 import { ConfiguracaoModule } from './configuracao/configuracao.module';
-
+import { RecommendationService } from './homepage/service/recommendation.service';
 
 
 
@@ -73,7 +73,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ConfiguracaoModule
 
   ],
-  providers: [TranslateService, LoginService, CadastroService],
+  providers: [TranslateService, LoginService, CadastroService, RecommendationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
