@@ -262,3 +262,36 @@ div.img-responsive {
 	background: linear-gradient(to left, #9558d5, #701ec6);
 	color: white !important;
 }
+
+.text1{
+	font-size: 0.8rem;
+}
+
+.like {
+	font-size: 40px;
+	line-height: 40px;
+	display: block;
+	transition: all 0.3s;
+	color: #701ec6;
+	border-radius: 100%;
+	outline: none;
+}
+.like:hover  {
+	font-size: 40px;
+	line-height: 40px;
+	display: block;
+	transition: all 0.3s;
+	color: #EE2A46;
+	border-radius: 100%;
+	outline: none;
+}
+.like:active{
+	font-size: 40px;
+	line-height: 40px;
+	display: block;
+	transition: all 0.3s;
+	color: #EE2A46;
+	border-radius: 100%;
+	outline: none;
+	transform: rotate(45deg); /* Equal to rotateZ(45deg) */
+}
