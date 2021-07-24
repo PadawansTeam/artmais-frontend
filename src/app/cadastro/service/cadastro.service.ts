@@ -13,6 +13,7 @@ export interface CadastroDto {
   category: string;
   subcategory: string;
   birthDate: string;
+  description: string;
 }
 
 @Injectable()
@@ -40,10 +41,11 @@ export class CadastroService {
     role: string,
     category: string,
     subcategory: string,
+    description: string
   ): Observable<object> {
     return this.http.post<object>(
       `${this.artPlusURL}` + 'v1/SignUp',
-      { name, email, password, username, birthDate, role, category, subcategory },
+      { name, email, password, username, birthDate, role, category, subcategory, description},
       this.httpOptions
     );
   }
