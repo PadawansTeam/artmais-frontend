@@ -7,6 +7,7 @@ import { SelectModule } from '../select/select.module';
 import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { ConstrucaoComponent } from './component/construcao.component';
+import { HeaderlogModule } from '../headerlog/headerlog.module';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -28,8 +29,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
   }),
     SelectModule,
-    HeaderModule,
-    FooterModule
+    FooterModule,
+    HeaderlogModule
   ],
   providers: [
     TranslateService
