@@ -10,6 +10,7 @@ import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { PerfilComponent } from './component/perfil.component';
 
 
+
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
