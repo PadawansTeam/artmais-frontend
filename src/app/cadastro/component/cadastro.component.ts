@@ -16,7 +16,8 @@ export class CadastroComponent implements OnInit {
     birthDate: null,
     role: null,
     category: null,
-    subcategory: null
+    subcategory: null,
+    description: null
   };
   errorMessage = '';
   redirectTo: string = '';
@@ -52,10 +53,17 @@ export class CadastroComponent implements OnInit {
   }
 
   public cadastroArtPlus() {
-    this.form.subcategory = this.form.category.split("_")[1];
-    this.form.category = this.form.category.split("_")[0];
-    console.log(this.form)
-    if (this.form.name && this.form.email && this.form.password && this.form.username && this.form.birthDate && this.form.role && this.form.category && this.form.subcategory) {
+
+    if (this.form.category === null || this.form.category === "") {
+      this.form.subcategory = "Consumidor";
+      this.form.category = "Consumidor";
+    }
+    else {
+      this.form.subcategory = this.form.category.split("_")[1];
+      this.form.category = this.form.category.split("_")[0];
+    }
+    this.form.description = " ";
+    if (this.form.name && this.form.email && this.form.password && this.form.username && this.form.birthDate && this.form.role && this.form.category && this.form.subcategory && this.form.description) {
       this.cadastroService
         .signUp(
           this.form.name,
@@ -65,7 +73,8 @@ export class CadastroComponent implements OnInit {
           this.form.birthDate,
           this.form.role,
           this.form.category,
-          this.form.subcategory
+          this.form.subcategory,
+          this.form.description
         ).subscribe(
           (response) => {
             this.router.navigateByUrl('/homepage');
@@ -75,7 +84,7 @@ export class CadastroComponent implements OnInit {
             throw err;
           }
         );
-    } else{
+    } else {
       this.invalidField = true;
     }
   }
