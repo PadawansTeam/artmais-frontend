@@ -3,6 +3,6 @@
 /* @import './styles/bootstrap/dist/css/bootstrap.min.css'; */
 
 
-body{
+html, body{
     font-family: 'Ubuntu', sans-serif;
 }

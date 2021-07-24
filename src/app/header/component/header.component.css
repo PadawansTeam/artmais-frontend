@@ -1,7 +1,4 @@
-/*==================================================
-  Create Post Box CSS
-  ==================================================*/
-
+/* 
 .list-inline>li {
     display: inline-block;
     padding-right: 5px;
@@ -47,14 +44,6 @@
     max-width: 45px;
 }
   
-
-  /*--------------------------------------------------------------
-  # Navigation Menu
-  --------------------------------------------------------------*/
-  /**
-  * Desktop Navigation 
-  */
-
   a {
     color: white;
     text-decoration: none;
@@ -135,7 +124,10 @@
  
     background: linear-gradient(to left, #9558d5, #701ec6);
     color: white !important;
+    padding: 8px 20px;
     margin-left: 30px;
+    border-radius: 4px;
+    font-weight: 600;
   }
 
   .navbar .getstarted:active {
@@ -145,8 +137,17 @@
     margin-left: 30px;
     border-radius: 4px;
     font-weight: 600;
-    color: #fff;
   }
+  .navbar .getstarted:visited{
+    background: linear-gradient(to left, #9558d5, #701ec6);
+   color: white !important;
+   padding: 8px 20px;
+   margin-left: 30px;
+   border-radius: 4px;
+   font-weight: 600;
+ }
+
+
   
   .navbar .dropdown ul {
     display: block;
@@ -208,107 +209,138 @@
     }
   }
   
-  /**
-  * Mobile Navigation 
-  */
-  .mobile-nav-toggle {
-    color: #701ec6;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-    line-height: 0;
-    transition: 0.5s;
+
+  .navbar-toggle span{
+display: block;
+width: 22px;
+height: 2px;
+border: 1px;
+background-color: #fff;
   }
-  
-  .mobile-nav-toggle.bi-x {
+
+   */
+
+
+   .logo {
+    max-width: 45px;
+    display: block;
+}
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #701ec6;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+}
+li{
+  margin-left: 10px;
+}
+
+.navbar {
+    background-color: rgba(231, 221, 235, 0.747);
+    height: 0rem;
+    min-height: 12vh;
+    padding: 2rem 2rem;
+    transition: all 0.5s;
+    border-bottom: 1px solid #c9b6db;
+    box-shadow: 0px 2px 15px rgba(61, 14, 37, 0.1);
+}
+
+.navbar .getstarted {
+    background: linear-gradient(to right, #9558d5, #701ec6);
+    border-radius: 4px;
+    padding: 8px 20px;
+    font-weight: 600;
     color: #fff;
   }
   
-  @media (max-width: 991px) {
-    .mobile-nav-toggle {
-      display: block;
-    }
-    .navbar ul {
-      display: none;
-    }
-  }
-  
-  .navbar-mobile {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(10, 38, 58, 0.9);
-    transition: 0.3s;
-    z-index: 999;
-  }
-  
-  .navbar-mobile .mobile-nav-toggle {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
-  
-  .navbar-mobile ul {
-    display: block;
-    position: absolute;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
-    padding: 10px 0;
-    background-color: #fff;
-    overflow-y: auto;
-    transition: 0.3s;
-  }
-  
-  .navbar-mobile a {
-    padding: 10px 20px;
-    font-size: 15px;
-    color: #124265;
-  }
-  
-  .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-    color: #701ec6;
-  }
-  
-  .navbar-mobile .getstarted {
-    margin: 15px;
-  }
-  
-  .navbar-mobile .dropdown ul {
-    position: static;
-    display: none;
-    margin: 10px 20px;
-    padding: 10px 0;
-    z-index: 99;
-    opacity: 1;
-    visibility: visible;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  }
-  
-  .navbar-mobile .dropdown ul li {
-    min-width: 200px;
-  }
-  
-  .navbar-mobile .dropdown ul a {
-    padding: 10px 20px;
-  }
-  
-  .navbar-mobile .dropdown ul a i {
-    font-size: 12px;
-  }
-  
-  .navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
-    color: #701ec6;
-  }
-  
-  .navbar-mobile .dropdown > .dropdown-active {
-    display: block;
+  .navbar .getstarted:hover {
+    background: linear-gradient(to left, #9558d5, #701ec6);
+    border-radius: 4px;
+    padding: 8px 20px;
+    font-weight: 600;
+    color: #fff;
   }
 
+ .getstarted:active {
+    background: linear-gradient(to left, #9558d5, #701ec6);
+    border-radius: 4px;
+    padding: 8px 20px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .getstarted:visited{
+    background: linear-gradient(to left, #9558d5, #701ec6);
+    border-radius: 4px;
+    padding: 8px 20px;
+    font-weight: 600;
+    color: #fff;
+ }
 
-  
+
+ @media only screen and (max-width: 600px) {
+     ul{
+         margin-top: 8px;
+         height: 100%;
+         box-shadow: 0px 2px 15px rgba(61, 14, 37, 0.1);
+     }
+
+    li{
+        height: 100%;
+        background-color: rgba(231, 221, 235, 0.89);
+    }
+
+    li a:hover{
+        color: #701ec6;
+    }
+    .logo {
+        max-width: 45px;
+        
+    }
+
+    .navbar .getstarted {
+        background: linear-gradient(to right, #9558d5, #701ec6);
+        border-radius: 4px;
+        font-weight: 600;
+        color: #fff;
+        align-self: center;
+        margin: 10px 50px;
+      }
+      .navbar .getstarted:hover {
+        background: linear-gradient(to left, #9558d5, #701ec6);
+        border-radius: 4px;
+        font-weight: 600;
+        color: #fff;
+        align-self: center;
+        margin: 10px 50px;
+ 
+      }
+
+      .navbar {
+        background-color: rgba(231, 221, 235, 0.89);
+        height: 0rem;
+        min-height: 15vh;
+        padding: 2rem 2rem;
+        transition: all 0.5s;
+        border-bottom: 1px solid #c9b6db;
+        box-shadow: 0px 2px 15px rgba(61, 14, 37, 0.1);
+        border-radius: 4px;
+        
+    }
+ }
