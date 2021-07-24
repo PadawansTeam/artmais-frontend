@@ -32,6 +32,8 @@ import { DashboardModule } from './dashboard/dashboad.module';
 import { InteresseModule } from './interesse/interesse.module';
 import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { RecommendationService } from './homepage/service/recommendation.service';
+import { ArtistaComponent } from './artista/component/artista.component';
+import { ArtistaModule } from './artista/artista.module';
 
 
 
@@ -70,8 +72,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     PerfilModule,
     DashboardModule,
     InteresseModule,
-    ConfiguracaoModule
-
+    ConfiguracaoModule,
+    ArtistaModule
   ],
   providers: [TranslateService, LoginService, CadastroService, RecommendationService],
   bootstrap: [AppComponent],
