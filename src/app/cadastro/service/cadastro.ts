@@ -8,6 +8,7 @@ export class Cadastro {
     public role: string,
     public category: string,
     public subcategory: string,
-    public subcategoryID: 0
+    public subcategoryID: 0,
+    public description: string
   ) {}
 }
