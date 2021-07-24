@@ -1,5 +1,6 @@
-<select id="select_lang" style="width: auto; border: none; background: none; padding-left: 30px; font-weight: 500;" class="select-control" #langSelect (change)="switchLang(langSelect.value)">
-    <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">
+<select id="select_lang" style="width: auto; border: none; background: none; padding-top: 8px; font-weight: 500; margin-left:8px" class="select-control" #langSelect (change)="switchLang(langSelect.value)">
+    <option    
+    *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">
         {{ lang }}
     </option>
 </select>
