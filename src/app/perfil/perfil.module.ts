@@ -8,6 +8,7 @@ import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { PerfilComponent } from './component/perfil.component';
+import { PerfilService } from './service/perfil.service';
 
 
 
@@ -34,7 +35,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FooterModule
   ],
   providers: [
-    TranslateService
+    TranslateService,
+    PerfilService
   ],
   bootstrap: []
 })

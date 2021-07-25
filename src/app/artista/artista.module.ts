@@ -8,6 +8,8 @@ import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { ArtistaComponent } from './component/artista.component';
+import { ArtistaService } from './service/artista.service';
+import { PerfilService } from '../perfil/service/perfil.service';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -33,7 +35,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FooterModule
   ],
   providers: [
-    TranslateService
+    TranslateService,
+    ArtistaService
   ],
   bootstrap: []
 })
