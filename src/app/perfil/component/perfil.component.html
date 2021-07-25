@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-12 shadow back">
                     <div class="img-responsive text-center">
-                        <img src="https://www.vagalume.com.br/pabllo-vittar/images/pabllo-vittar.jpg" alt="..."
+                        <img [src]="profile.userPicture" alt="..."
                             class="  rounded-circle img-fluid mx-auto img-perfil">
                     </div>
 
@@ -17,26 +17,26 @@
             </div>
 
             <div class="media-body  text-black">
-                <p class="mt-0 mb-0 name">Pablo Vittar</p>
-                <p class="small mb-0 text-muted">(Ela/Dela)</p>
-                <p class="small mb-2 category">Música</p>
+                <p class="mt-0 mb-0 name">{{profile.name}}</p>
+                <!-- <p class="small mb-0 text-muted">(Ela/Dela)</p> -->
+                <p class="small mb-2 category">{{profile.category}}- {{profile.subcategory}}</p>
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <ul class="list-inline social-buttons">
                                 <li class="list-inline-item">
-                                    <a href="#">
+                                    <a href="{{profile.facebook}}">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">
+                                    <a href="{{profile.twitter}}">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
 
                                 <li class="list-inline-item">
-                                    <a href="#">
+                                    <a href="{{profile.instagram}}">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
@@ -47,12 +47,7 @@
 
                 <div class="row ">
                     <div class="col-lg-8 mx-auto text-center">
-                        <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                            lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit sed,
-                            maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna quis
-                            ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum, nisi vitae
-                            porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo. Proin
-                            vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at.</p>
+                        <p class="large text-muted">{{profile.description}}</p>
                     </div>
                 </div>
             </div>
@@ -62,9 +57,9 @@
                         <i class="fa fa-phone icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
                         <div class="col-md-12 fw-bold mb-3">Telefones</div>
                         <div class="bg-light col-md-12 d-block text-center text1">
-                            <div class="col-md-12  text-muted">(xx) xxxxx-xxx</div>
-                            <div class="col-md-12 text-muted">(xx) xxxxx-xxx</div>
-                            <div class="col-md-12   text-muted">(xx) xxxxx-xxx</div>
+                            <div class="col-md-12  text-muted">{{profile.mainPhone}}</div>
+                            <div class="col-md-12 text-muted">{{profile.secundaryPhone}}</div>
+                            <div class="col-md-12   text-muted">{{profile.thridPhone}}</div>
                         </div>
                     </div>
                     <div class="bg-light col-md-3 d-block text-center">
@@ -74,15 +69,15 @@
                         </div>
                         <div class="row text1">
                             <div class="col-md-1  col-md-2 text-right fw-bold text-muted">Rua:</div>
-                            <div class="col-md-7 text-muted ">Pablo foi longe demais</div>
+                            <div class="col-md-7 text-muted ">{{profile.street}}</div>
                             <div class="col-md-1 text-left fw-bold text-muted">n°</div>
-                            <div class="col-md-1 text-right text-muted">xxxx</div>
+                            <div class="col-md-1 text-right text-muted">{{profile.number}}</div>
                         </div>
                         <div class="row text1">
                             <div class="col-md-1 text-left fw-bold text-muted">Bairro:</div>
-                            <div class="col-md-6 text-muted">Vila Formosa</div>
+                            <div class="col-md-6 text-muted">{{profile.neighborhood}}</div>
                             <div class="col-md-1 text-right fw-bold text-muted">CEP:</div>
-                            <div class="col-md-4 text-right text-muted">xxxxx-xxx</div>
+                            <div class="col-md-4 text-right text-muted">{{profile.zipCode}}</div>
                         </div>
                         
                     </div>
@@ -103,17 +98,17 @@
                             <div class="col-md-12">
                                 <ul class="list-inline social-buttons">
                                     <li class="list-inline-item">
-                                        <a href="#">
+                                        <a href="{{profile.facebookProfile}}">
                                             <i class="fab fa-facebook-f"></i>
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="#">
+                                        <a href="{{profile.instagramProfile}}">
                                             <i class="fab fa-twitter"></i>
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="#">
+                                        <a href="{{profile.whatsappProfile}}">
                                             <i class="fab fa-whatsapp"></i>
                                         </a>
                                     </li>
