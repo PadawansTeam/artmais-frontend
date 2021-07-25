@@ -24,16 +24,17 @@ import { ConstrucaoModule } from './construcao/construcao.module';
 import { SwiperModule } from 'swiper/angular';
 import { HomepageModule } from './homepage/homepage.module';
 import { PlanosModule } from './planos/planos.module';
-import { HeaderlogComponent } from './headerlog/component/headerlog.component';
 import { HeaderlogModule } from './headerlog/headerlog.module';
-import { PerfilComponent } from './perfil/component/perfil.component';
-import { DashboardComponent } from './dashboard/component/dashboard.component';
 import { PerfilModule } from './perfil/perfil.module';
 import { DashboardModule } from './dashboard/dashboad.module';
 import { InteresseModule } from './interesse/interesse.module';
 import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { RecommendationService } from './homepage/service/recommendation.service';
 import { ArtistaModule } from './artista/artista.module';
+// import { InteresseService } from './interesse/service/interesse.service';
+import { PerfilService } from './perfil/service/perfil.service';
+import { ArtistaService } from './artista/service/artista.service';
+// import { ConfiguracaoService } from './configuracao/service/configuracao.service';
 
 
 
@@ -75,7 +76,16 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ConfiguracaoModule,
     ArtistaModule
   ],
-  providers: [TranslateService, LoginService, CadastroService, RecommendationService],
+  providers: [
+    TranslateService, 
+    LoginService, 
+    CadastroService, 
+    RecommendationService, 
+    // InteresseService, 
+    PerfilService, 
+    ArtistaService,
+    // ConfiguracaoService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

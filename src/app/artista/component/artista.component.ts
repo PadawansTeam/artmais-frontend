@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Artista } from '../service/artista';
+import { ArtistaService } from '../service/artista.service';
 
 @Component({
   selector: 'app-artista',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistaComponent implements OnInit {
 
-  constructor() { }
+  artist!: Artista;
+
+  constructor(
+    public artistaService: ArtistaService
+  ) { }
 
   ngOnInit(): void {
+    this.artistaService.getArtista().subscribe(
+      (response: Artista) => {
+        console.log(response)
+        this.artist = response;
+      },
+      (err) => {
+        throw err;
+      }
+    )
   }
 
 }
