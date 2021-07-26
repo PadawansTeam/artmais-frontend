@@ -12,8 +12,7 @@
     <div class="friend-list">
       <div class="row">
         <div *ngFor="let recomendacao of recommendations" class="col-md-4 col-sm-6">
-          <a href="\artista">
-          <div class="friend-card">
+          <div class="friend-card" (click)="getPerfilById(recomendacao.userId)">
             <img
               [src]="recomendacao.backgroundPicture"
               alt="profile-cover" class="img-responsive cover">
@@ -27,7 +26,7 @@
                 <h5><a href="timeline.html" class="profile-link">{{recomendacao.username}}</a></h5>
               </div>
             </div>
-          </div></a>
+          </div>
         </div>
       </div>
     </div>
