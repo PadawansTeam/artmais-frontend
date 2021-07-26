@@ -31,7 +31,7 @@ import { InteresseModule } from './interesse/interesse.module';
 import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { RecommendationService } from './homepage/service/recommendation.service';
 import { ArtistaModule } from './artista/artista.module';
-// import { InteresseService } from './interesse/service/interesse.service';
+import { InteresseService } from './interesse/service/interesse.service';
 import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
 // import { ConfiguracaoService } from './configuracao/service/configuracao.service';
@@ -81,7 +81,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     LoginService, 
     CadastroService, 
     RecommendationService, 
-    // InteresseService, 
+    InteresseService, 
     PerfilService, 
     ArtistaService,
     // ConfiguracaoService
