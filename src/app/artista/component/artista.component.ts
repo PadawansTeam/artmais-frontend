@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Artista } from '../service/artista';
 import { ArtistaService } from '../service/artista.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-artista',
@@ -10,13 +11,17 @@ import { ArtistaService } from '../service/artista.service';
 export class ArtistaComponent implements OnInit {
 
   artist!: Artista;
+  idUser!: number;
 
   constructor(
-    public artistaService: ArtistaService
+    public artistaService: ArtistaService,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.artistaService.getArtista().subscribe(
+    this.idUser = this.route.snapshot.params['id'];
+    this.artistaService.getArtista(this.idUser).subscribe(
       (response: Artista) => {
         console.log(response)
         this.artist = response;
