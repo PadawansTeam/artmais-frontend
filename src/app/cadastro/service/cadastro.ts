@@ -9,6 +9,8 @@ export class Cadastro {
     public category: string,
     public subcategory: string,
     public subcategoryID: 0,
-    public description: string
+    public description: string,
+    public userPicture: string,
+    public backgroundPicture: string
   ) {}
 }
