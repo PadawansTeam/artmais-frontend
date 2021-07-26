@@ -17,7 +17,7 @@
                 <div class="row">
                     <div *ngFor="let subcategoria of allCategories" class="col-sm-3 text-center p-1">
                         <input [(ngModel)]="subcategoria.isSelected" type="checkbox" class="btn-check button" id="{{subcategoria.subcategoryID}}" autocomplete="off">
-                        <label class="btn btn-outline-primary button" for="{{subcategoria.subcategoryID}}">{{subcategoria.category}}- {{subcategoria.subcategory}}</label>
+                        <label class="btn btn-outline-primary button" for="{{subcategoria.subcategoryID}}">{{subcategoria.category}} - {{subcategoria.subcategory}}</label>
                     </div>
                 </div>
             </div>
