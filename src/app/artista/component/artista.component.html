@@ -55,7 +55,7 @@
                 <div class="row mx-auto">
                     <div class="bg-light col-md-3 d-block text-center ">
                         <i class="fa fa-phone icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
-                        <div class="col-md-12 fw-bold mb-3">Telefones</div>
+                        <div class="col-md-12 fw-bold mb-3">{{ 'PERFIL.TELEFONES' | translate }}</div>
                         <div class="bg-light col-md-12 d-block text-center text1">
                             <div class="col-md-12  text-muted">{{artist.mainPhone}}</div>
                             <div class="col-md-12 text-muted">{{artist.secundaryPhone}}</div>
@@ -65,34 +65,34 @@
                     <div class="bg-light col-md-3 d-block text-center">
                         <i class="fa fa-map-marker icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
                         <div class="col-md-12 fw-bold mb-3 ">
-                            Endereço
+                            {{ 'PERFIL.ENDERECO' | translate }}
                         </div>
                         <div class="row text1">
-                            <div class="col-md-1  col-md-2 text-right fw-bold text-muted">Rua:</div>
+                            <div class="col-md-1  col-md-2 text-right fw-bold text-muted">{{ 'PERFIL.RUA' | translate }}</div>
                             <div class="col-md-7 text-muted ">{{artist.street}}</div>
-                            <div class="col-md-1 text-left fw-bold text-muted">n°</div>
+                            <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.NUMERO' | translate }}</div>
                             <div class="col-md-1 text-right text-muted">{{artist.number}}</div>
                         </div>
                         <div class="row text1">
-                            <div class="col-md-1 text-left fw-bold text-muted">Bairro:</div>
+                            <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.BAIRRO' | translate }}</div>
                             <div class="col-md-6 text-muted">{{artist.neighborhood}}</div>
-                            <div class="col-md-1 text-right fw-bold text-muted">CEP:</div>
+                            <div class="col-md-1 text-right fw-bold text-muted">{{ 'PERFIL.CEP' | translate }}</div>
                             <div class="col-md-4 text-right text-muted">{{artist.zipCode}}</div>
                         </div>
                         
                     </div>
                     <div class="bg-light col-md-3 d-block text-center">
                         <i class="fa fa-calendar icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
-                        <div class="col-md-12 fw-bold mb-3 ">Calendário</div>
+                        <div class="col-md-12 fw-bold mb-3 ">{{ 'PERFIL.CALENDARIO' | translate }}</div>
                         <div class="bg-light col-md-12 d-block text-center">
                             <br>
                             <button class="getstarted" type="button" class="btn-calendar" aria-label="Acessar"
-                                href="#ModalCalendar" data-bs-toggle="modal">Acessar</button>
+                                href="#ModalCalendar" data-bs-toggle="modal">{{ 'PERFIL.CALENDARIO-BUTTON' | translate }}</button>
                         </div>
                     </div>
                     <div class="bg-light col-md-3 d-block text-center">
                         <i class="fa fa-share icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
-                        <div class="col-md-12 fw-bold mb-3 ">Compartilhar</div>
+                        <div class="col-md-12 fw-bold mb-3 ">{{ 'PERFIL.COMPARTILHAR' | translate }}</div>
                         <div class="bg-light col-md-12 d-block text-center">
                             <br>
                             <div class="col-md-12">
@@ -121,7 +121,7 @@
             </div>
             <div class=" row py-4 px-4">
                 <div class="col-md-11">
-                    <p class="mt-0 mb-3 title">Portifólio</p>
+                    <p class="mt-0 mb-3 title">{{ 'PERFIL.PORTIFOLIO' | translate }}</p>
                 </div>
                 <section id="portfolio">
                     <div class="row">

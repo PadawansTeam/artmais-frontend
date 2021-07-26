@@ -4,8 +4,7 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-12 mr-0 mt-5 mb-3">
-                    <p class="c1 ">Escolha as <b class="c2"> categorias</b>
-                         de artistas que você possui <b class="c2">mais interesse </b> de acompanhar</p>
+                    <p class="c1 ">{{ 'INTERESSES.TITULO' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -25,7 +24,7 @@
         <div class="row">
             <div class="col-md-12 text-center mb-5 mt-3 justify-content-center align-items-center">
                 <a>
-                    <button (click)="sendInterest()" type="button" class="btn-principal">Avançar</button>
+                    <button (click)="sendInterest()" type="button" class="btn-principal">{{ 'INTERESSES.BUTTON' | translate }}</button>
                 </a>
             </div>
         </div>
