@@ -22,7 +22,7 @@ export class Artista {
         public secundaryPhone: string,
         public thridPhone: string,
         public facebookProfile: string,
-        public instagramProfile: string,
+        public twitterProfile: string,
         public whatsappProfile: string,
         public  whatsappContact: string
     ) { }
