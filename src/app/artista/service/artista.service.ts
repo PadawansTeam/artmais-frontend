@@ -19,7 +19,7 @@ export class ArtistaService {
 
   constructor(private http: HttpClient) {}
 
-  getArtista(): Observable<any>{
-    return this.http.get(this.artPlusURL + 'v1/User/{userId}', this.httpOptions)
+  getArtista(id: number): Observable<any>{
+    return this.http.get(this.artPlusURL + 'v1/User/' + id, this.httpOptions)
   }
 }
