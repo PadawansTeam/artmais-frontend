@@ -1,3 +1,4 @@
+<app-headerlog></app-headerlog>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -9,39 +10,23 @@
             </div>
         </div>
         <div class="row align-items-center text-center justify-content-center">
-            <div class="col-md-6 mb-3  img1">
+            <div class="col-md-6 mb-3  img1" style="margin-top: -50%;">
                 <img src="assets/img/pages/interest.svg" alt="erro" style="width:100%;">
             </div>
             <div class="col-md-6 y-5 mb-3 ">
-                <div class="row ">
-                    <div class="col-sm-4 text-center p-1"> <a href=""><button type="button" class="btn1">Categoria</button></a>
+                <div class="row">
+                    <div *ngFor="let subcategoria of allCategories" class="col-sm-3 text-center p-1">
+                        <input [(ngModel)]="subcategoria.isSelected" type="checkbox" class="btn-check button" id="{{subcategoria.subcategoryID}}" autocomplete="off">
+                        <label class="btn btn-outline-primary button" for="{{subcategoria.subcategoryID}}">{{subcategoria.category}}- {{subcategoria.subcategory}}</label>
                     </div>
-                    <div class="col-md-4 text-center p-1"> <a href=""><button type="button" class="btn1">Categoria</button></a>
-                    </div>
-                    <div class="col-md-4 text-center p-1"> <a href=""><button type="button" class="btn1">Categoria</button></a>
-                    </div>
-                    <div class="col-md-4 text-center p-1"> <a href=""><button type="button" class="btn1">Categoria</button></a>
-                    </div>
-                    <div class="col-md-4 text-center p-1"> <a href=""><button type="button" class="btn1">Categoria</button></a>
-                    </div>
-                    <div class="col-md-4 text-center p-1"> <a href=""><button type="button" class="btn1">Categoria</button></a>
-                    </div>
-                    <div class="col-md-4 text-center p-1"> <a href=""><button type="button" class="btn1">Categoria</button></a>
-                    </div>
-                    <div class="col-md-4 text-center p-1"> <a href=""><button type="button" class="btn1">Categoria</button></a>
-                    </div>
-                    <div class="col-md-4 text-center p-1"> <a href=""><button type="button" class="btn1">Categoria</button></a>
-                    </div>
-                    <div class="col-md-4 text-center p-1 "> <a href=""><button type="button" class="btn1">Categoria</button></a>
-                    </div>
-                    
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-12 text-center mb-5 mt-3 justify-content-center align-items-center">
-                <a href="/configuracao"><button  type="button" class="btn-principal">Avançar</button></a>
+                <a>
+                    <button (click)="sendInterest()" type="button" class="btn-principal">Avançar</button>
+                </a>
             </div>
         </div>
     </div>
