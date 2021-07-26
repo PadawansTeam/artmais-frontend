@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'configuracao', component: ConfiguracaoComponent },
   { path: 'interesse', component: InteresseComponent },
-  { path: 'artista', component: ArtistaComponent }
+  { path: 'artista/:id', component: ArtistaComponent }
 ];
 
 @NgModule({

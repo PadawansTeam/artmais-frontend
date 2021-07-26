@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Recommendation } from '../service/recommendation';
 import { RecommendationService } from '../service/recommendation.service';
+import { ArtistaService } from '../../artista/service/artista.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -12,7 +14,9 @@ export class HomepageComponent implements OnInit {
   recommendations: Recommendation[] = [];
 
   constructor(
-    public recommendationService: RecommendationService
+    public recommendationService: RecommendationService,
+    public artistaService: ArtistaService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -26,4 +30,9 @@ export class HomepageComponent implements OnInit {
       }
     )
   }
+
+  getPerfilById(id: number) {
+    this.router.navigate(['/artista', id]);
+  }
+  
 }
