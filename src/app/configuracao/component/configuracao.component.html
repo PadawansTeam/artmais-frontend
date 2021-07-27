@@ -13,7 +13,6 @@
                                         [src]="information.userPicture">
                                 </div>
                                 <h5 class="user-name">{{information.name}}</h5>
-                                <!-- <h5 class="user-email">vitarlovers@yukee.com</h5> -->
                             </div>
                             <div class="about">
                                 <div class="row">
@@ -59,15 +58,15 @@
                                     <div class="col-md-12">
                                         <div class="col-md-12">
                                             <i class="fab fa-facebook-f icon-color"></i>
-                                            <input [(ngModel)]="this.userContact.userFacebook" type="url" class="form-control1" id="phone" placeholder="Facebook">
+                                            <input [(ngModel)]="this.userContact.facebook" type="url" class="form-control1" id="phone" placeholder="Facebook">
                                         </div>
                                         <div class="col-md-12">
                                             <i class="fab fa-twitter icon-color"></i>
-                                            <input [(ngModel)]="this.userContact.userTwitter" type="url" class="form-control1" id="phone" placeholder="Twitter">
+                                            <input [(ngModel)]="this.userContact.twitter" type="url" class="form-control1" id="phone" placeholder="Twitter">
                                         </div>
                                         <div class="col-md-12">
                                             <i class="fab fa-instagram icon-color"></i>
-                                            <input [(ngModel)]="this.userContact.userInstagram" type="url" class="form-control1" id="phone" placeholder="Instagram">
+                                            <input [(ngModel)]="this.userContact.instagram" type="url" class="form-control1" id="phone" placeholder="Instagram">
                                         </div>
                                         <div class="col-md-12 ">
                                             <i class="fas fa-comment-alt icon-color"></i>
@@ -105,9 +104,6 @@
                                         <div class="col-md-6 ">
                                             <label class="label-text" for="fullName ">{{ 'CONFIG.NOME' | translate }}</label>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label class="label-select" for="fullName">Pablo Vittar</label>
-                                        </div>
                                     </div>
                                     <input [(ngModel)]="this.userInfo.name" type="text" class="form-control" id="fullName" placeholder="Nome">
                                 </div>
@@ -117,9 +113,6 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label class="label-text" for="user">{{ 'CONFIG.NOME-USER' | translate }}</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="label-select" for="fullName">PabloVittar</label>
                                         </div>
                                     </div>
                                     <input [(ngModel)]="this.userInfo.username" type="text" class="form-control" id="user" placeholder="Nome de usuário">
@@ -140,9 +133,6 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label class="label-text" for="user">Pronomes:</label>
-                                        </div>
-                                        <div class="col-md-6">
                                             <label class="label-select" for="fullName">{{ 'CONFIG.PRONOMES' | translate }}</label>
                                         </div>
                                     </div>
@@ -155,9 +145,6 @@
                                         <div class="col-md-6">
                                             <label class="label-text" for="website">{{ 'CONFIG.NASCIMENTO' | translate }}</label>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label class="label-select" for="fullName">xx/xx/xxxx</label>
-                                        </div>
                                     </div>
                                     <input [(ngModel)]="this.userInfo.birthDate" type="date" class="form-control" id="datanasc">
                                 </div>
@@ -169,7 +156,7 @@
                                             <label class="label-text" for="phone">{{ 'CONFIG.TELEFONE' | translate }}</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="label-select" for="fullName">(xx) xxxxx-xxxx</label>
+                                            <label class="label-select" for="fullName">Exemplo: 5511984439901</label>
                                         </div>
                                     </div>
                                     <input [(ngModel)]="this.userInfo.mainPhone" type="tel" class="form-control" id="phone" placeholder="Primeiro telefone">
@@ -183,7 +170,7 @@
                                         </div>
                                         <div class="col-md-6">
 
-                                            <label class="label-select" for="fullName">(xx) xxxxx-xxxx</label>
+                                            <label class="label-select" for="fullName">Exemplo: 5511984439902</label>
                                         </div>
                                     </div>
                                     <input [(ngModel)]="this.userInfo.secundaryPhone" type="tel" class="form-control" id="phone" placeholder="Segundo telefone">
@@ -196,7 +183,7 @@
                                             <label class="label-text" for="phone">{{ 'CONFIG.TELEFONE' | translate }}</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="label-select" for="fullName">(xx) xxxxx-xxxx</label>
+                                            <label class="label-select" for="fullName">Exemplo: 5511984439903</label>
                                         </div>
                                     </div>
                                     <input [(ngModel)]="this.userInfo.thirdPhone" type="tel" class="form-control" id="phone" placeholder="Terceiro telefone">
@@ -232,8 +219,6 @@
                                                     <label class="label-text" for="Street">{{ 'CONFIG.LOGRADOURO' | translate }}</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="label-select" for="fullName">Pablo foi longe
-                                                        demais</label>
                                                 </div>
                                             </div>
                                             <input [(ngModel)]="this.userAddress.street" type="name" class="form-control" id="Street" placeholder="Digite o logradouro">
@@ -244,8 +229,7 @@
                                             <div class="row">
                                                 <div class="col-md-6"> <label class="label-text" for="ciTy">{{ 'CONFIG.NUMERO' | translate }}</label>
                                                 </div>
-                                                <div class="col-md-6"> <label class="label-select"
-                                                        for="fullName">xxxx</label></div>
+                                                <div class="col-md-6"></div>
                                             </div>
                                             <input [(ngModel)]="this.userAddress.number" type="number" class="form-control" id="ciTy" placeholder="Digite o número">
                                         </div>
@@ -257,7 +241,6 @@
                                                     <label class="label-text" for="sTate">{{ 'CONFIG.CIDADE' | translate }}</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="label-select" for="fullName">São Paulo</label>
                                                 </div>
                                             </div>
                                             <input type="text" class="form-control" id="sTate" placeholder="Digite a cidade">
@@ -268,8 +251,7 @@
                                             <div class="row">
                                                 <div class="col-md-6"> <label class="label-text"
                                                         for="zIp">{{ 'CONFIG.ESTADO' | translate }}</label></div>
-                                                <div class="col-md-6"> <label class="label-select"
-                                                        for="fullName">SP</label></div>
+                                                <div class="col-md-6"></div>
                                             </div>
                                             <input type="text" class="form-control" id="zIp" placeholder="Digite a UF">
                                         </div>
@@ -279,8 +261,7 @@
                                             <div class="row">
                                                 <div class="col-md-6"><label class="label-text" for="zIp">{{ 'CONFIG.BAIRRO' | translate }}</label>
                                                 </div>
-                                                <div class="col-md-6"> <label class="label-select" for="fullName">Vila
-                                                        Formosa</label></div>
+                                                <div class="col-md-6"></div>
                                             </div>
                                             <input [(ngModel)]="this.userAddress.neighborhood" type="text" class="form-control" id="zIp" placeholder="Digite o bairro">
                                         </div>
@@ -292,7 +273,6 @@
                                                     <label class="label-text" for="zIp">{{ 'CONFIG.CEP' | translate }}</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="label-select" for="fullName">xxxxx-xxx</label>
                                                 </div>
                                             </div>
                                             <input [(ngModel)]="this.userAddress.zipCode" type="text" class="form-control" id="zIp" placeholder="Digite o CEP">
@@ -305,7 +285,6 @@
                                                     <label class="label-text" for="zIp">{{ 'CONFIG.COMPLEMENTO' | translate }}</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="label-select" for="fullName">xxxxxx xxxxxxx xxxx</label>
                                                 </div>
                                             </div>
                                             <input [(ngModel)]="this.userAddress.complement" type="text" class="form-control" id="zIp" placeholder="Digite o Complemento">
