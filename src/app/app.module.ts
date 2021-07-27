@@ -34,7 +34,7 @@ import { ArtistaModule } from './artista/artista.module';
 import { InteresseService } from './interesse/service/interesse.service';
 import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
-// import { ConfiguracaoService } from './configuracao/service/configuracao.service';
+import { ConfiguracaoService } from './configuracao/service/configuracao.service';
 
 
 
@@ -84,7 +84,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     InteresseService, 
     PerfilService, 
     ArtistaService,
-    // ConfiguracaoService
+    ConfiguracaoService
   ],
   bootstrap: [AppComponent],
 })

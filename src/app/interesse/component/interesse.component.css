@@ -28,8 +28,8 @@
 }
 
 .btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active{
-    background-color: #9558d5; 
-    border-color: #9558d5;
+    background: linear-gradient(to right, #9558d5, #701ec6);; 
+    border-color: #701ec6;
     color: #fff;
     min-width: 9.5rem;
     min-height: 4rem;

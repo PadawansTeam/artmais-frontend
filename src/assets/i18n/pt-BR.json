@@ -34,11 +34,11 @@
     },
 
     "HEADER": {
-        "HOMEPAGE": "Recommendation",
+        "HOMEPAGE": "Recomendações",
         "INTERESSE":"Interesses",
-        "CONFIG": "Configurations",
-        "PERFIL": "Profile",
-        "SAIR": "Log Out"
+        "CONFIG": "Configurações",
+        "PERFIL": "Perfil",
+        "SAIR": "Sair"
     },
     "FOOTER": {
         "SOBRE": "SOBRE",
