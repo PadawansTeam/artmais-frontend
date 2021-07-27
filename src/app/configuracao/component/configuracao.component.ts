@@ -26,7 +26,7 @@ export class ConfiguracaoComponent implements OnInit {
 
   userPass: any = {
     oldPassword: null, 
-    oldPasswordConfirmation: null,
+    newPassword: null,
     password: null,
   }
 
@@ -99,7 +99,7 @@ export class ConfiguracaoComponent implements OnInit {
   updatePassword(){
     this.configService.updatePassword(
       this.userPass.oldPassword,
-      this.userPass.oldPasswordConfirmation,
+      this.userPass.newPassword,
       this.userPass.password,
     ).subscribe(
       (response) => {

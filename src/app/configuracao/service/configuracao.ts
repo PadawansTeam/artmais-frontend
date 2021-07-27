@@ -8,7 +8,7 @@ export class Configuracao {
         public secundaryPhone?: string,
         public thirdPhone?: string,
         public oldPassword?: string,
-        public oldPasswordConfirmation?: string,
+        public newPassword?: string,
         public password?: string,
         public description?: string,
         public userFacebook?: string,
