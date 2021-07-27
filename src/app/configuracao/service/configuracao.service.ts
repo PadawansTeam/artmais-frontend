@@ -49,12 +49,12 @@ export class ConfiguracaoService {
 
   updatePassword(
     oldPassword: string,
-    oldPasswordConfirmation: string,
+    newPassword: string,
     password: string
   ): Observable<object> {
     return this.http.patch<object>(
       `${this.artPlusURL}` + 'v1/User/UpdateUserPassword',
-      { oldPassword, oldPasswordConfirmation, password },
+      { oldPassword, newPassword, password },
       this.httpOptions
     );
   }

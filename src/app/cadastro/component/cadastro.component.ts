@@ -83,7 +83,7 @@ export class CadastroComponent implements OnInit {
           this.form.backgroundPicture
         ).subscribe(
           (response) => {
-            this.router.navigateByUrl('/homepage');
+            this.router.navigateByUrl('/login');
             return response;
           },
           (err) => {
