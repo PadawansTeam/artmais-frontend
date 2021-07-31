@@ -31,6 +31,10 @@ export class ConfiguracaoService {
     return this.http.get(this.artPlusURL + 'v1/Address', this.httpOptions)
   }
 
+  fileUpload(file: FormData) {
+    return this.http.post(this.artPlusURL + 'v1/', file, this.httpOptions);
+  }
+
   updateUserInfo(
     name: string,
     username: string,

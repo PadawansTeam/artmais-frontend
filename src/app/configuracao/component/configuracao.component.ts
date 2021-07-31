@@ -10,6 +10,8 @@ import { ConfiguracaoService } from '../service/configuracao.service';
 export class ConfiguracaoComponent implements OnInit {
 
   information!: Configuracao;
+  fileObj? : File;
+  fileUrl?: string;
 
   userInfo: any = {
     name: null,
@@ -82,6 +84,19 @@ export class ConfiguracaoComponent implements OnInit {
         throw err;
       }
     )
+  }
+
+  onFilePicked(event: any): void {
+    const FILE = event.target.files[0];
+    this.fileObj = FILE;
+  }
+  
+  onFileUpload() {
+    const fileForm = new FormData();
+    fileForm.append('file', this.fileObj!);
+    this.configService.fileUpload(fileForm).subscribe((res: any) => {
+      this.fileUrl = res.image;
+    });
   }
 
   updateUserInfo(){

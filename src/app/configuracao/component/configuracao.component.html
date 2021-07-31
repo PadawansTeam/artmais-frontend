@@ -126,7 +126,7 @@
                                         </div>
                                         <div class="col-md-6"></div>
                                     </div>
-                                    <input [(ngModel)]="this.userInfo.userPicture" type="file" accept=".jpg, .jpeg, .png" class="form-control" id="photo">
+                                    <input [(ngModel)]="this.userInfo.userPicture" (change)="onFilePicked($event)" type="file" accept=".jpg, .jpeg, .png" class="form-control" id="photo">
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -192,7 +192,7 @@
                             <div class="row gutters">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
                                     <div class="text-center">
-                                        <button (click)="updateUserInfo()" type="button" id="submit" name="submit" class="submit">{{ 'CONFIG.CONFIG-BUTTONS' | translate }}</button>
+                                        <button (click)="updateUserInfo(); onFileUpload()" type="button" id="submit" name="submit" class="submit">{{ 'CONFIG.CONFIG-BUTTONS' | translate }}</button>
                                     </div>
                                 </div>
                             </div>
