@@ -48,7 +48,7 @@ export class InteresseComponent implements OnInit {
     })
     this.interesseService.sendInterests(ids).subscribe(
       (response) => {
-        this.router.navigateByUrl('/configuracao');
+        this.router.navigateByUrl('/homepage');
         return response;
       },
       (err) => {
