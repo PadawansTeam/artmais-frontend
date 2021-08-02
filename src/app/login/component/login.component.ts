@@ -26,7 +26,7 @@ export class LoginComponent {
       .subscribe(
         (response) => {
           localStorage.setItem('token', response.token);
-          this.router.navigateByUrl('/interesse');
+          this.router.navigateByUrl('/homepage');
           this.loginReturn = true;
         },
         (err) => {
