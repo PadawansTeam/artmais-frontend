@@ -2,6 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+var AWS = require('aws-sdk');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +21,34 @@ export class ConfiguracaoService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  // aws.config.update({
+  //       secretAccessKey: 'a5JICmPidT2YSRgmzl/gOxIm6nuGvj2s5XH4WE1A',
+  //       accessKeyId: 'ASIA4GZ6YP6NVYYNEHFG',
+  //       region: 'us-east-1',
+  //   });
+  
+    // const s3 = new aws.S3();
+
+  public s3: any;
+
+  constructor(private http: HttpClient) {
+    AWS.config.getCredentials(function(err: any) {
+      if (err) console.log(err.stack);
+      // credentials not loaded
+      else {
+        console.log("Access key:", AWS.config.credentials.accessKeyId);
+      }
+    });
+    this.s3 = new AWS.S3({
+      endpoint: 'https://artplus-bucket.s3-accelerate.amazonaws.com',
+      secretAccessKey: 'a5JICmPidT2YSRgmzl/gOxIm6nuGvj2s5XH4WE1A',
+      accessKeyId: 'ASIA4GZ6YP6NVYYNEHFG',
+      region: 'us-east-1',
+    });
+    const app = express();
+    app.use(bodyParser.json());
+    app.use(cors());
+  }
 
   getUserInfo(): Observable<any>{
     return this.http.get(this.artPlusURL + 'v1/User', this.httpOptions)
@@ -32,7 +63,7 @@ export class ConfiguracaoService {
   }
 
   fileUpload(file: FormData) {
-    return this.http.post(this.artPlusURL + 'v1/', file, this.httpOptions);
+    // return this.http.post('https://artplus-bucket.s3-accelerate.amazonaws.com', file, this.httpOptions);
   }
 
   updateUserInfo(

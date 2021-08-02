@@ -94,9 +94,10 @@ export class ConfiguracaoComponent implements OnInit {
   onFileUpload() {
     const fileForm = new FormData();
     fileForm.append('file', this.fileObj!);
-    this.configService.fileUpload(fileForm).subscribe((res: any) => {
-      this.fileUrl = res.image;
-    });
+    // this.configService.fileUpload(fileForm).subscribe((res: any) => {
+    //   this.fileUrl = res.image;
+    //   console.log(res)
+    // });
   }
 
   updateUserInfo(){
