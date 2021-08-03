@@ -5,11 +5,12 @@ import { ConfiguracaoService } from '../service/configuracao.service';
 @Component({
   selector: 'app-configuracao',
   templateUrl: './configuracao.component.html',
-  styleUrls: ['./configuracao.component.css']
+  styleUrls: ['./configuracao.component.css'],
 })
 export class ConfiguracaoComponent implements OnInit {
-
   information!: Configuracao;
+  selectedFiles!: FileList;
+  urlImagem!: string;
 
   userInfo: any = {
     name: null,
@@ -21,18 +22,18 @@ export class ConfiguracaoComponent implements OnInit {
     thirdPhone: null,
     userTwitter: null,
     userFacebook: null,
-    userInstagram: null
-  }
+    userInstagram: null,
+  };
 
   userPass: any = {
-    oldPassword: null, 
+    oldPassword: null,
     newPassword: null,
     password: null,
-  }
+  };
 
   userDescription: any = {
-    description: null, 
-  }
+    description: null,
+  };
 
   userContact: any = {
     facebook: null,
@@ -41,21 +42,20 @@ export class ConfiguracaoComponent implements OnInit {
     mainPhone: null,
     secundaryPhone: null,
     thirdPhone: null,
-  }
+  };
 
   userAddress: any = {
     street: null,
     number: null,
     complement: null,
     neighborhood: null,
-    zipCode:null
-  }
+    zipCode: null,
+  };
 
-  constructor(
-    public configService: ConfiguracaoService
-  ) { }
+  constructor(public configService: ConfiguracaoService) {}
 
   ngOnInit(): void {
+    this.urlImagem = '';
     this.configService.getUserInfo().subscribe(
       (response: Configuracao) => {
         this.information = response;
@@ -71,31 +71,12 @@ export class ConfiguracaoComponent implements OnInit {
               (err) => {
                 throw err;
               }
-            )
+            );
           },
           (err) => {
             throw err;
           }
-        )
-      },
-      (err) => {
-        throw err;
-      }
-    )
-  }
-
-  updateUserInfo(){
-    this.configService.updateUserInfo(
-      this.userInfo.name,
-      this.userInfo.username,
-      this.userInfo.userPicture,
-      this.userInfo.birthDate,
-      this.userInfo.mainPhone,
-      this.userInfo.secundaryPhone,
-      this.userInfo.thirdPhone
-    ).subscribe(
-      (response) => {
-        return response;
+        );
       },
       (err) => {
         throw err;
@@ -103,66 +84,104 @@ export class ConfiguracaoComponent implements OnInit {
     );
   }
 
-  updatePassword(){
-    this.configService.updatePassword(
-      this.userPass.oldPassword,
-      this.userPass.newPassword,
-      this.userPass.password,
-    ).subscribe(
-      (response) => {
-        return response;
-      },
-      (err) => {
-        throw err;
-      }
-    );
+  updateUserInfo() {
+    this.upload();
+    this.configService
+      .updateUserInfo(
+        this.userInfo.name,
+        this.userInfo.username,
+        this.userInfo.userPicture,
+        this.userInfo.birthDate,
+        this.userInfo.mainPhone,
+        this.userInfo.secundaryPhone,
+        this.userInfo.thirdPhone
+      )
+      .subscribe(
+        (response) => {
+          return response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
   }
 
-  updateDescription(){
-    this.configService.updateDescription(
-      this.userDescription.description
-    ).subscribe(
-      (response) => {
-        return response;
-      },
-      (err) => {
-        throw err;
-      }
-    );
+  updatePassword() {
+    this.configService
+      .updatePassword(
+        this.userPass.oldPassword,
+        this.userPass.newPassword,
+        this.userPass.password
+      )
+      .subscribe(
+        (response) => {
+          return response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
   }
 
-  updateContact(){
-    this.configService.updateContact(
-      this.userContact.facebook, 
-      this.userContact.instagram, 
-      this.userContact.twitter, 
-      this.userContact.mainPhone, 
-      this.userContact.secundaryPhone, 
-      this.userContact.thirdPhone, 
-    ).subscribe(
-      (response) => {
-        return response;
-      },
-      (err) => {
-        throw err;
-      }
-    );
+  updateDescription() {
+    this.configService
+      .updateDescription(this.userDescription.description)
+      .subscribe(
+        (response) => {
+          return response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
   }
 
-  updateAddress(){
-    this.configService.updateAddress(
-      this.userAddress.street, 
-      this.userAddress.number, 
-      this.userAddress.complement, 
-      this.userAddress.neighborhood, 
-      this.userAddress.zipCode,
-    ).subscribe(
-      (response) => {
-        return response;
-      },
-      (err) => {
-        throw err;
-      }
-    );
+  updateContact() {
+    this.configService
+      .updateContact(
+        this.userContact.facebook,
+        this.userContact.instagram,
+        this.userContact.twitter,
+        this.userContact.mainPhone,
+        this.userContact.secundaryPhone,
+        this.userContact.thirdPhone
+      )
+      .subscribe(
+        (response) => {
+          return response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
+  }
+
+  updateAddress() {
+    this.configService
+      .updateAddress(
+        this.userAddress.street,
+        this.userAddress.number,
+        this.userAddress.complement,
+        this.userAddress.neighborhood,
+        this.userAddress.zipCode
+      )
+      .subscribe(
+        (response) => {
+          return response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
+  }
+
+  upload() {
+    this.urlImagem = '';
+    const file = this.selectedFiles.item(0);
+    this.configService.uploadfile(file!);
+  }
+
+  selectFile(event: any) {
+    this.selectedFiles = event.target.files;
   }
 }
