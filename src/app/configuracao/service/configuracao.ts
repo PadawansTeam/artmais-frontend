@@ -3,6 +3,7 @@ export class Configuracao {
         public name?: string,
         public username?: string,
         public userPicture?: string,
+        public backgroundPicture?: string,
         public birthDate?: Date,
         public mainPhone?: string,
         public secundaryPhone?: string,
