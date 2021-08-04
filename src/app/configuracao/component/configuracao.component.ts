@@ -15,6 +15,7 @@ export class ConfiguracaoComponent implements OnInit {
     name: null,
     username: null,
     userPicture: null,
+    backgroundPicture: null,
     birthDate: null,
     mainPhone: null,
     secundaryPhone: null,
@@ -48,7 +49,9 @@ export class ConfiguracaoComponent implements OnInit {
     number: null,
     complement: null,
     neighborhood: null,
-    zipCode:null
+    zipCode:null,
+    city: null,
+    state: null
   }
 
   constructor(
@@ -89,6 +92,7 @@ export class ConfiguracaoComponent implements OnInit {
       this.userInfo.name,
       this.userInfo.username,
       this.userInfo.userPicture,
+      this.userInfo.backgroundPicture,
       this.userInfo.birthDate,
       this.userInfo.mainPhone,
       this.userInfo.secundaryPhone,
@@ -156,6 +160,8 @@ export class ConfiguracaoComponent implements OnInit {
       this.userAddress.complement, 
       this.userAddress.neighborhood, 
       this.userAddress.zipCode,
+      this.userAddress.city,
+      this.userAddress.state
     ).subscribe(
       (response) => {
         return response;
