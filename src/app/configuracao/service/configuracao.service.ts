@@ -40,6 +40,7 @@ export class ConfiguracaoService {
     name: string,
     username: string,
     userPicture: string,
+    backgroundPicture: string,
     birthDate: Date,
     mainPhone: string,
     secundaryPhone: string,
@@ -47,15 +48,7 @@ export class ConfiguracaoService {
   ): Observable<object> {
     return this.http.put<object>(
       `${this.artPlusURL}` + 'v1/User/UpdateUserInfo',
-      {
-        name,
-        username,
-        userPicture,
-        birthDate,
-        mainPhone,
-        secundaryPhone,
-        thirdPhone,
-      },
+      { name, username, userPicture, backgroundPicture, birthDate, mainPhone, secundaryPhone, thirdPhone },
       this.httpOptions
     );
   }
@@ -100,11 +93,13 @@ export class ConfiguracaoService {
     number: number,
     complement: string,
     neighborhood: string,
-    zipCode: string
+    zipCode:string,
+    city: string,
+    state: string
   ): Observable<object> {
     return this.http.post<object>(
       `${this.artPlusURL}` + 'v1/Address/Upsert',
-      { street, number, complement, neighborhood, zipCode },
+      { street, number, complement, neighborhood, zipCode, city, state },
       this.httpOptions
     );
   }

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Configuracao } from '../service/configuracao';
 import { ConfiguracaoService } from '../service/configuracao.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-configuracao',
   templateUrl: './configuracao.component.html',
   styleUrls: ['./configuracao.component.css'],
+  providers: [DatePipe]
 })
 export class ConfiguracaoComponent implements OnInit {
   information!: Configuracao;
@@ -16,6 +18,7 @@ export class ConfiguracaoComponent implements OnInit {
     name: null,
     username: null,
     userPicture: null,
+    backgroundPicture: null,
     birthDate: null,
     mainPhone: null,
     secundaryPhone: null,
@@ -49,10 +52,15 @@ export class ConfiguracaoComponent implements OnInit {
     number: null,
     complement: null,
     neighborhood: null,
-    zipCode: null,
-  };
+    zipCode:null,
+    city: null,
+    state: null
+  }
 
-  constructor(public configService: ConfiguracaoService) {}
+  constructor(
+    public configService: ConfiguracaoService,
+    private datePipe: DatePipe
+  ) { }
 
   ngOnInit(): void {
     this.urlImagem = '';
@@ -60,50 +68,48 @@ export class ConfiguracaoComponent implements OnInit {
       (response: Configuracao) => {
         this.information = response;
         this.userInfo = response;
-        // this.userContact = response;
-        this.configService.getAddress().subscribe(
-          (response) => {
-            this.userAddress = response;
-            this.configService.getContactInfo().subscribe(
-              (response) => {
-                this.userContact = response;
-              },
-              (err) => {
-                throw err;
-              }
-            );
-          },
-          (err) => {
-            throw err;
-          }
-        );
+        this.userInfo.birthDate = this.datePipe.transform(this.userInfo.birthDate, 'dd/MM/yyyy');
       },
       (err) => {
         throw err;
       }
-    );
-  }
-
-  updateUserInfo() {
-    this.upload();
-    this.configService
-      .updateUserInfo(
-        this.userInfo.name,
-        this.userInfo.username,
-        this.userInfo.userPicture,
-        this.userInfo.birthDate,
-        this.userInfo.mainPhone,
-        this.userInfo.secundaryPhone,
-        this.userInfo.thirdPhone
-      )
-      .subscribe(
+    ),
+      this.configService.getAddress().subscribe(
         (response) => {
-          return response;
+          this.userAddress = response;
+        },
+        (err) => {
+          throw err;
+        }
+      ),
+      this.configService.getContactInfo().subscribe(
+        (response) => {
+          this.userContact = response;
         },
         (err) => {
           throw err;
         }
       );
+}
+
+  updateUserInfo(){
+    this.configService.updateUserInfo(
+      this.userInfo.name,
+      this.userInfo.username,
+      this.userInfo.userPicture,
+      this.userInfo.backgroundPicture,
+      this.userInfo.birthDate,
+      this.userInfo.mainPhone,
+      this.userInfo.secundaryPhone,
+      this.userInfo.thirdPhone
+    ).subscribe(
+      (response) => {
+        return response;
+      },
+      (err) => {
+        throw err;
+      }
+    );
   }
 
   updatePassword() {
@@ -156,23 +162,23 @@ export class ConfiguracaoComponent implements OnInit {
       );
   }
 
-  updateAddress() {
-    this.configService
-      .updateAddress(
-        this.userAddress.street,
-        this.userAddress.number,
-        this.userAddress.complement,
-        this.userAddress.neighborhood,
-        this.userAddress.zipCode
-      )
-      .subscribe(
-        (response) => {
-          return response;
-        },
-        (err) => {
-          throw err;
-        }
-      );
+  updateAddress(){
+    this.configService.updateAddress(
+      this.userAddress.street, 
+      this.userAddress.number, 
+      this.userAddress.complement, 
+      this.userAddress.neighborhood, 
+      this.userAddress.zipCode,
+      this.userAddress.city,
+      this.userAddress.state
+    ).subscribe(
+      (response) => {
+        return response;
+      },
+      (err) => {
+        throw err;
+      }
+    );
   }
 
   upload() {
