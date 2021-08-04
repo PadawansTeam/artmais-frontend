@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Configuracao } from '../service/configuracao';
 import { ConfiguracaoService } from '../service/configuracao.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-configuracao',
   templateUrl: './configuracao.component.html',
-  styleUrls: ['./configuracao.component.css']
+  styleUrls: ['./configuracao.component.css'],
+  providers: [DatePipe]
 })
 export class ConfiguracaoComponent implements OnInit {
 
@@ -55,36 +57,38 @@ export class ConfiguracaoComponent implements OnInit {
   }
 
   constructor(
-    public configService: ConfiguracaoService
+    public configService: ConfiguracaoService,
+    private datePipe: DatePipe
   ) { }
 
   ngOnInit(): void {
-      this.configService.getUserInfo().subscribe(
-        (response: Configuracao) => {
-          this.information = response;
-          this.userInfo = response;
+    this.configService.getUserInfo().subscribe(
+      (response: Configuracao) => {
+        this.information = response;
+        this.userInfo = response;
+        this.userInfo.birthDate = this.datePipe.transform(this.userInfo.birthDate, 'dd/MM/yyyy');
+      },
+      (err) => {
+        throw err;
+      }
+    ),
+      this.configService.getAddress().subscribe(
+        (response) => {
+          this.userAddress = response;
         },
         (err) => {
           throw err;
         }
       ),
-        this.configService.getAddress().subscribe(
-          (response) => {
-            this.userAddress = response;
-          },
-          (err) => {
-            throw err;
-          }
-        ),
-        this.configService.getContactInfo().subscribe(
-          (response) => {
-            this.userContact = response;
-          },
-          (err) => {
-            throw err;
-          }
-        );
-  }
+      this.configService.getContactInfo().subscribe(
+        (response) => {
+          this.userContact = response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
+}
 
   updateUserInfo(){
     this.configService.updateUserInfo(
