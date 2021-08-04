@@ -60,29 +60,29 @@ export class ConfiguracaoComponent implements OnInit {
       (response: Configuracao) => {
         this.information = response;
         this.userInfo = response;
-        // this.userContact = response;
-        this.configService.getAddress().subscribe(
-          (response) => {
-            this.userAddress = response;
-            this.configService.getContactInfo().subscribe(
-              (response) => {
-                this.userContact = response;
-              },
-              (err) => {
-                throw err;
-              }
-            )
-          },
-          (err) => {
-            throw err;
-          }
-        )
+        this.userInfo.birthDate = response.birthDate ? new Date(response.birthDate) : undefined;
       },
       (err) => {
         throw err;
       }
-    )
-  }
+    ),
+      this.configService.getAddress().subscribe(
+        (response) => {
+          this.userAddress = response;
+        },
+        (err) => {
+          throw err;
+        }
+      ),
+      this.configService.getContactInfo().subscribe(
+        (response) => {
+          this.userContact = response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
+}
 
   updateUserInfo(){
     this.configService.updateUserInfo(
