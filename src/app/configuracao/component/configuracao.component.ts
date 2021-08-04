@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Configuracao } from '../service/configuracao';
 import { ConfiguracaoService } from '../service/configuracao.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-configuracao',
   templateUrl: './configuracao.component.html',
-  styleUrls: ['./configuracao.component.css']
+  styleUrls: ['./configuracao.component.css'],
+  providers: [DatePipe]
 })
 export class ConfiguracaoComponent implements OnInit {
 
@@ -55,7 +57,8 @@ export class ConfiguracaoComponent implements OnInit {
   }
 
   constructor(
-    public configService: ConfiguracaoService
+    public configService: ConfiguracaoService,
+    private datePipe: DatePipe
   ) { }
 
   ngOnInit(): void {
@@ -63,7 +66,7 @@ export class ConfiguracaoComponent implements OnInit {
       (response: Configuracao) => {
         this.information = response;
         this.userInfo = response;
-        this.userInfo.birthDate = response.birthDate ? new Date(response.birthDate) : undefined;
+        this.userInfo.birthDate = this.datePipe.transform(this.userInfo.birthDate, 'dd/MM/yyyy');
       },
       (err) => {
         throw err;
