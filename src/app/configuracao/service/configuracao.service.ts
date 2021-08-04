@@ -13,7 +13,7 @@ export class ConfiguracaoService {
   public artPlusURL = `${environment.apiURL}`;
   public token = localStorage.getItem('token');
 
-  FOLDER = 'profile_pic/';
+  FOLDER = 'profile-pictures/2/';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -110,28 +110,29 @@ export class ConfiguracaoService {
   }
 
   uploadfile(file: File) {
+    let awsResult: any = {};
     const bucket = new S3({
-      accessKeyId: 'ASIA4GZ6YP6N46UB3CUX',
-      secretAccessKey: 'pep9bBevuyfCY1fkrpnv40MlSeq4HPkbz9//CfMl',
+      accessKeyId: 'AKIA3HSZCE6ZIDLOOE5F',
+      secretAccessKey: '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',
       region: 'us-east-1',
-      useAccelerateEndpoint: true,
-      signatureVersion: 'v4',
     });
 
     const params = {
-      Bucket: 'artplus-bucket',
+      Bucket: 'bucket-artmais',
       Key: this.FOLDER + file.name,
       Body: file,
+      ACL: 'public-read',
     };
 
     bucket.upload(params, function (err: any, data: any): Observable<object> {
       if (err) {
-        console.log('There was an error uploading your file: ', err);
         return err;
       }
 
-      console.log('Successfully uploaded file.', data);
-      return data;
+      awsResult.url = data['Location'];
+      return data['Location'];
     });
+
+    return awsResult;
   }
 }
