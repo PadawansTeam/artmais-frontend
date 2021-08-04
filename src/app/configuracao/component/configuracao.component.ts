@@ -15,6 +15,7 @@ export class ConfiguracaoComponent implements OnInit {
     name: null,
     username: null,
     userPicture: null,
+    backgroundPicture: null,
     birthDate: null,
     mainPhone: null,
     secundaryPhone: null,
@@ -48,7 +49,9 @@ export class ConfiguracaoComponent implements OnInit {
     number: null,
     complement: null,
     neighborhood: null,
-    zipCode:null
+    zipCode:null,
+    city: null,
+    state: null
   }
 
   constructor(
@@ -56,32 +59,31 @@ export class ConfiguracaoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.configService.getUserInfo().subscribe(
-      (response: Configuracao) => {
-        this.information = response;
-        this.userInfo = response;
-        // this.userContact = response;
+      this.configService.getUserInfo().subscribe(
+        (response: Configuracao) => {
+          this.information = response;
+          this.userInfo = response;
+        },
+        (err) => {
+          throw err;
+        }
+      ),
         this.configService.getAddress().subscribe(
           (response) => {
             this.userAddress = response;
-            this.configService.getContactInfo().subscribe(
-              (response) => {
-                this.userContact = response;
-              },
-              (err) => {
-                throw err;
-              }
-            )
           },
           (err) => {
             throw err;
           }
-        )
-      },
-      (err) => {
-        throw err;
-      }
-    )
+        ),
+        this.configService.getContactInfo().subscribe(
+          (response) => {
+            this.userContact = response;
+          },
+          (err) => {
+            throw err;
+          }
+        );
   }
 
   updateUserInfo(){
@@ -89,6 +91,7 @@ export class ConfiguracaoComponent implements OnInit {
       this.userInfo.name,
       this.userInfo.username,
       this.userInfo.userPicture,
+      this.userInfo.backgroundPicture,
       this.userInfo.birthDate,
       this.userInfo.mainPhone,
       this.userInfo.secundaryPhone,
@@ -156,6 +159,8 @@ export class ConfiguracaoComponent implements OnInit {
       this.userAddress.complement, 
       this.userAddress.neighborhood, 
       this.userAddress.zipCode,
+      this.userAddress.city,
+      this.userAddress.state
     ).subscribe(
       (response) => {
         return response;
