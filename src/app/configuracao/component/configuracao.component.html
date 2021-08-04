@@ -133,10 +133,11 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label class="label-select" for="fullName">{{ 'CONFIG.PRONOMES' | translate }}</label>
+                                            <label class="label-text" for="user">{{ 'CONFIG.FUNDO' | translate }}</label>
                                         </div>
+                                        <div class="col-md-6"></div>
                                     </div>
-                                    <input type="text" class="form-control" id="pronome" placeholder="Digite os pronomes">
+                                    <input [(ngModel)]="this.userInfo.backgroundPicture" type="file" accept=".jpg, .jpeg, .png" class="form-control" id="photo">
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -243,7 +244,7 @@
                                                 <div class="col-md-6">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control" id="sTate" placeholder="Digite a cidade">
+                                            <input [(ngModel)]="this.userAddress.city" type="text" class="form-control" id="sTate" placeholder="Digite a cidade">
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -253,7 +254,7 @@
                                                         for="zIp">{{ 'CONFIG.ESTADO' | translate }}</label></div>
                                                 <div class="col-md-6"></div>
                                             </div>
-                                            <input type="text" class="form-control" id="zIp" placeholder="Digite a UF">
+                                            <input [(ngModel)]="this.userAddress.state" type="text" class="form-control" id="zIp" placeholder="Digite a UF">
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
