@@ -115,7 +115,11 @@
         "CALENDARIO": "Calendário",
         "CALENDARIO-BUTTON": "Acessar",
         "COMPARTILHAR": "Compartilhar",
-        "PORTIFOLIO": "Portfólio"
+        "PORTIFOLIO": "Portfólio",
+        "SALVAR": "Salvar",
+        "FECHAR":"Fechar",
+        "DESCRIÇÃO-ITEM-PORTFOLIO": "Descrição",
+        "ADICIONAR-ITEM": "Adicionar item ao seu portfólio"
     },
     "CONFIG": {
         "SOBRE": "Sobre",
