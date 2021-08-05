@@ -104,8 +104,8 @@ export class ConfiguracaoService {
     );
   }
 
-  uploadfile(file: File) {
-    let awsResult: any = {};
+  uploadfile(file: File): string {
+    let url: string = '';
     const bucket = new S3({
       accessKeyId: 'AKIA3HSZCE6ZIDLOOE5F',
       secretAccessKey: '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',
@@ -124,10 +124,12 @@ export class ConfiguracaoService {
         return err;
       }
 
-      awsResult.url = data['Location'];
+      url += data['Location'];
       return data['Location'];
     });
 
-    return awsResult;
+
+    console.log(url);
+    return url;
   }
 }
