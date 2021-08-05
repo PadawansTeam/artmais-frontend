@@ -113,7 +113,12 @@
             "CALENDARIO": "Calendar",
             "CALENDARIO-BUTTON": "Access",
             "COMPARTILHAR": "Share",
-            "PORTIFOLIO": "Portfolio"
+            "PORTIFOLIO": "Portfolio",
+            "SALVAR": "Save",
+            "FECHAR":"Close",
+            "DESCRIÇÃO-ITEM-PORTFOLIO": "Description",
+            "ADICIONAR-ITEM": "Add item to your portfolio"
+            
         },
         "CONFIG": {
             "SOBRE":"About",

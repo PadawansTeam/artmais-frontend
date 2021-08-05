@@ -197,7 +197,16 @@ input[type='date'] {
     -moz-border-radius: 4px;
     border-radius: 4px;
     font-size: .825rem;
+}
 
-    
-    
+input[type='file']::-webkit-file-upload-button {
+	background-color: #701ec6;
+	color: #fff;
+	border-radius: 4px;
+}
+
+input[type='file']::-webkit-file-upload-button:hover {
+	background-color: white;
+	color: #701ec6;
+	border-radius: 4px;
 }
