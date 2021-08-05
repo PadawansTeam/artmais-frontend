@@ -127,7 +127,7 @@
                 <div class="col-md-1  ">
                     <ul class="plus-buttons list-inline2">
                         <li class="list-inline-item">
-                            <a href="#portfolioModal1" data-bs-toggle="modal">
+                            <a href="#ModalConfig" data-bs-toggle="modal">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </li>
@@ -180,9 +180,56 @@
                 </section>
             </div>
         </div>
-
     </div>
+     <!-- Modal Imput photo -->
+     <div class="portfolio-modal modal fade" id="ModalConfig" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content ">
+                <div class="close-modal" type="button" data-bs-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mx-auto ">
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 ">
+                                        <div class="ico">
+                                            <i class="bx bx-image bx-sm bx-tada-hover "></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
+                                        <h5 class=" c1">{{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</h5>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group ">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="label-text" for="user">{{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</label>
+                                            </div>
+                                            <div class="col-md-6"></div>
+                                            <input type="file" accept=".jpg, .jpeg, .png" class="form-control" id="photo"> 
+                                            <textarea  class="form-control2" name="" id="" cols="50" rows="6" placeholder="Digite a descrição..." maxlength="500"></textarea> 
+                                        </div>
+                                                                         
+                                    </div>
+                                    <div class="col-md-12">
+                                        
+                                    </div>
+                                </div>
 
+                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
+                                    aria-label="Fechar">{{ 'PERFIL.SALVAR' | translate }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -218,7 +265,7 @@
                                 </p>
 
                                 <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
+                                    aria-label="Fechar">{{ 'PERFIL.FECHAR' | translate }}</button>
                             </div>
                         </div>
                     </div>
@@ -257,7 +304,7 @@
                                 </p>
 
                                 <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
+                                    aria-label="Fechar">{{ 'PERFIL.FECHAR' | translate }}</button>
                             </div>
                         </div>
                     </div>
@@ -296,7 +343,7 @@
                                 </p>
 
                                 <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
+                                    aria-label="Fechar">{{ 'PERFIL.FECHAR' | translate }}</button>
                             </div>
                         </div>
                     </div>
@@ -333,7 +380,7 @@
                                     vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
                                 </p>
                                 <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
+                                    aria-label="Fechar">{{ 'PERFIL.FECHAR' | translate }}</button>
                             </div>
                         </div>
                     </div>
@@ -369,7 +416,7 @@
                                     vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
                                 </p>
                                 <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
+                                    aria-label="Fechar">{{ 'PERFIL.FECHAR' | translate }}</button>
                             </div>
                         </div>
                     </div>
@@ -405,7 +452,7 @@
                                     vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
                                 </p>
                                 <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
+                                    aria-label="Fechar">{{ 'PERFIL.FECHAR' | translate }}</button>
                             </div>
                         </div>
                     </div>
@@ -442,7 +489,7 @@
                                     vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
                                 </p>
                                 <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
+                                    aria-label="Fechar">{{ 'PERFIL.FECHAR' | translate }}</button>
                             </div>
                         </div>
                     </div>
