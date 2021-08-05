@@ -62,8 +62,16 @@ export class ConfiguracaoComponent implements OnInit {
     private datePipe: DatePipe
   ) {}
 
+  async uploadProfilePicture() {
+    const file = this.selectedProfileFiles.item(0);
+    this.urlImagem = await this.configService.uploadProfileFile(file!);
+  }
+
+  selectProfileFile(event: any) {
+    this.selectedProfileFiles = event.target.files;
+  }
+
   ngOnInit(): void {
-    this.urlImagem = '';
     this.configService.getUserInfo().subscribe(
       (response: Configuracao) => {
         this.information = response;
@@ -100,7 +108,7 @@ export class ConfiguracaoComponent implements OnInit {
       .updateUserInfo(
         this.userInfo.name,
         this.userInfo.username,
-        this.userInfo.userPicture,
+        this.urlImagem,
         this.userInfo.backgroundPicture,
         this.userInfo.birthDate,
         this.userInfo.mainPhone,
@@ -186,15 +194,5 @@ export class ConfiguracaoComponent implements OnInit {
           throw err;
         }
       );
-  }
-
-  async uploadProfilePicture() {
-    const file = this.selectedProfileFiles.item(0);
-    this.urlImagem = await this.configService.uploadProfileFile(file!);
-    console.log(this.urlImagem);
-  }
-
-  selectProfileFile(event: any) {
-    this.selectedProfileFiles = event.target.files;
   }
 }
