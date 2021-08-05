@@ -7,12 +7,12 @@ import { DatePipe } from '@angular/common';
   selector: 'app-configuracao',
   templateUrl: './configuracao.component.html',
   styleUrls: ['./configuracao.component.css'],
-  providers: [DatePipe]
+  providers: [DatePipe],
 })
 export class ConfiguracaoComponent implements OnInit {
   information!: Configuracao;
-  selectedFiles!: FileList;
-  urlImagem!: string;
+  selectedProfileFiles!: FileList;
+  urlImagem!: any;
 
   userInfo: any = {
     name: null,
@@ -52,15 +52,15 @@ export class ConfiguracaoComponent implements OnInit {
     number: null,
     complement: null,
     neighborhood: null,
-    zipCode:null,
+    zipCode: null,
     city: null,
-    state: null
-  }
+    state: null,
+  };
 
   constructor(
     public configService: ConfiguracaoService,
     private datePipe: DatePipe
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.urlImagem = '';
@@ -68,7 +68,10 @@ export class ConfiguracaoComponent implements OnInit {
       (response: Configuracao) => {
         this.information = response;
         this.userInfo = response;
-        this.userInfo.birthDate = this.datePipe.transform(this.userInfo.birthDate, 'dd/MM/yyyy');
+        this.userInfo.birthDate = this.datePipe.transform(
+          this.userInfo.birthDate,
+          'dd/MM/yyyy'
+        );
       },
       (err) => {
         throw err;
@@ -90,26 +93,28 @@ export class ConfiguracaoComponent implements OnInit {
           throw err;
         }
       );
-}
+  }
 
-  updateUserInfo(){
-    this.configService.updateUserInfo(
-      this.userInfo.name,
-      this.userInfo.username,
-      this.userInfo.userPicture,
-      this.userInfo.backgroundPicture,
-      this.userInfo.birthDate,
-      this.userInfo.mainPhone,
-      this.userInfo.secundaryPhone,
-      this.userInfo.thirdPhone
-    ).subscribe(
-      (response) => {
-        return response;
-      },
-      (err) => {
-        throw err;
-      }
-    );
+  updateUserInfo() {
+    this.configService
+      .updateUserInfo(
+        this.userInfo.name,
+        this.userInfo.username,
+        this.userInfo.userPicture,
+        this.userInfo.backgroundPicture,
+        this.userInfo.birthDate,
+        this.userInfo.mainPhone,
+        this.userInfo.secundaryPhone,
+        this.userInfo.thirdPhone
+      )
+      .subscribe(
+        (response) => {
+          return response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
   }
 
   updatePassword() {
@@ -162,32 +167,35 @@ export class ConfiguracaoComponent implements OnInit {
       );
   }
 
-  updateAddress(){
-    this.configService.updateAddress(
-      this.userAddress.street, 
-      this.userAddress.number, 
-      this.userAddress.complement, 
-      this.userAddress.neighborhood, 
-      this.userAddress.zipCode,
-      this.userAddress.city,
-      this.userAddress.state
-    ).subscribe(
-      (response) => {
-        return response;
-      },
-      (err) => {
-        throw err;
-      }
-    );
+  updateAddress() {
+    this.configService
+      .updateAddress(
+        this.userAddress.street,
+        this.userAddress.number,
+        this.userAddress.complement,
+        this.userAddress.neighborhood,
+        this.userAddress.zipCode,
+        this.userAddress.city,
+        this.userAddress.state
+      )
+      .subscribe(
+        (response) => {
+          return response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
   }
 
-  upload() {
+  uploadProfilePicture() {
     this.urlImagem = '';
-    const file = this.selectedFiles.item(0);
-    this.configService.uploadfile(file!);
+    const file = this.selectedProfileFiles.item(0);
+    this.urlImagem = this.configService.uploadProfileFile(file!);
+    console.log(this.urlImagem);
   }
 
-  selectFile(event: any) {
-    this.selectedFiles = event.target.files;
+  selectProfileFile(event: any) {
+    this.selectedProfileFiles = event.target.files;
   }
 }
