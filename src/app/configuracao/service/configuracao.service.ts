@@ -13,7 +13,7 @@ export class ConfiguracaoService {
   public artPlusURL = `${environment.apiURL}`;
   public token = localStorage.getItem('token');
 
-  FOLDER = 'profile-pictures/2/';
+  ProfileFolder = 'profile-pictures/';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -48,7 +48,16 @@ export class ConfiguracaoService {
   ): Observable<object> {
     return this.http.put<object>(
       `${this.artPlusURL}` + 'v1/User/UpdateUserInfo',
-      { name, username, userPicture, backgroundPicture, birthDate, mainPhone, secundaryPhone, thirdPhone },
+      {
+        name,
+        username,
+        userPicture,
+        backgroundPicture,
+        birthDate,
+        mainPhone,
+        secundaryPhone,
+        thirdPhone,
+      },
       this.httpOptions
     );
   }
@@ -93,7 +102,7 @@ export class ConfiguracaoService {
     number: number,
     complement: string,
     neighborhood: string,
-    zipCode:string,
+    zipCode: string,
     city: string,
     state: string
   ): Observable<object> {
@@ -104,32 +113,41 @@ export class ConfiguracaoService {
     );
   }
 
-  uploadfile(file: File): string {
-    let url: string = '';
+  async uploadProfileFile(file: File): Promise<string> {
     const bucket = new S3({
-      accessKeyId: 'AKIA3HSZCE6ZIDLOOE5F',
-      secretAccessKey: '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',
+      accessKeyId: `${environment.accessKeyId}`,
+      secretAccessKey: `${environment.secretAccessKey}`,
       region: 'us-east-1',
     });
 
     const params = {
-      Bucket: 'bucket-artmais',
-      Key: this.FOLDER + file.name,
+      Bucket: `${environment.bucket}`,
+      Key: this.ProfileFolder + file.name,
       Body: file,
       ACL: 'public-read',
     };
 
-    bucket.upload(params, function (err: any, data: any): Observable<object> {
-      if (err) {
+    const upload = bucket.upload(
+      params,
+      function (err: any, data: any): Observable<object> {
+        if (err) {
+          return err;
+        }
+
+        return data;
+      }
+    );
+
+    const promise = upload.promise();
+    const url = await promise.then(
+      function (data) {
+        return data.Location;
+      },
+      function (err) {
         return err;
       }
+    );
 
-      url += data['Location'];
-      return data['Location'];
-    });
-
-
-    console.log(url);
     return url;
   }
 }
