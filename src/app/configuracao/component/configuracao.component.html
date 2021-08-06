@@ -1,415 +1,583 @@
 <app-headerlog></app-headerlog>
 
 <div class="container">
-    <div class="main-body">
-        <div class="row">
-            <div class="col-lg-4 mt-j" data-aos="fade-up">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="account-settings d-flex flex-column">
-                            <div class="user-profile">
-                                <div class="user-avatar">
-                                    <img class="rounded-circle img-fluid mx-auto" [src]="information.userPicture">
-                                </div>
-                                <h5 class="user-name">{{information.name}}</h5>
-                            </div>
-                            <div class="about">
-                                <div class="row">
-                                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 ">
-                                        <div class="test">
-                                            <i class="bx bx-edit bx-sm bx-tada-hover "></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 ">
-                                        <h5 class="mb-2 c1 tl">{{ 'CONFIG.SOBRE' | translate }}</h5>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 mt-3">
-                                    <p>{{information.description}}</p>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="label-text" for="fullName ">{{ 'CONFIG.DESCRICAO' | translate
-                                        }}</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <textarea [(ngModel)]="this.userDescription.description" class="form-control2"
-                                        name="" id="" cols="50" rows="6" placeholder="Digite a descrição..."
-                                        maxlength="500"></textarea>
-                                </div>
-
-                                <div class="row gutters">
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
-                                        <div class="text-center">
-                                            <button (click)="updateDescription()" type="button" id="submit"
-                                                name="submit" class="submit">{{ 'CONFIG.CONFIG-BUTTONS' | translate
-                                                }}</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <hr class="my-4">
-                            <div class="row align-items-center">
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 ">
-                                    <div class="test">
-                                        <i class="bx bx-wink-smile bx-sm bx-tada-hover "></i>
-                                    </div>
-                                </div>
-                                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
-                                    <h5 class="mb-3 c1">{{ 'CONFIG.REDES-SOCIAIS' | translate }}</h5>
-                                </div>
-                                <div class="row text-center">
-                                    <div class="col-md-12">
-                                        <div class="col-md-12">
-                                            <i class="fab fa-facebook-f icon-color"></i>
-                                            <input [(ngModel)]="this.userContact.facebook" type="url"
-                                                class="form-control1" id="phone" placeholder="Facebook">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <i class="fab fa-twitter icon-color"></i>
-                                            <input [(ngModel)]="this.userContact.twitter" type="url"
-                                                class="form-control1" id="phone" placeholder="Twitter">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <i class="fab fa-instagram icon-color"></i>
-                                            <input [(ngModel)]="this.userContact.instagram" type="url"
-                                                class="form-control1" id="phone" placeholder="Instagram">
-                                        </div>
-                                        <div class="col-md-12 ">
-                                            <i class="fas fa-comment-alt icon-color"></i>
-                                            <input [(ngModel)]="this.userContact.mainPhone" type="text"
-                                                class="form-control1" id="phone" placeholder="Contato">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row gutters">
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
-                                        <div class="text-center">
-                                            <button (click)="updateContact()" type="button" id="submit" name="submit"
-                                                class="submit">{{ 'CONFIG.CONFIG-BUTTONS' | translate }}</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <div class="main-body">
+    <div class="row">
+      <div class="col-lg-4 mt-j" data-aos="fade-up">
+        <div class="card">
+          <div class="card-body">
+            <div class="account-settings d-flex flex-column">
+              <div class="user-profile">
+                <div class="user-avatar">
+                  <img
+                    class="rounded-circle img-fluid mx-auto"
+                    [src]="information.userPicture"
+                  />
                 </div>
-            </div>
-            <div class="col-lg-8 mt-j" data-aos="fade-up" data-aos-delay="200">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row gutters">
-                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 ">
-                                <div class="test">
-                                    <i class="bx bx-user bx-sm bx-tada-hover "></i>
-                                </div>
-                            </div>
-                            <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <h5 class="mb-3 c1">{{ 'CONFIG.DETALHES' | translate }}</h5>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <div class="row ">
-                                        <div class="col-md-6 ">
-                                            <label class="label-text" for="fullName ">{{ 'CONFIG.NOME' | translate
-                                                }}</label>
-                                        </div>
-                                    </div>
-                                    <input [(ngModel)]="this.userInfo.name" type="text" class="form-control"
-                                        id="fullName" placeholder="Nome">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="label-text" for="user">{{ 'CONFIG.NOME-USER' | translate
-                                                }}</label>
-                                        </div>
-                                    </div>
-                                    <input [(ngModel)]="this.userInfo.username" type="text" class="form-control"
-                                        id="user" placeholder="Nome de usuário">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="label-text" for="user">{{ 'CONFIG.FOTO' | translate }}</label>
-                                        </div>
-                                        <div class="col-md-6"></div>
-                                    </div>
-                                    <input [(ngModel)]="this.userInfo.userPicture" type="file"
-                                        accept=".jpg, .jpeg, .png" class="form-control" id="photo">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-<<<<<<< Updated upstream
-                                            <label class="label-text" for="user">{{ 'CONFIG.PRONOMES' | translate }}</label>
-=======
-                                            <label class="label-text" for="user">{{ 'CONFIG.FUNDO' | translate
-                                                }}</label>
->>>>>>> Stashed changes
-                                        </div>
-                                    </div>
-<<<<<<< Updated upstream
-                                    <input type="text" class="form-control" id="user" placeholder="Pronomes">
-=======
-                                    <input [(ngModel)]="this.userInfo.backgroundPicture" type="file"
-                                        accept=".jpg, .jpeg, .png" class="form-control" id="photo">
->>>>>>> Stashed changes
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="label-text" for="website">{{ 'CONFIG.NASCIMENTO' | translate
-                                                }}</label>
-                                        </div>
-                                    </div>
-                                    <input [(ngModel)]="this.userInfo.birthDate" type="text" max="9999-12-31"
-                                        class="form-control" id="datanasc">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="label-text" for="phone">{{ 'CONFIG.TELEFONE' | translate
-                                                }}</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="label-select" for="fullName">Exemplo: 5511984439901</label>
-                                        </div>
-                                    </div>
-                                    <input [(ngModel)]="this.userInfo.mainPhone" type="tel" class="form-control"
-                                        id="phone" placeholder="Primeiro telefone">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="label-text" for="phone">{{ 'CONFIG.TELEFONE' | translate
-                                                }}</label>
-                                        </div>
-                                        <div class="col-md-6">
-
-                                            <label class="label-select" for="fullName">Exemplo: 5511984439902</label>
-                                        </div>
-                                    </div>
-                                    <input [(ngModel)]="this.userInfo.secundaryPhone" type="tel" class="form-control"
-                                        id="phone" placeholder="Segundo telefone">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="label-text" for="phone">{{ 'CONFIG.TELEFONE' | translate
-                                                }}</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="label-select" for="fullName">Exemplo: 5511984439903</label>
-                                        </div>
-                                    </div>
-                                    <input [(ngModel)]="this.userInfo.thirdPhone" type="tel" class="form-control"
-                                        id="phone" placeholder="Terceiro telefone">
-                                </div>
-                            </div>
-                            <div class="row gutters">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
-                                    <div class="text-center">
-                                        <button (click)="updateUserInfo()" type="button" id="submit" name="submit"
-                                            class="submit">{{ 'CONFIG.CONFIG-BUTTONS' | translate }}</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h5 class="user-name">{{ information.name }}</h5>
+              </div>
+              <div class="about">
                 <div class="row">
-                    <div class="col-sm-12 " data-aos="fade-up" data-aos-delay="100">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row gutters">
-                                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 ">
-                                        <div class="test">
-                                            <i class="bx bx-map bx-sm bx-tada-hover "></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
-                                        <h5 class="mb-3 c1">{{ 'CONFIG.ENDERECO' | translate }}</h5>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label class="label-text" for="Street">{{ 'CONFIG.LOGRADOURO' |
-                                                        translate }}</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                </div>
-                                            </div>
-                                            <input [(ngModel)]="this.userAddress.street" type="name"
-                                                class="form-control" id="Street" placeholder="Digite o logradouro">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6"> <label class="label-text" for="ciTy">{{
-                                                        'CONFIG.NUMERO' | translate }}</label>
-                                                </div>
-                                                <div class="col-md-6"></div>
-                                            </div>
-                                            <input [(ngModel)]="this.userAddress.number" type="number"
-                                                class="form-control" id="ciTy" placeholder="Digite o número">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label class="label-text" for="sTate">{{ 'CONFIG.CIDADE' | translate
-                                                        }}</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                </div>
-                                            </div>
-                                            <input [(ngModel)]="this.userAddress.city" type="text" class="form-control"
-                                                id="sTate" placeholder="Digite a cidade">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6"> <label class="label-text" for="zIp">{{
-                                                        'CONFIG.ESTADO' | translate }}</label></div>
-                                                <div class="col-md-6"></div>
-                                            </div>
-                                            <input [(ngModel)]="this.userAddress.state" type="text" class="form-control"
-                                                id="zIp" placeholder="Digite a UF">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6"><label class="label-text" for="zIp">{{
-                                                        'CONFIG.BAIRRO' | translate }}</label>
-                                                </div>
-                                                <div class="col-md-6"></div>
-                                            </div>
-                                            <input [(ngModel)]="this.userAddress.neighborhood" type="text"
-                                                class="form-control" id="zIp" placeholder="Digite o bairro">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label class="label-text" for="zIp">{{ 'CONFIG.CEP' | translate
-                                                        }}</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                </div>
-                                            </div>
-                                            <input [(ngModel)]="this.userAddress.zipCode" type="text"
-                                                class="form-control" id="zIp" placeholder="Digite o CEP">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label class="label-text" for="zIp">{{ 'CONFIG.COMPLEMENTO' |
-                                                        translate }}</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                </div>
-                                            </div>
-                                            <input [(ngModel)]="this.userAddress.complement" type="text"
-                                                class="form-control" id="zIp" placeholder="Digite o Complemento">
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row gutters">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
-                                            <div class="text-center">
-                                                <button (click)="updateAddress()" type="button" id="submit"
-                                                    name="submit" class="submit">{{ 'CONFIG.CONFIG-BUTTONS' | translate
-                                                    }}</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                    <div class="test">
+                      <i class="bx bx-edit bx-sm bx-tada-hover"></i>
                     </div>
+                  </div>
+                  <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
+                    <h5 class="mb-2 c1 tl">{{ "CONFIG.SOBRE" | translate }}</h5>
+                  </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row gutters">
-                                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 ">
-                                        <div class="test">
-                                            <i class="bx bx-lock bx-sm bx-tada-hover"></i>
-                                        </div>
+                <div class="col-md-12 mt-3">
+                  <p>{{ information.description }}</p>
+                </div>
+                <div class="col-md-12">
+                  <label class="label-text" for="fullName ">{{
+                    "CONFIG.DESCRICAO" | translate
+                  }}</label>
+                </div>
+                <div class="col-md-12">
+                  <textarea
+                    [(ngModel)]="this.userDescription.description"
+                    class="form-control2"
+                    name=""
+                    id=""
+                    cols="50"
+                    rows="6"
+                    placeholder="Digite a descrição..."
+                    maxlength="500"
+                  ></textarea>
+                </div>
 
-                                    </div>
-                                    <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
-                                        <h5 class="mb-3 c1">{{ 'CONFIG.SENHA' | translate }}</h5>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                            <div class="form-group">
-                                                <label class="label-text" for="Street">{{ 'CONFIG.SENHA-ATUAL' |
-                                                    translate }}</label>
-                                                <input [(ngModel)]="this.userPass.oldPassword" type="password"
-                                                    class="form-control" id="Street" placeholder="Digite a senha">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                            <div class="form-group">
-                                                <label class="label-text" for="ciTy">{{ 'CONFIG.NOVA-SENHA' | translate
-                                                    }}</label>
-                                                <input [(ngModel)]="this.userPass.newPassword" type="password"
-                                                    class="form-control" id="ciTy" placeholder="Digite a senha">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                            <div class="form-group">
-                                                <label class="label-text" for="sTate">{{ 'CONFIG.CONFIRMA-SENHA' |
-                                                    translate }}</label>
-                                                <input [(ngModel)]="this.userPass.password" type="password"
-                                                    class="form-control" id="sTate" placeholder="Digite a senha">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row gutters">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
-                                            <div class="text-center">
-                                                <button (click)="updatePassword()" type="button" id="submit"
-                                                    name="submit" class="submit">{{ 'CONFIG.CONFIG-BUTTONS' | translate
-                                                    }}</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row gutters">
+                  <div
+                    class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3"
+                  >
+                    <div class="text-center">
+                      <button
+                        (click)="updateDescription()"
+                        type="button"
+                        id="submit"
+                        name="submit"
+                        class="submit"
+                      >
+                        {{ "CONFIG.CONFIG-BUTTONS" | translate }}
+                      </button>
                     </div>
+                  </div>
                 </div>
+              </div>
+              <hr class="my-4" />
+              <div class="row align-items-center">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                  <div class="test">
+                    <i class="bx bx-wink-smile bx-sm bx-tada-hover"></i>
+                  </div>
+                </div>
+                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
+                  <h5 class="mb-3 c1">
+                    {{ "CONFIG.REDES-SOCIAIS" | translate }}
+                  </h5>
+                </div>
+                <div class="row text-center">
+                  <div class="col-md-12">
+                    <div class="col-md-12">
+                      <i class="fab fa-facebook-f icon-color"></i>
+                      <input
+                        [(ngModel)]="this.userContact.facebook"
+                        type="url"
+                        class="form-control1"
+                        id="phone"
+                        placeholder="Facebook"
+                      />
+                    </div>
+                    <div class="col-md-12">
+                      <i class="fab fa-twitter icon-color"></i>
+                      <input
+                        [(ngModel)]="this.userContact.twitter"
+                        type="url"
+                        class="form-control1"
+                        id="phone"
+                        placeholder="Twitter"
+                      />
+                    </div>
+                    <div class="col-md-12">
+                      <i class="fab fa-instagram icon-color"></i>
+                      <input
+                        [(ngModel)]="this.userContact.instagram"
+                        type="url"
+                        class="form-control1"
+                        id="phone"
+                        placeholder="Instagram"
+                      />
+                    </div>
+                    <div class="col-md-12">
+                      <i class="fas fa-comment-alt icon-color"></i>
+                      <input
+                        [(ngModel)]="this.userContact.mainPhone"
+                        type="text"
+                        class="form-control1"
+                        id="phone"
+                        placeholder="Contato"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row gutters">
+                  <div
+                    class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3"
+                  >
+                    <div class="text-center">
+                      <button
+                        (click)="updateContact()"
+                        type="button"
+                        id="submit"
+                        name="submit"
+                        class="submit"
+                      >
+                        {{ "CONFIG.CONFIG-BUTTONS" | translate }}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="col-lg-8 mt-j" data-aos="fade-up" data-aos-delay="200">
+        <div class="card">
+          <div class="card-body">
+            <div class="row gutters">
+              <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                <div class="test">
+                  <i class="bx bx-user bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+              <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h5 class="mb-3 c1">{{ "CONFIG.DETALHES" | translate }}</h5>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="label-text" for="fullName ">{{
+                        "CONFIG.NOME" | translate
+                      }}</label>
+                    </div>
+                  </div>
+                  <input
+                    [(ngModel)]="this.userInfo.name"
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    placeholder="Nome"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="label-text" for="user">{{
+                        "CONFIG.NOME-USER" | translate
+                      }}</label>
+                    </div>
+                  </div>
+                  <input
+                    [(ngModel)]="this.userInfo.username"
+                    type="text"
+                    class="form-control"
+                    id="user"
+                    placeholder="Nome de usuário"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="label-text" for="user">{{
+                        "CONFIG.FOTO" | translate
+                      }}</label>
+                    </div>
+                    <div class="col-md-6"></div>
+                  </div>
+                  <input
+                    (change)="selectProfileFile($event)"
+                    type="file"
+                    accept=".jpg, .jpeg, .png"
+                    class="form-control"
+                    id="photo"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="label-text" for="website">{{
+                        "CONFIG.NASCIMENTO" | translate
+                      }}</label>
+                    </div>
+                  </div>
+                  <input
+                    [(ngModel)]="this.userInfo.birthDate"
+                    type="text"
+                    max="9999-12-31"
+                    class="form-control"
+                    id="datanasc"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="label-text" for="phone">{{
+                        "CONFIG.TELEFONE" | translate
+                      }}</label>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="label-select" for="fullName"
+                        >Exemplo: 5511984439901</label
+                      >
+                    </div>
+                  </div>
+                  <input
+                    [(ngModel)]="this.userInfo.mainPhone"
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="Primeiro telefone"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="label-text" for="phone">{{
+                        "CONFIG.TELEFONE" | translate
+                      }}</label>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="label-select" for="fullName"
+                        >Exemplo: 5511984439902</label
+                      >
+                    </div>
+                  </div>
+                  <input
+                    [(ngModel)]="this.userInfo.secundaryPhone"
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="Segundo telefone"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="label-text" for="phone">{{
+                        "CONFIG.TELEFONE" | translate
+                      }}</label>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="label-select" for="fullName"
+                        >Exemplo: 5511984439903</label
+                      >
+                    </div>
+                  </div>
+                  <input
+                    [(ngModel)]="this.userInfo.thirdPhone"
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="Terceiro telefone"
+                  />
+                </div>
+              </div>
+              <div class="row gutters">
+                <div
+                  class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3"
+                >
+                  <div class="text-center">
+                    <button
+                      (click)="uploadProfilePicture()"
+                      (click)="updateUserInfo()"
+                      type="button"
+                      id="submit"
+                      name="submit"
+                      class="submit"
+                    >
+                      {{ "CONFIG.CONFIG-BUTTONS" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <div class="card-body">
+                <div class="row gutters">
+                  <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                    <div class="test">
+                      <i class="bx bx-map bx-sm bx-tada-hover"></i>
+                    </div>
+                  </div>
+                  <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
+                    <h5 class="mb-3 c1">{{ "CONFIG.ENDERECO" | translate }}</h5>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="label-text" for="Street">{{
+                            "CONFIG.LOGRADOURO" | translate
+                          }}</label>
+                        </div>
+                        <div class="col-md-6"></div>
+                      </div>
+                      <input
+                        [(ngModel)]="this.userAddress.street"
+                        type="name"
+                        class="form-control"
+                        id="Street"
+                        placeholder="Digite o logradouro"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="label-text" for="ciTy">{{
+                            "CONFIG.NUMERO" | translate
+                          }}</label>
+                        </div>
+                        <div class="col-md-6"></div>
+                      </div>
+                      <input
+                        [(ngModel)]="this.userAddress.number"
+                        type="number"
+                        class="form-control"
+                        id="ciTy"
+                        placeholder="Digite o número"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="label-text" for="sTate">{{
+                            "CONFIG.CIDADE" | translate
+                          }}</label>
+                        </div>
+                        <div class="col-md-6"></div>
+                      </div>
+                      <input
+                        [(ngModel)]="this.userAddress.city"
+                        type="text"
+                        class="form-control"
+                        id="sTate"
+                        placeholder="Digite a cidade"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="label-text" for="zIp">{{
+                            "CONFIG.ESTADO" | translate
+                          }}</label>
+                        </div>
+                        <div class="col-md-6"></div>
+                      </div>
+                      <input
+                        [(ngModel)]="this.userAddress.state"
+                        type="text"
+                        class="form-control"
+                        id="zIp"
+                        placeholder="Digite a UF"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="label-text" for="zIp">{{
+                            "CONFIG.BAIRRO" | translate
+                          }}</label>
+                        </div>
+                        <div class="col-md-6"></div>
+                      </div>
+                      <input
+                        [(ngModel)]="this.userAddress.neighborhood"
+                        type="text"
+                        class="form-control"
+                        id="zIp"
+                        placeholder="Digite o bairro"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="label-text" for="zIp">{{
+                            "CONFIG.CEP" | translate
+                          }}</label>
+                        </div>
+                        <div class="col-md-6"></div>
+                      </div>
+                      <input
+                        [(ngModel)]="this.userAddress.zipCode"
+                        type="text"
+                        class="form-control"
+                        id="zIp"
+                        placeholder="Digite o CEP"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="label-text" for="zIp">{{
+                            "CONFIG.COMPLEMENTO" | translate
+                          }}</label>
+                        </div>
+                        <div class="col-md-6"></div>
+                      </div>
+                      <input
+                        [(ngModel)]="this.userAddress.complement"
+                        type="text"
+                        class="form-control"
+                        id="zIp"
+                        placeholder="Digite o Complemento"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row gutters">
+                    <div
+                      class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3"
+                    >
+                      <div class="text-center">
+                        <button
+                          (click)="updateAddress()"
+                          type="button"
+                          id="submit"
+                          name="submit"
+                          class="submit"
+                        >
+                          {{ "CONFIG.CONFIG-BUTTONS" | translate }}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <div class="card-body">
+                <div class="row gutters">
+                  <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                    <div class="test">
+                      <i class="bx bx-lock bx-sm bx-tada-hover"></i>
+                    </div>
+                  </div>
+                  <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
+                    <h5 class="mb-3 c1">{{ "CONFIG.SENHA" | translate }}</h5>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      <div class="form-group">
+                        <label class="label-text" for="Street">{{
+                          "CONFIG.SENHA-ATUAL" | translate
+                        }}</label>
+                        <input
+                          [(ngModel)]="this.userPass.oldPassword"
+                          type="password"
+                          class="form-control"
+                          id="Street"
+                          placeholder="Digite a senha"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      <div class="form-group">
+                        <label class="label-text" for="ciTy">{{
+                          "CONFIG.NOVA-SENHA" | translate
+                        }}</label>
+                        <input
+                          [(ngModel)]="this.userPass.newPassword"
+                          type="password"
+                          class="form-control"
+                          id="ciTy"
+                          placeholder="Digite a senha"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      <div class="form-group">
+                        <label class="label-text" for="sTate">{{
+                          "CONFIG.CONFIRMA-SENHA" | translate
+                        }}</label>
+                        <input
+                          [(ngModel)]="this.userPass.password"
+                          type="password"
+                          class="form-control"
+                          id="sTate"
+                          placeholder="Digite a senha"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row gutters">
+                    <div
+                      class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3"
+                    >
+                      <div class="text-center">
+                        <button
+                          (click)="updatePassword()"
+                          type="button"
+                          id="submit"
+                          name="submit"
+                          class="submit"
+                        >
+                          {{ "CONFIG.CONFIG-BUTTONS" | translate }}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <app-footer></app-footer>
