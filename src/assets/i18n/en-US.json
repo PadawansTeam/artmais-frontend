@@ -113,7 +113,12 @@
             "CALENDARIO": "Calendar",
             "CALENDARIO-BUTTON": "Access",
             "COMPARTILHAR": "Share",
-            "PORTIFOLIO": "Portfolio"
+            "PORTIFOLIO": "Portfolio",
+            "SALVAR": "Save",
+            "FECHAR":"Close",
+            "DESCRIÇÃO-ITEM-PORTFOLIO": "Description",
+            "ADICIONAR-ITEM": "Add item to your portfolio"
+            
         },
         "CONFIG": {
             "SOBRE":"About",
@@ -131,8 +136,8 @@
             "FOTO":"Profile Picture:",
             "FOTO-BUTTON":"Choose File",
             "FOTO-BOX":"No file selected",
-            "FUNDO":"Background Picture:",
-            "FUNDO-BOX":"No file chosen",
+            "PRONOMES":"Pronouns:",
+            "PRONOMES-BOX":"Enter the pronouns",
             "NASCIMENTO":"Date of Birth:",
             "TELEFONE":"Phones:",
             "PRIMEIRO-TELEFONE-BOX":"First phone",
