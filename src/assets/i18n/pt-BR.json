@@ -115,7 +115,11 @@
         "CALENDARIO": "Calendário",
         "CALENDARIO-BUTTON": "Acessar",
         "COMPARTILHAR": "Compartilhar",
-        "PORTIFOLIO": "Portfólio"
+        "PORTIFOLIO": "Portfólio",
+        "SALVAR": "Salvar",
+        "FECHAR":"Fechar",
+        "DESCRIÇÃO-ITEM-PORTFOLIO": "Descrição",
+        "ADICIONAR-ITEM": "Adicionar item ao seu portfólio"
     },
     "CONFIG": {
         "SOBRE": "Sobre",
@@ -131,8 +135,8 @@
         "FOTO": "Foto de Perfil:",
         "FOTO-BUTTON": "Escolher Arquivo",
         "FOTO-BOX": "Nenhum arquivo selecionado",
-        "FUNDO": "Imagem de Fundo:",
-        "FUNDO-BOX": "Nenhum arquivo selecionado",
+        "PRONOMES": "Pronomes:",
+        "PRONOMES-BOX": "Digite os pronomes",
         "NASCIMENTO": "Data de Nascimento:",
         "TELEFONE": "Telefone:",
         "PRIMEIRO-TELEFONE-BOX": "Primeiro telefone",
@@ -149,7 +153,7 @@
         "ESTADO-BOX": "Digite a UF",
         "BAIRRO": "Bairro:",
         "BAIRRO-BOX": "Digite o bairro",
-        "CEP": "CEP:",
+        "CEP": "CEP",
         "CEP-BOX": "Digite o CEP",
         "COMPLEMENTO": "Complemento:",
         "COMPLEMENTO-BOX": "Digite o complemento",

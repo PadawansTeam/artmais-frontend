@@ -167,7 +167,6 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 	width: 1px;
 	height: 50px;
 	margin-left: 35px;
-
 	transform: rotate(45deg);
 	background-color: #631D76;
 }
@@ -193,11 +192,11 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 .getstarted {
 	background: linear-gradient(to right, #9558d5, #701ec6);
 	padding: 8px 20px;
-	margin-left: 30px;
 	border-radius: 4px;
 	font-weight: 600;
 	color: #fff;
 	border: 0;
+	margin-top: 2rem;
 }
 
 .getstarted:hover {
@@ -206,14 +205,11 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 }
 
 .img-perfil {
-
 	width: 200px;
 	height: 200px;
 	border: 7px solid white;
 	margin-top: 4rem;
 	display: block;
-
-
 }
 
 .rounded-circle {
@@ -221,9 +217,8 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 	margin-right: auto;
 	vertical-align: middle;
 	z-index: 1;
-    margin-top: 9rem;
-    border-radius: 50%;
-
+	margin-top: 9rem;
+	border-radius: 50%;
 }
 
 div.img-responsive {
@@ -238,7 +233,7 @@ div.img-responsive {
 	}
 }
 
-.icon-color{
+.icon-color {
 	font-size: 15px;
 	line-height: 40px;
 	width: 40px;
@@ -248,22 +243,22 @@ div.img-responsive {
 	border-radius: 100%;
 	background-color: #701ec6;
 }
-.btn-calendar{
+
+.btn-calendar {
 	background: linear-gradient(to right, #9558d5, #701ec6);
 	padding: 8px 20px;
-
 	border-radius: 4px;
 	font-weight: 600;
 	color: #fff;
 	border: 0;
 }
 
-.btn-calendar:hover{
+.btn-calendar:hover {
 	background: linear-gradient(to left, #9558d5, #701ec6);
 	color: white !important;
 }
 
-.text1{
+.text1 {
 	font-size: 0.8rem;
 }
 
@@ -276,7 +271,8 @@ div.img-responsive {
 	border-radius: 100%;
 	outline: none;
 }
-.like:hover  {
+
+.like:hover {
 	font-size: 40px;
 	line-height: 40px;
 	display: block;
@@ -285,7 +281,8 @@ div.img-responsive {
 	border-radius: 100%;
 	outline: none;
 }
-.like:active{
+
+.like:active {
 	font-size: 40px;
 	line-height: 40px;
 	display: block;
@@ -293,5 +290,65 @@ div.img-responsive {
 	color: #EE2A46;
 	border-radius: 100%;
 	outline: none;
-	transform: rotate(45deg); /* Equal to rotateZ(45deg) */
+	transform: rotate(45deg);
+	/* Equal to rotateZ(45deg) */
+}
+
+.ico {
+	width: 35px;
+	height: 35px;
+	transition: all 0.3s;
+	color: white;
+	border-radius: 50%;
+	background-color: #701ec6;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.form-control2 {
+	margin-top: 2rem;
+	border: 1px solid #701ec6;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-size: .825rem;
+}
+
+.form-control {
+	border: 1px solid #701ec6;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-size: .825rem;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+.c1 {
+	color: #701ec6;
+	text-align: left;
+	align-items: center;
+}
+
+.label-text {
+	font-size: 14px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+	margin-top: 1rem;
+}
+
+input[type='file']::-webkit-file-upload-button {
+	background-color: #701ec6;
+	color: #fff;
+	border-radius: 4px;
+}
+
+input[type='file']::-webkit-file-upload-button:hover {
+	background-color: white;
+	color: #701ec6;
+	border-radius: 4px;
 }
