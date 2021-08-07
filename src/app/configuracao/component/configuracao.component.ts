@@ -62,15 +62,6 @@ export class ConfiguracaoComponent implements OnInit {
     private datePipe: DatePipe
   ) {}
 
-  async uploadProfilePicture() {
-    const file = this.selectedProfileFiles.item(0);
-    this.urlImagem = await this.configService.uploadProfileFile(file!);
-  }
-
-  selectProfileFile(event: any) {
-    this.selectedProfileFiles = event.target.files;
-  }
-
   ngOnInit(): void {
     this.configService.getUserInfo().subscribe(
       (response: Configuracao) => {
@@ -96,28 +87,6 @@ export class ConfiguracaoComponent implements OnInit {
       this.configService.getContactInfo().subscribe(
         (response) => {
           this.userContact = response;
-        },
-        (err) => {
-          throw err;
-        }
-      );
-  }
-
-  updateUserInfo() {
-    this.configService
-      .updateUserInfo(
-        this.userInfo.name,
-        this.userInfo.username,
-        this.urlImagem,
-        this.userInfo.backgroundPicture,
-        this.userInfo.birthDate,
-        this.userInfo.mainPhone,
-        this.userInfo.secundaryPhone,
-        this.userInfo.thirdPhone
-      )
-      .subscribe(
-        (response) => {
-          return response;
         },
         (err) => {
           throw err;
@@ -194,5 +163,33 @@ export class ConfiguracaoComponent implements OnInit {
           throw err;
         }
       );
+  }
+
+  async uploadProfile() {
+    const file = this.selectedProfileFiles.item(0);
+    this.urlImagem = await this.configService.uploadProfileFile(file!);
+    this.configService
+      .updateUserInfo(
+        this.userInfo.name,
+        this.userInfo.username,
+        this.urlImagem,
+        this.userInfo.backgroundPicture,
+        this.userInfo.birthDate,
+        this.userInfo.mainPhone,
+        this.userInfo.secundaryPhone,
+        this.userInfo.thirdPhone
+      )
+      .subscribe(
+        (response) => {
+          return response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
+  }
+
+  selectProfileFile(event: any) {
+    this.selectedProfileFiles = event.target.files;
   }
 }
