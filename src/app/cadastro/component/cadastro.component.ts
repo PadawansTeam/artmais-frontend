@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from '../service/cadastro.service';
 import { Router } from '@angular/router';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro',
@@ -28,18 +29,38 @@ export class CadastroComponent implements OnInit {
   isArtist = false;
   isClient = false;
   invalidField = false;
+  formCadastro!: FormGroup;
 
   constructor(
     private cadastroService: CadastroService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
+    this.formCadastro = this.formBuilder.group({
+      name: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$')
+      ])),
+      username: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9.\-_$@*!]{3,30}$')
+      ])),
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}')
+      ])),
+      password: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
+      ])),
+    });    
     this.cadastroService.getAll().subscribe(
       (response) => {
         this.arraySelect = response;
       },
-    )
+    );
   }
 
   public checkIsClient() {

@@ -13,7 +13,8 @@
         "BOTAO": "Cadastrar",
         "ARTISTA": "Sou artista",
         "CLIENTE": "Não sou artista",
-        "ERRO": "Campos obrigatórios não foram preenchidos. Por favor, tente novamente!"
+        "ERRO": "Campos obrigatórios não foram preenchidos. Por favor, tente novamente!",
+        "INVALIDO": "Campo inválido"
     },
     "ENTRAR": {
         "ENTRAR": "Entrar",
@@ -21,7 +22,8 @@
         "SENHA": "Senha",
         "BOTAO": "Entrar",
         "ERRO": "E-mail ou senha errados. Por favor, tente novamente!",
-        "ESQUECEU": "Esqueceu sua senha?"
+        "ESQUECEU": "Esqueceu sua senha?",
+        "INVALIDO": "Campo inválido"
     },
     "MENU": {
         "HOME": "Home",
@@ -162,7 +164,8 @@
         "SENHA-BOX": "Digite a senha",
         "NOVA-SENHA": "Nova Senha",
         "CONFIRMA-SENHA": "Confirmar Nova Senha",
-        "CONFIG-BUTTONS": "Salvar"
+        "CONFIG-BUTTONS": "Salvar",
+        "INVALIDO": "Campo inválido"
     },
     "PRIVACIDADE": {
         "TITULO": "Acordo de Privacidade e Segurança ",

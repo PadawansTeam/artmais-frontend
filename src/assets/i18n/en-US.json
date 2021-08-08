@@ -13,7 +13,8 @@
         "BOTAO": "Sign up",
         "ARTISTA": "I'm an artist",
         "CLIENTE": "I'm not an artist",
-        "ERRO": "Required fields were not filled. Please, try again!"
+        "ERRO": "Required fields were not filled. Please, try again!",
+        "INVALIDO": "Invalid field"
     },
     "ENTRAR": {
         "ENTRAR": "Sign In",
@@ -21,7 +22,8 @@
         "SENHA": "Password",
         "BOTAO": "Sign in",
         "ERRO": "E-mail or password are wrong. Please try again!",
-        "ESQUECEU": "Forgot your password?"
+        "ESQUECEU": "Forgot your password?",
+        "INVALIDO": "Invalid field"
     },
     "MENU": {
         "HOME": "Home",
@@ -124,10 +126,8 @@
             "SOBRE":"About",
             "DESCRICAO":"Description:",
             "DESCRICAO-BOX":"Enter the description...",
-    
             "REDES-SOCIAIS":"Social Networks",
             "CONTATO-PESSOAL":"Contact",
-    
             "DETALHES":"Details",
             "NOME":"Name:",
             "NOME-BOX":"Name",
@@ -143,7 +143,6 @@
             "PRIMEIRO-TELEFONE-BOX":"First phone",
             "SEGUNDO-TELEFONE-BOX":"Second phone",
             "TERCEIRO-TELEFONE-BOX":"Third phone",
-    
             "ENDERECO":"Address",
             "LOGRADOURO":"Street:",
             "LOGRADOURO-BOX":"Enter the street",
@@ -159,13 +158,13 @@
             "CEP-BOX":"Enter Zip/Postal Code",
             "COMPLEMENTO":"Complement:",
             "COMPLEMENTO-BOX":"Enter the complement",
-    
             "SENHA":"Password",
             "SENHA-ATUAL":"Current Password",
             "SENHA-BOX":"Enter the password",
             "NOVA-SENHA":"New password",
             "CONFIRMA-SENHA":"Confirm New password",
-            "CONFIG-BUTTONS" :"Save"
+            "CONFIG-BUTTONS" :"Save",
+            "INVALIDO": "Invalid field"
         },
         "PRIVACIDADE": {
             "TITULO": "Privacy and Security Agreement",
