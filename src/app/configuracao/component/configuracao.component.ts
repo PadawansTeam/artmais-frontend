@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Configuracao } from '../service/configuracao';
 import { ConfiguracaoService } from '../service/configuracao.service';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-configuracao',
   templateUrl: './configuracao.component.html',
   styleUrls: ['./configuracao.component.css'],
-  providers: [DatePipe],
 })
 export class ConfiguracaoComponent implements OnInit {
   information!: Configuracao;
-  selectedProfileFiles!: FileList;
+  selectedProfileFiles: FileList | undefined;
   urlImagem!: any;
 
   userInfo: any = {
@@ -57,20 +55,13 @@ export class ConfiguracaoComponent implements OnInit {
     state: null,
   };
 
-  constructor(
-    public configService: ConfiguracaoService,
-    private datePipe: DatePipe
-  ) {}
+  constructor(public configService: ConfiguracaoService) {}
 
   ngOnInit(): void {
     this.configService.getUserInfo().subscribe(
       (response: Configuracao) => {
         this.information = response;
         this.userInfo = response;
-        this.userInfo.birthDate = this.datePipe.transform(
-          this.userInfo.birthDate,
-          'dd/MM/yyyy'
-        );
       },
       (err) => {
         throw err;
@@ -166,8 +157,9 @@ export class ConfiguracaoComponent implements OnInit {
   }
 
   async uploadProfile() {
-    const file = this.selectedProfileFiles.item(0);
-    this.urlImagem = await this.configService.uploadProfileFile(file!);
+    const file = this.selectedProfileFiles?.item(0);
+    if (file == undefined) this.urlImagem = this.userInfo.userPicture;
+    else this.urlImagem = await this.configService.uploadProfileFile(file!);
     this.configService
       .updateUserInfo(
         this.userInfo.name,
