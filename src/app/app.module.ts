@@ -75,7 +75,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     DashboardModule,
     InteresseModule,
     ConfiguracaoModule,
-    ArtistaModule
+    ArtistaModule,
+    UsuariosModule
   ],
   providers: [
     TranslateService, 
