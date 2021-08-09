@@ -68,7 +68,8 @@
                             {{ 'PERFIL.ENDERECO' | translate }}
                         </div>
                         <div class="row text1">
-                            <div class="col-md-1  col-md-2 text-right fw-bold text-muted">{{ 'PERFIL.RUA' | translate }}</div>
+                            <div class="col-md-1  col-md-2 text-right fw-bold text-muted">{{ 'PERFIL.RUA' | translate }}
+                            </div>
                             <div class="col-md-7 text-muted ">{{profile.street}}</div>
                             <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.NUMERO' | translate }}</div>
                             <div class="col-md-1 text-right text-muted">{{profile.number}}</div>
@@ -79,7 +80,7 @@
                             <div class="col-md-1 text-right fw-bold text-muted">{{ 'PERFIL.CEP' | translate }}</div>
                             <div class="col-md-4 text-right text-muted">{{profile.zipCode}}</div>
                         </div>
-                        
+
                     </div>
                     <div class="bg-light col-md-3 d-block text-center">
                         <i class="fa fa-calendar icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
@@ -87,7 +88,8 @@
                         <div class="bg-light col-md-12 d-block text-center">
                             <br>
                             <button class="getstarted" type="button" class="btn-calendar" aria-label="Acessar"
-                                href="#ModalCalendar" data-bs-toggle="modal">{{ 'PERFIL.CALENDARIO-BUTTON' | translate }}</button>
+                                href="#ModalCalendar"
+                                data-bs-toggle="modal">{{ 'PERFIL.CALENDARIO-BUTTON' | translate }}</button>
                         </div>
                     </div>
                     <div class="bg-light col-md-3 d-block text-center">
@@ -116,7 +118,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class=" row py-4 px-4">
@@ -181,8 +183,8 @@
             </div>
         </div>
     </div>
-     <!-- Modal Imput photo -->
-     <div class="portfolio-modal modal fade" id="ModalConfig" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Modal Imput photo -->
+    <div class="portfolio-modal modal fade" id="ModalConfig" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content ">
                 <div class="close-modal" type="button" data-bs-dismiss="modal">
@@ -208,20 +210,24 @@
                                     <div class="form-group ">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label class="label-text" for="user">{{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</label>
+                                                <label class="label-text"
+                                                    for="user">{{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</label>
                                             </div>
                                             <div class="col-md-6"></div>
-                                            <input type="file" accept=".jpg, .jpeg, .png" class="form-control" id="photo"> 
-                                            <textarea  class="form-control2" name="" id="" cols="50" rows="6" placeholder="Digite a descrição..." maxlength="500"></textarea> 
+                                            <input (change)="selectPortfolioFile($event)" type="file"
+                                                accept=".jpg, .jpeg, .png" class="form-control" id="photo">
+                                            <textarea class="form-control2" name="" id="" cols="50" rows="6"
+                                                placeholder="Digite a descrição..." maxlength="500"></textarea>
                                         </div>
-                                                                         
+
                                     </div>
                                     <div class="col-md-12">
-                                        
+
                                     </div>
                                 </div>
 
-                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
+                                <button (click)="insertPortfolioFile()" class="getstarted" type="button"
+                                    class="getstarted" data-bs-dismiss="modal"
                                     aria-label="Fechar">{{ 'PERFIL.SALVAR' | translate }}</button>
                             </div>
                         </div>
@@ -247,11 +253,11 @@
                                 <img class="img-fluid d-block mx-auto"
                                     src="https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                                     alt="">
-                                    <div class="row ">
-                                        <div class="col-md-12 like">
-                                            <i class="fab fa-gratipay"></i>
-                                        </div>
+                                <div class="row ">
+                                    <div class="col-md-12 like">
+                                        <i class="fab fa-gratipay"></i>
                                     </div>
+                                </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
                                     lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
                                     sed,
