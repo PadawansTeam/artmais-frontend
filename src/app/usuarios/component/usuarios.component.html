@@ -14,7 +14,7 @@
     <div class="friend-list">
       <div class="row">
         <div *ngFor="let usuario of usuarios" class="col-md-2 col-sm-6">
-          <div class="friend-card">
+          <div class="friend-card" (click)="getPerfilById(usuario.userId)">
             <div class="img-responsive cover">
               <img [src]="usuario.backgroundPicture" alt="profile-cover" class="img-responsive cover">
             </div>
