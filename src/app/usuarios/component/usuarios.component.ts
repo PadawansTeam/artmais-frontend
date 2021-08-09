@@ -18,7 +18,7 @@ export class UsuariosComponent implements OnInit {
   ngOnInit() {
     this.recommendationService.recomentationUsers().subscribe(
       (response)=>{
-        console.log(response)
+        this.usuarios = response as Recommendation[];
       },
       err=> console.log(err)
     )
