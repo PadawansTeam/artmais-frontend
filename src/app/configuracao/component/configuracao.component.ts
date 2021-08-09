@@ -102,15 +102,15 @@ export class ConfiguracaoComponent implements OnInit {
         ])),
         phone: new FormControl('', Validators.compose([
           Validators.required,
-          Validators.pattern('^\S*(\d{13})\S*$')
+          Validators.pattern('^[0-9]{13}$')
         ])),
         secondPhone: new FormControl('', Validators.compose([
           Validators.required,
-          Validators.pattern('^\S*(\d{13})\S*$')
+          Validators.pattern('^[0-9]{13}$')
         ])),
         thirdPhone: new FormControl('', Validators.compose([
           Validators.required,
-          Validators.pattern('^\S*(\d{13})\S*$')
+          Validators.pattern('^[0-9]{13}$')
         ])),
         password: new FormControl('', Validators.compose([
           Validators.required,

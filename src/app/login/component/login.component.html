@@ -27,7 +27,6 @@
                   </div>
                   <input [(ngModel)]="this.form.password" formControlName="password" name="password" class="un form-control" type="password" align="center" placeholder="{{ 'ENTRAR.SENHA' | translate }}" />
                 </div>    
-                <p *ngIf="formLogin.get('password')!.valid" class="error" align="center">{{ "ENTRAR.INVALIDO" | translate }}</p>            
               </form>
             </div>
             <div class="row">

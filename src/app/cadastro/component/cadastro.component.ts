@@ -38,6 +38,11 @@ export class CadastroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.cadastroService.getAll().subscribe(
+      (response) => {
+        this.arraySelect = response;
+      },
+    );
     this.formCadastro = this.formBuilder.group({
       name: new FormControl('', Validators.compose([
         Validators.required,
@@ -56,11 +61,6 @@ export class CadastroComponent implements OnInit {
         Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
       ])),
     });    
-    this.cadastroService.getAll().subscribe(
-      (response) => {
-        this.arraySelect = response;
-      },
-    );
   }
 
   public checkIsClient() {
