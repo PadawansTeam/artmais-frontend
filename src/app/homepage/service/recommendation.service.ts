@@ -15,19 +15,19 @@ export class RecommendationService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getRecommendations(): Observable<any>{
+  getRecommendations(): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/Recomendation', this.httpOptions)
   }
 
   visitedProfiles(
     visitedUserId: number
   ): Observable<object> {
-    return this.http.post<object>(`${this.artPlusURL}` + 'v1/ProfileAccess/' + visitedUserId, this.httpOptions);
+    return this.http.post(this.artPlusURL + 'v1/ProfileAccess/' + visitedUserId, {}, this.httpOptions);
   }
 
-  recomentationUsers(){
+  recomentationUsers(): Observable<object> {
     return this.http.get(this.artPlusURL + 'v1/Recomendation/users', this.httpOptions)
   }
 }
