@@ -30,6 +30,7 @@
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "@popperjs/core": "^2.9.2",
+    "angularx-social-login": "^4.0.1",
     "aos": "^3.0.0-beta.6",
     "aws-sdk": "^2.959.0",
     "bootstrap": "^5.0.2",

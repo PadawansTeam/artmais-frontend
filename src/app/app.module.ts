@@ -36,7 +36,9 @@ import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
 import { ConfiguracaoService } from './configuracao/service/configuracao.service';
 import { UsuariosComponent } from './usuarios/component/usuarios.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -52,6 +54,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    SocialLoginModule,
     CommonModule,
     FormsModule,
     TranslateModule.forRoot({
@@ -86,7 +90,21 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     InteresseService, 
     PerfilService, 
     ArtistaService,
-    ConfiguracaoService
+    ConfiguracaoService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '891131493527-nqi3qkvomv8j9hio1vanpq4qkp6dvmoa.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent],
 })
