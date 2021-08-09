@@ -1,26 +1,18 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { UsuariosComponent } from './component/usuarios.component';
 import { HttpClient } from '@angular/common/http';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { SelectModule } from '../select/select.module';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpLoaderFactory } from '../app.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
-import { UsuariosComponent } from './component/usuarios.component';
-
-
-
-export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
-}
-
+import { SelectModule } from '../select/select.module';
 
 @NgModule({
-  declarations: [
-    UsuariosComponent
-  ],
   imports: [
-    BrowserModule,
+    CommonModule,
+    HeaderlogModule,
+    FooterModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
@@ -28,11 +20,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           deps: [HttpClient]
       }
   }),
-    SelectModule,
-    HeaderlogModule,
-    FooterModule
+    SelectModule
   ],
-  providers: [ TranslateService ],
-  bootstrap: []
+  declarations: [UsuariosComponent]
 })
 export class UsuariosModule { }

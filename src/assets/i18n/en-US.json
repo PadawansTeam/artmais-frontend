@@ -122,9 +122,10 @@
         "ADICIONAR-ITEM": "Add item to your portfolio"
         
     },
-    "PERFIS":{
-        "TITULO": "The ART+ Profiles",
-        "SUBTITULO": "Here are a few more profiles that may interest you! See more of our artist's network and apreciate their work!"
+    "USUARIOS": {
+        "TITULO": "Users",
+        "TEXTO": "See all platform users and network!"
+
     },
     "CONFIG": {
         "SOBRE":"About",
