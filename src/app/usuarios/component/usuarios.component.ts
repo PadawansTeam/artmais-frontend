@@ -22,6 +22,5 @@ export class UsuariosComponent implements OnInit {
       },
       err=> console.log(err)
     )
-  }
 
 }
