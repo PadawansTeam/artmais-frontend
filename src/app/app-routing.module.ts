@@ -11,6 +11,7 @@ import { InicioComponent } from './inicio/component/inicio.component';
 import { InteresseComponent } from './interesse/component/interesse.component';
 import { LoginComponent } from './login/component/login.component';
 import { PerfilComponent } from './perfil/component/perfil.component';
+import { PerfisAllComponent } from './perfis-all/component/perfis-all.component';
 import { PlanosComponent } from './planos/componet/planos.component';
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'configuracao', component: ConfiguracaoComponent },
   { path: 'interesse', component: InteresseComponent },
+  { path: 'perfis', component: PerfisAllComponent },
   { path: 'artista/:id', component: ArtistaComponent }
 ];
 

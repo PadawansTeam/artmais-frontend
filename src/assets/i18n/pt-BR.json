@@ -30,7 +30,8 @@
         "EQUIPE": "Equipe",
         "CONTATO": "Contato",
         "CADASTRO": "Cadastre-se",
-        "ENTRAR": "Entrar"
+        "ENTRAR": "Entrar",
+        "PERFIS": "Perfis"
     },
 
     "HEADER": {
@@ -120,6 +121,10 @@
         "FECHAR":"Fechar",
         "DESCRIÇÃO-ITEM-PORTFOLIO": "Descrição",
         "ADICIONAR-ITEM": "Adicionar item ao seu portfólio"
+    },
+    "PERFIS":{
+        "TITULO": "Os Perfis ART+",
+        "SUBTITULO": "Aqui estão mais alguns perfis que possam te interessar! Conheça a nossa rede de artistas e aprecie seus trabalhos!"
     },
     "CONFIG": {
         "SOBRE": "Sobre",
