@@ -26,4 +26,8 @@ export class RecommendationService {
   ): Observable<object> {
     return this.http.post<object>(`${this.artPlusURL}` + 'v1/ProfileAccess/' + visitedUserId, this.httpOptions);
   }
+
+  recomentationUsers(){
+    return this.http.get(this.artPlusURL + 'v1/Recomendation/users', this.httpOptions)
+  }
 }

@@ -11,7 +11,6 @@ import { InicioComponent } from './inicio/component/inicio.component';
 import { InteresseComponent } from './interesse/component/interesse.component';
 import { LoginComponent } from './login/component/login.component';
 import { PerfilComponent } from './perfil/component/perfil.component';
-import { PerfisAllComponent } from './perfis-all/component/perfis-all.component';
 import { PlanosComponent } from './planos/componet/planos.component';
 import { UsuariosComponent } from './usuarios/component/usuarios.component';
 

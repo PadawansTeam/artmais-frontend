@@ -123,9 +123,10 @@
         "DESCRIÇÃO-ITEM-PORTFOLIO": "Descrição",
         "ADICIONAR-ITEM": "Adicionar item ao seu portfólio"
     },
-    "PERFIS":{
-        "TITULO": "Os Perfis ART+",
-        "SUBTITULO": "Aqui estão mais alguns perfis que possam te interessar! Conheça a nossa rede de artistas e aprecie seus trabalhos!"
+    "USUARIOS": {
+        "TITULO": "Usuários",
+        "TEXTO": "Veja todos os usuários da plataforma e faça seu networking!"
+
     },
     "CONFIG": {
         "SOBRE": "Sobre",
