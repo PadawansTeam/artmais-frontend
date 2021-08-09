@@ -35,6 +35,7 @@ import { InteresseService } from './interesse/service/interesse.service';
 import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
 import { ConfiguracaoService } from './configuracao/service/configuracao.service';
+import { UsuariosComponent } from './usuarios/component/usuarios.component';
 
 
 
@@ -45,6 +46,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    UsuariosComponent,
   ],
   imports: [
     BrowserModule,
