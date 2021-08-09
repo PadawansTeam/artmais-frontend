@@ -34,6 +34,8 @@ import { ArtistaModule } from './artista/artista.module';
 import { InteresseService } from './interesse/service/interesse.service';
 import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 // import { ConfiguracaoService } from './configuracao/service/configuracao.service';
 
 
@@ -84,6 +86,20 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     InteresseService, 
     PerfilService, 
     ArtistaService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '891131493527-nqi3qkvomv8j9hio1vanpq4qkp6dvmoa.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    } 
     // ConfiguracaoService
   ],
   bootstrap: [AppComponent],

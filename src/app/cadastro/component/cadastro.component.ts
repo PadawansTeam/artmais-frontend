@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from '../service/cadastro.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SocialAuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./cadastro.component.css'],
 })
 export class CadastroComponent implements OnInit {
+
+
   form: any = {
     name: null,
     email: null,
@@ -29,7 +33,9 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private cadastroService: CadastroService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder, 
+    private socialAuthService: SocialAuthService
   ) { }
 
   ngOnInit() {
@@ -37,7 +43,11 @@ export class CadastroComponent implements OnInit {
       (response) => {
         this.arraySelect = response;
       },
-    )
+    );
+  
+    this.socialAuthService.authState.subscribe((user) => {
+      console.log(this.form);
+    });
   }
 
   public checkIsClient() {
@@ -87,5 +97,9 @@ export class CadastroComponent implements OnInit {
     } else {
       this.invalidField = true;
     }
+  }
+  
+  loginWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 }
