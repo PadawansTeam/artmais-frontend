@@ -35,8 +35,7 @@ import { InteresseService } from './interesse/service/interesse.service';
 import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
 import { ConfiguracaoService } from './configuracao/service/configuracao.service';
-import { PerfisAllModule } from './perfis-all/perfis-all.module';
-
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -71,7 +70,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HomepageModule,
     PlanosModule,
     HeaderlogModule,
-    PerfisAllModule,
+    UsuariosModule,
     PerfilModule,
     DashboardModule,
     InteresseModule,
