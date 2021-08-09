@@ -20,4 +20,10 @@ export class RecommendationService {
   getRecommendations(): Observable<any>{
     return this.http.get(this.artPlusURL + 'v1/Recomendation', this.httpOptions)
   }
+
+  visitedProfiles(
+    visitedUserId: number
+  ): Observable<object> {
+    return this.http.post<object>(`${this.artPlusURL}` + 'v1/ProfileAccess/' + visitedUserId, this.httpOptions);
+  }
 }

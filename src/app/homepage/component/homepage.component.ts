@@ -32,7 +32,15 @@ export class HomepageComponent implements OnInit {
   }
 
   getPerfilById(id: number) {
-    this.router.navigate(['/artista', id]);
+    this.recommendationService.visitedProfiles(id).subscribe(
+      (r) => {
+        console.log(r)
+        // this.router.navigate(['/artista', id]);
+      },
+      (err) => {
+        throw err;
+      }
+    )
   }
   
 }
