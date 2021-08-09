@@ -15,6 +15,9 @@
             <div class="collapse navbar-collapse justify-content-between" id="drop">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
+                      <a class="nav-link" href="\usuarios">{{ 'HEADER.USUARIOS' | translate }}</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="\homepage">{{ 'HEADER.HOMEPAGE' | translate }}</a>
                     </li>
                     <li class="nav-item">
@@ -22,9 +25,6 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="\construcao">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scrollto" href="\perfis">{{ 'MENU.PERFIS' | translate }}</a>
                     </li>
                     <select-lang *ngIf="!mobile"></select-lang>
                     <select-lang *ngIf="mobile" style="margin-left: 25px !important;"></select-lang>
