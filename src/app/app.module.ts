@@ -36,6 +36,7 @@ import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
 import { ConfiguracaoService } from './configuracao/service/configuracao.service';
 import { PerfisAllModule } from './perfis-all/perfis-all.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 
 
@@ -76,7 +77,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     DashboardModule,
     InteresseModule,
     ConfiguracaoModule,
-    ArtistaModule
+    ArtistaModule,
+    UsuariosModule
   ],
   providers: [
     TranslateService, 

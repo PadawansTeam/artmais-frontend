@@ -38,7 +38,8 @@
         "INTERESSE":"Interests",
         "CONFIG": "Configurations",
         "PERFIL": "Profile",
-        "SAIR": "Log Out"
+        "SAIR": "Log Out",
+        "USUARIOS": "Users"
     },
     "FOOTER": {
         "SOBRE": "ABOUT",
