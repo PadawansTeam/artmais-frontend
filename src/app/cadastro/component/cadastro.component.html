@@ -85,9 +85,10 @@
                 <input
                   [(ngModel)]="this.form.birthDate"
                   class="un form-control "
-                  type="text"
+                  type="date"
+                  max="9999-12-31"
                   onfocus="(this.type='date')"
-                  onblur="(this.type='text')"
+                  onblur="(this.type='date')"
                   placeholder="{{ 'CADASTRO.NASCIMENTO' | translate }}"
                 />
               </div>

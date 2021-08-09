@@ -36,7 +36,8 @@ import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
-// import { ConfiguracaoService } from './configuracao/service/configuracao.service';
+import { ConfiguracaoService } from './configuracao/service/configuracao.service';
+import { UsuariosComponent } from './usuarios/component/usuarios.component';
 
 
 
@@ -47,6 +48,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    UsuariosComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ConstrucaoModule,
     HomepageModule,
     PlanosModule,
-    HeaderlogModule, 
+    HeaderlogModule,
     PerfilModule,
     DashboardModule,
     InteresseModule,
@@ -79,13 +81,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ArtistaModule
   ],
   providers: [
-    TranslateService, 
-    LoginService, 
-    CadastroService, 
-    RecommendationService, 
-    InteresseService, 
-    PerfilService, 
+    TranslateService,
+    LoginService,
+    CadastroService,
+    RecommendationService,
+    InteresseService,
+    PerfilService,
     ArtistaService,
+    ConfiguracaoService,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
@@ -99,8 +102,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           }
         ]
       } as SocialAuthServiceConfig,
-    } 
-    // ConfiguracaoService
+    }
   ],
   bootstrap: [AppComponent],
 })

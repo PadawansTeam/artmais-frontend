@@ -4,12 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
-import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
-import { ConfiguracaoComponent } from './component/configuracao.component';
-import { ConfiguracaoService } from './service/configuracao.service';
-import { FormsModule } from '@angular/forms';
+import { UsuariosComponent } from './component/usuarios.component';
+
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -19,7 +17,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
-    ConfiguracaoComponent
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
@@ -32,12 +30,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   }),
     SelectModule,
     HeaderlogModule,
-    FooterModule,
-    FormsModule
+    FooterModule
   ],
-  providers: [
-    TranslateService, ConfiguracaoService
-  ],
+  providers: [ TranslateService ],
   bootstrap: []
 })
-export class ConfiguracaoModule { }
+export class UsuariosModule { }

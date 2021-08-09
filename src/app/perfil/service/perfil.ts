@@ -20,7 +20,7 @@ export class Perfil {
         public twitter: string,
         public mainPhone: string,
         public secundaryPhone: string,
-        public thridPhone: string,
+        public thirdPhone: string,
         public facebookProfile: string,
         public twitterProfile: string,
         public whatsappProfile: string,

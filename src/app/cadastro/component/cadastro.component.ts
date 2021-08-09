@@ -21,7 +21,9 @@ export class CadastroComponent implements OnInit {
     role: null,
     category: null,
     subcategory: null,
-    description: null
+    description: null,
+    userPicture: null,
+    backgroundPicture: null
   };
   errorMessage = '';
   redirectTo: string = '';
@@ -72,7 +74,9 @@ export class CadastroComponent implements OnInit {
       this.form.subcategory = this.form.category.split("_")[1];
       this.form.category = this.form.category.split("_")[0];
     }
-    this.form.description = " ";
+    this.form.userPicture = "https://artplus-bucket.s3.amazonaws.com/profile_pic/default.png";
+    this.form.backgroundPicture = "https://artplus-bucket.s3.amazonaws.com/background_pic/default.png";
+    this.form.description = "Olá! Sou novo na plataforma Art+!";
     if (this.form.name && this.form.email && this.form.password && this.form.username && this.form.birthDate && this.form.role && this.form.category && this.form.subcategory && this.form.description) {
       this.cadastroService
         .signUp(
@@ -84,10 +88,12 @@ export class CadastroComponent implements OnInit {
           this.form.role,
           this.form.category,
           this.form.subcategory,
-          this.form.description
+          this.form.description,
+          this.form.userPicture,
+          this.form.backgroundPicture
         ).subscribe(
           (response) => {
-            this.router.navigateByUrl('/homepage');
+            this.router.navigateByUrl('/interesse');
             return response;
           },
           (err) => {

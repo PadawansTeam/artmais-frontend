@@ -2,11 +2,9 @@
 <section clas=welcome>
   <div class="section-title" data-aos="fade-up">
     <div class="container">    <div class="row text-center">
-      <h2>Recomendação de Perfil</h2>
+      <h2>{{ 'RECOMENDACAO.TITULO' | translate }}</h2>
       <div class="col-md-12 ">
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in
-          iste officiis commodi quidem hic quas.</p>
+        <p>{{ 'RECOMENDACAO.SUBTITULO' | translate }}</p>
       </div>
     </div></div>
 
@@ -14,7 +12,7 @@
   <div class="container" data-aos="fade-up">
     <div class="friend-list">
       <div class="row">
-        <div *ngFor="let recomendacao of recommendations" class="col-md-4 col-sm-6">
+        <div *ngFor="let recomendacao of recommendations" class="col-md-3 col-sm-6">
           <div class="friend-card" (click)="getPerfilById(recomendacao.userId)">
             <img
               [src]="recomendacao.backgroundPicture"
@@ -24,9 +22,9 @@
                 [src]="recomendacao.userPicture"
                 alt="user" class="profile-photo-lg">
               <div class="friend-info">
-                <a href="#" class="pull-right text-green">{{recomendacao.category}} - </a>
-                <a href="#" class="pull-right text-green">{{recomendacao.subcategory}}</a>
-                <h5><a href="timeline.html" class="profile-link">{{recomendacao.username}}</a></h5>
+                <a class="pull-right text-green">{{recomendacao.category}} - </a>
+                <a class="pull-right text-green">{{recomendacao.subcategory}}</a>
+                <h5><a class="profile-link">{{recomendacao.username}}</a></h5>
               </div>
             </div>
           </div>
