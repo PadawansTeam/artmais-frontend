@@ -32,11 +32,11 @@ export class CadastroComponent implements OnInit {
   invalidField = false;
   loginForm: FormGroup | undefined;
   socialUser: SocialUser = new SocialUser;
-  isLoggedin: boolean = false;  
+  isLoggedin: boolean = false;
   constructor(
     private cadastroService: CadastroService,
     private router: Router,
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private socialAuthService: SocialAuthService
   ) { }
 
@@ -49,19 +49,18 @@ export class CadastroComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
-    });    
-    
+    });
+
     this.socialAuthService.authState.subscribe((user) => {
       this.socialUser = user;
       this.isLoggedin = (user != null);
-      console.log(this.socialUser);
     });
   }
 
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
-  
+
   public checkIsClient() {
     this.isClient = true
     this.isArtist = false
