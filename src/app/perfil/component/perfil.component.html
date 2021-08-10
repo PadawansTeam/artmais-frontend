@@ -90,8 +90,8 @@
                         <div class="bg-light col-md-12 d-block text-center">
                             <br>
                             <button class="getstarted" type="button" class="btn-calendar" aria-label="Acessar"
-                                href="#ModalCalendar"
-                                data-bs-toggle="modal">{{ 'PERFIL.CALENDARIO-BUTTON' | translate }}</button>
+                                href="#ModalCalendar" data-bs-toggle="modal">{{ 'PERFIL.CALENDARIO-BUTTON' | translate
+                                }}</button>
                         </div>
                     </div>
                     <div class="bg-light col-md-3 d-block text-center">
@@ -175,7 +175,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
-                                        <h5 class=" c1">{{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</h5>
+                                        <h5 class=" c1">{{ 'PERFIL.ADICIONAR-ITEM' | translate }}</h5>
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -185,19 +185,20 @@
                                             </div>
                                             <br>
                                             <div class="col-md-6"></div>
-                                            <input (change)="selectPortfolioFile($event)" type="file"
+                                            <input (change)="selectPortfolioFile($event)"      type="file"
                                                 accept=".jpg, .jpeg, .png" class="form-control" id="photo" required>
+                                            <div class="descr fw-bold">{{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
                                             <textarea [(ngModel)]="this.portfolioContent.description"
                                                 class="form-control2" cols="50" rows="6"
-                                                placeholder="Digite a descrição..." maxlength="500"></textarea>
+                                                placeholder="{{ 'PERFIL.PLACE-DESCRIÇÃO' | translate }}" maxlength="500"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                     </div>
                                 </div>
                                 <button (click)="insertPortfolioFile()" class="getstarted" type="button"
-                                    class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">{{ 'PERFIL.SALVAR' | translate }}</button>
+                                    class="getstarted" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
+                                    translate }}</button>
                             </div>
                         </div>
                     </div>
