@@ -65,3 +65,31 @@
     width: 30rem;
     margin-right: 40px;
 }
+
+@media (max-width:786px){
+    .interesse-button{
+        min-width: 107%;
+    }
+
+    .btn-outline-primary{
+        min-width: 105%;
+    }
+
+    .btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active{
+        min-width: 105%;
+    }
+
+    .imagem-interesse{
+        width: 100%;
+        padding-left: 5%;
+        max-width: 80%;
+    }
+}
+
+.interesse-button{
+    color: black;
+}
+
+.accordion-button:not(.collapsed){
+    background-color: transparent !important;
+}

@@ -41,7 +41,8 @@
         "CONFIG": "Configurações",
         "PERFIL": "Perfil",
         "SAIR": "Sair",
-        "USUARIOS": "Usuários"
+        "USUARIOS": "Usuários",
+        "DASHBOARD": "Dashboard"
     },
     "FOOTER": {
         "SOBRE": "SOBRE",

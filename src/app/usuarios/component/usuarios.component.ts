@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Recommendation } from 'src/app/homepage/service/recommendation';
+import { RecommendationService } from 'src/app/homepage/service/recommendation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosComponent implements OnInit {
 
-  constructor() { }
+  public usuarios: Recommendation [] = [];
 
-  ngOnInit(): void {
+  constructor(
+    public recommendationService: RecommendationService,
+    private router: Router
+    ) {}
+
+  ngOnInit() {
+    this.recommendationService.recomentationUsers().subscribe(
+      (response)=>{
+        this.usuarios = response as Recommendation[];
+      },
+      err=> console.log(err)
+    )
   }
 
+  getPerfilById(id: number) {
+    this.recommendationService.visitedProfiles(id).subscribe(
+      () => {
+        this.router.navigate(['/artista', id]);
+      },
+      (err) => {
+        throw err;
+      }
+    )
+  }
 }

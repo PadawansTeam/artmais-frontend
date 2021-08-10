@@ -1,243 +1,34 @@
 <app-headerlog></app-headerlog>
 <section clas=welcome>
-    <div class="section-title" data-aos="fade-up">
-      <div class="container">    <div class="row text-center">
+  <div class="section-title" data-aos="fade-up">
+    <div class="container">
+      <div class="row text-center">
         <h2>{{ 'USUARIOS.TITULO' | translate }}</h2>
         <div class="col-md-12 ">
           <p>{{ 'USUARIOS.TEXTO' | translate }}</p>
         </div>
-      </div></div>
+      </div>
     </div>
-    <div class="container" data-aos="fade-up">
-      <div class="friend-list">
-        <div class="row">
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
+  </div>
+  <div class="container" data-aos="fade-up">
+    <div class="friend-list">
+      <div class="row">
+        <div *ngFor="let usuario of usuarios" class="col-md-2 col-sm-6">
+          <div class="friend-card" (click)="getPerfilById(usuario.userId)">
+            <div class="img-responsive cover">
+              <img [src]="usuario.backgroundPicture" alt="profile-cover" class="img-responsive cover">
             </div>
-          </div>
-
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="friend-card">
-                    <div class="img-responsive cover">
-                    </div>
-              <div class="card-info">
-                <img src="https://jpimg.com.br/uploads/2021/07/design-sem-nome-2021-07-31t165601.205.jpg"
-                  alt="user" class="profile-photo-lg">
-                <div class="friend-info">
-                  <a class="pull-right text-green">Musicista -</a>
-                  <a class="pull-right text-green">&nbsp;POP</a>
-                  <h5><a class="profile-link">Pablofoilonge</a></h5>
-                </div>
+            <div class="card-info">
+              <img [src]="usuario.userPicture" alt="user" class="profile-photo-lg">
+              <div class="friend-info">
+                <a class="pull-right text-green">{{usuario.category}} - </a>
+                <a class="pull-right text-green">{{usuario.subcategory}}</a>
+                <h5><a class="profile-link">{{usuario.username}}</a></h5>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

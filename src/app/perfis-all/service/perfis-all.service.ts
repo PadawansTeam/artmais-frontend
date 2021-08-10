@@ -3,8 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
-@Injectable()
-export class RecommendationService {
+@Injectable({
+  providedIn: 'root'
+})
+export class PerfisAllService {
   public artPlusURL = `${environment.apiURL}`;
   public token = localStorage.getItem('token')
 
@@ -17,17 +19,20 @@ export class RecommendationService {
 
   constructor(private http: HttpClient) { }
 
-  getRecommendations(): Observable<any> {
-    return this.http.get(this.artPlusURL + 'v1/Recomendation', this.httpOptions)
-  }
-
-  visitedProfiles(
-    visitedUserId: number
+  updateAddress(
+    street: string,
+    number: number,
+    complement: string,
+    neighborhood: string,
+    zipCode: string,
+    city: string,
+    state: string
   ): Observable<object> {
-    return this.http.post(this.artPlusURL + 'v1/ProfileAccess/' + visitedUserId, {}, this.httpOptions);
+    return this.http.post<object>(
+      `${this.artPlusURL}` + 'v1/Address/Upsert',
+      { street, number, complement, neighborhood, zipCode, city, state },
+      this.httpOptions
+    );
   }
 
-  recomentationUsers(): Observable<object> {
-    return this.http.get(this.artPlusURL + 'v1/Recomendation/users', this.httpOptions)
-  }
 }

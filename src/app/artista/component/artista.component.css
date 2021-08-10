@@ -18,8 +18,8 @@
 }
 
 img {
-  object-fit: cover; /*this makes the image in src fit to the size specified below*/
-  width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  object-fit: cover; 
+  width: 100%;
   height: 80%;
 }
 

@@ -7,21 +7,22 @@ import { SelectModule } from '../select/select.module';
 import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
+import { PerfilComponent } from './component/perfil.component';
 import { PerfilService } from './service/perfil.service';
-
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
-
 @NgModule({
   declarations: [
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -31,7 +32,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
     SelectModule,
     HeaderlogModule,
-    FooterModule
+    FooterModule,
+    NgbModule
   ],
   providers: [
     TranslateService,
