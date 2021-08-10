@@ -9,14 +9,33 @@
             </div>
         </div>
         <div class="row align-items-center text-center justify-content-center">
-            <div class="col-md-6 mb-3  img1" style="margin-top: -50%;">
+            <div class="col-md-6 mb-3 img1">
                 <img src="assets/img/pages/interest.svg" alt="erro" style="width:100%;">
             </div>
-            <div class="col-md-6 y-5 mb-3 ">
-                <div class="row">
-                    <div *ngFor="let subcategoria of allCategories" class="col-sm-3 text-center p-1">
-                        <input [(ngModel)]="subcategoria.isSelected" type="checkbox" class="btn-check button" id="{{subcategoria.subcategoryID}}" autocomplete="off">
-                        <label class="btn btn-outline-primary button" for="{{subcategoria.subcategoryID}}">{{subcategoria.category}} - {{subcategoria.subcategory}}</label>
+            <div class="col-md-6 mb-3">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item" *ngFor="let categoria of (allCategories | keyvalue)">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                {{categoria.key}}
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-sm-3 text-center m-1" *ngFor="let subcategory of categoria.value">
+                                        <input type="checkbox" [(ngModel)]="subcategory.isSelected" class="btn-check button" id="{{subcategory.subcategoryID}}"
+                                            autocomplete="off" />
+                                        <label class="btn btn-outline-primary button"
+                                            for="{{subcategory.subcategoryID}}">{{subcategory.subcategory}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -24,7 +43,8 @@
         <div class="row">
             <div class="col-md-12 text-center mb-5 mt-3 justify-content-center align-items-center">
                 <a>
-                    <button (click)="sendInterest()" type="button" class="btn-principal">{{ 'INTERESSES.BUTTON' | translate }}</button>
+                    <button type="button" class="btn-principal">{{ 'INTERESSES.BUTTON' |
+                        translate }}</button>
                 </a>
             </div>
         </div>
