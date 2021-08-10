@@ -12,8 +12,7 @@ export class InteresseComponent implements OnInit {
 
   interests: Interesse[] = [];
   subcategories: Interesse[] = [];
-  category: Interesse[] = [];
-  allCategories: any[] = [];
+  allCategories: Map<string, any[]> = new Map();
 
   constructor(
     public interesseService: InteresseService,
@@ -22,16 +21,36 @@ export class InteresseComponent implements OnInit {
 
   ngOnInit(): void {
     this.interesseService.getInterests().subscribe(
-      (response: {subcategories: Interesse[], interests: Interesse[], category: Interesse[]}) => {
+      (response: { subcategories: Interesse[], interests: Interesse[] }) => {
         this.interests = response.interests;
-        this.category = response.category;
-        this.subcategories = response.subcategories;
+        response.subcategories.forEach((subcategory) => {
+          const index = this.interests.findIndex(item => item.subcategoryID === subcategory.subcategoryID);
+          let isSelected = !(index === -1);
+
+          if (this.allCategories.has(subcategory.category)) {
+            let aux = this.allCategories.get(subcategory.category) || [];
+            aux.push({
+              isSelected,
+              subcategory: subcategory.subcategory,
+              subcategoryID: subcategory.subcategoryID
+            })
+            this.allCategories.set(subcategory.category, aux)
+          } else {
+            this.allCategories.set(subcategory.category, [{
+              isSelected,
+              subcategory: subcategory.subcategory,
+              subcategoryID: subcategory.subcategoryID
+            }])
+          }
+        })
+        console.log(this.allCategories)
+        /* this.subcategories = response.subcategories;
         this.allCategories = this.subcategories.map((subcategory)=>{
           const index = this.interests.findIndex(item => item.subcategoryID === subcategory.subcategoryID);
           let rtn = subcategory;
           rtn.isSelected = !(index===-1);
           return rtn;
-        });
+        }); */
       },
       (err) => {
         throw err;
@@ -39,7 +58,7 @@ export class InteresseComponent implements OnInit {
     )
   }
 
-  sendInterest(){
+  /* sendInterest(){
     let ids: number[] = [];
     this.allCategories.forEach((x)=>{
       if(x.isSelected===true){
@@ -55,5 +74,5 @@ export class InteresseComponent implements OnInit {
         throw err;
       }
     );
-  }
+  } */
 }
