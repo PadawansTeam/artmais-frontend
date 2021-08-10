@@ -39,7 +39,8 @@
         "CONFIG": "Configurations",
         "PERFIL": "Profile",
         "SAIR": "Log Out",
-        "USUARIOS": "Users"
+        "USUARIOS": "Users",
+        "DASHBOARD": "Dashboard"
     },
     "FOOTER": {
         "SOBRE": "ABOUT",

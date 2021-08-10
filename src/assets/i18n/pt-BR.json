@@ -40,7 +40,8 @@
         "CONFIG": "Configurações",
         "PERFIL": "Perfil",
         "SAIR": "Sair",
-        "USUARIOS": "Usuários"
+        "USUARIOS": "Usuários",
+        "DASHBOARD": "Dashboard"
     },
     "FOOTER": {
         "SOBRE": "SOBRE",
@@ -193,11 +194,6 @@
         "BUTTON-A": "Eu aceito",
         "BUTTON-B": "Eu não aceito"
     
-    },
-    "USUARIOS": {
-        "TITULO": "USUÁRIOS",
-        "TEXTO": "Veja todos os usuários da plataforma e faça seu networking!"
-       
     }
 }
 

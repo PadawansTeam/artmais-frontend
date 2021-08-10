@@ -210,3 +210,10 @@ input[type='file']::-webkit-file-upload-button:hover {
 	color: #701ec6;
 	border-radius: 4px;
 }
+
+@media (max-width:760px){
+    .config-title{
+        margin-top: -1.7rem; 
+        margin-left: 3rem;
+    }
+}
