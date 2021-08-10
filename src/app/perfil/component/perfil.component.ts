@@ -12,7 +12,7 @@ export class PerfilComponent implements OnInit {
 
   profile!: Perfil;
   userPortfolioImages: UserPortfolio[] = [];
-  selectedPortfolioContent!: FileList;
+  selectedPortfolioContent: FileList | undefined;;
 
   portfolioContent: any = {
     publicationID: null,
@@ -49,9 +49,19 @@ export class PerfilComponent implements OnInit {
       );
   }
 
-  updateDescription() {
+  async insertPortfolioFile() {
+    const file = this.selectedPortfolioContent?.item(0);
+    if (file == undefined) {
+      alert("Uma imagem deve ser selecionada");
+      return;
+    }
+    else
+      this.portfolioContent.portfolioImageUrl = await this.perfilService.uploadPortfolioFile(file!);
     this.perfilService
-      .updatePortfolioDescription(this.portfolioContent.publicationID, this.portfolioDescription.description)
+      .insertPortfolioContent(
+        this.portfolioContent.portfolioImageUrl,
+        this.portfolioContent.description
+      )
       .subscribe(
         (response) => {
           return response;
@@ -60,16 +70,12 @@ export class PerfilComponent implements OnInit {
           throw err;
         }
       );
+    this.ngOnInit();
   }
 
-  async insertPortfolioFile() {
-    const file = this.selectedPortfolioContent.item(0);
-    this.portfolioContent.portfolioImageUrl = await this.perfilService.uploadPortfolioFile(file!);
+  updateDescription() {
     this.perfilService
-      .insertPortfolioContent(
-        this.portfolioContent.portfolioImageUrl,
-        this.portfolioContent.description
-      )
+      .updatePortfolioDescription(this.portfolioContent.publicationID, this.portfolioDescription.description)
       .subscribe(
         (response) => {
           return response;
