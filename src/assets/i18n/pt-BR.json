@@ -8,6 +8,12 @@
         "EMAIL": "E-mail",
         "CONF-EMAIL": "Confirmação do e-mail",
         "SENHA": "Senha",
+        "CAMPO-SENHA":"Sua senha deve possuir:",
+        "CAMPO-CRIT-1":"No mínimo 8 caracteres",
+        "CAMPO-CRIT-2":"Pelo menos 1 letra maiúscula",
+        "CAMPO-CRIT-4":"Pelo menos 1 número",
+        "CAMPO-CRIT-5":"Pelo menos 1 caractere especial",
+        "CAMPO-CRIT-3":"Pelo menos 1 letra minúscula",
         "CONF-SENHA": "Confirmação de senha",
         "NASCIMENTO": "Data de nascimento",
         "BOTAO": "Cadastrar",
@@ -15,6 +21,7 @@
         "CLIENTE": "Não sou artista",
         "ERRO": "Campos obrigatórios não foram preenchidos. Por favor, tente novamente!",
         "INVALIDO": "Campo inválido"
+
     },
     "ENTRAR": {
         "ENTRAR": "Entrar",
@@ -105,7 +112,8 @@
         "BUTTON": "Voltar"
     },
     "INTERESSES": {
-        "TITULO": "Escolha as categorias de artistas que você possui mais interesse de acompanhar",
+        "TITULO" : "Interesses",
+        "SUBTITULO": "Escolha as categorias de artistas que você possui mais interesse de acompanhar",
         "CATEGORIA": "Categoria",
         "BUTTON": "Avançar"
     },
@@ -122,8 +130,9 @@
         "PORTIFOLIO": "Portfólio",
         "SALVAR": "Salvar",
         "FECHAR":"Fechar",
-        "DESCRIÇÃO-ITEM-PORTFOLIO": "Descrição",
-        "ADICIONAR-ITEM": "Adicionar item ao seu portfólio"
+        "DESCRIÇÃO-ITEM-PORTFOLIO": "Descrição:",
+        "ADICIONAR-ITEM": "Adicionar item ao seu portfólio",
+        "PLACE-DESCRIÇÃO": "Digite a descrição..."
     },
     "CONFIG": {
         "SOBRE": "Sobre",

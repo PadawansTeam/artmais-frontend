@@ -8,6 +8,12 @@
         "EMAIL": "E-mail",
         "CONF-EMAIL": "Confirm your e-mail",
         "SENHA": "Password",
+        "CAMPO-SENHA":"Your password must have:",
+        "CAMPO-CRIT-1":"At least 8 characters",
+        "CAMPO-CRIT-2":"At least 1 capital letter",
+        "CAMPO-CRIT-4":"At least 1 number",
+        "CAMPO-CRIT-5":"At least 1 special character",
+        "CAMPO-CRIT-3":"At least 1 lowercase letter",
         "CONF-SENHA": "Confirm your password",
         "NASCIMENTO": "Birth date",
         "BOTAO": "Sign up",
@@ -103,7 +109,8 @@
             "BUTTON": "Back"
         },
         "INTERESSES": {
-            "TITULO": "Choose the categories of artists that you have more interest to follow",
+            "TITULO" : "Interest",
+            "SUBTITULO": "Choose the categories of artists that you have more interest to follow",
             "CATEGORIA": "Category",
             "BUTTON": "Next"
         },
@@ -120,8 +127,9 @@
             "PORTIFOLIO": "Portfolio",
             "SALVAR": "Save",
             "FECHAR":"Close",
-            "DESCRIÇÃO-ITEM-PORTFOLIO": "Description",
-            "ADICIONAR-ITEM": "Add item to your portfolio"
+            "DESCRIÇÃO-ITEM-PORTFOLIO": "Description:",
+            "ADICIONAR-ITEM": "Add item to your portfolio",
+            "PLACE-DESCRIÇÃO": "Enter the description..."
             
         },
         "CONFIG": {
