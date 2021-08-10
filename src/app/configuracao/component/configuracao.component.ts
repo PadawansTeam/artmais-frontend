@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Configuracao } from '../service/configuracao';
 import { ConfiguracaoService } from '../service/configuracao.service';
+import { DatePipe } from '@angular/common';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-configuracao',
@@ -11,6 +13,7 @@ export class ConfiguracaoComponent implements OnInit {
   information!: Configuracao;
   selectedProfileFiles: FileList | undefined;
   urlImagem!: any;
+  formConfig!: FormGroup;
 
   userInfo: any = {
     name: null,
@@ -55,7 +58,11 @@ export class ConfiguracaoComponent implements OnInit {
     state: null,
   };
 
-  constructor(public configService: ConfiguracaoService) {}
+  constructor(
+    public configService: ConfiguracaoService,
+    private datePipe: DatePipe,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.configService.getUserInfo().subscribe(
@@ -83,6 +90,36 @@ export class ConfiguracaoComponent implements OnInit {
           throw err;
         }
       );
+      this.formConfig = this.formBuilder.group({
+        name: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.pattern('^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$')
+        ])),
+        phone: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.pattern('^[0-9]{13}$')
+        ])),
+        secondPhone: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.pattern('^[0-9]{13}$')
+        ])),
+        thirdPhone: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.pattern('^[0-9]{13}$')
+        ])),
+        password: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
+        ])),
+        confirmPassword: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
+        ])),
+        zipcode: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.pattern('/^\d{5}-?\d{3}$/')
+        ])),
+      });    
   }
 
   updatePassword() {

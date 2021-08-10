@@ -8,103 +8,150 @@
             <div class="card-header card-header-primary text-center " data-aos="fade-up">
               <h4 class="card-title">{{ 'CADASTRO.TITULO' | translate }}</h4>
             </div>
-            <div class="card-body">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="bx bx-user bx-sm bx-tada-hover"></i>
-                  </span>
-                </div>
-                <input [(ngModel)]="this.form.name" name="socialName" class="un form-control " type="text"
-                  placeholder="{{ 'CADASTRO.SOCIAL' | translate }}">
-              </div>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="bx bx-mail-send bx-sm bx-tada-hover"></i>
-                  </span>
-                </div>
-                <input [(ngModel)]="this.form.username" class="un form-control " type="text"
-                  placeholder="{{ 'CADASTRO.USUARIO' | translate }}" />
-              </div>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="bx bx-mail-send bx-sm bx-tada-hover"></i>
-                  </span>
-                </div>
-                <input [(ngModel)]="this.form.email" name="email" class="un form-control" type="email"
-                  placeholder="{{ 'CADASTRO.EMAIL' | translate }}" />
-              </div>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="bx bx-lock bx-sm bx-tada-hover"></i>
-                  </span>
-                </div>
-                <input class="un form-control " type="password" placeholder="{{ 'CADASTRO.SENHA' | translate }}" />
-              </div>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="bx bx-lock bx-sm bx-tada-hover"></i>
-                  </span>
-                </div>
-                <input [(ngModel)]="this.form.password" name="password" class="un form-control " type="password"
-                  placeholder="{{ 'CADASTRO.CONF-SENHA' | translate }}" />
-              </div>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="bx bx-calendar bx-sm bx-tada-hover"></i>
-                  </span>
-                </div>
-                <input [(ngModel)]="this.form.birthDate" class="un form-control " type="date" max="9999-12-31"
-                  onfocus="(this.type='date')" onblur="(this.type='date')"
-                  placeholder="{{ 'CADASTRO.NASCIMENTO' | translate }}" />
-              </div>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="bx bx-palette bx-sm bx-tada-hover"></i>
-                  </span>
-                </div>
-                <div class="form-check radio-form">
-                  <label class="form-check-label" style="margin-right: 30px;">
-                    <input [(ngModel)]="this.form.role" class="form-check-input" (click)="checkIsArtist()" type="radio"
-                      name="category" id="category" value="artist" checked="">
-                    {{ 'CADASTRO.ARTISTA' | translate }}
-                    <span class="circle">
-                      <span class="check"></span>
+            <div class="card-body" >
+              <form [formGroup]="formCadastro">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-user bx-sm bx-tada-hover"></i>
                     </span>
-                  </label>
-                  <label class="form-check-label" style="margin-right: 30px;">
-                    <input [(ngModel)]="this.form.role" class="form-check-input" (click)="checkIsClient()" type="radio"
-                      name="category" id="category" value="client" checked="">
-                    {{ 'CADASTRO.CLIENTE' | translate }}
-                    <span class="circle">
-                      <span class="check"></span>
+                  </div>
+                  <input         
+                    [(ngModel)]="this.form.name" 
+                    formControlName="name"
+                    name="socialName"
+                    class="un form-control "
+                    type="text"
+                    placeholder="{{ 'CADASTRO.SOCIAL' | translate }}"
+                  >
+                </div>
+                <p *ngIf="formCadastro.get('name')!.touched && !formCadastro.get('name')!.valid" class="error" align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-mail-send bx-sm bx-tada-hover"></i>
                     </span>
-                  </label>
+                  </div>
+                  <input
+                    [(ngModel)]="this.form.username"
+                    formControlName="username"
+                    class="un form-control "
+                    type="text"
+                    placeholder="{{ 'CADASTRO.USUARIO' | translate }}"
+                  />
                 </div>
-              </div>
-              <div class="input-group" *ngIf="isArtist && !isClient">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="bx bx-palette bx-sm bx-tada-hover"></i>
-                  </span>
+                <p *ngIf="formCadastro.get('username')!.touched && !formCadastro.get('username')!.valid" class="error" align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-mail-send bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input
+                    [(ngModel)]="this.form.email"
+                    formControlName="email"
+                    name="email"
+                    class="un form-control "
+                    type="email"
+                    placeholder="{{ 'CADASTRO.EMAIL' | translate }}"
+                />
                 </div>
-                <select class="select" [(ngModel)]="this.form.category">
-                  <optgroup *ngFor="let categoria of arraySelect" [label]="categoria.category">
-                    <option *ngFor="let subcategoria of categoria.subcategory"
-                      [value]="categoria.category+'_'+subcategoria">
-                      {{subcategoria}}
-                    </option>
-                  </optgroup>
-                </select>
-              </div>
-            </div>
-            <p *ngIf="invalidField" class="error" align="center">{{ "CADASTRO.ERRO" | translate }}</p>
+                <p *ngIf="formCadastro.get('email')!.touched && !formCadastro.get('email')!.valid" class="error" align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-lock bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input
+                    class="un form-control "
+                    type="password"
+                    placeholder="{{ 'CADASTRO.SENHA' | translate }}"
+                  />
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-lock bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input
+                    [(ngModel)]="this.form.password"
+                    formControlName="password"
+                    name="password"
+                    class="un form-control "
+                    type="password"
+                    placeholder="{{ 'CADASTRO.CONF-SENHA' | translate }}"
+                />
+                </div>
+                <p *ngIf="formCadastro.get('password')!.touched && !formCadastro.get('password')!.valid" class="error" align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
+                <div class="password-group">
+                  <p class="password-title">Sua senha deve possuir:</p>
+                  <ul class="password-list">
+                    <li>No mínimo 8 caracteres</li>
+                    <li>Pelo menos 1 letra maiúscula</li>
+                    <li>Pelo menos 1 letra minúscula</li>
+                    <li>Pelo menos 1 número</li>
+                    <li>Pelo menos 1 caractere especial</li>
+                  </ul>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-calendar bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input
+                    [(ngModel)]="this.form.birthDate"
+                    [ngModelOptions]="{standalone: true}"
+                    class="un form-control "
+                    type="date"
+                    max="9999-12-31"
+                    onfocus="(this.type='date')"
+                    onblur="(this.type='date')"
+                    placeholder="{{ 'CADASTRO.NASCIMENTO' | translate }}"
+                  />
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-palette bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <div class="form-check radio-form">
+                    <label class="form-check-label" style="margin-right: 30px;">
+                      <input [(ngModel)]="this.form.role" [ngModelOptions]="{standalone: true}" class="form-check-input" (click)="checkIsArtist()" type="radio" name="category" id="category" value="artist" checked="">
+                      {{ 'CADASTRO.ARTISTA' | translate }}
+                      <span class="circle">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                    <label class="form-check-label" style="margin-right: 30px;">
+                      <input [(ngModel)]="this.form.role" [ngModelOptions]="{standalone: true}" class="form-check-input" (click)="checkIsClient()" type="radio" name="category" id="category" value="client" checked="">
+                      {{ 'CADASTRO.CLIENTE' | translate }}
+                      <span class="circle">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div> 
+                <div class="input-group" *ngIf= "isArtist && !isClient">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-palette bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <select class="select" [(ngModel)]="this.form.category" [ngModelOptions]="{standalone: true}">
+                    <optgroup *ngFor="let categoria of arraySelect" [label]= "categoria.category">
+                      <option *ngFor="let subcategoria of categoria.subcategory" [value]="categoria.category+'_'+subcategoria">
+                        {{subcategoria}}
+                      </option>
+                    </optgroup>
+                  </select>
+                </div> 
+              </form>
+            </div>   
+            <p *ngIf="invalidField" class="error" style="padding: 20px;" align="center">{{ "CADASTRO.ERRO" | translate }}</p>
             <button class="submit" align="center" (click)="cadastroArtPlus()">
               {{ "CADASTRO.BOTAO" | translate }}
             </button>
@@ -114,3 +161,4 @@
     </div>
   </div>
 </div>
+
