@@ -30,8 +30,7 @@
         "EQUIPE": "Equipe",
         "CONTATO": "Contato",
         "CADASTRO": "Cadastre-se",
-        "ENTRAR": "Entrar",
-        "PERFIS": "Perfis"
+        "ENTRAR": "Entrar"
     },
 
     "HEADER": {
@@ -124,11 +123,6 @@
         "DESCRIÇÃO-ITEM-PORTFOLIO": "Descrição",
         "ADICIONAR-ITEM": "Adicionar item ao seu portfólio"
     },
-    "USUARIOS": {
-        "TITULO": "Usuários",
-        "TEXTO": "Veja todos os usuários da plataforma e faça seu networking!"
-
-    },
     "CONFIG": {
         "SOBRE": "Sobre",
         "DESCRICAO": "Descrição:",
@@ -194,6 +188,11 @@
         "BUTTON-A": "Eu aceito",
         "BUTTON-B": "Eu não aceito"
     
+    },
+    "USUARIOS": {
+        "TITULO": "USUÁRIOS",
+        "TEXTO": "Veja todos os usuários da plataforma e faça seu networking!"
+       
     }
 }
 

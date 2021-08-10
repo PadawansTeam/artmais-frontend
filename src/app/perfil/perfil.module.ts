@@ -9,6 +9,8 @@ import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { PerfilComponent } from './component/perfil.component';
 import { PerfilService } from './service/perfil.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -32,7 +34,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   }),
     SelectModule,
     HeaderlogModule,
-    FooterModule
+    FooterModule,
+    NgbModule
   ],
   providers: [
     TranslateService,
