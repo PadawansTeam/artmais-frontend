@@ -6,8 +6,7 @@
             <div class="row">
                 <div class="col-lg-12 shadow back">
                     <div class="img-responsive text-center">
-                        <img [src]="artist.userPicture" alt="..."
-                            class="  rounded-circle img-fluid mx-auto img-perfil">
+                        <img [src]="artist.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
                     </div>
                 </div>
             </div>
@@ -68,7 +67,8 @@
                             {{ 'PERFIL.ENDERECO' | translate }}
                         </div>
                         <div class="row text1 text-left">
-                            <div class="col-md-2  col-md-2 fw-bold text-muted text-left">{{ 'PERFIL.RUA' | translate }}</div>
+                            <div class="col-md-2  col-md-2 fw-bold text-muted text-left">{{ 'PERFIL.RUA' | translate }}
+                            </div>
                             <div class="col-md-10 text-muted text-left">{{artist.street}}</div>
                         </div>
                         <div class="row text1">
@@ -80,7 +80,7 @@
                             <div class="col-md-6 text-muted">{{artist.neighborhood}}</div>
                             <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.CEP' | translate }}</div>
                             <div class="col-md-4 text-left text-muted">{{artist.zipCode}}</div>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="bg-light col-md-3 d-block text-center">
                         <i class="fa fa-calendar icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
@@ -88,7 +88,8 @@
                         <div class="bg-light col-md-12 d-block text-center">
                             <br>
                             <button class="getstarted" type="button" class="btn-calendar" aria-label="Acessar"
-                                href="#ModalCalendar" data-bs-toggle="modal">{{ 'PERFIL.CALENDARIO-BUTTON' | translate }}</button>
+                                href="#ModalCalendar"
+                                data-bs-toggle="modal">{{ 'PERFIL.CALENDARIO-BUTTON' | translate }}</button>
                         </div>
                     </div>
                     <div class="bg-light col-md-3 d-block text-center">
@@ -117,7 +118,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class=" row py-4 px-4">
@@ -126,97 +127,52 @@
                 </div>
                 <section id="portfolio">
                     <div class="row">
-                        <div class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <div *ngFor="let portfolioImage of portfolioImages"
+                            class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
+                            <a class="portfolio-link" data-bs-toggle="modal">
                                 <div class="portfolio-hover"></div>
-                                <img src="https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="" class="img-fluid rounded  ">
+                                <img [src]="portfolioImage.s3UrlMedia" alt="" class="img-fluid rounded  ">
                             </a>
                         </div>
-                        <div class="col-md-4 mb-2 pl-lg-2"><a class="portfolio-link" data-bs-toggle="modal"
-                                href="#portfolioModal2">
-                                <div class="portfolio-hover"></div><img
-                                    src="https://images.pexels.com/photos/736355/pexels-photo-736355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="" class="img-fluid rounded ">
-                            </a></div>
-
-                        <div class="col-md-4 pl-lg-2 mb-2"><a class="portfolio-link" data-bs-toggle="modal"
-                                href="#portfolioModal3">
-                                <div class="portfolio-hover"></div><img
-                                    src="https://images.pexels.com/photos/210887/pexels-photo-210887.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="" class="img-fluid rounded ">
-                            </a></div>
-
-                        <div class="col-md-4 pl-lg-2 mb-2"><a class="portfolio-link" data-bs-toggle="modal"
-                                href="#portfolioModal4">
-                                <div class="portfolio-hover"></div><img
-                                    src="https://images.pexels.com/photos/2479312/pexels-photo-2479312.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                    alt="" class="img-fluid rounded ">
-                            </a></div>
-
-                        <div class="col-md-4 pl-lg-2 mb-2"><a class="portfolio-link" data-bs-toggle="modal"
-                                href="#portfolioModal5">
-                                <div class="portfolio-hover"></div><img
-                                    src="https://images.pexels.com/photos/1434625/pexels-photo-1434625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="" class="img-fluid rounded ">
-                            </a></div>
-
-                        <div class="col-md-4 pl-lg-2 mb-2"><a class="portfolio-link" data-bs-toggle="modal"
-                                href="#portfolioModal6">
-                                <div class="portfolio-hover"></div><img
-                                    src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="" class="img-fluid rounded ">
-                            </a></div>
                     </div>
                 </section>
             </div>
         </div>
-
     </div>
 
 
     <!-- Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content ">
-                <div class="close-modal" type="button" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
+    <ng-template #content let-modal>
+        <div class="modal-body">
+            <div id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+
+                    <div class="close-modal" type="button" data-bs-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="container">
                     <div class="row">
                         <div class="col-md-12 mx-auto">
-                            <div class="modal-body">
-                                <img class="img-fluid d-block mx-auto"
-                                    src="https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="">
-                                    <div class="row ">
-                                        <div class="col-md-12 like">
-                                            <i class="fab fa-gratipay"></i>
-                                        </div>
-                                    </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                    lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
-                                    sed,
-                                    maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
-                                    quis
-                                    ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                    nisi vitae
-                                    porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
-                                    Proin
-                                    vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                </p>
-
-                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
+                            <img class="img-fluid d-block mx-auto"
+                                src="https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                alt="">
+                            <div class="row ">
+                                <div class="col-md-12 like" align="center">
+                                    <i class="fab fa-gratipay"></i>
+                                </div>
                             </div>
+                            <p>{{content}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="modal-footer">
+            <button class="getstarted" type="button" aria-label="Fechar" (click)="modal.close('Close click')"
+                align="center">Fechar</button>
+        </div>
+    </ng-template>
 
     <!-- Modal 2 -->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
@@ -257,155 +213,7 @@
         </div>
     </div>
 
-
-    <!-- Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  ">
-            <div class="modal-content">
-                <div class="close-modal" type="button" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 mx-auto">
-                            <div class="modal-body">
-                                <img class="img-fluid d-block mx-auto"
-                                    src="https://images.pexels.com/photos/210887/pexels-photo-210887.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                    lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
-                                    sed,
-                                    maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
-                                    quis
-                                    ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                    nisi vitae
-                                    porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
-                                    Proin
-                                    vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                </p>
-
-                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content ">
-                <div class="close-modal" type="button" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 mx-auto">
-                            <div class="modal-body">
-                                <img class="img-fluid d-block mx-auto"
-                                    src="https://images.pexels.com/photos/2479312/pexels-photo-2479312.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                    alt="">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                    lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
-                                    sed,
-                                    maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
-                                    quis
-                                    ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                    nisi vitae
-                                    porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
-                                    Proin
-                                    vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                </p>
-                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content ">
-                <div class="close-modal" type="button" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 mx-auto">
-                            <div class="modal-body">
-                                <img class="img-fluid d-block mx-auto"
-                                    src="https://images.pexels.com/photos/1434625/pexels-photo-1434625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                    lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
-                                    sed,
-                                    maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
-                                    quis
-                                    ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                    nisi vitae
-                                    porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
-                                    Proin
-                                    vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                </p>
-                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content ">
-                <div class="close-modal" type="button" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 mx-auto">
-                            <div class="modal-body">
-                                <img class="img-fluid d-block mx-auto"
-                                    src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                    lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
-                                    sed,
-                                    maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
-                                    quis
-                                    ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                    nisi vitae
-                                    porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
-                                    Proin
-                                    vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                </p>
-                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Modal calendar -->
-
     <div class="portfolio-modal modal fade" id="ModalCalendar" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content ">
