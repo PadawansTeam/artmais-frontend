@@ -23,6 +23,9 @@ export class InteresseComponent implements OnInit {
     this.interesseService.getInterests().subscribe(
       (response: { subcategories: Interesse[], interests: Interesse[] }) => {
         this.interests = response.interests;
+        response.subcategories = response.subcategories.sort(function (a, b) {
+          return a.subcategory.localeCompare(b.subcategory);
+      });
         response.subcategories.forEach((subcategory) => {
           const index = this.interests.findIndex(item => item.subcategoryID === subcategory.subcategoryID);
           let isSelected = !(index === -1);
@@ -43,14 +46,6 @@ export class InteresseComponent implements OnInit {
             }])
           }
         })
-        console.log(this.allCategories)
-        /* this.subcategories = response.subcategories;
-        this.allCategories = this.subcategories.map((subcategory)=>{
-          const index = this.interests.findIndex(item => item.subcategoryID === subcategory.subcategoryID);
-          let rtn = subcategory;
-          rtn.isSelected = !(index===-1);
-          return rtn;
-        }); */
       },
       (err) => {
         throw err;
@@ -58,12 +53,14 @@ export class InteresseComponent implements OnInit {
     )
   }
 
-  /* sendInterest(){
+  sendInterest() {
     let ids: number[] = [];
-    this.allCategories.forEach((x)=>{
-      if(x.isSelected===true){
-        ids.push(x.subcategoryID);
-      }
+    Array.from(this.allCategories).forEach(([category, subs]) => {
+      subs.forEach((subcategory) => {
+        if(subcategory.isSelected){
+          ids.push(subcategory.subcategoryID)
+        }
+      })
     })
     this.interesseService.sendInterests(ids).subscribe(
       (response) => {
@@ -74,5 +71,5 @@ export class InteresseComponent implements OnInit {
         throw err;
       }
     );
-  } */
+  }
 }
