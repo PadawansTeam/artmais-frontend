@@ -39,7 +39,8 @@
         "INTERESSE":"Interests",
         "CONFIG": "Configurations",
         "PERFIL": "Profile",
-        "SAIR": "Log Out"
+        "SAIR": "Log Out",
+        "USUARIOS": "Users"
     },
     "FOOTER": {
         "SOBRE": "ABOUT",
@@ -109,9 +110,9 @@
             "TELEFONES": "Phones",
             "ENDERECO": "Address",
             "RUA": "Street:",
-            "NUMERO": "House Number:",
+            "NUMERO": "Number:",
             "BAIRRO": "District:",
-            "CEP": "Zip/Postal Code:",
+            "CEP": "Zip:",
             "CALENDARIO": "Calendar",
             "CALENDARIO-BUTTON": "Access",
             "COMPARTILHAR": "Share",
@@ -188,4 +189,10 @@
             "BUTTON-A": "I accept",
             "BUTTON-B": "I do not accept"
         }
+        ,
+    "USUARIOS": {
+        "TITULO": "USERS",
+        "TEXTO": "See all platform users and network!"
+       
+    }
 }

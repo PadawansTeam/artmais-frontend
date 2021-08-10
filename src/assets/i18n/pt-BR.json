@@ -40,7 +40,8 @@
         "INTERESSE":"Interesses",
         "CONFIG": "Configurações",
         "PERFIL": "Perfil",
-        "SAIR": "Sair"
+        "SAIR": "Sair",
+        "USUARIOS": "Usuários"
     },
     "FOOTER": {
         "SOBRE": "SOBRE",
@@ -188,6 +189,12 @@
         "TEXTO-7": "Caso você não concorde com algum ponto deste acordo, selecione a opção “Eu não aceito” para que o seu cadastro na plataforma seja negado. Desta maneira, será redirecionado para a página inicial, onde o perfil poderá ser criado quando quiser. Estando de acordo, ao clicar em “Eu aceito”, você concorda com todos os pontos apresentados sobre o uso de seus dados em nossos serviços.",
         "BUTTON-A": "Eu aceito",
         "BUTTON-B": "Eu não aceito"
+    
+    },
+    "USUARIOS": {
+        "TITULO": "USUÁRIOS",
+        "TEXTO": "Veja todos os usuários da plataforma e faça seu networking!"
+       
     }
 }
 

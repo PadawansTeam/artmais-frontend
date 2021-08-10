@@ -35,8 +35,9 @@ import { InteresseService } from './interesse/service/interesse.service';
 import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
 import { ConfiguracaoService } from './configuracao/service/configuracao.service';
-
-
+import { UsuariosComponent } from './usuarios/component/usuarios.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PerfilComponent } from './perfil/component/perfil.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -45,6 +46,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    UsuariosComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -69,23 +72,24 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ConstrucaoModule,
     HomepageModule,
     PlanosModule,
-    HeaderlogModule, 
+    HeaderlogModule,
     PerfilModule,
     DashboardModule,
     InteresseModule,
     ConfiguracaoModule,
-    ArtistaModule
+    ArtistaModule,
+    NgbModule
   ],
   providers: [
-    TranslateService, 
-    LoginService, 
-    CadastroService, 
-    RecommendationService, 
-    InteresseService, 
-    PerfilService, 
+    TranslateService,
+    LoginService,
+    CadastroService,
+    RecommendationService,
+    InteresseService,
+    PerfilService,
     ArtistaService,
     ConfiguracaoService
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

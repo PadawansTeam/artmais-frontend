@@ -8,11 +8,10 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
   selector: 'app-configuracao',
   templateUrl: './configuracao.component.html',
   styleUrls: ['./configuracao.component.css'],
-  providers: [DatePipe],
 })
 export class ConfiguracaoComponent implements OnInit {
   information!: Configuracao;
-  selectedProfileFiles!: FileList;
+  selectedProfileFiles: FileList | undefined;
   urlImagem!: any;
   formConfig!: FormGroup;
 
@@ -70,10 +69,6 @@ export class ConfiguracaoComponent implements OnInit {
       (response: Configuracao) => {
         this.information = response;
         this.userInfo = response;
-        this.userInfo.birthDate = this.datePipe.transform(
-          this.userInfo.birthDate,
-          'dd/MM/yyyy'
-        );
       },
       (err) => {
         throw err;
@@ -199,8 +194,9 @@ export class ConfiguracaoComponent implements OnInit {
   }
 
   async uploadProfile() {
-    const file = this.selectedProfileFiles.item(0);
-    this.urlImagem = await this.configService.uploadProfileFile(file!);
+    const file = this.selectedProfileFiles?.item(0);
+    if (file == undefined) this.urlImagem = this.userInfo.userPicture;
+    else this.urlImagem = await this.configService.uploadProfileFile(file!);
     this.configService
       .updateUserInfo(
         this.userInfo.name,

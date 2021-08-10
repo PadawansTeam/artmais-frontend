@@ -4,11 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
-import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
-import { PerfilService } from './service/perfil.service';
-
+import { UsuariosComponent } from './component/usuarios.component';
 
 
 
@@ -19,24 +17,22 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
     TranslateModule.forRoot({
       loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
       }
-    }),
+  }),
     SelectModule,
     HeaderlogModule,
     FooterModule
   ],
-  providers: [
-    TranslateService,
-    PerfilService
-  ],
+  providers: [ TranslateService ],
   bootstrap: []
 })
-export class PerfilModule { }
+export class UsuariosModule { }
