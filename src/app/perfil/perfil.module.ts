@@ -10,14 +10,11 @@ import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { PerfilComponent } from './component/perfil.component';
 import { PerfilService } from './service/perfil.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
-
+import { FormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
-
 
 @NgModule({
   declarations: [
@@ -25,13 +22,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
       }
-  }),
+    }),
     SelectModule,
     HeaderlogModule,
     FooterModule,
