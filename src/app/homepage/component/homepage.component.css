@@ -4,6 +4,7 @@
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 0 30px 0 rgba(67, 18, 112, 0.3);
+  height: 14rem;
 }
 
 .friend-list .friend-card:hover {
@@ -15,8 +16,8 @@
 }
 
 img.profile-photo-lg {
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   border: 7px solid #fff;
   margin-top: -60px;
@@ -48,12 +49,10 @@ img.profile-photo-lg {
 
 .profile-link {
   text-decoration: none;
-  color: black;
+  color: #3a393b;
   text-align: center;
-}
-
-.box {
-  box-shadow: red 2rem;
+  font-size: 1rem;
+  text-align: center;
 }
 
 section {
@@ -68,6 +67,11 @@ section {
   padding-bottom: 30px;
   position: relative;
 
+}
+.text-sub {
+  color: #701ec6;
+  text-decoration: none;
+  font-size: small;
 }
 
 .section-title h2 {

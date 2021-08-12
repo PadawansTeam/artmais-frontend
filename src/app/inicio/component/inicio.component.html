@@ -1,112 +1,182 @@
 <app-header></app-header>
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <div class="row">
-        <div class="col-xl-12">
-          <img src="../assets/img/logos/log.png" alt="" class="logo">
-          <h1>{{'INICIO.TITULO' | translate}}</h1>
-          <h2>{{'INICIO.SUBTITULO' | translate}}</h2>
-          <a href="#about" class="btn-get-started scrollto">{{'INICIO.CONHECA' | translate}}</a>
-        </div>
+<div id="carouselhero" class="carousel slide carousel-fade text-center" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active " data-bs-interval="5000">
+      <img src="../assets/img/slide/home.jpg" class="back" alt="...">
+      <div class="carousel-caption " data-aos="zoom-out" data-aos-delay="100">
+        <img src="../assets/img/logos/log.png" alt="" class="logo">
+        <h1>{{'INICIO.TITULO' | translate}}</h1>
+        <h2>{{'INICIO.SUBTITULO' | translate}}</h2>
+        <a href="#about" class="btn-get-started scrollto">{{'INICIO.CONHECA' | translate}}</a>
       </div>
     </div>
-  </section>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="../assets/img/slide/slider1.jpeg" class="back" alt="...">
+      <div class="carousel-caption">
+        <img src="../assets/img/logos/log.png" alt="..." class="logo">
+        <h1>{{'INICIO.TITULO' | translate}}</h1>
+        <h2>{{'INICIO.SUBTITULO' | translate}}</h2>
+        <a href="#about" class="btn-get-started scrollto">{{'INICIO.CONHECA' | translate}}</a>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="../assets/img/slide/slider2.jpg" class="back" alt="...">
+      <div class="carousel-caption">
+        <img src="../assets/img/logos/log.png" alt="..." class="logo">
+        <h1>{{'INICIO.TITULO' | translate}}</h1>
+        <h2>{{'INICIO.SUBTITULO' | translate}}</h2>
+        <a href="#about" class="btn-get-started scrollto">{{'INICIO.CONHECA' | translate}}</a>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="../assets/img/slide/slider3.jpg" class="back" alt="...">
+      <div class="carousel-caption">
+        <img src="../assets/img/logos/log.png" alt="" class="logo">
+        <h1>{{'INICIO.TITULO' | translate}}</h1>
+        <h2>{{'INICIO.SUBTITULO' | translate}}</h2>
+        <a href="#about" class="btn-get-started scrollto">{{'INICIO.CONHECA' | translate}}</a>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="../assets/img/slide/slider4.jpg" class="back" alt="...">
+      <div class="carousel-caption">
+        <img src="../assets/img/logos/log.png" alt="..." class="logo">
+        <h1>{{'INICIO.TITULO' | translate}}</h1>
+        <h2>{{'INICIO.SUBTITULO' | translate}}</h2>
+        <a href="#about" class="btn-get-started scrollto">{{'INICIO.CONHECA' | translate}}</a>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="../assets/img/slide/slider5.jpg" class="back" alt="...">
+      <div class="carousel-caption">
+        <img src="../assets/img/logos/log.png" alt="..." class="logo">
+        <h1>{{'INICIO.TITULO' | translate}}</h1>
+        <h2>{{'INICIO.SUBTITULO' | translate}}</h2>
+        <a href="#about" class="btn-get-started scrollto">{{'INICIO.CONHECA' | translate}}</a>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="../assets/img/slide/slider6.jpg" class="back" alt="...">
+      <div class="carousel-caption">
+        <img src="../assets/img/logos/log.png" alt="..." class="logo">
+        <h1>{{'INICIO.TITULO' | translate}}</h1>
+        <h2>{{'INICIO.SUBTITULO' | translate}}</h2>
+        <a href="#about" class="btn-get-started scrollto">{{'INICIO.CONHECA' | translate}}</a>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="../assets/img/slide/slider7.jpg" class="back" alt="...">
+      <div class="carousel-caption">
+        <img src="../assets/img/logos/log.png" alt="..." class="logo">
+        <h1>{{'INICIO.TITULO' | translate}}</h1>
+        <h2>{{'INICIO.SUBTITULO' | translate}}</h2>
+        <a href="#about" class="btn-get-started scrollto">{{'INICIO.CONHECA' | translate}}</a>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="../assets/img/slide/slider8.jpg" class="back" alt="...">
+      <div class="carousel-caption">
+        <img src="../assets/img/logos/log.png" alt="..." class="logo">
+        <h1>{{'INICIO.TITULO' | translate}}</h1>
+        <h2>{{'INICIO.SUBTITULO' | translate}}</h2>
+        <a href="#about" class="btn-get-started scrollto">{{'INICIO.CONHECA' | translate}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="about" class="about section-bg">
+  <div class="container" data-aos="fade-up">
 
-      <!-- ======= About Section ======= -->
-      <section id="about" class="about section-bg">
-        <div class="container" data-aos="fade-up">
-  
-          <div class="row no-gutters">
-            <div class="content col-xl-5 d-flex align-items-stretch">
-              <div class="content">
-                <h3>{{'INICIO.SOBRE-TITULO' | translate}}</h3>
-                <p>{{'INICIO.SOBRE-SUBTITULO' | translate}}</p>
-                <a href="/cadastro" class="about-btn"><span>{{'INICIO.SOBRE-CADASTRAR' | translate}}</span> <i class="bx bx-chevron-right"></i></a>
-              </div>
+    <div class="row no-gutters">
+      <div class="content col-xl-5 d-flex align-items-stretch">
+        <div class="content">
+          <h3>{{'INICIO.SOBRE-TITULO' | translate}}</h3>
+          <p>{{'INICIO.SOBRE-SUBTITULO' | translate}}</p>
+          <a href="/cadastro" class="about-btn"><span>{{'INICIO.SOBRE-CADASTRAR' | translate}}</span> <i
+              class="bx bx-chevron-right"></i></a>
+        </div>
+      </div>
+      <div class="col-xl-7 d-flex align-items-stretch">
+        <div class="icon-boxes d-flex flex-column justify-content-center">
+          <div class="row">
+            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-image"></i>
+              <h4>{{'INICIO.SOBRE-TEXTO1' | translate}}</h4>
+              <p>{{'INICIO.SOBRE-SUBTEXTO1' | translate}}</p>
             </div>
-            <div class="col-xl-7 d-flex align-items-stretch">
-              <div class="icon-boxes d-flex flex-column justify-content-center">
-                <div class="row">
-                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <i class="bx bx-image"></i>
-                    <h4>{{'INICIO.SOBRE-TEXTO1' | translate}}</h4>
-                    <p>{{'INICIO.SOBRE-SUBTEXTO1' | translate}}</p>
-                  </div>
-                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                    <i class="bx bx-cube-alt"></i>
-                    <h4>{{'INICIO.SOBRE-TEXTO2' | translate}}</h4>
-                    <p>{{'INICIO.SOBRE-SUBTEXTO2' | translate}}</p>
-                  </div>
-                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                    <i class="bx bx-like"></i>
-                    <h4>{{'INICIO.SOBRE-TEXTO3' | translate}}</h4>
-                    <p>{{'INICIO.SOBRE-SUBTEXTO3' | translate}}</p>
-                  </div>
+            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-cube-alt"></i>
+              <h4>{{'INICIO.SOBRE-TEXTO2' | translate}}</h4>
+              <p>{{'INICIO.SOBRE-SUBTEXTO2' | translate}}</p>
+            </div>
+            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-like"></i>
+              <h4>{{'INICIO.SOBRE-TEXTO3' | translate}}</h4>
+              <p>{{'INICIO.SOBRE-SUBTEXTO3' | translate}}</p>
+            </div>
 
-                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <i class="bx bx-network-chart"></i>
-                    <h4>{{'INICIO.SOBRE-TEXTO4' | translate}}</h4>
-                    <p>{{'INICIO.SOBRE-SUBTEXTO4' | translate}}</p>
-                  </div>
-                </div>
-              </div><!-- End .content-->
+            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-network-chart"></i>
+              <h4>{{'INICIO.SOBRE-TEXTO4' | translate}}</h4>
+              <p>{{'INICIO.SOBRE-SUBTEXTO4' | translate}}</p>
             </div>
           </div>
+        </div><!-- End .content-->
+      </div>
+    </div>
   </div>
 </section><!-- End About Section -->
 <!--Planos Section-->
-      <section id="pricing" class="pricing">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>{{'INICIO.PLANOS-TITULO' | translate}}</h2>
-            <p>{{'INICIO.PLANOS-SUBTITULO' | translate}}</p>
+<section id="pricing" class="pricing">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>{{'INICIO.PLANOS-TITULO' | translate}}</h2>
+      <p>{{'INICIO.PLANOS-SUBTITULO' | translate}}</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-2 ">
+
+
+      </div>
+      <div class="col-md-4 " data-aos="fade" data-aos-delay="100">
+        <div class="box">
+          <h3 class="cor1">{{'INICIO.PLANOS-TITULO-CARD1' | translate}}</h3>
+          <h4><sup>R$</sup>0<span> {{'INICIO.PLANOS-POR-MES' | translate}}</span></h4>
+          <ul>
+            <li>{{'INICIO.PLANOS-TEXTO1-CARD1' | translate}}</li>
+            <li>{{'INICIO.PLANOS-TEXTO2-CARD1' | translate}}</li>
+            <li>{{'INICIO.PLANOS-TEXTO3-CARD1' | translate}}</li>
+            <li class="na">{{'INICIO.PLANOS-TEXTO4-CARD1' | translate}}</li>
+            <li class="na">{{'INICIO.PLANOS-TEXTO5-CARD1' | translate}}</li>
+            <li class="na">{{'INICIO.PLANOS-TEXTO6-CARD1' | translate}}</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="/cadastro" class="btn-buy">{{'INICIO.PLANOS-CADASTRAR-CARD1' | translate}}</a>
           </div>
-    
-          <div class="row">
-    
-            <div class="col-md-2 ">
-              
-    
-            </div>
-            <div class="col-md-4 " data-aos="fade" data-aos-delay="100">
-              <div class="box">
-                <h3 class="cor1">{{'INICIO.PLANOS-TITULO-CARD1' | translate}}</h3>
-                <h4><sup>R$</sup>0<span> {{'INICIO.PLANOS-POR-MES' | translate}}</span></h4>
-                <ul>
-                  <li>{{'INICIO.PLANOS-TEXTO1-CARD1' | translate}}</li>
-                  <li>{{'INICIO.PLANOS-TEXTO2-CARD1' | translate}}</li>
-                  <li>{{'INICIO.PLANOS-TEXTO3-CARD1' | translate}}</li>
-                  <li class="na">{{'INICIO.PLANOS-TEXTO4-CARD1' | translate}}</li>
-                  <li class="na">{{'INICIO.PLANOS-TEXTO5-CARD1' | translate}}</li>
-                  <li class="na">{{'INICIO.PLANOS-TEXTO6-CARD1' | translate}}</li>
-                </ul>
-                <div class="btn-wrap">
-                  <a href="/cadastro" class="btn-buy">{{'INICIO.PLANOS-CADASTRAR-CARD1' | translate}}</a>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-md-4 " data-aos="zoom-in" data-aos-delay="200">
-              <div class="box featured">
-                <h3>{{'INICIO.PLANOS-TITULO-CARD2' | translate}}</h3>
-                <h4><sup>R$</sup>10<span> {{'INICIO.PLANOS-POR-MES' | translate}}</span></h4>
-                <ul>
-                  <li>{{'INICIO.PLANOS-TEXTO1-CARD2' | translate}}</li>
-                  <li>{{'INICIO.PLANOS-TEXTO2-CARD2' | translate}}</li>
-                  <li>{{'INICIO.PLANOS-TEXTO3-CARD2' | translate}}</li>
-                  <li>{{'INICIO.PLANOS-TEXTO4-CARD2' | translate}}</li>
-                  <li>{{'INICIO.PLANOS-TEXTO5-CARD2' | translate}}</li>
-                  <li>{{'INICIO.PLANOS-TEXTO6-CARD2' | translate}}</li>
-                </ul>
-                <div class="btn-wrap">
-                  <a href="#" class="btn-buy">{{'INICIO.PLANOS-CADASTRAR-CARD2' | translate}}</a>
-                </div>
-              </div>
-            </div>  
-            <div class="col-md-2 " >  
-            </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 " data-aos="zoom-in" data-aos-delay="200">
+        <div class="box featured">
+          <h3>{{'INICIO.PLANOS-TITULO-CARD2' | translate}}</h3>
+          <h4><sup>R$</sup>10<span> {{'INICIO.PLANOS-POR-MES' | translate}}</span></h4>
+          <ul>
+            <li>{{'INICIO.PLANOS-TEXTO1-CARD2' | translate}}</li>
+            <li>{{'INICIO.PLANOS-TEXTO2-CARD2' | translate}}</li>
+            <li>{{'INICIO.PLANOS-TEXTO3-CARD2' | translate}}</li>
+            <li>{{'INICIO.PLANOS-TEXTO4-CARD2' | translate}}</li>
+            <li>{{'INICIO.PLANOS-TEXTO5-CARD2' | translate}}</li>
+            <li>{{'INICIO.PLANOS-TEXTO6-CARD2' | translate}}</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn-buy">{{'INICIO.PLANOS-CADASTRAR-CARD2' | translate}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 ">
+      </div>
     </div>
   </div>
   <br>
