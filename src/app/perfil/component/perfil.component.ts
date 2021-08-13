@@ -49,14 +49,14 @@ export class PerfilComponent implements OnInit {
       );
   }
 
-  async insertPortfolioFile() {
+  async insertPortfolioFile(userID: number) {
     const file = this.selectedPortfolioContent?.item(0);
     if (file == undefined) {
       alert("Uma imagem deve ser selecionada");
       return;
     }
     else
-      this.portfolioContent.portfolioImageUrl = await this.perfilService.uploadPortfolioFile(file!);
+      this.portfolioContent.portfolioImageUrl = await this.perfilService.uploadPortfolioFile(file!, userID);
     this.perfilService
       .insertPortfolioContent(
         this.portfolioContent.portfolioImageUrl,

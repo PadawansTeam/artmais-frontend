@@ -15,6 +15,7 @@ export class ConfiguracaoComponent implements OnInit {
   formConfig!: FormGroup;
 
   userInfo: any = {
+    userID: null,
     name: null,
     username: null,
     userPicture: null,
@@ -191,10 +192,10 @@ export class ConfiguracaoComponent implements OnInit {
       );
   }
 
-  async uploadProfile() {
+  async uploadProfile(userID: number) {
     const file = this.selectedProfileFiles?.item(0);
     if (file == undefined) this.urlImagem = this.userInfo.userPicture;
-    else this.urlImagem = await this.configService.uploadProfileFile(file!);
+    else this.urlImagem = await this.configService.uploadProfileFile(file!, userID);
     this.configService
       .updateUserInfo(
         this.userInfo.name,

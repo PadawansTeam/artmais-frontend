@@ -13,6 +13,7 @@ export class PerfilService {
   public token = localStorage.getItem('token');
 
   PortfolioFolder = 'portfolio-pictures/';
+  DateTimeNow = new Date();
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -21,7 +22,7 @@ export class PerfilService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getUser(): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/User', this.httpOptions);
@@ -53,7 +54,9 @@ export class PerfilService {
     );
   }
 
-  async uploadPortfolioFile(file: File): Promise<string> {
+  async uploadPortfolioFile(file: File, userID: number): Promise<string> {
+    const fileName = ((this.DateTimeNow.getTime() * 10000) + 621355968000000000);
+    const fileType = file.type.split('/').pop();
     const bucket = new S3({
       accessKeyId: `${environment.accessKeyId}`,
       secretAccessKey: `${environment.secretAccessKey}`,
@@ -62,7 +65,8 @@ export class PerfilService {
 
     const params = {
       Bucket: `${environment.bucket}`,
-      Key: this.PortfolioFolder + file.name,
+      ContentType: file.type.split('.').pop(),
+      Key: this.PortfolioFolder + `${userID}/` + fileName + `.${fileType}`,
       Body: file,
       ACL: 'public-read',
     };

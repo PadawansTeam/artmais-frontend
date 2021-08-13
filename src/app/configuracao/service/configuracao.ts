@@ -1,5 +1,6 @@
 export class Configuracao {
     constructor(
+        public userID?: number,
         public name?: string,
         public username?: string,
         public userPicture?: string,
