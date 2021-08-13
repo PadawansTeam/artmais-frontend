@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,37 +18,36 @@ import { InicioModule } from './inicio/inicio.module';
 import { CommonModule } from '@angular/common';
 import { LoginService } from './login/service/login.service';
 import { CadastroService } from './cadastro/service/cadastro.service';
-import { ErroModule } from './erro/erro.module';
-import { ConstrucaoModule } from './construcao/construcao.module';
 import { SwiperModule } from 'swiper/angular';
 import { HomepageModule } from './homepage/homepage.module';
-import { PlanosModule } from './planos/planos.module';
 import { HeaderlogModule } from './headerlog/headerlog.module';
 import { PerfilModule } from './perfil/perfil.module';
-import { DashboardModule } from './dashboard/dashboad.module';
-import { InteresseModule } from './interesse/interesse.module';
-import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { RecommendationService } from './homepage/service/recommendation.service';
 import { ArtistaModule } from './artista/artista.module';
-import { InteresseService } from './interesse/service/interesse.service';
 import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
+import { UsuariosModule } from './usuarios/usuarios.module';
+import { ErroModule } from './erro/erro.module';
+import { PlanosModule } from './planos/planos.module';
+import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { ConfiguracaoService } from './configuracao/service/configuracao.service';
-import { UsuariosComponent } from './usuarios/component/usuarios.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
-
+import { ConstrucaoModule } from './construcao/construcao.module';
+import { DashboardModule } from './dashboard/dashboad.module';
+import { InteresseModule } from './interesse/interesse.module';
+import { InteresseService } from './interesse/service/interesse.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UsuariosComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -75,20 +73,21 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ConstrucaoModule,
     HomepageModule,
     PlanosModule,
-    HeaderlogModule, 
+    HeaderlogModule,
+    UsuariosModule,
     PerfilModule,
     DashboardModule,
     InteresseModule,
     ConfiguracaoModule,
-    ArtistaModule
+    ArtistaModule,
   ],
   providers: [
-    TranslateService, 
-    LoginService, 
-    CadastroService, 
-    RecommendationService, 
-    InteresseService, 
-    PerfilService, 
+    TranslateService,
+    LoginService,
+    CadastroService,
+    RecommendationService,
+    InteresseService,
+    PerfilService,
     ArtistaService,
     ConfiguracaoService,
     {
@@ -100,11 +99,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
               '891131493527-nqi3qkvomv8j9hio1vanpq4qkp6dvmoa.apps.googleusercontent.com'
-            )
-          }
-        ]
+            ),
+          },
+        ],
       } as SocialAuthServiceConfig,
-    }
+    },
   ],
   bootstrap: [AppComponent],
 })

@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import { LoginResponseDto, LoginService } from '../service/login.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {
   SocialAuthService,
   GoogleLoginProvider,
   SocialUser,
 } from 'angularx-social-login';
+import {
+  Validators,
+  FormBuilder,
+  FormGroup,
+  FormControl,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -23,9 +28,9 @@ export class LoginComponent {
   roles: string[] = [];
   loginReturn: boolean = false;
   erroLogin: boolean = false;
-  loginForm: FormGroup | undefined;
   socialUser: SocialUser = new SocialUser();
   isLoggedin: boolean = false;
+  formLogin!: FormGroup;
 
   constructor(
     private loginService: LoginService,
@@ -35,9 +40,15 @@ export class LoginComponent {
   ) {}
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+    this.formLogin = this.formBuilder.group({
+      password: new FormControl('', Validators.required),
+      email: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}'),
+        ])
+      ),
     });
 
     this.socialAuthService.authState.subscribe((user) => {

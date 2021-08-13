@@ -1,29 +1,26 @@
 <app-headerlog></app-headerlog>
-<section clas=welcome>
+<section class="welcome">
   <div class="section-title" data-aos="fade-up">
-    <div class="container">    <div class="row text-center">
-      <h2>{{ 'RECOMENDACAO.TITULO' | translate }}</h2>
-      <div class="col-md-12 ">
-        <p>{{ 'RECOMENDACAO.SUBTITULO' | translate }}</p>
+    <div class="container">
+      <div class="row text-center">
+        <h2>{{ 'RECOMENDACAO.TITULO' | translate }}</h2>
+        <div class="col-md-12 ">
+          <p>{{ 'RECOMENDACAO.SUBTITULO' | translate }}</p>
+        </div>
       </div>
-    </div></div>
-
+    </div>
   </div>
   <div class="container" data-aos="fade-up">
     <div class="friend-list">
       <div class="row">
         <div *ngFor="let recomendacao of recommendations" class="col-md-3 col-sm-6">
           <div class="friend-card" (click)="getPerfilById(recomendacao.userId)">
-            <img
-              [src]="recomendacao.backgroundPicture"
-              alt="profile-cover" class="img-responsive cover">
+            <img [src]="recomendacao.backgroundPicture" alt="profile-cover" class="img-responsive cover">
             <div class="card-info">
-              <img
-                [src]="recomendacao.userPicture"
-                alt="user" class="profile-photo-lg">
+              <img [src]="recomendacao.userPicture" alt="user" class="profile-photo-lg">
               <div class="friend-info">
-                <a class="pull-right text-green">{{recomendacao.category}} - </a>
-                <a class="pull-right text-green">{{recomendacao.subcategory}}</a>
+                <a class="pull-right text-green">{{recomendacao.category}}</a><br>
+                <a class="pull-right text-sub">{{recomendacao.subcategory}}</a>
                 <h5><a class="profile-link">{{recomendacao.username}}</a></h5>
               </div>
             </div>

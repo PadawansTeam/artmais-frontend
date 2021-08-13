@@ -22,7 +22,6 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.recommendationService.getRecommendations().subscribe(
       (response) => {
-        console.log(response)
         this.recommendations = response as Recommendation[];
       },
       (err) => {
@@ -32,7 +31,14 @@ export class HomepageComponent implements OnInit {
   }
 
   getPerfilById(id: number) {
-    this.router.navigate(['/artista', id]);
+    this.recommendationService.visitedProfiles(id).subscribe(
+      () => {
+        this.router.navigate(['/artista', id]);
+      },
+      (err) => {
+        throw err;
+      }
+    )
   }
   
 }

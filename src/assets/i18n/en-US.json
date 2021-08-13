@@ -8,12 +8,19 @@
         "EMAIL": "E-mail",
         "CONF-EMAIL": "Confirm your e-mail",
         "SENHA": "Password",
+        "CAMPO-SENHA":"Your password must have:",
+        "CAMPO-CRIT-1":"At least 8 characters",
+        "CAMPO-CRIT-2":"At least 1 capital letter",
+        "CAMPO-CRIT-4":"At least 1 number",
+        "CAMPO-CRIT-5":"At least 1 special character",
+        "CAMPO-CRIT-3":"At least 1 lowercase letter",
         "CONF-SENHA": "Confirm your password",
         "NASCIMENTO": "Birth date",
         "BOTAO": "Sign up",
         "ARTISTA": "I'm an artist",
         "CLIENTE": "I'm not an artist",
-        "ERRO": "Required fields were not filled. Please, try again!"
+        "ERRO": "Required fields were not filled. Please, try again!",
+        "INVALIDO": "Invalid field"
     },
     "ENTRAR": {
         "ENTRAR": "Sign In",
@@ -21,7 +28,8 @@
         "SENHA": "Password",
         "BOTAO": "Sign in",
         "ERRO": "E-mail or password are wrong. Please try again!",
-        "ESQUECEU": "Forgot your password?"
+        "ESQUECEU": "Forgot your password?",
+        "INVALIDO": "Invalid field"
     },
     "MENU": {
         "HOME": "Home",
@@ -38,7 +46,8 @@
         "CONFIG": "Configurations",
         "PERFIL": "Profile",
         "SAIR": "Log Out",
-        "USUARIOS": "Users"
+        "USUARIOS": "Users",
+        "DASHBOARD": "Dashboard"
     },
     "FOOTER": {
         "SOBRE": "ABOUT",
@@ -100,7 +109,8 @@
             "BUTTON": "Back"
         },
         "INTERESSES": {
-            "TITULO": "Choose the categories of artists that you have more interest to follow",
+            "TITULO" : "Interest",
+            "SUBTITULO": "Choose the categories of artists that you have more interest to follow",
             "CATEGORIA": "Category",
             "BUTTON": "Next"
         },
@@ -117,18 +127,17 @@
             "PORTIFOLIO": "Portfolio",
             "SALVAR": "Save",
             "FECHAR":"Close",
-            "DESCRIÇÃO-ITEM-PORTFOLIO": "Description",
-            "ADICIONAR-ITEM": "Add item to your portfolio"
+            "DESCRIÇÃO-ITEM-PORTFOLIO": "Description:",
+            "ADICIONAR-ITEM": "Add item to your portfolio",
+            "PLACE-DESCRIÇÃO": "Enter the description..."
             
         },
         "CONFIG": {
             "SOBRE":"About",
             "DESCRICAO":"Description:",
             "DESCRICAO-BOX":"Enter the description...",
-    
             "REDES-SOCIAIS":"Social Networks",
             "CONTATO-PESSOAL":"Contact",
-    
             "DETALHES":"Details",
             "NOME":"Name:",
             "NOME-BOX":"Name",
@@ -144,7 +153,6 @@
             "PRIMEIRO-TELEFONE-BOX":"First phone",
             "SEGUNDO-TELEFONE-BOX":"Second phone",
             "TERCEIRO-TELEFONE-BOX":"Third phone",
-    
             "ENDERECO":"Address",
             "LOGRADOURO":"Street:",
             "LOGRADOURO-BOX":"Enter the street",
@@ -160,13 +168,13 @@
             "CEP-BOX":"Enter Zip/Postal Code",
             "COMPLEMENTO":"Complement:",
             "COMPLEMENTO-BOX":"Enter the complement",
-    
             "SENHA":"Password",
             "SENHA-ATUAL":"Current Password",
             "SENHA-BOX":"Enter the password",
             "NOVA-SENHA":"New password",
             "CONFIRMA-SENHA":"Confirm New password",
-            "CONFIG-BUTTONS" :"Save"
+            "CONFIG-BUTTONS" :"Save",
+            "INVALIDO": "Invalid field"
         },
         "PRIVACIDADE": {
             "TITULO": "Privacy and Security Agreement",

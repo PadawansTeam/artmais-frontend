@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from '../service/cadastro.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {
   SocialAuthService,
   GoogleLoginProvider,
   SocialUser,
 } from 'angularx-social-login';
 import { LoginService } from 'src/app/login/service/login.service';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro',
@@ -35,9 +35,10 @@ export class CadastroComponent implements OnInit {
   isArtist = false;
   isClient = false;
   invalidField = false;
-  loginForm: FormGroup | undefined;
+  formCadastro!: FormGroup;
   socialUser: SocialUser = new SocialUser();
   isLoggedin: boolean = false;
+
   constructor(
     private cadastroService: CadastroService,
     private router: Router,
@@ -47,13 +48,29 @@ export class CadastroComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.cadastroService.getAll().subscribe((response) => {
-      this.arraySelect = response;
-    });
+    this.cadastroService.getAll().subscribe(
+      (response) => {
+        this.arraySelect = response;
+      },
+    );
 
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+    this.formCadastro = this.formBuilder.group({
+      name: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$')
+      ])),
+      username: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9.\-_$@*!]{3,30}$')
+      ])),
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}')
+      ])),
+      password: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
+      ])),
     });
 
     this.socialAuthService.authState.subscribe((user) => {

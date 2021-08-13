@@ -9,12 +9,18 @@
 }
 
 .back {
-	background-image: url("src/assets/img/slide/test2.jpg");
+	background-image: url("src/assets/img/slide/slider3.jpg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	z-index: 0;
 	height: 250px;
+}
+
+img {
+  object-fit: cover; 
+  width: 100%; 
+  height: 80%;
 }
 
 body {
@@ -234,14 +240,17 @@ div.img-responsive {
 }
 
 .icon-color {
-	font-size: 15px;
-	line-height: 40px;
 	width: 40px;
 	height: 40px;
 	transition: all 0.3s;
 	color: white;
 	border-radius: 100%;
 	background-color: #701ec6;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	-ms-border-radius: 100%;
+	-o-border-radius: 100%;
+	padding: 10px;
 }
 
 .btn-calendar {
@@ -306,7 +315,7 @@ div.img-responsive {
 }
 
 .form-control2 {
-	margin-top: 2rem;
+	margin-top: 1rem;
 	border: 1px solid #701ec6;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -351,4 +360,12 @@ input[type='file']::-webkit-file-upload-button:hover {
 	background-color: white;
 	color: #701ec6;
 	border-radius: 4px;
+}
+
+.descr{
+	text-align: left;
+	align-items: center;
+	margin-top: 2rem;
+	font-style: bold;
+
 }
