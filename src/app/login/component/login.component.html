@@ -37,6 +37,11 @@
                 <p align="center"><a href="#" class="forgot">{{ "ENTRAR.ESQUECEU" | translate }}</a></p>
               </div>
             </div>
+            <div *ngIf="isLoggedin === false" class="row">
+              <div class="col-md-12 text-center">
+                <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
