@@ -7,8 +7,22 @@
           <div class="form">
             <div class="card-header card-header-primary text-center ">
               <h4 class="card-title">{{ "ENTRAR.ENTRAR" | translate }}</h4>
+              <div class="container">
+                <div class="row text-center mt-1">
+                  <div class="col-md-12">
+                    <a href=""><i class="fab fa-google icon-color"></i></a>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="card-body">
+              <div class="division">
+                <div class="line l">
+                </div>
+                <span class="cg">Ou</span>
+                <div class="line r">
+                </div>
+              </div>
               <form [formGroup]="formLogin">
                 <div class="input-group">
                   <div class="input-group-prepend">
@@ -38,6 +52,12 @@
                 <p align="center"><a href="#" class="forgot">{{ "ENTRAR.ESQUECEU" | translate }}</a></p>
               </div>
             </div>
+              <div class="row">
+                <div class="col-md-12 fot">
+                  <p class="text-fo">{{ "ENTRAR.NAO-POSSUI-CONTA" | translate }}</p>
+                  <a href="\cadastro" class="text-link">{{ "ENTRAR.CADASTRAR" | translate }}</a>
+                </div>
+              </div>
           </div>
         </div>
       </div>
