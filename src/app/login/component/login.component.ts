@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginResponseDto, LoginService } from '../service/login.service';
 import { Router } from '@angular/router';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +18,23 @@ export class LoginComponent {
   roles: string[] = [];
   loginReturn: boolean = false;
   erroLogin: boolean = false;
+  formLogin!: FormGroup;
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(
+    private loginService: LoginService, 
+    private router: Router,
+    private formBuilder: FormBuilder
+    ) {}
+
+  ngOnInit(): void {
+    this.formLogin = this.formBuilder.group({
+      password: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}')
+      ]))
+    });    
+  }
 
   public loginArtPlus() {
     this.loginService

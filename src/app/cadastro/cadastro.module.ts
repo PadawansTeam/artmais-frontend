@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CadastroComponent } from './component/cadastro.component';
 import { HttpClient } from '@angular/common/http';
@@ -33,6 +33,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SelectModule,
     HeaderModule,
     FooterModule,
+    ReactiveFormsModule
   ],
   providers: [TranslateService, CadastroService],
   bootstrap: [],

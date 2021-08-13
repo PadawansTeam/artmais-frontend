@@ -4,6 +4,8 @@
     overflow: hidden;
     margin-bottom: 20px;
     box-shadow: 0 0 30px 0 rgba(67, 18, 112, 0.3);
+    height: 13rem;
+ 
   }
   
   .friend-list .friend-card:hover {
@@ -27,6 +29,11 @@
     color: #701ec6;
     text-decoration: none;
   }
+  .text-sub {
+    color: #701ec6;
+    text-decoration: none;
+    font-size: small;
+  }
   
   .title {
     font-size: 30px;
@@ -49,12 +56,12 @@
   
   .profile-link {
     text-decoration: none;
-    color: black;
+    color: #3a393b;
     text-align: center;
+    padding-top: 1rem;
   }
-  
-  .box {
-    box-shadow: red 2rem;
+  .profile{
+    font-size: .85rem;
   }
   
   section {

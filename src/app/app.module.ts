@@ -19,25 +19,23 @@ import { InicioModule } from './inicio/inicio.module';
 import { CommonModule } from '@angular/common';
 import { LoginService } from './login/service/login.service';
 import { CadastroService } from './cadastro/service/cadastro.service';
-import { ErroModule } from './erro/erro.module';
-import { ConstrucaoModule } from './construcao/construcao.module';
 import { SwiperModule } from 'swiper/angular';
 import { HomepageModule } from './homepage/homepage.module';
-import { PlanosModule } from './planos/planos.module';
 import { HeaderlogModule } from './headerlog/headerlog.module';
 import { PerfilModule } from './perfil/perfil.module';
-import { DashboardModule } from './dashboard/dashboad.module';
-import { InteresseModule } from './interesse/interesse.module';
-import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { RecommendationService } from './homepage/service/recommendation.service';
 import { ArtistaModule } from './artista/artista.module';
-import { InteresseService } from './interesse/service/interesse.service';
 import { PerfilService } from './perfil/service/perfil.service';
 import { ArtistaService } from './artista/service/artista.service';
+import { UsuariosModule } from './usuarios/usuarios.module';
+import { ErroModule } from './erro/erro.module';
+import { PlanosModule } from './planos/planos.module';
+import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { ConfiguracaoService } from './configuracao/service/configuracao.service';
-import { UsuariosComponent } from './usuarios/component/usuarios.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PerfilComponent } from './perfil/component/perfil.component';
+import { ConstrucaoModule } from './construcao/construcao.module';
+import { DashboardModule } from './dashboard/dashboad.module';
+import { InteresseModule } from './interesse/interesse.module';
+import { InteresseService } from './interesse/service/interesse.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -45,9 +43,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UsuariosComponent,
-    PerfilComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -73,12 +69,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HomepageModule,
     PlanosModule,
     HeaderlogModule,
+    UsuariosModule,
     PerfilModule,
     DashboardModule,
     InteresseModule,
     ConfiguracaoModule,
     ArtistaModule,
-    NgbModule
   ],
   providers: [
     TranslateService,

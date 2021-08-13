@@ -1,22 +1,44 @@
 <app-headerlog></app-headerlog>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-12 mr-0 mt-5 mb-3">
-                    <p class="c1 ">{{ 'INTERESSES.TITULO' | translate }}</p>
+        <div class="section-title" data-aos="fade-up">
+            <div class="container">
+              <div class="row text-center">
+                <h2>{{ 'INTERESSES.TITULO' | translate }}</h2>
+                <div class="col-md-12 ">
+                  <p>{{ 'INTERESSES.SUBTITULO' | translate }}</p>
                 </div>
+              </div>
             </div>
-        </div>
-        <div class="row align-items-center text-center justify-content-center">
-            <div class="col-md-6 mb-3  img1" style="margin-top: -50%;">
-                <img src="assets/img/pages/interest.svg" alt="erro" style="width:100%;">
+          </div>
+        <div class="row align-items-center text-center justify-content-center" data-aos="fade-up">
+            <div class="col-md-6 mb-3  img1">
+                <img src="assets/img/pages/interest.svg" alt="erro" class="imagem-interesse" style="width:100%;">
             </div>
-            <div class="col-md-6 y-5 mb-3 ">
-                <div class="row">
-                    <div *ngFor="let subcategoria of allCategories" class="col-sm-3 text-center p-1">
-                        <input [(ngModel)]="subcategoria.isSelected" type="checkbox" class="btn-check button" id="{{subcategoria.subcategoryID}}" autocomplete="off">
-                        <label class="btn btn-outline-primary button" for="{{subcategoria.subcategoryID}}">{{subcategoria.category}} - {{subcategoria.subcategory}}</label>
+            <div class="col-md-6 mb-3 text-center ">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item" *ngFor="let categoria of (allCategories | keyvalue); let i=index">
+                        <h2 class="accordion-header" [id]="'heading' + i">
+                            <button class="accordion-button collapsed interesse-button" type="button" data-bs-toggle="collapse"
+                            [attr.data-bs-target]="'#collapse' + i" aria-expanded="false" [attr.aria-controls]="'collapse' + i">
+                                {{categoria.key}}
+                            </button>
+                        </h2>
+                        <div [id]="'collapse' + i" class="accordion-collapse collapse text-center" [attr.aria-labelledby]="'heading' + i"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body ">
+                                <div class="row">
+                                    <div class="col-sm-4 text-center p-1 " *ngFor="let subcategory of categoria.value ">
+                                        <input type="checkbox" [(ngModel)]="subcategory.isSelected"
+                                            class="btn-check button" id="{{subcategory.subcategoryID}}"
+                                            autocomplete="off" />
+                                        <label class="btn btn-outline-primary button "
+                                            for="{{subcategory.subcategoryID}}">{{subcategory.subcategory}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -24,7 +46,8 @@
         <div class="row">
             <div class="col-md-12 text-center mb-5 mt-3 justify-content-center align-items-center">
                 <a>
-                    <button (click)="sendInterest()" type="button" class="btn-principal">{{ 'INTERESSES.BUTTON' | translate }}</button>
+                    <button type="button" (click)="sendInterest()" class="btn-principal">{{ 'INTERESSES.BUTTON' |
+                        translate }}</button>
                 </a>
             </div>
         </div>
