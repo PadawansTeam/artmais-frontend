@@ -185,19 +185,21 @@
                                             </div>
                                             <br>
                                             <div class="col-md-6"></div>
-                                            <input (change)="selectPortfolioFile($event)"      type="file"
+                                            <input (change)="selectPortfolioFile($event)" type="file"
                                                 accept=".jpg, .jpeg, .png" class="form-control" id="photo" required>
-                                            <div class="descr fw-bold">{{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
+                                            <div class="descr fw-bold">
+                                                {{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
                                             <textarea [(ngModel)]="this.portfolioContent.description"
                                                 class="form-control2" cols="50" rows="6"
-                                                placeholder="{{ 'PERFIL.PLACE-DESCRIÇÃO' | translate }}" maxlength="500"></textarea>
+                                                placeholder="{{ 'PERFIL.PLACE-DESCRIÇÃO' | translate }}"
+                                                maxlength="500"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                     </div>
                                 </div>
-                                <button (click)="insertPortfolioFile()" class="getstarted" type="button"
-                                    class="getstarted" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
+                                <button (click)="insertPortfolioFile(this.profile.userID)" class="getstarted"
+                                    type="button" class="getstarted" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
                                     translate }}</button>
                             </div>
                         </div>

@@ -147,6 +147,8 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 .card-title {
 	margin-bottom: 0.75rem;
 	padding-bottom: 0.75rem;
+	font-size: 1.35rem;
+	line-height: 1.5em;
 }
 
 .card-subtitle {
@@ -605,10 +607,6 @@ fieldset[disabled][disabled] .form-control, .form-control.disabled, .form-contro
 	background: linear-gradient(to right, #9558d5, #701ec6);
 }
 
-.card .card-header-primary:hover, .card.bg-primary, .card.card-rotate.bg-primary .front, .card.card-rotate.bg-primary .back:hover {
-	background: linear-gradient(to left, #9558d5, #701ec6);
-}
-
 .card .card-header-info, .card.bg-info, .card.card-rotate.bg-info .front, .card.card-rotate.bg-info .back {
 	background: linear-gradient(to right, #9558d5, #701ec6);
 }
@@ -717,7 +715,7 @@ fieldset[disabled][disabled] .form-control, .form-control.disabled, .form-contro
 }
 
 .card-login .form {
-	min-height: 850px;
+	min-height: 900px;
 }
 
 .back {
@@ -820,4 +818,84 @@ ul li::before {
 	font-weight: bold;
 	display: inline-block;
 	width: 1rem;
+}
+
+.fot {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-content: center;
+}
+
+.text-fo {
+	font-size: 0.8rem;
+	font-weight: light;
+	color: #53585e;
+}
+
+.text-link {
+	font-size: 0.8rem;
+	color: #701ec6;
+	padding-left: 5px;
+}
+
+.text-link:hover {
+	font-size: 0.8rem;
+	font-weight: bold;
+	color: #701ec6;
+}
+
+.icon-color {
+	font-size: 20px;
+	line-height: 30px;
+	width: 33px;
+	height: 33px;
+	transition: all 0.3s;
+	color: white;
+	border-radius: 100%;
+	text-align: center;
+	padding: 8px;
+}
+
+.icon-color:hover {
+	font-size: 20px;
+	line-height: 30px;
+	width: 33px;
+	height: 33px;
+	transition: all 0.3s;
+	color: #ea4335;
+	border-radius: 100%;
+	background: #fff;
+	text-align: center;
+	padding: 8px;
+}
+
+.division {
+	float: none;
+	margin: 20px 0;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+.cg {
+	color: #53585e;
+}
+
+.line {
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	position: absolute;
+	top: 10%;
+	width: 40%;
+	margin-top: 8px;
+}
+
+.line.l {
+	left: 0;
+}
+
+.line.r {
+	right: 0;
 }
