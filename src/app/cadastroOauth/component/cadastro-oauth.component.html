@@ -7,13 +7,6 @@
           <div class="form">
             <div class="card-header card-header-primary text-center " data-aos="fade-up">
               <h4 class="card-title">{{ 'CADASTRO.TITULO' | translate }}</h4>
-              <div class="container">
-                <div class="row text-center mt-1">
-                  <div class="col-md-12">
-                    <button type="button" (click)="loginWithGoogle()"></button>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="card-body">
               <div class="division">
@@ -46,46 +39,6 @@
                 </div>
                 <p *ngIf="formCadastro.get('username')!.touched && !formCadastro.get('username')!.valid" class="error"
                   align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="bx bx-mail-send bx-sm bx-tada-hover"></i>
-                    </span>
-                  </div>
-                  <input [(ngModel)]="this.form.email" formControlName="email" name="email" class="un form-control "
-                    type="email" placeholder="{{ 'CADASTRO.EMAIL' | translate }}" />
-                </div>
-                <p *ngIf="formCadastro.get('email')!.touched && !formCadastro.get('email')!.valid" class="error"
-                  align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="bx bx-lock bx-sm bx-tada-hover"></i>
-                    </span>
-                  </div>
-                  <input class="un form-control " type="password" placeholder="{{ 'CADASTRO.SENHA' | translate }}" />
-                </div>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="bx bx-lock bx-sm bx-tada-hover"></i>
-                    </span>
-                  </div>
-                  <input [(ngModel)]="this.form.password" formControlName="password" name="password"
-                    class="un form-control " type="password" placeholder="{{ 'CADASTRO.CONF-SENHA' | translate }}" />
-                </div>
-                <p *ngIf="formCadastro.get('password')!.touched && !formCadastro.get('password')!.valid" class="error"
-                  align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
-                <div class="password-group">
-                  <p class="password-title">{{ 'CADASTRO.CAMPO-SENHA' | translate }}</p>
-                  <ul class="password-list">
-                    <li>{{ 'CADASTRO.CAMPO-CRIT-1' | translate }}</li>
-                    <li>{{ 'CADASTRO.CAMPO-CRIT-2' | translate }}</li>
-                    <li>{{ 'CADASTRO.CAMPO-CRIT-3' | translate }}</li>
-                    <li>{{ 'CADASTRO.CAMPO-CRIT-4' | translate }}</li>
-                    <li>{{ 'CADASTRO.CAMPO-CRIT-5' | translate }}</li>
-                  </ul>
-                </div>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">

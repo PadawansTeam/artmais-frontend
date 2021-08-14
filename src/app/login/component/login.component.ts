@@ -50,18 +50,6 @@ export class LoginComponent {
         ])
       ),
     });
-
-    this.socialAuthService.authState.subscribe((user) => {
-      this.socialUser = user;
-      this.isLoggedin = user != null;
-      this.loginService
-        .googleAuthenticate(this.socialUser.idToken)
-        .subscribe((response) => {
-          localStorage.setItem('token', response.token);
-          this.router.navigateByUrl('/homepage');
-          return response;
-        });
-    });
   }
 
   public loginArtPlus() {
@@ -82,7 +70,27 @@ export class LoginComponent {
       );
   }
 
-  public loginWithGoogle(): void {
+  loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+
+    this.socialAuthService.authState.subscribe((user) => {
+      this.socialUser = user;
+      this.isLoggedin = user != null;
+      this.loginService.googleAuthenticate(this.socialUser.idToken).subscribe(
+        (response) => {
+          localStorage.setItem('token', response.token);
+          this.router.navigateByUrl('/homepage');
+          return response;
+        },
+        (err) => {
+          if (err.status == 404) {
+            localStorage.setItem('externalAuthorizationId', this.socialUser.id);
+            localStorage.setItem('email', this.socialUser.email);
+            this.router.navigateByUrl('/cadastro/oauth');
+          }
+          throw err;
+        }
+      );
+    });
   }
 }

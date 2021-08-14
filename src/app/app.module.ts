@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroModule } from './cadastro/cadastro.module';
+import { CadastroOAuthModule } from './cadastroOauth/cadastro-oauth.module';
 import { LoginModule } from './login/login.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
@@ -18,6 +19,7 @@ import { InicioModule } from './inicio/inicio.module';
 import { CommonModule } from '@angular/common';
 import { LoginService } from './login/service/login.service';
 import { CadastroService } from './cadastro/service/cadastro.service';
+import { CadastroOAuthService } from './cadastroOauth/service/cadastro-oauth.service';
 import { SwiperModule } from 'swiper/angular';
 import { HomepageModule } from './homepage/homepage.module';
 import { HeaderlogModule } from './headerlog/headerlog.module';
@@ -65,6 +67,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
     LoginModule,
     CadastroModule,
+    CadastroOAuthModule,
     HeaderModule,
     FooterModule,
     InicioModule,
@@ -85,6 +88,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     TranslateService,
     LoginService,
     CadastroService,
+    CadastroOAuthService,
     RecommendationService,
     InteresseService,
     PerfilService,

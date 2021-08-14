@@ -4,22 +4,21 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 export interface CadastroDto {
+  externalAuthorizationId: string;
   name: string;
-  surname: string;
-  socialName: string;
   email: string;
-  password: string;
-  role: string;
+  username: string;
+  birthDate: Date;
   category: string;
   subcategory: string;
-  birthDate: Date;
+  subcategoryID: 0;
   description: string;
   userPicture: string;
   backgroundPicture: string;
 }
 
 @Injectable()
-export class CadastroService {
+export class CadastroOAuthService {
   public artPlusURL = `${environment.apiURL}`;
 
   httpOptions = {
@@ -30,17 +29,12 @@ export class CadastroService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<any> {
-    return this.http.get(this.artPlusURL + 'v1/SignUp', this.httpOptions);
-  }
-
   signUp(
+    externalAuthorizationId: string | null,
     name: string,
-    email: string,
-    password: string,
+    email: string | null,
     username: string,
     birthDate: Date,
-    role: string,
     category: string,
     subcategory: string,
     description: string,
@@ -48,14 +42,13 @@ export class CadastroService {
     backgroundPicture: string
   ): Observable<any> {
     return this.http.post<object>(
-      `${this.artPlusURL}` + 'v1/SignUp',
+      `${this.artPlusURL}v1/Google/signup`,
       {
+        externalAuthorizationId,
         name,
         email,
-        password,
         username,
         birthDate,
-        role,
         category,
         subcategory,
         description,

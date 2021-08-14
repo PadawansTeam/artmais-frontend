@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CadastroService } from '../service/cadastro.service';
+import { CadastroService } from 'src/app/cadastro/service/cadastro.service';
+import { CadastroOAuthService } from '../service/cadastro-oauth.service';
 import { Router } from '@angular/router';
-import {
-  SocialAuthService,
-  GoogleLoginProvider,
-  SocialUser,
-} from 'angularx-social-login';
-import { LoginService } from 'src/app/login/service/login.service';
 import {
   Validators,
   FormBuilder,
@@ -16,17 +11,20 @@ import {
 
 @Component({
   selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css'],
+  templateUrl: './cadastro-oauth.component.html',
+  styleUrls: ['./cadastro-oauth.component.css'],
 })
-export class CadastroComponent implements OnInit {
+export class CadastroOAuthComponent implements OnInit {
+  public externalAuthorizationId = localStorage.getItem(
+    'externalAuthorizationId'
+  );
+
+  public email = localStorage.getItem('email');
+
   form: any = {
     name: null,
-    email: null,
-    password: null,
     username: null,
     birthDate: null,
-    role: null,
     category: null,
     subcategory: null,
     description: null,
@@ -35,21 +33,17 @@ export class CadastroComponent implements OnInit {
   };
   errorMessage = '';
   redirectTo: string = '';
-  roles: string[] = [];
   arraySelect: any[] = [];
   isArtist = false;
   isClient = false;
   invalidField = false;
   formCadastro!: FormGroup;
-  socialUser: SocialUser = new SocialUser();
-  isLoggedin: boolean = false;
 
   constructor(
     private cadastroService: CadastroService,
+    private cadastroOAuthService: CadastroOAuthService,
     private router: Router,
-    private formBuilder: FormBuilder,
-    private socialAuthService: SocialAuthService,
-    private loginService: LoginService
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit() {
@@ -72,46 +66,6 @@ export class CadastroComponent implements OnInit {
           Validators.pattern('^[a-zA-Z0-9.-_$@*!]{3,30}$'),
         ])
       ),
-      email: new FormControl(
-        '',
-        Validators.compose([
-          Validators.required,
-          Validators.pattern('[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}'),
-        ])
-      ),
-      password: new FormControl(
-        '',
-        Validators.compose([
-          Validators.required,
-          Validators.pattern(
-            '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
-          ),
-        ])
-      ),
-    });
-  }
-
-  loginWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
-
-    this.socialAuthService.authState.subscribe((user) => {
-      this.socialUser = user;
-      this.isLoggedin = user != null;
-      this.loginService.googleAuthenticate(this.socialUser.idToken).subscribe(
-        (response) => {
-          localStorage.setItem('token', response.token);
-          this.router.navigateByUrl('/homepage');
-          return response;
-        },
-        (err) => {
-          if (err.status == 404) {
-            localStorage.setItem('externalAuthorizationId', this.socialUser.id);
-            localStorage.setItem('email', this.socialUser.email);
-            this.router.navigateByUrl('/cadastro/oauth');
-          }
-          throw err;
-        }
-      );
     });
   }
 
@@ -142,23 +96,19 @@ export class CadastroComponent implements OnInit {
     this.form.description = 'Olá! Sou novo na plataforma Art+!';
     if (
       this.form.name &&
-      this.form.email &&
-      this.form.password &&
       this.form.username &&
       this.form.birthDate &&
-      this.form.role &&
       this.form.category &&
       this.form.subcategory &&
       this.form.description
     ) {
-      this.cadastroService
+      this.cadastroOAuthService
         .signUp(
+          this.externalAuthorizationId,
           this.form.name,
-          this.form.email,
-          this.form.password,
+          this.email,
           this.form.username,
           this.form.birthDate,
-          this.form.role,
           this.form.category,
           this.form.subcategory,
           this.form.description,
