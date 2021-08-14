@@ -20,7 +20,9 @@
         "ARTISTA": "I'm an artist",
         "CLIENTE": "I'm not an artist",
         "ERRO": "Required fields were not filled. Please, try again!",
-        "INVALIDO": "Invalid field"
+        "INVALIDO": "Invalid field",
+        "ENTRAR":"Sign In",
+        "POSSUI-CONTA": "Already have an account?"
     },
     "ENTRAR": {
         "ENTRAR": "Sign In",
