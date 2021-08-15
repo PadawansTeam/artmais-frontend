@@ -14,6 +14,7 @@ export class ConfiguracaoService {
   public token = localStorage.getItem('token');
 
   ProfileFolder = 'profile-pictures/';
+  DateTimeNow = new Date();
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -114,7 +115,7 @@ export class ConfiguracaoService {
   }
 
   async uploadProfileFile(file: File, userID: number): Promise<string> {
-    const fileName = 'profilePicture';
+    const fileName = ((this.DateTimeNow.getTime() * 10000) + 621355968000000000);
     const fileType = file.type.split('/').pop();
     const bucket = new S3({
       accessKeyId: `${environment.accessKeyId}`,

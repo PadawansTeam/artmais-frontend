@@ -9,7 +9,6 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
   styleUrls: ['./configuracao.component.css'],
 })
 export class ConfiguracaoComponent implements OnInit {
-  information!: Configuracao;
   selectedProfileFiles: FileList | undefined;
   urlImagem!: any;
   formConfig!: FormGroup;
@@ -66,7 +65,6 @@ export class ConfiguracaoComponent implements OnInit {
   ngOnInit(): void {
     this.configService.getUserInfo().subscribe(
       (response: Configuracao) => {
-        this.information = response;
         this.userInfo = response;
       },
       (err) => {
@@ -143,6 +141,7 @@ export class ConfiguracaoComponent implements OnInit {
       .updateDescription(this.userDescription.description)
       .subscribe(
         (response) => {
+          this.routeUpdateEvent()
           return response;
         },
         (err) => {
@@ -163,6 +162,7 @@ export class ConfiguracaoComponent implements OnInit {
       )
       .subscribe(
         (response) => {
+          this.routeUpdateEvent();
           return response;
         },
         (err) => {
@@ -184,6 +184,7 @@ export class ConfiguracaoComponent implements OnInit {
       )
       .subscribe(
         (response) => {
+          this.routeUpdateEvent();
           return response;
         },
         (err) => {
@@ -209,6 +210,7 @@ export class ConfiguracaoComponent implements OnInit {
       )
       .subscribe(
         (response) => {
+          this.routeUpdateEvent();
           return response;
         },
         (err) => {
@@ -219,5 +221,9 @@ export class ConfiguracaoComponent implements OnInit {
 
   selectProfileFile(event: any) {
     this.selectedProfileFiles = event.target.files;
+  }
+
+  routeUpdateEvent() {
+    location.reload();
   }
 }
