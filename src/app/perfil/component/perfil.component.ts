@@ -64,13 +64,13 @@ export class PerfilComponent implements OnInit {
       )
       .subscribe(
         (response) => {
+          this.routeUpdateEvent();
           return response;
         },
         (err) => {
           throw err;
         }
       );
-    this.ngOnInit();
   }
 
   updateDescription() {
@@ -88,5 +88,9 @@ export class PerfilComponent implements OnInit {
 
   selectPortfolioFile(event: any) {
     this.selectedPortfolioContent = event.target.files;
+  }
+
+  routeUpdateEvent() {
+    location.reload();
   }
 }
