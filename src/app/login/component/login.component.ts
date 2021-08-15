@@ -31,6 +31,8 @@ export class LoginComponent {
   socialUser: SocialUser = new SocialUser();
   isLoggedin: boolean = false;
   formLogin!: FormGroup;
+  loaderOn: boolean = false;
+  erroAPI: boolean = false;
 
   constructor(
     private loginService: LoginService,
@@ -53,17 +55,23 @@ export class LoginComponent {
   }
 
   public loginArtPlus() {
+    this.loaderOn = true
     this.loginService
       .authenticate(this.form.email, this.form.password)
       .subscribe(
         (response) => {
           localStorage.setItem('token', response.token);
+          this.loaderOn = false;
           this.router.navigateByUrl('/homepage');
           this.loginReturn = true;
         },
         (err) => {
-          if (err.status == 422) {
+          if(err.status == 422){
+            this.loaderOn = false;
             this.erroLogin = true;
+          } else{
+            this.loaderOn = false;
+            this.erroAPI = true;
           }
           throw err;
         }

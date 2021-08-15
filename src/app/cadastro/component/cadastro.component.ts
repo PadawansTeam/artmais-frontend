@@ -43,6 +43,7 @@ export class CadastroComponent implements OnInit {
   formCadastro!: FormGroup;
   socialUser: SocialUser = new SocialUser();
   isLoggedin: boolean = false;
+  loaderOn: boolean = false;
 
   constructor(
     private cadastroService: CadastroService,
@@ -83,9 +84,7 @@ export class CadastroComponent implements OnInit {
         '',
         Validators.compose([
           Validators.required,
-          Validators.pattern(
-            '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
-          ),
+          Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'),
         ])
       ),
     });
@@ -128,12 +127,15 @@ export class CadastroComponent implements OnInit {
   }
 
   public cadastroArtPlus() {
-    if (this.form.category === null || this.form.category === '') {
-      this.form.subcategory = 'Consumidor';
-      this.form.category = 'Consumidor';
-    } else {
-      this.form.subcategory = this.form.category.split('_')[1];
-      this.form.category = this.form.category.split('_')[0];
+    this.loaderOn = true
+
+    if (this.form.category === null || this.form.category === "") {
+      this.form.subcategory = "Consumidor";
+      this.form.category = "Consumidor";
+    }
+    else {
+      this.form.subcategory = this.form.category.split("_")[1];
+      this.form.category = this.form.category.split("_")[0];
     }
     this.form.userPicture =
       'https://bucket-artmais.s3.amazonaws.com/default-image/defaultProfile.png';
@@ -168,14 +170,17 @@ export class CadastroComponent implements OnInit {
         .subscribe(
           (response) => {
             localStorage.setItem('token', response.token);
+            this.loaderOn = false;
             this.router.navigateByUrl('/interesse');
             return response;
           },
           (err) => {
+            this.loaderOn = false;
             throw err;
           }
         );
     } else {
+      this.loaderOn = false;
       this.invalidField = true;
     }
   }

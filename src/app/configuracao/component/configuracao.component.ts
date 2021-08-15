@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Configuracao } from '../service/configuracao';
 import { ConfiguracaoService } from '../service/configuracao.service';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-configuracao',
@@ -12,6 +13,18 @@ export class ConfiguracaoComponent implements OnInit {
   selectedProfileFiles: FileList | undefined;
   urlImagem!: any;
   formConfig!: FormGroup;
+
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
 
   userInfo: any = {
     userID: null,
@@ -114,7 +127,7 @@ export class ConfiguracaoComponent implements OnInit {
       ])),
       zipcode: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.pattern('/^\d{5}-?\d{3}$/')
+        Validators.pattern('[0-9]{5}-?[0-9]{3}')
       ])),
     });
   }
@@ -128,9 +141,18 @@ export class ConfiguracaoComponent implements OnInit {
       )
       .subscribe(
         (response) => {
+          this.Toast.fire({
+            icon: 'success',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+          })
           return response;
         },
         (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+          })
           throw err;
         }
       );
@@ -140,11 +162,20 @@ export class ConfiguracaoComponent implements OnInit {
     this.configService
       .updateDescription(this.userDescription.description)
       .subscribe(
-        (response) => {
+        async(response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+          })
           this.routeUpdateEvent()
           return response;
         },
         (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+          })
           throw err;
         }
       );
@@ -161,11 +192,20 @@ export class ConfiguracaoComponent implements OnInit {
         this.userContact.thirdPhone
       )
       .subscribe(
-        (response) => {
-          this.routeUpdateEvent();
+        async(response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+          })
+          this.routeUpdateEvent()
           return response;
         },
         (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+          })
           throw err;
         }
       );
@@ -183,11 +223,20 @@ export class ConfiguracaoComponent implements OnInit {
         this.userAddress.state
       )
       .subscribe(
-        (response) => {
-          this.routeUpdateEvent();
+        async(response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+          })
+          this.routeUpdateEvent()
           return response;
         },
         (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+          })
           throw err;
         }
       );
@@ -209,11 +258,20 @@ export class ConfiguracaoComponent implements OnInit {
         this.userInfo.thirdPhone
       )
       .subscribe(
-        (response) => {
-          this.routeUpdateEvent();
+        async(response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+          })
+          this.routeUpdateEvent()
           return response;
         },
         (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+          })
           throw err;
         }
       );
