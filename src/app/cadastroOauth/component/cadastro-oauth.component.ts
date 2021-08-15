@@ -90,9 +90,9 @@ export class CadastroOAuthComponent implements OnInit {
       this.form.category = this.form.category.split('_')[0];
     }
     this.form.userPicture =
-      'https://artplus-bucket.s3.amazonaws.com/profile_pic/default.png';
+      'https://bucket-artmais.s3.amazonaws.com/default-image/defaultProfile.png';
     this.form.backgroundPicture =
-      'https://artplus-bucket.s3.amazonaws.com/background_pic/default.png';
+      'https://bucket-artmais.s3.amazonaws.com/default-image/defaultBackground.png';
     this.form.description = 'Olá! Sou novo na plataforma Art+!';
     if (
       this.form.name &&
