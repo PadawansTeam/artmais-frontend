@@ -30,4 +30,12 @@ export class LoginService {
       this.httpOptions
     );
   }
+
+  googleAuthenticate(token: string): Observable<any> {
+    return this.http.post(
+      `${this.artPlusURL}v1/Google/signin/${token}`,
+      {},
+      this.httpOptions
+    );
+  }
 }

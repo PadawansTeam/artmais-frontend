@@ -856,7 +856,7 @@ input::placeholder {
 }
 
 .card-login .form {
-  min-height: 900px;
+  min-height: 400px;
 }
 
 .back {
