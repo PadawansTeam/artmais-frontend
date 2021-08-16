@@ -30,8 +30,10 @@
         "SENHA": "Password",
         "BOTAO": "Sign in",
         "ERRO": "E-mail or password are wrong. Please try again!",
+        "API": "An error occured. Please, try again later!",
         "ESQUECEU": "Forgot your password?",
-        "INVALIDO": "Invalid field"
+        "INVALIDO": "Invalid field",
+        "OU": "Or"
     },
     "MENU": {
         "HOME": "Home",

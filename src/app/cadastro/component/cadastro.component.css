@@ -1038,5 +1038,13 @@ ul li::before {
 }
 
 .line.r {
-  right: 0;
+	right: 0;
+}
+
+.loader{
+	position: fixed;
+    left: 50%;
+    top: 50%;
+    color: #701ec6;
+    z-index: 3;
 }
