@@ -21,7 +21,13 @@
         "SENHA": "Senha",
         "BOTAO": "Entrar",
         "ERRO": "E-mail ou senha errados. Por favor, tente novamente!",
-        "ESQUECEU": "Esqueceu sua senha?"
+        "API": "Ocorreu um erro. Por favor, tente novamente mais tarde",
+        "ESQUECEU": "Esqueceu sua senha?",
+        "INVALIDO": "Campo inválido",
+        "CADASTRAR":"Cadastre-se",
+        "NAO-POSSUI-CONTA": "Não possui uma conta?",
+        "OU": "Ou"
+
     },
     "MENU": {
         "HOME": "Home",
