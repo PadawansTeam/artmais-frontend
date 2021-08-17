@@ -63,7 +63,7 @@ export class CadastroComponent implements OnInit {
         '',
         Validators.compose([
           Validators.required,
-          Validators.pattern('^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$'),
+          Validators.pattern('^[a-zA-Zà-úÀ-Ú]{4,}(?: [a-zA-Zà-úÀ-Ú]+){0,2}$'),
         ])
       ),
       username: new FormControl(

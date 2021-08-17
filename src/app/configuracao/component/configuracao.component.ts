@@ -103,7 +103,7 @@ export class ConfiguracaoComponent implements OnInit {
     this.formConfig = this.formBuilder.group({
       name: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.pattern('^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$')
+        Validators.pattern('^[a-zA-Zà-úÀ-Ú]{4,}(?: [a-zA-Zà-úÀ-Ú]+){0,2}$')
       ])),
       phone: new FormControl('', Validators.compose([
         Validators.required,
