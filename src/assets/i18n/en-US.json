@@ -8,12 +8,21 @@
         "EMAIL": "E-mail",
         "CONF-EMAIL": "Confirm your e-mail",
         "SENHA": "Password",
+        "CAMPO-SENHA":"Your password must have:",
+        "CAMPO-CRIT-1":"At least 8 characters",
+        "CAMPO-CRIT-2":"At least 1 capital letter",
+        "CAMPO-CRIT-4":"At least 1 number",
+        "CAMPO-CRIT-5":"At least 1 special character",
+        "CAMPO-CRIT-3":"At least 1 lowercase letter",
         "CONF-SENHA": "Confirm your password",
         "NASCIMENTO": "Birth date",
         "BOTAO": "Sign up",
         "ARTISTA": "I'm an artist",
         "CLIENTE": "I'm not an artist",
-        "ERRO": "Required fields were not filled. Please, try again!"
+        "ERRO": "Required fields were not filled. Please, try again!",
+        "INVALIDO": "Invalid field",
+        "ENTRAR":"Sign In",
+        "POSSUI-CONTA": "Already have an account?"
     },
     "ENTRAR": {
         "ENTRAR": "Sign In",
@@ -27,6 +36,7 @@
         "OU": "Or",
         "NAO-POSSUI-CONTA": "Don't have an account?",
         "CADASTRAR":"Sign Up"
+
     },
     "MENU": {
         "HOME": "Home",
@@ -36,6 +46,15 @@
         "CONTATO": "Contact Us",
         "CADASTRO": "Sign Up",
         "ENTRAR": "Sign In"
+    },        
+    "HEADER": {
+        "HOMEPAGE": "Recommendation",
+        "INTERESSE":"Interests",
+        "CONFIG": "Configurations",
+        "PERFIL": "Profile",
+        "SAIR": "Log Out",
+        "USUARIOS": "Users",
+        "DASHBOARD": "Dashboard"
     },
     "FOOTER": {
         "SOBRE": "ABOUT",
@@ -83,5 +102,113 @@
         "PLANOS-TEXTO5-CARD2": "Unique customizable themes",
         "PLANOS-TEXTO6-CARD2": "Access to growth Dashboard",
         "PLANOS-CADASTRAR-CARD2": "Buy Now"
+    },
+        "RECOMENDACAO": {
+            "TITULO": "Profile Recommendation",
+            "SUBTITULO": "These profiles were chosen according to the artistic fields of interest to you. Activities, user interactions and searches made will be used to customize future suggestions. Discover new artists and follow their projects through Art+."
+        },
+        "ERRO": {
+            "TITULO": "404 - Page not found",
+            "BUTTON": "Back"
+        },
+        "CONSTRUCAO": {
+            "TITULO": "Sorry, the page is under construction",
+            "BUTTON": "Back"
+        },
+        "INTERESSES": {
+            "TITULO" : "Interest",
+            "SUBTITULO": "Choose the categories of artists that you have more interest to follow",
+            "CATEGORIA": "Category",
+            "BUTTON": "Next"
+        },
+        "PERFIL": {
+            "TELEFONES": "Phones",
+            "ENDERECO": "Address",
+            "RUA": "Street:",
+            "NUMERO": "Number:",
+            "BAIRRO": "District:",
+            "CEP": "Zip:",
+            "CALENDARIO": "Calendar",
+            "CALENDARIO-BUTTON": "Access",
+            "COMPARTILHAR": "Share",
+            "PORTIFOLIO": "Portfolio",
+            "SALVAR": "Save",
+            "FECHAR":"Close",
+            "DESCRIÇÃO-ITEM-PORTFOLIO": "Description:",
+            "ADICIONAR-ITEM": "Add item to your portfolio",
+            "PLACE-DESCRIÇÃO": "Enter the description..."
+            
+        },
+        "CONFIG": {
+            "SOBRE":"About",
+            "DESCRICAO":"Description:",
+            "DESCRICAO-BOX":"Enter the description...",
+            "REDES-SOCIAIS":"Social Networks",
+            "CONTATO-PESSOAL":"Contact",
+            "DETALHES":"Details",
+            "NOME":"Name:",
+            "NOME-BOX":"Name",
+            "NOME-USER":"User Name:",
+            "NOME-USER-BOX":"Username",
+            "FOTO":"Profile Picture:",
+            "FOTO-BUTTON":"Choose File",
+            "FOTO-BOX":"No file selected",
+            "PRONOMES":"Pronouns:",
+            "PRONOMES-BOX":"Enter the pronouns",
+            "NASCIMENTO":"Date of Birth:",
+            "TELEFONE":"Phones:",
+            "PRIMEIRO-TELEFONE-BOX":"First phone",
+            "SEGUNDO-TELEFONE-BOX":"Second phone",
+            "TERCEIRO-TELEFONE-BOX":"Third phone",
+            "ENDERECO":"Address",
+            "LOGRADOURO":"Street:",
+            "LOGRADOURO-BOX":"Enter the street",
+            "NUMERO":"House Number:",
+            "NUMERO-BOX":"Enter the house number",
+            "CIDADE":"City:",
+            "CIDADE-BOX":"Enter the city",
+            "ESTADO":"State/Region:",
+            "ESTADO-BOX":"Enter the state/region abbreviation",
+            "BAIRRO":"District:",
+            "BAIRRO-BOX":"Enter the district",
+            "CEP":"Zip/Postal Code:",
+            "CEP-BOX":"Enter Zip/Postal Code",
+            "COMPLEMENTO":"Complement:",
+            "COMPLEMENTO-BOX":"Enter the complement",
+            "SENHA":"Password",
+            "SENHA-ATUAL":"Current Password",
+            "SENHA-BOX":"Enter the password",
+            "NOVA-SENHA":"New password",
+            "CONFIRMA-SENHA":"Confirm New password",
+            "CONFIG-BUTTONS" :"Save",
+            "INVALIDO": "Invalid field"
+        },
+        "PRIVACIDADE": {
+            "TITULO": "Privacy and Security Agreement",
+            "SUBTITULO": "Please read the following text of the Privacy Agreement. You must accept the terms of this agreement to access the platform services.",
+            "TEXTO-1": "The Art+ platform complies with the General Law for the Protection of Personal Data (LGPD) (Brazilian Law No. 13.709/2018). This Privacy and Security Policy applies when using the platform's services. Knowledge of this factor is of crucial importance to keep the application transparent to all customers.",
+            "TEXTO-2": "Upon entering the platform, the user account data is used to perform the functions of Art+ within its dependencies. Furthermore, this agreement authorizes access to information. Registered users share their professional identities, their publications included in the Portfolios, their interactions with other artists and clients, the content researched and the profiles visited.",
+            "TEXTO-3": "It is offered to customers several options of how their data is collected, used and shared, from the deletion or correction of data included in the profile to the visibility control of publications. Your data is required at these times:",
+            "TEXTO-ITEMA": "To create an account: some data is provided including name, social name, date of birth, email address and/or mobile device number and a password. The account does not necessarily belong to an individual, an account for a company can be created. Being mandatory data, these are necessary for the creation of an account within the platform and its recovery in case of login problems. Once this account is created, a profile is also created;",
+            "TEXTO-ITEMB": "The customer has options on the information entered in their profile, such as: Portfolio, profile photo, address and artist recommendations. It is not necessary to provide additional information in your profile. The user can choose whether to include certain information in your profile and if you want to make them public. It is recommended that it not be published nor added to the profile personal data that should not be made publicly available. It is not mandatory to publish or loading personal data, but in this case the ability to interact with other users through the Art + services becomes limited;",
+            "TEXTO-ITEMC": "When using Art+ services, the user has the option to enter information about their location. If you want to use this option, you are asked to enable this feature using map tools, available on the platform, to help recommend your profile to users in nearby regions.",
+            "TEXTO-ITEMD": "All profiles have a Portfolio function, where users can upload their jobs with description and an optional price that are stored on our servers. Portfolios are visible to everyone who accesses the profile but only the account owner can change their status;",
+            "TEXTO-ITEME": "The types of research (such as name, location, or category) influence the availability of profiles, interfering with the recommendation system and the results of the upcoming consultations. This data exists on the basis of users to provide and customize the services, including the help of automated systems and inferences that are made for the platform to be more relevant and useful.",
+            "TEXTO-ITEMF": "When registering for a Premium subscription, the user provides information about payment and bank account, the same procedure used when negotiating between users in the platform. These are considered optional data, but are mandatory for the use of these Art+ services. Bank details, access to the transaction status and payment resolution, are stored in a history for each user;",
+            "TEXTO-ITEMG": "There is an option to assign telephone contact information to gain access to the contact function between profiles directly in your messaging applications.",
+            "TEXTO-ITEMH": "The user also has the option to make available other social networks in his profile that are personal and/or professional contacts, which are necessary for sharing links to their contents on other platforms.",
+            "TEXTO-ITEMI": "Even if you are just looking at the platform, access information such as your IP address and the type of device used in the contact are collected to define Art+ metrics and deliver the responsiveness of the page viewed.",
+            "TEXTO-4": "The profiles existing on the platform are completely visible to all users and customers of Art+ services, in addition to external visitors, those who can only view user profiles. Personal data is stored as long as users keep their account open or as long as necessary to provide services. This includes data provided directly and data generated from the use of the services offered. Even if the platform is used to search for a new artist infrequently, personal information is stored and the profile is kept active, unless the user chooses to close their account.",
+            "TEXTO-5": "If you choose to close the Art+ account, the user's personal data, as a rule, is no longer visible to third parties on the platform's services within 24 hours. Finally, within 30 days after the account is closed, the information of the closed account is, as a rule, deleted from the databases, where your posted works must be manually copied during this period to avoid their loss.",
+            "TEXTO-6": "If there are further questions about the points in this agreement, in the collection and processing of personal data or any other point of this document, contact the team at Art + at any time through the site itself or other platform contacts.",
+            "TEXTO-7": "If you do not agree with any point of this agreement, you must select the option “I do not accept” so that your registration on the platform will be denied. This way, you will be redirected to the homepage, where the profile can be created whenever you want. In agreement, by clicking on “I accept”, you agree with all the points presented regarding the use of your data in our services.",
+            "BUTTON-A": "I accept",
+            "BUTTON-B": "I do not accept"
+        }
+        ,
+    "USUARIOS": {
+        "TITULO": "USERS",
+        "TEXTO": "See all platform users and network!"
+       
     }
 }

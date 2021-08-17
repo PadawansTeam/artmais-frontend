@@ -1,4 +1,9 @@
 <app-header></app-header>
+<div *ngIf="loaderOn">
+  <div class="spinner-border loader" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
 <div class="page-header header-filter back">
   <div class="container">
     <div class="row">
@@ -7,26 +12,41 @@
           <div class="form">
             <div class="card-header card-header-primary text-center ">
               <h4 class="card-title">{{ "ENTRAR.ENTRAR" | translate }}</h4>
+              <div class="container">
+                <div class="row text-center mt-1">
+                  <div class="col-md-12">
+                    <a (click)="loginWithGoogle()"><i class="fab fa-google icon-color"></i></a>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="card-body">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="bx bx-user bx-sm bx-tada-hover"></i>
-                  </span>
+              <div class="division">
+                <div class="line l">
                 </div>
-                <input [(ngModel)]="this.form.email" name="email" class="un form-control " type="text" align="center"
-                  placeholder="{{ 'ENTRAR.EMAIL' | translate }}">
-              </div>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="bx bx-lock bx-sm bx-tada-hover"></i>
-                  </span>
+                <span class="cg">{{ "ENTRAR.OU" | translate }}</span>
+                <div class="line r">
                 </div>
-                <input [(ngModel)]="this.form.password" name="password" class="un form-control " type="password"
-                  align="center" placeholder="{{ 'ENTRAR.SENHA' | translate }}" />
               </div>
+              <form [formGroup]="formLogin">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-user bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input [(ngModel)]="this.form.email" formControlName="email" name="email" class="un form-control" type="email" align="center" placeholder="{{ 'ENTRAR.EMAIL' | translate }}">
+                </div>
+                <p *ngIf="formLogin.get('email')!.touched && !formLogin.get('email')!.valid" class="error" align="center">{{ "ENTRAR.INVALIDO" | translate }}</p>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-lock bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input [(ngModel)]="this.form.password" formControlName="password" name="password" class="un form-control" type="password" align="center" placeholder="{{ 'ENTRAR.SENHA' | translate }}" />
+                </div>    
+              </form>
             </div>
             <div class="row">
               <div class="col-md-12 text-center">
@@ -34,9 +54,16 @@
                   {{ "ENTRAR.BOTAO" | translate }}
                 </button>
                 <p *ngIf="erroLogin" class="error" align="center">{{ "ENTRAR.ERRO" | translate }}</p>
+                <p *ngIf="erroAPI" class="error" align="center">{{ "ENTRAR.API" | translate }}</p>
                 <p align="center"><a href="#" class="forgot">{{ "ENTRAR.ESQUECEU" | translate }}</a></p>
               </div>
             </div>
+              <div class="row">
+                <div class="col-md-12 fot">
+                  <p class="text-fo">{{ "ENTRAR.NAO-POSSUI-CONTA" | translate }}</p>
+                  <a href="\cadastro" class="text-link">{{ "ENTRAR.CADASTRAR" | translate }}</a>
+                </div>
+              </div>
           </div>
         </div>
       </div>

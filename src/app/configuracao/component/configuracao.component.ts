@@ -1,15 +1,287 @@
 import { Component, OnInit } from '@angular/core';
+import { Configuracao } from '../service/configuracao';
+import { ConfiguracaoService } from '../service/configuracao.service';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-configuracao',
   templateUrl: './configuracao.component.html',
-  styleUrls: ['./configuracao.component.css']
+  styleUrls: ['./configuracao.component.css'],
 })
 export class ConfiguracaoComponent implements OnInit {
+  selectedProfileFiles: FileList | undefined;
+  urlImagem!: any;
+  formConfig!: FormGroup;
 
-  constructor() { }
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  userInfo: any = {
+    userID: null,
+    name: null,
+    username: null,
+    userPicture: null,
+    backgroundPicture: null,
+    birthDate: null,
+    mainPhone: null,
+    secundaryPhone: null,
+    thirdPhone: null,
+    userTwitter: null,
+    userFacebook: null,
+    userInstagram: null,
+  };
+
+  userPass: any = {
+    oldPassword: null,
+    newPassword: null,
+    password: null,
+  };
+
+  userDescription: any = {
+    description: null,
+  };
+
+  userContact: any = {
+    facebook: null,
+    instagram: null,
+    twitter: null,
+    mainPhone: null,
+    secundaryPhone: null,
+    thirdPhone: null,
+  };
+
+  userAddress: any = {
+    street: null,
+    number: null,
+    complement: null,
+    neighborhood: null,
+    zipCode: null,
+    city: null,
+    state: null,
+  };
+
+  constructor(
+    public configService: ConfiguracaoService,
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    this.configService.getUserInfo().subscribe(
+      (response: Configuracao) => {
+        this.userInfo = response;
+      },
+      (err) => {
+        throw err;
+      }
+    ),
+      this.configService.getAddress().subscribe(
+        (response) => {
+          this.userAddress = response;
+        },
+        (err) => {
+          throw err;
+        }
+      ),
+      this.configService.getContactInfo().subscribe(
+        (response) => {
+          this.userContact = response;
+        },
+        (err) => {
+          throw err;
+        }
+      );
+    this.formConfig = this.formBuilder.group({
+      name: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$')
+      ])),
+      phone: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[0-9]{13}$')
+      ])),
+      secondPhone: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[0-9]{13}$')
+      ])),
+      thirdPhone: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[0-9]{13}$')
+      ])),
+      password: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
+      ])),
+      confirmPassword: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
+      ])),
+      zipcode: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('[0-9]{5}-?[0-9]{3}')
+      ])),
+    });
   }
 
+  updatePassword() {
+    this.configService
+      .updatePassword(
+        this.userPass.oldPassword,
+        this.userPass.newPassword,
+        this.userPass.password
+      )
+      .subscribe(
+        (response) => {
+          this.Toast.fire({
+            icon: 'success',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+          })
+          return response;
+        },
+        (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+          })
+          throw err;
+        }
+      );
+  }
+
+  updateDescription() {
+    this.configService
+      .updateDescription(this.userDescription.description)
+      .subscribe(
+        async(response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+          })
+          this.routeUpdateEvent()
+          return response;
+        },
+        (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+          })
+          throw err;
+        }
+      );
+  }
+
+  updateContact() {
+    this.configService
+      .updateContact(
+        this.userContact.facebook,
+        this.userContact.instagram,
+        this.userContact.twitter,
+        this.userContact.mainPhone,
+        this.userContact.secundaryPhone,
+        this.userContact.thirdPhone
+      )
+      .subscribe(
+        async(response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+          })
+          this.routeUpdateEvent()
+          return response;
+        },
+        (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+          })
+          throw err;
+        }
+      );
+  }
+
+  updateAddress() {
+    this.configService
+      .updateAddress(
+        this.userAddress.street,
+        this.userAddress.number,
+        this.userAddress.complement,
+        this.userAddress.neighborhood,
+        this.userAddress.zipCode,
+        this.userAddress.city,
+        this.userAddress.state
+      )
+      .subscribe(
+        async(response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+          })
+          this.routeUpdateEvent()
+          return response;
+        },
+        (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+          })
+          throw err;
+        }
+      );
+  }
+
+  async uploadProfile(userID: number) {
+    const file = this.selectedProfileFiles?.item(0);
+    if (file == undefined) this.urlImagem = this.userInfo.userPicture;
+    else this.urlImagem = await this.configService.uploadProfileFile(file!, userID);
+    this.configService
+      .updateUserInfo(
+        this.userInfo.name,
+        this.userInfo.username,
+        this.urlImagem,
+        this.userInfo.backgroundPicture,
+        this.userInfo.birthDate,
+        this.userInfo.mainPhone,
+        this.userInfo.secundaryPhone,
+        this.userInfo.thirdPhone
+      )
+      .subscribe(
+        async(response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+          })
+          this.routeUpdateEvent()
+          return response;
+        },
+        (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+          })
+          throw err;
+        }
+      );
+  }
+
+  selectProfileFile(event: any) {
+    this.selectedProfileFiles = event.target.files;
+  }
+
+  routeUpdateEvent() {
+    location.reload();
+  }
 }

@@ -8,12 +8,22 @@
         "EMAIL": "E-mail",
         "CONF-EMAIL": "Confirmação do e-mail",
         "SENHA": "Senha",
+        "CAMPO-SENHA":"Sua senha deve possuir:",
+        "CAMPO-CRIT-1":"No mínimo 8 caracteres",
+        "CAMPO-CRIT-2":"Pelo menos 1 letra maiúscula",
+        "CAMPO-CRIT-4":"Pelo menos 1 número",
+        "CAMPO-CRIT-5":"Pelo menos 1 caractere especial",
+        "CAMPO-CRIT-3":"Pelo menos 1 letra minúscula",
         "CONF-SENHA": "Confirmação de senha",
         "NASCIMENTO": "Data de nascimento",
         "BOTAO": "Cadastrar",
         "ARTISTA": "Sou artista",
         "CLIENTE": "Não sou artista",
-        "ERRO": "Campos obrigatórios não foram preenchidos. Por favor, tente novamente!"
+        "ERRO": "Campos obrigatórios não foram preenchidos. Por favor, tente novamente!",
+        "INVALIDO": "Campo inválido",
+        "ENTRAR":"Entrar",
+        "POSSUI-CONTA": "Já possui uma conta?"
+
     },
     "ENTRAR": {
         "ENTRAR": "Entrar",
@@ -28,6 +38,7 @@
         "NAO-POSSUI-CONTA": "Não possui uma conta?",
         "OU": "Ou"
 
+
     },
     "MENU": {
         "HOME": "Home",
@@ -37,6 +48,16 @@
         "CONTATO": "Contato",
         "CADASTRO": "Cadastre-se",
         "ENTRAR": "Entrar"
+    },
+
+    "HEADER": {
+        "HOMEPAGE": "Recomendações",
+        "INTERESSE":"Interesses",
+        "CONFIG": "Configurações",
+        "PERFIL": "Perfil",
+        "SAIR": "Sair",
+        "USUARIOS": "Usuários",
+        "DASHBOARD": "Dashboard"
     },
     "FOOTER": {
         "SOBRE": "SOBRE",
@@ -85,5 +106,113 @@
         "PLANOS-TEXTO5-CARD2": "Temas customizáveis exclusivos",
         "PLANOS-TEXTO6-CARD2": "Acesso a Dashboard de crescimento",        
         "PLANOS-CADASTRAR-CARD2": "Comprar"
+    },
+    "RECOMENDACAO": {
+        "TITULO": "Recomendação de Perfil",
+        "SUBTITULO": "Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse, suas atividades, interações com outros usuários e pesquisas feitas serão utilizadas para personalizar futuras sugestões. Descubra novos artistas e acompanhe seus projetos pelo Art+."
+    },
+    "ERRO": {
+        "TITULO": "404 - Página não encontrada",
+        "BUTTON": "Voltar"
+    },
+    "CONSTRUCAO": {
+        "TITULO": "Desculpe, a página está em construção",
+        "BUTTON": "Voltar"
+    },
+    "INTERESSES": {
+        "TITULO" : "Interesses",
+        "SUBTITULO": "Escolha as categorias de artistas que você possui mais interesse de acompanhar",
+        "CATEGORIA": "Categoria",
+        "BUTTON": "Avançar"
+    },
+    "PERFIL": {
+        "TELEFONES": "Telefones",
+        "ENDERECO": "Endereço",
+        "RUA": "Rua:",
+        "NUMERO": "N°:",
+        "BAIRRO": "Bairro:",
+        "CEP": "CEP",
+        "CALENDARIO": "Calendário",
+        "CALENDARIO-BUTTON": "Acessar",
+        "COMPARTILHAR": "Compartilhar",
+        "PORTIFOLIO": "Portfólio",
+        "SALVAR": "Salvar",
+        "FECHAR":"Fechar",
+        "DESCRIÇÃO-ITEM-PORTFOLIO": "Descrição:",
+        "ADICIONAR-ITEM": "Adicionar item ao seu portfólio",
+        "PLACE-DESCRIÇÃO": "Digite a descrição..."
+    },
+    "CONFIG": {
+        "SOBRE": "Sobre",
+        "DESCRICAO": "Descrição:",
+        "DESCRICAO-BOX": "Digite a descrição...",
+        "REDES-SOCIAIS": "Redes Sociais",
+        "CONTATO-PESSOAL": "Contato",
+        "DETALHES": "Detalhes",
+        "NOME": "Nome:",
+        "NOME-BOX": "Nome",
+        "NOME-USER": "Nome de Usuário:",
+        "NOME-USER-BOX": "Nome de usuário",
+        "FOTO": "Foto de Perfil:",
+        "FOTO-BUTTON": "Escolher Arquivo",
+        "FOTO-BOX": "Nenhum arquivo selecionado",
+        "PRONOMES": "Pronomes:",
+        "PRONOMES-BOX": "Digite os pronomes",
+        "NASCIMENTO": "Data de Nascimento:",
+        "TELEFONE": "Telefone:",
+        "PRIMEIRO-TELEFONE-BOX": "Primeiro telefone",
+        "SEGUNDO-TELEFONE-BOX": "Segundo telefone",
+        "TERCEIRO-TELEFONE-BOX": "Terceiro telefone",
+        "ENDERECO": "Endereço",
+        "LOGRADOURO": "Logradouro:",
+        "LOGRADOURO-BOX": "Digite o logradouro",
+        "NUMERO": "N°:",
+        "NUMERO-BOX": "Digite o número",
+        "CIDADE": "Cidade:",
+        "CIDADE-BOX": "Digite a cidade",
+        "ESTADO": "Estado:",
+        "ESTADO-BOX": "Digite a UF",
+        "BAIRRO": "Bairro:",
+        "BAIRRO-BOX": "Digite o bairro",
+        "CEP": "CEP",
+        "CEP-BOX": "Digite o CEP",
+        "COMPLEMENTO": "Complemento:",
+        "COMPLEMENTO-BOX": "Digite o complemento",
+        "SENHA": "Senha",
+        "SENHA-ATUAL": "Senha Atual",
+        "SENHA-BOX": "Digite a senha",
+        "NOVA-SENHA": "Nova Senha",
+        "CONFIRMA-SENHA": "Confirmar Nova Senha",
+        "CONFIG-BUTTONS": "Salvar",
+        "INVALIDO": "Campo inválido"
+    },
+    "PRIVACIDADE": {
+        "TITULO": "Acordo de Privacidade e Segurança ",
+        "SUBTITULO": "Por favor leia o seguinte texto do Acordo de Privacidade. Você deve aceitar os termos deste acordo para ter acesso aos serviços da plataforma.",
+        "TEXTO-1": "A plataforma Art+ está de acordo com a Lei Geral de Proteção de Dados Pessoais (LGPD) (Lei n◦ 13.709/2018). Esta Política de Privacidade e Segurança se aplica quando o usuário utiliza os serviços da plataforma. O conhecimento deste fator é de fundamental importância para se manter uma aplicação transparente a todos os clientes.",
+        "TEXTO-2": "Ao entrar na plataforma, os dados da conta de usuário são utilizados para a realização das funções da Art+ dentro de suas dependências. Ademais, este acordo autoriza o acesso às informações. Os usuários cadastrados compartilham suas identidades profissionais, seus trabalhos inseridos nos Portfólios e em suas publicações, suas interações com outros artistas e clientes, os conteúdos pesquisados e os perfis visitados.",
+        "TEXTO-3": "É oferecido aos clientes diversas opções de como seus dados são coletados, usados e compartilhados, desde a exclusão ou correção dos dados incluídos no perfil até o controle da visibilidade das publicações. Os seus dados são requeridos nestes momentos:",
+        "TEXTO-ITEMA": "Para criar uma conta: é fornecido alguns dados que incluem o nome, nome social, data de nascimento, endereço de e-mail e/ou número do dispositivo móvel e uma senha. A conta não é obrigatoriamente de uma pessoa física, podendo uma conta para sua empresa ser criada. Sendo dados obrigatórios, estes são necessários para a criação de um conta dentro da plataforma e sua recuperação  em caso de problemas de login. A partir da criação desta conta, se tem a criação de um perfil; ",
+        "TEXTO-ITEMB": "O cliente tem opções sobre as informações inseridas no seu perfil, tais como: seu Portfólio, foto de perfil, cidade ou área e recomendações de artistas. Não é necessário fornecer informações adicionais em seu perfil. O usuário pode escolher se deseja incluir certas informações no seu perfil e se quer torná-las públicas. É recomendado que não seja publicado e nem adicionado ao perfil dados pessoais que não deva ser disponibilizado ao público. Não é obrigatório a publicação nem carregamento de dados pessoais, mas nesse caso a capacidade de interagir com outros usuários através dos serviços da Art+ se torna limitada; ",
+        "TEXTO-ITEMC": "Ao usar os serviços da Art+, o usuário possui a opção de inserir informações sobre a sua localidade. É solicitado que, caso deseje utilizar essa opção, habilite esse recurso com o uso de ferramentas de mapa, disponíveis na plataforma, para auxiliar na recomendação do seu perfil a usuários de regiões próximas. ",
+        "TEXTO-ITEMD": "Todos os perfis têm a função de Portfólio, onde os usuários podem subir seus trabalhos com descrição e um preço opcional que são armazenados em nossos servidores. Os Portfólios ficam visíveis a todos os que acessarem o perfil mas apenas o proprietário da conta pode alterá-lo;",
+        "TEXTO-ITEME": "Os tipos de pesquisa (como por nome, localização ou categoria) influenciam a disponibilidade dos perfis, interferindo no sistema de recomendação e nos resultados das próximas consultas. São utilizados os dados que existem na base sobre os usuários para fornecer e personalizar os serviços, incluindo a ajuda de sistemas automatizados e inferências que são feitas para que a plataforma possa ser mais relevante e útil.",
+        "TEXTO-ITEMF": "Ao se cadastrar em uma Assinatura Premium, o usuário fornece informações sobre a forma de pagamento e cobrança, mesmo procedimento feito na negociação entre usuários por intermédio da plataforma. São considerados dados opcionais , porém são obrigatórios para o uso destes serviços da Art+ , com os dados bancários, se tem acesso ao status da transação e a resolução de pagamentos, que são armazenados em um histórico para cada usuário;",
+        "TEXTO-ITEMG": "O usuário tem a opção de ceder os dados de contato telefônico para conseguir acesso a função de contato entre perfis diretamente em suas aplicações de mensageria. ",
+        "TEXTO-ITEMH": "O usuário faz também a opção de disponibilizar outras redes sociais em seu perfil que sejam outros contatos pessoais e/ou profissionais, que são necessários para o compartilhamento de links de seus conteúdos em outras plataformas. ",
+        "TEXTO-ITEMI": "Mesmo que esteja apenas acessando a plataforma, as informações de acesso, como o seu endereço IP e o tipo de dispositivo utilizado no contato são recolhidas para a definição das métricas da Art+ e a entrega da responsividade da página visualizada.",
+        "TEXTO-4": "Os perfis presentes na plataforma ficam completamente visível a todos os usuários e clientes dos serviços da Art+, além de visitantes externos, esses que só podem visualizar os usuários. Os dados pessoais são armazenados enquanto os usuários mantém sua conta aberta ou conforme necessário para o fornecimento de serviços. Isso inclui os dados fornecidos diretamente e os dados gerados a partir da utilização dos serviços oferecidos. Mesmo que a plataforma seja utilizada para procurar um novo artista com baixa frequência, são armazenadas as informações pessoais e mantido o perfil ativo, a menos que o usuário opte por encerrar a sua conta.",
+        "TEXTO-5": "Caso seja optado por encerrar a conta da Art+ , os dados pessoais do usuário, por via de regra, não ficam mais visíveis para terceiros nos serviços da plataforma dentro de 24 horas. Por fim, em até 30 dias após o encerramento da conta são excluídos, por via de regra, as informações da conta encerrada das bases de dados, seus trabalhos postados devem ser copiados manualmente durante este período para evitar sua perda.",
+        "TEXTO-6": "Se houverem outras dúvidas acerca dos pontos apresentados neste acordo, na coleta e no processamento dos dados pessoais ou qualquer outro ponto deste documento, entre em contato com a equipe da Art+ a qualquer momento por meio do próprio site ou por outros contatos da plataforma.",
+        "TEXTO-7": "Caso você não concorde com algum ponto deste acordo, selecione a opção “Eu não aceito” para que o seu cadastro na plataforma seja negado. Desta maneira, será redirecionado para a página inicial, onde o perfil poderá ser criado quando quiser. Estando de acordo, ao clicar em “Eu aceito”, você concorda com todos os pontos apresentados sobre o uso de seus dados em nossos serviços.",
+        "BUTTON-A": "Eu aceito",
+        "BUTTON-B": "Eu não aceito"
+    
+    },
+    "USUARIOS": {
+        "TITULO": "USUÁRIOS",
+        "TEXTO": "Veja todos os usuários da plataforma e faça seu networking!"
+       
     }
 }
+

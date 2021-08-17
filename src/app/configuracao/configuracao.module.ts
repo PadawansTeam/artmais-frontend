@@ -8,6 +8,8 @@ import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { ConfiguracaoComponent } from './component/configuracao.component';
+import { ConfiguracaoService } from './service/configuracao.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -30,10 +32,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   }),
     SelectModule,
     HeaderlogModule,
-    FooterModule
+    FooterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    TranslateService
+    TranslateService, ConfiguracaoService
   ],
   bootstrap: []
 })

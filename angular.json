@@ -40,15 +40,11 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "node_modules/swiper/swiper-bundle.min.js",
               "src/assets/js/main.js",
               "src/assets/aos/aos.js",
               "src/assets/glightbox/js/glightbox.min.js",
-              "node_modules/bootstrap/js/dist/modal.js",
               "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
               "node_modules/@popperjs/core/dist/umd/popper.min.js"
-
             ]
           },
           "configurations": {
@@ -61,8 +57,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "15kb",
-                  "maximumError": "15kb"
+                  "maximumWarning": "16kb",
+                  "maximumError": "16kb"
                 }
               ],
               "fileReplacements": [

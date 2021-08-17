@@ -12,8 +12,10 @@ export interface CadastroDto {
   role: string;
   category: string;
   subcategory: string;
-  birthDate: string;
+  birthDate: Date;
   description: string;
+  userPicture: string;
+  backgroundPicture: string;
 }
 
 @Injectable()
@@ -29,23 +31,37 @@ export class CadastroService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<any> {
-    return this.http.get(this.artPlusURL + 'v1/SignUp', this.httpOptions)
+    return this.http.get(this.artPlusURL + 'v1/SignUp', this.httpOptions);
   }
 
   signUp(
     name: string,
-    email: 'user@example.com',
+    email: string,
     password: string,
     username: string,
-    birthDate: "2021-07-10T13:03:32.650Z",
+    birthDate: Date,
     role: string,
     category: string,
     subcategory: string,
-    description: string
-  ): Observable<object> {
+    description: string,
+    userPicture: string,
+    backgroundPicture: string
+  ): Observable<any> {
     return this.http.post<object>(
       `${this.artPlusURL}` + 'v1/SignUp',
-      { name, email, password, username, birthDate, role, category, subcategory, description},
+      {
+        name,
+        email,
+        password,
+        username,
+        birthDate,
+        role,
+        category,
+        subcategory,
+        description,
+        userPicture,
+        backgroundPicture,
+      },
       this.httpOptions
     );
   }

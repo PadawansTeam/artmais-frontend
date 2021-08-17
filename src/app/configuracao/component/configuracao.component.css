@@ -81,6 +81,7 @@ hr {
     background-color: #701ec6;
     text-align: center;
     margin-top: 3px;
+    padding: 8px;
 }
 
 .form-control1 {
@@ -197,7 +198,32 @@ input[type='date'] {
     -moz-border-radius: 4px;
     border-radius: 4px;
     font-size: .825rem;
+}
 
-    
-    
+input[type='file']::-webkit-file-upload-button {
+	background-color: #701ec6;
+	color: #fff;
+	border-radius: 4px;
+}
+
+input[type='file']::-webkit-file-upload-button:hover {
+	background-color: white;
+	color: #701ec6;
+	border-radius: 4px;
+}
+
+.error {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color:#cc0000;
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: -20px;
+    padding: 0;
+	font-size: 12px;
+}
+
+@media (max-width:760px){
+    .config-title{
+        margin-top: -1.7rem; 
+        margin-left: 3rem;
+    }
 }

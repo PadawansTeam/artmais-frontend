@@ -1,0 +1,106 @@
+.friend-list .friend-card {
+    border-radius: 4px;
+    border-bottom: 1px solid #f1f2f2;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px 0 rgba(67, 18, 112, 0.3);
+    height: 13rem;
+ 
+  }
+  
+  .friend-list .friend-card:hover {
+    transform: scale(1.08);
+  }
+  
+  .friend-list .friend-card .card-info {
+    text-align: center;
+  }
+  
+  img.profile-photo-lg {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 7px solid #fff;
+    margin-top: -60px;
+
+  }
+  
+  .text-green {
+    color: #701ec6;
+    text-decoration: none;
+  }
+  .text-sub {
+    color: #701ec6;
+    text-decoration: none;
+    font-size: small;
+  }
+  
+  .title {
+    font-size: 30px;
+    text-align: center;
+    padding-left: 70px;
+  }
+  
+  .sub {
+    font-size: 25px;
+    text-align: center;
+    padding-left: 0px;
+    color: #701ec6;
+  }
+  
+  .img-responsive {
+    width: 415px;
+    height: 70px !important;
+    background-color: #bf8cf5;
+  }
+  
+  .profile-link {
+    text-decoration: none;
+    color: #3a393b;
+    text-align: center;
+    padding-top: 1rem;
+  }
+  .profile{
+    font-size: .85rem;
+  }
+  
+  section {
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+  }
+  
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    position: relative;
+  
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .section-title{
+      margin-top: 40px;
+      font-size: 18px;
+    }
+    .section-title h2 {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      position: relative;
+    }
+  
+  }
+  
+  
