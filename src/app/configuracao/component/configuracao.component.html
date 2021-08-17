@@ -162,7 +162,8 @@
                       </div>
                     </div>
                     <input [(ngModel)]="this.userInfo.birthDate" [ngModelOptions]="{standalone: true}" type="text"
-                      max="9999-12-31" class="form-control" id="datanasc" />
+                      max="9999-12-31" onfocus="(this.type='date')"
+                      onblur="(this.type='date')" class="form-control" id="datanasc" />
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
