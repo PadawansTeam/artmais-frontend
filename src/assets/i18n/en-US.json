@@ -33,7 +33,10 @@
         "API": "An error occured. Please, try again later!",
         "ESQUECEU": "Forgot your password?",
         "INVALIDO": "Invalid field",
-        "OU": "Or"
+        "OU": "Or",
+        "NAO-POSSUI-CONTA": "Don't have an account?",
+        "CADASTRAR":"Sign Up"
+
     },
     "MENU": {
         "HOME": "Home",
