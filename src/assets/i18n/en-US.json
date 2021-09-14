@@ -22,7 +22,8 @@
         "ERRO": "Required fields were not filled. Please, try again!",
         "INVALIDO": "Invalid field",
         "ENTRAR":"Sign In",
-        "POSSUI-CONTA": "Already have an account?"
+        "POSSUI-CONTA": "Already have an account?",
+        "DATA-VALIDA": "Invalid Date"
     },
     "ENTRAR": {
         "ENTRAR": "Sign In",
@@ -181,7 +182,8 @@
             "NOVA-SENHA":"New password",
             "CONFIRMA-SENHA":"Confirm New password",
             "CONFIG-BUTTONS" :"Save",
-            "INVALIDO": "Invalid field"
+            "INVALIDO": "Invalid field",
+            "DATA-VALIDA": "Invalid Date"
         },
         "PRIVACIDADE": {
             "TITULO": "Privacy and Security Agreement",

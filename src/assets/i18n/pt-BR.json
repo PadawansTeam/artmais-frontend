@@ -22,7 +22,8 @@
         "ERRO": "Campos obrigatórios não foram preenchidos. Por favor, tente novamente!",
         "INVALIDO": "Campo inválido",
         "ENTRAR":"Entrar",
-        "POSSUI-CONTA": "Já possui uma conta?"
+        "POSSUI-CONTA": "Já possui uma conta?",
+        "DATA-VALIDA": "Data Inválida"
 
     },
     "ENTRAR": {
@@ -184,7 +185,8 @@
         "NOVA-SENHA": "Nova Senha",
         "CONFIRMA-SENHA": "Confirmar Nova Senha",
         "CONFIG-BUTTONS": "Salvar",
-        "INVALIDO": "Campo inválido"
+        "INVALIDO": "Campo inválido",
+        "DATA-VALIDA": "Data Inválida"
     },
     "PRIVACIDADE": {
         "TITULO": "Acordo de Privacidade e Segurança ",

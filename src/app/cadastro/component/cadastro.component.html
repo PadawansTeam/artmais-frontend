@@ -98,9 +98,10 @@
                     </span>
                   </div>
                   <input [(ngModel)]="this.form.birthDate" [ngModelOptions]="{standalone: true}"
-                    class="un form-control " type="date" max="9999-12-31" onfocus="(this.type='date')"
+                    class="un form-control " type="date" max="9999-12-31" (change)="verifyAge()" onfocus="(this.type='date')"
                     onblur="(this.type='date')" placeholder="{{ 'CADASTRO.NASCIMENTO' | translate }}" />
                 </div>
+                <p *ngIf= "isDateValid==false" class="error" style="padding: 10px;" align="center">{{"CADASTRO.DATA-VALIDA" | translate}}</p>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">

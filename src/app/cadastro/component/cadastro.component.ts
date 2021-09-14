@@ -39,6 +39,7 @@ export class CadastroComponent implements OnInit {
   arraySelect: any[] = [];
   isArtist = false;
   isClient = false;
+  isDateValid: boolean = true;
   invalidField = false;
   formCadastro!: FormGroup;
   socialUser: SocialUser = new SocialUser();
@@ -125,6 +126,21 @@ export class CadastroComponent implements OnInit {
     this.isClient = false;
     return;
   }
+
+  public verifyAge(){
+    let input = new Date(this.form.birthDate);
+    let today = new Date();
+    
+    //@ts-ignore
+    let mills = today-input;
+    let years = Math.floor(mills/31556952000)
+    
+    if(years<=100 && years>=18){
+      this.isDateValid = true;
+    }else{
+      this.isDateValid = false;
+    }
+}
 
   public cadastroArtPlus() {
     this.loaderOn = true

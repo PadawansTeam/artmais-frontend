@@ -13,6 +13,7 @@ export class ConfiguracaoComponent implements OnInit {
   selectedProfileFiles: FileList | undefined;
   urlImagem!: any;
   formConfig!: FormGroup;
+  isDateValid: boolean = true;
 
   Toast = Swal.mixin({
     toast: true,
@@ -283,5 +284,21 @@ export class ConfiguracaoComponent implements OnInit {
 
   routeUpdateEvent() {
     location.reload();
+  }
+
+  public verifyAge(){
+    console.log("Data:", this.userInfo.birthDate)
+    let input = new Date(this.userInfo.birthDate);
+    let today = new Date();
+    
+    //@ts-ignore
+    let mills = today-input;
+    let years = Math.floor(mills/31556952000)
+    
+    if(years<=100 && years>=18){
+      this.isDateValid = true;
+    }else{
+      this.isDateValid = false;
+    }
   }
 }
