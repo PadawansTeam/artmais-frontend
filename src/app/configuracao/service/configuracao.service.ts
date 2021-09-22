@@ -1,7 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import * as AWS from 'aws-sdk/global';
-import * as S3 from 'aws-sdk/clients/s3';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { buildWebpackBrowser } from '@angular-devkit/build-angular/src/browser';
@@ -13,7 +11,6 @@ export class ConfiguracaoService {
   public artPlusURL = `${environment.apiURL}`;
   public token = localStorage.getItem('token');
 
-  ProfileFolder = 'profile-pictures/';
   DateTimeNow = new Date();
 
   httpOptions = {
@@ -112,45 +109,5 @@ export class ConfiguracaoService {
       { street, number, complement, neighborhood, zipCode, city, state },
       this.httpOptions
     );
-  }
-
-  async uploadProfileFile(file: File, userID: number): Promise<string> {
-    const fileName = ((this.DateTimeNow.getTime() * 10000) + 621355968000000000);
-    const fileType = file.type.split('/').pop();
-    const bucket = new S3({
-      accessKeyId: `${environment.accessKeyId}`,
-      secretAccessKey: `${environment.secretAccessKey}`,
-      region: 'us-east-1',
-    });
-    const params = {
-      Bucket: `${environment.bucket}`,
-      ContentType: file.type.split('.').pop(),
-      Key: this.ProfileFolder + `${userID}/` + fileName + `.${fileType}`,
-      Body: file,
-      ACL: 'public-read',
-    };
-
-    const upload = bucket.upload(
-      params,
-      function (err: any, data: any): Observable<object> {
-        if (err) {
-          return err;
-        }
-
-        return data;
-      }
-    );
-
-    const promise = upload.promise();
-    const url = await promise.then(
-      function (data) {
-        return data.Location;
-      },
-      function (err) {
-        return err;
-      }
-    );
-
-    return url;
   }
 }

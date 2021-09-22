@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Configuracao } from '../service/configuracao';
 import { ConfiguracaoService } from '../service/configuracao.service';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-configuracao',
@@ -163,7 +163,7 @@ export class ConfiguracaoComponent implements OnInit {
     this.configService
       .updateDescription(this.userDescription.description)
       .subscribe(
-        async(response) => {
+        async (response) => {
           await this.Toast.fire({
             icon: 'success',
             title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
@@ -193,7 +193,7 @@ export class ConfiguracaoComponent implements OnInit {
         this.userContact.thirdPhone
       )
       .subscribe(
-        async(response) => {
+        async (response) => {
           await this.Toast.fire({
             icon: 'success',
             title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
@@ -224,7 +224,7 @@ export class ConfiguracaoComponent implements OnInit {
         this.userAddress.state
       )
       .subscribe(
-        async(response) => {
+        async (response) => {
           await this.Toast.fire({
             icon: 'success',
             title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
@@ -246,7 +246,7 @@ export class ConfiguracaoComponent implements OnInit {
   async uploadProfile(userID: number) {
     const file = this.selectedProfileFiles?.item(0);
     if (file == undefined) this.urlImagem = this.userInfo.userPicture;
-    else this.urlImagem = await this.configService.uploadProfileFile(file!, userID);
+    else this.urlImagem = file;
     this.configService
       .updateUserInfo(
         this.userInfo.name,
@@ -259,7 +259,7 @@ export class ConfiguracaoComponent implements OnInit {
         this.userInfo.thirdPhone
       )
       .subscribe(
-        async(response) => {
+        async (response) => {
           await this.Toast.fire({
             icon: 'success',
             title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
@@ -286,18 +286,18 @@ export class ConfiguracaoComponent implements OnInit {
     location.reload();
   }
 
-  public verifyAge(){
+  public verifyAge() {
     console.log("Data:", this.userInfo.birthDate)
     let input = new Date(this.userInfo.birthDate);
     let today = new Date();
-    
+
     //@ts-ignore
-    let mills = today-input;
-    let years = Math.floor(mills/31556952000)
-    
-    if(years<=100 && years>=18){
+    let mills = today - input;
+    let years = Math.floor(mills / 31556952000)
+
+    if (years <= 100 && years >= 18) {
       this.isDateValid = true;
-    }else{
+    } else {
       this.isDateValid = false;
     }
   }
