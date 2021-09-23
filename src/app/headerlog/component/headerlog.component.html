@@ -1,41 +1,49 @@
-   <header class="header">
-    <nav class="navbar navbar-expand-lg header-nav fixed-top ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="\homepage"> <img src="../assets/img/logos/log.png" alt="" class="d-inline-block align-text-top logo"></a>
-            <button class="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#drop"
-                aria-controls="#drop" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="" role="button"><i class="fa fa-bars" aria-hidden="true" style="color:#701ec6; font-size:30px;"></i></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="drop">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                  <li class="nav-item">
-                    <a class="nav-link" href="\usuarios">{{ 'HEADER.USUARIOS' | translate }}</a>
-                  </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="\homepage">{{ 'HEADER.HOMEPAGE' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="\interesse">{{ 'HEADER.INTERESSE' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="\construcao">{{ 'HEADER.DASHBOARD' | translate }}</a>
-                    </li>
-                    <select-lang *ngIf="!mobile"></select-lang>
-                    <select-lang *ngIf="mobile" style="margin-left: 0.6rem; background-color: rgba(231, 221, 235, 0.89);"></select-lang>
-                    <li class="nav-item">
-                      <a class="nav-link" href="\configuracao">{{ 'HEADER.CONFIG' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="\perfil">{{ 'HEADER.PERFIL' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link sair" href="\#">{{ 'HEADER.SAIR' | translate }}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  </header>
+<header class="header">
+  <nav class="navbar navbar-expand-lg header-nav fixed-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="\homepage"> <img src="../assets/img/logos/log.png" alt=""
+          class="d-inline-block align-text-top logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#drop"
+        aria-controls="#drop" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="" role="button"><i class="fa fa-bars" aria-hidden="true"
+            style="color:#701ec6; font-size:30px;"></i></span>
+      </button>
+      <form class="search-container">
+       <img class="search-icon"
+            src="../assets/img/logos/loupe.png">
+        <input type="text" id="search-bar" placeholder="{{ 'HEADER.PESQUISAR' | translate }}">
+      </form>
+      <div class="collapse navbar-collapse justify-content-between" id="drop">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link" href="\usuarios">{{ 'HEADER.USUARIOS' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link c-1" href="\planos">{{ 'HEADER.PLANOS' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\homepage">{{ 'HEADER.HOMEPAGE' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\interesse">{{ 'HEADER.INTERESSE' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\construcao">{{ 'HEADER.DASHBOARD' | translate }}</a>
+          </li>
+          <select-lang *ngIf="!mobile"></select-lang>
+          <select-lang *ngIf="mobile" style="margin-left: 0.6rem; background-color: rgba(231, 221, 235, 0.89);">
+          </select-lang>
+          <li class="nav-item">
+            <a class="nav-link" href="\configuracao">{{ 'HEADER.CONFIG' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\perfil">{{ 'HEADER.PERFIL' | translate }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sair" href="\#">{{ 'HEADER.SAIR' | translate }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

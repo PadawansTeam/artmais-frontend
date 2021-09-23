@@ -55,7 +55,10 @@
         "PERFIL": "Profile",
         "SAIR": "Log Out",
         "USUARIOS": "Users",
-        "DASHBOARD": "Dashboard"
+        "DASHBOARD": "Dashboard",
+        "PLANOS": "Subscription",
+        "PESQUISAR": "Search"
+
     },
     "FOOTER": {
         "SOBRE": "ABOUT",
