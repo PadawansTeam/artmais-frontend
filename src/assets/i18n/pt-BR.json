@@ -58,7 +58,11 @@
         "PERFIL": "Perfil",
         "SAIR": "Sair",
         "USUARIOS": "Usuários",
-        "DASHBOARD": "Dashboard"
+        "DASHBOARD": "Dashboard",
+        "PLANOS": "Planos",
+        "PESQUISAR": "Pesquisar"
+
+
     },
     "FOOTER": {
         "SOBRE": "SOBRE",
@@ -71,7 +75,6 @@
         "COPYRIGHT": " 2021 Todos os direitos reservados por Team Padawans",
         "EQUIPE": "Equipe",
         "PLANOS": "Planos"
-
     },
     "INICIO": {
         "TITULO": "O melhor lugar para se conectar com a arte",
