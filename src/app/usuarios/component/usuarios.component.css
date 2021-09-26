@@ -25,14 +25,28 @@
 
   }
   
-  .text-green {
-    color: #701ec6;
+  .text-cat {
+    font-size: 10px;
+    color: #FFF;
     text-decoration: none;
+    background-color: #6f1ec6dc;
+    padding: 5px 7px;
+    margin-top: 15px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
   }
   .text-sub {
+    font-size: 10px;
     color: #701ec6;
     text-decoration: none;
-    font-size: small;
+    border-radius: 4px;
+    padding: 5px 7px;
+    border: 1px solid #701ec6;
+    margin-top: 15px;
+    background-color: #FFF;
   }
   
   .title {
@@ -59,6 +73,7 @@
     color: #3a393b;
     text-align: center;
     padding-top: 1rem;
+    font-size: 14px;
   }
   .profile{
     font-size: .85rem;

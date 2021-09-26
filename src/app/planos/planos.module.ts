@@ -7,7 +7,7 @@ import { SelectModule } from '../select/select.module';
 import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { PlanosComponent } from './componet/planos.component';
-
+import { HeaderlogModule } from '../headerlog/headerlog.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -29,6 +29,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   }),
     SelectModule,
     HeaderModule,
+    HeaderlogModule,
     FooterModule
   ],
   providers: [

@@ -23,7 +23,10 @@
         "INVALIDO": "Campo inválido",
         "ENTRAR":"Entrar",
         "POSSUI-CONTA": "Já possui uma conta?",
-        "DATA-VALIDA": "Data Inválida"
+        "DATA-VALIDA": "Data Inválida",
+        "TEXTO-1-CADASTRO-PRIVA": "Ao clicar em cadastrar você aceita a",
+        "TEXTO-2-CADASTRO-PRIVA": "da Art+.",
+        "LINK-CADASTRO-PRIVA": "Política de Privacidade"
 
     },
     "ENTRAR": {
