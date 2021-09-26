@@ -209,9 +209,8 @@
         "TEXTO-4": "Os perfis presentes na plataforma ficam completamente visível a todos os usuários e clientes dos serviços da Art+, além de visitantes externos, esses que só podem visualizar os usuários. Os dados pessoais são armazenados enquanto os usuários mantém sua conta aberta ou conforme necessário para o fornecimento de serviços. Isso inclui os dados fornecidos diretamente e os dados gerados a partir da utilização dos serviços oferecidos. Mesmo que a plataforma seja utilizada para procurar um novo artista com baixa frequência, são armazenadas as informações pessoais e mantido o perfil ativo, a menos que o usuário opte por encerrar a sua conta.",
         "TEXTO-5": "Caso seja optado por encerrar a conta da Art+ , os dados pessoais do usuário, por via de regra, não ficam mais visíveis para terceiros nos serviços da plataforma dentro de 24 horas. Por fim, em até 30 dias após o encerramento da conta são excluídos, por via de regra, as informações da conta encerrada das bases de dados, seus trabalhos postados devem ser copiados manualmente durante este período para evitar sua perda.",
         "TEXTO-6": "Se houverem outras dúvidas acerca dos pontos apresentados neste acordo, na coleta e no processamento dos dados pessoais ou qualquer outro ponto deste documento, entre em contato com a equipe da Art+ a qualquer momento por meio do próprio site ou por outros contatos da plataforma.",
-        "TEXTO-7": "Caso você não concorde com algum ponto deste acordo, selecione a opção “Eu não aceito” para que o seu cadastro na plataforma seja negado. Desta maneira, será redirecionado para a página inicial, onde o perfil poderá ser criado quando quiser. Estando de acordo, ao clicar em “Eu aceito”, você concorda com todos os pontos apresentados sobre o uso de seus dados em nossos serviços.",
-        "BUTTON-A": "Eu aceito",
-        "BUTTON-B": "Eu não aceito"
+        "TEXTO-7": "Caso você não concorde com algum ponto deste acordo, não cadastre-se em nossa plataforma. Estando de acordo, ao clicar em “Cadastrar”, você concorda com todos os pontos apresentados sobre o uso de seus dados em nossos serviços.",
+        "SELE-IDIOMA": "Selecione o idioma:"
     
     },
     "USUARIOS": {
