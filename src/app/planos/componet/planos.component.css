@@ -1,4 +1,4 @@
-
+ 
 .btn-principal {
     background: linear-gradient(to right, #9558d5, #701ec6);
     padding: 8px 20px;
@@ -40,7 +40,7 @@
 
 
 .pricing {
-	margin-top: 90px;
+	margin-top: 120px;
 }
 
 .pricing .box {
@@ -152,3 +152,34 @@
 	background: #fff;
 	color: #701ec6;
 }
+.section-title {
+	text-align: center;
+	padding-bottom: 30px;
+	position: relative;
+	color: #555555;
+  
+  }
+
+  .section-title h2::after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 3px;
+	background: #701ec6;
+	bottom: 0;
+	left: calc(50% - 25px);
+}
+.section-title h2 {
+	font-size: 32px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	position: relative;
+  }
+
+  .image{
+	  margin-top: 100px;
+	  height: 100%;
+  }

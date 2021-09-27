@@ -43,6 +43,11 @@ import { ConstrucaoModule } from './construcao/construcao.module';
 import { DashboardModule } from './dashboard/dashboad.module';
 import { InteresseModule } from './interesse/interesse.module';
 import { InteresseService } from './interesse/service/interesse.service';
+<<<<<<< Updated upstream
+=======
+import { PrivacidadeModule } from './privacidade/privacidade.module';
+import { TesteModule } from './teste/teste.module';
+>>>>>>> Stashed changes
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -83,6 +88,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     InteresseModule,
     ConfiguracaoModule,
     ArtistaModule,
+<<<<<<< Updated upstream
+=======
+    PrivacidadeModule,
+    TesteModule
+>>>>>>> Stashed changes
   ],
   providers: [
     TranslateService,
