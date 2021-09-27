@@ -23,7 +23,10 @@
         "INVALIDO": "Invalid field",
         "ENTRAR":"Sign In",
         "POSSUI-CONTA": "Already have an account?",
-        "DATA-VALIDA": "Invalid Date"
+        "DATA-VALIDA": "Invalid Date",
+        "TEXTO-1-CADASTRO-PRIVA": "By clicking on Sing up you accept Art+'s",
+        "TEXTO-2-CADASTRO-PRIVA": "",
+        "LINK-CADASTRO-PRIVA": "Privacy Policy."
     },
     "ENTRAR": {
         "ENTRAR": "Sign In",

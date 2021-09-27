@@ -4,7 +4,7 @@
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 0 30px 0 rgba(67, 18, 112, 0.3);
-  height: 14rem;
+  height: 16rem;
 }
 
 .friend-list .friend-card:hover {
@@ -21,12 +21,10 @@ img.profile-photo-lg {
   border-radius: 50%;
   border: 7px solid #fff;
   margin-top: -60px;
+  margin-bottom: 10px;
 }
 
-.text-green {
-  color: #701ec6;
-  text-decoration: none;
-}
+
 
 .title {
   font-size: 30px;
@@ -68,10 +66,27 @@ section {
   position: relative;
 
 }
+.text-cat {
+  color: #FFF;
+  text-decoration: none;
+  background-color: #6f1ec6dc;
+  padding: 5px 7px;
+  margin-top: 15px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
 .text-sub {
   color: #701ec6;
   text-decoration: none;
   font-size: small;
+  border-radius: 4px;
+  padding: 5px 7px;
+  border: 1px solid #701ec6;
+  margin-top: 15px;
+  background-color: #FFF;
 }
 
 .section-title h2 {
@@ -99,3 +114,13 @@ section {
 
 }
 
+.section-title h2::after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 3px;
+	background: #701ec6;
+	bottom: 0;
+	left: calc(50% - 25px);
+}
