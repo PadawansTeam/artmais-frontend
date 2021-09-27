@@ -114,3 +114,13 @@ section {
 
 }
 
+.section-title h2::after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 3px;
+	background: #701ec6;
+	bottom: 0;
+	left: calc(50% - 25px);
+}
