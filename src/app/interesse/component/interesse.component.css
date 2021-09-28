@@ -1,12 +1,12 @@
-.container {
-    margin-top: 3rem;
+.interesse {
+    margin-top: 140px;
 }
 
 .section-title {
     text-align: center;
     padding-bottom: 30px;
     position: relative;
-  
+    color: #555555;  
   }
   
   .section-title h2 {

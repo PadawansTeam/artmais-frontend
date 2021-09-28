@@ -55,7 +55,7 @@
     },
 
     "HEADER": {
-        "HOMEPAGE": "Recomendações",
+        "HOMEPAGE": "Início",
         "INTERESSE":"Interesses",
         "CONFIG": "Configurações",
         "PERFIL": "Perfil",
@@ -122,6 +122,7 @@
         "TITULO": "404 - Página não encontrada",
         "BUTTON": "Voltar"
     },
+    
     "CONSTRUCAO": {
         "TITULO": "Desculpe, a página está em construção",
         "BUTTON": "Voltar"
@@ -150,6 +151,7 @@
         "PLACE-DESCRIÇÃO": "Digite a descrição..."
     },
     "CONFIG": {
+        "CONFIG":"Configurações",
         "SOBRE": "Sobre",
         "DESCRICAO": "Descrição:",
         "DESCRICAO-BOX": "Digite a descrição...",
@@ -218,8 +220,10 @@
     },
     "USUARIOS": {
         "TITULO": "USUÁRIOS",
-        "TEXTO": "Veja todos os usuários da plataforma e faça seu networking!"
-       
+        "TEXTO": "Veja todos os usuários da plataforma e faça seu networking!",
+        "TESTE": "Início"
     }
+
+    
 }
 

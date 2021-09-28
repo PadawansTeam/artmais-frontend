@@ -52,7 +52,7 @@
         "ENTRAR": "Sign In"
     },        
     "HEADER": {
-        "HOMEPAGE": "Recommendation",
+        "HOMEPAGE": "Home",
         "INTERESSE":"Interests",
         "CONFIG": "Configurations",
         "PERFIL": "Profile",
@@ -147,6 +147,7 @@
             
         },
         "CONFIG": {
+            "CONFIG":"Configurations",
             "SOBRE":"About",
             "DESCRICAO":"Description:",
             "DESCRICAO-BOX":"Enter the description...",
