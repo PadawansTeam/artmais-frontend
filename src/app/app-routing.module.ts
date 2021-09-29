@@ -15,6 +15,7 @@ import { PerfilComponent } from './perfil/component/perfil.component';
 import { PlanosComponent } from './planos/componet/planos.component';
 import { PrivacidadeComponent } from './privacidade/component/privacidade.component';
 import { UsuariosComponent } from './usuarios/component/usuarios.component';
+import { TesteComponent } from './teste/component/teste.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'artista/:id', component: ArtistaComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'privacidade', component: PrivacidadeComponent },
+  { path: 'teste', component: TesteComponent },
 ];
 
 @NgModule({

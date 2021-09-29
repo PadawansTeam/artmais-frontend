@@ -5,6 +5,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
 import { TesteComponent } from './component/teste.component';
+import { HeaderlogModule } from '../headerlog/headerlog.module';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -27,7 +28,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           deps: [HttpClient]
       }
   }),
-    SelectModule
+    SelectModule,
+    HeaderlogModule
   ],
   providers: [
     TranslateService
