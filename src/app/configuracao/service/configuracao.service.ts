@@ -16,6 +16,7 @@ export class ConfiguracaoService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
+      'Content-Disposition': 'multipart/form-data',
       Authorization: `Bearer ${this.token}`,
     }),
   };

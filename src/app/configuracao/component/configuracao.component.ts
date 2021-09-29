@@ -245,8 +245,12 @@ export class ConfiguracaoComponent implements OnInit {
 
   async uploadProfile(userID: number) {
     const file = this.selectedProfileFiles?.item(0);
-    if (file == undefined) this.urlImagem = this.userInfo.userPicture;
-    else this.urlImagem = file;
+    let formData: FormData = new FormData();
+    if (file == undefined)
+      this.urlImagem = this.userInfo.userPicture;
+    else
+      this.urlImagem = formData.append('file', file, file.name);
+
     this.configService
       .updateUserInfo(
         this.userInfo.name,
