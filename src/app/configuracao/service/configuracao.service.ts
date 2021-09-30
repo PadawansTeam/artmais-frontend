@@ -38,7 +38,6 @@ export class ConfiguracaoService {
   updateUserInfo(
     name: string,
     username: string,
-    userPicture: string,
     backgroundPicture: string,
     birthDate: Date,
     mainPhone: string,
@@ -50,7 +49,6 @@ export class ConfiguracaoService {
       {
         name,
         username,
-        userPicture,
         backgroundPicture,
         birthDate,
         mainPhone,
@@ -58,6 +56,16 @@ export class ConfiguracaoService {
         thirdPhone,
       },
       this.httpOptions
+    );
+  }
+
+  updateUserPicture(
+    userPicture: FormData,
+  ): Observable<object> {
+    console.log(userPicture.get("Foto de perfil.jpg"));
+    return this.http.post<object>(
+      `${this.artPlusURL}` + 'v1/aws/insertImage',
+       userPicture
     );
   }
 

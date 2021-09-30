@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ConfiguracaoComponent implements OnInit {
   selectedProfileFiles: FileList | undefined;
-  urlImagem!: any;
+  urlImagem!: FormData;
   formConfig!: FormGroup;
   isDateValid: boolean = true;
 
@@ -245,17 +245,24 @@ export class ConfiguracaoComponent implements OnInit {
 
   async uploadProfile(userID: number) {
     const file = this.selectedProfileFiles?.item(0);
-    let formData: FormData = new FormData();
-    if (file == undefined)
-      this.urlImagem = this.userInfo.userPicture;
-    else
-      this.urlImagem = formData.append('file', file, file.name);
 
+    if (file == undefined) {
+      return await this.uploadProfileServiceCall();
+    }
+    else {
+      let formData: FormData = new FormData();
+      formData.append('file', file, file.name);
+      formData.get('file');
+      await this.uploadUserPicture(formData);
+      return await this.uploadProfileServiceCall();
+    }
+ }
+
+  async uploadProfileServiceCall() {
     this.configService
       .updateUserInfo(
         this.userInfo.name,
         this.userInfo.username,
-        this.urlImagem,
         this.userInfo.backgroundPicture,
         this.userInfo.birthDate,
         this.userInfo.mainPhone,
@@ -280,6 +287,29 @@ export class ConfiguracaoComponent implements OnInit {
           throw err;
         }
       );
+  }
+
+  async uploadUserPicture(formData: FormData) {
+    this.configService
+    .updateUserPicture(formData)
+    .subscribe(
+      async (response) => {
+        await this.Toast.fire({
+          icon: 'success',
+          title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
+        })
+        this.routeUpdateEvent()
+        return response;
+      },
+      (err) => {
+        this.Toast.fire({
+          icon: 'error',
+          title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
+          text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
+        })
+        throw err;
+      }
+    );
   }
 
   selectProfileFile(event: any) {
