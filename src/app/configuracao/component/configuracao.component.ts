@@ -251,8 +251,7 @@ export class ConfiguracaoComponent implements OnInit {
     }
     else {
       let formData: FormData = new FormData();
-      formData.append('file', file, file.name);
-      formData.get('file');
+      formData.append(file.name, file);
       await this.uploadUserPicture(formData);
       return await this.uploadProfileServiceCall();
     }

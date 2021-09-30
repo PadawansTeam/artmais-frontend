@@ -16,10 +16,15 @@ export class ConfiguracaoService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Content-Disposition': 'multipart/form-data',
       Authorization: `Bearer ${this.token}`,
     }),
   };
+
+  customHttpOptions = {
+    headers: new HttpHeaders({
+      Authorization: `Bearer ${this.token}`,
+    })
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -62,10 +67,10 @@ export class ConfiguracaoService {
   updateUserPicture(
     userPicture: FormData,
   ): Observable<object> {
-    console.log(userPicture.get("Foto de perfil.jpg"));
     return this.http.post<object>(
       `${this.artPlusURL}` + 'v1/aws/insertImage',
-       userPicture
+       userPicture,
+       this.customHttpOptions
     );
   }
 
