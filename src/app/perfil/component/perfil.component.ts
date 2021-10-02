@@ -28,7 +28,6 @@ export class PerfilComponent implements OnInit {
   ngOnInit(): void {
     this.perfilService.getUser().subscribe(
       (response: Perfil) => {
-        console.log(response);
         this.profile = response;
       },
       (err) => {
@@ -37,7 +36,6 @@ export class PerfilComponent implements OnInit {
     ),
       this.perfilService.getUserPortfolio().subscribe(
         (response: UserPortfolio) => {
-          console.log(response);
           this.userPortfolioImages = response as UserPortfolio[];
         },
         (err) => {

@@ -373,7 +373,6 @@ export class ConfiguracaoComponent implements OnInit {
   }
 
   public verifyAge() {
-    console.log('Data:', this.userInfo.birthDate);
     let input = new Date(this.userInfo.birthDate);
     let today = new Date();
 

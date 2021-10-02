@@ -6,24 +6,20 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
-  styleUrls: ['./usuarios.component.css']
+  styleUrls: ['./usuarios.component.css'],
 })
 export class UsuariosComponent implements OnInit {
-
-  public usuarios: Recommendation [] = [];
+  public usuarios: Recommendation[] = [];
 
   constructor(
     public recommendationService: RecommendationService,
     private router: Router
-    ) {}
+  ) {}
 
   ngOnInit() {
-    this.recommendationService.recomentationUsers().subscribe(
-      (response)=>{
-        this.usuarios = response as Recommendation[];
-      },
-      err=> console.log(err)
-    )
+    this.recommendationService.recomentationUsers().subscribe((response) => {
+      this.usuarios = response as Recommendation[];
+    });
   }
 
   getPerfilById(id: number) {
@@ -34,6 +30,6 @@ export class UsuariosComponent implements OnInit {
       (err) => {
         throw err;
       }
-    )
+    );
   }
 }
