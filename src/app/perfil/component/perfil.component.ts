@@ -6,32 +6,29 @@ import { UserPortfolio } from '../service/UserPortfolio';
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.css']
+  styleUrls: ['./perfil.component.css'],
 })
 export class PerfilComponent implements OnInit {
-
   profile!: Perfil;
   userPortfolioImages: UserPortfolio[] = [];
-  selectedPortfolioContent: FileList | undefined;;
+  selectedPortfolioContent: FileList | undefined;
 
   portfolioContent: any = {
     publicationID: null,
     portfolioImageUrl: null,
-    description: null
+    description: null,
   };
 
   portfolioDescription: any = {
     description: null,
   };
 
-  constructor(
-    public perfilService: PerfilService,
-  ) { }
+  constructor(public perfilService: PerfilService) {}
 
   ngOnInit(): void {
     this.perfilService.getUser().subscribe(
       (response: Perfil) => {
-        console.log(response)
+        console.log(response);
         this.profile = response;
       },
       (err) => {
@@ -49,20 +46,18 @@ export class PerfilComponent implements OnInit {
       );
   }
 
-  async insertPortfolioFile(userID: number) {
+  insertPortfolioFile() {
     const file = this.selectedPortfolioContent?.item(0);
+
     if (file == undefined) {
-      alert("Uma imagem deve ser selecionada");
+      alert('Uma imagem deve ser selecionada');
       return;
-    }
-    else
-      this.portfolioContent.portfolioImageUrl = await this.perfilService.uploadPortfolioFile(file!, userID);
-    this.perfilService
-      .insertPortfolioContent(
-        this.portfolioContent.portfolioImageUrl,
-        this.portfolioContent.description
-      )
-      .subscribe(
+    } else {
+      let formData: FormData = new FormData();
+      formData.append(file.name, file);
+      formData.append('description', this.portfolioContent?.description);
+
+      this.perfilService.insertPortfolioContent(formData).subscribe(
         (response) => {
           this.routeUpdateEvent();
           return response;
@@ -71,11 +66,15 @@ export class PerfilComponent implements OnInit {
           throw err;
         }
       );
+    }
   }
 
   updateDescription() {
     this.perfilService
-      .updatePortfolioDescription(this.portfolioContent.publicationID, this.portfolioDescription.description)
+      .updatePortfolioDescription(
+        this.portfolioContent.publicationID,
+        this.portfolioDescription.description
+      )
       .subscribe(
         (response) => {
           return response;

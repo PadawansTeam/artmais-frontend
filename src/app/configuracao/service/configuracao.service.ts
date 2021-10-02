@@ -66,7 +66,7 @@ export class ConfiguracaoService {
 
   updateUserPicture(userPicture: FormData): Observable<object> {
     return this.http.put<object>(
-      `${this.artPlusURL}` + 'v1/aws/insertImage',
+      `${this.artPlusURL}v1/aws/updateProfilePicture`,
       userPicture,
       this.customHttpOptions
     );

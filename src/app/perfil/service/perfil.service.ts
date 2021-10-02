@@ -22,7 +22,13 @@ export class PerfilService {
     }),
   };
 
-  constructor(private http: HttpClient) { }
+  customHttpOptions = {
+    headers: new HttpHeaders({
+      Authorization: `Bearer ${this.token}`,
+    }),
+  };
+
+  constructor(private http: HttpClient) {}
 
   getUser(): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/User', this.httpOptions);
@@ -32,14 +38,11 @@ export class PerfilService {
     return this.http.get(this.artPlusURL + 'v1/Portfolio', this.httpOptions);
   }
 
-  insertPortfolioContent(
-    portfolioImageUrl: string,
-    description: string
-  ): Observable<object> {
+  insertPortfolioContent(formData: FormData): Observable<object> {
     return this.http.post<object>(
-      `${this.artPlusURL}` + 'v1/Portfolio/InsertPortfolioContent',
-      { portfolioImageUrl, description },
-      this.httpOptions
+      `${this.artPlusURL}v1/aws/InsertPortfolioContent`,
+      formData,
+      this.customHttpOptions
     );
   }
 
@@ -52,46 +55,5 @@ export class PerfilService {
       { publicationId, publicationDescription },
       this.httpOptions
     );
-  }
-
-  async uploadPortfolioFile(file: File, userID: number): Promise<string> {
-    const fileName = ((this.DateTimeNow.getTime() * 10000) + 621355968000000000);
-    const fileType = file.type.split('/').pop();
-    const bucket = new S3({
-      accessKeyId: `${environment.accessKeyId}`,
-      secretAccessKey: `${environment.secretAccessKey}`,
-      region: 'us-east-1',
-    });
-
-    const params = {
-      Bucket: `${environment.bucket}`,
-      ContentType: file.type.split('.').pop(),
-      Key: this.PortfolioFolder + `${userID}/` + fileName + `.${fileType}`,
-      Body: file,
-      ACL: 'public-read',
-    };
-
-    const upload = bucket.upload(
-      params,
-      function (err: any, data: any): Observable<object> {
-        if (err) {
-          return err;
-        }
-
-        return data;
-      }
-    );
-
-    const promise = upload.promise();
-    const url = await promise.then(
-      function (data) {
-        return data.Location;
-      },
-      function (err) {
-        return err;
-      }
-    );
-
-    return url;
   }
 }
