@@ -23,10 +23,10 @@ export class ConfiguracaoService {
   customHttpOptions = {
     headers: new HttpHeaders({
       Authorization: `Bearer ${this.token}`,
-    })
-  }
+    }),
+  };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getUserInfo(): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/User', this.httpOptions);
@@ -64,13 +64,11 @@ export class ConfiguracaoService {
     );
   }
 
-  updateUserPicture(
-    userPicture: FormData,
-  ): Observable<object> {
-    return this.http.post<object>(
+  updateUserPicture(userPicture: FormData): Observable<object> {
+    return this.http.put<object>(
       `${this.artPlusURL}` + 'v1/aws/insertImage',
-       userPicture,
-       this.customHttpOptions
+      userPicture,
+      this.customHttpOptions
     );
   }
 
