@@ -23,7 +23,10 @@
         "INVALIDO": "Invalid field",
         "ENTRAR":"Sign In",
         "POSSUI-CONTA": "Already have an account?",
-        "DATA-VALIDA": "Invalid Date"
+        "DATA-VALIDA": "Invalid Date",
+        "TEXTO-1-CADASTRO-PRIVA": "By clicking on Sing up you accept Art+'s",
+        "TEXTO-2-CADASTRO-PRIVA": "",
+        "LINK-CADASTRO-PRIVA": "Privacy Policy."
     },
     "ENTRAR": {
         "ENTRAR": "Sign In",
@@ -49,13 +52,16 @@
         "ENTRAR": "Sign In"
     },        
     "HEADER": {
-        "HOMEPAGE": "Recommendation",
+        "HOMEPAGE": "Home",
         "INTERESSE":"Interests",
         "CONFIG": "Configurations",
         "PERFIL": "Profile",
         "SAIR": "Log Out",
         "USUARIOS": "Users",
-        "DASHBOARD": "Dashboard"
+        "DASHBOARD": "Dashboard",
+        "PLANOS": "Subscription",
+        "PESQUISAR": "Search"
+
     },
     "FOOTER": {
         "SOBRE": "ABOUT",
@@ -141,6 +147,7 @@
             
         },
         "CONFIG": {
+            "CONFIG":"Configurations",
             "SOBRE":"About",
             "DESCRICAO":"Description:",
             "DESCRICAO-BOX":"Enter the description...",
@@ -203,9 +210,8 @@
             "TEXTO-4": "The profiles existing on the platform are completely visible to all users and customers of Art+ services, in addition to external visitors, those who can only view user profiles. Personal data is stored as long as users keep their account open or as long as necessary to provide services. This includes data provided directly and data generated from the use of the services offered. Even if the platform is used to search for a new artist infrequently, personal information is stored and the profile is kept active, unless the user chooses to close their account.",
             "TEXTO-5": "If you choose to close the Art+ account, the user's personal data, as a rule, is no longer visible to third parties on the platform's services within 24 hours. Finally, within 30 days after the account is closed, the information of the closed account is, as a rule, deleted from the databases, where your posted works must be manually copied during this period to avoid their loss.",
             "TEXTO-6": "If there are further questions about the points in this agreement, in the collection and processing of personal data or any other point of this document, contact the team at Art + at any time through the site itself or other platform contacts.",
-            "TEXTO-7": "If you do not agree with any point of this agreement, you must select the option “I do not accept” so that your registration on the platform will be denied. This way, you will be redirected to the homepage, where the profile can be created whenever you want. In agreement, by clicking on “I accept”, you agree with all the points presented regarding the use of your data in our services.",
-            "BUTTON-A": "I accept",
-            "BUTTON-B": "I do not accept"
+            "TEXTO-7": "If you do not agree with any point of this agreement, please do not register on our platform. In agreement, by clicking on “Sing up”, you agree with all the points presented regarding the use of your data in our services.",
+            "SELE-IDIOMA": "Select the language:"
         }
         ,
     "USUARIOS": {

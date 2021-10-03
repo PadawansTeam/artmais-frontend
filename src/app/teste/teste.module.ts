@@ -4,21 +4,20 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
-import { HeaderModule } from '../header/header.module';
-import { FooterModule } from '../footer/footer.module';
-import { PlanosComponent } from './componet/planos.component';
+import { TesteComponent } from './component/teste.component';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
-import { TesteModule } from '../teste/teste.module';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
-
 @NgModule({
   declarations: [
-    PlanosComponent
+    TesteComponent,
+  ],
+  exports: [
+    TesteComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,14 +29,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
   }),
     SelectModule,
-    HeaderModule,
-    FooterModule,
-    TesteModule,
-    HeaderlogModule,
+    HeaderlogModule
   ],
   providers: [
     TranslateService
   ],
   bootstrap: []
 })
-export class PlanosModule { }
+export class TesteModule { }

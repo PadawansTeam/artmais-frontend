@@ -146,6 +146,13 @@
             </div>
             <p *ngIf="invalidField" class="error" style="padding: 20px;" align="center">{{ "CADASTRO.ERRO" | translate
               }}</p>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 mt-1 fot">
+                    <p class="text-politica text-center">{{ "CADASTRO.TEXTO-1-CADASTRO-PRIVA" | translate }}<br><a href="\privacidade" class="text-link-politica">{{ "CADASTRO.LINK-CADASTRO-PRIVA" | translate }}</a> {{ "CADASTRO.TEXTO-2-CADASTRO-PRIVA" | translate }}</p> 
+                  </div>
+                </div>
+              </div>
             <div class="text-center">
               <button class="submit" align="center" (click)="cadastroArtPlus()">
                 {{ "CADASTRO.BOTAO" | translate }}
@@ -155,7 +162,7 @@
               <div class="row">
                 <div class="col-md-12 mt-1 fot">
                   <p class="text-fo">{{ "CADASTRO.POSSUI-CONTA" | translate }}</p>
-                  <a href="\login" class="text-link">{{ "CADASTRO.ENTRAR" | translate }}</a>
+                  <a href="\privacidade" class="text-link">{{ "CADASTRO.ENTRAR" | translate }}</a>
                 </div>
               </div>
             </div>

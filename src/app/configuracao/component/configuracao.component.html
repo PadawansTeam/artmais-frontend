@@ -1,9 +1,16 @@
 <app-headerlog></app-headerlog>
-
+<section class="config">
+<div class="section-title" data-aos="fade-up">
+  <div class="container">
+    <div class="row text-center">
+      <h2>{{ 'CONFIG.CONFIG' | translate }}</h2>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="main-body">
     <div class="row">
-      <div class="col-lg-4 mt-j" data-aos="fade-up">
+      <div class="col-lg-4" data-aos="fade-up">
         <div class="card">
           <div class="card-body">
             <div class="account-settings d-flex flex-column">
@@ -144,7 +151,7 @@
           </div>
         </div>
       </div>
-      <form [formGroup]="formConfig" class="col-lg-8 mt-j">
+      <form [formGroup]="formConfig" class="col-lg-8">
         <div data-aos="fade-up" data-aos-delay="200">
           <div class="card">
             <div class="card-body">

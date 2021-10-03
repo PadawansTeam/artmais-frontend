@@ -1,41 +1,67 @@
-   <header class="header">
-    <nav class="navbar navbar-expand-lg header-nav fixed-top ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="\homepage"> <img src="../assets/img/logos/log.png" alt="" class="d-inline-block align-text-top logo"></a>
-            <button class="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#drop"
-                aria-controls="#drop" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="" role="button"><i class="fa fa-bars" aria-hidden="true" style="color:#701ec6; font-size:30px;"></i></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="drop">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                  <li class="nav-item">
-                    <a class="nav-link" href="\usuarios">{{ 'HEADER.USUARIOS' | translate }}</a>
-                  </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="\homepage">{{ 'HEADER.HOMEPAGE' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="\interesse">{{ 'HEADER.INTERESSE' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="\construcao">{{ 'HEADER.DASHBOARD' | translate }}</a>
-                    </li>
-                    <select-lang *ngIf="!mobile"></select-lang>
-                    <select-lang *ngIf="mobile" style="margin-left: 0.6rem; background-color: rgba(231, 221, 235, 0.89);"></select-lang>
-                    <li class="nav-item">
-                      <a class="nav-link" href="\configuracao">{{ 'HEADER.CONFIG' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="\perfil">{{ 'HEADER.PERFIL' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link sair" href="\#">{{ 'HEADER.SAIR' | translate }}</a>
-                    </li>
-                </ul>
+<header class="header">
+  <nav class="navbar navbar-expand-lg header-nav fixed-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="\homepage"> <img src="../assets/img/logos/log.png" alt=""
+          class="d-inline-block align-text-top logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#drop"
+        aria-controls="#drop" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="" role="button"><i class="fa fa-bars" aria-hidden="true"
+            style="color:#701ec6; font-size:30px;"></i></span>
+      </button>
+      <form class="search-container">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="bx bx-search bx-sm bx-tada-hover"></i>
+                </span>
+              </div>
+              <input  class="un form-control"
+                type="text" placeholder="{{ 'HEADER.PESQUISAR' | translate }}">
             </div>
-        </div>
-    </nav>
-  </header>
+      </form>
+      <div class="collapse navbar-collapse justify-content-between" id="drop">
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item">
+              <select-lang *ngIf="!mobile"></select-lang>
+              <select-lang *ngIf="mobile" style="margin-left: 0.6rem;">
+              </select-lang>
+              </li>
+          <li class="nav-item ">
+            <a class="nav-link " href="\planos">
+              <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>  
+              <p>{{ 'HEADER.PLANOS' | translate }}</p></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="\homepage">
+                <i class="bx bxs-home bx-sm bx-tada-hover" aria-hidden="true"></i>
+              <p>{{ 'HEADER.HOMEPAGE' | translate }}</p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\interesse">
+              <i class="bx bx-network-chart bx-sm bx-tada-hover" aria-hidden="true"></i>
+              <p>{{ 'HEADER.INTERESSE' | translate }}</p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\dashboard">
+                <i class="bx bxs-bar-chart-alt-2 bx-sm bx-tada-hover" aria-hidden="true"></i>
+              <p>{{ 'HEADER.DASHBOARD' | translate }}</p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\configuracao">
+                <i class="bx bxs-cog bx-sm bx-tada-hover" aria-hidden="true"></i><p>{{ 'HEADER.CONFIG' | translate }}</p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\perfil">
+                <i class="bx bxs-user bx-sm bx-tada-hover" aria-hidden="true"></i>
+              <p>{{ 'HEADER.PERFIL' | translate }}</p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\#">
+              <i class="bx bx-exit bx-sm bx-tada-hover" aria-hidden="true"></i>
+                <p>{{ 'HEADER.SAIR' | translate }}</p></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

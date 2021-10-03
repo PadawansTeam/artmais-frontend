@@ -1,0 +1,185 @@
+ 
+.btn-principal {
+    background: linear-gradient(to right, #9558d5, #701ec6);
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #fff;
+    border: 0;
+    margin-top: 6rem;
+}
+
+.btn-principal:hover {
+    background: linear-gradient(to left, #9558d5, #701ec6);
+    color: white !important;
+    margin-left: 30px;
+    border: 0;
+}
+
+.btn-principal:active {
+    background: linear-gradient(to left, #9558d5, #701ec6);
+    color: white !important;
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #fff;
+    border: 0;
+}
+
+.ops {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    margin-top: 2rem
+}
+
+
+.pricing {
+	margin-top: 120px;
+}
+
+.pricing .box {
+	padding: 10px 20px;
+	text-align: center;
+	border-radius: 8px;
+	position: relative;
+	overflow: hidden;
+	background: #fefefe;
+	box-shadow: 0px 5px 30px 5px rgba(110, 123, 131, 0.5);
+	margin: 50px 0px 10px 10px;
+	max-width: 350px;
+	max-height: 550px;
+}
+
+.pricing .box:hover {
+	transform: scale(1.08);
+}
+
+.pricing .box h3 {
+	font-weight: 400;
+	padding: 15px;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.pricing .box h4 {
+	font-size: 42px;
+	color: #701ec6;
+	font-weight: 500;
+	font-family: "Open Sans", sans-serif;
+	margin-bottom: 20px;
+}
+
+.pricing .box h4 sup {
+	font-size: 20px;
+	top: -15px;
+	left: -3px;
+}
+
+.pricing .box h4 span {
+	color: black;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.pricing .box ul {
+	padding: 0;
+	list-style: none;
+	color: black;
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+}
+
+.pricing .box ul li {
+	padding-bottom: 16px;
+}
+
+.pricing .box ul .na {
+	color: #ccc;
+	text-decoration: line-through;
+}
+
+.pricing .box .btn-wrap {
+	padding: 15px;
+	text-align: center;
+}
+
+.pricing .box .btn-buy {
+	display: inline-block;
+	padding: 10px 40px;
+	border-radius: 4px;
+	color: #701ec6;
+	transition: none;
+	font-size: 14px;
+	font-weight: 400;
+	font-weight: 600;
+	transition: 0.3s;
+	border: 2px solid #701ec6;
+	text-decoration: none;
+}
+
+.pricing .box .btn-buy:hover {
+	background: linear-gradient(to right, #9558d5, #701ec6);
+	color: #fff;
+}
+
+.pricing .featured {
+	background: linear-gradient(to right, #9558d5, #701ec6);
+}
+
+.pricing .featured h3, .pricing .featured h4, .pricing .featured h4 span, .pricing .featured ul, .pricing .featured ul .na {
+	color: #fff;
+}
+
+.pricing .featured .btn-wrap {
+	padding: 15px;
+	text-align: center;
+}
+
+.pricing .featured .btn-buy {
+	color: #fff;
+	border: 2px solid #fff;
+}
+
+.pricing .featured .btn-buy:hover {
+	background: #fff;
+	color: #701ec6;
+}
+.section-title {
+	text-align: center;
+	padding-bottom: 30px;
+	position: relative;
+	color: #555555;
+  
+  }
+
+  .section-title h2::after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 3px;
+	background: #701ec6;
+	bottom: 0;
+	left: calc(50% - 25px);
+}
+.section-title h2 {
+	font-size: 32px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	position: relative;
+  }
+
+  .image{
+	  margin-top: 100px;
+	  height: 100%;
+  }

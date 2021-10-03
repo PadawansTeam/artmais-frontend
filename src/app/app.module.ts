@@ -34,15 +34,14 @@ import { PlanosModule } from './planos/planos.module';
 import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { ConfiguracaoService } from './configuracao/service/configuracao.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import {
-  SocialLoginModule,
-  SocialAuthServiceConfig,
-} from 'angularx-social-login';
+import {SocialLoginModule, SocialAuthServiceConfig} from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { ConstrucaoModule } from './construcao/construcao.module';
 import { DashboardModule } from './dashboard/dashboad.module';
 import { InteresseModule } from './interesse/interesse.module';
 import { InteresseService } from './interesse/service/interesse.service';
+import { PrivacidadeModule } from './privacidade/privacidade.module';
+import { TesteModule } from './teste/teste.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -83,6 +82,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     InteresseModule,
     ConfiguracaoModule,
     ArtistaModule,
+    PrivacidadeModule,
+    TesteModule,
   ],
   providers: [
     TranslateService,
