@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Configuracao } from '../service/configuracao';
 import { ConfiguracaoService } from '../service/configuracao.service';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import Swal from 'sweetalert2'
+import {
+  Validators,
+  FormBuilder,
+  FormGroup,
+  FormControl,
+} from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-configuracao',
@@ -11,7 +16,7 @@ import Swal from 'sweetalert2'
 })
 export class ConfiguracaoComponent implements OnInit {
   selectedProfileFiles: FileList | undefined;
-  urlImagem!: any;
+  urlImagem!: FormData;
   formConfig!: FormGroup;
   isDateValid: boolean = true;
 
@@ -22,17 +27,15 @@ export class ConfiguracaoComponent implements OnInit {
     timer: 3000,
     timerProgressBar: true,
     didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-  })
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
+  });
 
   userInfo: any = {
     userID: null,
     name: null,
     username: null,
-    userPicture: null,
-    backgroundPicture: null,
     birthDate: null,
     mainPhone: null,
     secundaryPhone: null,
@@ -74,7 +77,7 @@ export class ConfiguracaoComponent implements OnInit {
   constructor(
     public configService: ConfiguracaoService,
     private formBuilder: FormBuilder
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.configService.getUserInfo().subscribe(
@@ -102,34 +105,59 @@ export class ConfiguracaoComponent implements OnInit {
         }
       );
     this.formConfig = this.formBuilder.group({
-      name: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Zà-úÀ-Ú]{4,}(?: [a-zA-Zà-úÀ-Ú]+){0,2}$')
-      ])),
-      phone: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[0-9]{13}$')
-      ])),
-      secondPhone: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[0-9]{13}$')
-      ])),
-      thirdPhone: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[0-9]{13}$')
-      ])),
-      password: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
-      ])),
-      confirmPassword: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
-      ])),
-      zipcode: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('[0-9]{5}-?[0-9]{3}')
-      ])),
+      name: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('^[a-zA-Zà-úÀ-Ú]{4,}(?: [a-zA-Zà-úÀ-Ú]+){0,2}$'),
+        ])
+      ),
+      phone: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('^[0-9]{13}$'),
+        ])
+      ),
+      secondPhone: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('^[0-9]{13}$'),
+        ])
+      ),
+      thirdPhone: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('^[0-9]{13}$'),
+        ])
+      ),
+      password: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(
+            '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
+          ),
+        ])
+      ),
+      confirmPassword: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(
+            '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
+          ),
+        ])
+      ),
+      zipcode: new FormControl(
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern('[0-9]{5}-?[0-9]{3}'),
+        ])
+      ),
     });
   }
 
@@ -144,16 +172,25 @@ export class ConfiguracaoComponent implements OnInit {
         (response) => {
           this.Toast.fire({
             icon: 'success',
-            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
-          })
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Dados salvos com sucesso!'
+                : 'Information saved with success!',
+          });
           return response;
         },
         (err) => {
           this.Toast.fire({
             icon: 'error',
-            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
-            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
-          })
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Erro ao salvar os dados!'
+                : 'Failed to save information!',
+            text:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Tente novamente mais tarde!'
+                : 'Try again later!',
+          });
           throw err;
         }
       );
@@ -163,20 +200,29 @@ export class ConfiguracaoComponent implements OnInit {
     this.configService
       .updateDescription(this.userDescription.description)
       .subscribe(
-        async(response) => {
+        async (response) => {
           await this.Toast.fire({
             icon: 'success',
-            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
-          })
-          this.routeUpdateEvent()
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Dados salvos com sucesso!'
+                : 'Information saved with success!',
+          });
+          this.routeUpdateEvent();
           return response;
         },
         (err) => {
           this.Toast.fire({
             icon: 'error',
-            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
-            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
-          })
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Erro ao salvar os dados!'
+                : 'Failed to save information!',
+            text:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Tente novamente mais tarde!'
+                : 'Try again later!',
+          });
           throw err;
         }
       );
@@ -193,20 +239,29 @@ export class ConfiguracaoComponent implements OnInit {
         this.userContact.thirdPhone
       )
       .subscribe(
-        async(response) => {
+        async (response) => {
           await this.Toast.fire({
             icon: 'success',
-            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
-          })
-          this.routeUpdateEvent()
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Dados salvos com sucesso!'
+                : 'Information saved with success!',
+          });
+          this.routeUpdateEvent();
           return response;
         },
         (err) => {
           this.Toast.fire({
             icon: 'error',
-            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
-            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
-          })
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Erro ao salvar os dados!'
+                : 'Failed to save information!',
+            text:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Tente novamente mais tarde!'
+                : 'Try again later!',
+          });
           throw err;
         }
       );
@@ -224,34 +279,52 @@ export class ConfiguracaoComponent implements OnInit {
         this.userAddress.state
       )
       .subscribe(
-        async(response) => {
+        async (response) => {
           await this.Toast.fire({
             icon: 'success',
-            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
-          })
-          this.routeUpdateEvent()
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Dados salvos com sucesso!'
+                : 'Information saved with success!',
+          });
+          this.routeUpdateEvent();
           return response;
         },
         (err) => {
           this.Toast.fire({
             icon: 'error',
-            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
-            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
-          })
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Erro ao salvar os dados!'
+                : 'Failed to save information!',
+            text:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Tente novamente mais tarde!'
+                : 'Try again later!',
+          });
           throw err;
         }
       );
   }
 
-  async uploadProfile(userID: number) {
+  async uploadProfile() {
     const file = this.selectedProfileFiles?.item(0);
-    if (file == undefined) this.urlImagem = this.userInfo.userPicture;
-    else this.urlImagem = await this.configService.uploadProfileFile(file!, userID);
+
+    if (file == undefined) {
+      return await this.uploadProfileServiceCall();
+    } else {
+      let formData: FormData = new FormData();
+      formData.append(file.name, file);
+      await this.uploadUserPicture(formData);
+      return await this.uploadProfileServiceCall();
+    }
+  }
+
+  async uploadProfileServiceCall() {
     this.configService
       .updateUserInfo(
         this.userInfo.name,
         this.userInfo.username,
-        this.urlImagem,
         this.userInfo.backgroundPicture,
         this.userInfo.birthDate,
         this.userInfo.mainPhone,
@@ -259,23 +332,36 @@ export class ConfiguracaoComponent implements OnInit {
         this.userInfo.thirdPhone
       )
       .subscribe(
-        async(response) => {
+        async (response) => {
           await this.Toast.fire({
             icon: 'success',
-            title: localStorage.getItem("lang") === "pt-BR" ? "Dados salvos com sucesso!" : "Information saved with success!"
-          })
-          this.routeUpdateEvent()
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Dados salvos com sucesso!'
+                : 'Information saved with success!',
+          });
+          this.routeUpdateEvent();
           return response;
         },
         (err) => {
           this.Toast.fire({
             icon: 'error',
-            title: localStorage.getItem("lang") === "pt-BR" ? "Erro ao salvar os dados!" : "Failed to save information!",
-            text: localStorage.getItem("lang") === "pt-BR" ? "Tente novamente mais tarde!" : "Try again later!"
-          })
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Erro ao salvar os dados!'
+                : 'Failed to save information!',
+            text:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Tente novamente mais tarde!'
+                : 'Try again later!',
+          });
           throw err;
         }
       );
+  }
+
+  async uploadUserPicture(formData: FormData) {
+    this.configService.updateUserPicture(formData).subscribe();
   }
 
   selectProfileFile(event: any) {
@@ -286,18 +372,17 @@ export class ConfiguracaoComponent implements OnInit {
     location.reload();
   }
 
-  public verifyAge(){
-    console.log("Data:", this.userInfo.birthDate)
+  public verifyAge() {
     let input = new Date(this.userInfo.birthDate);
     let today = new Date();
-    
+
     //@ts-ignore
-    let mills = today-input;
-    let years = Math.floor(mills/31556952000)
-    
-    if(years<=100 && years>=18){
+    let mills = today - input;
+    let years = Math.floor(mills / 31556952000);
+
+    if (years <= 100 && years >= 18) {
       this.isDateValid = true;
-    }else{
+    } else {
       this.isDateValid = false;
     }
   }

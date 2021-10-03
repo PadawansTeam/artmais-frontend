@@ -11,11 +11,9 @@ import { ConfiguracaoComponent } from './component/configuracao.component';
 import { ConfiguracaoService } from './service/configuracao.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
-
 
 @NgModule({
   declarations: [
@@ -25,11 +23,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BrowserModule,
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
       }
-  }),
+    }),
     SelectModule,
     HeaderlogModule,
     FooterModule,
