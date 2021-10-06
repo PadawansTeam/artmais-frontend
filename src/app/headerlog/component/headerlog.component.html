@@ -8,17 +8,17 @@
         <span class="" role="button"><i class="fa fa-bars" aria-hidden="true"
             style="color:#701ec6; font-size:30px;"></i></span>
       </button>
-      <form class="search-container">
+      <div class="search-container" (keyup.enter)="goSearch()">
           <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="bx bx-search bx-sm bx-tada-hover"></i>
+                  <i (click)="goSearch()" style="cursor: pointer;" class="bx bx-search bx-sm bx-tada-hover"></i>
                 </span>
               </div>
-              <input  class="un form-control"
+              <input  class="un form-control" [(ngModel)]="this.search"
                 type="text" placeholder="{{ 'HEADER.PESQUISAR' | translate }}">
             </div>
-      </form>
+          </div>
       <div class="collapse navbar-collapse justify-content-between" id="drop">
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item">
