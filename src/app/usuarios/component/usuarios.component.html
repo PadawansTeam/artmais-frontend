@@ -4,8 +4,15 @@
     <div class="container">
       <div class="row text-center">
         <h2>{{ 'USUARIOS.TITULO' | translate }}</h2>
-        <div class="col-md-12 ">
-          <p>{{ 'USUARIOS.TEXTO' | translate }}</p>
+        <div *ngIf="searchSuccess">
+          <div class="col-md-12 ">
+            <p>{{ 'USUARIOS.TEXTO1' | translate }}</p>
+          </div>
+        </div>
+        <div *ngIf="!searchSuccess"> 
+          <div class="col-md-12 ">
+            <p>{{ 'USUARIOS.TEXTO2' | translate }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -13,7 +20,7 @@
   <div class="container" data-aos="fade-up">
     <div class="friend-list">
       <div class="row">
-        <div *ngFor="let usuario of usuarios" class="col-md-2 col-sm-6">
+        <div *ngFor="let usuario of usuarios" class="col-md-3 col-sm-6">
           <div class="friend-card" (click)="getPerfilById(usuario.userId)">
             <div class="img-responsive cover">
               <img [src]="usuario.backgroundPicture" alt="profile-cover" class="img-responsive cover">

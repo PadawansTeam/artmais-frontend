@@ -5,6 +5,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
 import { HeaderlogComponent } from './component/headerlog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -27,7 +28,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           deps: [HttpClient]
       }
   }),
-    SelectModule
+    SelectModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     TranslateService
