@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { buildWebpackBrowser } from '@angular-devkit/build-angular/src/browser';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +27,16 @@ export class ConfiguracaoService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router
+    ) {}
+
+  ngOnInit(): void {
+    if (this.token == undefined || this.token == null) {
+      this.router.navigate(['']);
+    }
+  }
 
   getUserInfo(): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/User', this.httpOptions);

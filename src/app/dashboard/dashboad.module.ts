@@ -8,6 +8,7 @@ import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { DashboardComponent } from './component/dashboard.component';
+import { DashboardService } from './service/dashboard.service';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -33,7 +34,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FooterModule
   ],
   providers: [
-    TranslateService
+    TranslateService, DashboardService
   ],
   bootstrap: []
 })

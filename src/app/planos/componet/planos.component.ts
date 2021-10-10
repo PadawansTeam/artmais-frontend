@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlanosService } from '../service/planos.service';
 
 @Component({
   selector: 'app-planos',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanosComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private planosService: PlanosService
+  ) { }
 
   ngOnInit(): void {
+    this.planosService.ngOnInit();
   }
 
 }

@@ -26,6 +26,7 @@ export class PerfilComponent implements OnInit {
   constructor(public perfilService: PerfilService) {}
 
   ngOnInit(): void {
+    this.perfilService.ngOnInit();
     this.perfilService.getUser().subscribe(
       (response: Perfil) => {
         this.profile = response;

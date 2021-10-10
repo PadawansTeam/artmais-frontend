@@ -27,6 +27,7 @@ export class ArtistaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.artistaService.ngOnInit();
     this.idUser = this.route.snapshot.params['id'];
     this.artistaService.getArtista(this.idUser).subscribe(
       (response: Artista) => {

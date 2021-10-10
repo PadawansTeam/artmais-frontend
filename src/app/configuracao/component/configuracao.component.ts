@@ -80,6 +80,7 @@ export class ConfiguracaoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.configService.ngOnInit();
     this.configService.getUserInfo().subscribe(
       (response: Configuracao) => {
         this.userInfo = response;

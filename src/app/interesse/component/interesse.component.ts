@@ -20,6 +20,7 @@ export class InteresseComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.interesseService.ngOnInit();
     this.interesseService.getInterests().subscribe(
       (response: { subcategories: Interesse[], interests: Interesse[] }) => {
         this.interests = response.interests;

@@ -24,6 +24,7 @@ export class UsuariosComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.usuariosService.ngOnInit();
     var x = window.location.href.split("/");
     this.usuariosService.getSearch(x[x.length-1]).subscribe(
       (response)=>{

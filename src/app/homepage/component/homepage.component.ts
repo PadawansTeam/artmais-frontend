@@ -20,6 +20,7 @@ export class HomepageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.recommendationService.ngOnInit();
     this.recommendationService.getRecommendations().subscribe(
       (response) => {
         this.recommendations = response as Recommendation[];
