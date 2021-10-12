@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Recommendation } from 'src/app/homepage/service/recommendation';
 import { RecommendationService } from 'src/app/homepage/service/recommendation.service';
 import { Router } from '@angular/router';
+import { Usuarios } from '../service/usuarios';
+import { UsuariosService } from '../service/usuarios.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -9,17 +11,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./usuarios.component.css'],
 })
 export class UsuariosComponent implements OnInit {
-  public usuarios: Recommendation[] = [];
+
+  public recomendacao: Recommendation [] = [];
+  public usuarios: Usuarios [] = [];
+
+  searchSuccess: boolean = false;
 
   constructor(
     public recommendationService: RecommendationService,
+    public usuariosService: UsuariosService,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.recommendationService.recomentationUsers().subscribe((response) => {
-      this.usuarios = response as Recommendation[];
-    });
+    var x = window.location.href.split("/");
+    this.usuariosService.getSearch(x[x.length-1]).subscribe(
+      (response)=>{
+        this.searchSuccess = true;
+        this.usuarios = response as Usuarios[];
+      },
+      (err)=>{
+        this.searchSuccess = false;
+      }
+    )
   }
 
   getPerfilById(id: number) {

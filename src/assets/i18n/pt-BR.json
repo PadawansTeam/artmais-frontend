@@ -219,9 +219,9 @@
     
     },
     "USUARIOS": {
-        "TITULO": "USUÁRIOS",
-        "TEXTO": "Veja todos os usuários da plataforma e faça seu networking!",
-        "TESTE": "Início"
+        "TITULO": "RESULTADOS DA PESQUISA",
+        "TEXTO1": "Veja aqui todos os resultados da sua pesquisa!",
+        "TEXTO2": "Sentimos muito, mas não encontramos nada para a sua pesquisa. Por favor, tente outro termo!"
     },
     "PUBLICACAO": {
         "COMENTARIOS": "Comentários",

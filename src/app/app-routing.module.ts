@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'configuracao', component: ConfiguracaoComponent },
   { path: 'interesse', component: InteresseComponent },
   { path: 'artista/:id', component: ArtistaComponent },
-  { path: 'usuarios', component: UsuariosComponent },
+  { path: 'pesquisa/:search', component: UsuariosComponent },
   { path: 'privacidade', component: PrivacidadeComponent },
   { path: 'publicacao', component: PublicacaoComponent },
   { path: 'teste', component: TesteComponent },
