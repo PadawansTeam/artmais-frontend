@@ -21,6 +21,16 @@ export class InteresseComponent implements OnInit {
 
   ngOnInit(): void {
     this.interesseService.ngOnInit();
+    this.interesseService.getValidation().subscribe(
+      (response) => {}, 
+      (err) => {
+        if (err.status == 401) {
+          this.router.navigate(['']);
+        }else if(err.status == 500){
+          this.router.navigate(['/erro']);
+        }
+      }
+    );
     this.interesseService.getInterests().subscribe(
       (response: { subcategories: Interesse[], interests: Interesse[] }) => {
         this.interests = response.interests;

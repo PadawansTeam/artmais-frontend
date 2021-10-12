@@ -38,6 +38,10 @@ export class ConfiguracaoService {
     }
   }
 
+  getValidation(): Observable<any> {
+    return this.http.get(this.artPlusURL + 'v1/Validation', this.httpOptions);
+  }
+
   getUserInfo(): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/User', this.httpOptions);
   }

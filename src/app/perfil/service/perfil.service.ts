@@ -40,6 +40,10 @@ export class PerfilService {
     }
   }
 
+  getValidation(): Observable<any> {
+    return this.http.get(this.artPlusURL + 'v1/Validation', this.httpOptions);
+  }
+
   getUser(): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/User', this.httpOptions);
   }

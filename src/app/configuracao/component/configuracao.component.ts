@@ -8,6 +8,7 @@ import {
   FormControl,
 } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-configuracao',
@@ -76,11 +77,22 @@ export class ConfiguracaoComponent implements OnInit {
 
   constructor(
     public configService: ConfiguracaoService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.configService.ngOnInit();
+    this.configService.getValidation().subscribe(
+      (response) => {}, 
+      (err) => {
+        if (err.status == 401) {
+          this.router.navigate(['']);
+        }else if(err.status == 500){
+          this.router.navigate(['/erro']);
+        }
+      }
+    );
     this.configService.getUserInfo().subscribe(
       (response: Configuracao) => {
         this.userInfo = response;

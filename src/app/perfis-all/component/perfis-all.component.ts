@@ -21,6 +21,16 @@ export class PerfisAllComponent implements OnInit {
 
   ngOnInit() {
     this.perfisAllService.ngOnInit();
+    this.perfisAllService.getValidation().subscribe(
+      (response) => {}, 
+      (err) => {
+        if (err.status == 401) {
+          this.router.navigate(['']);
+        }else if(err.status == 500){
+          this.router.navigate(['/erro']);
+        }
+      }
+    );
   }
 
   getPerfilById(id: number) {

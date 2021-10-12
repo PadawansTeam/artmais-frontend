@@ -28,6 +28,16 @@ export class ArtistaComponent implements OnInit {
 
   ngOnInit(): void {
     this.artistaService.ngOnInit();
+    this.artistaService.getValidation().subscribe(
+      (response) => {}, 
+      (err) => {
+        if (err.status == 401) {
+          this.router.navigate(['']);
+        }else if(err.status == 500){
+          this.router.navigate(['/erro']);
+        }
+      }
+    );
     this.idUser = this.route.snapshot.params['id'];
     this.artistaService.getArtista(this.idUser).subscribe(
       (response: Artista) => {

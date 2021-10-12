@@ -27,6 +27,10 @@ export class RecommendationService {
     }
   }
 
+  getValidation(): Observable<any> {
+    return this.http.get(this.artPlusURL + 'v1/Validation', this.httpOptions);
+  }
+
   getRecommendations(): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/Recomendation', this.httpOptions)
   }
