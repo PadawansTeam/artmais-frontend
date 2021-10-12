@@ -18,6 +18,7 @@ export class ArtistaComponent implements OnInit {
   artist!: Artista;
   idUser!: number;
   portfolioImages: Portfolio[] = [];
+  loggedUser: boolean = false;
 
   constructor(
     public artistaService: ArtistaService,
@@ -27,6 +28,7 @@ export class ArtistaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.seeIfLogged();
     this.idUser = this.route.snapshot.params['id'];
     this.artistaService.getArtista(this.idUser).subscribe(
       (response: Artista) => {
@@ -44,6 +46,22 @@ export class ArtistaComponent implements OnInit {
           throw err;
         }
       );
+  }
+
+  seeIfLogged(){
+    if (this.artistaService.token == undefined || this.artistaService.token == null) {
+      this.loggedUser = false;
+    }else{
+      this.artistaService.getValidation().subscribe(
+        (response) => {
+          this.loggedUser = true;
+        }, 
+        (err) => {
+          this.loggedUser = false;
+        },
+        () => console.log("Tá logado ", this.loggedUser)
+      );
+    }
   }
 
   showModal(image: any, descrption: any, modal: any) {

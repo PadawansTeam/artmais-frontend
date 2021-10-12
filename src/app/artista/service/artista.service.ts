@@ -22,6 +22,10 @@ export class ArtistaService {
     private http: HttpClient,
     private router: Router
     ) {}
+  
+  getValidation(): Observable<any> {
+    return this.http.post(this.artPlusURL + 'v1/Validation', {}, this.httpOptions);
+  }
 
   getArtista(id: number): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/User/' + id, this.httpOptions);

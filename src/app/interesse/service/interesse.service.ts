@@ -29,7 +29,7 @@ export class InteresseService {
   }
 
   getValidation(): Observable<any> {
-    return this.http.get(this.artPlusURL + 'v1/Validation', this.httpOptions);
+    return this.http.post(this.artPlusURL + 'v1/Validation', {}, this.httpOptions);
   }
 
   getInterests(): Observable<any>{
