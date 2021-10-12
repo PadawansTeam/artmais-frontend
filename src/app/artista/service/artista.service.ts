@@ -23,16 +23,6 @@ export class ArtistaService {
     private router: Router
     ) {}
 
-  ngOnInit(): void {
-    if (this.token == undefined || this.token == null) {
-      this.router.navigate(['']);
-    }
-  }
-
-  getValidation(): Observable<any> {
-    return this.http.get(this.artPlusURL + 'v1/Validation', this.httpOptions);
-  }
-
   getArtista(id: number): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/User/' + id, this.httpOptions);
   }
