@@ -218,5 +218,11 @@
         "TITULO": "USERS",
         "TEXTO": "See all platform users and network!"
        
+    },
+
+    "PUBLICACAO": {
+        "COMENTARIOS": "Comments",
+        "COMENTAR": "Comment",
+        "POSTAR": "Post Comment"
     }
 }

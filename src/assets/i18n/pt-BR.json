@@ -222,6 +222,11 @@
         "TITULO": "USUÁRIOS",
         "TEXTO": "Veja todos os usuários da plataforma e faça seu networking!",
         "TESTE": "Início"
+    },
+    "PUBLICACAO": {
+        "COMENTARIOS": "Comentários",
+        "COMENTAR": "Comentar",
+        "POSTAR": "Enviar Comentário"
     }
 
     

@@ -1,12 +1,3 @@
-.profile-header {
-	transform: translateY(5rem);
-}
-
-.profile {
-	text-align: center;
-	max-width: 100%;
-	max-width: 100%;
-}
 
 .back {
 	background-image: url("src/assets/img/slide/slider3.jpg");
@@ -289,6 +280,10 @@ div.img-responsive {
 	color: #EE2A46;
 	border-radius: 100%;
 	outline: none;
+}
+
+.publi{
+	height: 400px;
 }
 
 .like:active {
