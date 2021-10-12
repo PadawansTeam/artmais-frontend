@@ -42,6 +42,7 @@ import { InteresseModule } from './interesse/interesse.module';
 import { InteresseService } from './interesse/service/interesse.service';
 import { PrivacidadeModule } from './privacidade/privacidade.module';
 import { TesteModule } from './teste/teste.module';
+import { PublicacaoModule } from './publicacao/publicacao.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -84,6 +85,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ArtistaModule,
     PrivacidadeModule,
     TesteModule,
+    PublicacaoModule
   ],
   providers: [
     TranslateService,

@@ -16,6 +16,7 @@ import { PlanosComponent } from './planos/componet/planos.component';
 import { PrivacidadeComponent } from './privacidade/component/privacidade.component';
 import { UsuariosComponent } from './usuarios/component/usuarios.component';
 import { TesteComponent } from './teste/component/teste.component';
+import { PublicacaoComponent } from './publicacao/component/publicacao.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'artista/:id', component: ArtistaComponent },
   { path: 'pesquisa/:search', component: UsuariosComponent },
   { path: 'privacidade', component: PrivacidadeComponent },
+  { path: 'publicacao', component: PublicacaoComponent },
   { path: 'teste', component: TesteComponent },
 ];
 

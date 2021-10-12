@@ -214,9 +214,15 @@
             "SELE-IDIOMA": "Select the language:"
         }
         ,
-    "USUARIOS": {
+    "USUARIOS": {    
         "TITULO": "SEARCH RESULTS",
         "TEXTO1": "Here are all your search's results!",
         "TEXTO2": "We´re sorry, but we haven´t found anything on your search. Please try other words!"
+    },
+
+    "PUBLICACAO": {
+        "COMENTARIOS": "Comments",
+        "COMENTAR": "Comment",
+        "POSTAR": "Post Comment"
     }
 }
