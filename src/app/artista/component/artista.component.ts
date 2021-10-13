@@ -58,8 +58,7 @@ export class ArtistaComponent implements OnInit {
         }, 
         (err) => {
           this.loggedUser = false;
-        },
-        () => console.log("Tá logado ", this.loggedUser)
+        }
       );
     }
   }
