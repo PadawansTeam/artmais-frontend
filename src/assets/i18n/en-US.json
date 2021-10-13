@@ -143,8 +143,11 @@
             "FECHAR":"Close",
             "DESCRIÇÃO-ITEM-PORTFOLIO": "Description:",
             "ADICIONAR-ITEM": "Add item to your portfolio",
-            "PLACE-DESCRIÇÃO": "Enter the description..."
-            
+            "PLACE-DESCRIÇÃO": "Enter the description...",
+            "ABA-IMAGEM": "Images",
+            "ABA-VIDEO": "Videos",
+            "ABA-AUDIO": "Audios",
+            "ABA-ERRO": "There's nothing posted yet"
         },
         "CONFIG": {
             "CONFIG":"Configurations",

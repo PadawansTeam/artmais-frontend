@@ -11,7 +11,7 @@ import { UserPortfolio } from '../service/UserPortfolio';
 })
 export class PerfilComponent implements OnInit {
   profile!: Perfil;
-  userPortfolioImages: UserPortfolio[] = [];
+  userPortfolioContent: {image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[]} = {image: [], video: [], audio: []};
   selectedPortfolioContent: FileList | undefined;
 
   portfolioContent: any = {
@@ -50,8 +50,8 @@ export class PerfilComponent implements OnInit {
       }
     ),
       this.perfilService.getUserPortfolio().subscribe(
-        (response: UserPortfolio) => {
-          this.userPortfolioImages = response as UserPortfolio[];
+        (response) => {
+          this.userPortfolioContent = response as {image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[]};
         },
         (err) => {
           throw err;
