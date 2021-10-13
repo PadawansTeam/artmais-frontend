@@ -9,6 +9,7 @@ import { FooterModule } from '../footer/footer.module';
 import { PlanosComponent } from './componet/planos.component';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { TesteModule } from '../teste/teste.module';
+import { PlanosService } from './service/planos.service';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -36,7 +37,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HeaderlogModule,
   ],
   providers: [
-    TranslateService
+    TranslateService, PlanosService
   ],
   bootstrap: []
 })

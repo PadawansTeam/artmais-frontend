@@ -8,6 +8,7 @@ import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { ConstrucaoComponent } from './component/construcao.component';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
+import { ConstrucaoService } from './service/construcao.service';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -33,7 +34,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HeaderlogModule
   ],
   providers: [
-    TranslateService
+    TranslateService, ConstrucaoService
   ],
   bootstrap: []
 })

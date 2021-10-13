@@ -1,4 +1,9 @@
-<app-headerlog></app-headerlog>
+<div *ngIf="this.loggedUser == true">
+    <app-headerlog></app-headerlog>
+</div>
+<div *ngIf="this.loggedUser == false">
+    <app-header></app-header>
+</div>
 <div class="row py-3 px-4">
     <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
         <!-- Profile widget -->

@@ -20,6 +20,17 @@ export class HomepageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.recommendationService.ngOnInit();
+    this.recommendationService.getValidation().subscribe(
+      (response) => {}, 
+      (err) => {
+        if (err.status == 401) {
+          this.router.navigate(['']);
+        }else if(err.status == 500){
+          this.router.navigate(['/erro']);
+        }
+      }
+    );
     this.recommendationService.getRecommendations().subscribe(
       (response) => {
         this.recommendations = response as Recommendation[];

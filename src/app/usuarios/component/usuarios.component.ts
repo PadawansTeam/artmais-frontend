@@ -24,6 +24,17 @@ export class UsuariosComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.usuariosService.ngOnInit();
+    this.usuariosService.getValidation().subscribe(
+      (response) => {}, 
+      (err) => {
+        if (err.status == 401) {
+          this.router.navigate(['']);
+        }else if(err.status == 500){
+          this.router.navigate(['/erro']);
+        }
+      }
+    );
     var x = window.location.href.split("/");
     this.usuariosService.getSearch(x[x.length-1]).subscribe(
       (response)=>{

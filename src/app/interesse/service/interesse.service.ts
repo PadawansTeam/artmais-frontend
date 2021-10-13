@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 @Injectable({
@@ -16,7 +17,20 @@ export class InteresseService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router
+    ) {}
+
+  ngOnInit(): void {
+    if (this.token == undefined || this.token == null) {
+      this.router.navigate(['']);
+    }
+  }
+
+  getValidation(): Observable<any> {
+    return this.http.post(this.artPlusURL + 'v1/Validation', {}, this.httpOptions);
+  }
 
   getInterests(): Observable<any>{
     return this.http.get(this.artPlusURL + 'v1/Interest', this.httpOptions)

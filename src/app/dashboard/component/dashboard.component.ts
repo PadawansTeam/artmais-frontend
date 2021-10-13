@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DashboardService } from '../service/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dashService: DashboardService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    this.dashService.ngOnInit();
+    this.dashService.getValidation().subscribe(
+      (response) => {}, 
+      (err) => {
+        if (err.status == 401) {
+          this.router.navigate(['']);
+        }else if(err.status == 500){
+          this.router.navigate(['/erro']);
+        }
+      }
+    );
   }
+
+ 
 
 }
