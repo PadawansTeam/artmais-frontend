@@ -17,7 +17,7 @@ import {
 export class ArtistaComponent implements OnInit {
   artist!: Artista;
   idUser!: number;
-  portfolioImages: Portfolio[] = [];
+  artistPortfolioContent: {image: Portfolio[], video: Portfolio[], audio: Portfolio[]} = {image: [], video: [], audio: []};
   loggedUser: boolean = false;
 
   constructor(
@@ -38,14 +38,14 @@ export class ArtistaComponent implements OnInit {
         throw err;
       }
     ),
-      this.artistaService.getPortfolioArtista(this.idUser).subscribe(
-        (response: Portfolio) => {
-          this.portfolioImages = response as Portfolio[];
-        },
-        (err) => {
-          throw err;
-        }
-      );
+    this.artistaService.getPortfolioArtista(this.idUser).subscribe(
+      (response) => {
+        this.artistPortfolioContent = response as {image: Portfolio[], video: Portfolio[], audio: Portfolio[]};
+      },
+      (err) => {
+        throw err;
+      }
+    );
   }
 
   seeIfLogged(){
