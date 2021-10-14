@@ -91,7 +91,7 @@
         "SOBRE-TEXTO4": "Improve your networking",
         "SOBRE-SUBTEXTO4": "Connect with profiles that share your personal and professional interests",
         "PLANOS-TITULO": "SUBSCRIPTIONS",
-        "PLANOS-SUBTITULO": "The free plan already offers you all the features of Art+, the Premium plan makes you go even further. For a small monthly fee, it grants you new customization options, dissemination on the platform and access to a Dashboard function that allows you to view your profile metrics at any time. Get all these advantages and gain benefits for your profile and your business.",
+        "PLANOS-SUBTITULO": "The free plan already offers your profile to everyone, the Premium plan makes you go further. For a small monthly fee, it gives you customization options, greater platform awareness and access to a Dashboard function that lets you see your profile metrics at any time. Acquire all these advantages and gain benefits for your profile and your business.",
         "PLANOS-TITULO-CARD1": "FREE",
         "PLANOS-POR-MES": "/ month",
         "PLANOS-TEXTO1-CARD1": "Your profile available to everyone",
@@ -106,7 +106,7 @@
         "PLANOS-TEXTO2-CARD2": "Several themes available",
         "PLANOS-TEXTO3-CARD2": "Receive growth reports",
         "PLANOS-TEXTO4-CARD2": "Your profile boosted in surveys",
-        "PLANOS-TEXTO5-CARD2": "Unique customizable themes",
+        "PLANOS-TEXTO5-CARD2": "Customizable themes",
         "PLANOS-TEXTO6-CARD2": "Access to growth Dashboard",
         "PLANOS-CADASTRAR-CARD2": "Buy Now"
     },
@@ -218,5 +218,10 @@
         "TITULO": "SEARCH RESULTS",
         "TEXTO1": "Here are all your search's results!",
         "TEXTO2": "We´re sorry, but we haven´t found anything on your search. Please try other words!"
+    },
+
+    "ASSINANTES": {
+        "TITULO": "Hello Subscriber!",
+        "TEXTO1": "You already have the Premium plan."        
     }
 }

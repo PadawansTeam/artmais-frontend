@@ -8,7 +8,7 @@ import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { PlanosComponent } from './componet/planos.component';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
-import { TesteModule } from '../teste/teste.module';
+
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -32,7 +32,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SelectModule,
     HeaderModule,
     FooterModule,
-    TesteModule,
     HeaderlogModule,
   ],
   providers: [

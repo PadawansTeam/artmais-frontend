@@ -95,7 +95,7 @@
         "SOBRE-TEXTO4": "Melhore seu networking",
         "SOBRE-SUBTEXTO4": "Se conecte com perfis que partilham de seus interesses pessoais e profissionais.",
         "PLANOS-TITULO": "PLANOS",
-        "PLANOS-SUBTITULO": "O plano gratuito já te oferece todas as funcionalidades da Art+ , o plano Premium te faz ir além. Por uma pequena mensalidade, te concede novas opções de personalização, de divulgação na plataforma e acesso a uma função de Dashboard que permite ver a qualquer momento as métricas do seu perfil. Adquira todas estas vantagens e ganhe benefícios para seu perfil e seu negócio.",
+        "PLANOS-SUBTITULO": "O plano gratuito já disponibiliza seu perfil para todos, o plano Premium te faz ir além. Por uma pequena mensalidade, te concede opções de personalização, de maior divulgação na plataforma e acesso a uma função de Dashboard que permite ver a qualquer momento as métricas do seu perfil. Adquira todas estas vantagens e ganhe benefícios para seu perfil e seu negócio.",
         "PLANOS-TITULO-CARD1": "GRATUITO",
         "PLANOS-POR-MES": "/ mês",
         "PLANOS-TEXTO1-CARD1": "Seu perfil disponível para todos",
@@ -107,10 +107,10 @@
         "PLANOS-CADASTRAR-CARD1": "Cadastre-se",
         "PLANOS-TITULO-CARD2": "PREMIUM",
         "PLANOS-TEXTO1-CARD2": "Seu perfil disponível para todos",
-        "PLANOS-TEXTO2-CARD2": "Diversos temas disponíveis",
+       "PLANOS-TEXTO2-CARD2": "Diversos temas disponíveis",
         "PLANOS-TEXTO3-CARD2": "Receba relatórios de crescimento",
         "PLANOS-TEXTO4-CARD2": "Seu perfil divulgado na plataforma",
-        "PLANOS-TEXTO5-CARD2": "Temas customizáveis exclusivos",
+       "PLANOS-TEXTO5-CARD2": "Temas customizáveis", 
         "PLANOS-TEXTO6-CARD2": "Acesso a Dashboard de crescimento",        
         "PLANOS-CADASTRAR-CARD2": "Comprar"
     },
@@ -222,6 +222,11 @@
         "TITULO": "RESULTADOS DA PESQUISA",
         "TEXTO1": "Veja aqui todos os resultados da sua pesquisa!",
         "TEXTO2": "Sentimos muito, mas não encontramos nada para a sua pesquisa. Por favor, tente outro termo!"
+    },
+
+    "ASSINANTES": {
+        "TITULO": "Ola Assinante",
+        "TEXTO1": "Você já possui o plano Premium"        
     }
 
     

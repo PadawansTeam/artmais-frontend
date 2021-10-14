@@ -41,14 +41,19 @@ import { DashboardModule } from './dashboard/dashboad.module';
 import { InteresseModule } from './interesse/interesse.module';
 import { InteresseService } from './interesse/service/interesse.service';
 import { PrivacidadeModule } from './privacidade/privacidade.module';
+import { HeaderusercomumModule } from './headerusercomum/headerusercomum.module';
+import { TesteService } from './teste/service/teste.service';
 import { TesteModule } from './teste/teste.module';
+import { AssinanteModule} from './assinanteprime/assinanteprime.module';
+
+
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -57,6 +62,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SocialLoginModule,
     CommonModule,
     FormsModule,
+     
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -76,14 +82,16 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HomepageModule,
     PlanosModule,
     HeaderlogModule,
+    HeaderusercomumModule,
     UsuariosModule,
     PerfilModule,
     DashboardModule,
     InteresseModule,
     ConfiguracaoModule,
     ArtistaModule,
-    PrivacidadeModule,
+    PrivacidadeModule,   
     TesteModule,
+    AssinanteModule,
   ],
   providers: [
     TranslateService,
@@ -95,6 +103,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     PerfilService,
     ArtistaService,
     ConfiguracaoService,
+     
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
