@@ -1,6 +1,4 @@
 <app-headerlog></app-headerlog>
-
-
 <div class="row py-3 px-4">
     <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
 
@@ -138,18 +136,65 @@
                     </ul>
                 </div>
                 <section id="portfolio">
-                    <div class="row">
-                        <div *ngFor="let userPortfolioImage of userPortfolioImages"
-                            class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                            <a class="portfolio-link" data-bs-toggle="modal">
-                                <div class="portfolio-hover"></div>
-                                <img [src]="userPortfolioImage.s3UrlMedia" alt="" class="img-fluid rounded">
-                            </a>
-                            <div>
-                                <p align="center">{{userPortfolioImage.description}}</p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#image" type="button" role="tab" aria-controls="image" aria-selected="true">{{ 'PERFIL.ABA-IMAGEM' | translate }}</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">{{ 'PERFIL.ABA-VIDEO' | translate }}</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#audio" type="button" role="tab" aria-controls="audio" aria-selected="false">{{ 'PERFIL.ABA-AUDIO' | translate }}</button>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="image" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
+                                <div *ngIf="userPortfolioContent.image.length == 0" style="color: #6c757d!important;">
+                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{ 'PERFIL.ABA-ERRO' | translate }}</p>
+                                </div>
+                                <div *ngFor="let userPortfolioImage of userPortfolioContent.image"
+                                    class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
+                                    <a class="portfolio-link" data-bs-toggle="modal">
+                                        <div class="portfolio-hover"></div>
+                                        <img [src]="userPortfolioImage.s3UrlMedia" alt="" class="img-fluid rounded">
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
+                                <div *ngIf="userPortfolioContent.video.length == 0" style="color: #6c757d!important;">
+                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{ 'PERFIL.ABA-ERRO' | translate }}</p>
+                                </div>
+                                <div *ngFor="let userPortfolioVideo of userPortfolioContent.video"
+                                    class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
+                                    <a class="portfolio-link" data-bs-toggle="modal">
+                                        <div class="portfolio-hover"></div>
+                                        <video>
+                                            <source [src]="userPortfolioVideo.s3UrlMedia" class="img-fluid rounded">
+                                        </video>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="audio" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
+                                <div *ngIf="userPortfolioContent.audio.length == 0">
+                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{ 'PERFIL.ABA-ERRO' | translate }}</p>
+                                </div>
+                                <div *ngFor="let userPortfolioAudio of userPortfolioContent.audio"
+                                    class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
+                                    <a class="portfolio-link" data-bs-toggle="modal">
+                                        <div class="portfolio-hover"></div>
+                                        <audio>
+                                            <source [src]="userPortfolioAudio.s3UrlMedia" alt="" class="img-fluid rounded">
+                                        </audio>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
                 </section>
             </div>
         </div>
@@ -186,7 +231,7 @@
                                             <br>
                                             <div class="col-md-6"></div>
                                             <input (change)="selectPortfolioFile($event)" type="file"
-                                                accept=".jpg, .jpeg, .png" class="form-control" id="photo" required>
+                                                accept=".jpg, .jpeg, .png, .mp3, .mov, .mp4, .mpeg-1, .mpeg-2, .mpeg4, ,mpg, ,avi, .wmv, .mpegps, .flv, .aac, .wma, .wav" class="form-control" id="photo" required>
                                             <div class="descr fw-bold">
                                                 {{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
                                             <textarea [(ngModel)]="this.portfolioContent.description"
@@ -198,8 +243,8 @@
                                     <div class="col-md-12">
                                     </div>
                                 </div>
-                                <button (click)="insertPortfolioFile()" class="getstarted"
-                                    type="button" class="getstarted" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
+                                <button (click)="insertPortfolioFile()" class="getstarted" type="button"
+                                    class="getstarted" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
                                     translate }}</button>
                             </div>
                         </div>

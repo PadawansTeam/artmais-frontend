@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class PerfisAllService {
+export class DashboardService {
   public artPlusURL = `${environment.apiURL}`;
   public token = localStorage.getItem('token')
 
@@ -32,21 +32,4 @@ export class PerfisAllService {
   getValidation(): Observable<any> {
     return this.http.post(this.artPlusURL + 'v1/Validation', {}, this.httpOptions);
   }
-
-  updateAddress(
-    street: string,
-    number: number,
-    complement: string,
-    neighborhood: string,
-    zipCode: string,
-    city: string,
-    state: string
-  ): Observable<object> {
-    return this.http.post<object>(
-      `${this.artPlusURL}` + 'v1/Address/Upsert',
-      { street, number, complement, neighborhood, zipCode, city, state },
-      this.httpOptions
-    );
-  }
-
 }

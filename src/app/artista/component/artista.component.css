@@ -304,3 +304,12 @@ div.img-responsive {
 	outline: none;
 	transform: rotate(45deg); /* Equal to rotateZ(45deg) */
 }
+
+.nav-link{
+	color: #701ec6;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+	color: #9558d5;
+	font-weight: bold;
+}

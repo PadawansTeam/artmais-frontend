@@ -17,7 +17,8 @@ import {
 export class ArtistaComponent implements OnInit {
   artist!: Artista;
   idUser!: number;
-  portfolioImages: Portfolio[] = [];
+  artistPortfolioContent: {image: Portfolio[], video: Portfolio[], audio: Portfolio[]} = {image: [], video: [], audio: []};
+  loggedUser: boolean = false;
 
   constructor(
     public artistaService: ArtistaService,
@@ -27,6 +28,7 @@ export class ArtistaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.seeIfLogged();
     this.idUser = this.route.snapshot.params['id'];
     this.artistaService.getArtista(this.idUser).subscribe(
       (response: Artista) => {
@@ -36,14 +38,29 @@ export class ArtistaComponent implements OnInit {
         throw err;
       }
     ),
-      this.artistaService.getPortfolioArtista(this.idUser).subscribe(
-        (response: Portfolio) => {
-          this.portfolioImages = response as Portfolio[];
-        },
+    this.artistaService.getPortfolioArtista(this.idUser).subscribe(
+      (response) => {
+        this.artistPortfolioContent = response as {image: Portfolio[], video: Portfolio[], audio: Portfolio[]};
+      },
+      (err) => {
+        throw err;
+      }
+    );
+  }
+
+  seeIfLogged(){
+    if (this.artistaService.token == undefined || this.artistaService.token == null) {
+      this.loggedUser = false;
+    }else{
+      this.artistaService.getValidation().subscribe(
+        (response) => {
+          this.loggedUser = true;
+        }, 
         (err) => {
-          throw err;
+          this.loggedUser = false;
         }
       );
+    }
   }
 
   showModal(image: any, descrption: any, modal: any) {

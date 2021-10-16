@@ -148,7 +148,11 @@
         "FECHAR":"Fechar",
         "DESCRIÇÃO-ITEM-PORTFOLIO": "Descrição:",
         "ADICIONAR-ITEM": "Adicionar item ao seu portfólio",
-        "PLACE-DESCRIÇÃO": "Digite a descrição..."
+        "PLACE-DESCRIÇÃO": "Digite a descrição...",
+        "ABA-IMAGEM": "Imagens",
+        "ABA-VIDEO": "Vídeos",
+        "ABA-AUDIO": "Áudios",
+        "ABA-ERRO": "Não há nada postado ainda"
     },
     "CONFIG": {
         "CONFIG":"Configurações",
@@ -226,7 +230,13 @@
 
     "ASSINANTES": {
         "TITULO": "Ola Assinante",
-        "TEXTO1": "Você já possui o plano Premium"        
+        "TEXTO1": "Você já possui o plano Premium"    
+    },
+        
+    "PUBLICACAO": {
+        "COMENTARIOS": "Comentários",
+        "COMENTAR": "Comentar",
+        "POSTAR": "Enviar Comentário"
     }
 
     

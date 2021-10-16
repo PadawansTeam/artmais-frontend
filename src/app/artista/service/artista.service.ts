@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
@@ -17,7 +18,14 @@ export class ArtistaService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router
+    ) {}
+  
+  getValidation(): Observable<any> {
+    return this.http.post(this.artPlusURL + 'v1/Validation', {}, this.httpOptions);
+  }
 
   getArtista(id: number): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/User/' + id, this.httpOptions);

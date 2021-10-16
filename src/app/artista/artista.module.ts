@@ -32,6 +32,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   }),
     SelectModule,
     HeaderlogModule,
+    HeaderModule,
     FooterModule
   ],
   providers: [

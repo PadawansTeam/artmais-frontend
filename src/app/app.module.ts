@@ -42,11 +42,9 @@ import { InteresseModule } from './interesse/interesse.module';
 import { InteresseService } from './interesse/service/interesse.service';
 import { PrivacidadeModule } from './privacidade/privacidade.module';
 import { HeaderusercomumModule } from './headerusercomum/headerusercomum.module';
-import { TesteService } from './teste/service/teste.service';
 import { TesteModule } from './teste/teste.module';
 import { AssinanteModule} from './assinanteprime/assinanteprime.module';
-
-
+import { PublicacaoModule } from './publicacao/publicacao.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -92,6 +90,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     PrivacidadeModule,   
     TesteModule,
     AssinanteModule,
+    PublicacaoModule
   ],
   providers: [
     TranslateService,

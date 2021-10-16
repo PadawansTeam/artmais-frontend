@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Perfil } from '../service/perfil';
 import { PerfilService } from '../service/perfil.service';
 import { UserPortfolio } from '../service/UserPortfolio';
@@ -10,7 +11,7 @@ import { UserPortfolio } from '../service/UserPortfolio';
 })
 export class PerfilComponent implements OnInit {
   profile!: Perfil;
-  userPortfolioImages: UserPortfolio[] = [];
+  userPortfolioContent: {image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[]} = {image: [], video: [], audio: []};
   selectedPortfolioContent: FileList | undefined;
 
   portfolioContent: any = {
@@ -23,9 +24,23 @@ export class PerfilComponent implements OnInit {
     description: null,
   };
 
-  constructor(public perfilService: PerfilService) {}
+  constructor(
+    public perfilService: PerfilService, 
+    private router: Router
+    ) {}
 
   ngOnInit(): void {
+    this.perfilService.ngOnInit();
+    this.perfilService.getValidation().subscribe(
+      (response) => {}, 
+      (err) => {
+        if (err.status == 401) {
+          this.router.navigate(['']);
+        }else if(err.status == 500){
+          this.router.navigate(['/erro']);
+        }
+      }
+    );
     this.perfilService.getUser().subscribe(
       (response: Perfil) => {
         this.profile = response;
@@ -35,8 +50,8 @@ export class PerfilComponent implements OnInit {
       }
     ),
       this.perfilService.getUserPortfolio().subscribe(
-        (response: UserPortfolio) => {
-          this.userPortfolioImages = response as UserPortfolio[];
+        (response) => {
+          this.userPortfolioContent = response as {image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[]};
         },
         (err) => {
           throw err;

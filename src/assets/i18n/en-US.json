@@ -143,8 +143,11 @@
             "FECHAR":"Close",
             "DESCRIÇÃO-ITEM-PORTFOLIO": "Description:",
             "ADICIONAR-ITEM": "Add item to your portfolio",
-            "PLACE-DESCRIÇÃO": "Enter the description..."
-            
+            "PLACE-DESCRIÇÃO": "Enter the description...",
+            "ABA-IMAGEM": "Images",
+            "ABA-VIDEO": "Videos",
+            "ABA-AUDIO": "Audios",
+            "ABA-ERRO": "There's nothing posted yet"
         },
         "CONFIG": {
             "CONFIG":"Configurations",
@@ -214,7 +217,7 @@
             "SELE-IDIOMA": "Select the language:"
         }
         ,
-    "USUARIOS": {
+    "USUARIOS": {    
         "TITULO": "SEARCH RESULTS",
         "TEXTO1": "Here are all your search's results!",
         "TEXTO2": "We´re sorry, but we haven´t found anything on your search. Please try other words!"
@@ -222,6 +225,12 @@
 
     "ASSINANTES": {
         "TITULO": "Hello Subscriber!",
-        "TEXTO1": "You already have the Premium plan."        
+        "TEXTO1": "You already have the Premium plan."  
+    },
+          
+    "PUBLICACAO": {
+        "COMENTARIOS": "Comments",
+        "COMENTAR": "Comment",
+        "POSTAR": "Post Comment"
     }
 }
