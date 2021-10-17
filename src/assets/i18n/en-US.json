@@ -226,6 +226,7 @@
     "PUBLICACAO": {
         "COMENTARIOS": "Comments",
         "COMENTAR": "Comment",
-        "POSTAR": "Post Comment"
+        "POSTAR": "Post Comment",
+        "DATA-POSTAGEM": "Posted at "
     }
 }

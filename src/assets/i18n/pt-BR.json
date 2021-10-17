@@ -230,9 +230,8 @@
     "PUBLICACAO": {
         "COMENTARIOS": "Comentários",
         "COMENTAR": "Comentar",
-        "POSTAR": "Enviar Comentário"
+        "POSTAR": "Enviar Comentário",
+        "DATA-POSTAGEM": "Postado em "
     }
-
-    
 }
 

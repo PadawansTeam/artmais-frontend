@@ -5,33 +5,31 @@
             <div class="row">
                 <div class="col-lg-12 shadow back">
                     <div class="img-responsive text-center">
-                        <img src="https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                            alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
+                        <img [src]="artist.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
                     </div>
 
                 </div>
             </div>
             <div class="media-body  text-black">
-                <p class="mt-0 mb-0 name">Amiga</p>
-                <p class="mt-0 mb-0 username">amiga123</p>
-                <p class="small mb-2 category">teste - teste</p>
+                <p class="mt-0 mb-0 name">{{artist.name}}</p>
+                <p class="small mb-2 category">{{artist.category}} - {{artist.subcategory}}</p>
+                <p class="mt-0 mb-0 username">{{artist.description}}</p>
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <ul class="list-inline social-buttons">
-                                <li class="list-inline-item">
-                                    <a href="" target="_blank">
+                                <li class="list-inline-item" *ngIf="artist.facebook">
+                                    <a  href="{{artist.facebook}}" target="_blank">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
-                                <li class="list-inline-item">
-                                    <a href="" target="_blank">
+                                <li class="list-inline-item" *ngIf="artist.twitter">
+                                    <a  href="{{artist.twitter}}" target="_blank">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
-
-                                <li class="list-inline-item">
-                                    <a href="" target="_blank">
+                                <li class="list-inline-item" *ngIf="artist.instagram">
+                                    <a href="{{artist.instagram}}" target="_blank">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
@@ -54,9 +52,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 mt-0">
-                <img class="d-block mx-auto publi"
-                    src="https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="">
+                <img class="d-block mx-auto publi" [src]="publicacao.s3UrlMedia" alt="">
                 <div class="container text-center mt-3">
                     <div class="row align-items-center">
                         <div class="col-md-12">
@@ -103,21 +99,10 @@
 
                     <div class="col-md-2">
                     </div>
-                    <div class="col-md-8 text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                        lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
-                        sed,
-                        maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
-                        quis
-                        ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                        nisi vitae
-                        porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
-                        Proin
-                        vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                    </div>
+                    <div class="col-md-8 text-center"> {{publicacao.description}} </div>
                     <div class="row mt-2">
                         <div class="col-md-8"></div>
-                        <div class="col-md-4 date"><span class="text-black-50 ">Postado 12/04/2021</span></div>
+                        <div class="col-md-4 date"><span class="text-black-50 ">{{ 'PUBLICACAO.DATA-POSTAGEM' | translate }} {{publicacao.publicationDate}}</span></div>
                     </div>
                 </div>
             </div>

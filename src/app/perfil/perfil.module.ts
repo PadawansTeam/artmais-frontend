@@ -11,6 +11,7 @@ import { PerfilComponent } from './component/perfil.component';
 import { PerfilService } from './service/perfil.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -33,7 +34,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SelectModule,
     HeaderlogModule,
     FooterModule,
-    NgbModule
+    NgbModule,
+    RouterModule
   ],
   providers: [
     TranslateService,

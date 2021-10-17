@@ -23,23 +23,23 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <ul class="list-inline social-buttons">
-                                <li class="list-inline-item">
+                                <li class="list-inline-item" *ngIf="artist.facebook">
                                     <a href="{{artist.facebook}}" target="_blank">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item" *ngIf="artist.twitter">
                                     <a href="{{artist.twitter}}" target="_blank">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
 
-                                <li class="list-inline-item">
+                                <li class="list-inline-item" *ngIf="artist.instagram">
                                     <a href="{{artist.instagram}}" target="_blank">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item" *ngIf="artist.whatsappContact">
                                     <a href="{{artist.whatsappContact}}" target="_blank">
                                         <i class="fas fa-comment-alt"></i>
                                     </a>

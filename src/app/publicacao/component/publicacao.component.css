@@ -314,7 +314,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 }
 
 ul.social-buttons {
-	margin-top: 0;
+	margin-top: 1rem;
 	margin-bottom: 30px;
 }
 .pad-bot{

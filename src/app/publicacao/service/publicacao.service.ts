@@ -2,12 +2,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class ArtistaService {
+export class PublicacaoService {
   public artPlusURL = `${environment.apiURL}`;
   public token = localStorage.getItem('token');
 
@@ -21,17 +21,9 @@ export class ArtistaService {
   constructor(
     private http: HttpClient,
     private router: Router
-    ) {}
-  
-  getValidation(): Observable<any> {
-    return this.http.post(this.artPlusURL + 'v1/Validation', {}, this.httpOptions);
-  }
+  ) { }
 
-  getArtista(id: number): Observable<any> {
-    return this.http.get(this.artPlusURL + 'v1/User/' + id, this.httpOptions);
-  }
-
-  getPortfolioArtista(id: number): Observable<any> {
-    return this.http.get(this.artPlusURL + 'v1/Portfolio/' + id, this.httpOptions);
+  getPublication(userId: number, publicationId: number): Observable<any> {
+    return this.http.get(this.artPlusURL + `v1/Portfolio/${userId}/${publicationId}`, this.httpOptions);
   }
 }
