@@ -237,7 +237,13 @@
         "COMENTARIOS": "Comentários",
         "COMENTAR": "Comentar",
         "POSTAR": "Enviar Comentário"
+    },
+
+    "USERCOMUM": {
+        "SUBTITULO-RECOMENDACAO":"Descubra novos artistas!",
+        "SUBTITULO01-RECOMENDACAO":"Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse."
     }
+
 
     
 }
