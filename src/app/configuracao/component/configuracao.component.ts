@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { RecommendationService } from 'src/app/homepage/service/recommendation.service';
 
 @Component({
   selector: 'app-configuracao',
@@ -20,6 +21,7 @@ export class ConfiguracaoComponent implements OnInit {
   urlImagem!: FormData;
   formConfig!: FormGroup;
   isDateValid: boolean = true;
+  roleUser: boolean = false;
 
   Toast = Swal.mixin({
     toast: true,
@@ -76,6 +78,7 @@ export class ConfiguracaoComponent implements OnInit {
   };
 
   constructor(
+    public recommendationService: RecommendationService,
     public configService: ConfiguracaoService,
     private formBuilder: FormBuilder,
     private router: Router
@@ -83,6 +86,7 @@ export class ConfiguracaoComponent implements OnInit {
 
   ngOnInit(): void {
     this.configService.ngOnInit();
+    this.roleIfClient();
     this.configService.getValidation().subscribe(
       (response) => {}, 
       (err) => {
@@ -398,5 +402,18 @@ export class ConfiguracaoComponent implements OnInit {
     } else {
       this.isDateValid = false;
     }
+  }
+
+  roleIfClient(){    
+    this.recommendationService.getRole().subscribe(
+    (response) => {
+      console.warn('response Client',response.role);
+      if(response.role === 'Client'){
+        this.roleUser = true;
+      } else {
+        this.roleUser = false;
+      }
+     }
+  );
   }
 }
