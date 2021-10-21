@@ -14,7 +14,7 @@ export class InteresseComponent implements OnInit {
   interests: Interesse[] = [];
   subcategories: Interesse[] = [];
   allCategories: Map<string, any[]> = new Map();
-  roleUser: boolean = false;
+  roleUser: boolean = true;
 
   constructor(
     public interesseService: InteresseService,

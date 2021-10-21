@@ -125,9 +125,6 @@ section {
 	bottom: 0;
 	left: calc(50% - 25px);
 }
-
-
-
 .back {
 	background-image: url("src/assets/img/slide/slider3.jpg");
 	background-size: cover;

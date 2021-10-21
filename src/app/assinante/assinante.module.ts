@@ -7,7 +7,9 @@ import { SelectModule } from '../select/select.module';
 import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
-import { AssinanteprimeComponent } from './component/assinanteprime.component';
+import { AssinanteComponent } from './component/assinante.component';
+
+
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -15,9 +17,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 
 @NgModule({
-  declarations: [
-    AssinanteprimeComponent
-  ],
+  declarations: [AssinanteComponent],
   imports: [
     BrowserModule,
     TranslateModule.forRoot({

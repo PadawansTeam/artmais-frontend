@@ -7,7 +7,7 @@ import { UsuariosService } from 'src/app/usuarios/service/usuarios.service';
   templateUrl: './headerusercomum.component.html',
   styleUrls: ['./headerusercomum.component.css']
 })
-export class HeaderusercomumComponent implements OnInit {
+export class HeaderUserComumComponent implements OnInit {
 
   className!: string;
   mobile: boolean = false;
@@ -39,8 +39,4 @@ export class HeaderusercomumComponent implements OnInit {
       this.router.navigate(['/pesquisa', this.search]);
     }
   }
-
-
-
-  
 }

@@ -3,10 +3,10 @@ import { RecommendationService } from 'src/app/homepage/service/recommendation.s
 
 @Component({
   selector: 'app-assinanteprime',
-  templateUrl: './assinanteprime.component.html',
-  styleUrls: ['./assinanteprime.component.css']
+  templateUrl: './assinante.component.html',
+  styleUrls: ['./assinante.component.css']
 })
-export class AssinanteprimeComponent implements OnInit {
+export class AssinanteComponent implements OnInit {
   roleUser: boolean = false;
 
   constructor(

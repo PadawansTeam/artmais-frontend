@@ -5,7 +5,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderusercomumComponent } from './component/headerusercomum.component';
+import { HeaderUserComumComponent } from './component/headerusercomum.component';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -14,10 +14,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
-    HeaderusercomumComponent,
+    HeaderUserComumComponent,
   ],
   exports: [
-    HeaderusercomumComponent,
+    HeaderUserComumComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,4 +37,4 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   bootstrap: []
 })
-export class HeaderusercomumModule { }
+export class HeaderUserComumModule { }

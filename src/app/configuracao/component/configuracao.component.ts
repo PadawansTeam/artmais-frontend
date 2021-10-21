@@ -21,7 +21,7 @@ export class ConfiguracaoComponent implements OnInit {
   urlImagem!: FormData;
   formConfig!: FormGroup;
   isDateValid: boolean = true;
-  roleUser: boolean = false;
+  roleUser: boolean = true;
 
   Toast = Swal.mixin({
     toast: true,

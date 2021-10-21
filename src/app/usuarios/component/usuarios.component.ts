@@ -14,7 +14,7 @@ export class UsuariosComponent implements OnInit {
 
   public recomendacao: Recommendation [] = [];
   public usuarios: Usuarios [] = [];
-  public roleUser: boolean = false;
+  public roleUser: boolean = true;
 
   searchSuccess: boolean = false;
 

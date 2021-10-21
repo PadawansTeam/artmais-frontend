@@ -9,7 +9,7 @@ import { FooterModule } from '../footer/footer.module';
 import { HomepageComponent } from './component/homepage.component';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { RecommendationService } from './service/recommendation.service';
-import { HeaderusercomumModule } from '../headerusercomum/headerusercomum.module';
+import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -32,7 +32,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   }),
     SelectModule,
     HeaderlogModule,
-    HeaderusercomumModule,
+    HeaderUserComumModule,
     FooterModule
   ],
   providers: [ TranslateService, RecommendationService ],

@@ -6,7 +6,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
 import { TesteComponent } from './component/teste.component';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
-import { HeaderusercomumModule } from '../headerusercomum/headerusercomum.module';
+import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
 import { FooterModule } from '../footer/footer.module';
 import { RecommendationService } from './service/recommendation.service';
 
@@ -29,7 +29,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
   }),
     SelectModule,
-    HeaderusercomumModule,
+    HeaderUserComumModule,
     FooterModule
   ],
   providers: [

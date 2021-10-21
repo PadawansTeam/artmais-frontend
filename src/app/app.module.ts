@@ -41,9 +41,9 @@ import { DashboardModule } from './dashboard/dashboad.module';
 import { InteresseModule } from './interesse/interesse.module';
 import { InteresseService } from './interesse/service/interesse.service';
 import { PrivacidadeModule } from './privacidade/privacidade.module';
-import { HeaderusercomumModule } from './headerusercomum/headerusercomum.module';
+import { HeaderUserComumModule } from './headerusercomum/headerusercomum.module';
 import { TesteModule } from './teste/teste.module';
-import { AssinanteModule} from './assinanteprime/assinanteprime.module';
+import { AssinanteModule} from './assinante/assinante.module';
 import { PublicacaoModule } from './publicacao/publicacao.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -51,7 +51,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent,],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -80,14 +80,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HomepageModule,
     PlanosModule,
     HeaderlogModule,
-    HeaderusercomumModule,
+    HeaderUserComumModule,
     UsuariosModule,
     PerfilModule,
     DashboardModule,
     InteresseModule,
     ConfiguracaoModule,
     ArtistaModule,
-    PrivacidadeModule,   
+    PrivacidadeModule, 
     TesteModule,
     AssinanteModule,
     PublicacaoModule

@@ -10,7 +10,7 @@ import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { ConfiguracaoComponent } from './component/configuracao.component';
 import { ConfiguracaoService } from './service/configuracao.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderusercomumModule } from '../headerusercomum/headerusercomum.module';
+import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
 import { RecommendationService } from '../homepage/service/recommendation.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -32,7 +32,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
     SelectModule,
     HeaderlogModule,
-    HeaderusercomumModule,
+    HeaderUserComumModule,
     FooterModule,
     FormsModule,
     ReactiveFormsModule

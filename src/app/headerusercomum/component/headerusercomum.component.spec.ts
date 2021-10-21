@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HeaderusercomumComponent } from './headerusercomum.component';
 
 describe('HeaderusercomumComponent', () => {
