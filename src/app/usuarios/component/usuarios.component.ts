@@ -14,6 +14,7 @@ export class UsuariosComponent implements OnInit {
 
   public recomendacao: Recommendation [] = [];
   public usuarios: Usuarios [] = [];
+  public roleUser: boolean = false;
 
   searchSuccess: boolean = false;
 
@@ -25,6 +26,7 @@ export class UsuariosComponent implements OnInit {
 
   ngOnInit() {
     this.usuariosService.ngOnInit();
+    this.roleIfClient();
     this.usuariosService.getValidation().subscribe(
       (response) => {}, 
       (err) => {
@@ -57,4 +59,18 @@ export class UsuariosComponent implements OnInit {
       }
     );
   }
+
+  roleIfClient(){    
+    this.recommendationService.getRole().subscribe(
+    (response) => {
+      console.warn('response Client',response.role);
+      if(response.role === 'Client'){
+        this.roleUser = true;
+      } else {
+        this.roleUser = false;
+      }
+     }
+  );
+  }
+
 }

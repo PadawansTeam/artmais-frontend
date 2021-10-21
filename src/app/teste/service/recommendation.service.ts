@@ -1,7 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { AnyARecord } from 'dns';
 import { Observable } from 'rxjs';
+import { RoleUser } from 'src/app/models/role-user.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable()
@@ -43,5 +45,9 @@ export class RecommendationService {
 
   recomentationUsers(): Observable<object> {
     return this.http.get(this.artPlusURL + 'v1/Recomendation/users', this.httpOptions)
+  }
+
+  getRole(): Observable<RoleUser> {
+    return this.http.get<RoleUser>(this.artPlusURL + 'v1/User/GetUserRole', this.httpOptions);
   }
 }

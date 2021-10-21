@@ -1,4 +1,9 @@
-<app-headerlog></app-headerlog>
+<div *ngIf="roleUser">
+    <app-headerusercomum></app-headerusercomum>
+</div>
+<div *ngIf="!roleUser">
+<app-headerlog></app-headerlog>    
+</div>    
 <div class="interesse">
     <div class="row">
         <div class="section-title" data-aos="fade-up">

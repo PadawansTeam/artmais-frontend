@@ -3,6 +3,11 @@ import { Recommendation } from '../service/recommendation';
 import { RecommendationService } from '../service/recommendation.service';
 import { ArtistaService } from '../../artista/service/artista.service';
 import { Router } from '@angular/router';
+import { PerfilService } from 'src/app/perfil/service/perfil.service';
+import { Perfil } from 'src/app/perfil/service/perfil';
+import { NgIf } from '@angular/common';
+import { response } from 'express';
+import { Response } from 'aws-sdk';
 
 
 @Component({
@@ -11,20 +16,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./teste.component.css']
 })
 export class TesteComponent implements OnInit {
-  //className!: string;
-  //mobile: boolean = false; 
-
+  profile!: Perfil; 
   recommendations: Recommendation[] = [];
+  roleUser: boolean = false;
+  role: string = '';
   
   constructor(public recommendationService: RecommendationService,
     public artistaService: ArtistaService,
-    private router: Router) { }   //sem nada 
+    public perfilService: PerfilService,
+    private router: Router) { }  
 
   ngOnInit(): void {
-    //if (window.screen.width < 768)  
-    //  this.mobile = true;
-  //}
-
+    this.roleIfClient();
+    this.perfilService.getUser().subscribe(
+      (response: Perfil) => {
+        this.profile = response;
+      },
+      (err) => {
+        throw err;
+      }
+    ),
   this.recommendationService.ngOnInit();
   this.recommendationService.getValidation().subscribe(
     (response) => {}, 
@@ -43,7 +54,16 @@ export class TesteComponent implements OnInit {
     (err) => {
       throw err;
     }
+  );
+  this.recommendationService.getRole().subscribe(
+    (response) => {
+      this.role = response.role;
+    },
+    (err) => {
+      throw err;
+    }
   )
+
 }
 
 getPerfilById(id: number) {
@@ -56,5 +76,16 @@ getPerfilById(id: number) {
     }
   )
 }
+roleIfClient(){    
+    this.recommendationService.getRole().subscribe(
+    (response) => {
+      if(response.role === 'Client'){
+        this.roleUser = true;
+      } else {
+        this.roleUser = false;
+      }
+     }
+  );
+  }
 
 }

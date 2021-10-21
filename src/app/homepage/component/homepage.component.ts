@@ -3,6 +3,8 @@ import { Recommendation } from '../service/recommendation';
 import { RecommendationService } from '../service/recommendation.service';
 import { ArtistaService } from '../../artista/service/artista.service';
 import { Router } from '@angular/router';
+import { PerfilService } from 'src/app/perfil/service/perfil.service';
+import { Perfil } from 'src/app/perfil/service/perfil';
 
 @Component({
   selector: 'app-homepage',
@@ -10,17 +12,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-
+  profile!: Perfil;
   recommendations: Recommendation[] = [];
+  roleUser: boolean = false;
 
   constructor(
     public recommendationService: RecommendationService,
     public artistaService: ArtistaService,
+    public perfilService: PerfilService,
     private router: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.recommendationService.ngOnInit();
+    this.roleIfClient();    
+    this.perfilService.getUser().subscribe(
+      (response: Perfil) => {
+        this.profile = response;
+      },
+      (err) => {
+        throw err;
+      } 
+    ),
     this.recommendationService.getValidation().subscribe(
       (response) => {}, 
       (err) => {
@@ -50,6 +63,19 @@ export class HomepageComponent implements OnInit {
         throw err;
       }
     )
+  }
+
+  roleIfClient(){    
+    this.recommendationService.getRole().subscribe(
+    (response) => {
+      console.warn('response Client',response.role);
+      if(response.role === 'Client'){
+        this.roleUser = true;
+      } else {
+        this.roleUser = false;
+      }
+     }
+  );
   }
   
 }

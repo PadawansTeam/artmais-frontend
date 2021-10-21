@@ -7,6 +7,8 @@ import { SelectModule } from '../select/select.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { UsuariosComponent } from './component/usuarios.component';
+import { HeaderusercomumModule } from '../headerusercomum/headerusercomum.module';
+import { RecommendationService } from '../homepage/service/recommendation.service';
 
 
 
@@ -30,9 +32,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   }),
     SelectModule,
     HeaderlogModule,
+    HeaderusercomumModule,
     FooterModule
   ],
-  providers: [ TranslateService ],
+  providers: [ TranslateService, RecommendationService ],
   bootstrap: []
 })
 export class UsuariosModule { }

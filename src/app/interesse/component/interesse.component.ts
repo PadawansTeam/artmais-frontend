@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RecommendationService } from 'src/app/homepage/service/recommendation.service';
 import { Interesse } from '../service/interesse';
 import { InteresseService } from '../service/interesse.service';
 
@@ -13,14 +14,17 @@ export class InteresseComponent implements OnInit {
   interests: Interesse[] = [];
   subcategories: Interesse[] = [];
   allCategories: Map<string, any[]> = new Map();
+  roleUser: boolean = false;
 
   constructor(
     public interesseService: InteresseService,
+    public recommendationService: RecommendationService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.interesseService.ngOnInit();
+    this.roleIfClient();
     this.interesseService.getValidation().subscribe(
       (response) => {}, 
       (err) => {
@@ -83,4 +87,17 @@ export class InteresseComponent implements OnInit {
       }
     );
   }
+  roleIfClient(){    
+    this.recommendationService.getRole().subscribe(
+    (response) => {
+      console.warn('response Client',response.role);
+      if(response.role === 'Client'){
+        this.roleUser = true;
+      } else {
+        this.roleUser = false;
+      }
+     }
+  );
+  }
+
 }

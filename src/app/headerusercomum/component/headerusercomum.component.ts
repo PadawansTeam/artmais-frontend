@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuariosService } from 'src/app/usuarios/service/usuarios.service';
 
 @Component({
   selector: 'app-headerusercomum',
@@ -13,7 +14,8 @@ export class HeaderusercomumComponent implements OnInit {
   search: String | undefined;
 
   constructor(
-    private router: Router 
+    public usuariosService: UsuariosService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -37,4 +39,8 @@ export class HeaderusercomumComponent implements OnInit {
       this.router.navigate(['/pesquisa', this.search]);
     }
   }
+
+
+
+  
 }
