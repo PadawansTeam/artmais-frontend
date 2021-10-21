@@ -24,6 +24,6 @@ export class PublicacaoService {
   ) { }
 
   getPublication(userId: number, publicationId: number): Observable<any> {
-    return this.http.get(this.artPlusURL + `v1/Portfolio/${userId}/${publicationId}`, this.httpOptions);
+    return this.http.get(this.artPlusURL + `v1/Publication/GetPublicationById?publicationId=${publicationId}&userId=${userId}`, this.httpOptions);
   }
 }
