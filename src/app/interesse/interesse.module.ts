@@ -10,6 +10,8 @@ import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { InteresseComponent } from './component/interesse.component';
 import { InteresseService } from './service/interesse.service';
 import { FormsModule } from '@angular/forms';
+import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
+import { RecommendationService } from '../homepage/service/recommendation.service';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -32,11 +34,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   }),
     SelectModule,
     HeaderlogModule,
+    HeaderUserComumModule,
     FooterModule,
     FormsModule
   ],
   providers: [
-    TranslateService, InteresseService
+    TranslateService, InteresseService, RecommendationService
   ],
   bootstrap: []
 })

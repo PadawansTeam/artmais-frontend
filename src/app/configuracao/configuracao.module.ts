@@ -10,6 +10,8 @@ import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { ConfiguracaoComponent } from './component/configuracao.component';
 import { ConfiguracaoService } from './service/configuracao.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
+import { RecommendationService } from '../homepage/service/recommendation.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -30,12 +32,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
     SelectModule,
     HeaderlogModule,
+    HeaderUserComumModule,
     FooterModule,
     FormsModule,
     ReactiveFormsModule
   ],
   providers: [
-    TranslateService, ConfiguracaoService
+    TranslateService, ConfiguracaoService, RecommendationService
   ],
   bootstrap: []
 })
