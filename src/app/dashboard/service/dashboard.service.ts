@@ -14,7 +14,7 @@ export class DashboardService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.token}`
+      Authorization: `Bearer ${this.token}`,
     }),
   };
 
@@ -29,7 +29,12 @@ export class DashboardService {
     }
   }
 
+
   getValidation(): Observable<any> {
     return this.http.post(this.artPlusURL + 'v1/Validation', {}, this.httpOptions);
+  }
+
+  getDashBoardData(): Observable<any> {
+    return this.http.get(this.artPlusURL + 'v1/Dashboard', this.httpOptions);
   }
 }

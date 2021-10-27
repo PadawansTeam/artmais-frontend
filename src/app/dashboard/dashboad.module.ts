@@ -9,7 +9,7 @@ import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { DashboardComponent } from './component/dashboard.component';
 import { DashboardService } from './service/dashboard.service';
-
+import { ChartsModule } from 'ng2-charts';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -22,6 +22,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,

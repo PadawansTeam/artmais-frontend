@@ -45,6 +45,8 @@ import { HeaderUserComumModule } from './headerusercomum/headerusercomum.module'
 import { TesteModule } from './teste/teste.module';
 import { AssinanteModule} from './assinante/assinante.module';
 import { PublicacaoModule } from './publicacao/publicacao.module';
+import { ChartsModule } from 'ng2-charts';
+import { DashboardService } from './dashboard/service/dashboard.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -60,7 +62,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SocialLoginModule,
     CommonModule,
     FormsModule,
-     
+    ChartsModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -102,7 +105,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     PerfilService,
     ArtistaService,
     ConfiguracaoService,
-     
+    DashboardService,
+
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
