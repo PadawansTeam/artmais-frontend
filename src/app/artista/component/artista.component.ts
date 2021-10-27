@@ -75,7 +75,6 @@ export class ArtistaComponent implements OnInit {
     modalRef.componentInstance.descrption = descrption;
   }
 
-
 roleIfClient(){    
   this.recommendationService.getRole().subscribe(
   (response) => {
