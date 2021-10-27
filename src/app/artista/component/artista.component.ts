@@ -8,6 +8,7 @@ import {
   NgbModal,
   NgbModalOptions,
 } from '@ng-bootstrap/ng-bootstrap';
+import { RecommendationService } from 'src/app/homepage/service/recommendation.service';
 
 @Component({
   selector: 'app-artista',
@@ -19,16 +20,20 @@ export class ArtistaComponent implements OnInit {
   idUser!: number;
   artistPortfolioContent: {image: Portfolio[], video: Portfolio[], audio: Portfolio[]} = {image: [], video: [], audio: []};
   loggedUser: boolean = false;
+  roleUser: boolean = false;
 
   constructor(
     public artistaService: ArtistaService,
     private route: ActivatedRoute,
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    public recommendationService: RecommendationService
   ) {}
 
   ngOnInit(): void {
     this.seeIfLogged();
+    this.recommendationService.ngOnInit();
+    this.roleIfClient();  
     this.idUser = this.route.snapshot.params['id'];
     this.artistaService.getArtista(this.idUser).subscribe(
       (response: Artista) => {
@@ -69,4 +74,18 @@ export class ArtistaComponent implements OnInit {
     modalRef.componentInstance.image = image;
     modalRef.componentInstance.descrption = descrption;
   }
+
+
+roleIfClient(){    
+  this.recommendationService.getRole().subscribe(
+  (response) => {
+    console.warn('response Client',response.role);
+    if(response.role === 'Client'){
+      this.roleUser = true;
+    } else {
+      this.roleUser = false;
+    }
+   }
+);
+}  
 }
