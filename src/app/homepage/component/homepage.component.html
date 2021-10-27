@@ -15,16 +15,27 @@
       <div class="row">
         <div *ngFor="let recomendacao of recommendations" class="col-md-3 col-sm-6">
           <div class="friend-card" (click)="getPerfilById(recomendacao.userId)">
+
             <img [src]="recomendacao.backgroundPicture" alt="profile-cover" class="img-responsive cover">
+
             <div class="card-info">
+              <div class="star">
+                <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
+                <p>PREMIUM</p>
+              </div>
               <img [src]="recomendacao.userPicture" alt="user" class="profile-photo-lg">
-              <div class="friend-info">
+              <div class="friend-info ">
+                <div class="name fw-bolder">
+                  <a>
+                    <h5>Teste de nome</h5>
+                  </a>
+                </div>
+                <div class="profile-link fw-light">
+                  <p><a>{{recomendacao.username}}</a></p>
+                </div>
                 <a class="pull-right mt-5 text-cat">{{recomendacao.category}}</a><br>
                 <div class="mt-2">
                   <a class="pull-right text-sub">{{recomendacao.subcategory}}</a>
-                </div>
-                <div class="mt-2">
-                  <h5><a class="profile-link">{{recomendacao.username}}</a></h5>
                 </div>
               </div>
             </div>

@@ -67,13 +67,7 @@
     background-color: #bf8cf5;
   }
   
-  .profile-link {
-    text-decoration: none;
-    color: #3a393b;
-    text-align: center;
-    padding-top: 1rem;
-    font-size: 14px;
-  }
+
   .profile{
     font-size: .85rem;
   }
@@ -90,6 +84,8 @@
     padding-bottom: 30px;
     position: relative;
     margin-top: 20px;
+    color: #555555;
+
   }
   
   .section-title h2 {
@@ -99,6 +95,8 @@
     margin-bottom: 20px;
     padding-bottom: 20px;
     position: relative;
+    color: #555555;
+
   }
   
   @media only screen and (max-width: 600px) {
@@ -127,3 +125,35 @@
     bottom: 0;
     left: calc(50% - 25px);
   }
+
+.star{
+  color: #ffd700;
+  position: absolute;
+  top: 10px;
+  z-index: 23;
+  margin-left: 150px;
+  margin-top: 65px;
+}
+.star p{
+  font-weight: 400;
+  position: absolute;
+  font-size: 8px;
+  color: #bea201;
+}
+
+.name{
+  text-decoration: none;
+  color: #555555;
+  text-align: center;
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 0 !important;
+}
+
+.profile-link {
+  text-decoration: none;
+  color: #555555;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+}
