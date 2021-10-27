@@ -171,8 +171,8 @@
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
                                     <a class="portfolio-link" data-bs-toggle="modal">
                                         <div class="portfolio-hover"></div>
-                                        <video>
-                                            <source [src]="userPortfolioVideo.s3UrlMedia" class="img-fluid rounded">
+                                        <video controls Preload played width="375" >
+                                            <source [src]="userPortfolioVideo.s3UrlMedia"  type="video/mp4">
                                         </video>
                                     </a>
                                 </div>
@@ -187,8 +187,8 @@
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
                                     <a class="portfolio-link" data-bs-toggle="modal">
                                         <div class="portfolio-hover"></div>
-                                        <audio>
-                                            <source [src]="userPortfolioAudio.s3UrlMedia" alt="" class="img-fluid rounded">
+                                        <audio controls preload width="450">
+                                            <source [src]="userPortfolioAudio.s3UrlMedia" alt="" >
                                         </audio>
                                     </a>
                                 </div>
@@ -246,88 +246,6 @@
                                 <button (click)="insertPortfolioFile()" class="getstarted" type="button"
                                     class="getstarted" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
                                     translate }}</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content ">
-                <div class="close-modal" type="button" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 mx-auto">
-                            <div class="modal-body">
-                                <img class="img-fluid d-block mx-auto"
-                                    src="https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="">
-                                <div class="row ">
-                                    <div class="col-md-12 like">
-                                        <i class="fab fa-gratipay"></i>
-                                    </div>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                    lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
-                                    sed,
-                                    maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
-                                    quis
-                                    ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                    nisi vitae
-                                    porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
-                                    Proin
-                                    vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                </p>
-
-                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">{{ 'PERFIL.FECHAR' | translate }}</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content ">
-                <div class="close-modal" type="button" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <img class="img-fluid d-block mx-auto"
-                                    src="https://images.pexels.com/photos/736355/pexels-photo-736355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                    lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
-                                    sed,
-                                    maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
-                                    quis
-                                    ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                    nisi vitae
-                                    porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
-                                    Proin
-                                    vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                </p>
-
-                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">{{ 'PERFIL.FECHAR' | translate }}</button>
                             </div>
                         </div>
                     </div>

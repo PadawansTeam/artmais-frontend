@@ -165,8 +165,8 @@
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
                                     <a class="portfolio-link" data-bs-toggle="modal">
                                         <div class="portfolio-hover"></div>
-                                        <video>
-                                            <source [src]="userPortfolioVideo.s3UrlMedia" class="img-fluid rounded">
+                                        <video controls Preload played width="375" controlsList="nodownload">
+                                            <source [src]="userPortfolioVideo.s3UrlMedia" >
                                         </video>
                                     </a>
                                 </div>
@@ -181,8 +181,8 @@
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
                                     <a class="portfolio-link" data-bs-toggle="modal">
                                         <div class="portfolio-hover"></div>
-                                        <audio>
-                                            <source [src]="userPortfolioAudio.s3UrlMedia" alt="" class="img-fluid rounded">
+                                        <audio controls preload width="450" controlsList="nodownload">
+                                            <source [src]="userPortfolioAudio.s3UrlMedia" alt="">
                                         </audio>
                                     </a>
                                 </div>

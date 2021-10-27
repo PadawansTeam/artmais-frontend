@@ -1,0 +1,20 @@
+<div *ngIf="roleUser">
+  <meta http-equiv="Refresh" content="0; url=\homepage"/>      
+</div>
+<div *ngIf="!roleUser">
+<app-headerlog></app-headerlog>
+<section id="pricing" class="pricing">
+  <div class="section-title" data-aos="fade-up">
+    <div class="container">
+      <div class="row text-center ">
+        <h2> {{'ASSINANTES.TITULO' | translate}} </h2>
+        <div class="col-md-12 ">
+          <p>{{'ASSINANTES.TEXTO1' | translate}}</p>
+        </div>
+      </div>   
+  </div>
+</div><br>
+  <br>
+  <br>
+</section>
+</div>

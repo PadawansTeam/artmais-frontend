@@ -5,7 +5,7 @@ import { UsuariosService } from '../../usuarios/service/usuarios.service';
 @Component({
   selector: 'app-headerlog',
   templateUrl: './headerlog.component.html',
-  styleUrls: ['./headerlog.component.css']
+  styleUrls: ['./headerlog.component.css'],
 })
 export class HeaderlogComponent implements OnInit {
   className!: string;
@@ -15,27 +15,31 @@ export class HeaderlogComponent implements OnInit {
   constructor(
     public usuariosService: UsuariosService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    if (window.screen.width < 768) { 
+    if (window.screen.width < 768) {
       this.mobile = true;
     }
   }
 
   goSearch() {
-    var x = window.location.href.split("/");
-    if(x[x.length-2] == "pesquisa"){
-      if(this.search === x[x.length-1]){
+    var x = window.location.href.split('/');
+    if (x[x.length - 2] == 'pesquisa') {
+      if (this.search === x[x.length - 1]) {
         window.location.reload();
-      }else{
+      } else {
         this.router.navigate(['/pesquisa', this.search]);
-        setInterval(()=>{
+        setInterval(() => {
           window.location.reload();
-        }, 500)
+        }, 500);
       }
-    }else{
+    } else {
       this.router.navigate(['/pesquisa', this.search]);
     }
+  }
+
+  clearToken() {
+    localStorage.removeItem('token');
   }
 }
