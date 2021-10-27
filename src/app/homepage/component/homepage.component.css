@@ -4,7 +4,7 @@
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 0 30px 0 rgba(67, 18, 112, 0.3);
-  height: 16rem;
+  height: 20rem;
 }
 
 .friend-list .friend-card:hover {
@@ -20,7 +20,7 @@ img.profile-photo-lg {
   width: 100px;
   border-radius: 50%;
   border: 7px solid #fff;
-  margin-top: -60px;
+  margin-top: -50px;
   margin-bottom: 10px;
 }
 
@@ -45,12 +45,21 @@ img.profile-photo-lg {
   height: 100px !important;
 }
 
-.profile-link {
+.name{
   text-decoration: none;
-  color: #3a393b;
+  color: #555555;
   text-align: center;
   font-size: 1rem;
   text-align: center;
+  padding-bottom: 0 !important;
+}
+
+.profile-link {
+  text-decoration: none;
+  color: #555555;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 section {
@@ -125,6 +134,28 @@ section {
 	bottom: 0;
 	left: calc(50% - 25px);
 }
+.star{
+  color: #ffd700;
+  position: absolute;
+  top: 10px;
+  z-index: 23;
+  margin-left: 140px;
+  margin-top: 100px;
+}
+.star p{
+  font-weight: 400;
+  position: absolute;
+  font-size: 9px;
+  color: #bea201;
+}
+
+.star:hover{
+  transform: scale(1.08);
+}
+.star p:hover{
+  transform: scale(1.08);
+}
+
 .back {
 	background-image: url("src/assets/img/slide/slider3.jpg");
 	background-size: cover;
@@ -498,4 +529,4 @@ input[type='file']::-webkit-file-upload-button:hover {
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
 	color: #9558d5;
 	font-weight: bold;
-}
+  }
