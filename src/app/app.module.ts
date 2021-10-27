@@ -41,7 +41,9 @@ import { DashboardModule } from './dashboard/dashboad.module';
 import { InteresseModule } from './interesse/interesse.module';
 import { InteresseService } from './interesse/service/interesse.service';
 import { PrivacidadeModule } from './privacidade/privacidade.module';
+import { HeaderUserComumModule } from './headerusercomum/headerusercomum.module';
 import { TesteModule } from './teste/teste.module';
+import { AssinanteModule} from './assinante/assinante.module';
 import { PublicacaoModule } from './publicacao/publicacao.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -58,6 +60,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SocialLoginModule,
     CommonModule,
     FormsModule,
+     
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -77,14 +80,16 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HomepageModule,
     PlanosModule,
     HeaderlogModule,
+    HeaderUserComumModule,
     UsuariosModule,
     PerfilModule,
     DashboardModule,
     InteresseModule,
     ConfiguracaoModule,
     ArtistaModule,
-    PrivacidadeModule,
+    PrivacidadeModule, 
     TesteModule,
+    AssinanteModule,
     PublicacaoModule
   ],
   providers: [
@@ -97,6 +102,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     PerfilService,
     ArtistaService,
     ConfiguracaoService,
+     
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

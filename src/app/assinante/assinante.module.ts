@@ -6,10 +6,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
 import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
-import { PlanosComponent } from './componet/planos.component';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
-import { PlanosService } from './service/planos.service';
-
+import { AssinanteComponent } from './component/assinante.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -17,9 +15,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 
 @NgModule({
-  declarations: [
-    PlanosComponent
-  ],
+  declarations: [AssinanteComponent],
   imports: [
     BrowserModule,
     TranslateModule.forRoot({
@@ -31,12 +27,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   }),
     SelectModule,
     HeaderModule,
-    FooterModule,
-    HeaderlogModule,
+    FooterModule,  
+    HeaderlogModule,    
   ],
   providers: [
-    TranslateService, PlanosService
+    TranslateService
   ],
   bootstrap: []
 })
-export class PlanosModule { }
+
+export class AssinanteModule { }
