@@ -79,20 +79,36 @@
           <div class="container">
             <div class="row">
               <div class="col-md-4">
-                <h3>Evolução Comentários</h3>
-                <canvas #commentsCanvas></canvas>
-                <hr color="red" />
+                <ng-container *ngIf="userData.sumComments === 0">
+                  <h3>Você ainda não possui dados</h3>
+                </ng-container>
+                <ng-container *ngIf="userData.sumComments !== 0">
+                  <h3>Evolução Comentários</h3>
+                  <canvas #commentsCanvas></canvas>
+                  <hr color="red" />
+                </ng-container>
               </div>
               <div class="col-md-4">
-                <h3>Evolução Curtidas</h3>
-                <canvas #likesCanvas></canvas>
-                <hr color="red" />
+                <ng-container *ngIf="userData.sumLikes === 0">
+                  <h3>Você ainda não possui dados</h3>
+                </ng-container>
+                <ng-container *ngIf="userData.sumLikes !== 0">
+                  <h3>Evolução Curtidas</h3>
+                  <canvas #likesCanvas></canvas>
+                  <hr color="red" />
+                </ng-container>
+                
               </div>
 
               <div class="col-md-4">
-                <h3>Evolução Visitas</h3>
-                <canvas #visitsCanvas></canvas>
-                <hr color="red" />
+                <ng-container *ngIf="userData.sumVisits === 0">
+                  <h3>Você ainda não possui dados</h3>
+                </ng-container>
+                <ng-container *ngIf="userData.sumVisits !== 0">
+                  <h3>Evolução Visitas</h3>
+                  <canvas #visitsCanvas></canvas>
+                  <hr color="red" />
+                </ng-container>
               </div>
 
             </div>
