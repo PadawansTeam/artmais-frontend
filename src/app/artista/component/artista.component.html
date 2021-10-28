@@ -149,7 +149,7 @@
                                 </div>
                                 <div *ngFor="let userPortfolioImage of artistPortfolioContent.image"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                    <a class="portfolio-link" data-bs-toggle="modal">
+                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioImage.userID,'publicacao', userPortfolioImage.publicationID]">
                                         <div class="portfolio-hover"></div>
                                         <img [src]="userPortfolioImage.s3UrlMedia" alt="" class="img-fluid rounded">
                                     </a>
@@ -163,7 +163,7 @@
                                 </div>
                                 <div *ngFor="let userPortfolioVideo of artistPortfolioContent.video"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                    <a class="portfolio-link" data-bs-toggle="modal">
+                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioVideo.userID,'publicacao', userPortfolioVideo.publicationID]">
                                         <div class="portfolio-hover"></div>
                                         <video>
                                             <source [src]="userPortfolioVideo.s3UrlMedia" class="img-fluid rounded">
@@ -179,7 +179,7 @@
                                 </div>
                                 <div *ngFor="let userPortfolioAudio of artistPortfolioContent.audio"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                    <a class="portfolio-link" data-bs-toggle="modal">
+                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioAudio.userID,'publicacao', userPortfolioAudio.publicationID]">
                                         <div class="portfolio-hover"></div>
                                         <audio>
                                             <source [src]="userPortfolioAudio.s3UrlMedia" alt="" class="img-fluid rounded">

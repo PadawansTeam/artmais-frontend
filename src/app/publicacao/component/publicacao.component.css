@@ -65,7 +65,7 @@ ul.publi-buttons li.like a:hover {
 	display: block;
 }
 
-ul.publi-buttons li.like a:active {
+#active {
 	font-size: 40px;
 	line-height: 40px;
 	display: block;

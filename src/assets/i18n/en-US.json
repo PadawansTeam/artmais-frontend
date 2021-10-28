@@ -228,6 +228,7 @@
         "COMENTAR": "Comment",
         "POSTAR": "Post Comment",
         "DATA-POSTAGEM": "Posted at ",
-        "PRIMEIRO": "Be the first to comment!"
+        "PRIMEIRO": "Be the first to comment!",
+        "PRIMEIRO-AUTOR": "There are no comments yet"
     }
 }

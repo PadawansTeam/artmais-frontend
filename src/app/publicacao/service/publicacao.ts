@@ -1,5 +1,6 @@
 export class Publicacao {
     constructor(
+      public userId: number,
       public name: string,
       public username: string,
       public userPicture: string,
@@ -19,6 +20,7 @@ export class Publicacao {
         {
           name?: string,
           username?: string,
+          userPicture?: string,
           description?: string,
           commentDate?: Date,
         }

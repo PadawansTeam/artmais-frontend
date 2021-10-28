@@ -26,4 +26,20 @@ export class PublicacaoService {
   getPublication(userId: number, publicationId: number): Observable<any> {
     return this.http.get(this.artPlusURL + `v1/Publication/GetPublicationById?publicationId=${publicationId}&userId=${userId}`, this.httpOptions);
   }
+
+  insertLike(publicationId: number): Observable<any> {
+    return this.http.post(`${this.artPlusURL}` + `v1/Publication/InsertLike?publicationId=${publicationId}`, {publicationId}, this.httpOptions);
+  }
+
+  insertComment(publicationID: number, description: string): Observable<any> {
+    return this.http.post(`${this.artPlusURL}` + `v1/Publication/InsertComment`, {publicationID, description}, this.httpOptions);
+  }
+
+  deleteLike(publicationId: number): Observable<any> {
+    return this.http.delete(`${this.artPlusURL}` + `v1/Publication/DeleteLike?publicationId=${publicationId}`, this.httpOptions);
+  }
+
+  deletePublication(publicationId: number): Observable<any> {
+    return this.http.delete(`${this.artPlusURL}` + `v1/Aws/DeletePortfolioContent/${publicationId}`, this.httpOptions);
+  }
 }

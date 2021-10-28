@@ -10,6 +10,8 @@ import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { ArtistaComponent } from './component/artista.component';
 import { ArtistaService } from './service/artista.service';
 import { PerfilService } from '../perfil/service/perfil.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -33,7 +35,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SelectModule,
     HeaderlogModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    NgbModule,
+    RouterModule
   ],
   providers: [
     TranslateService,

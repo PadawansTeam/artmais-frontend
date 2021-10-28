@@ -41,13 +41,15 @@
         </div>
         <div class="row">
             <div class="col-md-12 text-end mt-3">
-                <ul class="plus-buttons list-inline2">
-                    <li class="list-inline-item">
-                        <a href=''>
-                            <i class="fa fa-trash"></i>
-                        </a>
-                    </li>
-                </ul>
+                <div *ngIf="this.isSameUser">
+                    <ul class="plus-buttons list-inline2">
+                        <li class="list-inline-item">
+                            <a (click)="deletePublication()">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </li>
+                    </ul>                    
+                </div>
             </div>
         </div>
         <div class="row">
@@ -57,18 +59,27 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <ul class="list-inline publi-buttons ">
-                                <li class="list-inline-item like">
-                                    <a>
-                                        <i class="fab fa-gratipay"></i>
-                                    </a>
-                                    <p class="quant">{{publicacao.likesAmount}}</p>
-                                </li>
-                                <li class="list-inline-item share">
-                                    <a>
-                                        <i class="fa fa-comment "></i>
-                                    </a>
-                                    <p class="quant">{{publicacao.commentsAmount}}</p>
-                                </li>
+                                <div *ngIf="!this.isSameUser" style="padding-right: 0.5rem">
+                                    <li (click)="like()" class="list-inline-item like">
+                                        <div *ngIf="this.publicacao.isLiked">
+                                            <a id="active"> 
+                                                <i class="fab fa-gratipay"></i>
+                                            </a>
+                                        </div>
+                                        <div *ngIf="!this.publicacao.isLiked">
+                                            <a>
+                                                <i class="fab fa-gratipay"></i>
+                                            </a>
+                                        </div>  
+                                        <p class="quant">{{publicacao.likesAmount}}</p>
+                                    </li>
+                                    <li class="list-inline-item share">
+                                        <a>
+                                            <i class="fa fa-comment "></i>
+                                        </a>
+                                        <p class="quant">{{publicacao.commentsAmount}}</p>
+                                    </li>
+                                </div>
                                 <!-- <li class="list-inline-item share">
                                     <a href="" target="_blank">
                                         <i class="fa fa-share fa-lg "></i>
@@ -114,7 +125,12 @@
         <h5 class="c1">{{ 'PUBLICACAO.COMENTARIOS' | translate }}</h5>
     </div>
     <div *ngIf="!publicacao.comments[0]">
-        <p class="text-center primeiro">{{ 'PUBLICACAO.PRIMEIRO' | translate }}</p>
+        <div *ngIf="!this.isSameUser">
+            <p class="text-center primeiro">{{ 'PUBLICACAO.PRIMEIRO' | translate }}</p>
+        </div>
+        <div *ngIf="this.isSameUser">
+            <p class="text-center primeiro">{{ 'PUBLICACAO.PRIMEIRO-AUTOR' | translate }}</p>
+        </div>
     </div>
     <div *ngFor="let comentario of publicacao.comments">
         <div class="d-flex justify-content-center row">
@@ -122,7 +138,7 @@
                 <div class="d-flex flex-column">
                     <div class="bg-light p-3">
                         <div class="">
-                            <!-- <img class="rounded-circle-coment " src="https://i.imgur.com/RpzrMR2.jpg" width="40"> -->
+                            <img class="rounded-circle-coment " src="{{comentario.userPicture}}" width="40">
                             <span class="nome-user">{{comentario.name}}</span>
                             <span class="username-coment text-black-50 ">{{comentario.username}}</span>
                             <br><span class="ms-3">{{comentario.description}}</span>
@@ -138,19 +154,21 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container" *ngIf="!this.isSameUser">
     <div class="col-md-12 text-center mb-3" id="comentarios">
         <h5 class="c1">{{ 'PUBLICACAO.COMENTAR' | translate }}</h5>
     </div>
     <div class="d-flex justify-content-center row">
         <div class="col-md-8">
             <div class="d-flex flex-column comment-section">
-
                 <div class="bg-light p-3">
-                    <div class="d-flex flex-row align-items-start"><img class="rounded-circle-coment"
-                            src="https://i.imgur.com/RpzrMR2.jpg" width="40"><textarea
-                            class="form-control ml-1 shadow-none textarea"></textarea></div>
-                    <div class="mt-2 text-center"><button class="getstarted " type="button">{{ 'PUBLICACAO.POSTAR' | translate }}</button></div>
+                    <div class="d-flex flex-row align-items-start">
+                        <!-- <img class="rounded-circle-coment" src="https://i.imgur.com/RpzrMR2.jpg" width="40"> -->
+                        <textarea [(ngModel)]="this.description" class="form-control ml-1 shadow-none textarea"></textarea>
+                    </div>
+                    <div class="mt-2 text-center">
+                        <button (click)="insertComment()" class="getstarted" type="button">{{ 'PUBLICACAO.POSTAR' | translate }}</button>
+                    </div>
                 </div>
             </div>
         </div>
