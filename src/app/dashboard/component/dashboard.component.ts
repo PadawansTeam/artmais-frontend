@@ -75,9 +75,6 @@ export class DashboardComponent implements OnInit {
   };
 
   
-  
-
-
   constructor(
     private dashService: DashboardService,
     private router: Router
@@ -101,28 +98,26 @@ export class DashboardComponent implements OnInit {
       (response: Dashboard) => {
         this.userData = response;
         
-        this.commentsDate = this.userData.commentsPrediction.map((commentsprediction: any) => commentsprediction.date)
-        this.commentsSum = this.userData.commentsGrowth.map((comments: any) => comments.sum)
+        if (this.userData.commentsPrediction){
+          this.commentsDate = this.userData.commentsPrediction.map((commentsprediction: any) => commentsprediction.date)
+          this.commentsSum = this.userData.commentsGrowth.map((comments: any) => comments.sum)  
+          this.commentsPredictionSum = this.userData.commentsPrediction.map((commentsprediction: any) => commentsprediction.prediction)
+          this.commentsGrowthGraph(this.commentsDate, this.commentsSum, this.commentsPredictionSum);
+        }
         
-        this.likesDate = this.userData.likesPrediction.map((likesprediction: any) => likesprediction.date)
-        this.likesSum = this.userData.likesGrowth.map((likes: any) => likes.sum)
-
-        this.visitsDate = this.userData.visitsPrediction.map((visitsprediction: any) => visitsprediction.date)
-        this.visitsSum = this.userData.visitsGrowth.map((visits: any) => visits.sum)
-
+        if (this.userData.likesPrediction){
+          this.likesDate = this.userData.likesPrediction.map((likesprediction: any) => likesprediction.date)
+          this.likesSum = this.userData.likesGrowth.map((likes: any) => likes.sum)
+          this.likesPredictionSum = this.userData.likesPrediction.map((likesprediction: any) => likesprediction.prediction)
+          this.likesGrowthGraph(this.likesDate, this.likesSum, this.likesPredictionSum);
+        }
         
-        this.commentsPredictionSum = this.userData.commentsPrediction.map((commentsprediction: any) => commentsprediction.prediction)
-
-        this.likesPredictionSum = this.userData.likesPrediction.map((likesprediction: any) => likesprediction.prediction)
-
-        this.visitsPredictionSum = this.userData.visitsPrediction.map((visitsprediction: any) => visitsprediction.prediction)
-
-      
-        this.commentsGrowthGraph(this.commentsDate, this.commentsSum, this.commentsPredictionSum);
-        this.likesGrowthGraph(this.likesDate, this.likesSum, this.likesPredictionSum);
-        this.visitsGrowthGraph(this.visitsDate, this.visitsSum, this.visitsPredictionSum);
-      
-        
+        if (this.userData.visitsPrediction){
+          this.visitsDate = this.userData.visitsPrediction.map((visitsprediction: any) => visitsprediction.date)
+          this.visitsSum = this.userData.visitsGrowth.map((visits: any) => visits.sum)
+          this.visitsPredictionSum = this.userData.visitsPrediction.map((visitsprediction: any) => visitsprediction.prediction)
+          this.visitsGrowthGraph(this.visitsDate, this.visitsSum, this.visitsPredictionSum);
+              
       },
       (err) => {
         throw err;
