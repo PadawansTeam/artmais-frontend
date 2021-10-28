@@ -22,11 +22,7 @@
               </div>
             </div>
           </div>
-          <div
-            class="col-lg-3 col-md-6 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
+          <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card card-stats">
               <div class="card-header card-header-success card-header-icon">
                 <div class="card-icon">
@@ -40,11 +36,7 @@
               </div>
             </div>
           </div>
-          <div
-            class="col-lg-3 col-md-6 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
+          <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card card-stats">
               <div class="card-header card-header-danger card-header-icon">
                 <div class="card-icon">
@@ -58,11 +50,7 @@
               </div>
             </div>
           </div>
-          <div
-            class="col-lg-3 col-md-6 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
+          <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="300">
             <div class="card card-stats">
               <div class="card-header card-header-info card-header-icon">
                 <div class="card-icon">
@@ -78,25 +66,57 @@
           </div>
           <div class="container text-center">
             <div class="row text-center">
-              <div class="col-md-4 background mx-2 my-2"
-              data-aos="fade-up"
-              data-aos-delay="100">
+              <div class="col-md-4 background text-center mx-2 my-2" data-aos="fade-up" data-aos-delay="100">
+                <ng-container *ngIf="userData.sumComments === 0">
+                  <p class="title-chart">{{ "DASHBOARD.CHART-COMENTARIOS" | translate }}</p>
+                  <div class="text-center teste">
+                    <div class="icon-sad">
+                      <i class="bx bx-sad bx-sm bx-tada-hover"></i>
+                  </div>
+                  </div>
+                  <p class="subtext-card mb-0">{{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}</p>
+                  <p class="subtext-card">{{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}</p> 
+                  <p class="text-footer-card">{{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}</p>
+                </ng-container>
+                <ng-container *ngIf="userData.sumComments !== 0">
                 <p class="title-chart">{{ "DASHBOARD.CHART-COMENTARIOS" | translate }}</p>
                 <canvas class="px-2" #commentsCanvas></canvas>
+                </ng-container>
               </div>
-              <div class="col-md-4 background mx-2 my-2"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              >
+              <div class="col-md-4 background mx-2 my-2" data-aos="fade-up" data-aos-delay="200">
+                <ng-container *ngIf="userData.sumLikes === 0">
+                  <p class="title-chart">{{ "DASHBOARD.CHART-CURTIDAS" | translate }}</p>
+                  <div class="text-center teste">
+                    <div class="icon-sad">
+                      <i class="bx bx-sad bx-sm bx-tada-hover"></i>
+                  </div>
+                  </div>
+                  <p class="subtext-card mb-0">{{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}</p>
+                  <p class="subtext-card">{{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}</p> 
+                  <p class="text-footer-card">{{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}</p>
+                </ng-container>
+                <ng-container *ngIf="userData.sumLikes !== 0">
                 <p class="title-chart">{{ "DASHBOARD.CHART-CURTIDAS" | translate }}</p>
                 <canvas class="px-2" #likesCanvas></canvas>
+                </ng-container>
               </div>
 
-              <div class="col-md-4 background mx-2 my-2"
-              data-aos="fade-up"
-              data-aos-delay="300">
+              <div class="col-md-4 background mx-2 my-2" data-aos="fade-up" data-aos-delay="300">
+                <ng-container *ngIf="userData.sumVisits === 0">
+                  <p class="title-chart">{{ "DASHBOARD.CHART-VISITAS" | translate }}</p>
+                  <div class="text-center teste">
+                    <div class="icon-sad">
+                      <i class="bx bx-sad bx-sm bx-tada-hover"></i>
+                  </div>
+                  </div>
+                  <p class="subtext-card mb-0">{{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}</p>
+                  <p class="subtext-card">{{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}</p> 
+                  <p class="text-footer-card">{{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}</p>
+                </ng-container>
+                <ng-container *ngIf="userData.sumVisits !== 0">
                 <p class="title-chart">{{ "DASHBOARD.CHART-VISITAS" | translate }}</p>
                 <canvas class="px-2" #visitsCanvas></canvas>
+              </ng-container>
               </div>
 
             </div>

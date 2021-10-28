@@ -245,7 +245,10 @@
         "MEDIA-IDADE":"Average Age",
         "CHART-COMENTARIOS":"Evolution Reviews",
         "CHART-CURTIDAS":"Evolution Likes",
-        "CHART-VISITAS":"Evolution Visits"
+        "CHART-VISITAS":"Evolution Visits",
+        "CARD-NULL-TEXT1":"That's too bad!",
+        "CARD-NULL-TEXT2":"You still don't have enough data to create the chart.",
+        "CARD-NULL-TEXT3":"Keep interacting on the platform!"
     }
 
 }

@@ -251,10 +251,9 @@
         "MEDIA-IDADE":"Média de Idade",
         "CHART-COMENTARIOS":"Evolução Comentários",
         "CHART-CURTIDAS":"Evolução Curtidas",
-        "CHART-VISITAS":" Evolução Visitas"
-    }
-
-
-    
-}
+        "CHART-VISITAS":" Evolução Visitas",
+        "CARD-NULL-TEXT1":"Poxa, que pena...",
+        "CARD-NULL-TEXT2":"Você ainda não possui dados suficiente para a criação do gráfico.",
+        "CARD-NULL-TEXT3":"Continue interagindo na plataforma!"
+}}
 

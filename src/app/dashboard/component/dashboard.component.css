@@ -848,3 +848,33 @@ padding: 0.9375rem 1.875rem;
     font-weight: 400;
     font-size: 1.5rem;
   }
+
+  .icon-sad{
+
+      width: 35px;
+      height: 35px;
+      transition: all 0.3s;
+      color: white;
+      border-radius: 50%;
+      background-color: #701ec6;
+      text-align: center;
+      padding-top: 5px;
+  }
+
+.subtext-card{
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.text-footer-card{
+  font-weight: 350;
+  font-size: 0.9rem;
+}
+
+.teste{
+  text-align: center !important;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  display:flex;
+}
