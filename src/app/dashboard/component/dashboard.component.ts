@@ -117,7 +117,8 @@ export class DashboardComponent implements OnInit {
           this.visitsSum = this.userData.visitsGrowth.map((visits: any) => visits.sum)
           this.visitsPredictionSum = this.userData.visitsPrediction.map((visitsprediction: any) => visitsprediction.prediction)
           this.visitsGrowthGraph(this.visitsDate, this.visitsSum, this.visitsPredictionSum);
-              
+        }
+
       },
       (err) => {
         throw err;
