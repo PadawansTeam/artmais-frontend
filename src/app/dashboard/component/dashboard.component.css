@@ -316,7 +316,7 @@ padding: 0.9375rem 1.875rem;
 }
 
 .card .author a {
-  color: #3C4858;
+  color: #555555;
   text-decoration: none;
 }
 
@@ -415,7 +415,7 @@ padding: 0.9375rem 1.875rem;
 .card .card-header.card-header-icon .card-title,
 .card .card-header.card-header-text .card-title {
   margin-top: 15px;
-  color: #3C4858;
+  color: #555555;
 }
 
 .card .card-header.card-header-icon h4,
@@ -835,4 +835,16 @@ padding: 0.9375rem 1.875rem;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  }
+
+  .background{
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 27%);
+    padding: 5px;
+    border-radius: 0.25rem;
+    width: 31.5% !important;
+  }
+
+  .title-chart{
+    font-weight: 400;
+    font-size: 1.5rem;
   }

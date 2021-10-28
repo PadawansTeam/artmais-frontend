@@ -237,6 +237,15 @@
     "USERCOMUM": {
         "SUBTITULO-RECOMENDACAO":"Discover new artists!",
         "SUBTITULO01-RECOMENDACAO":"These profiles were chosen according to the artistic branches of your interest."
+    },
+    "DASHBOARD": {
+        "TOTAL-CURTIDAS": "Total Likes",
+        "TOTAL-COMENTARIOS": "Total Comments",
+        "TOTAL-VISITAS": "Total Visits",
+        "MEDIA-IDADE":"Average Age",
+        "CHART-COMENTARIOS":"Evolution Reviews",
+        "CHART-CURTIDAS":"Evolution Likes",
+        "CHART-VISITAS":"Evolution Visits"
     }
 
 }

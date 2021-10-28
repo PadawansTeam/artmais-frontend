@@ -14,7 +14,7 @@
                 <div class="card-icon">
                   <i class="bx bxs-like bx-sm bx-tada-hover"></i>
                 </div>
-                <p class="card-category">Total de Curtidas</p>
+                <p class="card-category">{{ "DASHBOARD.TOTAL-CURTIDAS" | translate }}</p>
                 <h3 class="card-title">{{ userData.sumLikes }}</h3>
               </div>
               <div class="card-footer">
@@ -32,7 +32,7 @@
                 <div class="card-icon">
                   <i class="bx bxs-chat bx-sm bx-tada-hover"></i>
                 </div>
-                <p class="card-category">Total de Comentários</p>
+                <p class="card-category">{{ "DASHBOARD.TOTAL-COMENTARIOS" | translate }}</p>
                 <h3 class="card-title">{{ userData.sumComments }}</h3>
               </div>
               <div class="card-footer">
@@ -50,7 +50,7 @@
                 <div class="card-icon">
                   <i class="bx bx-search bx-sm bx-tada-hover"></i>
                 </div>
-                <p class="card-category">Total de Visitas</p>
+                <p class="card-category">{{ "DASHBOARD.TOTAL-VISITAS" | translate }}</p>
                 <h3 class="card-title">{{ userData.sumVisits }}</h3>
               </div>
               <div class="card-footer">
@@ -68,7 +68,7 @@
                 <div class="card-icon">
                   <i class="bx bxs-group bx-sm bx-tada-hover"></i>
                 </div>
-                <p class="card-category">Média de Idade</p>
+                <p class="card-category">{{ "DASHBOARD.MEDIA-IDADE" | translate }}</p>
                 <h3 class="card-title">{{ userData.averageUsersAge }}</h3>
               </div>
               <div class="card-footer">
@@ -76,23 +76,27 @@
               </div>
             </div>
           </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <h3>Evolução Comentários</h3>
-                <canvas #commentsCanvas></canvas>
-                <hr color="red" />
+          <div class="container text-center">
+            <div class="row text-center">
+              <div class="col-md-4 background mx-2 my-2"
+              data-aos="fade-up"
+              data-aos-delay="100">
+                <p class="title-chart">{{ "DASHBOARD.CHART-COMENTARIOS" | translate }}</p>
+                <canvas class="px-2" #commentsCanvas></canvas>
               </div>
-              <div class="col-md-4">
-                <h3>Evolução Curtidas</h3>
-                <canvas #likesCanvas></canvas>
-                <hr color="red" />
+              <div class="col-md-4 background mx-2 my-2"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              >
+                <p class="title-chart">{{ "DASHBOARD.CHART-CURTIDAS" | translate }}</p>
+                <canvas class="px-2" #likesCanvas></canvas>
               </div>
 
-              <div class="col-md-4">
-                <h3>Evolução Visitas</h3>
-                <canvas #visitsCanvas></canvas>
-                <hr color="red" />
+              <div class="col-md-4 background mx-2 my-2"
+              data-aos="fade-up"
+              data-aos-delay="300">
+                <p class="title-chart">{{ "DASHBOARD.CHART-VISITAS" | translate }}</p>
+                <canvas class="px-2" #visitsCanvas></canvas>
               </div>
 
             </div>
