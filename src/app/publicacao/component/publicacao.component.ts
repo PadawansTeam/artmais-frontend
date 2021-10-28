@@ -70,7 +70,6 @@ export class PublicacaoComponent implements OnInit {
         this.idPublicacao
       ).subscribe(
         (response) => {
-          this.publicacao.isLiked = true;
           this.getPublication();
         },
         (err) => {
@@ -82,7 +81,6 @@ export class PublicacaoComponent implements OnInit {
         this.idPublicacao
       ).subscribe(
         (response) => {
-          this.publicacao.isLiked = false;
           this.getPublication();
         },
         (err) => {
