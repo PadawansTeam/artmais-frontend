@@ -1,4 +1,9 @@
+<div *ngIf="roleUser">
+  <app-headerusercomum></app-headerusercomum>
+</div>
+<div *ngIf="!roleUser">
 <app-headerlog></app-headerlog>
+</div>
 <section clas=welcome>
   <div class="section-title" data-aos="fade-up">
     <div class="container">
@@ -26,15 +31,25 @@
               <img [src]="usuario.backgroundPicture" alt="profile-cover" class="img-responsive cover">
             </div>
             <div class="card-info">
+              <div class="star">
+                <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
+                <p>PREMIUM</p>
+              </div>
               <img [src]="usuario.userPicture" alt="user" class="profile-photo-lg">
               <div class="friend-info">
+                <div class="name fw-bolder">
+                  <a>
+                    <h5>Teste de nome</h5>
+                  </a>
+                </div>
+                <div class="profile-link fw-light">
+                  <h5><a class="profile-link">{{usuario.username}}</a></h5>
+                </div>
                 <a class="pull-right mt-5 text-cat">{{usuario.category}}</a><br>
                 <div class="mt-2">
                   <a class="pull-right text-sub">{{usuario.subcategory}}</a>
                 </div>
-                <div class="mt-2">
-                  <h5><a class="profile-link">{{usuario.username}}</a></h5>
-                </div>
+
               </div>
             </div>
           </div>

@@ -7,9 +7,7 @@ import { SelectModule } from '../select/select.module';
 import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
-import { DashboardComponent } from './component/dashboard.component';
-import { DashboardService } from './service/dashboard.service';
-import { ChartsModule } from 'ng2-charts';
+import { AssinanteComponent } from './component/assinante.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -17,12 +15,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 
 @NgModule({
-  declarations: [
-    DashboardComponent
-  ],
+  declarations: [AssinanteComponent],
   imports: [
     BrowserModule,
-    ChartsModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
@@ -31,12 +26,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
   }),
     SelectModule,
-    HeaderlogModule,
-    FooterModule
+    HeaderModule,
+    FooterModule,  
+    HeaderlogModule,    
   ],
   providers: [
-    TranslateService, DashboardService
+    TranslateService
   ],
   bootstrap: []
 })
-export class DashboardModule { }
+
+export class AssinanteModule { }

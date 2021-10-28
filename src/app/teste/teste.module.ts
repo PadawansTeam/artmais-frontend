@@ -6,7 +6,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
 import { TesteComponent } from './component/teste.component';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
-
+import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
+import { FooterModule } from '../footer/footer.module';
+import { RecommendationService } from './service/recommendation.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -16,9 +18,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [
     TesteComponent,
   ],
-  exports: [
-    TesteComponent,
-  ],
+
   imports: [
     BrowserModule,
     TranslateModule.forRoot({
@@ -29,11 +29,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
   }),
     SelectModule,
-    HeaderlogModule
+    HeaderUserComumModule,
+    FooterModule
   ],
   providers: [
-    TranslateService
-  ],
+    TranslateService, RecommendationService],
   bootstrap: []
 })
 export class TesteModule { }
