@@ -242,6 +242,16 @@
     "USERCOMUM": {
         "SUBTITULO-RECOMENDACAO":"Descubra novos artistas!",
         "SUBTITULO01-RECOMENDACAO":"Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse."
+    },
+        
+    "DASHBOARD": {
+        "TOTAL-CURTIDAS": "Total de Curtidas",
+        "TOTAL-COMENTARIOS": "Total de Comentários",
+        "TOTAL-VISITAS": "Total de Visitas",
+        "MEDIA-IDADE":"Média de Idade",
+        "CHART-COMENTARIOS":"Evolução Comentários",
+        "CHART-CURTIDAS":"Evolução Curtidas",
+        "CHART-VISITAS":" Evolução Visitas"
     }
 
 
