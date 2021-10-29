@@ -373,3 +373,6 @@ input[type='file']::-webkit-file-upload-button:hover {
 	color: #9558d5;
 	font-weight: bold;
 }
+.video-size{
+width: 100%;
+}
