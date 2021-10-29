@@ -1,15 +1,12 @@
 //Install express server
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
 var forceSsl = require('force-ssl-heroku');
 const csp = require('content-security-policy');
 const sts = require('strict-transport-security');
 const referrerPolicy = require('referrer-policy');
 const permissionsPolicy = require('permissions-policy');
-const mongoose = require('mongoose');
 const helmet = require('helmet');
-const axios = require('axios')
 
 const app = express();
 
@@ -59,30 +56,15 @@ app.use(permissionsPolicy({
   }
 }));
 
-app.use(express.static(__dirname + '/dist/artmais-frontend"'));
-app.use(express.static(path.join(__dirname + 'node_modules')));
+app.use(express.static("./dist/artmais-frontend"));
 
 app.use(bodyParser.json());
 
 app.use(forceSsl);
 
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  poolSize: 100
-}).then(() => {
-  console.log("Conectado com o mongo")
-}).catch((err) => {
-  console.log("Erro ao se conectar: " + err)
-})
-
-require('./schema/chat')
-const Chat = mongoose.model('chats');
-
-app.get('*', (req, res, next) => {
-  res.sendFile(path.join(__dirname, 'dist/artmais-frontend/index.html'));
-});
+app.get("/*", (req, res) =>
+  res.sendFile("index.html", { root: "dist/artmais-frontend/" })
+);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
