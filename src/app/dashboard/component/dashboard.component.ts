@@ -164,7 +164,6 @@ export class DashboardComponent implements OnInit {
         ]
       },
       options: {
-        responsive: true,
         scales: {
           yAxes: [{
               ticks: {
@@ -183,7 +182,7 @@ export class DashboardComponent implements OnInit {
     this.predictSumLikesRefined[2] = likesSum[likesSum.length-1]
 
     this.likesChart = new Chart(this.likesCanvas.nativeElement, {
-      type: 'bar',
+      type: 'line',
       data: {
         labels: likesDate,
         datasets: [
@@ -210,7 +209,7 @@ export class DashboardComponent implements OnInit {
         ]
       },
       options: {
-        responsive: true,
+
         
       }
     });
@@ -251,7 +250,6 @@ export class DashboardComponent implements OnInit {
         ]
       },
       options: {
-        responsive: true,
         scales: {
           yAxes: [{
               ticks: {

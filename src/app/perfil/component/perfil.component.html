@@ -51,7 +51,7 @@
             </div>
             <div class="bg-light pt-4 pb-4 mb-3">
                 <div class="row mx-auto">
-                    <div class="bg-light col-md-3 d-block text-center ">
+                    <div class="bg-light col-md-4 d-block text-center ">
                         <i class="fa fa-phone icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
                         <div class="col-md-12 fw-bold mb-3">{{ 'PERFIL.TELEFONES' | translate }}</div>
                         <div class="bg-light col-md-12 d-block text-center text1">
@@ -60,7 +60,7 @@
                             <div class="col-md-12 text-muted">{{profile.thirdPhone}}</div>
                         </div>
                     </div>
-                    <div class="bg-light col-md-3 d-block text-center ">
+                    <div class="bg-light col-md-4 d-block text-center ">
                         <i class="fa fa-map-marker icon-color mr-1 mb-2 mt-3 " aria-hidden="true"></i>
                         <div class="col-md-12 fw-bold mb-3 ">
                             {{ 'PERFIL.ENDERECO' | translate }}
@@ -82,7 +82,7 @@
                         </div>
 
                     </div>
-                    <div class="bg-light col-md-3 d-block text-center">
+                    <!-- <div class="bg-light col-md-3 d-block text-center">
                         <i class="fa fa-calendar icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
                         <div class="col-md-12 fw-bold mb-3 ">{{ 'PERFIL.CALENDARIO' | translate }}</div>
                         <div class="bg-light col-md-12 d-block text-center">
@@ -91,8 +91,8 @@
                                 href="#ModalCalendar" data-bs-toggle="modal">{{ 'PERFIL.CALENDARIO-BUTTON' | translate
                                 }}</button>
                         </div>
-                    </div>
-                    <div class="bg-light col-md-3 d-block text-center">
+                    </div> -->
+                    <div class="bg-light col-md-4 d-block text-center">
                         <i class="fa fa-share icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
                         <div class="col-md-12 fw-bold mb-3 ">{{ 'PERFIL.COMPARTILHAR' | translate }}</div>
                         <div class="bg-light col-md-12 d-block text-center">
@@ -138,20 +138,32 @@
                 <section id="portfolio">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#image" type="button" role="tab" aria-controls="image" aria-selected="true">{{ 'PERFIL.ABA-IMAGEM' | translate }}</button>
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#image"
+                                type="button" role="tab" aria-controls="image" aria-selected="true">
+                                <i class="bx bx-image bx-sm bx-tada-hover"></i>
+                                {{'PERFIL.ABA-IMAGEM' | translate }}</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">{{ 'PERFIL.ABA-VIDEO' | translate }}</button>
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#video"
+                                type="button" role="tab" aria-controls="video" aria-selected="false">
+                                <i class="bx bx-video bx-sm bx-tada-hover"></i>
+                                {{'PERFIL.ABA-VIDEO' | translate }}</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#audio" type="button" role="tab" aria-controls="audio" aria-selected="false">{{ 'PERFIL.ABA-AUDIO' | translate }}</button>
+
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#audio"
+                                type="button" role="tab" aria-controls="audio" aria-selected="false">
+                                    <i class="bx bx-music bx-sm bx-tada-hover"></i>
+                                {{'PERFIL.ABA-AUDIO' | translate }}</button>
+
                         </li>
-                      </ul>
-                      <div class="tab-content" id="myTabContent">
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="image" role="tabpanel" aria-labelledby="home-tab">
                             <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
                                 <div *ngIf="userPortfolioContent.image.length == 0" style="color: #6c757d!important;">
-                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{ 'PERFIL.ABA-ERRO' | translate }}</p>
+                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
+                                        'PERFIL.ABA-ERRO' | translate }}</p>
                                 </div>
                                 <div *ngFor="let userPortfolioImage of userPortfolioContent.image"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
@@ -165,14 +177,15 @@
                         <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
                                 <div *ngIf="userPortfolioContent.video.length == 0" style="color: #6c757d!important;">
-                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{ 'PERFIL.ABA-ERRO' | translate }}</p>
+                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
+                                        'PERFIL.ABA-ERRO' | translate }}</p>
                                 </div>
                                 <div *ngFor="let userPortfolioVideo of userPortfolioContent.video"
-                                    class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
+                                    class="col-md-4  mb-3 pr-lg-2 portifolio-item ">
                                     <a class="portfolio-link" data-bs-toggle="modal">
                                         <div class="portfolio-hover"></div>
-                                        <video controls Preload played width="375" >
-                                            <source [src]="userPortfolioVideo.s3UrlMedia"  type="video/mp4">
+                                        <video controls Preload played class="video-size">
+                                            <source [src]="userPortfolioVideo.s3UrlMedia" type="video/mp4">
                                         </video>
                                     </a>
                                 </div>
@@ -180,21 +193,22 @@
                         </div>
                         <div class="tab-pane fade" id="audio" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
-                                <div *ngIf="userPortfolioContent.audio.length == 0">
-                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{ 'PERFIL.ABA-ERRO' | translate }}</p>
+                                <div class="col-md-6" *ngIf="userPortfolioContent.audio.length == 0">
+                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
+                                        'PERFIL.ABA-ERRO' | translate }}</p>
                                 </div>
                                 <div *ngFor="let userPortfolioAudio of userPortfolioContent.audio"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
                                     <a class="portfolio-link" data-bs-toggle="modal">
                                         <div class="portfolio-hover"></div>
                                         <audio controls preload width="450">
-                                            <source [src]="userPortfolioAudio.s3UrlMedia" alt="" >
+                                            <source [src]="userPortfolioAudio.s3UrlMedia" alt="">
                                         </audio>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                      </div>
+                    </div>
                 </section>
             </div>
         </div>
@@ -231,7 +245,8 @@
                                             <br>
                                             <div class="col-md-6"></div>
                                             <input (change)="selectPortfolioFile($event)" type="file"
-                                                accept=".jpg, .jpeg, .png, .mp3, .mov, .mp4, .mpeg-1, .mpeg-2, .mpeg4, ,mpg, ,avi, .wmv, .mpegps, .flv, .aac, .wma, .wav" class="form-control" id="photo" required>
+                                                accept=".jpg, .jpeg, .png, .mp3, .mov, .mp4, .mpeg-1, .mpeg-2, .mpeg4, ,mpg, ,avi, .wmv, .mpegps, .flv, .aac, .wma, .wav"
+                                                class="form-control" id="photo" required>
                                             <div class="descr fw-bold">
                                                 {{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
                                             <textarea [(ngModel)]="this.portfolioContent.description"
