@@ -19,6 +19,11 @@ app.use(
     policy: ["no-referrer", "strict-origin-when-cross-origin"],
   })
 );
+app.use(
+  helmet.expectCt({
+    maxAge: 86400,
+  })
+);
 //Serve only the static files form the dist directory
 // Serve only the static files form the dist directory
 app.use(express.static("./dist/artmais-frontend"));
