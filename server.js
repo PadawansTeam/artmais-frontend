@@ -11,10 +11,10 @@ app.use(
     useDefaults: true,
     directives: {
       defaultSrc: ["'self'","https:","data:","artmais-frontend.herokuapp.com","https://artmais-frontend.herokuapp.com/"],
-      scriptSrc: ["https://static.ads-twitter.com","https://www.google-analytics.com","'sha256-q2sY7jlDS4SrxBg6oq/NBYk9XVSwDsterXWpH99SAn0='"],
-      imgSrc: ["'self'","https://s3.amazonaws.com","https://twitter.com https://pbs.twimg.com"],
-      fontSrc: ["'self","https://fonts.gstatic.com"],
-      styleSrc: ["'self'","https://fonts.googleapis.com"],
+      scriptSrc: ["'self'","*","https://static.ads-twitter.com","https://www.google-analytics.com","'sha256-q2sY7jlDS4SrxBg6oq/NBYk9XVSwDsterXWpH99SAn0='"],
+      imgSrc: ["'self'","*","data:","https://s3.amazonaws.com","https://twitter.com https://pbs.twimg.com"],
+      fontSrc: ["'self","*","https://fonts.gstatic.com"],
+      styleSrc: ["'self'","*","https://fonts.googleapis.com"],
       frameAncestors: ["'none'"],
     },
   })
