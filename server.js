@@ -7,13 +7,11 @@ const helmet = require('helmet');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(
-  helmet.contentSecurityPolicy({
-    useDefaults: false,
-    directives: {
-      defaultSrc: ["'none'"]       
-    },
+  helmet({
+    contentSecurityPolicy: 'none'    
   })
 );
+
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
 app.use(helmet.xssFilter());
