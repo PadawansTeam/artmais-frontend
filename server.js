@@ -7,15 +7,8 @@ const helmet = require('helmet');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(
-  helmet.contentSecurityPolicy({
-    useDefaults: true,
-    directives: {
-      defaultSrc: ['self'],
-      fontSrc: ['*'],
-      imgSrc: ['*','data:'],
-      scriptSrc: ['*'],   
-      styleSrc: ['*'],
-    },
+  helmet({
+    contentSecurityPolicy: false,
   })
 );
 app.use(helmet.noSniff());
