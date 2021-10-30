@@ -7,9 +7,9 @@ const helmet = require('helmet');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(
-helmet({
-    contentSecurityPolicy: scotthelme.co.uk,    
-})
+  helmet.contentSecurityPolicy({
+    defaultSrc: ["https:","data:","'unsafe-inline'","'unsafe-eval'"],
+  })
 );
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
