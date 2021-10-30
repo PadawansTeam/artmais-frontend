@@ -4,7 +4,6 @@ const path = require("path");
 const app = express();
 //Header secure
 const helmet = require('helmet');
-const permissionsPolicy = require('permissions-policy');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(
@@ -27,12 +26,6 @@ app.use(
 );
 helmet.dnsPrefetchControl();
 helmet.permittedCrossDomainPolicies();
-app.use(permissionsPolicy({
-    features: {
-      fullscreen: ['self'], // fullscreen=()      
-    },
-  })
-);
 //Serve only the static files form the dist directory
 // Serve only the static files form the dist directory
 app.use(express.static("./dist/artmais-frontend"));
