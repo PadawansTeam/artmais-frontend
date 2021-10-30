@@ -3,7 +3,10 @@ const express = require("express");
 const path = require("path");
 const app = express();
 //Header secure
+const sts = require('strict-transport-security');
 const helmet = require('helmet');
+const globalSTS = sts.getSTS({ 'max-age': 31536000, 'includeSubDomains': true });
+app.use(globalSTS);
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
 //Serve only the static files form the dist directory
