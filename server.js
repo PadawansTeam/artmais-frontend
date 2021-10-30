@@ -14,6 +14,11 @@ app.use(
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
 app.use(helmet.xssFilter());
+app.use(
+  helmet.referrerPolicy({
+    policy: ["no-referrer", "strict-origin-when-cross-origin"],
+  })
+);
 //Serve only the static files form the dist directory
 // Serve only the static files form the dist directory
 app.use(express.static("./dist/artmais-frontend"));
