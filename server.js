@@ -3,7 +3,9 @@ const express = require("express");
 const path = require("path");
 const app = express();
 //Header secure
+const referrerPolicy = require('referrer-policy');
 const helmet = require('helmet');
+app.use(referrerPolicy({ policy: 'same-origin' }));
 app.use(helmet.noSniff());
 //Serve only the static files form the dist directory
 // Serve only the static files form the dist directory
