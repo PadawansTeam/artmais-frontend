@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 //Header secure
 const helmet = require('helmet');
-const permissionsPolicy = require("permissions-policy");
+const permissionsPolicy = require('permissions-policy');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(
@@ -27,13 +27,9 @@ app.use(
 );
 helmet.dnsPrefetchControl();
 helmet.permittedCrossDomainPolicies();
-app.use(
-  permissionsPolicy({
+app.use(permissionsPolicy({
     features: {
-      fullscreen: ["self"], // fullscreen=()
-      vibrate: ["none"], // vibrate=(none)
-      payment: ["self", '"example.com"'], // payment=(self "example.com")
-      syncXhr: [], // syncXhr=()
+      fullscreen: ['self'], // fullscreen=()      
     },
   })
 );
