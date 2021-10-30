@@ -5,7 +5,7 @@ const app = express();
 //Header secure
 const helmet = require('helmet');
 app.use(helmet.hsts());
-//app.use(helmet.referrerPolicy());
+app.use(helmet.referrerPolicy());
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
 //Serve only the static files form the dist directory
