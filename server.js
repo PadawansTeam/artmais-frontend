@@ -5,11 +5,7 @@ const app = express();
 //Header secure
 const helmet = require('helmet');
 app.use(helmet.hsts());
-app.use(
-  helmet({
-    referrerPolicy: { policy: "same-origin" },
-  })
-);
+app.use(helmet.referrerPolicy());
 app.use(
   helmet({
     contentSecurityPolicy: false,
