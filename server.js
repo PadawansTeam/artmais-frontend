@@ -8,7 +8,7 @@ app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(
   helmet({
-    referrerPolicy: { policy: "strict-origin-when-cross-origin" },
+    referrerPolicy: { policy: "same-origin" },
   })
 );
 app.use(helmet.noSniff());
