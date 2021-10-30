@@ -6,11 +6,11 @@ const app = express();
 const helmet = require('helmet');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
-app.use(
-  helmet({
-    contentSecurityPolicy: false,
-  })
-);
+//app.use(
+//  helmet({
+//    contentSecurityPolicy: false,
+ // })
+//);
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
 app.use(helmet.xssFilter());
@@ -29,15 +29,10 @@ helmet.permittedCrossDomainPolicies();
 app.use(
   helmet.contentSecurityPolicy({
     defaultSrc: ["'self'"],
-    scriptSrc: scriptSources,
-    scriptSrcElem: scriptSources,
-    styleSrc: styleSources,
-    connectSrc: connectSources,
-    reportUri: '/report-violation',
+    scriptSrc: ["https://static.ads-twitter.com","https://www.google-analytics.com","'sha256-q2sY7jlDS4SrxBg6oq/NBYk9XVSwDsterXWpH99SAn0='"],
     reportOnly: false,
     })
 );
-
 //Serve only the static files form the dist directory
 // Serve only the static files form the dist directory
 app.use(express.static("./dist/artmais-frontend"));
