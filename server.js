@@ -26,6 +26,7 @@ app.use(
 );
 helmet.dnsPrefetchControl();
 helmet.permittedCrossDomainPolicies();
+app.use(helmet({ crossOriginEmbedderPolicy: true }));
 //Serve only the static files form the dist directory
 // Serve only the static files form the dist directory
 app.use(express.static("./dist/artmais-frontend"));
