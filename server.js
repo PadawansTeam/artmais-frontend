@@ -6,9 +6,16 @@ const app = express();
 const helmet = require('helmet');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
+app.use(helmet.contentSecurityPolicy());
 app.use(
   helmet.contentSecurityPolicy({
-    defaultSrc: ["'self'","https:","data:","'unsafe-inline'","'unsafe-eval'","artmais-frontend.herokuapp.com","https://artmais-frontend.herokuapp.com/"],
+    useDefaults: false,
+    directives: {
+      defaultSrc: ["'self'","https:","data:","artmais-frontend.herokuapp.com","https://artmais-frontend.herokuapp.com/"],
+      scriptSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      upgradeInsecureRequests: [],
+    },
   })
 );
 app.use(helmet.noSniff());
