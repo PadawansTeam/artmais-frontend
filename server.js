@@ -5,7 +5,7 @@ const app = express();
 //Header secure
 const referrerPolicy = require('referrer-policy');
 const helmet = require('helmet');
-app.use(referrerPolicy({ policy: 'no-referrer'}));
+app.use(referrerPolicy({ policy: 'same-origin'}));
 //app.use(referrerPolicy({ policy: 'strict-origin-when-cross-origin'}));
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
