@@ -8,7 +8,7 @@ app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(
   helmet.contentSecurityPolicy({
-    defaultSrc: ["https:","data:","'unsafe-inline'","'unsafe-eval'"],
+    defaultSrc: ["'self'","https:","data:","'unsafe-inline'","'unsafe-eval'","artmais-frontend.herokuapp.com","https://artmais-frontend.herokuapp.com/"],
   })
 );
 app.use(helmet.noSniff());
