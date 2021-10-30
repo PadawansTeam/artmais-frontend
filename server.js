@@ -10,11 +10,11 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
     directives: {
-      defaultSrc: ["'self'"],
-      fontSrc: ["*"],
-      imgSrc: ["*","data:"],
-      scriptSrc: ["*"],   
-      styleSrc: ["*"],
+      defaultSrc: ['self'],
+      fontSrc: ['*'],
+      imgSrc: ['*','data:'],
+      scriptSrc: ['*'],   
+      styleSrc: ['*'],
     },
   })
 );
