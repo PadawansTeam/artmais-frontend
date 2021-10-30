@@ -8,10 +8,9 @@ app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(
   helmet({
-    contentSecurityPolicy: 'none'    
+    contentSecurityPolicy: false,
   })
 );
-
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
 app.use(helmet.xssFilter());
