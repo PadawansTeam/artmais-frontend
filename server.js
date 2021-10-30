@@ -10,13 +10,7 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
     directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["https://static.ads-twitter.com", "https://www.google-analytics.com","'sha256-q2sY7jlDS4SrxBg6oq/NBYk9XVSwDsterXWpH99SAn0='"],
-      objectSrc: ["'none'"],
-      imgSrc:["'self'","https://s3.amazonaws.com","https://twitter.com https://pbs.twimg.com"],
-      fontSrc:["'self","https://fonts.gstatic.com"],
-      styleSrc:["'self","https://fonts.googleapis.com",""],
-      frameAncestors:['none']      
+      defaultSrc: ["'none'"]       
     },
   })
 );
