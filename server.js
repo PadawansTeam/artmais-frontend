@@ -3,10 +3,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 //Header secure
-const referrerPolicy = require('referrer-policy');
 const helmet = require('helmet');
 const globalSTS = sts.getSTS({ 'max-age': 63072000, 'includeSubDomains': true });
-app.use(referrerPolicy({ policy: 'same-origin' }));
 app.use(globalSTS);
 app.use(helmet.noSniff());
 //Serve only the static files form the dist directory
