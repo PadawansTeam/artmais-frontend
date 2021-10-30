@@ -24,6 +24,8 @@ app.use(
     maxAge: 86400,
   })
 );
+helmet.dnsPrefetchControl();
+helmet.permittedCrossDomainPolicies();
 //Serve only the static files form the dist directory
 // Serve only the static files form the dist directory
 app.use(express.static("./dist/artmais-frontend"));
