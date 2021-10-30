@@ -8,7 +8,7 @@ app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(
   helmet.contentSecurityPolicy({
-    useDefaults: false,
+    useDefaults: true,
     directives: {
       defaultSrc: ["'self'","https:","data:","artmais-frontend.herokuapp.com","https://artmais-frontend.herokuapp.com/"],      
     },
