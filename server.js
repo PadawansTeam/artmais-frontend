@@ -6,6 +6,11 @@ const app = express();
 const helmet = require('helmet');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
+app.use(
+  helmet({
+    referrerPolicy: { policy: "strict-origin-when-cross-origin" },
+  })
+);
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
 //Serve only the static files form the dist directory
