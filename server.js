@@ -20,6 +20,6 @@ app.listen(PORT, function () {});
 
 const referrerPolicy = require('referrer-policy');
 
-app.use(referrerPolicy({ policy: 'same-origin' }));
+app.use(referrerPolicy({ policy: 'sameorigin' }));
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
