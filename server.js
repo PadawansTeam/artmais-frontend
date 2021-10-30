@@ -4,8 +4,6 @@ const path = require("path");
 const app = express();
 //Header secure
 const helmet = require('helmet');
-const globalSTS = sts.getSTS({ 'max-age': 63072000, 'includeSubDomains': true });
-app.use(globalSTS);
 app.use(helmet.noSniff());
 //Serve only the static files form the dist directory
 // Serve only the static files form the dist directory
