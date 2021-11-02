@@ -347,3 +347,9 @@ ul.social-buttons {
 	font-size: 20px;
     color: #6c757d!important;
 }
+
+.image-audio{
+	max-width: 300px;
+    border-radius: 35px;
+    margin-bottom: -4rem;
+}

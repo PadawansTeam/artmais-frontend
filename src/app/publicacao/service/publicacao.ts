@@ -16,6 +16,7 @@ export class Publicacao {
       public s3UrlMedia: string,
       public description: string,
       public publicationDate: Date,
+      public mediaType: string,
       public comments: [
         {
           name?: string,

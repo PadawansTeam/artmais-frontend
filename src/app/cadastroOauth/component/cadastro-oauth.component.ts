@@ -63,7 +63,7 @@ export class CadastroOAuthComponent implements OnInit {
         '',
         Validators.compose([
           Validators.required,
-          Validators.pattern('^[a-zA-Z0-9.-_$@*!]{3,30}$'),
+          Validators.pattern('^[a-z0-9.-_$@*!]{3,30}$'),
         ])
       ),
     });

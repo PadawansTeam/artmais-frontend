@@ -4,10 +4,26 @@
         <div class="bg-white shadow  overflow-hidden">
             <div class="row">
                 <div class="col-lg-12 shadow back">
-                    <div class="img-responsive text-center">
-                        <img [src]="publicacao.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
+                    <div *ngIf="publicacao.mediaType == 'Imagem'">
+                        <div class="img-responsive text-center">
+                            <img [src]="publicacao.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
+                        </div>
                     </div>
-
+                    <div *ngIf="publicacao.mediaType == 'Video'">
+                        <div class="img-responsive text-center">
+                            <video controls Preload played width="375" controlsList="nodownload">
+                                <source [src]="publicacao.s3UrlMedia" >
+                            </video>
+                        </div>
+                    </div>
+                    <div *ngIf="publicacao.mediaType == 'Áudio'">
+                        <div class="img-responsive text-center">
+                            <img class="image-audio" [src]="'../../../assets/img/pages/notamusical.jpg'">
+                            <audio controls preload width="450" controlsList="nodownload">
+                                <source [src]="publicacao.s3UrlMedia" alt="">
+                            </audio>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="media-body  text-black">
