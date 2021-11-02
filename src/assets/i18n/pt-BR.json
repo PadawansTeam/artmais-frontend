@@ -236,7 +236,10 @@
     "PUBLICACAO": {
         "COMENTARIOS": "Comentários",
         "COMENTAR": "Comentar",
-        "POSTAR": "Enviar Comentário"
+        "POSTAR": "Enviar Comentário",
+        "DATA-POSTAGEM": "Postado em ",
+        "PRIMEIRO": "Seja o primeiro a comentar!",
+        "PRIMEIRO-AUTOR": "Ainda não há comentários!"
     },
 
     "USERCOMUM": {

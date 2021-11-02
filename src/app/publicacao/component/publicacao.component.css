@@ -65,7 +65,7 @@ ul.publi-buttons li.like a:hover {
 	display: block;
 }
 
-ul.publi-buttons li.like a:active {
+#active {
 	font-size: 40px;
 	line-height: 40px;
 	display: block;
@@ -166,13 +166,16 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 
 div.img-responsive {
 	display: block;
-	margin: 0 31.5rem;
+	margin: 0 20%;
 }
 
 @media (max-width: 767px) {
 	div.img-responsive {
 		display: block;
 		margin: 0 3.7rem;
+	}
+	.publi{
+		width: 100% !important;
 	}
 }
 
@@ -314,7 +317,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 }
 
 ul.social-buttons {
-	margin-top: 0;
+	margin-top: 1rem;
 	margin-bottom: 30px;
 }
 .pad-bot{
@@ -341,4 +344,15 @@ ul.social-buttons {
 
 .date{
 	font-size: small;
+}
+
+.primeiro{
+	font-size: 20px;
+    color: #6c757d!important;
+}
+
+.image-audio{
+	max-width: 300px;
+    border-radius: 35px;
+    margin-bottom: -4rem;
 }

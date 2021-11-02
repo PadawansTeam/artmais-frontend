@@ -32,9 +32,6 @@ export class ArtistaService {
   }
 
   getPortfolioArtista(id: number): Observable<any> {
-    return this.http.get(
-      this.artPlusURL + 'v1/Portfolio/' + id,
-      this.httpOptions
-    );
+    return this.http.get(this.artPlusURL + 'v1/Portfolio/' + id, this.httpOptions);
   }
 }

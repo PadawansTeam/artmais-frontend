@@ -33,10 +33,10 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'configuracao', component: ConfiguracaoComponent },
   { path: 'interesse', component: InteresseComponent },
-  { path: 'artista/:id', component: ArtistaComponent },
+  { path: 'artista/:id', component: ArtistaComponent},
+  { path: 'artista/:id/publicacao/:publicationId', component: PublicacaoComponent },
   { path: 'pesquisa/:search', component: UsuariosComponent },
   { path: 'privacidade', component: PrivacidadeComponent },
-  { path: 'publicacao', component: PublicacaoComponent },
   { path: 'assinante', component: AssinanteComponent },
   { path: 'teste', component: TesteComponent },
 ];

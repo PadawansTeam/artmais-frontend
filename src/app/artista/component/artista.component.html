@@ -26,23 +26,23 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <ul class="list-inline social-buttons">
-                                <li class="list-inline-item">
+                                <li class="list-inline-item" *ngIf="artist.facebook">
                                     <a href="{{artist.facebook}}" target="_blank">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item" *ngIf="artist.twitter">
                                     <a href="{{artist.twitter}}" target="_blank">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
 
-                                <li class="list-inline-item">
+                                <li class="list-inline-item" *ngIf="artist.instagram">
                                     <a href="{{artist.instagram}}" target="_blank">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item" *ngIf="artist.whatsappContact">
                                     <a href="{{artist.whatsappContact}}" target="_blank">
                                         <i class="fas fa-comment-alt"></i>
                                     </a>
@@ -152,7 +152,7 @@
                                 </div>
                                 <div *ngFor="let userPortfolioImage of artistPortfolioContent.image"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                    <a class="portfolio-link" data-bs-toggle="modal">
+                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioImage.userID,'publicacao', userPortfolioImage.publicationID]">
                                         <div class="portfolio-hover"></div>
                                         <img [src]="userPortfolioImage.s3UrlMedia" alt="" class="img-fluid rounded">
                                     </a>
@@ -166,7 +166,7 @@
                                 </div>
                                 <div *ngFor="let userPortfolioVideo of artistPortfolioContent.video"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                    <a class="portfolio-link" data-bs-toggle="modal">
+                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioVideo.userID,'publicacao', userPortfolioVideo.publicationID]">
                                         <div class="portfolio-hover"></div>
                                         <video controls Preload played width="375" controlsList="nodownload">
                                             <source [src]="userPortfolioVideo.s3UrlMedia" >
@@ -182,8 +182,9 @@
                                 </div>
                                 <div *ngFor="let userPortfolioAudio of artistPortfolioContent.audio"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                    <a class="portfolio-link" data-bs-toggle="modal">
+                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioAudio.userID,'publicacao', userPortfolioAudio.publicationID]">
                                         <div class="portfolio-hover"></div>
+                                        <img class="image-audio" [src]="'../../../assets/img/pages/notamusical.jpg'">
                                         <audio controls preload width="450" controlsList="nodownload">
                                             <source [src]="userPortfolioAudio.s3UrlMedia" alt="">
                                         </audio>
