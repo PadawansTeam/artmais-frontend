@@ -5,6 +5,7 @@ import { Chart, ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { isLabeledStatement } from 'typescript';
 import { Dashboard } from '../service/dashboard';
+import { type } from 'os';
 
 @Component({
   selector: 'app-dashboard',
@@ -140,25 +141,37 @@ export class DashboardComponent implements OnInit {
         labels: commentsDate,
         datasets: [
           {
-            label: 'Evolução de comentários',
+            label: 'Quantidade de comentários',
             fill: false,
             lineTension: 0.1,
-            backgroundColor: 'rgba(75,192,192,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
+            backgroundColor: '#701ec6',
+            borderColor: '#701ec6',
             borderCapStyle: 'butt',
             data: commentsSum
           },
           {
-            label: 'Predição',
+            label: 'Previsão',
             fill: false,
             lineTension: 0.1,
-            backgroundColor: 'rgba(22,140,142,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
+            backgroundColor: '#b882f2',
+            hoverBackgroundColor: '#701ec6',
+            borderColor: '#b882f2',
+            hoverBorderColor:'#701ec6',
             borderCapStyle: 'butt',
-            data: this.predictSumRefined
+            data: this.predictSumRefined,
+            borderDash: [5, 5],
           }
         ]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              }
+          }]
       }
+    }
     });
   }
 
@@ -174,24 +187,30 @@ export class DashboardComponent implements OnInit {
         labels: likesDate,
         datasets: [
           {
-            label: 'Evolução de curtidas',
+            label: 'Quantidade de curtidas',
             fill: false,
             lineTension: 0.1,
-            backgroundColor: 'rgba(75,192,192,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
+            backgroundColor: '#701ec6',
+            borderColor: '#701ec6',
             borderCapStyle: 'butt',
             data: likesSum
           },
           {
-            label: 'Predição',
+            label: 'Previsão',
             fill: false,
             lineTension: 0.1,
-            backgroundColor: 'rgba(22,140,142,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
+            backgroundColor: '#b882f2',
+            hoverBackgroundColor: '#701ec6',
+            hoverBorderColor:'#701ec6',
+            borderColor: '#b882f2',
             borderCapStyle: 'butt',
             data: this.predictSumLikesRefined
           }
         ]
+      },
+      options: {
+
+        
       }
     });
   }
@@ -208,25 +227,37 @@ export class DashboardComponent implements OnInit {
         labels: visitsDate,
         datasets: [
           {
-            label: 'Evolução de visitas',
-            fill: false,
+            label: 'Quantidade de visitas',
+            fill: true,
             lineTension: 0.1,
-            backgroundColor: 'rgba(75,192,192,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
+            backgroundColor: '#701ec6',
+            borderColor: '#701ec6',
             borderCapStyle: 'butt',
             data: visitsSum
           },
           {
-            label: 'Predição',
-            fill: false,
+            
+            label: 'Previsão',
+            fill: true,
             lineTension: 0.1,
-            backgroundColor: 'rgba(22,140,142,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
-            borderCapStyle: 'butt',
-            data: this.predictSumVisitsRefined
+            backgroundColor: 'rgba(184,130,242,0.5)',
+            hoverBackgroundColor: '#701ec6',
+            hoverBorderColor:'#701ec6',
+            borderColor: 'rgba(184,130,242,0.9)',
+            borderCapStyle: 'round',
+            data: this.predictSumVisitsRefined,
           }
         ]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              }
+          }]
       }
+    }
     });
   }
 }

@@ -12,6 +12,8 @@ import { ArtistaService } from './service/artista.service';
 import { PerfilService } from '../perfil/service/perfil.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import { RecommendationService } from '../homepage/service/recommendation.service';
+import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -37,11 +39,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HeaderModule,
     FooterModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    HeaderUserComumModule
   ],
   providers: [
     TranslateService,
-    ArtistaService
+    ArtistaService,
+    RecommendationService
   ],
   bootstrap: []
 })

@@ -1,4 +1,7 @@
-<div *ngIf="this.loggedUser == true">
+<div *ngIf="roleUser && this.loggedUser == true">
+    <app-headerusercomum></app-headerusercomum> 
+</div>
+<div *ngIf="!roleUser && this.loggedUser == true">
     <app-headerlog></app-headerlog>
 </div>
 <div *ngIf="this.loggedUser == false">

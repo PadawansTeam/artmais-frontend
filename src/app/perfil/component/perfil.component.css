@@ -379,3 +379,7 @@ input[type='file']::-webkit-file-upload-button:hover {
     border-radius: 35px;
     margin-bottom: -4rem;
 }
+
+.video-size{
+	width: 100%;
+}
