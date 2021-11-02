@@ -4,25 +4,8 @@
         <div class="bg-white shadow  overflow-hidden">
             <div class="row">
                 <div class="col-lg-12 shadow back">
-                    <div *ngIf="publicacao.mediaType == 'Imagem'">
-                        <div class="img-responsive text-center">
-                            <img [src]="publicacao.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
-                        </div>
-                    </div>
-                    <div *ngIf="publicacao.mediaType == 'Video'">
-                        <div class="img-responsive text-center">
-                            <video controls Preload played width="375" controlsList="nodownload">
-                                <source [src]="publicacao.s3UrlMedia" >
-                            </video>
-                        </div>
-                    </div>
-                    <div *ngIf="publicacao.mediaType == 'Áudio'">
-                        <div class="img-responsive text-center">
-                            <img class="image-audio" [src]="'../../../assets/img/pages/notamusical.jpg'">
-                            <audio controls preload width="450" controlsList="nodownload">
-                                <source [src]="publicacao.s3UrlMedia" alt="">
-                            </audio>
-                        </div>
+                    <div class="img-responsive text-center">
+                        <img [src]="publicacao.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
                     </div>
                 </div>
             </div>
@@ -70,7 +53,30 @@
         </div>
         <div class="row">
             <div class="col-md-12 mt-0">
-                <img class="d-block mx-auto publi" [src]="publicacao.s3UrlMedia" alt="">
+                <div *ngIf="publicacao.mediaType == 'Imagem'">
+                    <div class="img-responsive text-center">
+                        <img class="d-block mx-auto publi" [src]="publicacao.s3UrlMedia" alt="">
+                    </div>
+                </div>
+                <div *ngIf="publicacao.mediaType == 'Video'">
+                    <div class="img-responsive text-center">
+                        <video class="d-block mx-auto publi" controls Preload played width="375" controlsList="nodownload">
+                            <source [src]="publicacao.s3UrlMedia" >
+                        </video>
+                    </div>
+                </div>
+                <div *ngIf="publicacao.mediaType == 'Áudio'">
+                    <div class="img-responsive text-center">
+                        <div class="d-block mx-auto publi">
+                            <div style="display: inline-grid">
+                                <img class="image-audio" [src]="'../../../assets/img/pages/notamusical.jpg'">
+                                <audio controls preload width="450" controlsList="nodownload">
+                                    <source [src]="publicacao.s3UrlMedia" alt="">
+                                </audio>
+                            </div>    
+                        </div>    
+                    </div>
+                </div>
                 <div class="container text-center mt-3">
                     <div class="row align-items-center">
                         <div class="col-md-12">
@@ -129,7 +135,7 @@
                     <div class="col-md-8 text-center"> {{publicacao.description}} </div>
                     <div class="row mt-2">
                         <div class="col-md-8"></div>
-                        <div class="col-md-4 date"><span class="text-black-50 ">{{ 'PUBLICACAO.DATA-POSTAGEM' | translate }} {{publicacao.publicationDate}}</span></div>
+                        <div class="col-md-4 date"><span class="text-black-50 ">{{ 'PUBLICACAO.DATA-POSTAGEM' | translate }} {{publicacao.publicationDate | date:"dd/MM/yyyy"}}</span></div>
                     </div>
                 </div>
             </div>
@@ -161,7 +167,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-8"></div>
-                            <div class="col-md-4 text-end"><span class="text-black-50 date">{{ 'PUBLICACAO.DATA-POSTAGEM' | translate }} {{comentario.commentDate}}</span></div>
+                            <div class="col-md-4 text-end"><span class="text-black-50 date">{{ 'PUBLICACAO.DATA-POSTAGEM' | translate }} {{comentario.commentDate | date:"dd/MM/yyyy"}}</span></div>
                         </div>
                     </div>
                 </div>

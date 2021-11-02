@@ -166,13 +166,16 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 
 div.img-responsive {
 	display: block;
-	margin: 0 31.5rem;
+	margin: 0 20%;
 }
 
 @media (max-width: 767px) {
 	div.img-responsive {
 		display: block;
 		margin: 0 3.7rem;
+	}
+	.publi{
+		width: 100% !important;
 	}
 }
 

@@ -56,7 +56,6 @@ export class PublicacaoComponent implements OnInit {
     this.publicacaoService.getPublication(this.idUser, this.idPublicacao).subscribe(
       (response: Publicacao) => {
        this.publicacao = response;
-       console.log(this.publicacao.mediaType)
       },
       (err) => {
         throw err;
