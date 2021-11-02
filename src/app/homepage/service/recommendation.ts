@@ -5,6 +5,7 @@ export class Recommendation {
         public userPicture: string,
         public backgroundPicture: string,
         public category: string,
-        public subcategory: string
+        public subcategory: string,
+        public name: string
     ) { }
 }
