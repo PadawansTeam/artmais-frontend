@@ -155,11 +155,12 @@ export class DashboardComponent implements OnInit {
           scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    precision: 0
                 }
             }]
+          }
         }
-      }
       });
     }
     else{
@@ -196,11 +197,12 @@ export class DashboardComponent implements OnInit {
           scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    precision: 0
                 }
             }]
+          }
         }
-      }
       });
     }
   }
@@ -229,8 +231,14 @@ export class DashboardComponent implements OnInit {
           ]
         },
         options: {
-
-          
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    precision: 0
+                }
+            }]
+          }
         }
       });
     }
@@ -263,8 +271,14 @@ export class DashboardComponent implements OnInit {
           ]
         },
         options: {
-  
-          
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    precision: 0
+                }
+            }]
+          }
         }
       });
     }
@@ -297,11 +311,12 @@ export class DashboardComponent implements OnInit {
           scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    precision: 0
                 }
             }]
+          }
         }
-      }
       });
     }
     else{
@@ -337,11 +352,12 @@ export class DashboardComponent implements OnInit {
           scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    precision: 0
                 }
             }]
+          }
         }
-      }
       });
     }
   }
