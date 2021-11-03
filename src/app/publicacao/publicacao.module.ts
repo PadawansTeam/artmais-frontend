@@ -7,6 +7,8 @@ import { SelectModule } from '../select/select.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { FormsModule } from '@angular/forms';
 import { PublicacaoComponent } from './component/publicacao.component';
+import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
+import { HeaderModule } from '../header/header.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -27,7 +29,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     }),
     SelectModule,
-    HeaderlogModule
+    HeaderlogModule,
+    HeaderUserComumModule,
+    HeaderModule
   ],
   providers: [
     TranslateService,

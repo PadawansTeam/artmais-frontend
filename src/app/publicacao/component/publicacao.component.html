@@ -1,4 +1,12 @@
-<app-headerlog></app-headerlog>
+<div *ngIf="roleUser && this.loggedUser == true">
+    <app-headerusercomum></app-headerusercomum> 
+</div>
+<div *ngIf="!roleUser && this.loggedUser == true">
+    <app-headerlog></app-headerlog>
+</div>
+<div *ngIf="this.loggedUser == false">
+    <app-header></app-header>
+</div>
 <div class="row py-3 px-4">
     <div class="container">
         <div class="bg-white shadow  overflow-hidden">
@@ -83,6 +91,27 @@
                             <ul class="list-inline publi-buttons ">
                                 <div *ngIf="!this.isSameUser" style="padding-right: 0.5rem">
                                     <li (click)="like()" class="list-inline-item like">
+                                        <div *ngIf="this.publicacao.isLiked">
+                                            <a id="active"> 
+                                                <i class="fab fa-gratipay"></i>
+                                            </a>
+                                        </div>
+                                        <div *ngIf="!this.publicacao.isLiked">
+                                            <a>
+                                                <i class="fab fa-gratipay"></i>
+                                            </a>
+                                        </div>  
+                                        <p class="quant">{{publicacao.likesAmount}}</p>
+                                    </li>
+                                    <li class="list-inline-item share">
+                                        <a>
+                                            <i class="fa fa-comment "></i>
+                                        </a>
+                                        <p class="quant">{{publicacao.commentsAmount}}</p>
+                                    </li>
+                                </div>
+                                <div *ngIf="this.isSameUser" style="padding-right: 0.5rem">
+                                    <li class="list-inline-item like">
                                         <div *ngIf="this.publicacao.isLiked">
                                             <a id="active"> 
                                                 <i class="fab fa-gratipay"></i>

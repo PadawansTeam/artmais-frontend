@@ -5,6 +5,8 @@ import { PublicacaoService } from '../service/publicacao.service';
 import {Location} from '@angular/common';
 import Swal from 'sweetalert2';
 import { JwtHelperService } from "@auth0/angular-jwt";
+import { RecommendationService } from '../../homepage/service/recommendation.service';
+import { ArtistaService } from '../../artista/service/artista.service';
 
 @Component({
   selector: 'app-publicacao',
@@ -17,6 +19,8 @@ export class PublicacaoComponent implements OnInit {
   idPublicacao!: number;
   description!: string;
   isSameUser: boolean = false;
+  roleUser: boolean = false;
+  loggedUser: boolean = false;
 
   Toast = Swal.mixin({
     toast: true,
@@ -34,15 +38,16 @@ export class PublicacaoComponent implements OnInit {
     public publicacaoService: PublicacaoService,
     private route: ActivatedRoute,
     private router: Router,
-    private _location: Location
+    private _location: Location,
+    public artistaService: ArtistaService,
+    public recommendationService: RecommendationService
   ) { }
 
   ngOnInit(): void {
     const helper = new JwtHelperService();
     let decodedToken;
     if(localStorage.getItem('token')){
-      //@ts-ignore
-      decodedToken = helper.decodeToken(localStorage.getItem('token'));
+      decodedToken = helper.decodeToken(localStorage.getItem('token')!);
     }
     this.idUser = this.route.snapshot.params['id'];
     this.idPublicacao = this.route.snapshot.params['publicationId'];
@@ -50,6 +55,8 @@ export class PublicacaoComponent implements OnInit {
       this.isSameUser = true;
     }
     this.getPublication();
+    this.roleIfClient(); 
+    this.seeIfLogged();
   }
 
   getPublication(){
@@ -138,6 +145,33 @@ export class PublicacaoComponent implements OnInit {
 
   routeUpdateEvent() {
     location.reload();
+  }
+
+  roleIfClient(){    
+    this.recommendationService.getRole().subscribe(
+      (response) => {
+        if(response.role === 'Client'){
+          this.roleUser = true;
+        } else {
+          this.roleUser = false;
+        }
+      }
+    );
+  }
+
+  seeIfLogged(){
+    if (this.artistaService.token == undefined || this.artistaService.token == null) {
+      this.loggedUser = false;
+    }else{
+      this.artistaService.getValidation().subscribe(
+        (response) => {
+          this.loggedUser = true;
+        }, 
+        (err) => {
+          this.loggedUser = false;
+        }
+      );
+    }
   }
 
 }

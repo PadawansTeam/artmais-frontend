@@ -75,16 +75,15 @@ export class ArtistaComponent implements OnInit {
     modalRef.componentInstance.descrption = descrption;
   }
 
-roleIfClient(){    
-  this.recommendationService.getRole().subscribe(
-  (response) => {
-    console.warn('response Client',response.role);
-    if(response.role === 'Client'){
-      this.roleUser = true;
-    } else {
-      this.roleUser = false;
-    }
-   }
-);
-}  
+  roleIfClient(){    
+    this.recommendationService.getRole().subscribe(
+      (response) => {
+        if(response.role === 'Client'){
+          this.roleUser = true;
+        } else {
+          this.roleUser = false;
+        }
+      }
+    );
+  }  
 }
