@@ -16,6 +16,7 @@ import { RecommendationService } from '../homepage/service/recommendation.servic
 import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
 
 
+
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
