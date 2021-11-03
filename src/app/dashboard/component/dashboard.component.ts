@@ -131,7 +131,7 @@ export class DashboardComponent implements OnInit {
 
     this.predictSumRefined = predictSum.map(function(item) { return item == -1 ? null : item; });
 
-    this.predictSumRefined[2] = commentsSum[commentsSum.length-1]
+    this.predictSumRefined[commentsSum.length-1] = commentsSum[commentsSum.length-1]
 
 
 
@@ -179,7 +179,7 @@ export class DashboardComponent implements OnInit {
 
     this.predictSumLikesRefined = likesPredictionSum.map(function(item) { return item == -1 ? null : item; });
 
-    this.predictSumLikesRefined[2] = likesSum[likesSum.length-1]
+    this.predictSumLikesRefined[likesSum.length-1] = likesSum[likesSum.length-1]
 
     this.likesChart = new Chart(this.likesCanvas.nativeElement, {
       type: 'line',
@@ -219,7 +219,7 @@ export class DashboardComponent implements OnInit {
 
     this.predictSumVisitsRefined = predictSum.map(function(item) { return item == -1 ? null : item; });
 
-    this.predictSumVisitsRefined[2] = visitsSum[visitsSum.length-1]
+    this.predictSumVisitsRefined[visitsSum.length-1] = visitsSum[visitsSum.length-1]
 
     this.visitsChart = new Chart(this.visitsCanvas.nativeElement, {
       type: 'line',
