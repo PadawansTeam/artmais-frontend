@@ -134,45 +134,75 @@ export class DashboardComponent implements OnInit {
     this.predictSumRefined[commentsSum.length-1] = commentsSum[commentsSum.length-1]
 
 
-
-    this.commentsChart = new Chart(this.commentsCanvas.nativeElement, {
-      type: 'line',
-      data: {
-        labels: commentsDate,
-        datasets: [
-          {
-            label: 'Quantidade de comentários',
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: '#701ec6',
-            borderColor: '#701ec6',
-            borderCapStyle: 'butt',
-            data: commentsSum
-          },
-          {
-            label: 'Previsão',
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: '#b882f2',
-            hoverBackgroundColor: '#701ec6',
-            borderColor: '#b882f2',
-            hoverBorderColor:'#701ec6',
-            borderCapStyle: 'butt',
-            data: this.predictSumRefined,
-            borderDash: [5, 5],
-          }
-        ]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-              ticks: {
-                  beginAtZero: true
-              }
-          }]
+    if (commentsSum.length == 1){
+      this.commentsChart = new Chart(this.commentsCanvas.nativeElement, {
+        type: 'bar',
+        data: {
+          labels: commentsDate,
+          datasets: [
+            {
+              label: 'Quantidade de comentários',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#701ec6',
+              borderColor: '#701ec6',
+              borderCapStyle: 'butt',
+              data: commentsSum
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
       }
+      });
     }
-    });
+    else{
+
+      this.commentsChart = new Chart(this.commentsCanvas.nativeElement, {
+        type: 'line',
+        data: {
+          labels: commentsDate,
+          datasets: [
+            {
+              label: 'Quantidade de comentários',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#701ec6',
+              borderColor: '#701ec6',
+              borderCapStyle: 'butt',
+              data: commentsSum
+            },
+            {
+              label: 'Previsão',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#b882f2',
+              hoverBackgroundColor: '#701ec6',
+              borderColor: '#b882f2',
+              hoverBorderColor:'#701ec6',
+              borderCapStyle: 'butt',
+              data: this.predictSumRefined,
+              borderDash: [5, 5],
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+      }
+      });
+    }
   }
 
   private likesGrowthGraph(likesDate: string[], likesSum: number[], likesPredictionSum: number[]) {
@@ -181,38 +211,63 @@ export class DashboardComponent implements OnInit {
 
     this.predictSumLikesRefined[likesSum.length-1] = likesSum[likesSum.length-1]
 
-    this.likesChart = new Chart(this.likesCanvas.nativeElement, {
-      type: 'line',
-      data: {
-        labels: likesDate,
-        datasets: [
-          {
-            label: 'Quantidade de curtidas',
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: '#701ec6',
-            borderColor: '#701ec6',
-            borderCapStyle: 'butt',
-            data: likesSum
-          },
-          {
-            label: 'Previsão',
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: '#b882f2',
-            hoverBackgroundColor: '#701ec6',
-            hoverBorderColor:'#701ec6',
-            borderColor: '#b882f2',
-            borderCapStyle: 'butt',
-            data: this.predictSumLikesRefined
-          }
-        ]
-      },
-      options: {
+    if (likesSum.length == 1){
+      this.likesChart = new Chart(this.likesCanvas.nativeElement, {
+        type: 'bar',
+        data: {
+          labels: likesDate,
+          datasets: [
+            {
+              label: 'Quantidade de curtidas',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#701ec6',
+              borderColor: '#701ec6',
+              borderCapStyle: 'butt',
+              data: likesSum
+            }
+          ]
+        },
+        options: {
 
-        
-      }
-    });
+          
+        }
+      });
+    }
+    else{
+      this.likesChart = new Chart(this.likesCanvas.nativeElement, {
+        type: 'line',
+        data: {
+          labels: likesDate,
+          datasets: [
+            {
+              label: 'Quantidade de curtidas',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#701ec6',
+              borderColor: '#701ec6',
+              borderCapStyle: 'butt',
+              data: likesSum
+            },
+            {
+              label: 'Previsão',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#b882f2',
+              hoverBackgroundColor: '#701ec6',
+              hoverBorderColor:'#701ec6',
+              borderColor: '#b882f2',
+              borderCapStyle: 'butt',
+              data: this.predictSumLikesRefined
+            }
+          ]
+        },
+        options: {
+  
+          
+        }
+      });
+    }
   }
 
   private visitsGrowthGraph(visitsDate: string[], visitsSum: number[], predictSum: number[]) {
@@ -221,43 +276,73 @@ export class DashboardComponent implements OnInit {
 
     this.predictSumVisitsRefined[visitsSum.length-1] = visitsSum[visitsSum.length-1]
 
-    this.visitsChart = new Chart(this.visitsCanvas.nativeElement, {
-      type: 'line',
-      data: {
-        labels: visitsDate,
-        datasets: [
-          {
-            label: 'Quantidade de visitas',
-            fill: true,
-            lineTension: 0.1,
-            backgroundColor: '#701ec6',
-            borderColor: '#701ec6',
-            borderCapStyle: 'butt',
-            data: visitsSum
-          },
-          {
-            
-            label: 'Previsão',
-            fill: true,
-            lineTension: 0.1,
-            backgroundColor: 'rgba(184,130,242,0.5)',
-            hoverBackgroundColor: '#701ec6',
-            hoverBorderColor:'#701ec6',
-            borderColor: 'rgba(184,130,242,0.9)',
-            borderCapStyle: 'round',
-            data: this.predictSumVisitsRefined,
-          }
-        ]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-              ticks: {
-                  beginAtZero: true
-              }
-          }]
+    if (visitsSum.length == 1){
+      this.visitsChart = new Chart(this.visitsCanvas.nativeElement, {
+        type: 'bar',
+        data: {
+          labels: visitsDate,
+          datasets: [
+            {
+              label: 'Quantidade de visitas',
+              fill: true,
+              lineTension: 0.1,
+              backgroundColor: '#701ec6',
+              borderColor: '#701ec6',
+              borderCapStyle: 'butt',
+              data: visitsSum
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
       }
+      });
     }
-    });
+    else{
+      this.visitsChart = new Chart(this.visitsCanvas.nativeElement, {
+        type: 'line',
+        data: {
+          labels: visitsDate,
+          datasets: [
+            {
+              label: 'Quantidade de visitas',
+              fill: true,
+              lineTension: 0.1,
+              backgroundColor: '#701ec6',
+              borderColor: '#701ec6',
+              borderCapStyle: 'butt',
+              data: visitsSum
+            },
+            {
+              
+              label: 'Previsão',
+              fill: true,
+              lineTension: 0.1,
+              backgroundColor: 'rgba(184,130,242,0.5)',
+              hoverBackgroundColor: '#701ec6',
+              hoverBorderColor:'#701ec6',
+              borderColor: 'rgba(184,130,242,0.9)',
+              borderCapStyle: 'round',
+              data: this.predictSumVisitsRefined,
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+      }
+      });
+    }
   }
 }
