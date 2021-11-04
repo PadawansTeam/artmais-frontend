@@ -18,9 +18,9 @@
 }
 
 img {
-  object-fit: cover; 
+  object-fit: fill; 
   width: 100%;
-  height: 80%;
+  height: 250px;
 }
 
 body {
@@ -318,4 +318,9 @@ div.img-responsive {
 	max-width: 300px;
     border-radius: 35px;
     margin-bottom: -4rem;
+}
+.video-size{
+	width: 100%;
+	height: 250px;
+	object-fit: fill;
 }
