@@ -1,473 +1,271 @@
+<div *ngIf="roleUser && this.loggedUser == true">
+    <app-headerusercomum></app-headerusercomum> 
+</div>
+<div *ngIf="!roleUser && this.loggedUser == true">
+    <app-headerlog></app-headerlog>
+</div>
 <div *ngIf="this.loggedUser == false">
     <app-header></app-header>
 </div>
-<div *ngIf="this.loggedUser == true && roleUser">
-    <app-headerusercomum></app-headerusercomum>
-</div>
-<div *ngIf="this.loggedUser == true && !roleUser">
-    <app-headerlog></app-headerlog>
-</div>
-<div *ngIf="this.loggedUser == true && this.artist.category =='Consumidor'">
- 
-    <div class="row py-3 px-4">
-        <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
-            <!-- Profile widget -->
-            <div class="bg-white shadow  overflow-hidden">
-                <div class="row">
-                    <div class="col-lg-12 shadow back">
-                        <div class="img-responsive text-center">
-                            <img [src]="artist.userPicture" alt="..."
-                                class="  rounded-circle img-fluid mx-auto img-perfil">
-                        </div>
-                    </div>
-                </div>
-                <div class="media-body  text-black">
-                    <p class="mt-0 mb-0 name">{{artist.name}}</p>
-                    <!-- <p class="small mb-0 text-muted">(Ela/Dela)</p> -->
-                    <p class="small mb-2 category">{{artist.category}}</p>
-                    <div class="row ">
-                        <div class="col-lg-8 mx-auto text-center">
-                            <p class="large text-muted">{{artist.description}}</p>
-                        </div>
+<div class="row py-3 px-4">
+    <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
+        <!-- Profile widget -->
+        <div class="bg-white shadow  overflow-hidden">
+            <div class="row">
+                <div class="col-lg-12 shadow back">
+                    <div class="img-responsive text-center">
+                        <img [src]="artist.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Modal 1 -->
-        <ng-template #content let-modal>
-            <div class="modal-body">
-                <div id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
+            <div class="media-body  text-black">
+                <p class="mt-0 mb-0 name">{{artist.name}}</p>
+                <!-- <p class="small mb-0 text-muted">(Ela/Dela)</p> -->
+                <p class="small mb-2 category">{{artist.category}} - {{artist.subcategory}}</p>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <ul class="list-inline social-buttons">
+                                <li class="list-inline-item" *ngIf="artist.facebook">
+                                    <a href="{{artist.facebook}}" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item" *ngIf="artist.twitter">
+                                    <a href="{{artist.twitter}}" target="_blank">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
 
-                        <div class="close-modal" type="button" data-bs-dismiss="modal">
-                            <div class="lr">
-                                <div class="rl"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 mx-auto">
-                                <img class="img-fluid d-block mx-auto"
-                                    src="https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="">
-                                <div class="row ">
-                                    <div class="col-md-12 like" align="center">
-                                        <i class="fab fa-gratipay"></i>
-                                    </div>
-                                </div>
-                                <p>{{content}}</p>
-                            </div>
+                                <li class="list-inline-item" *ngIf="artist.instagram">
+                                    <a href="{{artist.instagram}}" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item" *ngIf="artist.whatsappContact">
+                                    <a href="{{artist.whatsappContact}}" target="_blank">
+                                        <i class="fas fa-comment-alt"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button class="getstarted" type="button" aria-label="Fechar" (click)="modal.close('Close click')"
-                    align="center">Fechar</button>
-            </div>
-        </ng-template>
 
-        <!-- Modal 2 -->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content ">
-                    <div class="close-modal" type="button" data-bs-dismiss="modal">
-                        <div class="lr">
-                            <div class="rl"></div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 mx-auto">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here -->
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="https://images.pexels.com/photos/736355/pexels-photo-736355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                        alt="">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                        lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel
-                                        suscipit
-                                        sed,
-                                        maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas
-                                        magna
-                                        quis
-                                        ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                        nisi vitae
-                                        porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec
-                                        justo.
-                                        Proin
-                                        vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                    </p>
-
-                                    <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                        aria-label="Fechar">Fechar</button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row ">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <p class="large text-muted">{{artist.description}}</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Modal calendar -->
-        <div class="portfolio-modal modal fade" id="ModalCalendar" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content ">
-                    <div class="close-modal" type="button" data-bs-dismiss="modal">
-                        <div class="lr">
-                            <div class="rl"></div>
+            <div class="bg-light pt-4 pb-4 mb-3">
+                <div class="row mx-auto">
+                    <div class="bg-light col-md-3 d-block text-center ">
+                        <i class="fa fa-phone icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
+                        <div class="col-md-12 fw-bold mb-3">{{ 'PERFIL.TELEFONES' | translate }}</div>
+                        <div class="bg-light col-md-12 d-block text-center text1">
+                            <div class="col-md-12  text-muted">{{artist.mainPhone}}</div>
+                            <div class="col-md-12 text-muted">{{artist.secundaryPhone}}</div>
+                            <div class="col-md-12 text-muted">{{artist.thirdPhone}}</div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 mx-auto">
-                                <div class="modal-body">
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="https://images.pexels.com/photos/5386754/pexels-photo-5386754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                        alt="">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                        lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel
-                                        suscipit
-                                        sed,
-                                        maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas
-                                        magna
-                                        quis
-                                        ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                        nisi vitae
-                                        porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec
-                                        justo.
-                                        Proin
-                                        vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                    </p>
-                                    <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                        aria-label="Fechar">Fechar</button>
-                                </div>
+                    <div class="bg-light col-md-3 d-block text-center">
+                        <i class="fa fa-map-marker icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
+                        <div class="col-md-12 fw-bold mb-3 ">
+                            {{ 'PERFIL.ENDERECO' | translate }}
+                        </div>
+                        <div class="row text1 text-left">
+                            <div class="col-md-2  col-md-2 fw-bold text-muted text-left">{{ 'PERFIL.RUA' | translate }}
                             </div>
+                            <div class="col-md-10 text-muted text-left">{{artist.street}}</div>
+                        </div>
+                        <div class="row text1">
+                            <div class="col-md-3 text-left fw-bold text-muted">{{ 'PERFIL.NUMERO' | translate }}</div>
+                            <div class="col-md-1 text-left text-muted">{{artist.number}}</div>
+                        </div>
+                        <div class="row text1">
+                            <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.BAIRRO' | translate }}</div>
+                            <div class="col-md-6 text-muted">{{artist.neighborhood}}</div>
+                            <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.CEP' | translate }}</div>
+                            <div class="col-md-4 text-left text-muted">{{artist.zipCode}}</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div *ngIf="this.loggedUser == true && this.artist.category !='Consumidor'">
-    
-    <div class="row py-3 px-4">
-        <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
-            <!-- Profile widget -->
-            <div class="bg-white shadow  overflow-hidden">
-                <div class="row">
-                    <div class="col-lg-12 shadow back">
-                        <div class="img-responsive text-center">
-                            <img [src]="artist.userPicture" alt="..."
-                                class="  rounded-circle img-fluid mx-auto img-perfil">
+                    <div class="bg-light col-md-3 d-block text-center">
+                        <i class="fa fa-calendar icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
+                        <div class="col-md-12 fw-bold mb-3 ">{{ 'PERFIL.CALENDARIO' | translate }}</div>
+                        <div class="bg-light col-md-12 d-block text-center">
+                            <br>
+                            <button class="getstarted" type="button" class="btn-calendar" aria-label="Acessar"
+                                href="#ModalCalendar"
+                                data-bs-toggle="modal">{{ 'PERFIL.CALENDARIO-BUTTON' | translate }}</button>
                         </div>
                     </div>
-                </div>
-                <div class="media-body  text-black">
-                    <p class="mt-0 mb-0 name">{{artist.name}}</p>
-                    <!-- <p class="small mb-0 text-muted">(Ela/Dela)</p> -->
-                    <p class="small mb-2 category">{{artist.category}} - {{artist.subcategory}}</p>
-                    <div class="container">
-                        <div class="row align-items-center">
+                    <div class="bg-light col-md-3 d-block text-center">
+                        <i class="fa fa-share icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
+                        <div class="col-md-12 fw-bold mb-3 ">{{ 'PERFIL.COMPARTILHAR' | translate }}</div>
+                        <div class="bg-light col-md-12 d-block text-center">
+                            <br>
                             <div class="col-md-12">
                                 <ul class="list-inline social-buttons">
                                     <li class="list-inline-item">
-                                        <a href="{{artist.facebook}}" target="_blank">
+                                        <a href="{{artist.facebookProfile}}" target="_blank">
                                             <i class="fab fa-facebook-f"></i>
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="{{artist.twitter}}" target="_blank">
+                                        <a href="{{artist.twitterProfile}}" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                         </a>
                                     </li>
-
                                     <li class="list-inline-item">
-                                        <a href="{{artist.instagram}}" target="_blank">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="{{artist.whatsappContact}}" target="_blank">
-                                            <i class="fas fa-comment-alt"></i>
+                                        <a href="{{artist.whatsappProfile}}" target="_blank">
+                                            <i class="fab fa-whatsapp"></i>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class=" row py-4 px-4">
+                <div class="col-md-11">
+                    <p class="mt-0 mb-3 title">{{ 'PERFIL.PORTIFOLIO' | translate }}</p>
+                </div>
+                <section id="portfolio">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#image" type="button" role="tab" aria-controls="image" aria-selected="true">
+                            <i class="bx bx-image bx-sm bx-tada-hover"></i>{{ 'PERFIL.ABA-IMAGEM' | translate }}</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">
+                            <i class="bx bx-video bx-sm bx-tada-hover"></i>{{ 'PERFIL.ABA-VIDEO' | translate }}</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#audio" type="button" role="tab" aria-controls="audio" aria-selected="false">
+                            <i class="bx bx-music bx-sm bx-tada-hover"></i>{{ 'PERFIL.ABA-AUDIO' | translate }}</button>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="image" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
+                                <div *ngIf="artistPortfolioContent.image.length == 0" style="color: #6c757d!important;">
+                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{ 'PERFIL.ABA-ERRO' | translate }}</p>
+                                </div>
+                                <div *ngFor="let userPortfolioImage of artistPortfolioContent.image"
+                                    class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
+                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioImage.userID,'publicacao', userPortfolioImage.publicationID]">
+                                        <div class="portfolio-hover"></div>
+                                        <img [src]="userPortfolioImage.s3UrlMedia" alt="" class="img-fluid rounded">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
+                                <div *ngIf="artistPortfolioContent.video.length == 0" style="color: #6c757d!important;">
+                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{ 'PERFIL.ABA-ERRO' | translate }}</p>
+                                </div>
+                                <div *ngFor="let userPortfolioVideo of artistPortfolioContent.video"
+                                    class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
+                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioVideo.userID,'publicacao', userPortfolioVideo.publicationID]">
+                                        <div class="portfolio-hover"></div>
+                                        <video controls Preload played width="375" controlsList="nodownload">
+                                            <source [src]="userPortfolioVideo.s3UrlMedia" >
+                                        </video>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="audio" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
+                                <div *ngIf="artistPortfolioContent.audio.length == 0">
+                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{ 'PERFIL.ABA-ERRO' | translate }}</p>
+                                </div>
+                                <div *ngFor="let userPortfolioAudio of artistPortfolioContent.audio"
+                                    class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
+                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioAudio.userID,'publicacao', userPortfolioAudio.publicationID]">
+                                        <div class="portfolio-hover"></div>
+                                        <img class="image-audio" [src]="'../../../assets/img/pages/notamusical.jpg'">
+                                        <audio controls preload width="450" controlsList="nodownload">
+                                            <source [src]="userPortfolioAudio.s3UrlMedia" alt="">
+                                        </audio>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </section>
+            </div>
+        </div>
+    </div>
 
-                    <div class="row ">
-                        <div class="col-lg-8 mx-auto text-center">
-                            <p class="large text-muted">{{artist.description}}</p>
+
+    <!-- Modal 1 -->
+    <ng-template #content let-modal>
+        <div class="modal-body">
+            <div id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+
+                    <div class="close-modal" type="button" data-bs-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl"></div>
                         </div>
                     </div>
-                </div>
-                <div class="bg-light pt-4 pb-4 mb-3">
-                    <div class="row mx-auto">
-                        <div class="bg-light col-md-3 d-block text-center ">
-                            <i class="fa fa-phone icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
-                            <div class="col-md-12 fw-bold mb-3">{{ 'PERFIL.TELEFONES' | translate }}</div>
-                            <div class="bg-light col-md-12 d-block text-center text1">
-                                <div class="col-md-12  text-muted">{{artist.mainPhone}}</div>
-                                <div class="col-md-12 text-muted">{{artist.secundaryPhone}}</div>
-                                <div class="col-md-12 text-muted">{{artist.thirdPhone}}</div>
-                            </div>
-                        </div>
-                        <div class="bg-light col-md-3 d-block text-center">
-                            <i class="fa fa-map-marker icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
-                            <div class="col-md-12 fw-bold mb-3 ">
-                                {{ 'PERFIL.ENDERECO' | translate }}
-                            </div>
-                            <div class="row text1 text-left">
-                                <div class="col-md-2  col-md-2 fw-bold text-muted text-left">{{ 'PERFIL.RUA' | translate
-                                    }}
-                                </div>
-                                <div class="col-md-10 text-muted text-left">{{artist.street}}</div>
-                            </div>
-                            <div class="row text1">
-                                <div class="col-md-3 text-left fw-bold text-muted">{{ 'PERFIL.NUMERO' | translate }}
-                                </div>
-                                <div class="col-md-1 text-left text-muted">{{artist.number}}</div>
-                            </div>
-                            <div class="row text1">
-                                <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.BAIRRO' | translate }}
-                                </div>
-                                <div class="col-md-6 text-muted">{{artist.neighborhood}}</div>
-                                <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.CEP' | translate }}</div>
-                                <div class="col-md-4 text-left text-muted">{{artist.zipCode}}</div>
-                            </div>
-                        </div>
-                        <div class="bg-light col-md-3 d-block text-center">
-                            <i class="fa fa-calendar icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
-                            <div class="col-md-12 fw-bold mb-3 ">{{ 'PERFIL.CALENDARIO' | translate }}</div>
-                            <div class="bg-light col-md-12 d-block text-center">
-                                <br>
-                                <button class="getstarted" type="button" class="btn-calendar" aria-label="Acessar"
-                                    href="#ModalCalendar" data-bs-toggle="modal">{{ 'PERFIL.CALENDARIO-BUTTON' |
-                                    translate }}</button>
-                            </div>
-                        </div>
-                        <div class="bg-light col-md-3 d-block text-center">
-                            <i class="fa fa-share icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
-                            <div class="col-md-12 fw-bold mb-3 ">{{ 'PERFIL.COMPARTILHAR' | translate }}</div>
-                            <div class="bg-light col-md-12 d-block text-center">
-                                <br>
-                                <div class="col-md-12">
-                                    <ul class="list-inline social-buttons">
-                                        <li class="list-inline-item">
-                                            <a href="{{artist.facebookProfile}}" target="_blank">
-                                                <i class="fab fa-facebook-f"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="{{artist.twitterProfile}}" target="_blank">
-                                                <i class="fab fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="{{artist.whatsappProfile}}" target="_blank">
-                                                <i class="fab fa-whatsapp"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                    <div class="row">
+                        <div class="col-md-12 mx-auto">
+                            <img class="img-fluid d-block mx-auto"
+                                src="https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                alt="">
+                            <div class="row ">
+                                <div class="col-md-12 like" align="center">
+                                    <i class="fab fa-gratipay"></i>
                                 </div>
                             </div>
+                            <p>{{content}}</p>
                         </div>
                     </div>
-                </div>
-                <div class=" row py-4 px-4">
-                    <div class="col-md-11">
-                        <p class="mt-0 mb-3 title">{{ 'PERFIL.PORTIFOLIO' | translate }}</p>
-                    </div>
-                    <section id="portfolio">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                    data-bs-target="#image" type="button" role="tab" aria-controls="image"
-                                    aria-selected="true">{{ 'PERFIL.ABA-IMAGEM' | translate }}</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#video"
-                                    type="button" role="tab" aria-controls="video" aria-selected="false">{{
-                                    'PERFIL.ABA-VIDEO' | translate }}</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#audio"
-                                    type="button" role="tab" aria-controls="audio" aria-selected="false">{{
-                                    'PERFIL.ABA-AUDIO' | translate }}</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="image" role="tabpanel"
-                                aria-labelledby="home-tab">
-                                <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
-                                    <div *ngIf="artistPortfolioContent.image.length == 0"
-                                        style="color: #6c757d!important;">
-                                        <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
-                                            'PERFIL.ABA-ERRO' | translate }}</p>
-                                    </div>
-                                    <div *ngFor="let userPortfolioImage of artistPortfolioContent.image"
-                                        class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                        <a class="portfolio-link" data-bs-toggle="modal">
-                                            <div class="portfolio-hover"></div>
-                                            <img [src]="userPortfolioImage.s3UrlMedia" alt="" class="img-fluid rounded">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
-                                    <div *ngIf="artistPortfolioContent.video.length == 0"
-                                        style="color: #6c757d!important;">
-                                        <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
-                                            'PERFIL.ABA-ERRO' | translate }}</p>
-                                    </div>
-                                    <div *ngFor="let userPortfolioVideo of artistPortfolioContent.video"
-                                        class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                        <a class="portfolio-link" data-bs-toggle="modal">
-                                            <div class="portfolio-hover"></div>
-                                            <video>
-                                                <source [src]="userPortfolioVideo.s3UrlMedia" class="img-fluid rounded">
-                                            </video>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="audio" role="tabpanel" aria-labelledby="contact-tab">
-                                <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
-                                    <div *ngIf="artistPortfolioContent.audio.length == 0">
-                                        <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
-                                            'PERFIL.ABA-ERRO' | translate }}</p>
-                                    </div>
-                                    <div *ngFor="let userPortfolioAudio of artistPortfolioContent.audio"
-                                        class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                        <a class="portfolio-link" data-bs-toggle="modal">
-                                            <div class="portfolio-hover"></div>
-                                            <audio>
-                                                <source [src]="userPortfolioAudio.s3UrlMedia" alt=""
-                                                    class="img-fluid rounded">
-                                            </audio>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                 </div>
             </div>
         </div>
+        <div class="modal-footer">
+            <button class="getstarted" type="button" aria-label="Fechar" (click)="modal.close('Close click')"
+                align="center">Fechar</button>
+        </div>
+    </ng-template>
 
-
-        <!-- Modal 1 -->
-        <ng-template #content let-modal>
-            <div class="modal-body">
-                <div id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-
-                        <div class="close-modal" type="button" data-bs-dismiss="modal">
-                            <div class="lr">
-                                <div class="rl"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 mx-auto">
+    <!-- Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <div class="close-modal" type="button" data-bs-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
                                 <img class="img-fluid d-block mx-auto"
-                                    src="https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                    src="https://images.pexels.com/photos/736355/pexels-photo-736355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                                     alt="">
-                                <div class="row ">
-                                    <div class="col-md-12 like" align="center">
-                                        <i class="fab fa-gratipay"></i>
-                                    </div>
-                                </div>
-                                <p>{{content}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="getstarted" type="button" aria-label="Fechar" (click)="modal.close('Close click')"
-                    align="center">Fechar</button>
-            </div>
-        </ng-template>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
+                                    lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
+                                    sed,
+                                    maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
+                                    quis
+                                    ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
+                                    nisi vitae
+                                    porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
+                                    Proin
+                                    vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
+                                </p>
 
-        <!-- Modal 2 -->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content ">
-                    <div class="close-modal" type="button" data-bs-dismiss="modal">
-                        <div class="lr">
-                            <div class="rl"></div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 mx-auto">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here -->
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="https://images.pexels.com/photos/736355/pexels-photo-736355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                        alt="">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                        lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel
-                                        suscipit
-                                        sed,
-                                        maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas
-                                        magna
-                                        quis
-                                        ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                        nisi vitae
-                                        porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec
-                                        justo.
-                                        Proin
-                                        vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                    </p>
-
-                                    <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                        aria-label="Fechar">Fechar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal calendar -->
-        <div class="portfolio-modal modal fade" id="ModalCalendar" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content ">
-                    <div class="close-modal" type="button" data-bs-dismiss="modal">
-                        <div class="lr">
-                            <div class="rl"></div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 mx-auto">
-                                <div class="modal-body">
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="https://images.pexels.com/photos/5386754/pexels-photo-5386754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                        alt="">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                        lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel
-                                        suscipit
-                                        sed,
-                                        maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas
-                                        magna
-                                        quis
-                                        ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                        nisi vitae
-                                        porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec
-                                        justo.
-                                        Proin
-                                        vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                    </p>
-                                    <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                        aria-label="Fechar">Fechar</button>
-                                </div>
+                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
+                                    aria-label="Fechar">Fechar</button>
                             </div>
                         </div>
                     </div>
@@ -475,4 +273,40 @@
             </div>
         </div>
     </div>
-</div>
+
+    <!-- Modal calendar -->
+    <div class="portfolio-modal modal fade" id="ModalCalendar" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <div class="close-modal" type="button" data-bs-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mx-auto">
+                            <div class="modal-body">
+                                <img class="img-fluid d-block mx-auto"
+                                    src="https://images.pexels.com/photos/5386754/pexels-photo-5386754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                    alt="">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
+                                    lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
+                                    sed,
+                                    maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
+                                    quis
+                                    ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
+                                    nisi vitae
+                                    porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
+                                    Proin
+                                    vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
+                                </p>
+                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
+                                    aria-label="Fechar">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
