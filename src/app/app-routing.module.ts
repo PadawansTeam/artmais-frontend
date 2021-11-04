@@ -18,6 +18,9 @@ import { UsuariosComponent } from './usuarios/component/usuarios.component';
 import { TesteComponent } from './teste/component/teste.component';
 import { PublicacaoComponent } from './publicacao/component/publicacao.component';
 import {AssinanteComponent} from './assinante/component/assinante.component';
+import { PagamentoplanosComponent } from './pagamentoplanos/component/pagamentoplanos.component';
+
+
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -38,6 +41,7 @@ const routes: Routes = [
   { path: 'pesquisa/:search', component: UsuariosComponent },
   { path: 'privacidade', component: PrivacidadeComponent },
   { path: 'assinante', component: AssinanteComponent },
+  { path: 'pagamento', component: PagamentoplanosComponent },
   { path: 'teste', component: TesteComponent },
 ];
 

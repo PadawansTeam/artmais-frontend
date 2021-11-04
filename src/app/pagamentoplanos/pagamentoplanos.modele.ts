@@ -4,11 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectModule } from '../select/select.module';
-import { TesteComponent } from './component/teste.component';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
 import { FooterModule } from '../footer/footer.module';
-import { RecommendationService } from './service/recommendation.service';
+import { PagamentoplanosComponent } from './component/pagamentoplanos.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -16,7 +15,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
-    TesteComponent,
+    PagamentoplanosComponent,
   ],
 
   imports: [
@@ -34,7 +33,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HeaderlogModule
   ],
   providers: [
-    TranslateService, RecommendationService],
+    TranslateService],
   bootstrap: []
 })
-export class TesteModule { }
+export class PagamentoplanosModule { }

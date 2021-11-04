@@ -9,9 +9,9 @@
 }
 
 img {
-  object-fit: cover; 
+  object-fit: fill; 
   width: 100%; 
-  height: 80%;
+  height: 250px;
 }
 
 body {
@@ -382,4 +382,6 @@ input[type='file']::-webkit-file-upload-button:hover {
 
 .video-size{
 	width: 100%;
+	height: 250px;
+	object-fit: fill;
 }
