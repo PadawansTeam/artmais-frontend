@@ -147,10 +147,9 @@
                                 {{'PERFIL.ABA-VIDEO' | translate }}</button>
                         </li>
                         <li class="nav-item" role="presentation">
-
                             <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#audio"
                                 type="button" role="tab" aria-controls="audio" aria-selected="false">
-                                    <i class="bx bx-music bx-sm bx-tada-hover"></i>
+                                <i class="bx bx-music bx-sm bx-tada-hover"></i>
                                 {{'PERFIL.ABA-AUDIO' | translate }}</button>
 
                         </li>
@@ -164,7 +163,8 @@
                                 </div>
                                 <div *ngFor="let userPortfolioImage of userPortfolioContent.image"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item">
-                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioImage.userID,'publicacao', userPortfolioImage.publicationID]">
+                                    <a class="portfolio-link" data-bs-toggle="modal"
+                                        [routerLink]="['/artista', userPortfolioImage.userID,'publicacao', userPortfolioImage.publicationID]">
                                         <div class="portfolio-hover"></div>
                                         <img [src]="userPortfolioImage.s3UrlMedia" alt="" class="img-fluid rounded">
                                     </a>
@@ -179,7 +179,8 @@
                                 </div>
                                 <div *ngFor="let userPortfolioVideo of userPortfolioContent.video"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioVideo.userID,'publicacao', userPortfolioVideo.publicationID]">
+                                    <a class="portfolio-link" data-bs-toggle="modal"
+                                        [routerLink]="['/artista', userPortfolioVideo.userID,'publicacao', userPortfolioVideo.publicationID]">
                                         <div class="portfolio-hover"></div>
                                         <video controls Preload played class="video-size">
                                             <source [src]="userPortfolioVideo.s3UrlMedia" type="video/mp4">
@@ -196,7 +197,8 @@
                                 </div>
                                 <div *ngFor="let userPortfolioAudio of userPortfolioContent.audio"
                                     class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                    <a class="portfolio-link" data-bs-toggle="modal" [routerLink]="['/artista', userPortfolioAudio.userID,'publicacao', userPortfolioAudio.publicationID]">
+                                    <a class="portfolio-link" data-bs-toggle="modal"
+                                        [routerLink]="['/artista', userPortfolioAudio.userID,'publicacao', userPortfolioAudio.publicationID]">
                                         <img class="image-audio" [src]="'../../../assets/img/pages/notamusical.jpg'">
                                         <div class="portfolio-hover"></div>
                                         <audio controls preload width="450">

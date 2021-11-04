@@ -126,7 +126,7 @@
             "TITULO" : "Interest",
             "SUBTITULO": "Choose the categories of artists that you have more interest to follow",
             "CATEGORIA": "Category",
-            "BUTTON": "Next"
+            "BUTTON": "Select"
         },
         "PERFIL": {
             "TELEFONES": "Phones",
