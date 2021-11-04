@@ -1,0 +1,120 @@
+<app-headerlog></app-headerlog>
+<div class="page-header header-filter back">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 ml-auto mr-auto mt-3">
+        <div class="card card-login " data-aos="fade-up">
+          <div class="form">
+            <div class="card-header card-header-primary text-center " data-aos="fade-up">
+              <h4 class="card-title">Pagamento do Plano</h4>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-credit-card-front bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input type="text" name="cardNumber" class="un form-control " id="form-checkout__cardNumber "placeholder="Número do Cartão" />
+                </div>
+                <p class="error"
+                  align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-bullseye bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input type="text" name="cardExpirationMonth" id="form-checkout__cardExpirationMonth" class="un form-control"  placeholder="Mês de expiração"/>
+                </div>
+                <p class="error"
+                  align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-layer bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input type="text" name="cardExpirationYear" id="form-checkout__cardExpirationYear" class="un form-control"  placeholder="Ano de expiração"/>
+                </div>
+                <p class="error"
+                  align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-id-card bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input type="text" name="cardholderName" id="form-checkout__cardholderName" placeholder="Card Holder name" class="un form-control"/>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-envelope bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input type="email" name="cardholderEmail" id="form-checkout__cardholderEmail" class="un form-control" placeholder="Card Holder Email"/>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-credit-card bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input type="text" name="securityCode" id="form-checkout__securityCode" class="un form-control" placeholder="Código de Segurança"/>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-lock bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <select class="select" name="issuer" id="form-checkout__issuer"></select>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-lock bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <select name="identificationType" id="form-checkout__identificationType" class="select"></select>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-barcode bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <input type="text" name="identificationNumber" id="form-checkout__identificationNumber" class="un form-control" placeholder="Número de Identificação"/>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-lock bx-sm bx-tada-hover"></i>
+                    </span>
+                  </div>
+                  <select name="installments" id="form-checkout__installments" class="select"></select>
+                </div>
+                
+              </form>
+            </div>
+            <div class="text-center">
+              <button class="submit" align="center" id="form-checkout__submit">
+                Pagar
+              </button>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 mt-1 fot">
+                  <progress value="0" class="progress-bar">Carregando...</progress>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
