@@ -183,10 +183,10 @@ export class DashboardComponent implements OnInit {
               label: 'Previsão',
               fill: false,
               lineTension: 0.1,
-              backgroundColor: '#b882f2',
-              hoverBackgroundColor: '#701ec6',
-              borderColor: '#b882f2',
-              hoverBorderColor:'#701ec6',
+              backgroundColor: '#969b9b',
+              hoverBackgroundColor: '#353535',
+              borderColor: '#969b9b',
+              hoverBorderColor:'#353535',
               borderCapStyle: 'butt',
               data: this.predictSumRefined,
               borderDash: [5, 5],
@@ -261,12 +261,13 @@ export class DashboardComponent implements OnInit {
               label: 'Previsão',
               fill: false,
               lineTension: 0.1,
-              backgroundColor: '#b882f2',
-              hoverBackgroundColor: '#701ec6',
-              hoverBorderColor:'#701ec6',
-              borderColor: '#b882f2',
+              backgroundColor: '#969b9b',
+              hoverBackgroundColor: '#353535',
+              hoverBorderColor:'#353535',
+              borderColor: '#969b9b',
               borderCapStyle: 'butt',
-              data: this.predictSumLikesRefined
+              data: this.predictSumLikesRefined,
+              borderDash: [5, 5]
             }
           ]
         },
@@ -327,7 +328,7 @@ export class DashboardComponent implements OnInit {
           datasets: [
             {
               label: 'Quantidade de visitas',
-              fill: true,
+              fill: false,
               lineTension: 0.1,
               backgroundColor: '#701ec6',
               borderColor: '#701ec6',
@@ -337,14 +338,15 @@ export class DashboardComponent implements OnInit {
             {
               
               label: 'Previsão',
-              fill: true,
+              fill: false,
               lineTension: 0.1,
-              backgroundColor: 'rgba(184,130,242,0.5)',
-              hoverBackgroundColor: '#701ec6',
-              hoverBorderColor:'#701ec6',
-              borderColor: 'rgba(184,130,242,0.9)',
+              backgroundColor: '#969b9b',
+              hoverBackgroundColor: '#353535',
+              hoverBorderColor:'#353535',
+              borderColor: '#969b9b',
               borderCapStyle: 'round',
               data: this.predictSumVisitsRefined,
+              borderDash: [5, 5],
             }
           ]
         },
