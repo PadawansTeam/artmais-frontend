@@ -24,7 +24,7 @@ export class PublicacaoService {
   ) { }
 
   getPublication(userId: number, publicationId: number): Observable<any> {
-    return this.http.get(`${this.artPlusURL}` + `v1/Publication/GetPublicationById/${publicationId}/${userId}`, this.httpOptions)  
+    return this.http.get(`${this.artPlusURL}` + `v1/Publication/GetPublicationById/${publicationId}/${userId}`)  
   }
 
   insertLike(publicationId: number): Observable<any> {
