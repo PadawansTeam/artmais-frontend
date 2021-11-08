@@ -54,20 +54,31 @@ export class PublicacaoComponent implements OnInit {
     if(decodedToken.nameid == this.idUser){
       this.isSameUser = true;
     }
+    this.seeIfLogged();
     this.getPublication();
     this.roleIfClient(); 
-    this.seeIfLogged();
   }
 
   getPublication(){
-    this.publicacaoService.getPublication(this.idUser, this.idPublicacao).subscribe(
-      (response: Publicacao) => {
-       this.publicacao = response;
-      },
-      (err) => {
-        throw err;
-      },
-    );
+    if(this.loggedUser == true){
+      this.publicacaoService.getLoggedPublication(this.idUser, this.idPublicacao).subscribe(
+        (response: Publicacao) => {
+         this.publicacao = response;
+        },
+        (err) => {
+          throw err;
+        },
+      );
+    } else if(this.loggedUser == false){
+      this.publicacaoService.getUnloggedPublication(this.idUser, this.idPublicacao).subscribe(
+        (response: Publicacao) => {
+         this.publicacao = response;
+        },
+        (err) => {
+          throw err;
+        },
+      );
+    }
   }
 
   like(){
