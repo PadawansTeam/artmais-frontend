@@ -205,7 +205,7 @@
         </div>
     </div>
 </div>
-<div class="container" *ngIf="!this.isSameUser">
+<div class="container" *ngIf="!this.isSameUser && this.loggedUser">
     <div class="col-md-12 text-center mb-3" id="comentarios">
         <h5 class="c1">{{ 'PUBLICACAO.COMENTAR' | translate }}</h5>
     </div>

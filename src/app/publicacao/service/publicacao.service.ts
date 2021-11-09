@@ -23,8 +23,12 @@ export class PublicacaoService {
     private router: Router
   ) { }
 
-  getPublication(userId: number, publicationId: number): Observable<any> {
-    return this.http.get(`${this.artPlusURL}` + `v1/Publication/GetPublicationById/${publicationId}/${userId}`, this.httpOptions)  
+  getUnloggedPublication(userId: number, publicationId: number): Observable<any> {
+    return this.http.get(`${this.artPlusURL}` + `v1/Publication/GetPublicationById/${publicationId}/${userId}`)  
+  }
+
+  getLoggedPublication(userId: number, publicationId: number): Observable<any> {
+    return this.http.get(`${this.artPlusURL}` + `v1/Publication/GetPublicationByIdAndLoggedUser/${publicationId}/${userId}`, this.httpOptions)  
   }
 
   insertLike(publicationId: number): Observable<any> {
