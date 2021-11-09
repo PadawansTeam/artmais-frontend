@@ -69,7 +69,7 @@ export class PublicacaoComponent implements OnInit {
           throw err;
         },
       );
-    } else if(this.loggedUser == false){
+    } else{
       this.publicacaoService.getUnloggedPublication(this.idUser, this.idPublicacao).subscribe(
         (response: Publicacao) => {
          this.publicacao = response;
