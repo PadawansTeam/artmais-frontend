@@ -6,6 +6,7 @@ export class Usuarios {
         public userPicture: string,
         public backgroundPicture: string,
         public category: string,
-        public subcategory: string
+        public subcategory: string,
+        public isPremium: boolean
     ) { }
 }

@@ -31,9 +31,11 @@
               <img [src]="usuario.backgroundPicture" alt="profile-cover" class="img-responsive cover">
             </div>
             <div class="card-info">
-              <div class="star">
-                <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
-                <p>PREMIUM</p>
+              <div *ngIf="usuario.isPremium">
+                <div class="star">
+                  <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
+                  <p>PREMIUM</p>
+                </div>
               </div>
               <img [src]="usuario.userPicture" alt="user" class="profile-photo-lg">
               <div class="friend-info">
