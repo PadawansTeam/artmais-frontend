@@ -229,8 +229,10 @@
     },
 
     "ASSINANTES": {
-        "TITULO": "Ola Assinante",
-        "TEXTO1": "Você já possui o plano Premium"    
+        "TITULO-0": "Olá, ",
+        "TITULO-1": "+",
+        "TEXTO1": "O melhor da Art+ para Você!",
+        "TEXTO2": "Sua assinatura habilita: O acesso ao Dashboard de crescimento e seu perfil em primeiro nas pesquisas na plataforma!"    
     },
         
     "PUBLICACAO": {
