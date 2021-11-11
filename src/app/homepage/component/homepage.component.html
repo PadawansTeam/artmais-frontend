@@ -46,9 +46,11 @@
             <div class="friend-card" (click)="getPerfilById(recomendacao.userId)">
               <img [src]="recomendacao.backgroundPicture" alt="profile-cover" class="img-responsive cover">
               <div class="card-info">
-                <div class="star">
-                  <i class="bx bxs-star bx-md" aria-hidden="true"></i>
-                  <p>PREMIUM</p>
+                <div *ngIf="recomendacao.isPremium">
+                  <div class="star">
+                    <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
+                    <p>PREMIUM</p>
+                  </div>
                 </div>
                 <img [src]="recomendacao.userPicture" alt="user" class="profile-photo-lg">
                 <div class="friend-info">
@@ -94,9 +96,11 @@
             <img [src]="recomendacao.backgroundPicture" alt="profile-cover" class="img-responsive cover">
 
             <div class="card-info">
-              <div class="star">
-                <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
-                <p>PREMIUM</p>
+              <div *ngIf="recomendacao.isPremium">
+                <div class="star">
+                  <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
+                  <p>PREMIUM</p>
+                </div>
               </div>
               <img [src]="recomendacao.userPicture" alt="user" class="profile-photo-lg">
               <div class="friend-info ">

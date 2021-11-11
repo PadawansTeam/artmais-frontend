@@ -6,6 +6,7 @@ export class Recommendation {
         public backgroundPicture: string,
         public category: string,
         public subcategory: string,
-        public name: string
+        public name: string,
+        public isPremium: boolean
     ) { }
 }
