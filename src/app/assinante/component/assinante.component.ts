@@ -39,8 +39,7 @@ export class AssinanteComponent implements OnInit {
 
   roleIfClient() {
     this.recommendationService.getRole().subscribe(
-      (response) => {
-        console.warn('response Client', response.role);
+      (response) => {        
         if (response.role === 'Client') {
           this.roleUser = true;
         } else {
@@ -52,8 +51,7 @@ export class AssinanteComponent implements OnInit {
 
   AssinanteIfPremium() {
     this.assinanteService.getAssinaturaPremium().subscribe(
-      (response) => {
-        console.warn('response artista premium', response);
+      (response) => {        
         if (response.isPremium === true) {
           this.ifPremium = true;
         } else {
