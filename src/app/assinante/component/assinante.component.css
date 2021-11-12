@@ -136,7 +136,7 @@
 	padding-bottom: 30px;
 	position: relative;
 	color: #555;
-  }
+}
 
   .image{
 	  margin-top: 100px;
@@ -160,12 +160,12 @@
   margin-bottom: 30px;
   margin-top: 30px;
   border-radius: 6px;
-  color: #333;  
+  color: #333;
   width: 100%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-.card> hr {
+.card > hr {
   margin-right: 0;
   margin-left: 0;
 }
@@ -192,7 +192,6 @@
   border-bottom: none;
   background: transparent;
 }
-
 
 .card .card-header-success .card-icon,
 .card .card-header-success .card-text,
@@ -250,26 +249,26 @@
   min-height: 160px;
 }
 
-.card .card-body + .card-footer,
 .card .card-footer {
   padding: 0;
   padding-top: 10px;
-  margin: 0 15px 10px;
+  margin: 15px 10px;
   border-radius: 0;
   justify-content: space-between;
   align-items: center;
 }
+.card .card-body + .card-footer,
+
 
 .card .card-footer .stats {
-  color: #999999;
+  color: #999;
   font-size: 12px;
   line-height: 22px;
 }
 .card .card-body + .card-footer .stats,
 .card .card-footer .stats .card-category {
   padding-top: 7px;
-  padding-bottom: 7px;
-  margin: 0;
+  padding-bottom: 7px; 
 }
 
 .card .card-body + .card-footer .stats .card-category,
@@ -301,14 +300,14 @@
   text-align: right;
 }
 
-.card-stats .card-header .card-icon+.card-title,
-.card-stats .card-header .card-icon+.card-category {
+.card-stats .card-header .card-icon + .card-title,
+.card-stats .card-header .card-icon + .card-category {
   padding-top: 10px;
 }
 
 .card-stats .card-header.card-header-icon .card-title,
-.card-stats .card-header.card-header-text .card-title,
 .card-stats .card-header.card-header-icon .card-category,
+.card-stats .card-header.card-header-text .card-title,
 .card-stats .card-header.card-header-text .card-category {
   margin: 0;
 }
@@ -318,7 +317,7 @@
   font-size: 14px;
 }
 
-.card-stats .card-header+.card-footer {
+.card-stats .card-header + .card-footer {
   border-top: 1px solid #eee;
   margin-top: 20px;
 }
@@ -335,61 +334,53 @@
   text-align: right;
 }
 
-.section-title {
-  text-align: center;
-  padding-bottom: 30px;
-  position: relative;
-  color: #555;  
-}
-
 @media (max-width: 1196px) {
-	.button-renew {    
+	.button-renew {
     position: absolute;
     left: 37%;
     top: 62%;
     transform: rotate(-20deg);
-    background: linear-gradient(to right, #9558d5, #701ec6);      
+    background: linear-gradient(to right, #9558d5, #701ec6);
  	}
 }
 
 @media (max-width: 1152px) {
-	.button-renew {    
+	.button-renew {
     position: absolute;
     left: 38%;
     top: 62%;
     transform: rotate(-20deg);
-    background: linear-gradient(to right, #9558d5, #701ec6);      
+    background: linear-gradient(to right, #9558d5, #701ec6);
  	}
 }
 
 @media (max-width: 768px) {
-	.button-renew {    
+	.button-renew {
     position: absolute;
     left: 30%;
     top: 75;
     transform: rotate(-20deg);
-    background: linear-gradient(to right, #9558d5, #701ec6);      
+    background: linear-gradient(to right, #9558d5, #701ec6);
  	}
 }
 
 @media (max-width: 540px) {
-	.button-renew {    
+	.button-renew {
     position: absolute;
     left: 31%;
     top: 65;
     transform: rotate(-20deg);
-    background: linear-gradient(to right, #9558d5, #701ec6);          
-      
+    background: linear-gradient(to right, #9558d5, #701ec6);
 	}
 }
 
 @media (max-width: 470px) {
-	.button-renew {    
+	.button-renew {
     position: absolute;
     left: 31%;
     top: 65;
     transform: rotate(-20deg);
-    background: linear-gradient(to right, #9558d5, #701ec6);          
+    background: linear-gradient(to right, #9558d5, #701ec6);    
     font-size: 55%;   
 	}
 }
