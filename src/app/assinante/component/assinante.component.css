@@ -12,7 +12,7 @@
   left: 39%;
   top: 62%;
   transform: rotate(-20deg);
-  background: linear-gradient(to right, #9558d5, #701ec6);  
+  background: linear-gradient(to right, #9558d5, #701ec6);
   border-radius: 4px;
   font-weight: 600;
   color: #fff;
@@ -143,7 +143,7 @@
 	  height: 100%;
   }
 
-.card-icon > .bx-sm{
+.card-icon> .bx-sm{
   font-size: 2rem !important;
 }
 
@@ -155,8 +155,7 @@
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid #eeeeee;
-  border-radius: 0.25rem;
+  border: 1px solid #eee;  
   font-size: 0.875rem;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -242,7 +241,7 @@
 .card .card-header.card-header-icon .card-title,
 .card .card-header.card-header-text .card-title {
   margin-top: 15px;
-  color: #555555;
+  color: #555;
 }
 
 
@@ -251,7 +250,7 @@
   min-height: 160px;
 }
 
-.card .card-body+.card-footer,
+.card .card-body + .card-footer,
 .card .card-footer {
   padding: 0;
   padding-top: 10px;
@@ -261,25 +260,19 @@
   align-items: center;
 }
 
-.card .card-body+.card-footer h6,
-.card .card-footer h6 {
-  width: 100%;
-}
-
-.card .card-body+.card-footer .stats,
 .card .card-footer .stats {
   color: #999999;
   font-size: 12px;
   line-height: 22px;
 }
-
-.card .card-body+.card-footer .stats .card-category,
+.card .card-body + .card-footer .stats,
 .card .card-footer .stats .card-category {
   padding-top: 7px;
   padding-bottom: 7px;
   margin: 0;
 }
 
+.card .card-body + .card-footer .stats .card-category,
 .card .card-body+.card-footer .stats .material-icons,
 .card .card-footer .stats .material-icons {
   position: relative;
@@ -287,14 +280,11 @@
   font-size: 16px;
 }
 
-
 .card [class*="card-header-"] {
   margin: 0px 15px 0;
   padding: 0;
   position: relative;
 }
-
-
 
 .card [class*="card-header-"] .card-icon,
 .card [class*="card-header-"] .card-text {
@@ -323,8 +313,6 @@
   margin: 0;
 }
 
-
-
 .card-stats .card-header .card-category:not([class*="text-"]) {
   color: #999;
   font-size: 14px;
@@ -346,13 +334,13 @@
 .card-stats .card-body {
   text-align: right;
 }
+
 .section-title {
   text-align: center;
   padding-bottom: 30px;
   position: relative;
-  color: #555;
-  
-  }
+  color: #555;  
+}
 
 @media (max-width: 1196px) {
 	.button-renew {    
