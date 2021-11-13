@@ -24,6 +24,7 @@ export class Artista {
     public facebookProfile: string,
     public twitterProfile: string,
     public whatsappProfile: string,
-    public whatsappContact: string
+    public whatsappContact: string,
+    public isPremium: boolean
   ) {}
 }
