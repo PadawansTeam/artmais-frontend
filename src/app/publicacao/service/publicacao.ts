@@ -28,6 +28,7 @@ export class Publicacao {
       ],
       public commentsAmount: number,
       public likesAmount: number,
-      public isLiked: boolean
+      public isLiked: boolean,
+      public isPremium: boolean
       ) {}
 }

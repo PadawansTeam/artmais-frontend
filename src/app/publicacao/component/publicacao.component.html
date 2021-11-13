@@ -13,6 +13,12 @@
             <div class="row">
                 <div class="col-lg-12 shadow back">
                     <div class="img-responsive text-center">
+                        <div *ngIf="publicacao.isPremium">
+                            <div class="star">
+                              <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
+                              <p>PREMIUM</p>
+                            </div>
+                        </div>
                         <img [src]="publicacao.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
                     </div>
                 </div>
