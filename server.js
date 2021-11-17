@@ -7,11 +7,11 @@ const helmet = require('helmet');
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
-    directives: {    
-      defaultSrc: "*",  
+    directives: {
+      defaultSrc: "*",
       fontSrc: "*",
       imgSrc: "*",
-      scriptSrc: "*",   
+      scriptSrc: "*",
       styleSrc: "*",
       frameSrc: "*",
       fontSrc: "*",
