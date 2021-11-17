@@ -8,9 +8,9 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
     directives: {
-      defaultSrc: ["'self'"],
+      defaultSrc: ["*"],
       fontSrc: ["*"],
-      imgSrc: ["*","data:"],
+      imgSrc: ["*"],
       scriptSrc: ["*"],   
       styleSrc: ["*"],
     },
