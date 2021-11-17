@@ -7,15 +7,19 @@ const helmet = require('helmet');
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
-    directives: {      
-      fontSrc: ["*"],
-      imgSrc: ["*"],
-      scriptSrc: ["*"],   
-      styleSrc: ["*"],
+    directives: {    
+      defaultSrc: "*",  
+      fontSrc: "*",
+      imgSrc: "*",
+      scriptSrc: "*",   
+      styleSrc: "*",
+      frameSrc: "*",
+      fontSrc: "*",
+      reportOnly: true,
+      setAllHeaders: false,
     },
   })
 );
-app.use(helmet.contentSecurityPolicy.dangerouslyDisableDefaultSrc());
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(helmet.noSniff());
