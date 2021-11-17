@@ -3,27 +3,19 @@ const express = require("express");
 const path = require("path");
 const app = express();
 //Header secure
-const csp = require('content-security-policy');
 const helmet = require('helmet');
-const cspPolicy = {
-  'default-src': csp.SRC_ANY,
-  'style-src': [
-      '*'
-  ],
-  'script-src': [
-    '*'
-  ],
-  'connect-src': csp.SRC_ANY,
-  'child-src': [
-      csp.SRC_SELF,
-      '*'
-  ],
-  'img-src': [
-    '*'
-  ]
-};
-const globalCSP = csp.getCSP(cspPolicy);
-app.use(globalCSP);
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: false,
+    directives: {
+      defaultSrc: ["'self'"],
+      fontSrc: ["*"],
+      imgSrc: ["*","data:"],
+      scriptSrc: ["*"],   
+      styleSrc: ["*"],
+    },
+  })
+);
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(helmet.noSniff());
