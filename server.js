@@ -8,12 +8,12 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
     directives: {
-      defaultSrc: "*",
-      fontSrc: "*",
-      imgSrc: "*",
-      scriptSrc: "*",
-      styleSrc: "*",
-      frameSrc: "*",      
+      defaultSrc: ["*"],
+      fontSrc: ["*"],
+      imgSrc: ["*"],
+      scriptSrc: ["*"],
+      styleSrc: ["*"],
+      frameSrc: ["*"],      
       reportOnly: true,
       setAllHeaders: false,
     },
