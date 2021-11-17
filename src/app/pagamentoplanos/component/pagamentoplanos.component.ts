@@ -8,6 +8,7 @@ import { PagamentoplanosService } from '../service/pagamentoplanos.service';
   styleUrls: ['./pagamentoplanos.component.css']
 })
 export class PagamentoplanosComponent implements OnInit {
+  cardForm: any;
 
   constructor(
     private scriptService: ExternalService,
@@ -15,12 +16,13 @@ export class PagamentoplanosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.pagamentoSerice.ngOnInit();
     this.scriptService.load('MercadoPago').then(data => {
   }).catch(error => console.log(error));
     //@ts-ignore
-    const mp = new MercadoPago('YOUR_PUBLIC_KEY');
-    const cardForm = mp.cardForm({
-      amount: "100.5",
+    const mp = new MercadoPago('TEST-3765ae52-23a2-40f0-9811-7a3d6cbbe51d');
+    this.cardForm = mp.cardForm({
+      amount: "10",
       autoMount: true,
       form: {
         id: "form-checkout",
@@ -80,7 +82,7 @@ export class PagamentoplanosComponent implements OnInit {
             installments,
             identificationNumber,
             identificationType,
-          } = cardForm.getCardFormData();
+          } = this.cardForm.getCardFormData();
 
           fetch("/process_payment", {
             method: "POST",
@@ -116,12 +118,13 @@ export class PagamentoplanosComponent implements OnInit {
   }
 
   botaoPagar(){
-    this.pagamentoSerice.insertPagamento().subscribe(
-      (response) => {
-      },
-      (err) => {
-        throw err;
-      },
-    );  
+    // this.pagamentoSerice.insertPagamento().subscribe(
+    //   (response) => {
+    //   },
+    //   (err) => {
+    //     throw err;
+    //   },
+    // );  
+    console.log("Teste: ", this.cardForm.createCardToken())
   }
 }

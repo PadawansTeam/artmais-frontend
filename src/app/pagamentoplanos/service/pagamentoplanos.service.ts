@@ -21,7 +21,13 @@ export class PagamentoplanosService {
   constructor(
     private http: HttpClient,
     private router: Router
-  ) { }
+    ) { }
+
+  ngOnInit(): void {
+    if (this.token == undefined || this.token == null) {
+      this.router.navigate(['']);
+    }
+  }
 
   insertPagamento(): Observable<any> {
     return this.http.post(`${this.artPlusURL}` + `v1`, this.httpOptions);

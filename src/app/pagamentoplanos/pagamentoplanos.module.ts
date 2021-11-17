@@ -10,6 +10,7 @@ import { FooterModule } from '../footer/footer.module';
 import { PagamentoplanosComponent } from './component/pagamentoplanos.component';
 import { ExternalService } from './service/external.service';
 import { PagamentoplanosService } from './service/pagamentoplanos.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -33,6 +34,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HeaderUserComumModule,
     FooterModule,
     HeaderlogModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     TranslateService, 
