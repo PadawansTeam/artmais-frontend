@@ -51,7 +51,7 @@ export class PublicacaoComponent implements OnInit {
     }
     this.idUser = this.route.snapshot.params['id'];
     this.idPublicacao = this.route.snapshot.params['publicationId'];
-    if(decodedToken.nameid == this.idUser){
+    if(decodedToken?.nameid == this.idUser){
       this.isSameUser = true;
     }
     this.seeIfLogged();

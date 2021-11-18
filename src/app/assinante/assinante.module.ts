@@ -8,6 +8,8 @@ import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { AssinanteComponent } from './component/assinante.component';
+import { AssinanteService } from './service/assinante.service';
+import { ArtistaService } from '../artista/service/artista.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -31,7 +33,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HeaderlogModule,    
   ],
   providers: [
-    TranslateService
+    TranslateService,
+    AssinanteService,
+    ArtistaService
   ],
   bootstrap: []
 })

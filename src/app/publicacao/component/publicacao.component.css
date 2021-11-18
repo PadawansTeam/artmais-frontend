@@ -177,6 +177,11 @@ div.img-responsive {
 	.publi{
 		width: 100% !important;
 	}
+
+	.star{
+		margin-left: 175px !important;
+		margin-top: 5px !important;
+	}
 }
 
 .icon-color {
@@ -292,7 +297,21 @@ input[type='file']::-webkit-file-upload-button:hover {
     width: 45rem;
 }
 
+.star{
+	color: #ffd700;
+	position: absolute;
+	top: 42%;
+	z-index: 23;
+	margin-left: 27.3rem;
+	margin-top: 50px;
+}
 
+.star p{
+	font-weight: 400;
+	position: absolute;
+	font-size: 8px;
+	color: #bea201;
+}
 
 
 ul.social-buttons {
