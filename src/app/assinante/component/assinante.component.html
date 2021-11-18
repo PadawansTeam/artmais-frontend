@@ -19,7 +19,7 @@
                 <div class="card-icon">
                   <i class='bx bx-calendar-exclamation bx-sm bx-tada-hover'></i>
                 </div>
-                <p class="card-category">Validade do Plano</p>
+                <p class="card-category">{{'ASSINANTES.PREMIUM-VALIDADE' | translate}}</p>
                 <h5 class="card-title">{{assinante.endDate | date:'dd/MM/yyyy'}}</h5>
               </div>
               <div class="card-footer">
@@ -28,16 +28,17 @@
             </div>
           </div>
         </div>
-        <div>
-          <br>          
+        <div>                  
           <p>{{'ASSINANTES.TEXTO2' | translate}}</p>
-          <p>Continue aproveitando todos os recursos disponíves renovando sua assinatura</p>
+          <p>{{'ASSINANTES.TEXTO3' | translate}}</p>
+          <p>{{'ASSINANTES.TEXTO4' | translate}}</p><br>
+          <p>{{'ASSINANTES.TEXTO5' | translate}}</p>
         </div>
         <div class="row align-items-center text-center justify-content-center" data-aos="fade-up">
           <div class="div.renew">
             <img class="image-renew" src="assets/img/assinante/credcard.svg" alt="...">
             <a href="/pagamento">
-              <button class="btn btn-primary button-renew">Renovar</button>
+              <button class=" btn btn-buy button-renew bx-tada-hover">{{'ASSINANTES.BOTAO-RENOVAR' | translate}}</button>
             </a>
           </div>
         </div>
