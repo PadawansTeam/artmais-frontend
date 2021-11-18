@@ -50,6 +50,8 @@ const cspPolicy = {
 
   ]
 };
+const globalCSP = csp.getCSP(cspPolicy);
+app.use(globalCSP);
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(helmet.noSniff());
