@@ -11,8 +11,8 @@ app.use(
     useDefaults: false,
     directives: {
       "default-src": ["*"],
-      "script-src": ["*"],
-      "style-src": ["*"],
+      "script-src": ["*","'unsafe-eval'","'unsafe-inline'",`nonce-${nonce}`],
+      "style-src": ["*","'unsafe-inline'","'unsafe-eval'"],
       "base-uri": ["*"],
       "form-action": ["*"],
       "manifest-src": ["*"],
