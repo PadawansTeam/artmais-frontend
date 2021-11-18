@@ -7,13 +7,8 @@ const helmet = require('helmet');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
 app.use(
-  helmet.contentSecurityPolicy({
-    useDefaults: false,
-    directives: {
-      "default-src": ["'self'","https:","data:","artmais-frontend.herokuapp.com","https://artmais-frontend.herokuapp.com/","artmais-backend.herokuapp.com","https://artmais-backend.herokuapp.com","https://boxicons.com/","https://undraw.co/illustrations"],
-      "scriptSrc": ["'self'", "https://static.ads-twitter.com", "https://www.google-analytics.com", "'sha256-q2sY7jlDS4SrxBg6oq/NBYk9XVSwDsterXWpH99SAn0='", "https://boxicons.com/", "https://undraw.co/illustrations"],
-      "style-src": ["'self'", "https://fonts.googleapis.com", "https://boxicons.com/", "https://undraw.co/illustrations"],
-    },
+  helmet({
+    contentSecurityPolicy: false,
   })
 );
 app.use(helmet.noSniff());
