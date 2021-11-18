@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { isInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 import Swal from 'sweetalert2';
 import { ExternalService } from '../service/external.service';
 import { PagamentoplanosService } from '../service/pagamentoplanos.service';
@@ -33,8 +32,8 @@ export class PagamentoplanosComponent implements OnInit {
 
   ngOnInit(): void {
     this.pagamentoSerice.ngOnInit();
-    this.scriptService.load('MercadoPago').then(data => {
-  }).catch(error => console.log(error));
+    this.scriptService.load('MercadoPago').then((data) => {
+  }).catch((error) => console.log(error));
     //@ts-ignore
     const mp = new MercadoPago('TEST-3765ae52-23a2-40f0-9811-7a3d6cbbe51d');
     this.cardForm = mp.cardForm({
@@ -138,10 +137,10 @@ export class PagamentoplanosComponent implements OnInit {
       (response: any) => {
         let pagamentoRes = this.cardForm.getCardFormData();
         this.pagamentoSerice.insertPagamento({
-          transactionAmount: parseFloat(pagamentoRes.amount), 
-          cardToken: pagamentoRes.token, 
-          email: pagamentoRes.cardholderEmail, 
-          installments: parseInt(pagamentoRes.installments) , 
+          transactionAmount: parseFloat(pagamentoRes.amount),
+          cardToken: pagamentoRes.token,
+          email: pagamentoRes.cardholderEmail,
+          installments: parseInt(pagamentoRes.installments) ,
           paymentMethodId: pagamentoRes.paymentMethodId
         }).subscribe(
           async (response) => {
@@ -168,7 +167,7 @@ export class PagamentoplanosComponent implements OnInit {
             });
             throw err;
           },
-        );  
+        );
       }
     );
   }
