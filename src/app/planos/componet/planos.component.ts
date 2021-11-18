@@ -26,6 +26,7 @@ export class PlanosComponent implements OnInit {
   ngOnInit(): void {
     this.planosService.ngOnInit();
     this.roleIfClient();
+    this.goToAssinante();
     this.AssinanteIfPremium();
     this.planosService.getValidation().subscribe(
       (response) => { },
@@ -41,7 +42,7 @@ export class PlanosComponent implements OnInit {
 
   roleIfClient() {
     this.recommendationService.getRole().subscribe(
-      (response) => {        
+      (response) => {
         if (response.role === 'Client') {
           this.roleUser = true;
         } else {
@@ -53,7 +54,7 @@ export class PlanosComponent implements OnInit {
 
   AssinanteIfPremium() {
     this.assinanteService.getAssinaturaPremium().subscribe(
-      (response) => {        
+      (response) => {
         if (response.isPremium === true) {
           this.ifPremium = true;
         } else {
@@ -63,5 +64,16 @@ export class PlanosComponent implements OnInit {
     )
   }
 
-
+  goToAssinante() {
+    this.assinanteService.getAssinaturaPremium().subscribe(
+      (response) => {
+        if (response.isPremium === true) {
+          this.ifPremium = true;
+          this.router.navigate(['/assinante']);
+        } else {
+          this.ifPremium = false;
+        }
+      }
+    )
+  }
 }
