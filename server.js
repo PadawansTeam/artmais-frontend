@@ -6,18 +6,17 @@ const app = express();
 const helmet = require('helmet');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
+app.use((req, res, next) => {
+  res.locals.cspNonce = crypto.randomBytes(16).toString("hex");
+  next();
+});
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
     directives: {
       "default-src": helmet.contentSecurityPolicy.dangerouslyDisableDefaultSrc,
-      "scriptSrc": ["'self'","'unsafe-inline'","'unsafe-eval'","https://static.ads-twitter.com","https://www.google-analytics.com","'sha256-q2sY7jlDS4SrxBg6oq/NBYk9XVSwDsterXWpH99SAn0='","https://boxicons.com/","https://undraw.co/illustrations"],
-      "style-src": ["'self'","'unsafe-inline'","*","https://fonts.googleapis.com","https://boxicons.com/","https://undraw.co/illustrations"],
-      "base-uri": ["*"],
-      "form-action": ["*"],
-      "manifest-src": ["*"],
-      "media-src": ["*"],
-      "object-src": ["*"],
+      "scriptSrc": ["'self'", "https://static.ads-twitter.com", "https://www.google-analytics.com", "'sha256-q2sY7jlDS4SrxBg6oq/NBYk9XVSwDsterXWpH99SAn0='", "https://boxicons.com/", "https://undraw.co/illustrations", (req, res) => `'nonce-${res.locals.cspNonce}'`],
+      "style-src": ["'self'", "https://fonts.googleapis.com", "https://boxicons.com/", "https://undraw.co/illustrations"],
     },
   })
 );
