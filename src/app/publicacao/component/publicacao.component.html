@@ -7,11 +7,9 @@
 <div *ngIf="this.loggedUser == false">
     <app-header></app-header>
 </div>
-<div>
-    <meta name="description" content="{{publicacao.description}}">
-    <meta property="og:image" itemprop="image" content="https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/8/6/3/9/8639f29e71a957769de231fa75770f2a.jpg" />
-    <meta property="og:image:type" content="image/png" />
-</div>
+
+
+
 <div class="row py-3 px-4">
     <div class="container">
         <div class="bg-white shadow  overflow-hidden">
@@ -73,6 +71,9 @@
         <div class="row">
             <div class="col-md-12 mt-0">
                 <div *ngIf="publicacao.mediaType == 'Imagem'">
+                    <meta name="description" content="{{publicacao.description}}">
+                    <meta property="og:image" itemprop="image" content="{{publicacao.s3UrlMedia}}" />
+                    <meta property="og:image:type" content="image/png" />
                     <div class="img-responsive text-center">
                         <img class="d-block mx-auto publi" [src]="publicacao.s3UrlMedia" alt="">
                     </div>
