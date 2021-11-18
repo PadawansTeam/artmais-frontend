@@ -4,7 +4,7 @@
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 0 30px 0 rgba(67, 18, 112, 0.3);
-  height: 20rem;
+  height: 22rem;
 }
 
 .friend-list .friend-card:hover {
@@ -19,10 +19,18 @@ img.profile-photo-lg {
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  border: 7px solid #fff;
+  border: 7px solid rgb(240, 237, 237);
   margin-top: -50px;
   margin-bottom: 10px;
 }
+img.profile-photo-lg-premium {
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 7px solid #d4b921;
+	margin-top: -50px;
+	margin-bottom: 10px;
+  }
 
 
 
@@ -51,7 +59,6 @@ img.profile-photo-lg {
   text-align: center;
   font-size: 1rem;
   text-align: center;
-  padding-bottom: 0 !important;
 }
 
 .profile-link {
@@ -59,7 +66,6 @@ img.profile-photo-lg {
   color: #555555;
   text-align: center;
   font-size: 1rem;
-  margin-bottom: 10px;
 }
 
 section {
@@ -135,18 +141,21 @@ section {
 	left: calc(50% - 25px);
 }
 .star{
-  color: #ffd700;
-  position: absolute;
-  top: 10px;
-  z-index: 23;
-  margin-left: 140px;
-  margin-top: 100px;
+  color: #d4b921;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  padding: 0 0 5px 0 !important;
 }
+
 .star p{
   font-weight: 400;
-  position: absolute;
   font-size: 9px;
-  color: #bea201;
+  color: #d4b921;
+  padding: 20px 0 0 0;
 }
 
 .star:hover{
@@ -157,7 +166,7 @@ section {
 }
 
 .back {
-	background-image: url("src/assets/img/slide/slider3.jpg");
+	background-image: url("src/assets/img/pages/bg2.jpg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -266,10 +275,13 @@ ul.plus-buttons li a {
 .img-perfil {
 	width: 200px;
 	height: 200px;
-	border: 7px solid white;
+	border: 7px solid rgb(240, 237, 237);
 	margin-top: 4rem;
 	display: block;
 }
+
+
+
 
 .rounded-circle {
 	margin-left: auto;
@@ -470,3 +482,6 @@ color: #555555;
 	height: 50%;
 }
 
+p{
+	margin-bottom: 10px !important;
+}

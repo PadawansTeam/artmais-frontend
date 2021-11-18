@@ -10,26 +10,31 @@
 <div *ngIf="this.artist.category =='Consumidor'">
     <div class="row py-3 px-4">
         <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
-            <!-- Profile widget -->
             <div class="bg-white shadow  overflow-hidden">
                 <div class="row">
                     <div class="col-lg-12 shadow back">
                         <div class="img-responsive text-center">
                             <div *ngIf="artist.isPremium">
-                                <div class="star">
-                                  <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
-                                  <p>PREMIUM</p>
+                                <img [src]="artist.userPicture" alt="Profile Image"
+                                    class="  rounded-circle img-fluid mx-auto img-perfil-premium">
                                 </div>
-                              </div>
-                            <img [src]="artist.userPicture" alt="..."
-                                class="  rounded-circle img-fluid mx-auto img-perfil">
+                                <div *ngIf="!artist.isPremium">
+                                    <img [src]="artist.userPicture" alt="Profile Image"
+                                        class="  rounded-circle img-fluid mx-auto img-perfil">
+                                </div>
                         </div>
                     </div>
                 </div>
                 <div class="media-body  text-black">
                     <p class="mt-0 mb-0 name">{{artist.name}}</p>
-                    <!-- <p class="small mb-0 text-muted">(Ela/Dela)</p> -->
+                    <p class="mt-0 mb-0 username">{{artist.username}}</p>
                     <p class="small mb-2 category">{{artist.category}}</p>
+                    <div *ngIf="artist.isPremium">
+                        <div class="col-md-12 star mt-0 text-center">
+                            <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
+                            <p>PREMIUM</p>
+                        </div>
+                    </div>
                     <div class="row ">
                         <div class="col-lg-8 mx-auto text-center">
                             <p class="large text-muted">{{artist.description}}</p>
@@ -43,25 +48,31 @@
 <div *ngIf="this.artist.category !='Consumidor'">
     <div class="row py-3 px-4">
         <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
-            <!-- Profile widget -->
             <div class="bg-white shadow  overflow-hidden">
                 <div class="row">
                     <div class="col-lg-12 shadow back">
                         <div class="img-responsive text-center">
-                            <img [src]="artist.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
                             <div *ngIf="artist.isPremium">
-                                <div class="star">
-                                  <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
-                                  <p>PREMIUM</p>
+                                <img [src]="artist.userPicture" alt="Profile Image"
+                                    class="  rounded-circle img-fluid mx-auto img-perfil-premium">
                                 </div>
-                            </div>
+                                <div *ngIf="!artist.isPremium">
+                                    <img [src]="artist.userPicture" alt="Profile Image"
+                                        class="  rounded-circle img-fluid mx-auto img-perfil">
+                                </div>
                         </div>
                     </div>
                 </div>
                 <div class="media-body  text-black">
                     <p class="mt-0 mb-0 name">{{artist.name}}</p>
-                    <!-- <p class="small mb-0 text-muted">(Ela/Dela)</p> -->
-                    <p class="small mb-2 category">{{artist.category}} - {{artist.subcategory}}</p>
+                    <p class="mt-0 mb-0 username">{{artist.username}}</p>
+                    <p class="small mb-0 category">{{artist.category}} - {{artist.subcategory}}</p>
+                    <div *ngIf="artist.isPremium">
+                        <div class="col-md-12 star mt-0 text-center">
+                            <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
+                            <p>PREMIUM</p>
+                        </div>
+                    </div>
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-12">
@@ -113,23 +124,32 @@
                             <div class="col-md-12 fw-bold mb-3 ">
                                 {{ 'PERFIL.ENDERECO' | translate }}
                             </div>
-                            <div class="row text1 text-left">
-                                <div class="col-md-2  col-md-2 fw-bold text-muted text-left">{{ 'PERFIL.RUA' | translate
-                                    }}
+                            <div *ngIf= "artist.street  && artist.number">
+                                <div class="adress mx-3">
+                                    <p class="fw-bold text-muted mx-1 text-left">{{ 'PERFIL.RUA' | translate }}</p>
+                                    <p class="text-muted text-left">{{artist.street}}</p>
+                                    <p class="fw-bold text-muted mx-1 text-left">{{ 'PERFIL.NUMERO' | translate }}</p>
+                                    <p class="text-muted text-left">{{artist.number}}</p>
                                 </div>
-                                <div class="col-md-10 text-muted text-left">{{artist.street}}</div>
-                            </div>
-                            <div class="row text1">
-                                <div class="col-md-3 text-left fw-bold text-muted">{{ 'PERFIL.NUMERO' | translate }}
+                                <div *ngif = "artist.complement">
+                                    <div class="adress">
+                                        <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.COMPLEMENTO' | translate }}</p>
+                                        <p class="text-muted text-left">{{artist.complement}}</p>
+                                    </div>
                                 </div>
-                                <div class="col-md-1 text-left text-muted">{{artist.number}}</div>
-                            </div>
-                            <div class="row text1">
-                                <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.BAIRRO' | translate }}
+                                <div class="adress">
+                                    <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.BAIRRO' | translate }}</p>
+                                    <p class="text-muted mx-1 text-left">{{artist.neighborhood}}</p>
+                                    <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.CEP' | translate }}</p>
+                                    <p class="text-muted text-left">{{artist.zipCode}}</p>
                                 </div>
-                                <div class="col-md-6 text-muted">{{artist.neighborhood}}</div>
-                                <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.CEP' | translate }}</div>
-                                <div class="col-md-4 text-left text-muted">{{artist.zipCode}}</div>
+                                <div class="adress">
+                                
+                                    <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.CIDADE' | translate }}</p>
+                                    <p class="text-muted mx-1 text-left">{{artist.city}}</p>
+                                    <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.ESTADO' | translate }}</p>
+                                    <p class="text-muted text-left">{{artist.state}}</p>
+                                </div>
                             </div>
                         </div>
                         <div class="bg-light col-md-4 d-block text-center">

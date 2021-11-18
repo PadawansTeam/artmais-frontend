@@ -4,7 +4,7 @@
     overflow: hidden;
     margin-bottom: 20px;
     box-shadow: 0 0 30px 0 rgba(67, 18, 112, 0.3);
-    height: 16rem;
+    height: 19rem;
  
   }
   
@@ -20,10 +20,19 @@
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    border: 7px solid #fff;
+    border: 7px solid rgb(240, 237, 237);
     margin-top: -60px;
 
   }
+
+  img.profile-photo-lg-premium {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 7px solid #d4b921;
+    margin-top: -50px;
+    margin-bottom: 10px;
+    }
   
   .text-cat {
     color: #FFF;
@@ -127,18 +136,21 @@
   }
 
 .star{
-  color: #ffd700;
-  position: absolute;
-  top: 10px;
-  z-index: 23;
-  margin-left: 150px;
-  margin-top: 65px;
+  color: #d4b921;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  padding: 0 0 5px 0 !important;
 }
+
 .star p{
   font-weight: 400;
-  position: absolute;
-  font-size: 8px;
-  color: #bea201;
+  font-size: 9px;
+  color: #d4b921;
+  padding: 10px 0 0 0;
 }
 
 .name{
@@ -156,4 +168,8 @@
   text-align: center;
   font-size: 1rem;
   font-weight: 400;
+}
+
+p{
+	margin-bottom: 10px !important;
 }
