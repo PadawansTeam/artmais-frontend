@@ -8,12 +8,12 @@
         "EMAIL": "E-mail",
         "CONF-EMAIL": "Confirmação do e-mail",
         "SENHA": "Senha",
-        "CAMPO-SENHA": "Sua senha deve possuir:",
-        "CAMPO-CRIT-1": "No mínimo 8 caracteres",
-        "CAMPO-CRIT-2": "Pelo menos 1 letra maiúscula",
-        "CAMPO-CRIT-4": "Pelo menos 1 número",
-        "CAMPO-CRIT-5": "Pelo menos 1 caractere especial",
-        "CAMPO-CRIT-3": "Pelo menos 1 letra minúscula",
+        "CAMPO-SENHA":"Sua senha deve possuir:",
+        "CAMPO-CRIT-1":"No mínimo 8 caracteres",
+        "CAMPO-CRIT-2":"Pelo menos 1 letra maiúscula",
+        "CAMPO-CRIT-4":"Pelo menos 1 número",
+        "CAMPO-CRIT-5":"Pelo menos 1 caractere especial",
+        "CAMPO-CRIT-3":"Pelo menos 1 letra minúscula",
         "CONF-SENHA": "Confirmação de senha",
         "NASCIMENTO": "Data de nascimento",
         "BOTAO": "Cadastrar",
@@ -21,12 +21,13 @@
         "CLIENTE": "Não sou artista",
         "ERRO": "Campos obrigatórios não foram preenchidos. Por favor, tente novamente!",
         "INVALIDO": "Campo inválido",
-        "ENTRAR": "Entrar",
+        "ENTRAR":"Entrar",
         "POSSUI-CONTA": "Já possui uma conta?",
         "DATA-VALIDA": "Data Inválida",
         "TEXTO-1-CADASTRO-PRIVA": "Ao clicar em cadastrar você aceita a",
         "TEXTO-2-CADASTRO-PRIVA": "da Art+.",
         "LINK-CADASTRO-PRIVA": "Política de Privacidade"
+
     },
     "ENTRAR": {
         "ENTRAR": "Entrar",
@@ -37,9 +38,11 @@
         "API": "Ocorreu um erro. Por favor, tente novamente mais tarde",
         "ESQUECEU": "Esqueceu sua senha?",
         "INVALIDO": "Campo inválido",
-        "CADASTRAR": "Cadastre-se",
+        "CADASTRAR":"Cadastre-se",
         "NAO-POSSUI-CONTA": "Não possui uma conta?",
         "OU": "Ou"
+
+
     },
     "MENU": {
         "HOME": "Home",
@@ -50,9 +53,10 @@
         "CADASTRO": "Cadastre-se",
         "ENTRAR": "Entrar"
     },
+
     "HEADER": {
         "HOMEPAGE": "Início",
-        "INTERESSE": "Interesses",
+        "INTERESSE":"Interesses",
         "CONFIG": "Configurações",
         "PERFIL": "Perfil",
         "SAIR": "Sair",
@@ -60,6 +64,8 @@
         "DASHBOARD": "Dashboard",
         "PLANOS": "Planos",
         "PESQUISAR": "Pesquisar"
+
+
     },
     "FOOTER": {
         "SOBRE": "SOBRE",
@@ -93,37 +99,38 @@
         "PLANOS-TITULO-CARD1": "GRATUITO",
         "PLANOS-POR-MES": "/ mês",
         "PLANOS-TEXTO1-CARD1": "Seu perfil disponível para todos",
-        "PLANOS-TEXTO2-CARD1": "Diversos temas disponíveis",
+        "PLANOS-TEXTO2-CARD1": "Perfil no top das buscas",
         "PLANOS-TEXTO3-CARD1": "Receba relatórios de crescimento",
         "PLANOS-TEXTO4-CARD1": "Seu perfil divulgado na plataforma",
-        "PLANOS-TEXTO5-CARD1": "Temas customizáveis exclusivos",
+        "PLANOS-TEXTO5-CARD1": "Perfil no top das recomendações",
         "PLANOS-TEXTO6-CARD1": "Acesso a Dashboard de crescimento",
         "PLANOS-CADASTRAR-CARD1": "Cadastre-se",
         "PLANOS-TITULO-CARD2": "PREMIUM",
         "PLANOS-TEXTO1-CARD2": "Seu perfil disponível para todos",
-        "PLANOS-TEXTO2-CARD2": "Diversos temas disponíveis",
+       "PLANOS-TEXTO2-CARD2":  "Perfil no top das buscas",
         "PLANOS-TEXTO3-CARD2": "Receba relatórios de crescimento",
-        "PLANOS-TEXTO4-CARD2": "Seu perfil divulgado na plataforma",
-        "PLANOS-TEXTO5-CARD2": "Temas customizáveis",
-        "PLANOS-TEXTO6-CARD2": "Acesso a Dashboard de crescimento",
+        "PLANOS-TEXTO4-CARD2": "Perfil destacado na plataforma",
+       "PLANOS-TEXTO5-CARD2":  "Perfil no top das recomendações",
+        "PLANOS-TEXTO6-CARD2": "Acesso a Dashboard de crescimento",     
         "PLANOS-CADASTRAR-CARD2": "Comprar"
     },
     "RECOMENDACAO": {
         "TITULO": "RECOMENDAÇÃO DE PERFIL",
         "SUBTITULO": "Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse, suas atividades, interações com outros usuários e pesquisas feitas serão utilizadas para personalizar futuras sugestões. Descubra novos artistas e acompanhe seus projetos pelo Art+.",
-        "TOOLTIP-RECOMENDACAO1": "Nosso sistema recomendará os artistas das categorias que você escolher na página recomendar. Além disso, você também receberá dicas de artistas que a plataforma Art + entender que são relevantes para você.",
-        "TOOLTIP-RECOMENDACAO2": "Caso você seja Premium, você terá destaque na recomendação dos outros usuários da plataforma, aparecendo primeiro para eles."
+        "TOOLTIP-RECOMENDACAO1":"Nosso sistema recomendará os artistas das categorias que você escolher na página recomendar. Além disso, você também receberá dicas de artistas que a plataforma Art + entender que são relevantes para você.",
+        "TOOLTIP-RECOMENDACAO2":"Caso você seja Premium, você terá destaque na recomendação dos outros usuários da plataforma, aparecendo primeiro para eles."
     },
     "ERRO": {
         "TITULO": "404 - Página não encontrada",
         "BUTTON": "Voltar"
     },
+    
     "CONSTRUCAO": {
         "TITULO": "Desculpe, a página está em construção",
         "BUTTON": "Voltar"
     },
     "INTERESSES": {
-        "TITULO": "Interesses",
+        "TITULO" : "Interesses",
         "SUBTITULO": "Escolha as categorias de artistas que você possui mais interesse de acompanhar",
         "CATEGORIA": "Categoria",
         "BUTTON": "Selecionar"
@@ -140,7 +147,7 @@
         "COMPARTILHAR": "Compartilhar",
         "PORTIFOLIO": "Portfólio",
         "SALVAR": "Salvar",
-        "FECHAR": "Fechar",
+        "FECHAR":"Fechar",
         "DESCRIÇÃO-ITEM-PORTFOLIO": "Descrição:",
         "ADICIONAR-ITEM": "Adicionar item ao seu portfólio",
         "PLACE-DESCRIÇÃO": "Digite a descrição...",
@@ -150,7 +157,7 @@
         "ABA-ERRO": "Não há nada postado ainda"
     },
     "CONFIG": {
-        "CONFIG": "Configurações",
+        "CONFIG":"Configurações",
         "SOBRE": "Sobre",
         "DESCRICAO": "Descrição:",
         "DESCRICAO-BOX": "Digite a descrição...",
@@ -215,23 +222,21 @@
         "TEXTO-6": "Se houverem outras dúvidas acerca dos pontos apresentados neste acordo, na coleta e no processamento dos dados pessoais ou qualquer outro ponto deste documento, entre em contato com a equipe da Art+ a qualquer momento por meio do próprio site ou por outros contatos da plataforma.",
         "TEXTO-7": "Caso você não concorde com algum ponto deste acordo, não cadastre-se em nossa plataforma. Estando de acordo, ao clicar em “Cadastrar”, você concorda com todos os pontos apresentados sobre o uso de seus dados em nossos serviços.",
         "SELE-IDIOMA": "Selecione o idioma:"
+    
     },
     "USUARIOS": {
         "TITULO": "RESULTADOS DA PESQUISA",
         "TEXTO1": "Veja aqui todos os resultados da sua pesquisa!",
         "TEXTO2": "Sentimos muito, mas não encontramos nada para a sua pesquisa. Por favor, tente outro termo!"
     },
+
     "ASSINANTES": {
         "TITULO-0": "Olá, ",
         "TITULO-1": "+",
         "TEXTO1": "O melhor da Art+ para Você!",
-        "PREMIUM-VALIDADE": "Validade do Plano",
-        "TEXTO2": "Sua assinatura habilita:",
-        "TEXTO3": "Acesso ao Dashboard de crescimento;",
-        "TEXTO4": "Seu perfil no topo das buscas e em recomendações.",
-        "TEXTO5": "Continue aproveitando todos os recursos disponíveis renovando sua assinatura!",
-        "BOTAO-RENOVAR": "Renovar"
+        "TEXTO2": "Sua assinatura habilita: O acesso ao Dashboard de crescimento e seu perfil em primeiro nas pesquisas na plataforma!"    
     },
+        
     "PUBLICACAO": {
         "COMENTARIOS": "Comentários",
         "COMENTAR": "Comentar",
@@ -240,31 +245,32 @@
         "PRIMEIRO": "Seja o primeiro a comentar!",
         "PRIMEIRO-AUTOR": "Ainda não há comentários!"
     },
+
     "USERCOMUM": {
-        "SUBTITULO-RECOMENDACAO": "Descubra novos artistas!",
-        "SUBTITULO01-RECOMENDACAO": "Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse."
+        "SUBTITULO-RECOMENDACAO":"Descubra novos artistas!",
+        "SUBTITULO01-RECOMENDACAO":"Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse."
     },
+        
     "DASHBOARD": {
         "TOTAL-CURTIDAS": "Total de Curtidas",
         "TOTAL-COMENTARIOS": "Total de Comentários",
         "TOTAL-VISITAS": "Total de Visitas",
-        "MEDIA-IDADE": "Média de Idade",
-        "CHART-COMENTARIOS": "Evolução Comentários",
-        "CHART-CURTIDAS": "Evolução Curtidas",
-        "CHART-VISITAS": " Evolução Visitas",
-        "CARD-NULL-TEXT1": "Poxa, que pena...",
-        "CARD-NULL-TEXT2": "Você ainda não possui dados suficiente para a criação do gráfico.",
-        "CARD-NULL-TEXT3": "Continue interagindo na plataforma!",
-        "TOOLTIP-DASH1": "Mostrará as métricas do seu engajamento dentro da plataforma, para isso receba comentários, curtidas e visitas no seu perfil! ",
-        "TOOLTIP-DASH2": "A linha na cor roxa são os seus dados, já a linha tracejada na cor cinza são os dados da previsão que a plataforma Art+ calculou, tendo como base uma regressão linear simples.",
-        "TOOLTIP-DASH3": "No primeiro mês de uso da plataforma a linha da previsão aparecerá como uma linha reta, pois não temos dados suficientes. Mas, nos meses seguintes, te conheceremos melhor e seu gráfico ficará mais parecido com a realidade.",
-        "NO-PREMIUM-TEXT1": "Poxa, que pena...",
-        "NO-PREMIUM-TEXT2": "Você ainda não possui o plano premium para visualizar o seu Dashboard.",
-        "NO-PREMIUM-TEXT3": "Aproveite! Adquira o plano premium agora!",
-        "NO-PREMIUM-TEXT4": "Algumas das métricas que seu Dashboard terá são:",
-        "NO-PREMIUM-TEXT5": "Quantidade de comentários e curtidas em seu portifólio",
-        "NO-PREMIUM-TEXT6": "Previsão de suas métricas para os próximos meses",
-        "NO-PREMIUM-TEXT7": "E muito mais!",
-        "NO-PREMIUM-BUTTON": "Adquirir"
-    }
-}
+        "MEDIA-IDADE":"Média de Idade",
+        "CHART-COMENTARIOS":"Evolução Comentários",
+        "CHART-CURTIDAS":"Evolução Curtidas",
+        "CHART-VISITAS":" Evolução Visitas",
+        "CARD-NULL-TEXT1":"Poxa, que pena...",
+        "CARD-NULL-TEXT2":"Você ainda não possui dados suficiente para a criação do gráfico.",
+        "CARD-NULL-TEXT3":"Continue interagindo na plataforma!",
+        "TOOLTIP-DASH1":"Mostrará as métricas do seu engajamento dentro da plataforma, para isso receba comentários, curtidas e visitas no seu perfil! ",
+        "TOOLTIP-DASH2":"A linha na cor roxa são os seus dados, já a linha tracejada na cor cinza são os dados da previsão que a plataforma Art+ calculou, tendo como base uma regressão linear simples.",
+        "TOOLTIP-DASH3":"No primeiro mês de uso da plataforma a linha da previsão aparecerá como uma linha reta, pois não temos dados suficientes. Mas, nos meses seguintes, te conheceremos melhor e seu gráfico ficará mais parecido com a realidade.",
+        "NO-PREMIUM-TEXT1":"Poxa, que pena...",
+        "NO-PREMIUM-TEXT2":"Você ainda não possui o plano premium para visualizar o seu Dashboard.",
+        "NO-PREMIUM-TEXT3":"Aproveite! Adquira o plano premium agora!",
+        "NO-PREMIUM-TEXT4":"Algumas das métricas que seu Dashboard terá são:",
+        "NO-PREMIUM-TEXT5":"Quantidade de comentários e curtidas em seu portifólio",
+        "NO-PREMIUM-TEXT6":"Previsão de suas métricas para os próximos meses",
+        "NO-PREMIUM-TEXT7":"E muito mais!",
+        "NO-PREMIUM-BUTTON":"Adquirir"
+}}
