@@ -12,12 +12,15 @@
   left: 39%;
   top: 62%;
   transform: rotate(-20deg);
-  background: linear-gradient(to right, #9558d5, #701ec6);
-  border-radius: 4px;
-  font-weight: 600;
-  color: #fff;
-  border: 0;
+  background: linear-gradient(to left, #9558d5, #701ec6);
+  color: white !important;
+	border-radius: 4px;
+	color: #701ec6;
+	transition: 0.2s;
+	border: 2px solid #701ec6;
+	text-decoration: none;
 }
+
 .pricing {
 	margin-top: 120px;
 }
