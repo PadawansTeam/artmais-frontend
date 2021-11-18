@@ -11,7 +11,7 @@ app.use(helmet.frameguard());
 app.use(helmet.xssFilter());
 app.use(
   helmet({
-    contentSecurityPolicy: true,
+    contentSecurityPolicy: false,
   })
 );
 app.use(
