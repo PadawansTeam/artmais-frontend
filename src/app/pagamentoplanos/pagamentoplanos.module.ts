@@ -8,6 +8,9 @@ import { HeaderlogModule } from '../headerlog/headerlog.module';
 import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
 import { FooterModule } from '../footer/footer.module';
 import { PagamentoplanosComponent } from './component/pagamentoplanos.component';
+import { ExternalService } from './service/external.service';
+import { PagamentoplanosService } from './service/pagamentoplanos.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -30,10 +33,15 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SelectModule,
     HeaderUserComumModule,
     FooterModule,
-    HeaderlogModule
+    HeaderlogModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    TranslateService],
+    TranslateService, 
+    ExternalService,
+    PagamentoplanosService
+  ],
   bootstrap: []
 })
 export class PagamentoplanosModule { }
