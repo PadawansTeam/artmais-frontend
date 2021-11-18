@@ -10,9 +10,9 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
     directives: {
-      "default-src": ["*"],
-      "script-src": ["*"],
-      "style-src": ["*"],
+      "default-src": helmet.contentSecurityPolicy.dangerouslyDisableDefaultSrc,
+      "scriptSrc": ["'self'","'unsafe-inline'","'unsafe-eval'","https://static.ads-twitter.com","https://www.google-analytics.com","'sha256-q2sY7jlDS4SrxBg6oq/NBYk9XVSwDsterXWpH99SAn0='","https://boxicons.com/","https://undraw.co/illustrations"],
+      "style-src": ["'self'","'unsafe-inline'","*","https://fonts.googleapis.com","https://boxicons.com/","https://undraw.co/illustrations"],
       "base-uri": ["*"],
       "form-action": ["*"],
       "manifest-src": ["*"],
