@@ -18,7 +18,7 @@ app.use(
       frameAncestors: ["'none'"],
       upgradeInsecureRequests: [],
     },
-    reportOnly: true,
+    reportOnly: false,
   })
 );
 app.use(helmet.noSniff());
