@@ -5,21 +5,27 @@
             <div class="row">
                 <div class="col-lg-12 shadow back">
                     <div class="img-responsive">
-                        <img [src]="profile.userPicture" alt="Profile Image" class="  rounded-circle img-fluid mx-auto img-perfil">
-                                                <!-- <div *ngIf="profile.isPremium">
-                            <div class="star">
-                              <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
-                              <p>PREMIUM</p>
-                            </div>
-                          </div> -->
+                        <div *ngIf="profile.isPremium">
+                        <img [src]="profile.userPicture" alt="Profile Image"
+                            class="  rounded-circle img-fluid mx-auto img-perfil-premium">
+                        </div>
+                        <div *ngIf="!profile.isPremium">
+                            <img [src]="profile.userPicture" alt="Profile Image"
+                                class="  rounded-circle img-fluid mx-auto img-perfil">
+                        </div>
                     </div>
-
                 </div>
             </div>
-
             <div class="media-body  text-black">
                 <p class="mt-0 mb-0 name">{{profile.name}}</p>
-                <p class="small mb-2 category">{{profile.category}} - {{profile.subcategory}}</p>
+                <p class="mt-0 mb-0 username">{{profile.username}}</p>
+                <p class="small mb-0 category">{{profile.category}} - {{profile.subcategory}}</p>
+                <div *ngIf="profile.isPremium">
+                    <div class="col-md-12 star mt-0 text-center">
+                        <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
+                        <p>PREMIUM</p>
+                    </div>
+                </div>
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-12">
@@ -44,7 +50,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row ">
                     <div class="col-lg-8 mx-auto text-center">
                         <p class="large text-muted">{{profile.description}}</p>
@@ -62,25 +67,41 @@
                             <div class="col-md-12 text-muted">{{profile.thirdPhone}}</div>
                         </div>
                     </div>
-                    <div class="bg-light col-md-4 d-block text-center ">
-                        <i class="fa fa-map-marker icon-color mr-1 mb-2 mt-3 " aria-hidden="true"></i>
-                        <div class="col-md-12 fw-bold mb-3 ">
+                    <div class="bg-light col-md-4 d-block  ">
+                        <div class="text-center">
+                            <i class="fa fa-map-marker icon-color mr-1 mb-2 mt-3  " aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-12 fw-bold mb-3  text-center">
                             {{ 'PERFIL.ENDERECO' | translate }}
                         </div>
-                        <div class="row text1 text-left">
-                            <div class="col-md-2  col-md-2 fw-bold text-muted text-left">{{ 'PERFIL.RUA' | translate }}
+                        <div *ngIf= "profile.street  && profile.number">
+                            <div class="adress">
+                                <p class="fw-bold text-muted mx-1 text-left">{{ 'PERFIL.RUA' | translate }}</p>
+                                <p class="text-muted text-left">{{profile.street}}</p>
+                                <p class="fw-bold text-muted mx-1 text-left">{{ 'PERFIL.NUMERO' | translate }}</p>
+                                <p class="text-muted text-left">{{profile.number}}</p>
                             </div>
-                            <div class="col-md-10 text-muted text-left">{{profile.street}}</div>
-                        </div>
-                        <div class="row text1">
-                            <div class="col-md-3 text-left fw-bold text-muted">{{ 'PERFIL.NUMERO' | translate }}</div>
-                            <div class="col-md-1 text-left text-muted">{{profile.number}}</div>
-                        </div>
-                        <div class="row text1">
-                            <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.BAIRRO' | translate }}</div>
-                            <div class="col-md-6 text-muted">{{profile.neighborhood}}</div>
-                            <div class="col-md-1 text-left fw-bold text-muted">{{ 'PERFIL.CEP' | translate }}</div>
-                            <div class="col-md-4 text-left text-muted">{{profile.zipCode}}</div>
+                            <div *ngif = "profile.complement">
+                                <div class="adress">
+                                    <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.COMPLEMENTO' | translate }}:</p>
+                                    <p class="text-muted text-left">{{profile.complement}}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="adress">
+                                <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.BAIRRO' | translate }}</p>
+                                <p class="text-muted mx-1 text-left">{{profile.neighborhood}}</p>
+                                <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.CEP' | translate }}:</p>
+                                <p class="text-muted text-left">{{profile.zipCode}}</p>
+                                
+                            </div>
+                            <div class="adress">
+                                
+                                <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.CIDADE' | translate }}</p>
+                                <p class="text-muted mx-1 text-left">{{profile.city}}</p>
+                                <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.ESTADO' | translate }}:</p>
+                                <p class="text-muted text-left">{{profile.state}}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="bg-light col-md-4 d-block text-center">
@@ -109,7 +130,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class=" row py-4 px-4">
@@ -260,4 +280,4 @@
             </div>
         </div>
     </div>
-    </div>
+</div>

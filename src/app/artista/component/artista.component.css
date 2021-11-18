@@ -210,18 +210,25 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 	background: linear-gradient(to left, #9558d5, #701ec6);
 	color: white !important;
 }
+.username{
+	color: gray;
+}
 
 .img-perfil {
 
 	width: 200px;
 	height: 200px;
-	border: 7px solid white;
+	border: 7px solid rgb(240, 237, 237);
 	margin-top: 4rem;
 	display: block;
-
-
 }
-
+.img-perfil-premium {
+	width: 200px;
+	height: 200px;
+	border: 8px solid #d4b921;
+	display: block;
+	padding-top: 0 !important;
+}
 .rounded-circle {
 	margin-left: auto;
 	margin-right: auto;
@@ -229,9 +236,7 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 	z-index: 1;
     margin-top: 9rem;
     border-radius: 50%;
-
 }
-
 div.img-responsive {
 	display: block;
 	margin: 0 31.5rem;
@@ -243,10 +248,6 @@ div.img-responsive {
 		margin: 0 3.7rem;
 	}
 
-	.star{
-		margin-left: 175px !important;
-		margin-top: 5px !important;
-	}
 }
 
 .icon-color{
@@ -331,17 +332,27 @@ div.img-responsive {
 }
 
 .star{
-	color: #ffd700;
-	position: absolute;
-	top: 42%;
-	z-index: 23;
-	margin-left: 190px;
-	margin-top: 50px;
+	color: #d4b921;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
 }
 
 .star p{
 	font-weight: 400;
-	position: absolute;
-	font-size: 8px;
-	color: #bea201;
+	font-size: 20px;
+	color: #d4b921;
+	padding: 20px 0 0 0;
+}
+
+.adress{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
 }

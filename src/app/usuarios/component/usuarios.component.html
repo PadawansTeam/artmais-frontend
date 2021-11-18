@@ -32,13 +32,18 @@
             </div>
             <div class="card-info">
               <div *ngIf="usuario.isPremium">
-                <div class="star">
-                  <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
-                  <p>PREMIUM</p>
-                </div>
+                <img [src]="usuario.userPicture" alt="user" class="profile-photo-lg-premium">
               </div>
-              <img [src]="usuario.userPicture" alt="user" class="profile-photo-lg">
+              <div *ngIf="!usuario.isPremium">
+                <img [src]="usuario.userPicture" alt="user" class="profile-photo-lg">
+              </div>
               <div class="friend-info">
+                <div *ngIf="usuario.isPremium">
+                  <div class="star">
+                    <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
+                    <p>PREMIUM</p>
+                  </div>
+                </div>
                 <div class="name fw-bolder">
                   <a>
                     <h5>{{usuario.name}}</h5>

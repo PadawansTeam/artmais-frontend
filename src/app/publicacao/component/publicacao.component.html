@@ -17,12 +17,13 @@
                 <div class="col-lg-12 shadow back">
                     <div class="img-responsive text-center">
                         <div *ngIf="publicacao.isPremium">
-                            <div class="star">
-                              <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
-                              <p>PREMIUM</p>
+                            <img [src]="publicacao.userPicture" alt="Profile Image"
+                                class="  rounded-circle img-fluid mx-auto img-perfil-premium">
                             </div>
-                        </div>
-                        <img [src]="publicacao.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
+                            <div *ngIf="!publicacao.isPremium">
+                                <img [src]="publicacao.userPicture" alt="Profile Image"
+                                    class="  rounded-circle img-fluid mx-auto img-perfil">
+                            </div>
                     </div>
                 </div>
             </div>
@@ -30,6 +31,12 @@
                 <p class="mt-0 mb-0 name">{{publicacao.name}}</p>
                 <p class="mt-0 mb-0 username">{{publicacao.username}}</p>
                 <p class="small mb-2 category">{{publicacao.category}} - {{publicacao.subcategory}}</p>
+                <div *ngIf="publicacao.isPremium">
+                    <div class="col-md-12 star mt-0 text-center">
+                        <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
+                        <p>PREMIUM</p>
+                    </div>
+                </div>
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-12">
