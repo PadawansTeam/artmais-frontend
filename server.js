@@ -10,7 +10,7 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
     directives: {      
-      defaultSrc: ["'self'","'unsafe-inline'","*","https:","data:","artmais-frontend.herokuapp.com","https://artmais-frontend.herokuapp.com/","artmais-backend.herokuapp.com","https://artmais-backend.herokuapp.com",,"https://boxicons.com/","https://undraw.co/illustrations"],
+      defaultSrc: ["'self'","'unsafe-inline'","*","https:","data:","artmais-frontend.herokuapp.com","https://artmais-frontend.herokuapp.com/","artmais-backend.herokuapp.com","https://artmais-backend.herokuapp.com","https://boxicons.com/","https://undraw.co/illustrations"],
       scriptSrc: ["'self'","*","'unsafe-inline'","https://static.ads-twitter.com","https://www.google-analytics.com","'sha256-q2sY7jlDS4SrxBg6oq/NBYk9XVSwDsterXWpH99SAn0='","https://boxicons.com/","https://undraw.co/illustrations"],
       imgSrc: ["'self'","*","data:","https://s3.amazonaws.com","https://twitter.com","https://pbs.twimg.com","https://boxicons.com/","https://undraw.co/illustrations"],
       fontSrc: ["'self","*","'unsafe-inline'","https://fonts.gstatic.com","https://boxicons.com/","https://undraw.co/illustrations"],
