@@ -115,8 +115,10 @@
         "PLANOS-CADASTRAR-CARD2": "Comprar"
     },
     "RECOMENDACAO": {
-        "TITULO": "Recomendação de Perfil",
-        "SUBTITULO": "Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse, suas atividades, interações com outros usuários e pesquisas feitas serão utilizadas para personalizar futuras sugestões. Descubra novos artistas e acompanhe seus projetos pelo Art+."
+        "TITULO": "RECOMENDAÇÃO DE PERFIL",
+        "SUBTITULO": "Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse, suas atividades, interações com outros usuários e pesquisas feitas serão utilizadas para personalizar futuras sugestões. Descubra novos artistas e acompanhe seus projetos pelo Art+.",
+        "TOOLTIP-RECOMENDACAO1":"Nosso sistema recomendará os artistas das categorias que você escolher na página recomendar. Além disso, você também receberá dicas de artistas que a plataforma Art + entender que são relevantes para você.",
+        "TOOLTIP-RECOMENDACAO2":"Caso você seja Premium, você terá destaque na recomendação dos outros usuários da plataforma, aparecendo primeiro para eles."
     },
     "ERRO": {
         "TITULO": "404 - Página não encontrada",
@@ -259,6 +261,17 @@
         "CHART-VISITAS":" Evolução Visitas",
         "CARD-NULL-TEXT1":"Poxa, que pena...",
         "CARD-NULL-TEXT2":"Você ainda não possui dados suficiente para a criação do gráfico.",
-        "CARD-NULL-TEXT3":"Continue interagindo na plataforma!"
+        "CARD-NULL-TEXT3":"Continue interagindo na plataforma!",
+        "TOOLTIP-DASH1":"Mostrará as métricas do seu engajamento dentro da plataforma, para isso receba comentários, curtidas e visitas no seu perfil! ",
+        "TOOLTIP-DASH2":"A linha na cor roxa são os seus dados, já a linha tracejada na cor cinza são os dados da previsão que a plataforma Art+ calculou, tendo como base uma regressão linear simples.",
+        "TOOLTIP-DASH3":"No primeiro mês de uso da plataforma a linha da previsão aparecerá como uma linha reta, pois não temos dados suficientes. Mas, nos meses seguintes, te conheceremos melhor e seu gráfico ficará mais parecido com a realidade.",
+        "NO-PREMIUM-TEXT1":"Poxa, que pena...",
+        "NO-PREMIUM-TEXT2":"Você ainda não possui o plano premium para visualizar o seu Dashboard.",
+        "NO-PREMIUM-TEXT3":"Aproveite! Adquira o plano premium agora!",
+        "NO-PREMIUM-TEXT4":"Algumas das métricas que seu Dashboard terá são:",
+        "NO-PREMIUM-TEXT5":"Quantidade de comentários e curtidas em seu portifólio",
+        "NO-PREMIUM-TEXT6":"Previsão de suas métricas para os próximos meses",
+        "NO-PREMIUM-TEXT7":"E muito mais!",
+        "NO-PREMIUM-BUTTON":"Adquirir"
 }}
 

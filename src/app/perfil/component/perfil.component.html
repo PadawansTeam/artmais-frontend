@@ -4,14 +4,14 @@
         <div class="bg-white shadow  overflow-hidden">
             <div class="row">
                 <div class="col-lg-12 shadow back">
-                    <div class="img-responsive text-center">
-                        <div *ngIf="profile.isPremium">
+                    <div class="img-responsive">
+                        <img [src]="profile.userPicture" alt="Profile Image" class="  rounded-circle img-fluid mx-auto img-perfil">
+                                                <!-- <div *ngIf="profile.isPremium">
                             <div class="star">
-                              <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
+                              <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
                               <p>PREMIUM</p>
                             </div>
-                          </div>
-                        <img [src]="profile.userPicture" alt="..." class="  rounded-circle img-fluid mx-auto img-perfil">
+                          </div> -->
                     </div>
 
                 </div>
@@ -207,8 +207,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal Input photo -->
     <div class="portfolio-modal modal fade" id="ModalConfig" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content ">
@@ -262,40 +260,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal calendar -->
-    <!-- <div class="portfolio-modal modal fade" id="ModalCalendar" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content ">
-                <div class="close-modal" type="button" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 mx-auto">
-                            <div class="modal-body">
-                                <img class="img-fluid d-block mx-auto"
-                                    src="https://images.pexels.com/photos/5386754/pexels-photo-5386754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    alt="">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
-                                    lorem sed tellus posuere tincidunt a ac lorem. Nam urna tellus, luctus vel suscipit
-                                    sed,
-                                    maximus id sapien. Nam vestibulum aliquam sapien a malesuada. Aliquam egestas magna
-                                    quis
-                                    ligula gravida varius. Nunc convallis sollicitudin egestas. Vivamus condimentum,
-                                    nisi vitae
-                                    porta vehicula, est ipsum eleifend felis, pharetra condimentum quam felis nec justo.
-                                    Proin
-                                    vitae ligula tincidunt nibh scelerisque fermentum. Praesent semper at
-                                </p>
-                                <button class="getstarted" type="button" class="getstarted" data-bs-dismiss="modal"
-                                    aria-label="Fechar">{{ 'PERFIL.FECHAR' | translate }}</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>

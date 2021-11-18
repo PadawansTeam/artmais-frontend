@@ -10,6 +10,7 @@ export class Dashboard {
         public sumVisits: string,
         public visitsGrowth: string,
         public visitsPrediction: string,
-        public lineChartType: string
+        public lineChartType: string,
+        public isPremium: boolean
     ){ }
 }
