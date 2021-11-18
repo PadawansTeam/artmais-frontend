@@ -6,7 +6,8 @@ const app = express();
 const helmet = require('helmet');
 const csp = require('content-security-policy');
 const cspPolicy = {
-  'default-src': csp.SRC_ANY,
+  'default-src': [csp.SRC_ANY,csp.SRC_SELF,'self'],
+
   'style-src': [
       csp.SRC_SELF,
       csp.SRC_USAFE_INLINE,
