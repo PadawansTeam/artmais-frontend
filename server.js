@@ -6,11 +6,7 @@ const app = express();
 const helmet = require('helmet');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
-app.use(
-  helmet({
-    contentSecurityPolicy: false,
-  })
-);
+app.use(helmet.permittedCrossDomainPolicies())
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
 app.use(helmet.xssFilter());
