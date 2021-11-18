@@ -111,8 +111,10 @@
         "PLANOS-CADASTRAR-CARD2": "Buy Now"
     },
         "RECOMENDACAO": {
-            "TITULO": "Profile Recommendation",
-            "SUBTITULO": "These profiles were chosen according to the artistic fields of interest to you. Activities, user interactions and searches made will be used to customize future suggestions. Discover new artists and follow their projects through Art+."
+            "TITULO": "PROFILE RECOMMENDATION",
+            "SUBTITULO": "These profiles were chosen according to the artistic fields of interest to you. Activities, user interactions and searches made will be used to customize future suggestions. Discover new artists and follow their projects through Art+.",
+            "TOOLTIP-RECOMENDACAO1":"Our system will recommend artists from the categories you choose on the recommend page. In addition, you will also receive tips from artists that the Art+ platform understands that are relevant to you.",
+            "TOOLTIP-RECOMENDACAO2":"If you are Premium, you will be highlighted in the recommendation of other platform users, appearing first for them."
         },
         "ERRO": {
             "TITULO": "404 - Page not found",
@@ -251,7 +253,18 @@
         "CHART-VISITAS":"Evolution Visits",
         "CARD-NULL-TEXT1":"That's too bad!",
         "CARD-NULL-TEXT2":"You still don't have enough data to create the chart.",
-        "CARD-NULL-TEXT3":"Keep interacting on the platform!"
+        "CARD-NULL-TEXT3":"Keep interacting on the platform!",
+        "TOOLTIP-DASH1":"It will show your engagement metrics within the platform, so that you receive comments, likes and visits to your profile!",
+        "TOOLTIP-DASH2":"The purple line is your data, the gray dashed line is the forecast data that the Art+ platform calculated, based on a simple linear regression.",
+        "TOOLTIP-DASH3":"In the first month of using the platform the forecast line will appear as a straight line as we do not have enough data. But in the coming months, we'll get to know you better and your chart will look more like reality.",
+        "NO-PREMIUM-TEXT1":"That's too bad!",
+        "NO-PREMIUM-TEXT2":"You do not have the premium plan to view your Dashboard yet.",
+        "NO-PREMIUM-TEXT3":"Enjoy! Get the premium plan now!",
+        "NO-PREMIUM-TEXT4":"Some of the metrics your Dashboard will have are:",
+        "NO-PREMIUM-TEXT5":"Number of comments and likes in your portfolio",
+        "NO-PREMIUM-TEXT6":"Forecast your metrics for the coming months",
+        "NO-PREMIUM-TEXT7":"And much more!",
+        "NO-PREMIUM-BUTTON":"Purchase"
     }
 
 }

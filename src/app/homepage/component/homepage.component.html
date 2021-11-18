@@ -37,6 +37,17 @@
           <p>{{'USERCOMUM.SUBTITULO01-RECOMENDACAO' | translate  }}  </p>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="plus-buttons list-inline2">
+            <li class="list-inline-item">
+                <a href="#ModalQuestion" data-bs-toggle="modal">
+                    <i class="fa fa-question"></i>
+                </a>
+            </li>
+        </ul>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container" data-aos="fade-up">
@@ -85,6 +96,17 @@
           <p>{{ 'RECOMENDACAO.SUBTITULO' | translate }}</p>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="plus-buttons list-inline2">
+            <li class="list-inline-item">
+                <a href="#ModalQuestion" data-bs-toggle="modal">
+                    <i class="fa fa-question"></i>
+                </a>
+            </li>
+        </ul>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container" data-aos="fade-up">
@@ -124,4 +146,43 @@
     </div>
   </div>
 </section>
+</div>
+
+<div class="portfolio-modal modal fade" id="ModalQuestion" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content ">
+          <div class="close-modal" type="button" data-bs-dismiss="modal">
+              <div class="lr">
+                  <div class="rl"></div>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12 mx-auto ">
+                      <div class="modal-body ">
+                          <div class="row ">
+                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                                  <h5 class="title-modal">{{ 'RECOMENDACAO.TITULO' | translate }}</h5>
+                              </div>
+                          </div>
+                          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                              <div class="col-md-12">
+                                <div class="col-md-12 " data-aos="zoom-in" data-aos-delay="100">
+                                  <img src="assets/img/pages/RS.svg" alt="dashboard" class="image-toll mb-2">
+                                </div>
+                                <p>
+                                  {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO1" | translate }}
+                                </p>
+                                <p>
+                                  {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO2" | translate }}
+                                </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>

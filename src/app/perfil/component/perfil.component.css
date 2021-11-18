@@ -1,6 +1,6 @@
 
 .back {
-	background-image: url("src/assets/img/slide/slider3.jpg");
+	background-image: url("src/assets/img/pages/bg2.jpg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -204,16 +204,14 @@ ul.plus-buttons li a:active, ul.plus-buttons li a:focus, ul.plus-buttons li a:ho
 .img-perfil {
 	width: 200px;
 	height: 200px;
-	border: 7px solid white;
-	margin-top: 4rem;
+	border: 8px solid white;
 	display: block;
+	padding-top: 0 !important;
 }
 
 .rounded-circle {
-	margin-left: auto;
-	margin-right: auto;
 	vertical-align: middle;
-	z-index: 1;
+	z-index: 2;
 	margin-top: 9rem;
 	border-radius: 50%;
 }
@@ -394,7 +392,7 @@ input[type='file']::-webkit-file-upload-button:hover {
 .star{
 	color: #ffd700;
 	position: absolute;
-	top: 42%;
+	top: 30%;
 	z-index: 23;
 	margin-left: 190px;
 	margin-top: 50px;
@@ -403,6 +401,6 @@ input[type='file']::-webkit-file-upload-button:hover {
 .star p{
 	font-weight: 400;
 	position: absolute;
-	font-size: 8px;
+	font-size: 20px;
 	color: #bea201;
 }
