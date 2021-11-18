@@ -29,7 +29,14 @@ export class PagamentoplanosService {
     }
   }
 
-  insertPagamento(): Observable<any> {
-    return this.http.post(`${this.artPlusURL}` + `v1`, this.httpOptions);
+  insertPagamento( infos: {transactionAmount: number, cardToken: string,  installments: number, paymentMethodId: string, email: string}): Observable<any> {
+    return this.http.post(`${this.artPlusURL}` + `v1/Payment/PaymentCreateRequest`, {
+      transactionAmount: infos.transactionAmount, 
+      cardToken: infos.cardToken, 
+      description: " ", 
+      installments: infos.installments,
+      paymentMethodId: infos.paymentMethodId, 
+      email: infos.email 
+    }, this.httpOptions);
   }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { isInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
+import Swal from 'sweetalert2';
 import { ExternalService } from '../service/external.service';
 import { PagamentoplanosService } from '../service/pagamentoplanos.service';
 
@@ -10,9 +13,22 @@ import { PagamentoplanosService } from '../service/pagamentoplanos.service';
 export class PagamentoplanosComponent implements OnInit {
   cardForm: any;
 
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
+  });
+
   constructor(
     private scriptService: ExternalService,
-    private pagamentoSerice: PagamentoplanosService
+    private pagamentoSerice: PagamentoplanosService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -22,7 +38,7 @@ export class PagamentoplanosComponent implements OnInit {
     //@ts-ignore
     const mp = new MercadoPago('TEST-3765ae52-23a2-40f0-9811-7a3d6cbbe51d');
     this.cardForm = mp.cardForm({
-      amount: "10",
+      amount: "120",
       autoMount: true,
       form: {
         id: "form-checkout",
@@ -118,13 +134,42 @@ export class PagamentoplanosComponent implements OnInit {
   }
 
   botaoPagar(){
-    // this.pagamentoSerice.insertPagamento().subscribe(
-    //   (response) => {
-    //   },
-    //   (err) => {
-    //     throw err;
-    //   },
-    // );  
-    console.log("Teste: ", this.cardForm.createCardToken())
+    this.cardForm.createCardToken().then(
+      (response: any) => {
+        let pagamentoRes = this.cardForm.getCardFormData();
+        this.pagamentoSerice.insertPagamento({
+          transactionAmount: parseFloat(pagamentoRes.amount), 
+          cardToken: pagamentoRes.token, 
+          email: pagamentoRes.cardholderEmail, 
+          installments: parseInt(pagamentoRes.installments) , 
+          paymentMethodId: pagamentoRes.paymentMethodId
+        }).subscribe(
+          async (response) => {
+            await this.Toast.fire({
+              icon: 'success',
+              title:
+                localStorage.getItem('lang') === 'pt-BR'
+                  ? 'Pagamento realizado com sucesso!'
+                  : 'Payment recieved!',
+            });
+            this.router.navigate(['/assinante']);
+          },
+          (err) => {
+            this.Toast.fire({
+              icon: 'error',
+              title:
+                localStorage.getItem('lang') === 'pt-BR'
+                  ? 'Erro ao efetuar pagamento!'
+                  : 'Failed to proceed with payment!',
+              text:
+                localStorage.getItem('lang') === 'pt-BR'
+                  ? 'Tente novamente mais tarde!'
+                  : 'Try again later!',
+            });
+            throw err;
+          },
+        );  
+      }
+    );
   }
 }
