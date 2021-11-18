@@ -3,9 +3,15 @@ const express = require("express");
 const path = require("path");
 const app = express();
 //Header secure
+const permissionsPolicy = require('permissions-policy');
 const helmet = require('helmet');
 app.use(helmet.hsts());
 app.use(helmet.referrerPolicy());
+app.use(permissionsPolicy({
+  features: {
+      fullscreen: ['self']
+  }
+}));
 app.use(
   helmet({
     contentSecurityPolicy: false,
