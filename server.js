@@ -10,8 +10,14 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
     directives: {
-      "default-src": helmet.contentSecurityPolicy.dangerouslyDisableDefaultSrc,
-      "script-src": ["'self'","*","'unsafe-inline'","'unsafe-eval'","https://static.ads-twitter.com","https://www.google-analytics.com","'sha256-q2sY7jlDS4SrxBg6oq/NBYk9XVSwDsterXWpH99SAn0='","https://boxicons.com/","https://undraw.co/illustrations"],
+      "default-src": ["*"],
+      "script-src": ["*"],
+      "style-src": ["*"],
+      "base-uri": ["*"],
+      "form-action": ["*"],
+      "manifest-src": ["*"],
+      "media-src": ["*"],
+      "object-src": ["*"],
     },
   })
 );
@@ -38,4 +44,4 @@ app.get("/*", (req, res) =>
 );
 // Start the app by listening on the default Heroku port
 const PORT = process.env.PORT || 4200;
-app.listen(PORT, function () {});
+app.listen(PORT, function () { });
