@@ -1,39 +1,59 @@
 <app-headerlog></app-headerlog>
 <div *ngIf="userData.isPremium === false">
-<section class="dash">
-  <div class="content">
-    <div class="section-title" data-aos="fade-up">
-      <div class="row text-center">
-        <h2>Dashboard</h2>
-        <div class="col-md-12"></div>
+  <section class="dash">
+    <div class="content">
+      <div class="section-title" data-aos="fade-up">
+        <div class="row text-center">
+          <h2>Dashboard</h2>
+          <div class="col-md-12"></div>
+        </div>
       </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-6 text-center ops " data-aos="fade-up">
-          <div class="text-center ">
-              <div class="icon-sad-no-premium">
-                <i class="bx bx-sad  bx-tada-hover"></i>
-            </div>
-            </div>
-            <p class="text-no-premium mt-1">{{ "DASHBOARD.NO-PREMIUM-TEXT1" | translate }}</p>
-            <p class="text-no-premium mb-1">{{ "DASHBOARD.NO-PREMIUM-TEXT2" | translate }}</p>
-            <p class="text-no-premium-b mb-2"><b>{{ "DASHBOARD.NO-PREMIUM-TEXT3" | translate }}</b></p>
-            <p class="text-no-premium mb-1">{{ "DASHBOARD.NO-PREMIUM-TEXT4" | translate }}</p>
-            <p class="text-no-premium-list mb-0">{{ "DASHBOARD.NO-PREMIUM-TEXT5" | translate }}</p>
-            <p class="text-no-premium-list mb-0">{{ "DASHBOARD.NO-PREMIUM-TEXT6" | translate }}</p>
-            <p class="text-no-premium-list">{{ "DASHBOARD.NO-PREMIUM-TEXT7" | translate }}</p>
-            <a href="/planos"><button  type="button" class="btn-principal mt-1">{{ "DASHBOARD.NO-PREMIUM-BUTTON" | translate }}</button></a>
 
-                    </div>
-      <div class="col-md-6 img-no-premium" data-aos="fade-up">
-           <img src="assets/img/pages/data.svg" alt="erro" class="img-no-premium">
+      <div class="row">
+        <div class="col-md-6 text-center ops" data-aos="fade-up">
+          <div class="text-center">
+            <div class="icon-sad-no-premium">
+              <i class="bx bx-sad bx-tada-hover"></i>
+            </div>
+          </div>
+          <p class="text-no-premium mt-1">
+            {{ "DASHBOARD.NO-PREMIUM-TEXT1" | translate }}
+          </p>
+          <p class="text-no-premium mb-1">
+            {{ "DASHBOARD.NO-PREMIUM-TEXT2" | translate }}
+          </p>
+          <p class="text-no-premium-b mb-2">
+            <b>{{ "DASHBOARD.NO-PREMIUM-TEXT3" | translate }}</b>
+          </p>
+          <p class="text-no-premium mb-1">
+            {{ "DASHBOARD.NO-PREMIUM-TEXT4" | translate }}
+          </p>
+          <p class="text-no-premium-list mb-0">
+            {{ "DASHBOARD.NO-PREMIUM-TEXT5" | translate }}
+          </p>
+          <p class="text-no-premium-list mb-0">
+            {{ "DASHBOARD.NO-PREMIUM-TEXT6" | translate }}
+          </p>
+          <p class="text-no-premium-list">
+            {{ "DASHBOARD.NO-PREMIUM-TEXT7" | translate }}
+          </p>
+          <a href="/planos"
+            ><button type="button" class="btn-principal mt-1">
+              {{ "DASHBOARD.NO-PREMIUM-BUTTON" | translate }}
+            </button></a
+          >
+        </div>
+        <div class="col-md-6 img-no-premium" data-aos="fade-up">
+          <img
+            src="assets/img/pages/data.svg"
+            alt="erro"
+            class="img-no-premium"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </div>
-<div *ngIf="userData.isPremium ===  true">
 <section class="dash">
   <div class="content">
     <div class="section-title" data-aos="fade-up">
@@ -45,11 +65,11 @@
         <div class="col-md-12">
           <ul class="plus-buttons list-inline2">
             <li class="list-inline-item">
-                <a href="#ModalQuestion" data-bs-toggle="modal">
-                    <i class="fa fa-question"></i>
-                </a>
+              <a href="#ModalQuestion" data-bs-toggle="modal">
+                <i class="fa fa-question"></i>
+              </a>
             </li>
-        </ul>
+          </ul>
         </div>
       </div>
       <div class="container-fluid">
@@ -60,7 +80,9 @@
                 <div class="card-icon">
                   <i class="bx bxs-like bx-sm bx-tada-hover"></i>
                 </div>
-                <p class="card-category">{{ "DASHBOARD.TOTAL-CURTIDAS" | translate }}</p>
+                <p class="card-category">
+                  {{ "DASHBOARD.TOTAL-CURTIDAS" | translate }}
+                </p>
                 <h3 class="card-title">{{ userData.sumLikes }}</h3>
               </div>
               <div class="card-footer">
@@ -68,13 +90,19 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="col-lg-3 col-md-6 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="card card-stats">
               <div class="card-header card-header-success card-header-icon">
                 <div class="card-icon">
                   <i class="bx bxs-chat bx-sm bx-tada-hover"></i>
                 </div>
-                <p class="card-category">{{ "DASHBOARD.TOTAL-COMENTARIOS" | translate }}</p>
+                <p class="card-category">
+                  {{ "DASHBOARD.TOTAL-COMENTARIOS" | translate }}
+                </p>
                 <h3 class="card-title">{{ userData.sumComments }}</h3>
               </div>
               <div class="card-footer">
@@ -82,13 +110,19 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="col-lg-3 col-md-6 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="card card-stats">
               <div class="card-header card-header-danger card-header-icon">
                 <div class="card-icon">
                   <i class="bx bx-search bx-sm bx-tada-hover"></i>
                 </div>
-                <p class="card-category">{{ "DASHBOARD.TOTAL-VISITAS" | translate }}</p>
+                <p class="card-category">
+                  {{ "DASHBOARD.TOTAL-VISITAS" | translate }}
+                </p>
                 <h3 class="card-title">{{ userData.sumVisits }}</h3>
               </div>
               <div class="card-footer">
@@ -96,13 +130,19 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="col-lg-3 col-md-6 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div class="card card-stats">
               <div class="card-header card-header-info card-header-icon">
                 <div class="card-icon">
                   <i class="bx bxs-group bx-sm bx-tada-hover"></i>
                 </div>
-                <p class="card-category">{{ "DASHBOARD.MEDIA-IDADE" | translate }}</p>
+                <p class="card-category">
+                  {{ "DASHBOARD.MEDIA-IDADE" | translate }}
+                </p>
                 <h3 class="card-title">{{ userData.averageUsersAge }}</h3>
               </div>
               <div class="card-footer">
@@ -112,57 +152,99 @@
           </div>
           <div class="container text-center">
             <div class="row text-center">
-              <div class="col-md-4 background text-center my-1" data-aos="fade-up" data-aos-delay="100">
+              <div
+                class="col-md-4 background text-center my-1"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 <ng-container *ngIf="userData.sumComments === 0">
-                  <p class="title-chart">{{ "DASHBOARD.CHART-COMENTARIOS" | translate }}</p>
+                  <p class="title-chart">
+                    {{ "DASHBOARD.CHART-COMENTARIOS" | translate }}
+                  </p>
                   <div class="text-center teste">
                     <div class="icon-sad">
                       <i class="bx bx-sad bx-sm bx-tada-hover"></i>
+                    </div>
                   </div>
-                  </div>
-                  <p class="subtext-card mb-0">{{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}</p>
-                  <p class="subtext-card">{{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}</p> 
-                  <p class="text-footer-card">{{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}</p>
+                  <p class="subtext-card mb-0">
+                    {{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}
+                  </p>
+                  <p class="subtext-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}
+                  </p>
+                  <p class="text-footer-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}
+                  </p>
                 </ng-container>
                 <ng-container *ngIf="userData.sumComments !== 0">
-                <p class="title-chart">{{ "DASHBOARD.CHART-COMENTARIOS" | translate }}</p>
-                <canvas class="px-2" #commentsCanvas></canvas>
+                  <p class="title-chart">
+                    {{ "DASHBOARD.CHART-COMENTARIOS" | translate }}
+                  </p>
+                  <canvas class="px-2" #commentsCanvas></canvas>
                 </ng-container>
               </div>
-              <div class="col-md-4 background  my-1" data-aos="fade-up" data-aos-delay="200">
+              <div
+                class="col-md-4 background my-1"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <ng-container *ngIf="userData.sumLikes === 0">
-                  <p class="title-chart">{{ "DASHBOARD.CHART-CURTIDAS" | translate }}</p>
+                  <p class="title-chart">
+                    {{ "DASHBOARD.CHART-CURTIDAS" | translate }}
+                  </p>
                   <div class="text-center teste">
                     <div class="icon-sad">
                       <i class="bx bx-sad bx-sm bx-tada-hover"></i>
+                    </div>
                   </div>
-                  </div>
-                  <p class="subtext-card mb-0">{{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}</p>
-                  <p class="subtext-card">{{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}</p> 
-                  <p class="text-footer-card">{{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}</p>
+                  <p class="subtext-card mb-0">
+                    {{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}
+                  </p>
+                  <p class="subtext-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}
+                  </p>
+                  <p class="text-footer-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}
+                  </p>
                 </ng-container>
                 <ng-container *ngIf="userData.sumLikes !== 0">
-                <p class="title-chart">{{ "DASHBOARD.CHART-CURTIDAS" | translate }}</p>
-                <canvas class="px-2" #likesCanvas></canvas>
+                  <p class="title-chart">
+                    {{ "DASHBOARD.CHART-CURTIDAS" | translate }}
+                  </p>
+                  <canvas class="px-2" #likesCanvas></canvas>
                 </ng-container>
               </div>
 
-              <div class="col-md-4 background  my-1" data-aos="fade-up" data-aos-delay="300">
+              <div
+                class="col-md-4 background my-1"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <ng-container *ngIf="userData.sumVisits === 0">
-                  <p class="title-chart">{{ "DASHBOARD.CHART-VISITAS" | translate }}</p>
+                  <p class="title-chart">
+                    {{ "DASHBOARD.CHART-VISITAS" | translate }}
+                  </p>
                   <div class="text-center teste">
                     <div class="icon-sad">
                       <i class="bx bx-sad bx-sm bx-tada-hover"></i>
+                    </div>
                   </div>
-                  </div>
-                  <p class="subtext-card mb-0">{{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}</p>
-                  <p class="subtext-card">{{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}</p> 
-                  <p class="text-footer-card">{{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}</p>
+                  <p class="subtext-card mb-0">
+                    {{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}
+                  </p>
+                  <p class="subtext-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}
+                  </p>
+                  <p class="text-footer-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}
+                  </p>
                 </ng-container>
                 <ng-container *ngIf="userData.sumVisits !== 0">
-                <p class="title-chart">{{ "DASHBOARD.CHART-VISITAS" | translate }}</p>
-                <canvas class="px-2" #visitsCanvas></canvas>
-              </ng-container>
+                  <p class="title-chart">
+                    {{ "DASHBOARD.CHART-VISITAS" | translate }}
+                  </p>
+                  <canvas class="px-2" #visitsCanvas></canvas>
+                </ng-container>
               </div>
             </div>
           </div>
@@ -171,45 +253,57 @@
     </div>
   </div>
 </section>
-<div class="portfolio-modal modal fade" id="ModalQuestion" tabindex="-1" role="dialog" aria-hidden="true">
+<div
+  class="portfolio-modal modal fade"
+  id="ModalQuestion"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content ">
-          <div class="close-modal" type="button" data-bs-dismiss="modal">
-              <div class="lr">
-                  <div class="rl"></div>
-              </div>
-          </div>
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-12 mx-auto ">
-                      <div class="modal-body ">
-                          <div class="row ">
-                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-
-                                  <h5 class="title-modal">DASHBOARD</h5>
-                              </div>
-                          </div>
-                          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                              <div class="col-md-12">
-                                <div class="col-md-12 " data-aos="zoom-in" data-aos-delay="100">
-                                  <img src="assets/img/pages/Dash.svg" alt="dashboard" class="image-toll mb-2">
-                                </div>
-                                <p>
-                                  {{ "DASHBOARD.TOOLTIP-DASH1" | translate }}
-                                </p>
-                                <p>
-                                  {{ "DASHBOARD.TOOLTIP-DASH2" | translate }}
-                                </p>
-                                <p>
-                                  {{ "DASHBOARD.TOOLTIP-DASH3" | translate }}
-                                </p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+    <div class="modal-content">
+      <div class="close-modal" type="button" data-bs-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
       </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mx-auto">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <h5 class="title-modal">DASHBOARD</h5>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="col-md-12">
+                  <div
+                    class="col-md-12"
+                    data-aos="zoom-in"
+                    data-aos-delay="100"
+                  >
+                    <img
+                      src="assets/img/pages/Dash.svg"
+                      alt="dashboard"
+                      class="image-toll mb-2"
+                    />
+                  </div>
+                  <p>
+                    {{ "DASHBOARD.TOOLTIP-DASH1" | translate }}
+                  </p>
+                  <p>
+                    {{ "DASHBOARD.TOOLTIP-DASH2" | translate }}
+                  </p>
+                  <p>
+                    {{ "DASHBOARD.TOOLTIP-DASH3" | translate }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </div>

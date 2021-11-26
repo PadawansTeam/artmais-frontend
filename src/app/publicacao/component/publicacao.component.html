@@ -71,7 +71,14 @@
                                 <i class="fa fa-trash"></i>
                             </a>
                         </li>
-                    </ul>                    
+                    </ul>
+                    <ul class="plus-buttons list-inline2">
+                        <li class="list-inline-item">
+                            <a href="#ModalConfig" data-bs-toggle="modal">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </li>
+                    </ul>                      
                 </div>
             </div>
         </div>
@@ -239,6 +246,51 @@
                     </div>
                     <div class="mt-2 text-center">
                         <button (click)="insertComment()" class="getstarted" type="button">{{ 'PUBLICACAO.POSTAR' | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="descricao-modal modal fade" id="ModalConfig" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="close-modal" type="button" data-bs-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mx-auto ">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h5 class=" c1">Editar Publicação</h5>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group ">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                        </div>
+                                        <br>
+                                        <div class="col-md-6"></div>
+                                        <div class="descr fw-bold">
+                                            {{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
+                                        <textarea 
+                                            class="form-control2" cols="50" rows="6"
+                                            placeholder="{{ 'PERFIL.PLACE-DESCRIÇÃO' | translate }}"
+                                            maxlength="500"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                </div>
+                            </div>
+                            <button class="getstarted" type="button"
+                                class="getstarted mt-2" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
+                                translate }}</button>
+                        </div>
                     </div>
                 </div>
             </div>
