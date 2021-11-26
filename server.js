@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 //Header secure
+const featurePolicy = require("feature-policy");
 const helmet = require('helmet');
 app.use(
   helmet.hsts({
@@ -19,13 +20,28 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
     directives: {
-      "default-src": ["'self'"]
+      "default-src": ["'self'"],
     },
   })
 );
 app.use(
   helmet.referrerPolicy({
     policy: ["no-referrer"],
+  })
+);
+app.use(
+  featurePolicy({
+    features: {
+      fullscreen: ['self'],
+      accelerometer: [" "],
+      camera: [" "],
+      geolocation: [" "],
+      gyroscope: [" "],
+      magnetometer: [" "],
+      microphone: [" "],
+      payment: [" "],
+      usb: [" "],
+    },
   })
 );
 //Serve only the static files form the dist directory
