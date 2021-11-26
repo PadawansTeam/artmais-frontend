@@ -15,7 +15,11 @@ app.use(
     action: "deny",
   })
 );
-app.use(helmet.contentSecurityPolicy(false));
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 app.use(
   helmet.referrerPolicy({
     policy: ["no-referrer"],
