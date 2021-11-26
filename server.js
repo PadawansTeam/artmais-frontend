@@ -32,14 +32,14 @@ app.use(
 app.use(
   permissionsPolicy({
     features: {
-      accelerometer: ["self"],
-      camera: ["self"],
-      geolocation: ["self"],
-      gyroscope: ["self"],
-      magnetometer: ["self"],
-      microphone: ["self"],
-      payment: ["self"],
-      usb: ["self"],
+      accelerometer: ["'self'"],
+      camera: ["'self'"],
+      geolocation: ["'self'"],
+      gyroscope: ["'self'"],
+      magnetometer: ["'self'"],
+      microphone: ["'self'"],
+      payment: ["'self'"],
+      usb: ["'self'"],
     },
   })
 );
