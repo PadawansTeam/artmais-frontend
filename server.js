@@ -16,11 +16,6 @@ app.use(
   })
 );
 app.use(
-  helmet({
-    contentSecurityPolicy: false,
-  })
-);
-app.use(
   helmet.referrerPolicy({
     policy: ["no-referrer"],
   })
