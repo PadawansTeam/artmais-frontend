@@ -3,8 +3,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 //Header secure
-const featurePolicy = require("feature-policy");
 const helmet = require('helmet');
+const permissionsPolicy = require("permissions-policy");
 app.use(
   helmet.hsts({
     maxAge: 31536000,
@@ -30,16 +30,16 @@ app.use(
   })
 );
 app.use(
-  featurePolicy({
-    features: {  
-      accelerometer=(any),
-      camera=(any),
-      geolocation=(any),
-      gyroscope=(any),
-      magnetometer=(any),
-      microphone=(any),
-      payment=(any),
-      usb=(any),
+  permissionsPolicy({
+    features: {
+      accelerometer: ["self"],
+      camera: ["self"],
+      geolocation: ["self"],
+      gyroscope: ["self"],
+      magnetometer: ["self"],
+      microphone: ["self"],
+      payment: ["self"],
+      usb: ["self"],
     },
   })
 );
