@@ -32,14 +32,14 @@ app.use(
 app.use(
   featurePolicy({
     features: {  
-      accelerometer();,
-      camera();,
-      geolocation();,
-      gyroscope();,
-      magnetometer();,
-      microphone();,
-      payment();,
-      usb();
+      accelerometer=(any),
+      camera=(any),
+      geolocation=(any),
+      gyroscope=(any),
+      magnetometer=(any),
+      microphone=(any),
+      payment=(any),
+      usb=(any),
     },
   })
 );
