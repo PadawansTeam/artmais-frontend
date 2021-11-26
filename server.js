@@ -31,7 +31,7 @@ app.use(
 );
 app.use(
   featurePolicy({
-    features: {      
+    features: {  
       accelerometer();,
       camera();,
       geolocation();,
