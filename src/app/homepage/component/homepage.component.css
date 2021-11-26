@@ -69,18 +69,19 @@ img.profile-photo-lg-premium {
 }
 
 section {
-  padding: 120px 0;
-  overflow: hidden;
-  position: relative;
-  margin-top: 30px;
-}
 
+	overflow: hidden;
+	position: relative;
+	color: #555555;
+}
+.welcome{
+	padding: 120px 0 20px 0;
+	margin-top: 30px;
+}
 .section-title {
   text-align: center;
   padding-bottom: 30px;
   position: relative;
-  color: #555555;
-
 }
 .text-cat {
   color: #FFF;

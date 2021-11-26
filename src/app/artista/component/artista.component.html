@@ -1,273 +1,426 @@
 <div *ngIf="this.loggedUser == false">
-    <app-header></app-header>
+  <app-header></app-header>
 </div>
 <div *ngIf="roleUser && this.loggedUser == true">
-    <app-headerusercomum></app-headerusercomum>
+  <app-headerusercomum></app-headerusercomum>
 </div>
 <div *ngIf="!roleUser && this.loggedUser == true">
-    <app-headerlog></app-headerlog>
+  <app-headerlog></app-headerlog>
 </div>
-<div *ngIf="this.artist.category =='Consumidor'">
-    <div class="row py-3 px-4">
-        <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
-            <div class="bg-white shadow  overflow-hidden">
-                <div class="row">
-                    <div class="col-lg-12 shadow back">
-                        <div class="img-responsive text-center">
-                            <div *ngIf="artist.isPremium">
-                                <img [src]="artist.userPicture" alt="Profile Image"
-                                    class="  rounded-circle img-fluid mx-auto img-perfil-premium">
-                                </div>
-                                <div *ngIf="!artist.isPremium">
-                                    <img [src]="artist.userPicture" alt="Profile Image"
-                                        class="  rounded-circle img-fluid mx-auto img-perfil">
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="media-body  text-black">
-                    <p class="mt-0 mb-0 name">{{artist.name}}</p>
-                    <p class="mt-0 mb-0 username">{{artist.username}}</p>
-                    <p class="small mb-2 category">{{artist.category}}</p>
-                    <div *ngIf="artist.isPremium">
-                        <div class="col-md-12 star mt-0 text-center">
-                            <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
-                            <p>PREMIUM</p>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col-lg-8 mx-auto text-center">
-                            <p class="large text-muted">{{artist.description}}</p>
-                        </div>
-                    </div>
-                </div>
+<div *ngIf="this.artist.category == 'Consumidor'">
+  <div class="row py-3 px-4">
+    <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
+      <div class="bg-white shadow overflow-hidden">
+        <div class="row">
+          <div class="col-lg-12 shadow back">
+            <div class="img-responsive text-center">
+              <div *ngIf="artist.isPremium">
+                <img
+                  [src]="artist.userPicture"
+                  alt="Profile Image"
+                  class="rounded-circle img-fluid mx-auto img-perfil-premium"
+                />
+              </div>
+              <div *ngIf="!artist.isPremium">
+                <img
+                  [src]="artist.userPicture"
+                  alt="Profile Image"
+                  class="rounded-circle img-fluid mx-auto img-perfil"
+                />
+              </div>
             </div>
+          </div>
         </div>
+        <div class="media-body text-black">
+          <p class="mt-0 mb-0 name">{{ artist.name }}</p>
+          <p class="mt-0 mb-0 username">{{ artist.username }}</p>
+          <p class="small mb-2 category">{{ artist.category }}</p>
+          <div *ngIf="artist.isPremium">
+            <div class="col-md-12 star mt-0 text-center">
+              <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
+              <p>PREMIUM</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <p class="large text-muted">{{ artist.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-<div *ngIf="this.artist.category !='Consumidor'">
-    <div class="row py-3 px-4">
-        <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
-            <div class="bg-white shadow  overflow-hidden">
-                <div class="row">
-                    <div class="col-lg-12 shadow back">
-                        <div class="img-responsive text-center">
-                            <div *ngIf="artist.isPremium">
-                                <img [src]="artist.userPicture" alt="Profile Image"
-                                    class="  rounded-circle img-fluid mx-auto img-perfil-premium">
-                                </div>
-                                <div *ngIf="!artist.isPremium">
-                                    <img [src]="artist.userPicture" alt="Profile Image"
-                                        class="  rounded-circle img-fluid mx-auto img-perfil">
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="media-body  text-black">
-                    <p class="mt-0 mb-0 name">{{artist.name}}</p>
-                    <p class="mt-0 mb-0 username">{{artist.username}}</p>
-                    <p class="small mb-0 category">{{artist.category}} - {{artist.subcategory}}</p>
-                    <div *ngIf="artist.isPremium">
-                        <div class="col-md-12 star mt-0 text-center">
-                            <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
-                            <p>PREMIUM</p>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-12">
-                                <ul class="list-inline social-buttons">
-                                    <li class="list-inline-item" *ngIf="artist.facebook">
-                                        <a href="{{artist.facebook}}" target="_blank">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item" *ngIf="artist.twitter">
-                                        <a href="{{artist.twitter}}" target="_blank">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item" *ngIf="artist.instagram">
-                                        <a href="{{artist.instagram}}" target="_blank">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item" *ngIf="artist.whatsappContact">
-                                        <a href="{{artist.whatsappContact}}" target="_blank">
-                                            <i class="fas fa-comment-alt"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col-lg-8 mx-auto text-center">
-                            <p class="large text-muted">{{artist.description}}</p>
-                        </div>
-                    </div>
-                </div>
+<div *ngIf="this.artist.category != 'Consumidor'">
+  <div class="row py-3 px-4">
+    <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
+      <div class="bg-white shadow overflow-hidden">
+        <div class="row">
+          <div class="col-lg-12 shadow back">
+            <div class="img-responsive text-center">
+              <div *ngIf="artist.isPremium">
+                <img
+                  [src]="artist.userPicture"
+                  alt="Profile Image"
+                  class="rounded-circle img-fluid mx-auto img-perfil-premium"
+                />
+              </div>
+              <div *ngIf="!artist.isPremium">
+                <img
+                  [src]="artist.userPicture"
+                  alt="Profile Image"
+                  class="rounded-circle img-fluid mx-auto img-perfil"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="media-body text-black">
+          <p class="mt-0 mb-0 name">{{ artist.name }}</p>
+          <p class="mt-0 mb-0 username">{{ artist.username }}</p>
+          <p class="small mb-0 category">
+            {{ artist.category }} - {{ artist.subcategory }}
+          </p>
+          <div *ngIf="artist.isPremium">
+            <div class="col-md-12 star mt-0 text-center">
+              <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
+              <p>PREMIUM</p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <ul class="list-inline social-buttons">
+                  <li class="list-inline-item" *ngIf="artist.facebook">
+                    <a href="{{ artist.facebook }}" target="_blank">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item" *ngIf="artist.twitter">
+                    <a href="{{ artist.twitter }}" target="_blank">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item" *ngIf="artist.instagram">
+                    <a href="{{ artist.instagram }}" target="_blank">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item" *ngIf="artist.whatsappContact">
+                    <a href="{{ artist.whatsappContact }}" target="_blank">
+                      <i class="fas fa-comment-alt"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <p class="large text-muted">{{ artist.description }}</p>
+            </div>
+          </div>
+        </div>
 
-                <div class="bg-light pt-4 pb-4 mb-3">
-                    <div class="row mx-auto">
-                        <div class="bg-light col-md-4 d-block text-center ">
-                            <i class="fa fa-phone icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
-                            <div class="col-md-12 fw-bold mb-3">{{ 'PERFIL.TELEFONES' | translate }}</div>
-                            <div class="bg-light col-md-12 d-block text-center text1">
-                                <div class="col-md-12  text-muted">{{artist.mainPhone}}</div>
-                                <div class="col-md-12 text-muted">{{artist.secundaryPhone}}</div>
-                                <div class="col-md-12 text-muted">{{artist.thirdPhone}}</div>
-                            </div>
-                        </div>
-                        <div class="bg-light col-md-4 d-block text-center">
-                            <i class="fa fa-map-marker icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
-                            <div class="col-md-12 fw-bold mb-3 ">
-                                {{ 'PERFIL.ENDERECO' | translate }}
-                            </div>
-                            <div *ngIf= "artist.street  && artist.number">
-                                <div class="adress mx-3">
-                                    <p class="fw-bold text-muted mx-1 text-left">{{ 'PERFIL.RUA' | translate }}</p>
-                                    <p class="text-muted text-left">{{artist.street}}</p>
-                                    <p class="fw-bold text-muted mx-1 text-left">{{ 'PERFIL.NUMERO' | translate }}</p>
-                                    <p class="text-muted text-left">{{artist.number}}</p>
-                                </div>
-                                <div *ngif = "artist.complement">
-                                    <div class="adress">
-                                        <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.COMPLEMENTO' | translate }}</p>
-                                        <p class="text-muted text-left">{{artist.complement}}</p>
-                                    </div>
-                                </div>
-                                <div class="adress">
-                                    <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.BAIRRO' | translate }}</p>
-                                    <p class="text-muted mx-1 text-left">{{artist.neighborhood}}</p>
-                                    <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.CEP' | translate }}</p>
-                                    <p class="text-muted text-left">{{artist.zipCode}}</p>
-                                </div>
-                                <div class="adress">
-                                
-                                    <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.CIDADE' | translate }}</p>
-                                    <p class="text-muted mx-1 text-left">{{artist.city}}</p>
-                                    <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.ESTADO' | translate }}</p>
-                                    <p class="text-muted text-left">{{artist.state}}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-light col-md-4 d-block text-center">
-                            <i class="fa fa-share icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
-                            <div class="col-md-12 fw-bold mb-3 ">{{ 'PERFIL.COMPARTILHAR' | translate }}</div>
-                            <div class="bg-light col-md-12 d-block text-center">
-                                <br>
-                                <div class="col-md-12">
-                                    <ul class="list-inline social-buttons">
-                                        <li class="list-inline-item">
-                                            <a href="{{artist.facebookProfile}}" target="_blank">
-                                                <i class="fab fa-facebook-f"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="{{artist.twitterProfile}}" target="_blank">
-                                                <i class="fab fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="{{artist.whatsappProfile}}" target="_blank">
-                                                <i class="fab fa-whatsapp"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="bg-light pt-4 pb-4 mb-3">
+          <div class="row mx-auto">
+            <div class="bg-light col-md-4 d-block text-center">
+              <i
+                class="fa fa-phone icon-color mr-1 mb-2 mt-3"
+                aria-hidden="true"
+              ></i>
+              <div class="col-md-12 fw-bold mb-3">
+                {{ "PERFIL.TELEFONES" | translate }}
+              </div>
+              <div class="bg-light col-md-12 d-block text-center text1">
+                <div class="col-md-12 text-muted">{{ artist.mainPhone }}</div>
+                <div class="col-md-12 text-muted">
+                  {{ artist.secundaryPhone }}
                 </div>
-                <div class=" row py-4 px-4">
-                    <div class="col-md-11">
-                        <p class="mt-0 mb-3 title">{{ 'PERFIL.PORTIFOLIO' | translate }}</p>
-                    </div>
-                    <section id="portfolio">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                    data-bs-target="#image" type="button" role="tab" aria-controls="image"
-                                    aria-selected="true">
-                                    <i class="bx bx-image bx-sm bx-tada-hover"></i>{{ 'PERFIL.ABA-IMAGEM' | translate
-                                    }}</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#video"
-                                    type="button" role="tab" aria-controls="video" aria-selected="false">
-                                    <i class="bx bx-video bx-sm bx-tada-hover"></i>{{ 'PERFIL.ABA-VIDEO' | translate
-                                    }}</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#audio"
-                                    type="button" role="tab" aria-controls="audio" aria-selected="false">
-                                    <i class="bx bx-music bx-sm bx-tada-hover"></i>{{ 'PERFIL.ABA-AUDIO' | translate
-                                    }}</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="image" role="tabpanel"
-                                aria-labelledby="home-tab">
-                                <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
-                                    <div *ngIf="artistPortfolioContent.image.length == 0"
-                                        style="color: #6c757d!important;">
-                                        <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
-                                            'PERFIL.ABA-ERRO' | translate }}</p>
-                                    </div>
-                                    <div *ngFor="let userPortfolioImage of artistPortfolioContent.image"
-                                        class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                        <a class="portfolio-link" data-bs-toggle="modal"
-                                            [routerLink]="['/artista', userPortfolioImage.userID,'publicacao', userPortfolioImage.publicationID]">
-                                            <div class="portfolio-hover"></div>
-                                            <img [src]="userPortfolioImage.s3UrlMedia" alt="" class="img-fluid rounded">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
-                                    <div *ngIf="artistPortfolioContent.video.length == 0"
-                                        style="color: #6c757d!important;">
-                                        <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
-                                            'PERFIL.ABA-ERRO' | translate }}</p>
-                                    </div>
-                                    <div *ngFor="let userPortfolioVideo of artistPortfolioContent.video"
-                                        class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                        <a class="portfolio-link" data-bs-toggle="modal"
-                                            [routerLink]="['/artista', userPortfolioVideo.userID,'publicacao', userPortfolioVideo.publicationID]">
-                                            <div class="portfolio-hover"></div>
-                                            <video controls Preload played width="375" controlsList="nodownload">
-                                                <source [src]="userPortfolioVideo.s3UrlMedia">
-                                            </video>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="audio" role="tabpanel" aria-labelledby="contact-tab">
-                                <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
-                                    <div *ngIf="artistPortfolioContent.audio.length == 0">
-                                        <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
-                                            'PERFIL.ABA-ERRO' | translate }}</p>
-                                    </div>
-                                    <div *ngFor="let userPortfolioAudio of artistPortfolioContent.audio"
-                                        class="col-md-4 mb-3 pr-lg-2 portifolio-item ">
-                                        <a class="portfolio-link" data-bs-toggle="modal"
-                                            [routerLink]="['/artista', userPortfolioAudio.userID,'publicacao', userPortfolioAudio.publicationID]">
-                                            <div class="portfolio-hover"></div>
-                                            <img class="image-audio"
-                                                [src]="'../../../assets/img/pages/notamusical.jpg'">
-                                            <audio controls preload width="450" controlsList="nodownload">
-                                                <source [src]="userPortfolioAudio.s3UrlMedia" alt="">
-                                            </audio>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+                <div class="col-md-12 text-muted">{{ artist.thirdPhone }}</div>
+              </div>
             </div>
+            <div class="bg-light col-md-4 d-block text-center">
+              <i
+                class="fa fa-map-marker icon-color mr-1 mb-2 mt-3"
+                aria-hidden="true"
+              ></i>
+              <div class="col-md-12 fw-bold mb-3">
+                {{ "PERFIL.ENDERECO" | translate }}
+              </div>
+              <div *ngIf="artist.street && artist.number">
+                <div class="adress mx-3">
+                  <p class="fw-bold text-muted mx-1 text-left">
+                    {{ "PERFIL.RUA" | translate }}
+                  </p>
+                  <p class="text-muted text-left">{{ artist.street }}</p>
+                  <p class="fw-bold text-muted mx-1 text-left">
+                    {{ "PERFIL.NUMERO" | translate }}
+                  </p>
+                  <p class="text-muted text-left">{{ artist.number }}</p>
+                </div>
+                <div *ngif="artist.complement">
+                  <div class="adress">
+                    <p class="fw-bold mx-1 text-muted text-left">
+                      {{ "PERFIL.COMPLEMENTO" | translate }}
+                    </p>
+                    <p class="text-muted text-left">{{ artist.complement }}</p>
+                  </div>
+                </div>
+                <div class="adress">
+                  <p class="fw-bold mx-1 text-muted text-left">
+                    {{ "PERFIL.BAIRRO" | translate }}
+                  </p>
+                  <p class="text-muted mx-1 text-left">
+                    {{ artist.neighborhood }}
+                  </p>
+                  <p class="fw-bold mx-1 text-muted text-left">
+                    {{ "PERFIL.CEP" | translate }}
+                  </p>
+                  <p class="text-muted text-left">{{ artist.zipCode }}</p>
+                </div>
+                <div class="adress">
+                  <p class="fw-bold mx-1 text-muted text-left">
+                    {{ "PERFIL.CIDADE" | translate }}
+                  </p>
+                  <p class="text-muted mx-1 text-left">{{ artist.city }}</p>
+                  <p class="fw-bold mx-1 text-muted text-left">
+                    {{ "PERFIL.ESTADO" | translate }}
+                  </p>
+                  <p class="text-muted text-left">{{ artist.state }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-light col-md-4 d-block text-center">
+              <i
+                class="fa fa-share icon-color mr-1 mb-2 mt-3"
+                aria-hidden="true"
+              ></i>
+              <div class="col-md-12 fw-bold mb-3">
+                {{ "PERFIL.COMPARTILHAR" | translate }}
+              </div>
+              <div class="bg-light col-md-12 d-block text-center">
+                <br />
+                <div class="col-md-12">
+                  <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                      <a href="{{ artist.facebookProfile }}" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="{{ artist.twitterProfile }}" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="{{ artist.whatsappProfile }}" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="row py-4 px-4">
+          <div class="col-md-11">
+            <p class="mt-0 mb-3 title">{{ "PERFIL.PORTIFOLIO" | translate }}</p>
+          </div>
+          <section id="portfolio">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="home-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#image"
+                  type="button"
+                  role="tab"
+                  aria-controls="image"
+                  aria-selected="true"
+                >
+                  <i class="bx bx-image bx-sm bx-tada-hover"></i
+                  >{{ "PERFIL.ABA-IMAGEM" | translate }}
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="profile-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#video"
+                  type="button"
+                  role="tab"
+                  aria-controls="video"
+                  aria-selected="false"
+                >
+                  <i class="bx bx-video bx-sm bx-tada-hover"></i
+                  >{{ "PERFIL.ABA-VIDEO" | translate }}
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="contact-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#audio"
+                  type="button"
+                  role="tab"
+                  aria-controls="audio"
+                  aria-selected="false"
+                >
+                  <i class="bx bx-music bx-sm bx-tada-hover"></i
+                  >{{ "PERFIL.ABA-AUDIO" | translate }}
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="image"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+              >
+                <div class="row" style="margin-top: 1.5rem; min-height: 8rem">
+                  <div
+                    *ngIf="artistPortfolioContent.image.length == 0"
+                    style="color: #6c757d !important"
+                  >
+                    <p
+                      class="text-center"
+                      style="font-size: 20px; color: #6c757d !important"
+                    >
+                      {{ "PERFIL.ABA-ERRO" | translate }}
+                    </p>
+                  </div>
+                  <div
+                    *ngFor="
+                      let userPortfolioImage of artistPortfolioContent.image
+                    "
+                    class="col-md-4 mb-3 pr-lg-2 portifolio-item"
+                  >
+                    <a
+                      class="portfolio-link"
+                      data-bs-toggle="modal"
+                      [routerLink]="[
+                        '/artista',
+                        userPortfolioImage.userID,
+                        'publicacao',
+                        userPortfolioImage.publicationID
+                      ]"
+                    >
+                      <div class="portfolio-hover"></div>
+                      <img
+                        [src]="userPortfolioImage.s3UrlMedia"
+                        alt=""
+                        class="img-fluid rounded"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="video"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+              >
+                <div class="row" style="margin-top: 1.5rem; min-height: 8rem">
+                  <div
+                    *ngIf="artistPortfolioContent.video.length == 0"
+                    style="color: #6c757d !important"
+                  >
+                    <p
+                      class="text-center"
+                      style="font-size: 20px; color: #6c757d !important"
+                    >
+                      {{ "PERFIL.ABA-ERRO" | translate }}
+                    </p>
+                  </div>
+                  <div
+                    *ngFor="
+                      let userPortfolioVideo of artistPortfolioContent.video
+                    "
+                    class="col-md-4 mb-3 pr-lg-2 portifolio-item"
+                  >
+                    <a
+                      class="portfolio-link"
+                      data-bs-toggle="modal"
+                      [routerLink]="[
+                        '/artista',
+                        userPortfolioVideo.userID,
+                        'publicacao',
+                        userPortfolioVideo.publicationID
+                      ]"
+                    >
+                      <div class="portfolio-hover"></div>
+                      <video
+                        controls
+                        Preload
+                        played
+                        width="375"
+                        controlsList="nodownload"
+                      >
+                        <source [src]="userPortfolioVideo.s3UrlMedia" />
+                      </video>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="audio"
+                role="tabpanel"
+                aria-labelledby="contact-tab"
+              >
+                <div class="row" style="margin-top: 1.5rem; min-height: 8rem">
+                  <div *ngIf="artistPortfolioContent.audio.length == 0">
+                    <p
+                      class="text-center"
+                      style="font-size: 20px; color: #6c757d !important"
+                    >
+                      {{ "PERFIL.ABA-ERRO" | translate }}
+                    </p>
+                  </div>
+                  <div
+                    *ngFor="
+                      let userPortfolioAudio of artistPortfolioContent.audio
+                    "
+                    class="col-md-4 mb-3 pr-lg-2 portifolio-item"
+                  >
+                    <a
+                      class="portfolio-link"
+                      data-bs-toggle="modal"
+                      [routerLink]="[
+                        '/artista',
+                        userPortfolioAudio.userID,
+                        'publicacao',
+                        userPortfolioAudio.publicationID
+                      ]"
+                    >
+                      <div class="portfolio-hover"></div>
+                      <img
+                        class="image-audio"
+                        [src]="'../../../assets/img/pages/notamusical.jpg'"
+                      />
+                      <audio
+                        controls
+                        preload
+                        width="450"
+                        controlsList="nodownload"
+                      >
+                        <source [src]="userPortfolioAudio.s3UrlMedia" alt="" />
+                      </audio>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
