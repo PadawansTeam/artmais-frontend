@@ -31,15 +31,15 @@ app.use(
 );
 app.use(
   featurePolicy({
-    features: {      
-      accelerometer: ["*"],
-      camera: ["*"],
-      geolocation: ["*"],
-      gyroscope: ["*"],
-      magnetometer: ["*"],
-      microphone: ["*"],
-      payment: ["*"],
-      usb: ["*"],
+    features: {  
+      accelerometer();,
+      camera();,
+      geolocation();,
+      gyroscope();,
+      magnetometer();,
+      microphone();,
+      payment();,
+      usb();
     },
   })
 );
