@@ -15,7 +15,6 @@ app.use(
     action: "deny",
   })
 );
-app.use(helmet.xssFilter());
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: false,
@@ -29,7 +28,6 @@ app.use(
     policy: ["no-referrer"],
   })
 );
-helmet.dnsPrefetchControl();
 //Serve only the static files form the dist directory
 // Serve only the static files form the dist directory
 app.use(express.static("./dist/artmais-frontend"));
