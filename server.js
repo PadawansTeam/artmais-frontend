@@ -4,7 +4,6 @@ const path = require("path");
 const app = express();
 //Header secure
 const helmet = require('helmet');
-const permissionsPolicy = require("permissions-policy");
 app.use(
   helmet.hsts({
     maxAge: 31536000,
@@ -16,11 +15,7 @@ app.use(
     action: "deny",
   })
 );
-app.use(
-  helmet({
-    contentSecurityPolicy: false,
-  })
-);
+app.use(helmet.contentSecurityPolicy(false));
 app.use(
   helmet.referrerPolicy({
     policy: ["no-referrer"],
