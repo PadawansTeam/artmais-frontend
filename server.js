@@ -17,30 +17,13 @@ app.use(
   })
 );
 app.use(
-  helmet.contentSecurityPolicy({
-    useDefaults: false,
-    directives: {
-      "default-src": ["'self'"],
-    },
+  helmet({
+    contentSecurityPolicy: false,
   })
 );
 app.use(
   helmet.referrerPolicy({
     policy: ["no-referrer"],
-  })
-);
-app.use(
-  permissionsPolicy({
-    features: {
-      accelerometer: ["'self'"],
-      camera: ["'self'"],
-      geolocation: ["'self'"],
-      gyroscope: ["'self'"],
-      magnetometer: ["'self'"],
-      microphone: ["'self'"],
-      payment: ["'self'"],
-      usb: ["'self'"],
-    },
   })
 );
 //Serve only the static files form the dist directory
