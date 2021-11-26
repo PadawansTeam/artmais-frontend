@@ -4,10 +4,17 @@ const path = require("path");
 const app = express();
 //Header secure
 const helmet = require('helmet');
-app.use(helmet.hsts());
-app.use(helmet.referrerPolicy());
+app.use(
+  helmet.hsts({
+    maxAge: 31536000,
+  })
+);
 app.use(helmet.noSniff());
-app.use(helmet.frameguard());
+app.use(
+  helmet.frameguard({
+    action: "deny",
+  })
+);
 app.use(helmet.xssFilter());
 app.use(
   helmet.contentSecurityPolicy({
@@ -19,16 +26,10 @@ app.use(
 );
 app.use(
   helmet.referrerPolicy({
-    policy: ["no-referrer", "strict-origin-when-cross-origin"],
-  })
-);
-app.use(
-  helmet.expectCt({
-    maxAge: 86400,
+    policy: ["no-referrer"],
   })
 );
 helmet.dnsPrefetchControl();
-helmet.permittedCrossDomainPolicies();
 //Serve only the static files form the dist directory
 // Serve only the static files form the dist directory
 app.use(express.static("./dist/artmais-frontend"));
