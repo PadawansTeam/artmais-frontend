@@ -10,8 +10,11 @@ app.use(helmet.noSniff());
 app.use(helmet.frameguard());
 app.use(helmet.xssFilter());
 app.use(
-  helmet({
-    contentSecurityPolicy: false,
+  helmet.contentSecurityPolicy({
+    useDefaults: false,
+    directives: {
+      "default-src": ["'self'"]
+    },
   })
 );
 app.use(
