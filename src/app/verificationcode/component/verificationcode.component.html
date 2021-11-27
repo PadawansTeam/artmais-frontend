@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="page-header header-filter back">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+          <div class="card card-login" data-aos="fade-up">
+            <div class="form">
+              <div class="card-header card-header-primary text-center ">
+                <h4 class="card-title">{{ 'VEFICACAO.TITLE' | translate }}</h4>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="bx bx-barcode bx-sm bx-tada-hover"></i>
+                      </span>
+                    </div>
+                    <input  formControlName="" name="" class="un form-control" type="email" align="center" placeholder="{{ 'VEFICACAO.TEXT' | translate }}">
+                  </div>
+                </form>
+              </div>
+              <div class="row">
+                <div class="col-md-6 text-center">
+                  <button class="submit" align="center">
+                    {{ 'VEFICACAO.REENVIAR' | translate }}
+                  </button>
+                </div>
+                <div class="col-md-6 text-center">
+                    <a href="\trocasenha"><button class="submit" align="center">
+                      {{ 'VEFICACAO.CONFIRMAR' | translate }}
+                    </button></a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>

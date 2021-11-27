@@ -39,7 +39,10 @@
         "INVALIDO": "Invalid field",
         "OU": "Or",
         "NAO-POSSUI-CONTA": "Don't have an account?",
-        "CADASTRAR": "Sign Up"
+        "CADASTRAR": "Sign Up",
+        "MODAL-TEXT": "Enter your email to receive the verification code",
+        "MODAL-TITLE": "PASSWORD CHANGE",
+        "MODAL-ENVIAR": "Submit Code"
     },
     "MENU": {
         "HOME": "Home",
@@ -163,6 +166,7 @@
         "NOME-USER": "User Name:",
         "NOME-USER-BOX": "Username",
         "FOTO": "Profile Picture:",
+        "CAPA":"Cover Picture:",
         "FOTO-BUTTON": "Choose File",
         "FOTO-BOX": "No file selected",
         "PRONOMES": "Pronouns:",
@@ -246,5 +250,17 @@
         "NO-PREMIUM-TEXT6": "Forecast your metrics for the coming months",
         "NO-PREMIUM-TEXT7": "And much more!",
         "NO-PREMIUM-BUTTON": "Purchase"
+    },
+    "VEFICACAO": {
+        "TITLE": "Verification code",
+        "REENVIAR": "Resend",
+        "CONFIRMAR": "Confirm",
+        "TEXT": "Enter the verification code"
+    },
+    "NOVA-SENHA": {
+        "TITLE": "New password",
+        "NOVA-SENHA": "Enter new password",
+        "CONFIRMAR": "Confirm",
+        "CONFIRMAR-SENHA": "Enter the verification code"
     }
 }

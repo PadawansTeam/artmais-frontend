@@ -48,6 +48,8 @@ import { PublicacaoModule } from './publicacao/publicacao.module';
 import { ChartsModule } from 'ng2-charts';
 import { DashboardService } from './dashboard/service/dashboard.service';
 import { PagamentoplanosModule } from './pagamentoplanos/pagamentoplanos.module';
+import { PassawordChangeModule } from './passwordchange/passawordchange.module';
+import { VerificationcodeModule } from './verificationcode/verificationcode.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -95,7 +97,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     TesteModule,
     AssinanteModule,
     PublicacaoModule,
-    PagamentoplanosModule
+    PagamentoplanosModule,
+    PassawordChangeModule,
+    VerificationcodeModule
   ],
   providers: [
     TranslateService,

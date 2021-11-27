@@ -39,7 +39,10 @@
         "INVALIDO": "Campo inválido",
         "CADASTRAR": "Cadastre-se",
         "NAO-POSSUI-CONTA": "Não possui uma conta?",
-        "OU": "Ou"
+        "OU": "Ou",
+        "MODAL-TEXT": "Digite seu e-mail para receber o código de verificação",
+        "MODAL-TITLE": "MUDANÇA DE SENHA",
+        "MODAL-ENVIAR": "Enviar Código"
     },
     "MENU": {
         "HOME": "Home",
@@ -163,6 +166,7 @@
         "NOME-USER": "Nome de Usuário:",
         "NOME-USER-BOX": "Nome de usuário",
         "FOTO": "Foto de Perfil:",
+        "CAPA":"Foto de Capa:",
         "FOTO-BUTTON": "Escolher Arquivo",
         "FOTO-BOX": "Nenhum arquivo selecionado",
         "PRONOMES": "Pronomes:",
@@ -267,5 +271,17 @@
         "NO-PREMIUM-TEXT6": "Previsão de suas métricas para os próximos meses",
         "NO-PREMIUM-TEXT7": "E muito mais!",
         "NO-PREMIUM-BUTTON": "Adquirir"
+    },
+    "VEFICACAO": {
+        "TITLE": "Código de verificação",
+        "REENVIAR": "Reenviar",
+        "CONFIRMAR": "Confirmar",
+        "TEXT": "Digite o código de verificação"
+    },
+    "NOVA-SENHA": {
+        "TITLE": "Nova Senha",
+        "NOVA-SENHA": "Digite a nova senha",
+        "CONFIRMAR": "Confirmar",
+        "CONFIRMAR-SENHA": "Confirme a nova senha"
     }
 }
