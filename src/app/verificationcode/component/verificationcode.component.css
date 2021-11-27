@@ -644,6 +644,7 @@
       45deg,
       rgba(101, 47, 142, 0.88) 0%,
       rgba(125, 46, 185, 0.45) 100%
+
     );
     background: -moz-linear-gradient(
       135deg,
@@ -651,6 +652,16 @@
       rgba(125, 46, 185, 0.45) 100%
     );
     background: -webkit-linear-gradient(
+      135deg,
+      rgba(101, 47, 142, 0.88) 0%,
+      rgba(125, 46, 185, 0.45) 100%
+    );
+    background: -o-linear-gradient(
+      135deg,
+      rgba(101, 47, 142, 0.88) 0%,
+      rgba(125, 46, 185, 0.45) 100%
+    );
+    background: -ms-linear-gradient(
       135deg,
       rgba(101, 47, 142, 0.88) 0%,
       rgba(125, 46, 185, 0.45) 100%
@@ -678,9 +689,7 @@
   .card .card-header {
     border-radius: 3px;
     padding: 1rem 15px;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: -30px;
+    margin: -30px 15px auto 15px;
     border: 0;
   }
   
@@ -837,11 +846,8 @@
   }
   
   .card-login .card-header {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: -30px;
+    margin-top: -30px 20px 4px 20px;
     padding: 20px 0;
-    margin-bottom: 4px;
   }
   
   .card-login .card-body {
@@ -876,12 +882,8 @@
     color: #fff;
     background: linear-gradient(to right, #9558d5, #701ec6);
     border: 0;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding: 10px 40px;
+    margin-top: 10px auto;
     text-align: center;
     font-size: 13px;
     font-weight: 600;
