@@ -39,7 +39,10 @@
         "INVALIDO": "Campo inválido",
         "CADASTRAR": "Cadastre-se",
         "NAO-POSSUI-CONTA": "Não possui uma conta?",
-        "OU": "Ou"
+        "OU": "Ou",
+        "MODAL-TEXT": "Digite seu e-mail para receber o código de verificação",
+        "MODAL-TITLE": "MUDANÇA DE SENHA",
+        "MODAL-ENVIAR": "Enviar Código"
     },
     "MENU": {
         "HOME": "Home",
@@ -109,7 +112,8 @@
         "PLANOS-CADASTRAR-CARD2": "Comprar"
     },
     "RECOMENDACAO": {
-        "TITULO": "RECOMENDAÇÃO DE PERFIL",
+        "TITULO-INTE": "PERFIS DE INTERESSE",
+        "TITULO-RECO": "PERFIS RECOMENDADOS",
         "SUBTITULO": "Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse, suas atividades, interações com outros usuários e pesquisas feitas serão utilizadas para personalizar futuras sugestões. Descubra novos artistas e acompanhe seus projetos pelo Art+.",
         "TOOLTIP-RECOMENDACAO1": "Nosso sistema recomendará os artistas das categorias que você escolher na página recomendar. Além disso, você também receberá dicas de artistas que a plataforma Art + entender que são relevantes para você.",
         "TOOLTIP-RECOMENDACAO2": "Caso você seja Premium, você terá destaque na recomendação dos outros usuários da plataforma, aparecendo primeiro para eles."
@@ -163,6 +167,7 @@
         "NOME-USER": "Nome de Usuário:",
         "NOME-USER-BOX": "Nome de usuário",
         "FOTO": "Foto de Perfil:",
+        "CAPA":"Foto de Capa:",
         "FOTO-BUTTON": "Escolher Arquivo",
         "FOTO-BOX": "Nenhum arquivo selecionado",
         "PRONOMES": "Pronomes:",
@@ -267,5 +272,17 @@
         "NO-PREMIUM-TEXT6": "Previsão de suas métricas para os próximos meses",
         "NO-PREMIUM-TEXT7": "E muito mais!",
         "NO-PREMIUM-BUTTON": "Adquirir"
+    },
+    "VEFICACAO": {
+        "TITLE": "Código de verificação",
+        "REENVIAR": "Reenviar",
+        "CONFIRMAR": "Confirmar",
+        "TEXT": "Digite o código de verificação"
+    },
+    "NOVA-SENHA": {
+        "TITLE": "Nova Senha",
+        "NOVA-SENHA": "Digite a nova senha",
+        "CONFIRMAR": "Confirmar",
+        "CONFIRMAR-SENHA": "Confirme a nova senha"
     }
 }

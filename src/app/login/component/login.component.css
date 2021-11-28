@@ -1024,3 +1024,8 @@ label {
     color: #701ec6;
     z-index: 3;
 }
+
+.image-toll{
+	width: 30%;
+	height: 30%;
+}

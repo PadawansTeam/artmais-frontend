@@ -19,6 +19,8 @@ import { TesteComponent } from './teste/component/teste.component';
 import { PublicacaoComponent } from './publicacao/component/publicacao.component';
 import {AssinanteComponent} from './assinante/component/assinante.component';
 import { PagamentoplanosComponent } from './pagamentoplanos/component/pagamentoplanos.component';
+import { PasswordchangeComponent } from './passwordchange/component/passwordchange.component';
+import { VerificationcodeComponent } from './verificationcode/component/verificationcode.component';
 
 
 
@@ -43,6 +45,8 @@ const routes: Routes = [
   { path: 'assinante', component: AssinanteComponent },
   { path: 'pagamento', component: PagamentoplanosComponent },
   { path: 'teste', component: TesteComponent },
+  { path: 'trocasenha', component: PasswordchangeComponent },
+  { path: 'verificacao', component: VerificationcodeComponent },
 ];
 
 @NgModule({

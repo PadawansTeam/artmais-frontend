@@ -1,260 +1,632 @@
 <div *ngIf="roleUser">
-<app-headerusercomum></app-headerusercomum>
-<div class="row py-3 px-4">
-  <div class="container">
-      <div class="bg-white shadow  overflow-hidden">
-          <div class="row">
-              <div class="col-lg-12 shadow back">
-                  <div class="img-text-center">
-                      <img [src]="profile.userPicture ? profile.userPicture : '' " alt="..."
-                          class="  rounded-circle img-fluid mx-auto img-perfil">
-                  </div>
-              </div>
-          </div>
-          <div class="media-body  text-black">
-              <p class="mt-0 mb-0 name"> {{profile.name}} </p>                
-              <p class="small mb-2 category"> {{profile.category}} </p>
-
-              <div class="row ">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="large text-muted">{{profile.description}}</p>
-                </div>
-            </div>              
-              <div class="container">
-                  <div class="row align-items-center">
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="row">
-      </div>
-  </div>
-</div>
-  <div class="section-title" data-aos="fade-up">
+  <app-headerusercomum></app-headerusercomum>
+  <div class="row py-3 px-4">
     <div class="container">
-      <div class="row text-center ">
-        <h3>{{'USERCOMUM.SUBTITULO-RECOMENDACAO' | translate }}</h3>
-        <div class="col-md-12 ">
-          <p>{{'USERCOMUM.SUBTITULO01-RECOMENDACAO' | translate  }}  </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="plus-buttons list-inline2">
-            <li class="list-inline-item">
-                <a href="#ModalQuestion" data-bs-toggle="modal">
-                    <i class="fa fa-question"></i>
-                </a>
-            </li>
-        </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container" data-aos="fade-up">
-      <div class="friend-list">
+      <div class="bg-white shadow overflow-hidden">
         <div class="row">
-          <div *ngFor="let recomendacao of recommendations" class="col-md-3 col-sm-6">
-            <div class="friend-card" (click)="getPerfilById(recomendacao.userId)">
-              <img [src]="recomendacao.backgroundPicture" alt="profile-cover" class="img-responsive cover">
-              <div class="card-info">
-                <div *ngIf="recomendacao.isPremium">
-                <img [src]="recomendacao.userPicture" alt="user" class="profile-photo-lg-premium">
-              </div>
-              <div *ngIf="!recomendacao.isPremium">
-                <img [src]="recomendacao.userPicture" alt="user" class="profile-photo-lg">
-              </div>
-                <div class="friend-info">
-                  <div *ngIf="recomendacao.isPremium">
-                    <div class="star">
-                      <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
-                      <p>PREMIUM</p>
-                    </div>
-                  </div>
-                  <div class="name fw-bolder">
-                    <a>
-                      <h5>{{recomendacao.name}}</h5>
-                    </a>
-                  </div>
-                  <div class="profile-link fw-light">
-                    <p><a>{{recomendacao.username}}</a></p>
-                  </div>
-                  <a class="pull-right mt-5 text-cat">{{recomendacao.category}}</a><br>
-                  <div class="mt-2">
-                    <a class="pull-right text-sub">{{recomendacao.subcategory}}</a>
-                  </div>
-                </div>
-              </div>
+          <div class="col-lg-12 shadow back">
+            <div class="img-text-center">
+              <img
+                [src]="profile.userPicture ? profile.userPicture : ''"
+                alt="..."
+                class="rounded-circle img-fluid mx-auto img-perfil"
+              />
             </div>
           </div>
         </div>
-      </div>
-    </div>  
-  </div>
-<div *ngIf="!roleUser">
-<app-headerlog></app-headerlog>
-<section class="welcome">
-  <div class="section-title" data-aos="fade-up">
-    <div class="container">
-      <div class="row text-center ">
-        <h2>PERFIS DE INTERESSE</h2>
-        <!-- <div class="col-md-12 ">
-          <p>{{ 'RECOMENDACAO.SUBTITULO' | translate }}</p>
-        </div> -->
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="plus-buttons list-inline2">
-            <li class="list-inline-item">
-                <a href="#ModalQuestion" data-bs-toggle="modal">
-                    <i class="fa fa-question"></i>
-                </a>
-            </li>
-        </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container" data-aos="fade-up">
-    <div class="friend-list">
-      <div class="row">
-        <div *ngFor="let recomendacao of recommendations" class="col-md-3 col-sm-6">
-          <div class="friend-card" (click)="getPerfilById(recomendacao.userId)">
+        <div class="media-body text-black">
+          <p class="mt-0 mb-0 name">{{ profile.name }}</p>
+          <p class="small mb-2 category">{{ profile.category }}</p>
 
-            <img [src]="recomendacao.backgroundPicture" alt="profile-cover" class="img-responsive cover">
-
-            <div class="card-info">
-              <div *ngIf="recomendacao.isPremium">
-                <img [src]="recomendacao.userPicture" alt="user" class="profile-photo-lg-premium">
-              </div>
-              <div *ngIf="!recomendacao.isPremium">
-                <img [src]="recomendacao.userPicture" alt="user" class="profile-photo-lg">
-              </div>
-              <div *ngIf="recomendacao.isPremium">
-                <div class="star mt-0">
-                  <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
-                  <p>PREMIUM</p>
-                </div>
-              </div>
-              <div class="friend-info ">
-                <div class="name fw-bolder mb-0">
-                  <a>
-                    <h5>{{recomendacao.name}}</h5>
-                  </a>
-                </div>
-                <div class="profile-link fw-light mt-0 mb-0">
-                  <p><a>{{recomendacao.username}}</a></p>
-                </div>
-                <a class="pull-right mt-5 text-cat">{{recomendacao.category}}</a><br>
-                <div class="mt-2">
-                  <a class="pull-right text-sub">{{recomendacao.subcategory}}</a>
-                </div>
-              </div>
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <p class="large text-muted">{{ profile.description }}</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="recommendation">
-  <div class="section-title" data-aos="fade-up">
-    <div class="container">
-      <div class="row text-center ">
-        <h2>PERFIS RECOMENDADOS</h2>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="plus-buttons list-inline2">
-            <li class="list-inline-item">
-                <a href="#ModalQuestion" data-bs-toggle="modal">
-                    <i class="fa fa-question"></i>
-                </a>
-            </li>
-        </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container" data-aos="fade-up">
-    <div class="friend-list">
-      <div class="row">
-        <div *ngFor="let recomendacao of recommendations" class="col-md-3 col-sm-6">
-          <div class="friend-card" (click)="getPerfilById(recomendacao.userId)">
-
-            <img [src]="recomendacao.backgroundPicture" alt="profile-cover" class="img-responsive cover">
-
-            <div class="card-info">
-              <div *ngIf="recomendacao.isPremium">
-                <img [src]="recomendacao.userPicture" alt="user" class="profile-photo-lg-premium">
-              </div>
-              <div *ngIf="!recomendacao.isPremium">
-                <img [src]="recomendacao.userPicture" alt="user" class="profile-photo-lg">
-              </div>
-              <div *ngIf="recomendacao.isPremium">
-                <div class="star mt-0">
-                  <i class="bx bxs-star bx-sm bx-tada-hover" aria-hidden="true"></i>
-                  <p>PREMIUM</p>
-                </div>
-              </div>
-              <div class="friend-info ">
-                <div class="name fw-bolder mb-0">
-                  <a>
-                    <h5>{{recomendacao.name}}</h5>
-                  </a>
-                </div>
-                <div class="profile-link fw-light mt-0 mb-0">
-                  <p><a>{{recomendacao.username}}</a></p>
-                </div>
-                <a class="pull-right mt-5 text-cat">{{recomendacao.category}}</a><br>
-                <div class="mt-2">
-                  <a class="pull-right text-sub">{{recomendacao.subcategory}}</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
-<div class="portfolio-modal modal fade" id="ModalQuestion" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content ">
-          <div class="close-modal" type="button" data-bs-dismiss="modal">
-              <div class="lr">
-                  <div class="rl"></div>
-              </div>
           </div>
           <div class="container">
-              <div class="row">
-                  <div class="col-md-12 mx-auto ">
-                      <div class="modal-body ">
-                          <div class="row ">
-                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-
-                                  <h5 class="title-modal">{{ 'RECOMENDACAO.TITULO' | translate }}</h5>
-                              </div>
-                          </div>
-                          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                              <div class="col-md-12">
-                                <div class="col-md-12 " data-aos="zoom-in" data-aos-delay="100">
-                                  <img src="assets/img/pages/RS.svg" alt="dashboard" class="image-toll mb-2">
-                                </div>
-                                <p>
-                                  {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO1" | translate }}
-                                </p>
-                                <p>
-                                  {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO2" | translate }}
-                                </p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+            <div class="row align-items-center"></div>
           </div>
+        </div>
       </div>
+      <div class="row"></div>
+    </div>
+  </div>
+  <section>
+  <div class="section-title" data-aos="fade-up">
+    <div class="container">
+      <div class="row text-center" id="interesses">
+        <h2>PERFIS DE INTERESSE</h2>
+        <!-- <div class="col-md-12 ">
+        <p>{{ 'RECOMENDACAO.SUBTITULO' | translate }}</p>
+      </div> -->
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="plus-buttons list-inline2">
+            <li class="list-inline-item">
+              <a href="#ModalInterestsConsumer" data-bs-toggle="modal">
+                <i class="fa fa-question"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" data-aos="fade-up">
+    <div class="friend-list">
+      <div class="row">
+        <div
+          *ngFor="let recomendacao of recommendations"
+          class="col-md-3 col-sm-6"
+        >
+          <div class="friend-card" (click)="getPerfilById(recomendacao.userId)">
+            <img
+              [src]="recomendacao.backgroundPicture"
+              alt="profile-cover"
+              class="img-responsive cover"
+            />
+            <div class="card-info">
+              <div *ngIf="recomendacao.isPremium">
+                <img
+                  [src]="recomendacao.userPicture"
+                  alt="user"
+                  class="profile-photo-lg-premium"
+                />
+              </div>
+              <div *ngIf="!recomendacao.isPremium">
+                <img
+                  [src]="recomendacao.userPicture"
+                  alt="user"
+                  class="profile-photo-lg"
+                />
+              </div>
+              <div class="friend-info">
+                <div *ngIf="recomendacao.isPremium">
+                  <div class="star">
+                    <i
+                      class="bx bxs-star bx-sm bx-tada-hover"
+                      aria-hidden="true"
+                    ></i>
+                    <p>PREMIUM</p>
+                  </div>
+                </div>
+                <div class="name fw-bolder">
+                  <a>
+                    <h5>{{ recomendacao.name }}</h5>
+                  </a>
+                </div>
+                <div class="profile-link fw-light">
+                  <p>
+                    <a>{{ recomendacao.username }}</a>
+                  </p>
+                </div>
+                <a class="pull-right mt-5 text-cat">{{
+                  recomendacao.category
+                }}</a
+                ><br />
+                <div class="mt-2">
+                  <a class="pull-right text-sub">{{
+                    recomendacao.subcategory
+                  }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  <section class="recommendation" id="recomendados">
+    <div class="section-title" data-aos="fade-up">
+      <div class="container">
+        <div class="row text-center">
+          <h2>PERFIS RECOMENDADOS</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="plus-buttons list-inline2">
+              <li class="list-inline-item">
+                <a href="#ModalRecommendationConsumer" data-bs-toggle="modal">
+                  <i class="fa fa-question"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" data-aos="fade-up">
+      <div class="friend-list">
+        <div class="row">
+          <div
+            *ngFor="let recomendacao of recommendations"
+            class="col-md-3 col-sm-6"
+          >
+            <div
+              class="friend-card"
+              (click)="getPerfilById(recomendacao.userId)"
+            >
+              <img
+                [src]="recomendacao.backgroundPicture"
+                alt="profile-cover"
+                class="img-responsive cover"
+              />
+
+              <div class="card-info">
+                <div *ngIf="recomendacao.isPremium">
+                  <img
+                    [src]="recomendacao.userPicture"
+                    alt="user"
+                    class="profile-photo-lg-premium"
+                  />
+                </div>
+                <div *ngIf="!recomendacao.isPremium">
+                  <img
+                    [src]="recomendacao.userPicture"
+                    alt="user"
+                    class="profile-photo-lg"
+                  />
+                </div>
+                <div *ngIf="recomendacao.isPremium">
+                  <div class="star mt-0">
+                    <i
+                      class="bx bxs-star bx-sm bx-tada-hover"
+                      aria-hidden="true"
+                    ></i>
+                    <p>PREMIUM</p>
+                  </div>
+                </div>
+                <div class="friend-info">
+                  <div class="name fw-bolder mb-0">
+                    <a>
+                      <h5>{{ recomendacao.name }}</h5>
+                    </a>
+                  </div>
+                  <div class="profile-link fw-light mt-0 mb-0">
+                    <p>
+                      <a>{{ recomendacao.username }}</a>
+                    </p>
+                  </div>
+                  <a class="pull-right mt-5 text-cat">{{
+                    recomendacao.category
+                  }}</a
+                  ><br />
+                  <div class="mt-2">
+                    <a class="pull-right text-sub">{{
+                      recomendacao.subcategory
+                    }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div *ngIf="!roleUser">
+  <app-headerlog></app-headerlog>
+  <section class="welcome">
+    <div class="section-title" data-aos="fade-up">
+      <!-- <div class="row">
+      <div
+        class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3 buttons-inte-reco"
+      >
+        <div class="text-end">
+          <a href="/homepage/#interesses"><button
+            type="button"
+            id="submit"
+            name="submit"
+            class="submit"
+          >
+            Interesses
+          </button></a>
+        </div>
+        <div class="text-end">
+          <a href="/homepage/#recomendados"><button
+            type="button"
+            id="submit"
+            name="submit"
+            class="submit"
+          >
+            Recomendados
+          </button></a>
+        </div>
+      </div>
+    </div> -->
+      <div class="container">
+        <div class="row text-center" id="interesses">
+          <h2>{{ "RECOMENDACAO.TITULO-INTE" | translate }}</h2>
+          <!-- <div class="col-md-12 ">
+          <p>{{ 'RECOMENDACAO.SUBTITULO' | translate }}</p>
+        </div> -->
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="plus-buttons list-inline2">
+              <li class="list-inline-item">
+                <a href="#ModalInterestsArtist" data-bs-toggle="modal">
+                  <i class="fa fa-question"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" data-aos="fade-up">
+      <div class="friend-list">
+        <div class="row">
+          <div
+            *ngFor="let recomendacao of recommendations"
+            class="col-md-3 col-sm-6"
+          >
+            <div
+              class="friend-card"
+              (click)="getPerfilById(recomendacao.userId)"
+            >
+              <img
+                [src]="recomendacao.backgroundPicture"
+                alt="profile-cover"
+                class="img-responsive cover"
+              />
+
+              <div class="card-info">
+                <div *ngIf="recomendacao.isPremium">
+                  <img
+                    [src]="recomendacao.userPicture"
+                    alt="user"
+                    class="profile-photo-lg-premium"
+                  />
+                </div>
+                <div *ngIf="!recomendacao.isPremium">
+                  <img
+                    [src]="recomendacao.userPicture"
+                    alt="user"
+                    class="profile-photo-lg"
+                  />
+                </div>
+                <div *ngIf="recomendacao.isPremium">
+                  <div class="star mt-0">
+                    <i
+                      class="bx bxs-star bx-sm bx-tada-hover"
+                      aria-hidden="true"
+                    ></i>
+                    <p>PREMIUM</p>
+                  </div>
+                </div>
+                <div class="friend-info">
+                  <div class="name fw-bolder mb-0">
+                    <a>
+                      <h5>{{ recomendacao.name }}</h5>
+                    </a>
+                  </div>
+                  <div class="profile-link fw-light mt-0 mb-0">
+                    <p>
+                      <a>{{ recomendacao.username }}</a>
+                    </p>
+                  </div>
+                  <a class="pull-right mt-5 text-cat">{{
+                    recomendacao.category
+                  }}</a
+                  ><br />
+                  <div class="mt-2">
+                    <a class="pull-right text-sub">{{
+                      recomendacao.subcategory
+                    }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="recommendation" id="recomendados">
+    <div class="section-title" data-aos="fade-up">
+      <div class="container">
+        <div class="row text-center">
+          <h2>{{ "RECOMENDACAO.TITULO-RECO" | translate }}</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="plus-buttons list-inline2">
+              <li class="list-inline-item">
+                <a href="#ModalRecommendationArtist" data-bs-toggle="modal">
+                  <i class="fa fa-question"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" data-aos="fade-up">
+      <div class="friend-list">
+        <div class="row">
+          <div
+            *ngFor="let recomendacao of recommendations"
+            class="col-md-3 col-sm-6"
+          >
+            <div
+              class="friend-card"
+              (click)="getPerfilById(recomendacao.userId)"
+            >
+              <img
+                [src]="recomendacao.backgroundPicture"
+                alt="profile-cover"
+                class="img-responsive cover"
+              />
+
+              <div class="card-info">
+                <div *ngIf="recomendacao.isPremium">
+                  <img
+                    [src]="recomendacao.userPicture"
+                    alt="user"
+                    class="profile-photo-lg-premium"
+                  />
+                </div>
+                <div *ngIf="!recomendacao.isPremium">
+                  <img
+                    [src]="recomendacao.userPicture"
+                    alt="user"
+                    class="profile-photo-lg"
+                  />
+                </div>
+                <div *ngIf="recomendacao.isPremium">
+                  <div class="star mt-0">
+                    <i
+                      class="bx bxs-star bx-sm bx-tada-hover"
+                      aria-hidden="true"
+                    ></i>
+                    <p>PREMIUM</p>
+                  </div>
+                </div>
+                <div class="friend-info">
+                  <div class="name fw-bolder mb-0">
+                    <a>
+                      <h5>{{ recomendacao.name }}</h5>
+                    </a>
+                  </div>
+                  <div class="profile-link fw-light mt-0 mb-0">
+                    <p>
+                      <a>{{ recomendacao.username }}</a>
+                    </p>
+                  </div>
+                  <a class="pull-right mt-5 text-cat">{{
+                    recomendacao.category
+                  }}</a
+                  ><br />
+                  <div class="mt-2">
+                    <a class="pull-right text-sub">{{
+                      recomendacao.subcategory
+                    }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div
+  class="portfolio-modal modal fade"
+  id="ModalInterestsConsumer"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="close-modal" type="button" data-bs-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mx-auto">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <h5 class="title-modal">
+                    {{ "RECOMENDACAO.TITULO-INTE" | translate }}
+                  </h5>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="col-md-12">
+                  <div
+                    class="col-md-12"
+                    data-aos="zoom-in"
+                    data-aos-delay="100"
+                  >
+                    <img
+                      src="assets/img/pages/tool-interest.svg"
+                      alt="dashboard"
+                      class="image-toll mb-2"
+                    />
+                  </div>
+                  <p>
+                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO1" | translate }}
+                  </p>
+                  <p>
+                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO2" | translate }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<div
+  class="portfolio-modal modal fade"
+  id="ModalInterestsArtist"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="close-modal" type="button" data-bs-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mx-auto">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <h5 class="title-modal">
+                    {{ "RECOMENDACAO.TITULO-INTE" | translate }}
+                  </h5>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="col-md-12">
+                  <div
+                    class="col-md-12"
+                    data-aos="zoom-in"
+                    data-aos-delay="100"
+                  >
+                    <img
+                      src="assets/img/pages/RS.svg"
+                      alt="dashboard"
+                      class="image-toll mb-2"
+                    />
+                  </div>
+                  <p>
+                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO1" | translate }}
+                  </p>
+                  <p>
+                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO2" | translate }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="portfolio-modal modal fade"
+  id="ModalRecommendationConsumer"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="close-modal" type="button" data-bs-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mx-auto">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <h5 class="title-modal">
+                    {{ "RECOMENDACAO.TITULO-RECO" | translate }}
+                  </h5>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="col-md-12">
+                  <div
+                    class="col-md-12"
+                    data-aos="zoom-in"
+                    data-aos-delay="100"
+                  >
+                    <img
+                      src="assets/img/pages/RS.svg"
+                      alt="dashboard"
+                      class="image-toll mb-2"
+                    />
+                  </div>
+                  <p>
+                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO1" | translate }}
+                  </p>
+                  <p>
+                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO2" | translate }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="portfolio-modal modal fade"
+  id="ModalRecommendationArtist"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="close-modal" type="button" data-bs-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mx-auto">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <h5 class="title-modal">
+                    {{ "RECOMENDACAO.TITULO-RECO" | translate }}
+                  </h5>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="col-md-12">
+                  <div
+                    class="col-md-12"
+                    data-aos="zoom-in"
+                    data-aos-delay="100"
+                  >
+                    <img
+                      src="assets/img/pages/RS.svg"
+                      alt="dashboard"
+                      class="image-toll mb-2"
+                    />
+                  </div>
+                  <p>
+                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO1" | translate }}
+                  </p>
+                  <p>
+                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO2" | translate }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

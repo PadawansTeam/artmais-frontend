@@ -39,7 +39,10 @@
         "INVALIDO": "Invalid field",
         "OU": "Or",
         "NAO-POSSUI-CONTA": "Don't have an account?",
-        "CADASTRAR": "Sign Up"
+        "CADASTRAR": "Sign Up",
+        "MODAL-TEXT": "Enter your email to receive the verification code",
+        "MODAL-TITLE": "PASSWORD CHANGE",
+        "MODAL-ENVIAR": "Submit Code"
     },
     "MENU": {
         "HOME": "Home",
@@ -131,7 +134,8 @@
             "ABA-ERRO": "There's nothing posted yet"
         },
     "RECOMENDACAO": {
-        "TITULO": "PROFILE RECOMMENDATION",
+        "TITULO-INTE": "INTEREST PROFILES",
+        "TITULO-RECO": "RECOMMENDED PROFILES",
         "SUBTITULO": "These profiles were chosen according to the artistic fields of interest to you. Activities, user interactions and searches made will be used to customize future suggestions. Discover new artists and follow their projects through Art+.",
         "TOOLTIP-RECOMENDACAO1": "Our system will recommend artists from the categories you choose on the recommend page. In addition, you will also receive tips from artists that the Art+ platform understands that are relevant to you.",
         "TOOLTIP-RECOMENDACAO2": "If you are Premium, you will be highlighted in the recommendation of other platform users, appearing first for them."
@@ -163,6 +167,7 @@
         "NOME-USER": "User Name:",
         "NOME-USER-BOX": "Username",
         "FOTO": "Profile Picture:",
+        "CAPA":"Cover Picture:",
         "FOTO-BUTTON": "Choose File",
         "FOTO-BOX": "No file selected",
         "PRONOMES": "Pronouns:",
@@ -246,5 +251,17 @@
         "NO-PREMIUM-TEXT6": "Forecast your metrics for the coming months",
         "NO-PREMIUM-TEXT7": "And much more!",
         "NO-PREMIUM-BUTTON": "Purchase"
+    },
+    "VEFICACAO": {
+        "TITLE": "Verification code",
+        "REENVIAR": "Resend",
+        "CONFIRMAR": "Confirm",
+        "TEXT": "Enter the verification code"
+    },
+    "NOVA-SENHA": {
+        "TITLE": "New password",
+        "NOVA-SENHA": "Enter new password",
+        "CONFIRMAR": "Confirm",
+        "CONFIRMAR-SENHA": "Enter the verification code"
     }
 }

@@ -55,7 +55,7 @@
                 </button>
                 <p *ngIf="erroLogin" class="error" align="center">{{ "ENTRAR.ERRO" | translate }}</p>
                 <p *ngIf="erroAPI" class="error" align="center">{{ "ENTRAR.API" | translate }}</p>
-                <p align="center"><a href="#" class="forgot">{{ "ENTRAR.ESQUECEU" | translate }}</a></p>
+                <p align="center"><a href="#ModalForgotPassword"data-bs-toggle="modal" class="forgot">{{ "ENTRAR.ESQUECEU" | translate }}</a></p>
               </div>
             </div>
               <div class="row">
@@ -71,3 +71,64 @@
   </div>
 </div>
 <app-footer></app-footer>
+
+<div
+  class="portfolio-modal modal fade"
+  id="ModalForgotPassword"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="close-modal" type="button" data-bs-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12 mx-auto">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <h5 class="title-modal">
+                    {{ 'ENTRAR.MODAL-TITLE' | translate }}
+                  </h5>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="col-md-12">
+                  <div
+                    class="col-md-12"
+                    data-aos="zoom-in"
+                    data-aos-delay="100"
+                  >
+                    <img
+                      src="assets/img/pages/mail_send.svg"
+                      alt="mail-send"
+                      class="image-toll mb-2 "
+                    />
+                  </div>
+                  <p>{{ 'ENTRAR.MODAL-TEXT' | translate }}</p>
+                  <form [formGroup]="formLogin">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="bx bx-user bx-sm bx-tada-hover"></i>
+                        </span>
+                      </div>
+                      <input formControlName="email" name="email" class="un form-control" type="email" align="center" placeholder="{{ 'ENTRAR.EMAIL' | translate }}">
+                    </div></form>
+                    <a href="\verificacao"><button class="submit" align="center">
+                      {{ 'ENTRAR.MODAL-ENVIAR' | translate }}
+                    </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
