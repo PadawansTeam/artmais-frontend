@@ -112,7 +112,8 @@
         "PLANOS-CADASTRAR-CARD2": "Comprar"
     },
     "RECOMENDACAO": {
-        "TITULO": "RECOMENDAÇÃO DE PERFIL",
+        "TITULO-INTE": "PERFIS DE INTERESSE",
+        "TITULO-RECO": "PERFIS RECOMENDADOS",
         "SUBTITULO": "Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse, suas atividades, interações com outros usuários e pesquisas feitas serão utilizadas para personalizar futuras sugestões. Descubra novos artistas e acompanhe seus projetos pelo Art+.",
         "TOOLTIP-RECOMENDACAO1": "Nosso sistema recomendará os artistas das categorias que você escolher na página recomendar. Além disso, você também receberá dicas de artistas que a plataforma Art + entender que são relevantes para você.",
         "TOOLTIP-RECOMENDACAO2": "Caso você seja Premium, você terá destaque na recomendação dos outros usuários da plataforma, aparecendo primeiro para eles."

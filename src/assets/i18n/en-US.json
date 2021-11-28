@@ -134,7 +134,8 @@
             "ABA-ERRO": "There's nothing posted yet"
         },
     "RECOMENDACAO": {
-        "TITULO": "PROFILE RECOMMENDATION",
+        "TITULO-INTE": "INTEREST PROFILES",
+        "TITULO-RECO": "RECOMMENDED PROFILES",
         "SUBTITULO": "These profiles were chosen according to the artistic fields of interest to you. Activities, user interactions and searches made will be used to customize future suggestions. Discover new artists and follow their projects through Art+.",
         "TOOLTIP-RECOMENDACAO1": "Our system will recommend artists from the categories you choose on the recommend page. In addition, you will also receive tips from artists that the Art+ platform understands that are relevant to you.",
         "TOOLTIP-RECOMENDACAO2": "If you are Premium, you will be highlighted in the recommendation of other platform users, appearing first for them."
