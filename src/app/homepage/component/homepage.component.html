@@ -32,83 +32,87 @@
     </div>
   </div>
   <section>
-  <div class="section-title" data-aos="fade-up">
-    <div class="container">
-      <div class="row text-center" id="interesses">
-        <h2>PERFIS DE INTERESSE</h2>
-        <!-- <div class="col-md-12 ">
+    <div class="section-title" data-aos="fade-up">
+      <div class="container">
+        <div class="row text-center" id="interesses">
+          <h2>
+            <a
+              href="#ModalInterests"
+              data-bs-toggle="modal"
+              class="question-mark"
+            >
+              <i
+                class="bx bx-question-mark bx-sm bx-tada-hover"
+                aria-hidden="true"
+              ></i> </a
+            >{{ "RECOMENDACAO.TITULO-INTE" | translate }}
+          </h2>
+          <!-- <div class="col-md-12 ">
         <p>{{ 'RECOMENDACAO.SUBTITULO' | translate }}</p>
       </div> -->
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="plus-buttons list-inline2">
-            <li class="list-inline-item">
-              <a href="#ModalInterestsConsumer" data-bs-toggle="modal">
-                <i class="fa fa-question"></i>
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container" data-aos="fade-up">
-    <div class="friend-list">
-      <div class="row">
-        <div
-          *ngFor="let recomendacao of recommendations"
-          class="col-md-3 col-sm-6"
-        >
-          <div class="friend-card" (click)="getPerfilById(recomendacao.userId)">
-            <img
-              [src]="recomendacao.backgroundPicture"
-              alt="profile-cover"
-              class="img-responsive cover"
-            />
-            <div class="card-info">
-              <div *ngIf="recomendacao.isPremium">
-                <img
-                  [src]="recomendacao.userPicture"
-                  alt="user"
-                  class="profile-photo-lg-premium"
-                />
-              </div>
-              <div *ngIf="!recomendacao.isPremium">
-                <img
-                  [src]="recomendacao.userPicture"
-                  alt="user"
-                  class="profile-photo-lg"
-                />
-              </div>
-              <div class="friend-info">
+    <div class="container" data-aos="fade-up">
+      <div class="friend-list">
+        <div class="row">
+          <div
+            *ngFor="let recomendacao of recommendations"
+            class="col-md-3 col-sm-6"
+          >
+            <div
+              class="friend-card"
+              (click)="getPerfilById(recomendacao.userId)"
+            >
+              <img
+                [src]="recomendacao.backgroundPicture"
+                alt="profile-cover"
+                class="img-responsive cover"
+              />
+              <div class="card-info">
                 <div *ngIf="recomendacao.isPremium">
-                  <div class="star">
-                    <i
-                      class="bx bxs-star bx-sm bx-tada-hover"
-                      aria-hidden="true"
-                    ></i>
-                    <p>PREMIUM</p>
+                  <img
+                    [src]="recomendacao.userPicture"
+                    alt="user"
+                    class="profile-photo-lg-premium"
+                  />
+                </div>
+                <div *ngIf="!recomendacao.isPremium">
+                  <img
+                    [src]="recomendacao.userPicture"
+                    alt="user"
+                    class="profile-photo-lg"
+                  />
+                </div>
+                <div class="friend-info">
+                  <div *ngIf="recomendacao.isPremium">
+                    <div class="star">
+                      <i
+                        class="bx bxs-star bx-sm bx-tada-hover"
+                        aria-hidden="true"
+                      ></i>
+                      <p>PREMIUM</p>
+                    </div>
                   </div>
-                </div>
-                <div class="name fw-bolder">
-                  <a>
-                    <h5>{{ recomendacao.name }}</h5>
-                  </a>
-                </div>
-                <div class="profile-link fw-light">
-                  <p>
-                    <a>{{ recomendacao.username }}</a>
-                  </p>
-                </div>
-                <a class="pull-right mt-5 text-cat">{{
-                  recomendacao.category
-                }}</a
-                ><br />
-                <div class="mt-2">
-                  <a class="pull-right text-sub">{{
-                    recomendacao.subcategory
-                  }}</a>
+                  <div class="name fw-bolder">
+                    <a>
+                      <h5>{{ recomendacao.name }}</h5>
+                    </a>
+                  </div>
+                  <div class="profile-link fw-light">
+                    <p>
+                      <a>{{ recomendacao.username }}</a>
+                    </p>
+                  </div>
+                  <a class="pull-right mt-5 text-cat">{{
+                    recomendacao.category
+                  }}</a
+                  ><br />
+                  <div class="mt-2">
+                    <a class="pull-right text-sub">{{
+                      recomendacao.subcategory
+                    }}</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -116,23 +120,23 @@
         </div>
       </div>
     </div>
-  </div></section>
+  </section>
   <section class="recommendation" id="recomendados">
     <div class="section-title" data-aos="fade-up">
       <div class="container">
         <div class="row text-center">
-          <h2>PERFIS RECOMENDADOS</h2>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <ul class="plus-buttons list-inline2">
-              <li class="list-inline-item">
-                <a href="#ModalRecommendationConsumer" data-bs-toggle="modal">
-                  <i class="fa fa-question"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <h2>
+            <a
+              href="#ModalRecommendation"
+              data-bs-toggle="modal"
+              class="question-mark"
+            >
+              <i
+                class="bx bx-question-mark bx-sm bx-tada-hover"
+                aria-hidden="true"
+              ></i> </a
+            >{{ "RECOMENDACAO.TITULO-RECO" | translate }}
+          </h2>
         </div>
       </div>
     </div>
@@ -238,21 +242,22 @@
     </div> -->
       <div class="container">
         <div class="row text-center" id="interesses">
-          <h2>{{ "RECOMENDACAO.TITULO-INTE" | translate }}</h2>
+          <h2>
+            <a
+              href="#ModalInterests"
+              data-bs-toggle="modal"
+              class="question-mark"
+            >
+              <i
+                class="bx bx-question-mark bx-sm bx-tada-hover"
+                aria-hidden="true"
+              ></i> </a
+            >{{ "RECOMENDACAO.TITULO-INTE" | translate }}
+          </h2>
+
           <!-- <div class="col-md-12 ">
           <p>{{ 'RECOMENDACAO.SUBTITULO' | translate }}</p>
         </div> -->
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <ul class="plus-buttons list-inline2">
-              <li class="list-inline-item">
-                <a href="#ModalInterestsArtist" data-bs-toggle="modal">
-                  <i class="fa fa-question"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
@@ -329,18 +334,18 @@
     <div class="section-title" data-aos="fade-up">
       <div class="container">
         <div class="row text-center">
-          <h2>{{ "RECOMENDACAO.TITULO-RECO" | translate }}</h2>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <ul class="plus-buttons list-inline2">
-              <li class="list-inline-item">
-                <a href="#ModalRecommendationArtist" data-bs-toggle="modal">
-                  <i class="fa fa-question"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <h2>
+            <a
+              href="#ModalRecommendation"
+              data-bs-toggle="modal"
+              class="question-mark"
+            >
+              <i
+                class="bx bx-question-mark bx-sm bx-tada-hover"
+                aria-hidden="true"
+              ></i> </a
+            >{{ "RECOMENDACAO.TITULO-RECO" | translate }}
+          </h2>
         </div>
       </div>
     </div>
@@ -417,7 +422,7 @@
 
 <div
   class="portfolio-modal modal fade"
-  id="ModalInterestsConsumer"
+  id="ModalInterests"
   tabindex="-1"
   role="dialog"
   aria-hidden="true"
@@ -454,10 +459,7 @@
                     />
                   </div>
                   <p>
-                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO1" | translate }}
-                  </p>
-                  <p>
-                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO2" | translate }}
+                    {{ "RECOMENDACAO.TOOLTIP-INTERESSES1" | translate }}
                   </p>
                 </div>
               </div>
@@ -470,61 +472,7 @@
 </div>
 <div
   class="portfolio-modal modal fade"
-  id="ModalInterestsArtist"
-  tabindex="-1"
-  role="dialog"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="close-modal" type="button" data-bs-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 mx-auto">
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                  <h5 class="title-modal">
-                    {{ "RECOMENDACAO.TITULO-INTE" | translate }}
-                  </h5>
-                </div>
-              </div>
-              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="col-md-12">
-                  <div
-                    class="col-md-12"
-                    data-aos="zoom-in"
-                    data-aos-delay="100"
-                  >
-                    <img
-                      src="assets/img/pages/RS.svg"
-                      alt="dashboard"
-                      class="image-toll mb-2"
-                    />
-                  </div>
-                  <p>
-                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO1" | translate }}
-                  </p>
-                  <p>
-                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO2" | translate }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div
-  class="portfolio-modal modal fade"
-  id="ModalRecommendationConsumer"
+  id="ModalRecommendation"
   tabindex="-1"
   role="dialog"
   aria-hidden="true"
@@ -562,63 +510,6 @@
                   </div>
                   <p>
                     {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO1" | translate }}
-                  </p>
-                  <p>
-                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO2" | translate }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div
-  class="portfolio-modal modal fade"
-  id="ModalRecommendationArtist"
-  tabindex="-1"
-  role="dialog"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="close-modal" type="button" data-bs-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 mx-auto">
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                  <h5 class="title-modal">
-                    {{ "RECOMENDACAO.TITULO-RECO" | translate }}
-                  </h5>
-                </div>
-              </div>
-              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="col-md-12">
-                  <div
-                    class="col-md-12"
-                    data-aos="zoom-in"
-                    data-aos-delay="100"
-                  >
-                    <img
-                      src="assets/img/pages/RS.svg"
-                      alt="dashboard"
-                      class="image-toll mb-2"
-                    />
-                  </div>
-                  <p>
-                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO1" | translate }}
-                  </p>
-                  <p>
-                    {{ "RECOMENDACAO.TOOLTIP-RECOMENDACAO2" | translate }}
                   </p>
                 </div>
               </div>
