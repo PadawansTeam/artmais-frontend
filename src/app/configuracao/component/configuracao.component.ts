@@ -77,12 +77,8 @@ export class ConfiguracaoComponent implements OnInit {
     city: null,
     state: null,
   };
-  
-  validZipCode = false;
-  validNumber = false;
-  validMainPhone: any;
-  validSecundaryPhone: any; 
-  validThirdPhone: any;
+
+  invalidField: boolean = false;
 
   statesList = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'ES', 'GO', 'MA', 
   'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 
@@ -259,6 +255,14 @@ export class ConfiguracaoComponent implements OnInit {
   }
 
   updateContact() {
+
+    if((this.userContact.facebook || this.userContact.facebook == null) &&
+      (this.userContact.instagram || this.userContact.instagram == null) &&
+      (this.userContact.twitter || this.userContact.twitter == null) &&
+      (/^[0-9]{13}$/.test(this.userContact.mainPhone) || this.userContact.mainPhone == null) &&
+      (/^[0-9]{13}$/.test(this.userContact.secundaryPhone) || this.userContact.secundaryPhone == null) &&
+      (/^[0-9]{13}$/.test(this.userContact.thirdPhone) || this.userContact.thirdPhone == null))
+      {
     this.configService
       .updateContact(
         this.userContact.facebook,
@@ -295,46 +299,62 @@ export class ConfiguracaoComponent implements OnInit {
           throw err;
         }
       );
+    } else {
+      this.invalidField = true;
+    }
   }
 
   updateAddress() {
-    this.configService
-      .updateAddress(
-        this.userAddress.street,
-        this.userAddress.number,
-        this.userAddress.complement,
-        this.userAddress.neighborhood,
-        this.userAddress.zipCode,
-        this.userAddress.city,
-        this.userAddress.state
-      )
-      .subscribe(
-        async (response) => {
-          await this.Toast.fire({
-            icon: 'success',
-            title:
-              localStorage.getItem('lang') === 'pt-BR'
-                ? 'Dados salvos com sucesso!'
-                : 'Information saved with success!',
-          });
-          this.routeUpdateEvent();
-          return response;
-        },
-        (err) => {
-          this.Toast.fire({
-            icon: 'error',
-            title:
-              localStorage.getItem('lang') === 'pt-BR'
-                ? 'Erro ao salvar os dados!'
-                : 'Failed to save information!',
-            text:
-              localStorage.getItem('lang') === 'pt-BR'
-                ? 'Tente novamente mais tarde!'
-                : 'Try again later!',
-          });
-          throw err;
-        }
-      );
+
+    if((this.userAddress.street || this.userAddress.street == null) &&
+      (this.userAddress.complement || this.userAddress.complement == null) &&
+      (this.userAddress.neighborhood || this.userAddress.neighborhood == null) &&
+      (this.userAddress.city || this.userAddress.city == null) &&
+      (this.userAddress.state || this.userAddress.state == null) &&
+      (/^[0-9]{5}-?[0-9]{3}$/.test(this.userAddress.zipCode) || this.userAddress.zipCode == null) &&
+      (/^\d+$/.test(this.userAddress.number || this.userAddress.number == null)
+      ))
+    {
+      this.configService
+        .updateAddress(
+          this.userAddress.street,
+          this.userAddress.number,
+          this.userAddress.complement,
+          this.userAddress.neighborhood,
+          this.userAddress.zipCode,
+          this.userAddress.city,
+          this.userAddress.state
+        )
+        .subscribe(
+          async (response) => {
+            await this.Toast.fire({
+              icon: 'success',
+              title:
+                localStorage.getItem('lang') === 'pt-BR'
+                  ? 'Dados salvos com sucesso!'
+                  : 'Information saved with success!',
+            });
+            this.routeUpdateEvent();
+            return response;
+          },
+          (err) => {
+            this.Toast.fire({
+              icon: 'error',
+              title:
+                localStorage.getItem('lang') === 'pt-BR'
+                  ? 'Erro ao salvar os dados!'
+                  : 'Failed to save information!',
+              text:
+                localStorage.getItem('lang') === 'pt-BR'
+                  ? 'Tente novamente mais tarde!'
+                  : 'Try again later!',
+            });
+            throw err;
+          }
+        );
+      } else {
+        this.invalidField = true;
+      }
   }
 
   async uploadProfile() {
@@ -351,43 +371,56 @@ export class ConfiguracaoComponent implements OnInit {
   }
 
   async uploadProfileServiceCall() {
-    this.configService
-      .updateUserInfo(
-        this.userInfo.name,
-        this.userInfo.username,
-        this.userInfo.backgroundPicture,
-        this.userInfo.birthDate,
-        this.userInfo.mainPhone,
-        this.userInfo.secundaryPhone,
-        this.userInfo.thirdPhone
-      )
-      .subscribe(
-        async (response) => {
-          await this.Toast.fire({
-            icon: 'success',
-            title:
-              localStorage.getItem('lang') === 'pt-BR'
-                ? 'Dados salvos com sucesso!'
-                : 'Information saved with success!',
-          });
-          this.routeUpdateEvent();
-          return response;
-        },
-        (err) => {
-          this.Toast.fire({
-            icon: 'error',
-            title:
-              localStorage.getItem('lang') === 'pt-BR'
-                ? 'Erro ao salvar os dados!'
-                : 'Failed to save information!',
-            text:
-              localStorage.getItem('lang') === 'pt-BR'
-                ? 'Tente novamente mais tarde!'
-                : 'Try again later!',
-          });
-          throw err;
-        }
-      );
+
+    if ((this.userInfo.name || this.userInfo.name == null) &&
+      (this.userInfo.username || this.userInfo.username == null) &&
+      (this.userInfo.backgroundPicture || this.userInfo.backgroundPicture == null) &&
+      (this.userInfo.birthDate || this.userInfo.birthDate == null) &&
+      (/^[0-9]{13}$/.test(this.userInfo.mainPhone) || this.userInfo.mainPhone == null) &&
+      (/^[0-9]{13}$/.test(this.userInfo.secundaryPhone) || this.userInfo.secundaryPhone == null) &&
+      (/^[0-9]{13}$/.test(this.userInfo.thirdPhone) || this.userInfo.thirdPhone == null))
+    {
+      this.configService
+        .updateUserInfo(
+          this.userInfo.name,
+          this.userInfo.username,
+          this.userInfo.backgroundPicture,
+          this.userInfo.birthDate,
+          this.userInfo.mainPhone,
+          this.userInfo.secundaryPhone,
+          this.userInfo.thirdPhone
+        )
+        .subscribe(
+          async (response) => {
+            await this.Toast.fire({
+              icon: 'success',
+              title:
+                localStorage.getItem('lang') === 'pt-BR'
+                  ? 'Dados salvos com sucesso!'
+                  : 'Information saved with success!',
+            });
+            this.routeUpdateEvent();
+            return response;
+          },
+          (err) => {
+            this.Toast.fire({
+              icon: 'error',
+              title:
+                localStorage.getItem('lang') === 'pt-BR'
+                  ? 'Erro ao salvar os dados!'
+                  : 'Failed to save information!',
+              text:
+                localStorage.getItem('lang') === 'pt-BR'
+                  ? 'Tente novamente mais tarde!'
+                  : 'Try again later!',
+            });
+            throw err;
+          }
+        );
+    } else {
+      this.invalidField = true;
+    }
+
   }
 
   async uploadUserPicture(formData: FormData) {
