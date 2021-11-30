@@ -13,6 +13,7 @@ export class InteresseComponent implements OnInit {
 
   interests: Interesse[] = [];
   subcategories: Interesse[] = [];
+  recommendations: Interesse[] = [];
   allCategories: Map<string, any[]> = new Map();
   roleUser: boolean = true;
 
@@ -36,7 +37,11 @@ export class InteresseComponent implements OnInit {
       }
     );
     this.interesseService.getInterests().subscribe(
-      (response: { subcategories: Interesse[], interests: Interesse[] }) => {
+      (response: { subcategories: Interesse[], interests: Interesse[], recommendations: Interesse[] }) => {
+        this.recommendations = response.recommendations;
+        this.recommendations.forEach((recommendation) => {
+          recommendation.isSelected = true;
+        })
         this.interests = response.interests;
         response.subcategories = response.subcategories.sort(function (a, b) {
           return a.subcategory.localeCompare(b.subcategory);
@@ -70,15 +75,22 @@ export class InteresseComponent implements OnInit {
 
   sendInterest() {
     let ids: number[] = [];
+    let recommendedIds: number[] = [];
     Array.from(this.allCategories).forEach(([category, subs]) => {
       subs.forEach((subcategory) => {
         if(subcategory.isSelected){
           ids.push(subcategory.subcategoryID)
         }
       })
+    });
+    this.recommendations.forEach((recommendation) => {
+      if(recommendation.isSelected){
+        recommendedIds.push(recommendation.subcategoryID)
+      }
     })
-    this.interesseService.sendInterests(ids).subscribe(
+    this.interesseService.sendInterests(ids, recommendedIds).subscribe(
       (response) => {
+        console.log("Ids: ", ids, recommendedIds)
         this.router.navigateByUrl('/homepage');
         return response;
       },

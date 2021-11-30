@@ -56,36 +56,44 @@
     <div class="container" data-aos="fade-up">
       <div class="friend-list">
         <div class="row">
+          <div *ngIf="interests.length == 0">
+            <p
+              class="text-center"
+              style="font-size: 20px; color: #6c757d !important; margin-bottom: 4rem !important;"
+            >
+              {{ "PERFIL.ABA-ERRO" | translate }}
+            </p>
+          </div>
           <div
-            *ngFor="let recomendacao of recommendations"
+            *ngFor="let interest of interests"
             class="col-md-3 col-sm-6"
           >
             <div
               class="friend-card"
-              (click)="getPerfilById(recomendacao.userId)"
+              (click)="getPerfilById(interest.userId)"
             >
               <img
-                [src]="recomendacao.backgroundPicture"
+                [src]="interest.backgroundPicture"
                 alt="profile-cover"
                 class="img-responsive cover"
               />
               <div class="card-info">
-                <div *ngIf="recomendacao.isPremium">
+                <div *ngIf="interest.isPremium">
                   <img
-                    [src]="recomendacao.userPicture"
+                    [src]="interest.userPicture"
                     alt="user"
                     class="profile-photo-lg-premium"
                   />
                 </div>
-                <div *ngIf="!recomendacao.isPremium">
+                <div *ngIf="!interest.isPremium">
                   <img
-                    [src]="recomendacao.userPicture"
+                    [src]="interest.userPicture"
                     alt="user"
                     class="profile-photo-lg"
                   />
                 </div>
                 <div class="friend-info">
-                  <div *ngIf="recomendacao.isPremium">
+                  <div *ngIf="interest.isPremium">
                     <div class="star">
                       <i
                         class="bx bxs-star bx-sm bx-tada-hover"
@@ -96,22 +104,18 @@
                   </div>
                   <div class="name fw-bolder">
                     <a>
-                      <h5>{{ recomendacao.name }}</h5>
+                      <h5>{{ interest.name }}</h5>
                     </a>
                   </div>
                   <div class="profile-link fw-light">
                     <p>
-                      <a>{{ recomendacao.username }}</a>
+                      <a>{{ interest.username }}</a>
                     </p>
                   </div>
-                  <a class="pull-right mt-5 text-cat">{{
-                    recomendacao.category
-                  }}</a
+                  <a class="pull-right mt-5 text-cat">{{ interest.category }}</a
                   ><br />
                   <div class="mt-2">
-                    <a class="pull-right text-sub">{{
-                      recomendacao.subcategory
-                    }}</a>
+                    <a class="pull-right text-sub">{{ interest.subcategory }}</a>
                   </div>
                 </div>
               </div>
@@ -143,6 +147,14 @@
     <div class="container" data-aos="fade-up">
       <div class="friend-list">
         <div class="row">
+          <div *ngIf="recommendations.length == 0">
+            <p
+              class="text-center"
+              style="font-size: 20px; color: #6c757d !important; margin-bottom: 4rem !important;"
+            >
+              {{ "PERFIL.ABA-ERRO" | translate }}
+            </p>
+          </div>
           <div
             *ngFor="let recomendacao of recommendations"
             class="col-md-3 col-sm-6"
@@ -264,36 +276,44 @@
     <div class="container" data-aos="fade-up">
       <div class="friend-list">
         <div class="row">
+          <div *ngIf="interests.length == 0">
+            <p
+              class="text-center"
+              style="font-size: 20px; color: #6c757d !important; margin-bottom: 4rem !important;"
+            >
+              {{ "PERFIL.ABA-ERRO" | translate }}
+            </p>
+          </div>
           <div
-            *ngFor="let recomendacao of recommendations"
+            *ngFor="let interest of interests"
             class="col-md-3 col-sm-6"
           >
             <div
               class="friend-card"
-              (click)="getPerfilById(recomendacao.userId)"
+              (click)="getPerfilById(interest.userId)"
             >
               <img
-                [src]="recomendacao.backgroundPicture"
+                [src]="interest.backgroundPicture"
                 alt="profile-cover"
                 class="img-responsive cover"
               />
 
               <div class="card-info">
-                <div *ngIf="recomendacao.isPremium">
+                <div *ngIf="interest.isPremium">
                   <img
-                    [src]="recomendacao.userPicture"
+                    [src]="interest.userPicture"
                     alt="user"
                     class="profile-photo-lg-premium"
                   />
                 </div>
-                <div *ngIf="!recomendacao.isPremium">
+                <div *ngIf="!interest.isPremium">
                   <img
-                    [src]="recomendacao.userPicture"
+                    [src]="interest.userPicture"
                     alt="user"
                     class="profile-photo-lg"
                   />
                 </div>
-                <div *ngIf="recomendacao.isPremium">
+                <div *ngIf="interest.isPremium">
                   <div class="star mt-0">
                     <i
                       class="bx bxs-star bx-sm bx-tada-hover"
@@ -305,21 +325,21 @@
                 <div class="friend-info">
                   <div class="name fw-bolder mb-0">
                     <a>
-                      <h5>{{ recomendacao.name }}</h5>
+                      <h5>{{ interest.name }}</h5>
                     </a>
                   </div>
                   <div class="profile-link fw-light mt-0 mb-0">
                     <p>
-                      <a>{{ recomendacao.username }}</a>
+                      <a>{{ interest.username }}</a>
                     </p>
                   </div>
                   <a class="pull-right mt-5 text-cat">{{
-                    recomendacao.category
+                    interest.category
                   }}</a
                   ><br />
                   <div class="mt-2">
                     <a class="pull-right text-sub">{{
-                      recomendacao.subcategory
+                      interest.subcategory
                     }}</a>
                   </div>
                 </div>
@@ -352,6 +372,14 @@
     <div class="container" data-aos="fade-up">
       <div class="friend-list">
         <div class="row">
+          <div *ngIf="recommendations.length == 0">
+            <p
+              class="text-center"
+              style="font-size: 20px; color: #6c757d !important; margin-bottom: 4rem !important;"
+            >
+              {{ "PERFIL.ABA-ERRO" | translate }}
+            </p>
+          </div>
           <div
             *ngFor="let recomendacao of recommendations"
             class="col-md-3 col-sm-6"

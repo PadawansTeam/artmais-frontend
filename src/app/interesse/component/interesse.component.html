@@ -21,6 +21,29 @@
                 <img src="assets/img/pages/interest.svg" alt="erro" class="imagem-interesse" style="width:100%;">
             </div>
             <div class="col-md-6 mb-3 text-center ">
+                <div class="accordion-item recommendation">
+                    <h2 class="accordion-header" [id]="'heading'">
+                        <button class="accordion-button collapsed interesse-button" type="button" data-bs-toggle="collapse"
+                        [attr.data-bs-target]="'#collapse'" aria-expanded="false" [attr.aria-controls]="'collapse'">
+                            Recomendações
+                        </button>
+                    </h2>
+                    <div [id]="'collapse'" class="accordion-collapse collapse text-center" [attr.aria-labelledby]="'heading'"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body ">
+                            <div class="row">
+                                <div class="col-sm-4 text-center p-1 " *ngFor="let recommendation of recommendations ">
+                                    <input type="checkbox" [(ngModel)]="recommendation.isSelected"
+                                        class="btn-check button" id="{{recommendation.subcategoryID}}"
+                                        autocomplete="off" />
+                                    <label class="btn btn-outline-primary button "
+                                        for="{{recommendation.subcategoryID}}">{{recommendation.category}}-{{recommendation.subcategory}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item" *ngFor="let categoria of (allCategories | keyvalue); let i=index">
                         <h2 class="accordion-header" [id]="'heading' + i">

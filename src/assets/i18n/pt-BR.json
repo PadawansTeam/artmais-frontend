@@ -114,6 +114,7 @@
     "RECOMENDACAO": {
         "TITULO-INTE": "PERFIS DE INTERESSE",
         "TITULO-RECO": "PERFIS RECOMENDADOS",
+        "SUBTITULO-ERRO": "Não há nenhum perfil ainda!",
         "SUBTITULO": "Estes perfis foram escolhidos de acordo com os ramos artísticos de seu interesse, suas atividades, interações com outros usuários e pesquisas feitas serão utilizadas para personalizar futuras sugestões. Descubra novos artistas e acompanhe seus projetos pelo Art+.",
         "TOOLTIP-RECOMENDACAO1": "A plataforma Art+ recomendará os artistas que a plataforma Art+ entende que são relevantes para você! ",
         "TOOLTIP-INTERESSES1": "O sistema recomendará os artistas das categorias que você escolher na página interesses."
@@ -130,7 +131,8 @@
         "TITULO": "Interesses",
         "SUBTITULO": "Escolha as categorias de artistas que você possui mais interesse de acompanhar",
         "CATEGORIA": "Categoria",
-        "BUTTON": "Selecionar"
+        "BUTTON": "Selecionar", 
+        "RECOMENDACAO": "Recomendações do Sistema"
     },
     "PERFIL": {
         "TELEFONES": "Telefones",

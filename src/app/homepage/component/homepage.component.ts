@@ -14,6 +14,7 @@ import { Perfil } from 'src/app/perfil/service/perfil';
 export class HomepageComponent implements OnInit {
   profile!: Perfil;
   recommendations: Recommendation[] = [];
+  interests: Recommendation[] = [];
   roleUser: boolean = false;
 
   constructor(
@@ -46,7 +47,8 @@ export class HomepageComponent implements OnInit {
     );
     this.recommendationService.getRecommendations().subscribe(
       (response) => {
-        this.recommendations = response as Recommendation[];
+        this.recommendations = response.recommendedInterests as Recommendation[];
+        this.interests = response.userInterests as Recommendation[];
       },
       (err) => {
         throw err;

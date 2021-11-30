@@ -36,13 +36,7 @@ export class InteresseService {
     return this.http.get(this.artPlusURL + 'v1/Interest', this.httpOptions)
   }
 
-  sendInterests(
-    subcategoryID: number[],
-  ): Observable<object> {
-    return this.http.post<object>(
-      `${this.artPlusURL}` + 'v1/Interest',
-      { subcategoryID },
-      this.httpOptions
-    );
+  sendInterests(subcategoryID: number[], recommendedSubcategoryID: number[]): Observable<object> {
+    return this.http.post<object>(`${this.artPlusURL}` + 'v1/Interest', { subcategoryID, recommendedSubcategoryID }, this.httpOptions);
   }
 }
