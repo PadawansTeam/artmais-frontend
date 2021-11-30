@@ -20,6 +20,8 @@
         "ARTISTA": "Sou artista",
         "CLIENTE": "Não sou artista",
         "ERRO": "Campos obrigatórios não foram preenchidos. Por favor, tente novamente!",
+        "NOMEUSUARIO-JA-UTILIZADO": "Este nome de usuário já está sendo utilizado",
+        "EMAIL-JA-UTILIZADO": "Este e-mail já está sendo utilizado",
         "INVALIDO": "Campo inválido",
         "ENTRAR": "Entrar",
         "POSSUI-CONTA": "Já possui uma conta?",

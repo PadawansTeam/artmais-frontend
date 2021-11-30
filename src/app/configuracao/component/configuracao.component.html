@@ -910,14 +910,15 @@
                           </div>
                           <div class="col-md-6"></div>
                         </div>
-                        <input
+                        <select
                           [(ngModel)]="this.userAddress.state"
                           [ngModelOptions]="{ standalone: true }"
                           type="text"
                           class="form-control"
                           id="zIp"
                           placeholder="Digite a UF"
-                        />
+                        > <option *ngFor="let state of this.statesList">
+                          {{state}} </option> </select>
                       </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

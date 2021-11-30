@@ -45,6 +45,9 @@ export class CadastroComponent implements OnInit {
   socialUser: SocialUser = new SocialUser();
   isLoggedin: boolean = false;
   loaderOn: boolean = false;
+  emailInUse = false;
+  usernameInUse = false;
+  invalidPassword = false;
 
   constructor(
     private cadastroService: CadastroService,
@@ -140,7 +143,24 @@ export class CadastroComponent implements OnInit {
     }else{
       this.isDateValid = false;
     }
-}
+  
+  }
+
+  public onChange(field: String){
+    
+    if (field == 'email'){
+      this.emailInUse = false;
+    }
+
+    if (field == 'password'){
+      this.invalidPassword = false;
+    }
+
+    if (field == 'username'){
+      this.usernameInUse = false;
+    }
+
+  }
 
   public cadastroArtPlus() {
     this.loaderOn = true
@@ -192,12 +212,22 @@ export class CadastroComponent implements OnInit {
           },
           (err) => {
             this.loaderOn = false;
+
+            if(err.error.message == 'E-mail já utilizado.'){
+              this.emailInUse = true;
+            }
+
+            if(err.error.message == 'Username já utilizado.'){
+              this.usernameInUse = true;
+            }
+
             throw err;
           }
         );
     } else {
       this.loaderOn = false;
       this.invalidField = true;
+      this.form.category = '';
     }
   }
 }
