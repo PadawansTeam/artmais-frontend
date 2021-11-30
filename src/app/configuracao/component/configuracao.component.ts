@@ -10,6 +10,7 @@ import {
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { RecommendationService } from 'src/app/homepage/service/recommendation.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-configuracao',
@@ -86,12 +87,13 @@ export class ConfiguracaoComponent implements OnInit {
   statesList = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'ES', 'GO', 'MA', 
   'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 
   'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
-  
+
   constructor(
     public recommendationService: RecommendationService,
     public configService: ConfiguracaoService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    public datepipe: DatePipe
   ) {}
 
   ngOnInit(): void {
@@ -110,6 +112,7 @@ export class ConfiguracaoComponent implements OnInit {
     this.configService.getUserInfo().subscribe(
       (response: Configuracao) => {
         this.userInfo = response;
+        this.userInfo.birthDate = this.datepipe.transform(this.userInfo.birthDate, 'MM/dd/YYYY');
       },
       (err) => {
         throw err;
