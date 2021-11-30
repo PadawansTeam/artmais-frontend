@@ -46,9 +46,10 @@
                       <i class="bx bx-envelope bx-sm bx-tada-hover"></i>
                     </span>
                   </div>
-                  <input [(ngModel)]="this.form.username" formControlName="username" class="un form-control "
+                  <input [(ngModel)]="this.form.username" formControlName="username" (change)="onChange('username')" class="un form-control "
                     type="text" placeholder="{{ 'CADASTRO.USUARIO' | translate }}" />
                 </div>
+                <p *ngIf="usernameInUse === true" class="error" style="padding: 20px;" align="center">{{ 'CADASTRO.NOMEUSUARIO-JA-UTILIZADO' | translate }}</p>
                 <p *ngIf="formCadastro.get('username')!.touched && !formCadastro.get('username')!.valid" class="error"
                   align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
                 <div class="input-group">
@@ -57,9 +58,11 @@
                       <i class="bx bx-mail-send bx-sm bx-tada-hover"></i>
                     </span>
                   </div>
-                  <input [(ngModel)]="this.form.email" formControlName="email" name="email" class="un form-control "
+                  <input [(ngModel)]="this.form.email" formControlName="email" (change)="onChange('email')" name="email" class="un form-control "
                     type="email" placeholder="{{ 'CADASTRO.EMAIL' | translate }}" />
                 </div>
+                <p *ngIf="emailInUse === true" class="error" style="padding: 20px;" align="center">{{"CADASTRO.EMAIL-JA-UTILIZADO" | translate
+                }}</p>
                 <p *ngIf="formCadastro.get('email')!.touched && !formCadastro.get('email')!.valid" class="error"
                   align="center">{{ 'CADASTRO.INVALIDO' | translate }}</p>
                 <div class="input-group">
@@ -76,7 +79,7 @@
                       <i class="bx bx-lock bx-sm bx-tada-hover"></i>
                     </span>
                   </div>
-                  <input [(ngModel)]="this.form.password" formControlName="password" name="password"
+                  <input [(ngModel)]="this.form.password" formControlName="password" (change)="onChange('password')" name="password"
                     class="un form-control " type="password" placeholder="{{ 'CADASTRO.CONF-SENHA' | translate }}" />
                 </div>
                 <p *ngIf="formCadastro.get('password')!.touched && !formCadastro.get('password')!.valid" class="error"
