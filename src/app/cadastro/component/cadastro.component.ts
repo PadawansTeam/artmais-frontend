@@ -221,14 +221,13 @@ export class CadastroComponent implements OnInit {
               this.usernameInUse = true;
             }
 
-            this.form.category = '';
-
             throw err;
           }
         );
     } else {
       this.loaderOn = false;
       this.invalidField = true;
+      this.form.category = '';
     }
   }
 }
