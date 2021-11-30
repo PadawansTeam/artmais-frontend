@@ -20,6 +20,8 @@
         "ARTISTA": "I'm an artist",
         "CLIENTE": "I'm not an artist",
         "ERRO": "Required fields were not filled. Please, try again!",
+        "NOMEUSUARIO-JA-UTILIZADO": "This username is already in use",
+        "EMAIL-JA-UTILIZADO": "This e-mail is already in use",
         "INVALIDO": "Invalid field",
         "ENTRAR": "Sign In",
         "POSSUI-CONTA": "Already have an account?",

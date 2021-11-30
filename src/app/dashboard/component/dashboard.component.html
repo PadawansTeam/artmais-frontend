@@ -157,10 +157,14 @@
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
+              <p class="title-chart">{{ "DASHBOARD.CHART-COMENTARIOS" | translate }}</p>
+              <div *ngIf="loaderOn">
+                <div class="spinner-border loader" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
                 <ng-container *ngIf="userData.sumComments === 0">
-                  <p class="title-chart">
-                    {{ "DASHBOARD.CHART-COMENTARIOS" | translate }}
-                  </p>
+                  <!--- <p class="title-chart">{{ "DASHBOARD.CHART-COMENTARIOS" | translate }}</p> -->
                   <div class="text-center teste">
                     <div class="icon-sad">
                       <i class="bx bx-sad bx-sm bx-tada-hover"></i>
@@ -177,9 +181,7 @@
                   </p>
                 </ng-container>
                 <ng-container *ngIf="userData.sumComments !== 0">
-                  <p class="title-chart">
-                    {{ "DASHBOARD.CHART-COMENTARIOS" | translate }}
-                  </p>
+                  <!--- <p class="title-chart">{{ "DASHBOARD.CHART-COMENTARIOS" | translate }}</p> -->
                   <canvas class="px-2" #commentsCanvas></canvas>
                 </ng-container>
               </div>
@@ -188,10 +190,14 @@
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
+              <p class="title-chart">{{ "DASHBOARD.CHART-CURTIDAS" | translate }}</p>
+              <div *ngIf="loaderOn">
+                <div class="spinner-border loader" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
                 <ng-container *ngIf="userData.sumLikes === 0">
-                  <p class="title-chart">
-                    {{ "DASHBOARD.CHART-CURTIDAS" | translate }}
-                  </p>
+                  <!--- <p class="title-chart">{{ "DASHBOARD.CHART-CURTIDAS" | translate }}</p> --->
                   <div class="text-center teste">
                     <div class="icon-sad">
                       <i class="bx bx-sad bx-sm bx-tada-hover"></i>
@@ -208,9 +214,7 @@
                   </p>
                 </ng-container>
                 <ng-container *ngIf="userData.sumLikes !== 0">
-                  <p class="title-chart">
-                    {{ "DASHBOARD.CHART-CURTIDAS" | translate }}
-                  </p>
+                  <!--- <p class="title-chart">{{ "DASHBOARD.CHART-CURTIDAS" | translate }}</p> --->
                   <canvas class="px-2" #likesCanvas></canvas>
                 </ng-container>
               </div>
@@ -220,10 +224,14 @@
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
+              <p class="title-chart">{{ "DASHBOARD.CHART-VISITAS" | translate }}</p> 
+              <div *ngIf="loaderOn">
+                <div class="spinner-border loader" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
                 <ng-container *ngIf="userData.sumVisits === 0">
-                  <p class="title-chart">
-                    {{ "DASHBOARD.CHART-VISITAS" | translate }}
-                  </p>
+                  <!--- <p class="title-chart">{{ "DASHBOARD.CHART-VISITAS" | translate }}</p> -->
                   <div class="text-center teste">
                     <div class="icon-sad">
                       <i class="bx bx-sad bx-sm bx-tada-hover"></i>
@@ -240,9 +248,7 @@
                   </p>
                 </ng-container>
                 <ng-container *ngIf="userData.sumVisits !== 0">
-                  <p class="title-chart">
-                    {{ "DASHBOARD.CHART-VISITAS" | translate }}
-                  </p>
+                  <!--- <p class="title-chart">{{ "DASHBOARD.CHART-VISITAS" | translate }}</p> -->
                   <canvas class="px-2" #visitsCanvas></canvas>
                 </ng-container>
               </div>
