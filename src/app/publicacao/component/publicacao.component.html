@@ -266,7 +266,7 @@
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h5 class=" c1">Editar Publicação</h5>
+                                    <h5 class=" c1">{{ 'PUBLICACAO.EDITAR' | translate }}</h5>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -279,6 +279,7 @@
                                         <div class="descr fw-bold">
                                             {{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
                                         <textarea 
+                                            [(ngModel)]="this.userDescription.description"
                                             class="form-control2" cols="50" rows="6"
                                             placeholder="{{ 'PERFIL.PLACE-DESCRIÇÃO' | translate }}"
                                             maxlength="500"></textarea>
@@ -287,7 +288,7 @@
                                 <div class="col-md-12">
                                 </div>
                             </div>
-                            <button class="getstarted" type="button"
+                            <button class="getstarted" type="button" (click)="updateDescription()"
                                 class="getstarted mt-2" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
                                 translate }}</button>
                         </div>

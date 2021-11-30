@@ -22,6 +22,10 @@ export class PublicacaoComponent implements OnInit {
   roleUser: boolean = false;
   loggedUser: boolean = false;
 
+  userDescription: any = {
+    description: null,
+  };
+
   Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -156,6 +160,37 @@ export class PublicacaoComponent implements OnInit {
 
   routeUpdateEvent() {
     location.reload();
+  }
+
+  updateDescription() {
+    this.publicacaoService.updateDescription(this.idPublicacao, this.userDescription.description)
+      .subscribe(
+        async (response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Descrição atualizada com sucesso!'
+                : 'Description updated with success!',
+          });
+          this.routeUpdateEvent();
+          return response;
+        },
+        (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Erro ao salvar a descrição!'
+                : 'Failed to save description!',
+            text:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Tente novamente mais tarde!'
+                : 'Try again later!',
+          });
+          throw err;
+        }
+      );
   }
 
   roleIfClient(){    

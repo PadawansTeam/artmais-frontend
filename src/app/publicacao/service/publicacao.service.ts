@@ -46,4 +46,8 @@ export class PublicacaoService {
   deletePublication(publicationId: number): Observable<any> {
     return this.http.delete(`${this.artPlusURL}` + `v1/Aws/DeletePortfolioContent/${publicationId}`, this.httpOptions);
   }
+
+  updateDescription(publicationId: number, publicationDescription: string): Observable<object> {
+    return this.http.patch<object>(`${this.artPlusURL}` + 'v1/Portfolio/UpdateDescription', { publicationId, publicationDescription }, this.httpOptions);
+  }
 }
