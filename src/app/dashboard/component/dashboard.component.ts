@@ -75,6 +75,7 @@ export class DashboardComponent implements OnInit {
     visitsGrowth: null
   };
 
+  loaderOn: boolean = false;
   
   constructor(
     private dashService: DashboardService,
@@ -83,13 +84,16 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.loaderOn = true;
     this.dashService.ngOnInit();
     this.dashService.getValidation().subscribe(
       (response) => { },
       (err) => {
         if (err.status == 401) {
+          this.loaderOn = false;
           this.router.navigate(['']);
         } else if (err.status == 500) {
+          this.loaderOn = false;
           this.router.navigate(['/erro']);
         }
       }
@@ -164,7 +168,6 @@ export class DashboardComponent implements OnInit {
       });
     }
     else{
-
       this.commentsChart = new Chart(this.commentsCanvas.nativeElement, {
         type: 'line',
         data: {
@@ -205,6 +208,7 @@ export class DashboardComponent implements OnInit {
         }
       });
     }
+    this.loaderOn = false;
   }
 
   private likesGrowthGraph(likesDate: string[], likesSum: number[], likesPredictionSum: number[]) {
@@ -283,6 +287,7 @@ export class DashboardComponent implements OnInit {
         }
       });
     }
+    this.loaderOn = false;
   }
 
   private visitsGrowthGraph(visitsDate: string[], visitsSum: number[], predictSum: number[]) {
@@ -362,5 +367,6 @@ export class DashboardComponent implements OnInit {
         }
       });
     }
+    this.loaderOn = false;
   }
 }

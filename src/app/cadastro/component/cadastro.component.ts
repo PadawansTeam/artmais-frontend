@@ -44,6 +44,11 @@ export class CadastroComponent implements OnInit {
   formCadastro!: FormGroup;
   socialUser: SocialUser = new SocialUser();
   isLoggedin: boolean = false;
+  alreadyTaken: boolean = false;
+  invalidEmail: boolean = false;
+  invalidPassword: boolean = false;
+  field = '';
+  
   loaderOn: boolean = false;
 
   constructor(
@@ -127,6 +132,22 @@ export class CadastroComponent implements OnInit {
     return;
   }
 
+  public onChange(field: String){
+    
+    if (field == 'email'){
+      this.invalidEmail = false;
+    }
+
+    if (field == 'password'){
+      this.invalidPassword = false;
+    }
+
+    if (field == 'username'){
+      this.alreadyTaken = false;
+    }
+
+  }
+
   public verifyAge(){
     let input = new Date(this.form.birthDate);
     let today = new Date();
@@ -192,12 +213,22 @@ export class CadastroComponent implements OnInit {
           },
           (err) => {
             this.loaderOn = false;
+
+            if(err.status == 422){
+              this.alreadyTaken = true;
+            }
+            
+            this.form.category = '';
+
             throw err;
+
+            
           }
         );
     } else {
       this.loaderOn = false;
       this.invalidField = true;
+
     }
   }
 }

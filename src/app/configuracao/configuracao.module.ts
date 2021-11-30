@@ -12,6 +12,7 @@ import { ConfiguracaoService } from './service/configuracao.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
 import { RecommendationService } from '../homepage/service/recommendation.service';
+import { DatePipe } from '@angular/common';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -38,7 +39,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ReactiveFormsModule
   ],
   providers: [
-    TranslateService, ConfiguracaoService, RecommendationService
+    TranslateService, ConfiguracaoService, RecommendationService, DatePipe
   ],
   bootstrap: []
 })

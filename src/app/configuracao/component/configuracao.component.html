@@ -169,15 +169,15 @@
                           </div>
                         </div>
                         <input
-                          [(ngModel)]="this.userInfo.birthDate"
-                          [ngModelOptions]="{ standalone: true }"
-                          type="text"
-                          max="9999-12-31"
-                          (change)="verifyAge()"
-                          onfocus="(this.type='date')"
-                          onblur="(this.type='date')"
-                          class="form-control"
-                          id="datanasc"
+                        [(ngModel)]="this.userInfo.birthDate"
+                        [ngModelOptions]="{ standalone: true }"
+                        type="text"
+                        max="9999-12-31"
+                        (change)="verifyAge()"
+                        onfocus="(this.type='date')"
+                        onblur="(this.type='date')"
+                        class="form-control"
+                        id="datanasc"
                         />
                       </div>
                       <p *ngIf="isDateValid == false" class="error" align="center">
@@ -669,7 +669,7 @@
                       </div>
                     </div>
                     <input
-                      [(ngModel)]="this.userInfo.birthDate"
+                    [(ngModel)]="this.userInfo.birthDate"
                       [ngModelOptions]="{ standalone: true }"
                       type="text"
                       max="9999-12-31"
@@ -891,14 +891,15 @@
                           </div>
                           <div class="col-md-6"></div>
                         </div>
-                        <input
+                        <select
                           [(ngModel)]="this.userAddress.state"
                           [ngModelOptions]="{ standalone: true }"
                           type="text"
                           class="form-control"
                           id="zIp"
                           placeholder="Digite a UF"
-                        />
+                        > <option *ngFor="let state of this.statesList">
+                          {{state}} </option> </select>
                       </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
