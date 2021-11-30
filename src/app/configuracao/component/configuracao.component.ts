@@ -76,7 +76,17 @@ export class ConfiguracaoComponent implements OnInit {
     city: null,
     state: null,
   };
+  
+  validZipCode = false;
+  validNumber = false;
+  validMainPhone: any;
+  validSecundaryPhone: any; 
+  validThirdPhone: any;
 
+  statesList = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'ES', 'GO', 'MA', 
+  'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 
+  'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
+  
   constructor(
     public recommendationService: RecommendationService,
     public configService: ConfiguracaoService,
