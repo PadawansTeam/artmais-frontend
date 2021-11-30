@@ -223,7 +223,8 @@
         "POSTAR": "Post Comment",
         "DATA-POSTAGEM": "Posted at ",
         "PRIMEIRO": "Be the first to comment!",
-        "PRIMEIRO-AUTOR": "There are no comments yet"
+        "PRIMEIRO-AUTOR": "There are no comments yet",
+        "EDITAR": "Edit publication"
     },
     "USERCOMUM": {
         "SUBTITULO-RECOMENDACAO": "Discover new artists!",

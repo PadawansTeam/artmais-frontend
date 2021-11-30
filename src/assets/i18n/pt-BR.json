@@ -244,7 +244,8 @@
         "POSTAR": "Enviar Comentário",
         "DATA-POSTAGEM": "Postado em ",
         "PRIMEIRO": "Seja o primeiro a comentar!",
-        "PRIMEIRO-AUTOR": "Ainda não há comentários!"
+        "PRIMEIRO-AUTOR": "Ainda não há comentários!",
+        "EDITAR": "Editar publicação"
     },
     "USERCOMUM": {
         "SUBTITULO-RECOMENDACAO": "Descubra novos artistas!",
