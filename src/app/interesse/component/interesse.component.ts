@@ -90,7 +90,6 @@ export class InteresseComponent implements OnInit {
     })
     this.interesseService.sendInterests(ids, recommendedIds).subscribe(
       (response) => {
-        console.log("Ids: ", ids, recommendedIds)
         this.router.navigateByUrl('/homepage');
         return response;
       },
