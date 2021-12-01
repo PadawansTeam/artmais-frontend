@@ -174,7 +174,7 @@ export class CadastroComponent implements OnInit {
       this.form.category = this.form.category.split("_")[0];
     }
     this.form.userPicture =
-      'https://bucket-artmais.s3.amazonaws.com/default-image/defaultProfile.png';
+      'https://bucket-artmais.s3.amazonaws.com/default-image/defaultProfilePic.jpg';
     this.form.backgroundPicture =
       'https://bucket-artmais.s3.amazonaws.com/default-image/defaultBackground.png';
     this.form.description = 'Olá! Sou novo na plataforma Art+!';
