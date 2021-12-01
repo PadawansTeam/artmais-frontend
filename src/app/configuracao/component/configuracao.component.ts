@@ -256,12 +256,12 @@ export class ConfiguracaoComponent implements OnInit {
 
   updateContact() {
 
-    if((this.userContact.facebook || this.userContact.facebook == '') &&
-      (this.userContact.instagram || this.userContact.instagram == '') &&
-      (this.userContact.twitter || this.userContact.twitter == '') &&
-      (/^[0-9]{13}$/.test(this.userContact.mainPhone) || this.userContact.mainPhone == '') &&
-      (/^[0-9]{13}$/.test(this.userContact.secundaryPhone) || this.userContact.secundaryPhone == '') &&
-      (/^[0-9]{13}$/.test(this.userContact.thirdPhone) || this.userContact.thirdPhone == ''))
+    if((this.userContact.facebook || this.userContact.facebook == '' || this.userContact.facebook == null) &&
+      (this.userContact.instagram || this.userContact.instagram == '' || this.userContact.instagram == null) &&
+      (this.userContact.twitter || this.userContact.twitter == '' || this.userContact.twitter == null) &&
+      (/^[0-9]{13}$/.test(this.userContact.mainPhone) || this.userContact.mainPhone == '' || this.userContact.mainPhone == null) &&
+      (/^[0-9]{13}$/.test(this.userContact.secundaryPhone) || this.userContact.secundaryPhone == '' || this.userContact.secundaryPhone == null) &&
+      (/^[0-9]{13}$/.test(this.userContact.thirdPhone) || this.userContact.thirdPhone == '' || this.userContact.thirdPhone == null))
       {
     this.configService
       .updateContact(
@@ -306,12 +306,12 @@ export class ConfiguracaoComponent implements OnInit {
 
   updateAddress() {
 
-    if((this.userAddress.street || this.userAddress.street == '') &&
-      (this.userAddress.complement || this.userAddress.complement == '') &&
-      (this.userAddress.neighborhood || this.userAddress.neighborhood == '') &&
-      (this.userAddress.city || this.userAddress.city == '') &&
-      (this.userAddress.state || this.userAddress.state == '') &&
-      (/^[0-9]{5}-?[0-9]{3}$/.test(this.userAddress.zipCode) || this.userAddress.zipCode == '') &&
+    if((this.userAddress.street || this.userAddress.street == '' || this.userAddress.street == null) &&
+      (this.userAddress.complement || this.userAddress.complement == '' || this.userAddress.complement == null) &&
+      (this.userAddress.neighborhood || this.userAddress.neighborhood == '' || this.userAddress.neighborhood == null) &&
+      (this.userAddress.city || this.userAddress.city == '' || this.userAddress.city == null) &&
+      (this.userAddress.state || this.userAddress.state == '' || this.userAddress.state == null) &&
+      (/^[0-9]{5}-?[0-9]{3}$/.test(this.userAddress.zipCode) || this.userAddress.zipCode == '' || this.userAddress.zipCode == null) &&
       (/^\d+$/.test(this.userAddress.number) || this.userAddress.number == null)
       )
     {
@@ -376,9 +376,9 @@ export class ConfiguracaoComponent implements OnInit {
       (this.userInfo.username || this.userInfo.username == '') &&
       (this.userInfo.backgroundPicture || this.userInfo.backgroundPicture == '') &&
       (this.userInfo.birthDate || this.userInfo.birthDate == '') &&
-      (/^[0-9]{13}$/.test(this.userInfo.mainPhone) || this.userInfo.mainPhone == '') &&
-      (/^[0-9]{13}$/.test(this.userInfo.secundaryPhone) || this.userInfo.secundaryPhone == '') &&
-      (/^[0-9]{13}$/.test(this.userInfo.thirdPhone) || this.userInfo.thirdPhone == ''))
+      (/^[0-9]{13}$/.test(this.userInfo.mainPhone) || this.userInfo.mainPhone == '' || this.userInfo.mainPhone == null) &&
+      (/^[0-9]{13}$/.test(this.userInfo.secundaryPhone) || this.userInfo.secundaryPhone == '' || this.userInfo.secundaryPhone == null) &&
+      (/^[0-9]{13}$/.test(this.userInfo.thirdPhone) || this.userInfo.thirdPhone == '' || this.userInfo.thirdPhone == null))
     {
       this.configService
         .updateUserInfo(
