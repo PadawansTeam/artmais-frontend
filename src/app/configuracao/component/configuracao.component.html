@@ -627,7 +627,7 @@
                   <p
                     *ngIf="
                       formConfig.get('phone')!.touched &&
-                      !formConfig.get('phone')!.valid
+                      !formConfig.get('phone')!.valid && !formConfig.get('phone')
                     "
                     class="error"
                     align="center"
@@ -661,7 +661,7 @@
                   <p
                     *ngIf="
                       formConfig.get('secondPhone')!.touched &&
-                      !formConfig.get('secondPhone')!.valid
+                      !formConfig.get('secondPhone')!.valid && !formConfig.get('secondPhone')
                     "
                     class="error"
                     align="center"
@@ -695,7 +695,7 @@
                   <p
                     *ngIf="
                       formConfig.get('thirdPhone')!.touched &&
-                      !formConfig.get('thirdPhone')!.valid
+                      !formConfig.get('thirdPhone')!.valid && !formConfig.get('thirdPhone')
                     "
                     class="error"
                     align="center"
@@ -847,6 +847,11 @@
                               "CONFIG.CEP" | translate
                             }}</label>
                           </div>
+                          <div class="col-md-6">
+                            <label class="label-select" for="fullName"
+                              >Exemplo: 04180-112</label
+                            >
+                          </div>
                           <div class="col-md-6"></div>
                         </div>
                         <input
@@ -860,8 +865,8 @@
                       </div>
                       <p
                         *ngIf="
-                          formConfig.get('zipcode')!.touched &&
-                          !formConfig.get('zipcode')!.valid
+                        formConfig.get('zipcode')!.touched &&
+                        !formConfig.get('zipcode')!.valid && !formConfig.get('zipcode')
                         "
                         class="error"
                         align="center"

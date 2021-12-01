@@ -58,7 +58,7 @@
     "HEADER": {
         "HOMEPAGE": "Home",
         "INTERESSE": "Interests",
-        "CONFIG": "Configurations",
+        "CONFIG": "Settings",
         "PERFIL": "Profile",
         "SAIR": "Log Out",
         "USUARIOS": "Users",
@@ -159,7 +159,7 @@
         "RECOMENDACAO": "System´s Recommendation"
     },
     "CONFIG": {
-        "CONFIG": "Configurations",
+        "CONFIG": "Settings",
         "SOBRE": "About",
         "DESCRICAO": "Description:",
         "DESCRICAO-BOX": "Enter the description...",
