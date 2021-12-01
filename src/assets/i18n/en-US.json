@@ -138,6 +138,7 @@
     "RECOMENDACAO": {
         "TITULO-INTE": "INTEREST PROFILES",
         "TITULO-RECO": "RECOMMENDED PROFILES",
+        "SUBTITULO-ERRO": "There are no profiles yet!",
         "SUBTITULO": "These profiles were chosen according to the artistic fields of interest to you. Activities, user interactions and searches made will be used to customize future suggestions. Discover new artists and follow their projects through Art+.",
         "TOOLTIP-RECOMENDACAO1": "The Art+ platform will recommend artists that the Art+ platform understands are relevant to you!",
         "TOOLTIP-INTERESSES1": "The system will recommend artists from the categories you choose on the interests page."
@@ -154,7 +155,8 @@
         "TITULO": "Interest",
         "SUBTITULO": "Choose the categories of artists that you have more interest to follow",
         "CATEGORIA": "Category",
-        "BUTTON": "Select"
+        "BUTTON": "Select", 
+        "RECOMENDACAO": "System´s Recommendation"
     },
     "CONFIG": {
         "CONFIG": "Configurations",
