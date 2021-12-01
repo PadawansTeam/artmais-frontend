@@ -306,8 +306,6 @@ export class ConfiguracaoComponent implements OnInit {
 
   updateAddress() {
 
-    console.log(this.userAddress.number);
-
     if((this.userAddress.street || this.userAddress.street == '') &&
       (this.userAddress.complement || this.userAddress.complement == '') &&
       (this.userAddress.neighborhood || this.userAddress.neighborhood == '') &&
