@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { RoleUser } from 'src/app/models/role-user.model';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.prod';
 
 @Injectable()
 export class RecommendationService {
@@ -20,7 +20,7 @@ export class RecommendationService {
   constructor(
     private http: HttpClient,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     if (this.token == undefined || this.token == null) {

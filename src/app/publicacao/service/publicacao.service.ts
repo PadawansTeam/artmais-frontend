@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -24,19 +24,19 @@ export class PublicacaoService {
   ) { }
 
   getUnloggedPublication(userId: number, publicationId: number): Observable<any> {
-    return this.http.get(`${this.artPlusURL}` + `v1/Publication/GetPublicationById/${publicationId}/${userId}`)  
+    return this.http.get(`${this.artPlusURL}` + `v1/Publication/GetPublicationById/${publicationId}/${userId}`)
   }
 
   getLoggedPublication(userId: number, publicationId: number): Observable<any> {
-    return this.http.get(`${this.artPlusURL}` + `v1/Publication/GetPublicationByIdAndLoggedUser/${publicationId}/${userId}`, this.httpOptions)  
+    return this.http.get(`${this.artPlusURL}` + `v1/Publication/GetPublicationByIdAndLoggedUser/${publicationId}/${userId}`, this.httpOptions)
   }
 
   insertLike(publicationId: number): Observable<any> {
-    return this.http.post(`${this.artPlusURL}` + `v1/Publication/InsertLike?publicationId=${publicationId}`, {publicationId}, this.httpOptions);
+    return this.http.post(`${this.artPlusURL}` + `v1/Publication/InsertLike?publicationId=${publicationId}`, { publicationId }, this.httpOptions);
   }
 
   insertComment(publicationID: number, description: string): Observable<any> {
-    return this.http.post(`${this.artPlusURL}` + `v1/Publication/InsertComment`, {publicationID, description}, this.httpOptions);
+    return this.http.post(`${this.artPlusURL}` + `v1/Publication/InsertComment`, { publicationID, description }, this.httpOptions);
   }
 
   deleteLike(publicationId: number): Observable<any> {

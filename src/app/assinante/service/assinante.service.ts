@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from  '@angular/router';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -23,12 +23,12 @@ export class AssinanteService {
     private router: Router
   ) { }
 
-  getAssinaturaPremium(): Observable<any> {    
+  getAssinaturaPremium(): Observable<any> {
     return this.http.get(`${this.artPlusURL}` + `v1/Signature/GetSignatureUserDto`, this.httpOptions);
   }
 
   getArtista(userId: number): Observable<any> {
-   return this.http.get(`${this.artPlusURL}` + `v1/User/${userId}`, this.httpOptions);
+    return this.http.get(`${this.artPlusURL}` + `v1/User/${userId}`, this.httpOptions);
   }
 
 }
