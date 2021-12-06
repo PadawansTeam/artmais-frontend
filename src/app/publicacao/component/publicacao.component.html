@@ -1,300 +1,516 @@
 <div *ngIf="roleUser && this.loggedUser == true">
-    <app-headerusercomum></app-headerusercomum> 
+  <app-headerusercomum></app-headerusercomum>
 </div>
 <div *ngIf="!roleUser && this.loggedUser == true">
-    <app-headerlog></app-headerlog>
+  <app-headerlog></app-headerlog>
 </div>
 <div *ngIf="this.loggedUser == false">
-    <app-header></app-header>
+  <app-header></app-header>
 </div>
 
-
-
 <div class="row py-3 px-4">
-    <div class="container">
-        <div class="bg-white shadow  overflow-hidden">
-            <div class="row">
-                <div class="col-lg-12 shadow back">
-                    <div class="img-responsive text-center">
-                        <div *ngIf="publicacao.isPremium">
-                            <img [src]="publicacao.userPicture" alt="Profile Image"
-                                class="  rounded-circle img-fluid mx-auto img-perfil-premium">
-                            </div>
-                            <div *ngIf="!publicacao.isPremium">
-                                <img [src]="publicacao.userPicture" alt="Profile Image"
-                                    class="  rounded-circle img-fluid mx-auto img-perfil">
-                            </div>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="bg-white shadow overflow-hidden">
+      <div class="row">
+        <div class="col-lg-12 shadow back">
+          <div class="img-responsive text-center">
+            <div *ngIf="publicacao.isPremium">
+              <img
+                [src]="publicacao.userPicture"
+                alt="Profile Image"
+                class="rounded-circle img-fluid mx-auto img-perfil-premium"
+              />
             </div>
-            <div class="media-body  text-black">
-                <p class="mt-0 mb-0 name">{{publicacao.name}}</p>
-                <p class="mt-0 mb-0 username">{{publicacao.username}}</p>
-                <p class="small mb-2 category">{{publicacao.category}} - {{publicacao.subcategory}}</p>
-                <div *ngIf="publicacao.isPremium">
-                    <div class="col-md-12 star mt-0 text-center">
-                        <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
-                        <p>PREMIUM</p>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <ul class="list-inline social-buttons">
-                                <li class="list-inline-item" *ngIf="publicacao.userFacebook">
-                                    <a  href="{{publicacao.userFacebook}}" target="_blank">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item" *ngIf="publicacao.userTwitter">
-                                    <a  href="{{publicacao.userTwitter}}" target="_blank">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item" *ngIf="publicacao.userInstagram">
-                                    <a href="{{publicacao.userInstagram}}" target="_blank">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div *ngIf="!publicacao.isPremium">
+              <img
+                [src]="publicacao.userPicture"
+                alt="Profile Image"
+                class="rounded-circle img-fluid mx-auto img-perfil"
+              />
             </div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-end mt-3">
-                <div *ngIf="this.isSameUser">
-                    <ul class="plus-buttons list-inline2">
-                        <li class="list-inline-item">
-                            <a (click)="deletePublication()">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="plus-buttons list-inline2">
-                        <li class="list-inline-item">
-                            <a href="#ModalConfig" data-bs-toggle="modal">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                        </li>
-                    </ul>                      
-                </div>
-            </div>
+      </div>
+      <div class="media-body text-black">
+        <p class="mt-0 mb-0 name">{{ publicacao.name }}</p>
+        <p class="mt-0 mb-0 username">{{ publicacao.username }}</p>
+        <p class="small mb-2 category">
+          {{ publicacao.category }} - {{ publicacao.subcategory }}
+        </p>
+        <div *ngIf="publicacao.isPremium">
+          <div class="col-md-12 star mt-0 text-center">
+            <i class="bx bxs-star bx-md bx-tada-hover" aria-hidden="true"></i>
+            <p>PREMIUM</p>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 mt-0">
-                <div *ngIf="publicacao.mediaType == 'Imagem'">
-                    <meta name="description" content="{{publicacao.description}}">
-                    <meta property="og:image" itemprop="image" content="{{publicacao.s3UrlMedia}}" />
-                    <meta property="og:image:type" content="image/png" />
-                    <meta property="og:type" content="website" />
-                    <div class="img-responsive text-center">
-                        <img class="d-block mx-auto publi" [src]="publicacao.s3UrlMedia" alt="">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <ul class="list-inline social-buttons">
+                <li class="list-inline-item" *ngIf="publicacao.userFacebook">
+                  <a href="{{ publicacao.userFacebook }}" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item" *ngIf="publicacao.userTwitter">
+                  <a href="{{ publicacao.userTwitter }}" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item" *ngIf="publicacao.userInstagram">
+                  <a href="{{ publicacao.userInstagram }}" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-end mt-3">
+        <div *ngIf="this.isSameUser">
+          <ul class="plus-buttons list-inline2">
+            <li class="list-inline-item">
+              <a (click)="deletePublication()">
+                <i class="fa fa-trash"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="plus-buttons list-inline2">
+            <li class="list-inline-item">
+              <a href="#ModalConfig" data-bs-toggle="modal">
+                <i class="fa fa-edit"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mt-0">
+        <div *ngIf="publicacao.mediaType == 'Imagem'">
+          <meta name="description" content="{{ publicacao.description }}" />
+          <meta
+            property="og:image"
+            itemprop="image"
+            content="{{ publicacao.s3UrlMedia }}"
+          />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:type" content="website" />
+          <div class="img-responsive text-center">
+            <img
+              class="d-block mx-auto publi"
+              [src]="publicacao.s3UrlMedia"
+              alt=""
+            />
+          </div>
+        </div>
+        <div *ngIf="publicacao.mediaType == 'Video'">
+          <div class="img-responsive text-center">
+            <video
+              class="d-block mx-auto publi"
+              controls
+              Preload
+              played
+              width="375"
+              controlsList="nodownload"
+            >
+              <source [src]="publicacao.s3UrlMedia" />
+            </video>
+          </div>
+        </div>
+        <div *ngIf="publicacao.mediaType == 'Áudio'">
+          <div class="img-responsive text-center">
+            <div class="d-block mx-auto publi">
+              <div style="display: inline-grid">
+                <img
+                  class="image-audio"
+                  [src]="'../../../assets/img/pages/notamusical.jpg'"
+                />
+                <audio controls preload width="450" controlsList="nodownload">
+                  <source [src]="publicacao.s3UrlMedia" alt="" />
+                </audio>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container text-center mt-3">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <ul class="list-inline publi-buttons">
+                <div *ngIf="!this.isSameUser" style="padding-right: 0.5rem">
+                  <li (click)="like()" class="list-inline-item like">
+                    <div *ngIf="this.publicacao.isLiked">
+                      <a id="active">
+                        <i class="fab fa-gratipay"></i>
+                      </a>
                     </div>
-                </div>
-                <div *ngIf="publicacao.mediaType == 'Video'">
-                    <div class="img-responsive text-center">
-                        <video class="d-block mx-auto publi" controls Preload played width="375" controlsList="nodownload">
-                            <source [src]="publicacao.s3UrlMedia" >
-                        </video>
+                    <div *ngIf="!this.publicacao.isLiked">
+                      <a>
+                        <i class="fab fa-gratipay"></i>
+                      </a>
                     </div>
+                    <p class="quant">{{ publicacao.likesAmount }}</p>
+                  </li>
+                  <li class="list-inline-item share">
+                    <a>
+                      <i class="fa fa-comment"></i>
+                    </a>
+                    <p class="quant">{{ publicacao.commentsAmount }}</p>
+                  </li>
                 </div>
-                <div *ngIf="publicacao.mediaType == 'Áudio'">
-                    <div class="img-responsive text-center">
-                        <div class="d-block mx-auto publi">
-                            <div style="display: inline-grid">
-                                <img class="image-audio" [src]="'../../../assets/img/pages/notamusical.jpg'">
-                                <audio controls preload width="450" controlsList="nodownload">
-                                    <source [src]="publicacao.s3UrlMedia" alt="">
-                                </audio>
-                            </div>    
-                        </div>    
+                <div *ngIf="this.isSameUser" style="padding-right: 0.5rem">
+                  <li class="list-inline-item like">
+                    <div *ngIf="this.publicacao.isLiked">
+                      <a id="active">
+                        <i class="fab fa-gratipay"></i>
+                      </a>
                     </div>
+                    <div *ngIf="!this.publicacao.isLiked">
+                      <a>
+                        <i class="fab fa-gratipay"></i>
+                      </a>
+                    </div>
+                    <p class="quant">{{ publicacao.likesAmount }}</p>
+                  </li>
+                  <li class="list-inline-item share">
+                    <a>
+                      <i class="fa fa-comment"></i>
+                    </a>
+                    <p class="quant">{{ publicacao.commentsAmount }}</p>
+                  </li>
                 </div>
-                <div class="container text-center mt-3">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <ul class="list-inline publi-buttons ">
-                                <div *ngIf="!this.isSameUser" style="padding-right: 0.5rem">
-                                    <li (click)="like()" class="list-inline-item like">
-                                        <div *ngIf="this.publicacao.isLiked">
-                                            <a id="active"> 
-                                                <i class="fab fa-gratipay"></i>
-                                            </a>
-                                        </div>
-                                        <div *ngIf="!this.publicacao.isLiked">
-                                            <a>
-                                                <i class="fab fa-gratipay"></i>
-                                            </a>
-                                        </div>  
-                                        <p class="quant">{{publicacao.likesAmount}}</p>
-                                    </li>
-                                    <li class="list-inline-item share">
-                                        <a>
-                                            <i class="fa fa-comment "></i>
-                                        </a>
-                                        <p class="quant">{{publicacao.commentsAmount}}</p>
-                                    </li>
-                                </div>
-                                <div *ngIf="this.isSameUser" style="padding-right: 0.5rem">
-                                    <li class="list-inline-item like">
-                                        <div *ngIf="this.publicacao.isLiked">
-                                            <a id="active"> 
-                                                <i class="fab fa-gratipay"></i>
-                                            </a>
-                                        </div>
-                                        <div *ngIf="!this.publicacao.isLiked">
-                                            <a>
-                                                <i class="fab fa-gratipay"></i>
-                                            </a>
-                                        </div>  
-                                        <p class="quant">{{publicacao.likesAmount}}</p>
-                                    </li>
-                                    <li class="list-inline-item share">
-                                        <a>
-                                            <i class="fa fa-comment "></i>
-                                        </a>
-                                        <p class="quant">{{publicacao.commentsAmount}}</p>
-                                    </li>
-                                </div>
-                                <!-- <li class="list-inline-item share">
+                <!-- <li class="list-inline-item share">
                                     <a href="" target="_blank">
                                         <i class="fa fa-share fa-lg "></i>
                                     </a>
                                     <p class="quant">10</p>
                                 </li> -->
-                                <li class="list-inline-item share pad-bot">
-                                    <a href="{{publicacao.publicationFacebook}}" target="_blank">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item share pad-bot">
-                                    <a href="{{publicacao.publicationTwitter}}" target="_blank">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item share pad-bot">
-                                    <a href="{{publicacao.publicationWhatsapp}}" target="_blank">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-
-                    <div class="col-md-2">
-                    </div>
-                    <div class="col-md-8 text-center"> {{publicacao.description}} </div>
-                    <div class="row mt-2">
-                        <div class="col-md-8"></div>
-                        <div class="col-md-4 date"><span class="text-black-50 ">{{ 'PUBLICACAO.DATA-POSTAGEM' | translate }} {{publicacao.publicationDate | date:"dd/MM/yyyy"}}</span></div>
-                    </div>
-                </div>
+                <li class="list-inline-item share pad-bot">
+                  <a
+                    href="{{ publicacao.publicationFacebook }}"
+                    target="_blank"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item share pad-bot">
+                  <a href="{{ publicacao.publicationTwitter }}" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item share pad-bot">
+                  <a
+                    href="{{ publicacao.publicationWhatsapp }}"
+                    target="_blank"
+                  >
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8 text-center">{{ publicacao.description }}</div>
+          <div class="row mt-2">
+            <div class="col-md-8"></div>
+            <div class="col-md-4 date">
+              <span class="text-black-50"
+                >{{ "PUBLICACAO.DATA-POSTAGEM" | translate }}
+                {{ publicacao.publicationDate | date: "dd/MM/yyyy" }}</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="container">
-    <div class="col-md-12 text-center mb-3" id="comentarios">
-        <h5 class="c1">{{ 'PUBLICACAO.COMENTARIOS' | translate }}</h5>
+  <div class="col-md-12 text-center mb-3" id="comentarios">
+    <h5 class="c1">{{ "PUBLICACAO.COMENTARIOS" | translate }}</h5>
+  </div>
+  <div *ngIf="!publicacao.comments[0]">
+    <div *ngIf="!this.isSameUser">
+      <p class="text-center primeiro">
+        {{ "PUBLICACAO.PRIMEIRO" | translate }}
+      </p>
     </div>
-    <div *ngIf="!publicacao.comments[0]">
-        <div *ngIf="!this.isSameUser">
-            <p class="text-center primeiro">{{ 'PUBLICACAO.PRIMEIRO' | translate }}</p>
-        </div>
-        <div *ngIf="this.isSameUser">
-            <p class="text-center primeiro">{{ 'PUBLICACAO.PRIMEIRO-AUTOR' | translate }}</p>
-        </div>
+    <div *ngIf="this.isSameUser">
+      <p class="text-center primeiro">
+        {{ "PUBLICACAO.PRIMEIRO-AUTOR" | translate }}
+      </p>
     </div>
-    <div *ngFor="let comentario of publicacao.comments">
-        <div class="d-flex justify-content-center row">
-            <div class="col-md-8">
-                <div class="d-flex flex-column">
-                    <div class="bg-light p-3">
-                        <div class="">
-                            <img class="rounded-circle-coment " src="{{comentario.userPicture}}" width="40">
-                            <span class="nome-user">{{comentario.name}}</span>
-                            <span class="username-coment text-black-50 ">{{comentario.username}}</span>
-                            <br><span class="ms-3">{{comentario.description}}</span>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-md-8"></div>
-                            <div class="col-md-4 text-end"><span class="text-black-50 date">{{ 'PUBLICACAO.DATA-POSTAGEM' | translate }} {{comentario.commentDate | date:"dd/MM/yyyy"}}</span></div>
-                        </div>
-                    </div>
+  </div>
+  <div *ngFor="let comentario of publicacao.comments">
+    <div class="d-flex justify-content-center row">
+      <div class="col-md-8">
+        <div class="d-flex flex-column">
+          <div class="bg-light p-3">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-11">
+                  <img
+                    class="rounded-circle-coment"
+                    src="{{ comentario.userPicture }}"
+                    width="40"
+                    height="40"
+                  />
+                  <span class="nome-user">{{ comentario.name }}</span>
+                  <span class="username-coment text-black-50">{{
+                    comentario.username
+                  }}</span>
                 </div>
-                <hr>
+                <!-- integrar -->
+                <div class="col-md-1 text-end">
+                  <ul
+                    class="trash-buttons list-inline2 d-flex flex-row-reverse"
+                  >
+                    <li class="list-inline-item">
+                      <a data-bs-toggle="modal" data-bs-target="#confirmDelete">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <br /><span class="my-1">{{ comentario.description }}</span>
+              <div class="row mt-1 mb-0">
+                <div class="col-md-9 text-end">
+                  <ul
+                    class="
+                      answer-buttons
+                      list-inline2
+                      d-flex
+                      flex-row-reverse
+                      mb-0
+                    "
+                  >
+                    <li class="list-inline-item text-center answer">
+                      <a data-bs-toggle="modal" data-bs-target="#newanswer">
+                        <i class="fa fa-comments"></i>
+                        <span class="answer-text mx-2">{{ "PUBLICACAO.REPLY" | translate }}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-3 text-end">
+                  <span class="text-black-50 date"
+                    >{{ "PUBLICACAO.DATA-POSTAGEM" | translate }}
+                    {{ comentario.commentDate | date: "dd/MM/yyyy" }}</span
+                  >
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+
+        <!-- comentário resposta integrar -->
+        <div class="row justify-content-center">
+          <div class="col-md-2"></div>
+          <div class="col-md-10">
+            <div class="d-flex flex-column">
+              <div class="bg-answer p-3">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-11">
+                      <img
+                        class="rounded-circle-coment"
+                        src="{{ comentario.userPicture }}"
+                        width="40"
+                        height="40"
+                      />
+                      <span class="nome-user">{{ comentario.name }}</span>
+                      <span class="username-coment text-black-50">{{
+                        comentario.username
+                      }}</span>
+                    </div>
+                    <div class="col-md-1 text-end">
+                      <ul
+                        class="
+                          trash-buttons
+                          list-inline2
+                          d-flex
+                          flex-row-reverse
+                        "
+                      >
+                        <li class="list-inline-item">
+                          <a
+                            data-bs-toggle="modal"
+                            data-bs-target="#confirmDelete"
+                          >
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <br /><span class="my-1">{{ comentario.description }}</span>
+                  <div class="row mt-1 mb-0">
+                    <div class="col-md-12 text-end">
+                      <span class="text-black-50 date"
+                        >{{ "PUBLICACAO.DATA-POSTAGEM" | translate }}
+                        {{ comentario.commentDate | date: "dd/MM/yyyy" }}</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
     </div>
+  </div>
 </div>
 <div class="container" *ngIf="!this.isSameUser && this.loggedUser">
-    <div class="col-md-12 text-center mb-3" id="comentarios">
-        <h5 class="c1">{{ 'PUBLICACAO.COMENTAR' | translate }}</h5>
-    </div>
-    <div class="d-flex justify-content-center row">
-        <div class="col-md-8">
-            <div class="d-flex flex-column comment-section">
-                <div class="bg-light p-3">
-                    <div class="d-flex flex-row align-items-start">
-                        <!-- <img class="rounded-circle-coment" src="https://i.imgur.com/RpzrMR2.jpg" width="40"> -->
-                        <textarea [(ngModel)]="this.description" class="form-control ml-1 shadow-none textarea"></textarea>
-                    </div>
-                    <div class="mt-2 text-center">
-                        <button (click)="insertComment()" class="getstarted" type="button">{{ 'PUBLICACAO.POSTAR' | translate }}</button>
-                    </div>
-                </div>
-            </div>
+  <div class="col-md-12 text-center mb-3" id="comentarios">
+    <h5 class="c1">{{ "PUBLICACAO.COMENTAR" | translate }}</h5>
+  </div>
+  <div class="d-flex justify-content-center row">
+    <div class="col-md-8">
+      <div class="d-flex flex-column comment-section">
+        <div class="bg-light p-3">
+          <div class="d-flex flex-row align-items-start">
+            <!-- <img class="rounded-circle-coment" src="https://i.imgur.com/RpzrMR2.jpg" width="40"> -->
+            <textarea
+              [(ngModel)]="this.description"
+              class="form-control ml-1 shadow-none textarea"
+            ></textarea>
+          </div>
+          <div class="mt-2 text-center">
+            <button (click)="insertComment()" class="getstarted" type="button">
+              {{ "PUBLICACAO.POSTAR" | translate }}
+            </button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-<div class="descricao-modal modal fade" id="ModalConfig" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content ">
-            <div class="close-modal" type="button" data-bs-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 mx-auto ">
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h5 class=" c1">{{ 'PUBLICACAO.EDITAR' | translate }}</h5>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <div class="form-group ">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                        </div>
-                                        <br>
-                                        <div class="col-md-6"></div>
-                                        <div class="descr fw-bold">
-                                            {{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
-                                        <textarea 
-                                            [(ngModel)]="this.userDescription.description"
-                                            class="form-control2" cols="50" rows="6"
-                                            placeholder="{{ 'PERFIL.PLACE-DESCRIÇÃO' | translate }}"
-                                            maxlength="500"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                </div>
-                            </div>
-                            <button class="getstarted" type="button" (click)="updateDescription()"
-                                class="getstarted mt-2" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
-                                translate }}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div
+  class="descricao-modal modal fade"
+  id="ModalConfig"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="close-modal" type="button" data-bs-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
         </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mx-auto">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <h5 class="c1">{{ "PUBLICACAO.EDITAR" | translate }}</h5>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6"></div>
+                    <br />
+                    <div class="col-md-6"></div>
+                    <div class="descr fw-bold">
+                      {{ "PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO" | translate }}
+                    </div>
+                    <textarea
+                      [(ngModel)]="this.userDescription.description"
+                      class="form-control2"
+                      cols="50"
+                      rows="6"
+                      placeholder="{{ 'PERFIL.PLACE-DESCRIÇÃO' | translate }}"
+                      maxlength="500"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12"></div>
+              </div>
+              <button
+                type="button"
+                (click)="updateDescription()"
+                class="getstarted mt-2"
+                data-bs-dismiss="modal"
+                aria-label="Fechar"
+              >
+                {{ "PERFIL.SALVAR" | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- integrar -->
+
+<div
+  class="descricao-modal modal fade"
+  id="newanswer"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="close-modal" type="button" data-bs-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mx-auto">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <h5 class="c1">{{ "PUBLICACAO.MODAL-ANSWER-TITLE" | translate }}</h5>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6"></div>
+                    <br />
+                    <div class="col-md-6"></div>
+                    <div class="descr fw-bold">{{ "PUBLICACAO.MODAL-ANSWER-TEXT" | translate }}</div>
+                    <textarea
+                      [(ngModel)]="this.userDescription.description"
+                      class="form-control2"
+                      cols="50"
+                      rows="6"
+                      placeholder="{{ 'PUBLICACAO.MODAL-ANSWER-PLACEHOLDER' | translate }}"
+                      maxlength="500"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12"></div>
+              </div>
+              <button
+                type="button"
+                (click)="updateDescription()"
+                class="getstarted mt-2"
+                data-bs-dismiss="modal"
+                aria-label="Fechar"
+              >
+              {{ "PUBLICACAO.MODAL-ANSWER-BUTTON" | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

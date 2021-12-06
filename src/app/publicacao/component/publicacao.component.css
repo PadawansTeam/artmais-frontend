@@ -381,3 +381,46 @@ ul.social-buttons {
 	text-align: center;
 	background-color: rgba(240, 242, 243, 0.9);
 }
+
+ul.trash-buttons li a {
+	font-size: 15px;
+	line-height: 40px;
+	display: block;
+	width: 40px;
+	height: 40px;
+	transition: all 0.3s;
+	color: #701ec6;
+	border-radius: 100%;
+	outline: none;
+	margin-bottom: 0;
+	padding-right: 13px;
+}
+
+ul.trash-buttons li a:active, ul.trash-buttons li a:focus, ul.trash-buttons li a:hover {
+	background-color: #701ec6;
+	color: white;
+}
+
+ul.answer-buttons li a {
+	color: rgba(0,0,0,.5)!important;
+}
+ul.answer-buttons li a:active, ul.answer-buttons li a:focus, ul.answer-buttons li a:hover {
+	color: black
+}
+
+.answer:hover{
+
+	color: black !important;
+}
+
+.answer-text{
+	font-size: small;
+}
+
+.answer-text:hover{
+	color: black !important;
+}
+
+.bg-answer{
+	background-color: #efeff0;
+}
