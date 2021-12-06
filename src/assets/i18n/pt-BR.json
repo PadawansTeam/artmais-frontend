@@ -249,7 +249,12 @@
         "DATA-POSTAGEM": "Postado em ",
         "PRIMEIRO": "Seja o primeiro a comentar!",
         "PRIMEIRO-AUTOR": "Ainda não há comentários!",
-        "EDITAR": "Editar publicação"
+        "MODAL-ANSWER-TITLE": "Responder Comentário",
+        "MODAL-ANSWER-TEXT": "Comentário:",
+        "MODAL-ANSWER-BUTTON": "Enviar",
+        "MODAL-ANSWER-PLACEHOLDER": "Digite o comentário...",
+        "REPLY": "Responder"
+        
     },
     "USERCOMUM": {
         "SUBTITULO-RECOMENDACAO": "Descubra novos artistas!",

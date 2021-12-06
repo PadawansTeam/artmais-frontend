@@ -228,7 +228,12 @@
         "DATA-POSTAGEM": "Posted at ",
         "PRIMEIRO": "Be the first to comment!",
         "PRIMEIRO-AUTOR": "There are no comments yet",
-        "EDITAR": "Edit publication"
+        "EDITAR": "Edit publication",
+        "MODAL-ANSWER-TITLE": "Reply Comment",
+        "MODAL-ANSWER-TEXT": "Comment:",
+        "MODAL-ANSWER-BUTTON": "Send",
+        "MODAL-ANSWER-PLACEHOLDER": "Enter the comment...",
+        "REPLY": "Reply"
     },
     "USERCOMUM": {
         "SUBTITULO-RECOMENDACAO": "Discover new artists!",
