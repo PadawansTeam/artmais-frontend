@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.prod';
 
 export interface CadastroDto {
   name: string;
@@ -28,7 +28,7 @@ export class CadastroService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
     return this.http.get(this.artPlusURL + 'v1/SignUp', this.httpOptions);

@@ -1,9 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
-import * as AWS from 'aws-sdk/global';
-import * as S3 from 'aws-sdk/clients/s3';
+import { environment } from '../../../environments/environment.prod';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -32,7 +30,7 @@ export class PerfilService {
   constructor(
     private http: HttpClient,
     private router: Router
-    ) {}
+  ) { }
 
   ngOnInit(): void {
     if (this.token == undefined || this.token == null) {
