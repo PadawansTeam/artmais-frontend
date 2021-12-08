@@ -165,7 +165,12 @@
                                 type="button" role="tab" aria-controls="audio" aria-selected="false">
                                 <i class="bx bx-music bx-sm bx-tada-hover"></i>
                                 {{'PERFIL.ABA-AUDIO' | translate }}</button>
-
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#externalMedia"
+                                type="button" role="tab" aria-controls="link" aria-selected="false">
+                                <i class="bx bx-link bx-sm bx-tada-hover"></i>
+                                {{'PERFIL.ABA-LINK' | translate }}</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -222,6 +227,19 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane fade" id="externalMedia" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
+                                <!-- <div *ngIf="userPortfolioContent.externalMedia.length == 0" style="color: #6c757d!important;">
+                                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
+                                        'PERFIL.ABA-ERRO' | translate }}</p>
+                                </div> -->
+                                <!-- <div *ngFor="let userPortfolioExternalMedia of userPortfolioContent.externalMedia"
+                                    class="col-md-4 mb-3 pr-lg-2 portifolio-item "> -->
+                                    <!-- <iframe src="https://www.instagram.com/p/BxFc58nFwpN/embed" frameborder="0" allowfullscreen></iframe>      -->
+                                    <!-- <iframe src="https://www.youtube.com/embed/ldNTJlWqIH8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                <!-- </div> -->
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -238,42 +256,122 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 mx-auto ">
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 ">
-                                        <div class="ico">
-                                            <i class="bx bx-image bx-sm bx-tada-hover "></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
-                                        <h5 class=" c1">{{ 'PERFIL.ADICIONAR-ITEM' | translate }}</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <div class="form-group ">
-                                        <div class="row">
-                                            <div class="col-md-6">
+                            <div class="row py-4 px-4">
+                                <section id="portfolio">
+                                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                      <button
+                                        class="nav-link active"
+                                        id="home-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#file"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="file"
+                                        aria-selected="true"
+                                      >
+                                        <i class="bx bx-folder bx-sm bx-tada-hover"></i>
+                                        {{'PERFIL.ABA-ARQUIVO' | translate }}
+                                      </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                      <button
+                                        class="nav-link"
+                                        id="profile-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#link"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="link"
+                                        aria-selected="false"
+                                      >
+                                        <i class="bx bx-link bx-sm bx-tada-hover"></i>
+                                        {{'PERFIL.ABA-LINKS' | translate }}
+                                      </button>
+                                    </li>
+                                  </ul>
+                                  <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="file" role="tabpanel" aria-labelledby="home-tab">
+                                      <div class="row" style="margin-top: 1.5rem; min-height: 8rem">
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 ">
+                                                    <div class="ico">
+                                                        <i class="bx bx-image bx-sm bx-tada-hover "></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
+                                                    <h5 class=" c1">{{ 'PERFIL.ADICIONAR-ITEM' | translate }}</h5>
+                                                </div>
                                             </div>
-                                            <br>
-                                            <div class="col-md-6"></div>
-                                            <input (change)="selectPortfolioFile($event)" type="file"
-                                                accept=".jpg, .jpeg, .png, .mp3, .mov, .mp4, .mpeg-1, .mpeg-2, .mpeg4, .mpg, .avi, .mpegps, .flv, .aac, .wma, .wav"
-                                                class="form-control" id="photo" required>
-                                            <div class="descr fw-bold">
-                                                {{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
-                                            <textarea [(ngModel)]="this.portfolioContent.description"
-                                                class="form-control2" cols="50" rows="6"
-                                                placeholder="{{ 'PERFIL.PLACE-DESCRIÇÃO' | translate }}"
-                                                maxlength="500"></textarea>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="form-group ">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                        </div>
+                                                        <br>
+                                                        <div class="col-md-6"></div>
+                                                        <input (change)="selectPortfolioFile($event)" type="file"
+                                                            accept=".jpg, .jpeg, .png, .mp3, .mov, .mp4, .mpeg-1, .mpeg-2, .mpeg4, .mpg, .avi, .mpegps, .flv, .aac, .wma, .wav" max-size=32154
+                                                            class="form-control" id="photo" required>
+                                                        <div class="descr fw-bold">
+                                                            {{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
+                                                        <textarea [(ngModel)]="this.portfolioContent.description"
+                                                            class="form-control2" cols="50" rows="6"
+                                                            placeholder="{{ 'PERFIL.PLACE-DESCRIÇÃO' | translate }}"
+                                                            maxlength="500"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                </div>
+                                            </div>
+                                            <button (click)="insertPortfolioFile()" class="getstarted" type="button"
+                                                class="getstarted" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
+                                                translate }}</button>
                                         </div>
+                                      </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="tab-pane fade" id="link" role="tabpanel" aria-labelledby="profile-tab">
+                                      <div class="row" style="margin-top: 1.5rem; min-height: 8rem">
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 ">
+                                                    <div class="ico">
+                                                        <i class="bx bx-image bx-sm bx-tada-hover "></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
+                                                    <h5 class=" c1">{{ 'PERFIL.ADICIONAR-ITEM' | translate }}</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="form-group ">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                        </div>
+                                                        <br>
+                                                        <div class="col-md-6"></div>
+                                                        <input [(ngModel)]="this.portfolioContent.portfolioImageUrl" placeholder="Insira o link aqui" type="text" class="form-control" id="photo" required>
+                                                        <div class="descr fw-bold">
+                                                            {{ 'PERFIL.DESCRIÇÃO-ITEM-PORTFOLIO' | translate }}</div>
+                                                        <textarea [(ngModel)]="this.portfolioContent.description"
+                                                            class="form-control2" cols="50" rows="6"
+                                                            placeholder="{{ 'PERFIL.PLACE-DESCRIÇÃO' | translate }}"
+                                                            maxlength="500"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                </div>
+                                            </div>
+                                            <button (click)="insertExternalMedia()" class="getstarted" type="button"
+                                                class="getstarted" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
+                                                translate }}</button>
+                                        </div>
+                                      </div>
                                     </div>
-                                </div>
-                                <button (click)="insertPortfolioFile()" class="getstarted" type="button"
-                                    class="getstarted" data-bs-dismiss="modal" aria-label="Fechar">{{ 'PERFIL.SALVAR' |
-                                    translate }}</button>
-                            </div>
+                                  </div>
+                                </section>
+                              </div>
                         </div>
                     </div>
                 </div>

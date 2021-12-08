@@ -156,7 +156,10 @@
         "ABA-IMAGEM": "Imagens",
         "ABA-VIDEO": "Vídeos",
         "ABA-AUDIO": "Áudios",
-        "ABA-ERRO": "Não há nada postado ainda"
+        "ABA-LINK": "Mídias Externas",
+        "ABA-ERRO": "Não há nada postado ainda",
+        "ABA-ARQUIVO": "Arquivo",
+        "ABA-LINKS": "Link"
     },
     "CONFIG": {
         "CONFIG": "Configurações",

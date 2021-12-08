@@ -51,11 +51,18 @@ export class PerfilService {
   }
 
   insertPortfolioContent(formData: FormData): Observable<object> {
-    return this.http.post<object>(
-      `${this.artPlusURL}v1/aws/InsertPortfolioContent`,
-      formData,
-      this.customHttpOptions
-    );
+    return this.http.post<object>(`${this.artPlusURL}v1/aws/InsertPortfolioContent`, formData, this.customHttpOptions);
+  }
+
+  insertExternalMedia(
+    portfolioImageUrl: string,
+    description: string
+  ): Observable<any> {
+    return this.http.post(this.artPlusURL + 'v1/Portfolio/InsertPortfolioExternalMediaContent',
+    {
+      portfolioImageUrl,
+      description
+    }, this.httpOptions);
   }
 
   updatePortfolioDescription(
