@@ -1,36 +1,47 @@
 <app-header></app-header>
 <div class="page-header header-filter back">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 ml-auto mr-auto">
-          <div class="card card-login" data-aos="fade-up">
-            <div class="form">
-              <div class="card-header card-header-primary text-center ">
-                <h4 class="card-title">{{ 'VEFICACAO.TITLE' | translate }}</h4>
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="bx bx-barcode bx-sm bx-tada-hover"></i>
-                      </span>
-                    </div>
-                    <input  formControlName="" name="" class="un form-control" type="email" align="center" placeholder="{{ 'VEFICACAO.TEXT' | translate }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+        <div class="card card-login" data-aos="fade-up">
+          <div class="form">
+            <div class="card-header card-header-primary text-center">
+              <h4 class="card-title">{{ "VEFICACAO.TITLE" | translate }}</h4>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="formVerificationCode">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="bx bx-user bx-sm bx-tada-hover"></i>
+                    </span>
                   </div>
-                </form>
-              </div>
-              <div class="row">
-                <div class="col-md-6 text-center">
-                  <button class="submit" align="center">
-                    {{ 'VEFICACAO.REENVIAR' | translate }}
-                  </button>
+                  <input
+                    [(ngModel)]="this.form.verificationCode"
+                    formControlName="verificationCode"
+                    name="verificationCode"
+                    class="un form-control"
+                    type="text"
+                    align="center"
+                    placeholder="{{ 'VEFICACAO.TEXT' | translate }}"
+                  />
                 </div>
-                <div class="col-md-6 text-center">
-                    <a href="\trocasenha"><button class="submit" align="center">
-                      {{ 'VEFICACAO.CONFIRMAR' | translate }}
-                    </button></a>
-                  </div>
+              </form>
+            </div>
+            <div class="row">
+              <div class="col-md-6 text-center">
+                <a (click)="sendForgotPasswordMail()"
+                  ><button class="submit" align="center">
+                    {{ "VEFICACAO.REENVIAR" | translate }}
+                  </button></a
+                >
+              </div>
+              <div class="col-md-6 text-center">
+                <a (click)="validateAuthenticationCode()"
+                  ><button class="submit" align="center">
+                    {{ "VEFICACAO.CONFIRMAR" | translate }}
+                  </button></a
+                >
               </div>
             </div>
           </div>
@@ -38,4 +49,5 @@
       </div>
     </div>
   </div>
+</div>
 <app-footer></app-footer>

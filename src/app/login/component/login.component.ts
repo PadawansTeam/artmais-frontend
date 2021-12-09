@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginResponseDto, LoginService } from '../service/login.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import {
   SocialAuthService,
   GoogleLoginProvider,
@@ -33,6 +34,19 @@ export class LoginComponent {
   formLogin!: FormGroup;
   loaderOn: boolean = false;
   erroAPI: boolean = false;
+  email: string = '';
+
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
+  });
 
   constructor(
     private loginService: LoginService,
@@ -55,7 +69,7 @@ export class LoginComponent {
   }
 
   public loginArtPlus() {
-    this.loaderOn = true
+    this.loaderOn = true;
     this.loginService
       .authenticate(this.form.email, this.form.password)
       .subscribe(
@@ -66,10 +80,10 @@ export class LoginComponent {
           this.loginReturn = true;
         },
         (err) => {
-          if(err.status == 422){
+          if (err.status == 422) {
             this.loaderOn = false;
             this.erroLogin = true;
-          } else{
+          } else {
             this.loaderOn = false;
             this.erroAPI = true;
           }
@@ -100,5 +114,46 @@ export class LoginComponent {
         }
       );
     });
+  }
+
+  sendForgotPasswordMail(): void {
+    this.loginService.passwordRecovery(this.email).subscribe(
+      (response) => {
+        localStorage.setItem('userId', response.userId);
+        localStorage.setItem('email', this.email);
+        this.router.navigateByUrl('/verificacao');
+        return response;
+      },
+      (err) => {
+        if (err.status == 404) {
+          this.Toast.fire({
+            icon: 'error',
+            title:
+              localStorage.getItem('lang') === 'en-US'
+                ? 'E-mail not found!'
+                : 'E-mail não encontrado',
+            text:
+              localStorage.getItem('lang') === 'en-US'
+                ? 'Send a valid e-mail!'
+                : 'Envie um e-mail válido!',
+          });
+          throw err;
+        }
+        if (err.status == 500) {
+          this.Toast.fire({
+            icon: 'error',
+            title:
+              localStorage.getItem('lang') === 'en-US'
+                ? 'Unknown error!'
+                : 'Erro desconhecido',
+            text:
+              localStorage.getItem('lang') === 'en-US'
+                ? 'Try again later!'
+                : 'Tente novamente mais tarde!',
+          });
+          throw err;
+        }
+      }
+    );
   }
 }
