@@ -21,13 +21,29 @@ export class LoginService {
     }),
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   authenticate(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.artPlusURL}` + 'v1/SignIn', { email, password }, this.httpOptions);
+    return this.http.post(
+      `${this.artPlusURL}` + 'v1/SignIn',
+      { email, password },
+      this.httpOptions
+    );
   }
 
   googleAuthenticate(token: string): Observable<any> {
-    return this.http.post(`${this.artPlusURL}v1/Google/signin/${token}`, {}, this.httpOptions);
+    return this.http.post(
+      `${this.artPlusURL}v1/Google/signin/${token}`,
+      {},
+      this.httpOptions
+    );
+  }
+
+  passwordRecovery(email: string | null): Observable<any> {
+    return this.http.post(
+      `${this.artPlusURL}v1/PasswordRecovery/Create/${email}`,
+      {},
+      this.httpOptions
+    );
   }
 }

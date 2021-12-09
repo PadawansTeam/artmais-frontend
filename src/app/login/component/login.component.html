@@ -45,7 +45,7 @@
                     </span>
                   </div>
                   <input [(ngModel)]="this.form.password" formControlName="password" name="password" class="un form-control" type="password" align="center" placeholder="{{ 'ENTRAR.SENHA' | translate }}" />
-                </div>    
+                </div>
               </form>
             </div>
             <div class="row">
@@ -118,9 +118,9 @@
                           <i class="bx bx-user bx-sm bx-tada-hover"></i>
                         </span>
                       </div>
-                      <input formControlName="email" name="email" class="un form-control" type="email" align="center" placeholder="{{ 'ENTRAR.EMAIL' | translate }}">
+                      <input [(ngModel)]="this.email" formControlName="email" name="email" class="un form-control" type="email" align="center" placeholder="{{ 'ENTRAR.EMAIL' | translate }}">
                     </div></form>
-                    <a href="\verificacao"><button class="submit" align="center">
+                    <a (click)="sendForgotPasswordMail()"><button class="submit" align="center">
                       {{ 'ENTRAR.MODAL-ENVIAR' | translate }}
                     </button></a>
                 </div>
