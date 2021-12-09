@@ -133,7 +133,10 @@
             "ABA-IMAGEM": "Images",
             "ABA-VIDEO": "Videos",
             "ABA-AUDIO": "Audios",
-            "ABA-ERRO": "There's nothing posted yet"
+            "ABA-LINK": "External Media",
+            "ABA-ERRO": "There's nothing posted yet",
+            "ABA-ARQUIVO": "File",
+            "ABA-LINKS": "Link"
         },
     "RECOMENDACAO": {
         "TITULO-INTE": "INTEREST PROFILES",

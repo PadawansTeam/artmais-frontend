@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Perfil } from '../service/perfil';
 import { PerfilService } from '../service/perfil.service';
 import { UserPortfolio } from '../service/UserPortfolio';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-perfil',
@@ -11,7 +12,7 @@ import { UserPortfolio } from '../service/UserPortfolio';
 })
 export class PerfilComponent implements OnInit {
   profile!: Perfil;
-  userPortfolioContent: {image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[]} = {image: [], video: [], audio: []};
+  userPortfolioContent: {image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[], externalMedia: UserPortfolio[]} = {image: [], video: [], audio: [], externalMedia: []};
   selectedPortfolioContent: FileList | undefined;
 
   portfolioContent: any = {
@@ -23,6 +24,18 @@ export class PerfilComponent implements OnInit {
   portfolioDescription: any = {
     description: null,
   };
+
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
+  });
 
   constructor(
     public perfilService: PerfilService, 
@@ -51,7 +64,7 @@ export class PerfilComponent implements OnInit {
     ),
       this.perfilService.getUserPortfolio().subscribe(
         (response) => {
-          this.userPortfolioContent = response as {image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[]};
+          this.userPortfolioContent = response as {image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[], externalMedia: UserPortfolio[]};
         },
         (err) => {
           throw err;
@@ -82,6 +95,41 @@ export class PerfilComponent implements OnInit {
     }
   }
 
+  insertExternalMedia() {
+    this.perfilService
+      .insertExternalMedia(
+        this.portfolioContent.portfolioImageUrl,
+        this.portfolioDescription.description
+      )
+      .subscribe(
+        async (response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Postagem publicada com sucesso!'
+                : 'Post published successfully!',
+          });
+          this.routeUpdateEvent();
+          return response;
+        },
+        (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Erro ao pulicar!'
+                : 'Failed to publish!',
+            text:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Tente novamente mais tarde!'
+                : 'Try again later!',
+          });
+          throw err;
+        },
+      );
+  }
+
   updateDescription() {
     this.perfilService
       .updatePortfolioDescription(
@@ -89,12 +137,31 @@ export class PerfilComponent implements OnInit {
         this.portfolioDescription.description
       )
       .subscribe(
-        (response) => {
+        async (response) => {
+          await this.Toast.fire({
+            icon: 'success',
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+              ? 'Postagem publicada com sucesso!'
+              : 'Post published successfully!',
+          });
+          this.routeUpdateEvent();
           return response;
         },
         (err) => {
+          this.Toast.fire({
+            icon: 'error',
+            title:
+              localStorage.getItem('lang') === 'pt-BR'
+              ? 'Erro ao pulicar!'
+              : 'Failed to publish!',
+            text:
+              localStorage.getItem('lang') === 'pt-BR'
+                ? 'Tente novamente mais tarde!'
+                : 'Try again later!',
+          });
           throw err;
-        }
+        },
       );
   }
 
