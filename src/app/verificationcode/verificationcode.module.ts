@@ -13,6 +13,7 @@ import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VerificationcodeComponent } from './component/verificationcode.component';
+import { VerificationCodeService } from './service/verification-code.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -35,7 +36,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FooterModule,
     ReactiveFormsModule
   ],
-  providers: [TranslateService],
+  providers: [TranslateService, VerificationCodeService],
   bootstrap: [],
 })
 export class VerificationcodeModule {}
