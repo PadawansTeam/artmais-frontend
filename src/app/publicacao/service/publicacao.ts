@@ -19,6 +19,7 @@ export class Publicacao {
       public mediaType: string,
       public comments: [
         {
+          commentID?: number,
           name?: string,
           username?: string,
           userPicture?: string,

@@ -271,7 +271,7 @@
                     class="trash-buttons list-inline2 d-flex flex-row-reverse"
                   >
                     <li class="list-inline-item">
-                      <a data-bs-toggle="modal" data-bs-target="#confirmDelete">
+                      <a data-bs-toggle="modal" data-bs-target="#confirmDelete" (click)="deleteComment(comentario.commentID)">
                         <i class="fa fa-trash"></i>
                       </a>
                     </li>
@@ -310,7 +310,7 @@
         </div>
 
         <!-- comentário resposta integrar -->
-        <div class="row justify-content-center">
+        <!-- <div class="row justify-content-center">
           <div class="col-md-2"></div>
           <div class="col-md-10">
             <div class="d-flex flex-column">
@@ -362,7 +362,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <hr />
       </div>
     </div>
