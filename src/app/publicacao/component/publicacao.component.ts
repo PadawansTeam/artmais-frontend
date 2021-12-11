@@ -67,7 +67,6 @@ export class PublicacaoComponent implements OnInit {
     if(this.loggedUser == true){
       this.publicacaoService.getLoggedPublication(this.idUser, this.idPublicacao).subscribe(
         (response: Publicacao) => {
-          console.log("Comentarios: ", response)
          this.publicacao = response;
         },
         (err) => {
@@ -77,7 +76,6 @@ export class PublicacaoComponent implements OnInit {
     } else{
       this.publicacaoService.getUnloggedPublication(this.idUser, this.idPublicacao).subscribe(
         (response: Publicacao) => {
-          console.log("Comentarios: ", response)
          this.publicacao = response;
         },
         (err) => {
