@@ -11,13 +11,10 @@ export class AppComponent {
 
   constructor() {
     if (!localStorage.getItem('lang')) localStorage.setItem('lang', 'pt-BR');
-    /*
     if (environment.production) {
       if (location.protocol === 'http:') {
         window.location.href = location.href.replace('http', 'https');
       }
     }
-    */
-
   }
 }
