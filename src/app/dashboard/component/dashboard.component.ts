@@ -19,23 +19,20 @@ export class DashboardComponent implements OnInit {
   private likesCanvas!: ElementRef;
   @ViewChild('visitsCanvas')
   private visitsCanvas!: ElementRef;
-  @ViewChild('commentsPredictionCanvas')
-  private commentsPredictionCanvas!: ElementRef;
-  @ViewChild('likesPredictionCanvas')
-  private likesPredictionCanvas!: ElementRef;
-  @ViewChild('visitsPredictionCanvas')
-  private visitsPredictionCanvas!: ElementRef;
-  
-  
-
-  titulo = 'Evolução de comentários por mês';
-  labels: any;
-  data: any;
+  @ViewChild('videoCanvas')
+  private videoCanvas!: ElementRef;
+  @ViewChild('audioCanvas')
+  private audioCanvas!: ElementRef;
+  @ViewChild('pictureCanvas')
+  private pictureCanvas!: ElementRef;
 
 
   commentsChart: any;
   likesChart: any;
   visitsChart: any;
+  audioChart: any;
+  videoChart: any;
+  pictureChart: any;
   commentsPredictionChart: any;
   likesPredictionChart: any;
   visitsPredictionChart: any;
@@ -55,6 +52,7 @@ export class DashboardComponent implements OnInit {
   visitsPredictionSum: any;
 
   sumComments: any;
+  sumVideoGrowth: any;
 
   predictSumRefined: any;
   predictSumLikesRefined: any;
@@ -63,7 +61,21 @@ export class DashboardComponent implements OnInit {
   predictDate: any;
   predictSum: any;
 
-  
+  videoCommentsDate: any;
+  videoCommentsSum: any;
+  videoLikesDate: any;
+  videoLikesSum: any;
+
+  audioCommentsDate: any;
+  audioCommentsSum: any;
+  audioLikesDate: any;
+  audioLikesSum: any;
+
+  pictureCommentsDate: any;
+  pictureCommentsSum: any;
+  pictureLikesDate: any;
+  pictureLikesSum: any;
+
 
   userData: any = {
     averageUsersAge: null,
@@ -74,7 +86,14 @@ export class DashboardComponent implements OnInit {
     sumComments: null,
     sumLikes: null,
     sumVisits: null,
-    visitsGrowth: null
+    visitsGrowth: null,
+    sumVideoGrowth: null,
+    videoCommentsGrowth: null,
+    audioCommentsGrowth: null,
+    picturesCommentsGrowth: null,
+    videoLikesGrowth: null,
+    audioLikesGrowth: null,
+    picturesLikesGrowth: null
   };
 
   loaderOn: boolean = false;
@@ -101,6 +120,10 @@ export class DashboardComponent implements OnInit {
       }
     );
 
+    function sum(accumulator: any, a: any) {
+      return accumulator + a;
+    }
+
     this.dashService.getDashBoardData().subscribe(
       (response: Dashboard) => {
         this.userData = response;
@@ -126,6 +149,35 @@ export class DashboardComponent implements OnInit {
           this.visitsGrowthGraph(this.visitsDate, this.visitsSum, this.visitsPredictionSum);
         }
 
+        if (this.userData.videoCommentsGrowth){
+          this.videoCommentsDate = this.userData.videoCommentsGrowth.map((videoGrowth: any) => videoGrowth.date)
+          this.videoCommentsSum = this.userData.videoCommentsGrowth.map((videoGrowth: any) => videoGrowth.sum)
+          this.videoLikesSum = this.userData.videoLikesGrowth.map((videoGrowth: any) => videoGrowth.sum)
+          
+          this.userData.videoCommentsGrowth = this.videoCommentsSum.reduce(sum, 0) + this.videoLikesSum.reduce(sum, 0);
+
+          this.videosGrowthGraph(this.videoCommentsDate, this.videoCommentsSum, this.videoLikesSum);
+        }
+
+        if (this.userData.audioCommentsGrowth){
+          this.audioCommentsDate = this.userData.audioCommentsGrowth.map((audioGrowth: any) => audioGrowth.date)
+          this.audioCommentsSum = this.userData.audioCommentsGrowth.map((audioGrowth: any) => audioGrowth.sum)
+          this.audioLikesSum = this.userData.audioLikesGrowth.map((audioGrowth: any) => audioGrowth.sum)
+        
+          this.userData.audioCommentsGrowth = this.audioCommentsSum.reduce(sum, 0) + this.audioLikesSum.reduce(sum, 0);
+
+          this.audioGrowthGraph(this.audioCommentsDate, this.audioCommentsSum, this.audioLikesSum);
+        }
+        
+        if (this.userData.picturesCommentsGrowth){
+          this.pictureCommentsDate = this.userData.picturesCommentsGrowth.map((pictureGrowth: any) => pictureGrowth.date)
+          this.pictureCommentsSum = this.userData.picturesCommentsGrowth.map((pictureGrowth: any) => pictureGrowth.sum)
+          this.pictureLikesSum = this.userData.picturesLikesGrowth.map((pictureGrowth: any) => pictureGrowth.sum)
+        
+          this.userData.picturesCommentsGrowth = this.pictureCommentsSum.reduce(sum, 0) + this.pictureLikesSum.reduce(sum, 0);
+
+          this.pictureGrowthGraph(this.pictureCommentsDate, this.pictureCommentsSum, this.pictureLikesSum);
+        }
       },
       (err) => {
         throw err;
@@ -372,4 +424,170 @@ export class DashboardComponent implements OnInit {
     }
     this.loaderOn = false;
   }  
+
+  private videosGrowthGraph(videoCommentsDate: string[], videoCommentsSum: number[], 
+                            videoLikesSum: number[]) {
+
+    if (videoCommentsDate.length == 1){
+      this.videoChart = new Chart(this.videoCanvas.nativeElement, {
+        type: 'bar',
+        data: {
+          labels: videoCommentsDate,
+          datasets: [
+            {
+              label: 'Quantidade de visitas',
+              fill: true,
+              lineTension: 0.1,
+              backgroundColor: '#701ec6',
+              borderColor: '#701ec6',
+              borderCapStyle: 'butt',
+              data: videoCommentsSum
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    precision: 0
+                }
+            }]
+          }
+        }
+      });
+    }
+    else{
+      this.videoChart = new Chart(this.videoCanvas.nativeElement, {
+        type: 'line',
+        data: {
+          labels: videoCommentsDate,
+          datasets: [
+            {
+              label: 'Quantidade de comentários',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#701ec6',
+              borderColor: '#701ec6',
+              borderCapStyle: 'butt',
+              data: videoCommentsSum
+            },
+            {
+              
+              label: 'Quantidade de curtidas',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#969b9b',
+              hoverBackgroundColor: '#353535',
+              hoverBorderColor:'#353535',
+              borderColor: '#969b9b',
+              borderCapStyle: 'round',
+              data: videoLikesSum
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    precision: 0
+                }
+            }]
+          }
+        }
+      });
+    }
+    this.loaderOn = false;
+  }
+
+  private audioGrowthGraph(audioCommentsDate: string[], audioCommentsSum: number[], 
+                           audioLikesSum: number[]) {
+
+    this.audioChart = new Chart(this.audioCanvas.nativeElement, {
+        type: 'line',
+        data: {
+          labels: audioCommentsDate,
+          datasets: [
+            {
+              label: 'Quantidade de comentários',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#701ec6',
+              borderColor: '#701ec6',
+              borderCapStyle: 'butt',
+              data: audioCommentsSum
+            },
+            {
+              
+              label: 'Quantidade de curtidas',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#969b9b',
+              hoverBackgroundColor: '#353535',
+              hoverBorderColor:'#353535',
+              borderColor: '#969b9b',
+              borderCapStyle: 'round',
+              data: audioLikesSum
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    precision: 0
+                }
+            }]
+          }
+        }
+      });
+    this.loaderOn = false;
+  }
+
+  private pictureGrowthGraph(pictureCommentsDate: string[], pictureCommentsSum: number[], 
+                           pictureLikesSum: number[]) {
+
+    this.pictureChart = new Chart(this.pictureCanvas.nativeElement, {
+        type: 'line',
+        data: {
+          labels: pictureCommentsDate,
+          datasets: [
+            {
+              label: 'Quantidade de comentários',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#701ec6',
+              borderColor: '#701ec6',
+              borderCapStyle: 'butt',
+              data: pictureCommentsSum
+            },
+            {
+              
+              label: 'Quantidade de curtidas',
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: '#969b9b',
+              hoverBackgroundColor: '#353535',
+              hoverBorderColor:'#353535',
+              borderColor: '#969b9b',
+              borderCapStyle: 'round',
+              data: pictureLikesSum
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    precision: 0
+                }
+            }]
+          }
+        }
+      });
+    this.loaderOn = false;
+  }
 }

@@ -252,6 +252,102 @@
                   <canvas class="px-2" #visitsCanvas></canvas>
                 </ng-container>
               </div>
+              <div
+                class="col-md-4 background my-1"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+              <p class="title-chart">{{ "DASHBOARD.CHART-VIDEO" | translate }}</p> 
+              <div *ngIf="loaderOn">
+                <div class="spinner-border loader" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+                <ng-container *ngIf="userData.videoCommentsGrowth === 0">
+                  
+                  <div class="text-center teste">
+                    <div class="icon-sad">
+                      <i class="bx bx-sad bx-sm bx-tada-hover"></i>
+                    </div>
+                  </div>
+                  <p class="subtext-card mb-0">
+                    {{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}
+                  </p>
+                  <p class="subtext-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}
+                  </p>
+                  <p class="text-footer-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}
+                  </p>
+                </ng-container>
+                <ng-container *ngIf="userData.videoCommentsGrowth !== 0">
+                  <canvas class="px-2" #videoCanvas></canvas>
+                </ng-container>
+              </div>
+              <div
+                class="col-md-4 background my-1"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+              <p class="title-chart">{{ "DASHBOARD.CHART-AUDIO" | translate }}</p> 
+              <div *ngIf="loaderOn">
+                <div class="spinner-border loader" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+                <ng-container *ngIf="userData.audioCommentsGrowth === 0">
+                  
+                  <div class="text-center teste">
+                    <div class="icon-sad">
+                      <i class="bx bx-sad bx-sm bx-tada-hover"></i>
+                    </div>
+                  </div>
+                  <p class="subtext-card mb-0">
+                    {{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}
+                  </p>
+                  <p class="subtext-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}
+                  </p>
+                  <p class="text-footer-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}
+                  </p>
+                </ng-container>
+                <ng-container *ngIf="userData.audioCommentsGrowth !== 0">
+                  <canvas class="px-2" #audioCanvas></canvas>
+                </ng-container>
+              </div>
+              <div
+                class="col-md-4 background my-1"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+              <p class="title-chart">{{ "DASHBOARD.CHART-PICTURE" | translate }}</p> 
+              <div *ngIf="loaderOn">
+                <div class="spinner-border loader" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+                <ng-container *ngIf="userData.picturesCommentsGrowth === 0">
+                  
+                  <div class="text-center teste">
+                    <div class="icon-sad">
+                      <i class="bx bx-sad bx-sm bx-tada-hover"></i>
+                    </div>
+                  </div>
+                  <p class="subtext-card mb-0">
+                    {{ "DASHBOARD.CARD-NULL-TEXT1" | translate }}
+                  </p>
+                  <p class="subtext-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT2" | translate }}
+                  </p>
+                  <p class="text-footer-card">
+                    {{ "DASHBOARD.CARD-NULL-TEXT3" | translate }}
+                  </p>
+                </ng-container>
+                <ng-container *ngIf="userData.picturesCommentsGrowth !== 0">
+                  <canvas class="px-2" #pictureCanvas></canvas>
+                </ng-container>
+              </div>
             </div>
           </div>
         </div>

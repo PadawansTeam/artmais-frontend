@@ -16,6 +16,5 @@ export class AppComponent {
         window.location.href = location.href.replace('http', 'https');
       }
     }
-
   }
 }
