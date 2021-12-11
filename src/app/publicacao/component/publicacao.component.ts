@@ -67,6 +67,7 @@ export class PublicacaoComponent implements OnInit {
     if(this.loggedUser == true){
       this.publicacaoService.getLoggedPublication(this.idUser, this.idPublicacao).subscribe(
         (response: Publicacao) => {
+          console.log("Comentarios: ", response)
          this.publicacao = response;
         },
         (err) => {
@@ -76,6 +77,7 @@ export class PublicacaoComponent implements OnInit {
     } else{
       this.publicacaoService.getUnloggedPublication(this.idUser, this.idPublicacao).subscribe(
         (response: Publicacao) => {
+          console.log("Comentarios: ", response)
          this.publicacao = response;
         },
         (err) => {
@@ -143,6 +145,52 @@ export class PublicacaoComponent implements OnInit {
         throw err;
       },
     );
+  }
+
+  // respondComment(){
+  //   this.publicacaoService.insertComment(
+  //     this.idComentario, 
+  //     this.description
+  //   ).subscribe(
+  //     async (response) => {
+  //       await this.Toast.fire({
+  //         icon: 'success',
+  //         title:
+  //           localStorage.getItem('lang') === 'pt-BR'
+  //             ? 'Comentário postado com sucesso!'
+  //             : 'Comment posted successfully!',
+  //       });
+  //       this.routeUpdateEvent();
+  //       return response;
+  //     },
+  //     (err) => {
+  //       this.Toast.fire({
+  //         icon: 'error',
+  //         title:
+  //           localStorage.getItem('lang') === 'pt-BR'
+  //             ? 'Erro ao comentar!'
+  //             : 'Failed to comment!',
+  //         text:
+  //           localStorage.getItem('lang') === 'pt-BR'
+  //             ? 'Tente novamente mais tarde!'
+  //             : 'Try again later!',
+  //       });
+  //       throw err;
+  //     },
+  //   );
+  // }
+
+  deleteComment(idComentario: any) {
+    this.publicacaoService.deleteComment(
+      idComentario
+    ).subscribe(
+      (response) => {
+        this.getPublication();
+      },
+      (err) => {
+        throw err;
+      },
+    ); 
   }
 
   deletePublication(){
