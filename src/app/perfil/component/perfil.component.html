@@ -58,7 +58,7 @@
             </div>
             <div class="bg-light pt-4 pb-4 mb-3">
                 <div class="row mx-auto">
-                    <div class="bg-light col-md-4 d-block text-center ">
+                    <div *ngIf="profile.mainPhone || profile.secundaryPhone || profile.thirdPhone " class="bg-light col-md-4 d-block text-center mx-auto">
                         <i class="fa fa-phone icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
                         <div class="col-md-12 fw-bold mb-3">{{ 'PERFIL.TELEFONES' | translate }}</div>
                         <div class="bg-light col-md-12 d-block text-center text1">
@@ -67,14 +67,13 @@
                             <div class="col-md-12 text-muted">{{profile.thirdPhone}}</div>
                         </div>
                     </div>
-                    <div class="bg-light col-md-4 d-block  ">
+                    <div *ngIf= "profile.street  && profile.number" class="bg-light col-md-4 d-block text-center mx-auto">
                         <div class="text-center">
                             <i class="fa fa-map-marker icon-color mr-1 mb-2 mt-3  " aria-hidden="true"></i>
                         </div>
                         <div class="col-md-12 fw-bold mb-3  text-center">
                             {{ 'PERFIL.ENDERECO' | translate }}
                         </div>
-                        <div *ngIf= "profile.street  && profile.number">
                             <div class="adress">
                                 <p class="fw-bold text-muted mx-1 text-left">{{ 'PERFIL.RUA' | translate }}</p>
                                 <p class="text-muted text-left">{{profile.street}}</p>
@@ -102,9 +101,9 @@
                                 <p class="fw-bold mx-1 text-muted text-left">{{ 'PERFIL.ESTADO' | translate }}:</p>
                                 <p class="text-muted text-left">{{profile.state}}</p>
                             </div>
-                        </div>
+                        
                     </div>
-                    <div class="bg-light col-md-4 d-block text-center">
+                    <div class="bg-light col-md-4 d-block text-center mx-auto">
                         <i class="fa fa-share icon-color mr-1 mb-2 mt-3" aria-hidden="true"></i>
                         <div class="col-md-12 fw-bold mb-3 ">{{ 'PERFIL.COMPARTILHAR' | translate }}</div>
                         <div class="bg-light col-md-12 d-block text-center">

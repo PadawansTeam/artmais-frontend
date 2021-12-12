@@ -124,7 +124,7 @@
 
         <div class="bg-light pt-4 pb-4 mb-3">
           <div class="row mx-auto">
-            <div class="bg-light col-md-4 d-block text-center">
+            <div  *ngIf="artist.mainPhone || artist.secundaryPhone || artist.thirdPhone " class="bg-light col-md-4 d-block text-center mx-auto">
               <i
                 class="fa fa-phone icon-color mr-1 mb-2 mt-3"
                 aria-hidden="true"
@@ -140,7 +140,9 @@
                 <div class="col-md-12 text-muted">{{ artist.thirdPhone }}</div>
               </div>
             </div>
-            <div class="bg-light col-md-4 d-block text-center">
+
+            <div *ngIf="artist.street && artist.number">
+            <div class="bg-light col-md-4 d-block text-center mx-auto">
               <i
                 class="fa fa-map-marker icon-color mr-1 mb-2 mt-3"
                 aria-hidden="true"
@@ -148,7 +150,6 @@
               <div class="col-md-12 fw-bold mb-3">
                 {{ "PERFIL.ENDERECO" | translate }}
               </div>
-              <div *ngIf="artist.street && artist.number">
                 <div class="adress mx-3">
                   <p class="fw-bold text-muted mx-1 text-left">
                     {{ "PERFIL.RUA" | translate }}
@@ -189,9 +190,10 @@
                   </p>
                   <p class="text-muted text-left">{{ artist.state }}</p>
                 </div>
-              </div>
+              
             </div>
-            <div class="bg-light col-md-4 d-block text-center">
+            </div>
+            <div class="bg-light col-md-4 d-block text-center mx-auto">
               <i
                 class="fa fa-share icon-color mr-1 mb-2 mt-3"
                 aria-hidden="true"
