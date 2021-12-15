@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuariosService } from '../../usuarios/service/usuarios.service';
+import { HeaderLog } from '../service/headerlog';
+import { HeaderLogService } from '../service/headerlog.service';
 
 @Component({
   selector: 'app-headerlog',
@@ -8,12 +10,14 @@ import { UsuariosService } from '../../usuarios/service/usuarios.service';
   styleUrls: ['./headerlog.component.css'],
 })
 export class HeaderlogComponent implements OnInit {
+  profile!: HeaderLog;
   className!: string;
   mobile: boolean = false;
   search: String | undefined;
 
   constructor(
     public usuariosService: UsuariosService,
+    public headerLogService: HeaderLogService,
     private router: Router
   ) {}
 
@@ -21,6 +25,14 @@ export class HeaderlogComponent implements OnInit {
     if (window.screen.width < 768) {
       this.mobile = true;
     }
+    this.headerLogService.getUser().subscribe(
+      (response: HeaderLog) => {
+        this.profile = response;
+      },
+      (err) => {
+        throw err;
+      }
+    )
   }
 
   goSearch() {
