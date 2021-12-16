@@ -120,7 +120,7 @@
                       </div>
                       <input [(ngModel)]="this.email" formControlName="email" name="email" class="un form-control" type="email" align="center" placeholder="{{ 'ENTRAR.EMAIL' | translate }}">
                     </div></form>
-                    <a (click)="sendForgotPasswordMail()"><button class="submit" align="center">
+                    <a (click)="sendForgotPasswordMail()"><button class="submit" align="center" data-bs-dismiss="modal">
                       {{ 'ENTRAR.MODAL-ENVIAR' | translate }}
                     </button></a>
                 </div>
