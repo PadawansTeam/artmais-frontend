@@ -265,7 +265,6 @@
                     comentario.username
                   }}</span>
                 </div>
-                <!-- integrar -->
                 <div class="col-md-1 text-end">
                   <ul
                     class="trash-buttons list-inline2 d-flex flex-row-reverse"
@@ -291,7 +290,7 @@
                     "
                   >
                     <li class="list-inline-item text-center answer">
-                      <a data-bs-toggle="modal" data-bs-target="#newanswer">
+                      <a data-bs-toggle="modal" data-bs-target="#newanswer" (click)="answerComment(comentario.commentID)">
                         <i class="fa fa-comments"></i>
                         <span class="answer-text mx-2">{{ "PUBLICACAO.REPLY" | translate }}</span>
                       </a>
@@ -308,61 +307,60 @@
             </div>
           </div>
         </div>
-
-        <!-- comentário resposta integrar -->
-        <!-- <div class="row justify-content-center">
-          <div class="col-md-2"></div>
-          <div class="col-md-10">
-            <div class="d-flex flex-column">
-              <div class="bg-answer p-3">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-11">
-                      <img
-                        class="rounded-circle-coment"
-                        src="{{ comentario.userPicture }}"
-                        width="40"
-                        height="40"
-                      />
-                      <span class="nome-user">{{ comentario.name }}</span>
-                      <span class="username-coment text-black-50">{{
-                        comentario.username
-                      }}</span>
+        <div *ngFor="let resposta of comentario.answers">
+          <div class="row justify-content-center">
+            <div class="col-md-2"></div>
+            <div class="col-md-10">
+              <div class="d-flex flex-column">
+                <div class="bg-answer p-3">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-11">
+                        <img
+                          class="rounded-circle-coment"
+                          src="{{ resposta.userPicture }}"
+                          width="40"
+                          height="40"
+                        />
+                        <span class="nome-user">{{ resposta.name }}</span>
+                        <span class="username-coment text-black-50">{{ resposta.username }}</span>
+                      </div>
+                      <div class="col-md-1 text-end">
+                        <ul
+                          class="
+                            trash-buttons
+                            list-inline2
+                            d-flex
+                            flex-row-reverse
+                          "
+                        >
+                          <li class="list-inline-item">
+                            <a
+                              data-bs-toggle="modal"
+                              data-bs-target="#confirmDelete"
+                              (click)="deleteReply(resposta.answerID)"
+                            >
+                              <i class="fa fa-trash"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                    <div class="col-md-1 text-end">
-                      <ul
-                        class="
-                          trash-buttons
-                          list-inline2
-                          d-flex
-                          flex-row-reverse
-                        "
-                      >
-                        <li class="list-inline-item">
-                          <a
-                            data-bs-toggle="modal"
-                            data-bs-target="#confirmDelete"
-                          >
-                            <i class="fa fa-trash"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <br /><span class="my-1">{{ comentario.description }}</span>
-                  <div class="row mt-1 mb-0">
-                    <div class="col-md-12 text-end">
-                      <span class="text-black-50 date"
-                        >{{ "PUBLICACAO.DATA-POSTAGEM" | translate }}
-                        {{ comentario.commentDate | date: "dd/MM/yyyy" }}</span
-                      >
+                    <br /><span class="my-1">{{ resposta.description }}</span>
+                    <div class="row mt-1 mb-0">
+                      <div class="col-md-12 text-end">
+                        <span class="text-black-50 date"
+                          >{{ "PUBLICACAO.DATA-POSTAGEM" | translate }}
+                          {{ resposta.answerDate | date: "dd/MM/yyyy" }}</span
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
         <hr />
       </div>
     </div>
@@ -454,8 +452,6 @@
   </div>
 </div>
 
-<!-- integrar -->
-
 <div
   class="descricao-modal modal fade"
   id="newanswer"
@@ -487,7 +483,7 @@
                     <div class="col-md-6"></div>
                     <div class="descr fw-bold">{{ "PUBLICACAO.MODAL-ANSWER-TEXT" | translate }}</div>
                     <textarea
-                      [(ngModel)]="this.userDescription.description"
+                      [(ngModel)]="this.answerDescription.description"
                       class="form-control2"
                       cols="50"
                       rows="6"
@@ -500,7 +496,7 @@
               </div>
               <button
                 type="button"
-                (click)="updateDescription()"
+                (click)="respondComment()"
                 class="getstarted mt-2"
                 data-bs-dismiss="modal"
                 aria-label="Fechar"
