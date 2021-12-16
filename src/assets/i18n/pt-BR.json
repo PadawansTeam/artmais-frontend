@@ -159,7 +159,11 @@
         "ABA-LINK": "Mídias Externas",
         "ABA-ERRO": "Não há nada postado ainda",
         "ABA-ARQUIVO": "Arquivo",
-        "ABA-LINKS": "Link"
+        "ABA-LINKS": "Link",
+        "TITULO-ITEM-PORTFOLIO": "Título do Vídeo:",
+        "INSIRA-LINK": "Insira o link aqui",
+        "PLACE-TITULO": "Insira o título",
+        "APENAS-YT": "*são aceitos apenas vídeos do YouTube"
     },
     "CONFIG": {
         "CONFIG": "Configurações",

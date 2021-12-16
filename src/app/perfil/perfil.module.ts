@@ -12,6 +12,7 @@ import { PerfilService } from './service/perfil.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgxVideoListPlayerModule } from 'ngx-video-list-player';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -35,7 +36,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HeaderlogModule,
     FooterModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    NgxVideoListPlayerModule
   ],
   providers: [
     TranslateService,

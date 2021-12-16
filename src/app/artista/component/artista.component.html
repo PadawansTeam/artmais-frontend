@@ -277,6 +277,13 @@
                   >{{ "PERFIL.ABA-AUDIO" | translate }}
                 </button>
               </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                    data-bs-target="#externalMedia" type="button" role="tab" aria-controls="link"
+                    aria-selected="false" (click)="getVideos()">
+                    <i class="bx bx-link bx-sm bx-tada-hover"></i>
+                    {{'PERFIL.ABA-LINK' | translate }}</button>
+              </li>
             </ul>
             <div class="tab-content" id="myTabContent">
               <div
@@ -419,6 +426,20 @@
                   </div>
                 </div>
               </div>
+              <div class="tab-pane fade" id="externalMedia" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
+                    <div class="col">
+                        <div *ngIf="config?.sources?.length == 0"
+                            style="color: #6c757d!important;">
+                            <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
+                                'PERFIL.ABA-ERRO' | translate }}</p>
+                        </div>
+                        <div *ngIf="config?.sources?.length !== 0">
+                            <ngx-video-list-player [config]="config"></ngx-video-list-player>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
           </section>
         </div>

@@ -4,6 +4,7 @@ import { Perfil } from '../service/perfil';
 import { PerfilService } from '../service/perfil.service';
 import { UserPortfolio } from '../service/UserPortfolio';
 import Swal from 'sweetalert2';
+import { IVideoConfig } from 'ngx-video-list-player';
 
 @Component({
   selector: 'app-perfil',
@@ -12,8 +13,10 @@ import Swal from 'sweetalert2';
 })
 export class PerfilComponent implements OnInit {
   profile!: Perfil;
-  userPortfolioContent: {image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[], externalMedia: UserPortfolio[]} = {image: [], video: [], audio: [], externalMedia: []};
+  userPortfolioContent: { image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[], externalMedia: UserPortfolio[] } = { image: [], video: [], audio: [], externalMedia: [] };
   selectedPortfolioContent: FileList | undefined;
+
+  config: IVideoConfig = {sources:[]}
 
   portfolioContent: any = {
     publicationID: null,
@@ -38,18 +41,18 @@ export class PerfilComponent implements OnInit {
   });
 
   constructor(
-    public perfilService: PerfilService, 
+    public perfilService: PerfilService,
     private router: Router
-    ) {}
+  ) { }
 
   ngOnInit(): void {
     this.perfilService.ngOnInit();
     this.perfilService.getValidation().subscribe(
-      (response) => {}, 
+      (response) => { },
       (err) => {
         if (err.status == 401) {
           this.router.navigate(['']);
-        }else if(err.status == 500){
+        } else if (err.status == 500) {
           this.router.navigate(['/erro']);
         }
       }
@@ -64,12 +67,24 @@ export class PerfilComponent implements OnInit {
     ),
       this.perfilService.getUserPortfolio().subscribe(
         (response) => {
-          this.userPortfolioContent = response as {image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[], externalMedia: UserPortfolio[]};
+          this.userPortfolioContent = response as { image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[], externalMedia: UserPortfolio[] };
         },
         (err) => {
           throw err;
         }
       );
+  }
+
+  getVideos() {
+    for(let external of this.userPortfolioContent.externalMedia){
+      this.config.sources.push(
+        {
+          src: external.s3UrlMedia || "",
+          isYoutubeVideo: true,
+          videoName: external.description,
+        }
+      )
+    }
   }
 
   insertPortfolioFile() {
@@ -142,8 +157,8 @@ export class PerfilComponent implements OnInit {
             icon: 'success',
             title:
               localStorage.getItem('lang') === 'pt-BR'
-              ? 'Postagem publicada com sucesso!'
-              : 'Post published successfully!',
+                ? 'Postagem publicada com sucesso!'
+                : 'Post published successfully!',
           });
           this.routeUpdateEvent();
           return response;
@@ -153,8 +168,8 @@ export class PerfilComponent implements OnInit {
             icon: 'error',
             title:
               localStorage.getItem('lang') === 'pt-BR'
-              ? 'Erro ao pulicar!'
-              : 'Failed to publish!',
+                ? 'Erro ao pulicar!'
+                : 'Failed to publish!',
             text:
               localStorage.getItem('lang') === 'pt-BR'
                 ? 'Tente novamente mais tarde!'

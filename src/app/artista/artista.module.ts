@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { RecommendationService } from '../homepage/service/recommendation.service';
 import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
+import { NgxVideoListPlayerModule } from 'ngx-video-list-player';
 
 
 
@@ -41,7 +42,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FooterModule,
     NgbModule,
     RouterModule,
-    HeaderUserComumModule
+    HeaderUserComumModule,
+    NgxVideoListPlayerModule
   ],
   providers: [
     TranslateService,
