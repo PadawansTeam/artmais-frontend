@@ -68,7 +68,6 @@ export class PerfilComponent implements OnInit {
       this.perfilService.getUserPortfolio().subscribe(
         (response) => {
           this.userPortfolioContent = response as { image: UserPortfolio[], video: UserPortfolio[], audio: UserPortfolio[], externalMedia: UserPortfolio[] };
-          console.log(this.userPortfolioContent.externalMedia)
         },
         (err) => {
           throw err;
@@ -85,7 +84,7 @@ export class PerfilComponent implements OnInit {
           videoName: external.description,
         }
       )
-    };
+    }
   }
 
   insertPortfolioFile() {

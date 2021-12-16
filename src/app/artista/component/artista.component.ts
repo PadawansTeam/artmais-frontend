@@ -52,7 +52,7 @@ export class ArtistaComponent implements OnInit {
           videoName: external.description,
         }
       )
-    };
+    }
   }
   
   seeIfLogged(){
