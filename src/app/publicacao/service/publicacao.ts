@@ -25,6 +25,16 @@ export class Publicacao {
           userPicture?: string,
           description?: string,
           commentDate?: Date,
+          answers?: [
+            {
+              answerID?: number,
+              name?: string,
+              username?: string,
+              userPicture?: string,
+              description?: string,
+              answerDate: Date
+            }
+          ]
         }
       ],
       public commentsAmount: number,

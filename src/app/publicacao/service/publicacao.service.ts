@@ -51,9 +51,13 @@ export class PublicacaoService {
     return this.http.delete(`${this.artPlusURL}` + `v1/Publication/DeleteComment?commentId=${commentId}`, this.httpOptions);
   }
   
-  // respondComment(publicationID: number, description: string): Observable<any> {
-  //   return this.http.post(`${this.artPlusURL}` + `v1/Publication/InsertComment`, { publicationID, description }, this.httpOptions);
-  // }
+  respondComment(commentId: number, description: string): Observable<any> {
+    return this.http.post(`${this.artPlusURL}` + `v1/Answer/Create`, { commentId, description }, this.httpOptions);
+  }
+
+  deleteAnswer(answerId: number): Observable<any> {
+    return this.http.delete(`${this.artPlusURL}` + `v1/Answer/Delete/${answerId}`, this.httpOptions);
+  }
 
   updateDescription(publicationId: number, publicationDescription: string): Observable<object> {
     return this.http.patch<object>(`${this.artPlusURL}` + 'v1/Portfolio/UpdateDescription', { publicationId, publicationDescription }, this.httpOptions);

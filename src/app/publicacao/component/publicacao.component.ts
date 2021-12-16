@@ -14,6 +14,7 @@ import { ArtistaService } from '../../artista/service/artista.service';
   styleUrls: ['./publicacao.component.css']
 })
 export class PublicacaoComponent implements OnInit {
+  idResposta!: number;
   publicacao!: Publicacao;
   idUser!: number;
   idPublicacao!: number;
@@ -23,6 +24,10 @@ export class PublicacaoComponent implements OnInit {
   loggedUser: boolean = false;
 
   userDescription: any = {
+    description: null,
+  };
+
+  answerDescription: any = {
     description: null,
   };
 
@@ -145,38 +150,55 @@ export class PublicacaoComponent implements OnInit {
     );
   }
 
-  // respondComment(){
-  //   this.publicacaoService.insertComment(
-  //     this.idComentario, 
-  //     this.description
-  //   ).subscribe(
-  //     async (response) => {
-  //       await this.Toast.fire({
-  //         icon: 'success',
-  //         title:
-  //           localStorage.getItem('lang') === 'pt-BR'
-  //             ? 'Comentário postado com sucesso!'
-  //             : 'Comment posted successfully!',
-  //       });
-  //       this.routeUpdateEvent();
-  //       return response;
-  //     },
-  //     (err) => {
-  //       this.Toast.fire({
-  //         icon: 'error',
-  //         title:
-  //           localStorage.getItem('lang') === 'pt-BR'
-  //             ? 'Erro ao comentar!'
-  //             : 'Failed to comment!',
-  //         text:
-  //           localStorage.getItem('lang') === 'pt-BR'
-  //             ? 'Tente novamente mais tarde!'
-  //             : 'Try again later!',
-  //       });
-  //       throw err;
-  //     },
-  //   );
-  // }
+  answerComment(idComentario: any){
+    this.idResposta = idComentario;
+  }
+
+  respondComment(){
+    this.publicacaoService.respondComment(
+      this.idResposta, 
+      this.answerDescription.description
+    ).subscribe(
+      async (response) => {
+        await this.Toast.fire({
+          icon: 'success',
+          title:
+            localStorage.getItem('lang') === 'pt-BR'
+              ? 'Resposta postado com sucesso!'
+              : 'Reply posted successfully!',
+        });
+        this.routeUpdateEvent();
+        return response;
+      },
+      (err) => {
+        this.Toast.fire({
+          icon: 'error',
+          title:
+            localStorage.getItem('lang') === 'pt-BR'
+              ? 'Erro ao responder!'
+              : 'Failed to reply!',
+          text:
+            localStorage.getItem('lang') === 'pt-BR'
+              ? 'Tente novamente mais tarde!'
+              : 'Try again later!',
+        });
+        throw err;
+      },
+    );
+  }
+
+  deleteReply(idResposta: any) {
+    this.publicacaoService.deleteAnswer(
+      idResposta
+    ).subscribe(
+      (response) => {
+        this.getPublication();
+      },
+      (err) => {
+        throw err;
+      },
+    ); 
+  }
 
   deleteComment(idComentario: any) {
     this.publicacaoService.deleteComment(
