@@ -427,18 +427,20 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="externalMedia" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="row" style="margin-top: 1.5rem; min-height: 8rem;">
-                    <div class="col">
-                        <div *ngIf="config?.sources?.length == 0"
-                            style="color: #6c757d!important;">
-                            <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
-                                'PERFIL.ABA-ERRO' | translate }}</p>
-                        </div>
-                        <div *ngIf="config?.sources?.length !== 0">
-                            <ngx-video-list-player [config]="config"></ngx-video-list-player>
-                        </div>
+                <div class="row" style="margin-top: 1.5rem; min-height: 8rem">
+                  <div *ngIf="artistPortfolioContent.externalMedia.length == 0"
+                    style="color: #6c757d!important;">
+                    <p class="text-center" style=" font-size: 20px; color: #6c757d!important;">{{
+                        'PERFIL.ABA-ERRO' | translate }}</p>
+                  </div>
+                  <div  class="col-md-4 mb-3 pr-lg-2 portifolio-item" *ngFor="let userPortfolioMidia of artistPortfolioContent.externalMedia">
+                      <youtube-player
+                        [videoId]="userPortfolioMidia.s3UrlMedia"
+                        [width]="400"
+                        [height]="250">
+                      </youtube-player>
+                  </div>
                     </div>
-                </div>
             </div>
             </div>
           </section>

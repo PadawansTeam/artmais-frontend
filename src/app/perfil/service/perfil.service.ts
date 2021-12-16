@@ -55,13 +55,12 @@ export class PerfilService {
   }
 
   insertExternalMedia(
-    portfolioImageUrl: string,
-    description: string
+    portfolioImageUrl: string
   ): Observable<any> {
     return this.http.post(this.artPlusURL + 'v1/Portfolio/InsertPortfolioExternalMediaContent',
     {
       portfolioImageUrl,
-      description
+      description: " "
     }, this.httpOptions);
   }
 
