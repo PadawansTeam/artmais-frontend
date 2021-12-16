@@ -44,14 +44,18 @@ export class ArtistaComponent implements OnInit {
   }
 
   getVideos() {
-    for(let external of this.artistPortfolioContent.externalMedia){
-      this.config.sources.push(
-        {
-          src: external.s3UrlMedia || "",
-          isYoutubeVideo: true,
-          videoName: external.description,
-        }
-      )
+    if (this.config.sources.length != 0){
+      return
+    } else{ 
+      for(let external of this.artistPortfolioContent.externalMedia){
+        this.config.sources.push(
+          {
+            src: external.s3UrlMedia || "",
+            isYoutubeVideo: true,
+            videoName: external.description,
+          }
+        )
+      }
     }
   }
   

@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
 import { RecommendationService } from '../homepage/service/recommendation.service';
 import { HeaderUserComumModule } from '../headerusercomum/headerusercomum.module';
 import { NgxVideoListPlayerModule } from 'ngx-video-list-player';
-
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -43,7 +43,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     NgbModule,
     RouterModule,
     HeaderUserComumModule,
-    NgxVideoListPlayerModule
+    NgxVideoListPlayerModule,
+    YouTubePlayerModule
   ],
   providers: [
     TranslateService,

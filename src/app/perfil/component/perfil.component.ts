@@ -76,14 +76,18 @@ export class PerfilComponent implements OnInit {
   }
 
   getVideos() {
-    for(let external of this.userPortfolioContent.externalMedia){
-      this.config.sources.push(
-        {
-          src: external.s3UrlMedia || "",
-          isYoutubeVideo: true,
-          videoName: external.description,
-        }
-      )
+    if (this.config.sources.length != 0){
+      return
+    } else{ 
+      for(let external of this.userPortfolioContent.externalMedia){
+        this.config.sources.push(
+          {
+            src: external.s3UrlMedia || "",
+            isYoutubeVideo: true,
+            videoName: external.description,
+          }
+        )
+      }
     }
   }
 
@@ -113,8 +117,7 @@ export class PerfilComponent implements OnInit {
   insertExternalMedia() {
     this.perfilService
       .insertExternalMedia(
-        this.portfolioContent.portfolioImageUrl,
-        this.portfolioDescription.description
+        this.portfolioContent.portfolioImageUrl
       )
       .subscribe(
         async (response) => {

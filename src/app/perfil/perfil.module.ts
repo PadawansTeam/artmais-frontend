@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgxVideoListPlayerModule } from 'ngx-video-list-player';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -37,7 +38,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FooterModule,
     NgbModule,
     RouterModule,
-    NgxVideoListPlayerModule
+    NgxVideoListPlayerModule,
+    YouTubePlayerModule
   ],
   providers: [
     TranslateService,
