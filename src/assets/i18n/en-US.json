@@ -136,7 +136,11 @@
             "ABA-LINK": "External Media",
             "ABA-ERRO": "There's nothing posted yet",
             "ABA-ARQUIVO": "File",
-            "ABA-LINKS": "Link"
+            "ABA-LINKS": "Link",
+            "TITULO-ITEM-PORTFOLIO": "Video Title:",
+            "INSIRA-LINK": "Insert the link here",
+            "PLACE-TITULO": "Insert the title",
+            "APENAS-YT": "*will be accepted YouTube videos only"
         },
     "RECOMENDACAO": {
         "TITULO-INTE": "INTEREST PROFILES",

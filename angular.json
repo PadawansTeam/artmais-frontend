@@ -25,7 +25,15 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+               "src/assets",
+               {
+                "glob": "**/*",
+                "input": "./node_modules/ngx-video-list-player/assets",
+                "output": "/assets/"
+              }   
+              ],
             "styles": ["src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/swiper/swiper-bundle.min.css",

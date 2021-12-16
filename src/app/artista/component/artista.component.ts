@@ -9,6 +9,7 @@ import {
   NgbModalOptions,
 } from '@ng-bootstrap/ng-bootstrap';
 import { RecommendationService } from 'src/app/homepage/service/recommendation.service';
+import { IVideoConfig } from 'ngx-video-list-player';
 
 @Component({
   selector: 'app-artista',
@@ -18,9 +19,13 @@ import { RecommendationService } from 'src/app/homepage/service/recommendation.s
 export class ArtistaComponent implements OnInit {
   artist!: Artista;
   idUser!: number;
-  artistPortfolioContent: { image: Portfolio[], video: Portfolio[], audio: Portfolio[] } = { image: [], video: [], audio: [] };
+  artistPortfolioContent: { image: Portfolio[], video: Portfolio[], audio: Portfolio[], externalMedia: Portfolio[] } = { image: [], video: [], audio: [], externalMedia: []
+   };
   loggedUser: boolean = false;
   roleUser: boolean = false;
+
+  config: IVideoConfig = {sources:[]}
+
 
   constructor(
     public artistaService: ArtistaService,
@@ -36,6 +41,18 @@ export class ArtistaComponent implements OnInit {
     this.roleIfClient();
     this.idUser = this.route.snapshot.params['id'];
     this.getArtista();
+  }
+
+  getVideos() {
+    for(let external of this.artistPortfolioContent.externalMedia){
+      this.config.sources.push(
+        {
+          src: external.s3UrlMedia || "",
+          isYoutubeVideo: true,
+          videoName: external.description,
+        }
+      )
+    };
   }
   
   seeIfLogged(){
@@ -82,7 +99,7 @@ export class ArtistaComponent implements OnInit {
     ),
       this.artistaService.getPortfolioArtista(this.idUser).subscribe(
         (response) => {
-          this.artistPortfolioContent = response as { image: Portfolio[], video: Portfolio[], audio: Portfolio[] };
+          this.artistPortfolioContent = response as { image: Portfolio[], video: Portfolio[], audio: Portfolio[], externalMedia: Portfolio[] };
         },
         (err) => {
           throw err;
