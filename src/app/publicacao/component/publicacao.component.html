@@ -265,7 +265,7 @@
                     comentario.username
                   }}</span>
                 </div>
-                <div class="col-md-1 text-end">
+                <div class="col-md-1 text-end" *ngIf="this.isSameUser">
                   <ul
                     class="trash-buttons list-inline2 d-flex flex-row-reverse"
                   >
@@ -325,7 +325,7 @@
                         <span class="nome-user">{{ resposta.name }}</span>
                         <span class="username-coment text-black-50">{{ resposta.username }}</span>
                       </div>
-                      <div class="col-md-1 text-end">
+                      <div class="col-md-1 text-end" *ngIf="this.isSameUser">
                         <ul
                           class="
                             trash-buttons
