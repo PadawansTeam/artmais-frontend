@@ -82,7 +82,6 @@ export class PublicacaoComponent implements OnInit {
       this.publicacaoService.getUnloggedPublication(this.idUser, this.idPublicacao).subscribe(
         (response: Publicacao) => {
          this.publicacao = response;
-         console.log(response)
         },
         (err) => {
           throw err;
